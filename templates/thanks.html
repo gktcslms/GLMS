@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+
+<br/><br/><br/><br/><br/>
+<table style="width:100%">
+    <tr>
+        <td><h3 style="text-align: center">Status</h3></td>
+        <td><h3  style="text-align: center">{{ request_status }}</h3></td>
+    </tr>
+
+    <tr>
+        <td><h3 style="text-align: center">Payment-ID</h3></td>
+        <td><h3 style="text-align: center">{{ request_payment }}</h3></td>
+    </tr>
+
+    <tr>
+        <td><h3 style="text-align: center">Djangoista user_name</h3></td>
+        <td><h3 style="text-align: center">{{ requesting_user }}</h3></td>
+    </tr>
+
+    <tr>
+        <td><h3 style="text-align: center">Instamojo Name</h3></td>
+        <td><h3 style="text-align: center">{{ name }}</h3></td>
+    </tr>
+
+    <tr>
+        <td><h3 style="text-align: center">Phone Number</h3></td>
+        <td><h3 style="text-align: center">{{ phone_number }}</h3></td>
+    </tr>
+
+    <tr>
+        <td><h3 style="text-align: center">Success</h3></td>
+        <td><h3 style="text-align: center">{{ state }}</h3></td>
+    </tr>
+
+    <tr>
+        <td><h3 style="text-align: center">Status</h3></td>
+        <td><h3 style="text-align: center">{{ status }}</h3></td>
+    </tr>
+
+    <tr>
+        <td><h3 style="text-align: center">Email ID</h3></td>
+        <td><h3 style="text-align: center">{{ email }}</h3></td>
+    </tr>
+
+    <tr>
+        <td><h3 style="text-align: center">Course Enrolled</h3></td>
+        <td><h3 style="text-align: center">{{ purpose }}</h3></td>
+    </tr>
+
+    <tr>
+        <td><h3 style="text-align: center">Amount Paid</h3></td>
+        <td><h3 style="text-align: center">{{ amount }}</h3></td>
+    </tr>
+<!-- <h3 style="text-align: center">{{ base_url }}</h3> -->
+<!-- <h1 style="text-align: center">{{ data }}</h1> -->
+<!-- <h3 style="text-align: center">Instamojo Name          {{ name }}</h3> -->
+<!-- <h3 style="text-align: center">Phone Number            {{ phone_number }}</h3> -->
+<!-- <h3 style="text-align: center">Success                 {{ state }}</h3> -->
+<!-- <h3 style="text-align: center">Status                  {{ status }}</h3> -->
+<!-- <h3 style="text-align: center">Email ID                {{ email }}</h3> -->
+<!-- <h3 style="text-align: center">Course Enrolled         {{ purpose }}</h3> -->
+<!-- <h3 style="text-align: center">Amount Paid             {{ amount }}</h3> -->
+</table>
+<a href="{{ base_url }}"><h3 style="text-align: center">Payment Details Link</h3></a>
+
+
+
+
+{% endblock %}

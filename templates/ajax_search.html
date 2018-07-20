@@ -1,0 +1,8 @@
+{% if course.count < 6 %}
+
+  {% for c in course %}
+	<hr/>
+    <a href="#"><div style="background:#EEE;padding-left: 12px;">{{ c.course_name }}</div></a>
+  {% endfor %}
+<hr/ style="margin-bottom:0px;">
+{% endif %}

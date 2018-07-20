@@ -1,0 +1,59 @@
+{% extends "index.html" %}
+
+{% block home %}
+<table width="1000px" >
+	<tr>
+		<td width="650px" style="padding-left: 15px">
+	
+<div style="font-family:Times;font-size: 15px;padding-right: 20px" align="justify" width='100' padding-left: 20px>
+	
+<b>Are you looking for skilled professional?</b> <br/><br/>
+
+Your search stops here !!!<br/>
+<br/>
+
+At GKTCS, we have 500+  experienced professionals as well as freshers, with new skills looking for a career changeover. Connect with us to get the right talent you are looking for!<br/>
+
+Our students are proficient professionals who have taken the initiative to learn essential new skills through our career-oriented program.
+
+<br/>
+<br/>
+
+You have come to the right place, if:<br/>
+
+1. You are looking for professionals with hands-on experience in relatively new technologies.<br/>
+
+2. You are looking for professionals with guaranteed experience and expertise in technologies.<br/>
+
+3. You are looking for professionals who are updated and industry-relevant.<br/>
+
+<br/>
+Update us on your open positions and we'll put them in front of an ocean of talented and qualified practitioners. We’re happy to provide you with more details about the hiring process. Just fill in the form and one of our representative will get back to you.
+</div>
+</td>
+<td align="right" border='10'>
+	<div align="right">
+			<form  method= 'post' action=""> {% csrf_token %}
+					<table align="left">
+						<tr><td><b>Job Title:</b></td><td>{{ form.job_title }}</td></tr>
+						<tr><td><b>Vacancies:</b></td><td>{{ form.vaccancies }}</td></tr>
+						<tr><td><b>Job Description:</b></td><td>{{ form.job_description }}</td></tr>
+						<tr><td><b>Desired profile:</b></td><td>{{ form.Desired_profile }}</td></tr>
+						<tr><td><b>Experience:</b></td><td>{{ form.Experience }}</td></tr>
+						<tr><td><b>Salary:</b></td><td>{{ form.salary }}</td></tr>
+						<tr><td><b>Location:</b></td><td>{{ form.location }}</td></tr>
+						<tr><td><b>Company name:</b></td><td>{{ form.company_name }}</td></tr>
+						<tr><td><b>Person name:</b></td><td>{{ form.person_name }}</td></tr>
+						<tr><td><b>Mobile:</b></td><td>{{ form.mobile }}</td></tr>
+						<tr><td><b>Email:</b></td><td>{{ form.Email }}</td></tr>
+						<tr><td><b>Companyurl:</b></td><td>{{ form.companyurl }}</td></tr>
+						
+						<tr><td colspan="2" style="padding-left: 60px"><input type="submit" onclick="myFunction()"></td></tr>
+						
+					</table>
+				</form>
+			</div>
+</td>
+</tr>
+</table>
+{% endblock %}

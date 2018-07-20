@@ -1,0 +1,64 @@
+{% extends "base_dashboard.html" %}
+{% load crispy_forms_tags %}
+{% block head %}
+
+{% endblock %}
+{% block content %}
+
+<div class="jumbotron jumbotron-header-bar" style="background-color: #505763;">
+<div class="container">
+<div class="row">
+<div class="col-md-12"><h2 style="color:#fff; text-align:center;" class="pull-left">Trainer Dashboard</h2></div>
+<a class="btn btn-default pull-right hidden" style="margin-top:20px; color:#007791; border: 1px solid #007791;border-radius: 5px;">+Create a new course</a>
+</div>
+</div>
+</div>
+<div class="container">
+	<div class="well">
+		<div class="row">
+				<div class="col-md-2 col-sm-3 col-xs-6 course_wrap">
+					<a href="/add_course/">
+					<div class="course_inner">
+						<div>
+							 <img class="img-responsive" src="/static/images/module_update.jpg"/>
+						</div>
+						<div class="inner_info" style="position:relative">
+						<div class="info_show" style="">
+						<a href="/add_course/"> <h3>Add new Courses</h3> </a>
+						</div>
+						</div>
+					</div>
+					</a>
+				</div>
+				<div class="col-md-2 col-sm-3 col-xs-6 course_wrap">
+					<a href="/display_courses/">
+					<div class="course_inner">
+						<div>
+							 <img class="img-responsive" src="/static/images/course_update.jpg"/>
+						</div>
+						<div class="inner_info" style="position:relative">
+						<div class="info_show" style="">
+						<a href="#"> <h3>My Courses</h3> </a>
+						</div>
+						</div>
+					</div>
+					</a>
+				</div>
+				<div class="col-md-2 col-sm-3 col-xs-6 course_wrap">
+					<a href="#">
+					<div class="course_inner">
+						<div>
+							 <img class="img-responsive" src="/static/images/profile_update.jpg"/>
+						</div>
+						<div class="inner_info" style="position:relative">
+						<div class="info_show" style="">
+						<a href="#"> <h3>My Profile</h3> </a>
+						</div>
+						</div>
+					</div>
+					</a>
+				</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

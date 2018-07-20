@@ -1,0 +1,161 @@
+{% extends "base_dashboard.html" %}
+{% block head %}
+<script src="https://cdn.jsdelivr.net/npm/afterglowplayer@1.x"></script>
+<script src="/static/html5lightbox/html5lightbox.js"></script>
+<style>
+.cntr{
+ text-align:center;
+}
+.main-panel > .content{
+	padding:0px
+}
+.course_cur>li{
+    background-color: #337ab7;
+    border-radius: 0px;
+    outline: 0;
+	width:100%;
+	text-align:center;
+	color:#fff;
+	box-shadow: 0 0 1px 1px rgba(20,23,28,.1), 0 3px 1px 0 rgba(20,23,28,.1);
+}
+
+.course-box {
+    margin-bottom: 15px;
+	margin-top: 15px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 0 1px 1px rgba(20,23,28,.1), 0 3px 1px 0 rgba(20,23,28,.1);
+    padding: 4px 25px;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+<div style="background-color:#337ab7; padding:10px" class="row"><!––<img src="python_banner.jpg" class="img-fluid" style="width:100%" alt="Responsive image">
+<div class="col-md-5" style="padding-left:30px">	
+	<img src="{{ course.thumbnail.url}}" class="img-responsive"> 
+</div>
+<div class="col-md-7">
+	<h1 style="color:#fff; text-shadow: 2px 2px #212020;">{{course.course_name}}</h1>
+	<h5 style="color:#fff;text-shadow: 2px 2px #212020;">{{course.description | safe}}</h5>
+</div>
+</div>
+</div>
+<div class="container" style="background-color: #e8e8e8; padding-bottom: 15px;">
+<div class="row">
+<div class="col-md-12">
+	<div class="course-box">
+	  <h3 class="cntr">Course objectives</h3>
+	  Some of the key skills you will gain upon completion of this program include:
+	  <br/>
+	  <p id="course_obj">{{course.objectives}}</p>
+	  <p><span id="messageSpan"><span></p>
+	</div>  
+</div>
+<div class="col-md-6">
+	<div class="course-box">
+		<h3 class="cntr">Prerequisite</h3>
+		<p>
+		{{course.prerequisite}}
+		</p>
+	</div>
+</div>
+<div class="col-md-6">
+	<div class="course-box">
+		<h3 class="cntr">Requirements</h3>
+		<p>
+		{{course.requirements}}
+		</p>
+	</div>
+</div>
+</div>  
+  <ul class="nav course_cur rwo">
+    <li><h4>Course Curriculum</h4></li>
+  </ul>
+	<div class="tab-content">
+    <div id="basicpy" class="">
+		<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+			<div id="module-group" class="panel panel-default">
+				{% for module in modules %}
+				<div class="course-box">
+					<a role="button" data-toggle="collapse" data-parent="#module-group" href="#module{{module.id}}" aria-expanded="true" aria-controls="collapseOne">
+					<div class="panel-heading" role="tab" id="title{{module.id}}">
+						<h4 class="panel-title">
+							
+								<i class="more-less glyphicon glyphicon-plus"></i>
+								{{module.order}}. {{module.name}}
+							
+						</h4>
+					</div>
+					</a>
+					<div id="module{{module.id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="title{{module.id}}">
+						<div class="panel-body course-box">
+							<span style="font-face:bold">Topics:</span>
+							<ul>
+								<li>{{ module.topics}}</li> 
+							</ul>
+							<div class="row">
+								{% if module.video %}
+								<div class="col-md-3">  
+									<a href="#myvideo{{ module.id }}" class="afterglow btn btn-primary"><i class="far fa-play-circle"></i> Video</a>
+									<video id="myvideo{{ module.id }}" width="960" height="540" data-overscale="false" class="afterglow-lightboxplayer" data-autoresize="fit" data-skin="dark">
+									  <source type="video/mp4" src="{{ module.video.url}}" />
+									</video>
+								</div>
+								{% endif %}
+								{% if module.Presentation %}
+									<div class="col-md-3"><a href="{{ module.Presentation.url}}" class="btn btn-primary html5lightbox"><i class="far fa-file-powerpoint"></i> Presentation</a></div>
+								{% endif %}
+								{% if module.Assignment %}
+								<div class="col-md-3"><a href="{{ module.Assignment.url}}" class="btn btn-primary html5lightbox"><i class="far fa-file-alt"></i> Assignment</a></div>
+								{% endif %}
+							</div>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div><!-- panel-group -->	
+    </div>
+  </div>
+</div>
+<script>
+function toggleIcon(e) {
+    $(e.target)
+        .prev('.panel-heading')
+        .find(".more-less")
+        .toggleClass('glyphicon-plus glyphicon-minus');
+}
+$('.panel-group').on('hidden.bs.collapse', toggleIcon);
+$('.panel-group').on('shown.bs.collapse', toggleIcon);
+</script>
+{% endblock %}
+
+{% block lower %}
+<script>
+$("#my_courses").addClass("active");
+</script>
+<script>
+$(document).ready(function () {
+    var message = jQuery("#course_obj").text();
+    message = message.replace(/\n/g, "<br>").replace(/  /g,"&nbsp;&nbsp;");
+    jQuery("#course_obj").html(message);
+});
+</script>
+<script>
+$(document).ready(function () {
+    var message = jQuery("#course_prereq").text();
+    message = message.replace(/\n/g, "<br>").replace(/  /g,"&nbsp;&nbsp;");
+    jQuery("#course_prereq").html(message);
+});
+</script>
+<script>
+$(document).ready(function () {
+    var message = jQuery("#course_require").text();
+    message2 = message.replace(/\n/g, "<br>").replace(/  /g,"&nbsp;&nbsp;");
+    jQuery("#course_require").html(message2);
+});
+</script>
+{% endblock %}

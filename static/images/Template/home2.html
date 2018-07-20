@@ -1,0 +1,319 @@
+{% load staticfiles %}
+<title>Gktcs LMS</title>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title> GKTCS LMS</title>
+		<link rel="shortcut icon" href="http://gktcs.in/GLMS/public/static/images/favicon.ico" type="image/x-icon" />
+		<link rel="icon" href="http://gktcs.in/GLMS/public/static/images/favicon.ico" type="image" />
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+		<script type="text/javascript" src="http://gktcs.in/GLMS/public/static/js/jssor.js"></script>
+    	<script type="text/javascript" src="http://gktcs.in/GLMS/public/static/js/jssor.slider.js"></script>
+		<script>
+
+        jssor_slider1_starter = function (containerId) {
+
+            var _SlideshowTransitions = [
+            //Fade
+            { $Duration: 1200, $Opacity: 2 }
+            ];
+
+            var options = {
+                $AutoPlay: true,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
+                $AutoPlaySteps: 1,                                  //[Optional] Steps to go for each navigation request (this options applys only when slideshow disabled), the default value is 1
+                $AutoPlayInterval: 3000,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
+                $PauseOnHover: 1,                               //[Optional] Whether to pause when mouse over if a slider is auto playing, 0 no pause, 1 pause for desktop, 2 pause for touch device, 3 pause for desktop and touch device, 4 freeze for desktop, 8 freeze for touch device, 12 freeze for desktop and touch device, default value is 1
+
+                $ArrowKeyNavigation: true,   			            //[Optional] Allows keyboard (arrow key) navigation or not, default value is false
+                $SlideDuration: 500,                                //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
+                $MinDragOffsetToSlide: 20,                          //[Optional] Minimum drag offset to trigger slide , default value is 20
+                //$SlideWidth: 1500,                                 //[Optional] Width of every slide in pixels, default value is width of 'slides' container
+                //$SlideHeight: 450,                                //[Optional] Height of every slide in pixels, default value is height of 'slides' container
+                $SlideSpacing: 0, 					                //[Optional] Space between each slide in pixels, default value is 0
+                $DisplayPieces: 1,                                  //[Optional] Number of pieces to display (the slideshow would be disabled if the value is set to greater than 1), the default value is 1
+                $ParkingPosition: 0,                                //[Optional] The offset position to park slide (this options applys only when slideshow disabled), default value is 0.
+                $UISearchMode: 1,                                   //[Optional] The way (0 parellel, 1 recursive, default value is 1) to search UI components (slides container, loading screen, navigator container, arrow navigator container, thumbnail navigator container etc).
+                $PlayOrientation: 1,                                //[Optional] Orientation to play slide (for auto play, navigation), 1 horizental, 2 vertical, 5 horizental reverse, 6 vertical reverse, default value is 1
+                $DragOrientation: 3,                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
+
+                $SlideshowOptions: {                                //[Optional] Options to specify and enable slideshow or not
+                    $Class: $JssorSlideshowRunner$,                 //[Required] Class to create instance of slideshow
+                    $Transitions: _SlideshowTransitions,            //[Required] An array of slideshow transitions to play slideshow
+                    $TransitionsOrder: 1,                           //[Optional] The way to choose transition to play slide, 1 Sequence, 0 Random
+                    $ShowLink: true                                    //[Optional] Whether to bring slide link on top of the slider when slideshow is running, default value is false
+                },
+
+                
+            };
+            var jssor_slider1 = new $JssorSlider$(containerId, options);
+
+            //responsive code begin
+            //you can remove responsive code if you don't want the slider scales while window resizes
+            function ScaleSlider() {
+                var parentWidth = jssor_slider1.$Elmt.parentNode.clientWidth;
+                if (parentWidth)
+                    jssor_slider1.$ScaleWidth(Math.min(parentWidth, 1500));
+                else
+                    $Jssor$.$Delay(ScaleSlider, 30);
+            }
+
+            ScaleSlider();
+            $Jssor$.$AddEvent(window, "load", ScaleSlider);
+
+            $Jssor$.$AddEvent(window, "resize", $Jssor$.$WindowResizeFilter(window, ScaleSlider));
+            $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+            //responsive code end
+        };
+    	</script>
+    	<style>
+    		p {
+        	text-align: justify;
+			}
+    		
+    		.panel.with-nav-tabs .nav-tabs{
+			border-bottom: none;
+			}
+			/********************************************************************/
+			/********************************************************************/
+			/*** PANEL PRIMARY ***/
+			.with-nav-tabs.panel-primary .nav-tabs > li > a,
+			.with-nav-tabs.panel-primary .nav-tabs > li > a:hover,
+			.with-nav-tabs.panel-primary .nav-tabs > li > a:focus {
+			    color: #fff;
+			}
+			.with-nav-tabs.panel-primary .nav-tabs > .open > a,
+			.with-nav-tabs.panel-primary .nav-tabs > .open > a:hover,
+			.with-nav-tabs.panel-primary .nav-tabs > .open > a:focus,
+			.with-nav-tabs.panel-primary .nav-tabs > li > a:hover,
+			.with-nav-tabs.panel-primary .nav-tabs > li > a:focus {
+				color: #fff;
+				background-color: #3071a9;
+				border-color: transparent;
+			}
+			.with-nav-tabs.panel-primary .nav-tabs > li.active > a,
+			.with-nav-tabs.panel-primary .nav-tabs > li.active > a:hover,
+			.with-nav-tabs.panel-primary .nav-tabs > li.active > a:focus {
+				color: #428bca;
+				background-color: #fff;
+				border-color: #428bca;
+				border-bottom-color: transparent;
+			}
+			.with-nav-tabs.panel-primary .nav-tabs > li.dropdown .dropdown-menu {
+			    background-color: #428bca;
+			    border-color: #3071a9;
+			}
+			.with-nav-tabs.panel-primary .nav-tabs > li.dropdown .dropdown-menu > li > a {
+			    color: #fff;   
+			}
+			.with-nav-tabs.panel-primary .nav-tabs > li.dropdown .dropdown-menu > li > a:hover,
+			.with-nav-tabs.panel-primary .nav-tabs > li.dropdown .dropdown-menu > li > a:focus {
+			    background-color: #3071a9;
+			}
+			.with-nav-tabs.panel-primary .nav-tabs > li.dropdown .dropdown-menu > .active > a,
+			.with-nav-tabs.panel-primary .nav-tabs > li.dropdown .dropdown-menu > .active > a:hover,
+			.with-nav-tabs.panel-primary .nav-tabs > li.dropdown .dropdown-menu > .active > a:focus {
+			    background-color: #4a9fe9;
+			}
+			/********************************************************************/
+			.col-xs-auto{
+			 padding: 0 15px 0 15px;
+			 float:left;
+			}
+    	</style>
+	</head>
+	<body>
+		<header>
+				<div class="row" style="height:35px; background-color:#0099BB;">
+					<div class="col-xs-2"></div>
+					<!--<div class="col-md-1"style="height:35px; background-color:#CC6611;color:#FFFFFF; Padding-top:7px"><b>Demo Video</b></div>-->
+					<div class="col-xs-1">
+						<div class="btn btn-warning">Demo Video</div>
+					</div>
+					<div class="col-xs-2"></div>
+					<div class="col-xs-2"> <div class="glyphicon glyphicon-envelope"style="color:99FFFF;padding-top:7px"><b>support@gktcs.in </b> </div></div>
+					<div class="col-xs-2"><div class="glyphicon glyphicon-phone"style="color:99FFFF;padding-top:7px">+<b>91-9975072320 </b> </div></div>
+				</div>	
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-auto"> <a href="http://gktcs.in"> <img width="70" height="70" src="http://gktcs.in/GLMS/public/static/images/logo(2).png"/></a></div>
+						<div class="col-xs-10">
+							<nav class="navbar navbar-default">
+						  	<div class="container-fluid">
+						    <!-- Brand and toggle get grouped for better mobile display -->
+						    <div class="navbar-header">
+						      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						        <span class="sr-only">Toggle navigation</span>
+						        <span class="icon-bar"></span>
+						        <span class="icon-bar"></span>
+						        <span class="icon-bar"></span>
+						      </button>
+						    </div>
+	
+						    <!-- Collect the nav links, forms, and other content for toggling -->
+						    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						      <ul class="nav navbar-nav">
+						        <li class="active"><a href="{% url 'home' %}">Home<span class="sr-only">(current)</span></a></li>
+								<li><a href="{% url 'Aboutus' %}">Aboutus</a></li>
+								<li><a href="{% url 'Courses' %}">Courses</a></li>
+								<li><a href="{% url 'CT' %}">Corporate</a></li>
+								<li><a href="{% url 'blog' %}">Blogs</a></li>
+								<li><a href="{% url 'Placement' %}">Placement</a></li> 
+						      </ul>
+						      <ul class="nav navbar-nav navbar-right">
+						      <form class="navbar-form navbar-left" role="search" action="/search/" method="get">
+						        <div class="form-group">
+						          <input type="text" name="q" class="form-control" placeholder="Find a Course">
+						        </div>
+						        <button type="submit" class="btn btn-default">FIND COURSE</button>
+						      </form>  
+						      </ul>
+						    </div><!-- /.navbar-collapse -->
+						  </div><!-- /.container-fluid -->
+						</nav>
+						</div>
+					</div>
+				</div>
+				<div class="container" id="slider1_container" style="position: relative; top: 0px; left: 0px; width: 1500px; height: 450px; overflow: hidden; ">
+			
+			        <!-- Loading Screen -->
+			        <div u="loading" style="position: absolute; top: 0px; left: 0px;">
+			            <div style="filter: alpha(opacity=70); opacity:0.7; position: absolute; display: block;
+			                background-color: #000000; top: 0px; left: 0px;width: 100%;height:100%;">
+			            </div>
+			            <div style="position: absolute; display: block; background: url(../img/loading.gif) no-repeat center center;
+			                top: 0px; left: 0px;width: 100%;height:100%;">
+			            </div>
+			        </div>
+			
+			        <!-- Slides Container -->
+			        <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1500px; height: 450px; overflow: hidden;">
+			            <div>
+			                <img u="image" src="http://gktcs.in/GLMS/public/static/images/android2.jpg" />
+			            </div>
+			            <div>
+			                <img u="image" src="http://gktcs.in/GLMS/public/static/images/angular2.jpg" />
+			            </div>
+			            <div>
+			                <img u="image" src="http://gktcs.in/GLMS/public/static/images/ruby2.jpg" />
+			            </div>
+			            <div>
+			                <img u="image" src="http://gktcs.in/GLMS/public/static/images/java2.jpg" />
+			            </div>
+			            <div>
+			                <img u="image" src="http://gktcs.in/GLMS/public/static/images/ios2.jpg" />
+			            </div>
+			            <div>
+			                <img u="image" src="http://gktcs.in/GLMS/public/static/images/python2.jpg" />
+			            </div>
+			            <div>
+			                <img u="image" src="http://gktcs.in/GLMS/public/static/images/html2.jpg" />
+			            </div>
+			            <div>
+			                <img u="image" src="http://gktcs.in/GLMS/public/static/images/php2.jpg"/>
+			            </div>
+			            <div>
+			                <img u="image" src="http://gktcs.in/GLMS/public/static/images/dotnet2.jpg" />
+			            </div>
+			            <script>
+			            	jssor_slider1_starter('slider1_container');
+			        	</script>
+			
+			    	</div>
+			        </div>
+		</header>
+		<div class="container">
+		<div class="row">
+			
+			<div class="col-md-6 well">
+				<h3 style="color: #FF4400" > Welcome to ILMS </h3> 
+				<p>Interactive Learning Management Solution is the Learning management System where you can online from anywhere in the world, Today’s world is a highly competitive world and almost all organisation’s are exposed to best raw materials,
+					 supply chains, marketing and cost control opinions etc. But the human resource is the most important of all the assets. To improve the competency and capability of human resource. Training and development has become an integrated part 
+					 of any organisations to do list. Just like we add manure to nurture the plant which would give fruits. In similar manner we need to add manure to human resources by the way of training to deliver desired results.
+				<br/>GKTCS Innovations is a result of professionals from training and development coming together with a common vision “to deliver most optimized training solutions to the organisation which are result oriented and cost effective”. <div style="height:1px"></div></p>
+		
+			</div>	
+			
+			<div class="col-md-6 well">
+				<div class="row">
+					<h3 style="color: #FF4400" > About GKTCS Innovations Pvt. Ltd. </h3>
+					<p style="text-align: justify;">We are in to Corporate training and development from past 5years. We groom the candidate as per the client requirement .
+						Mostly we get the requirements on new technologies like Python,Danjo , Ruby on Rail ,Hdoop, Android loli pop, cloud computing etc.
+						We placed the candidate as per their capability. If the Candidate is already trained we give the placement to them or we groom them in the lastest demanding technologies.</p>
+				</div>	<br>
+				<div class="row">
+					<h3 style="color: #FF4400" > Who can be a Corporate Trainer? </h3>
+					<p>Who has an in-depth working knowledge of the particular domain and is very passionate about teaching and sharing his/her expert knowledge with students and professionals can teach at GKTCS. Good oral communication skills are mandatory. 
+						<div style="height:0px"></div></p>
+				</div>
+			</div>
+			
+		</div>
+		</div>
+		<div class="container well ">
+		<div class="row" style="text-align: center;"><h2>Choose what you want to learn</h2></div>
+		<div class="row" style="text-align: center;"><h4>Do you already have a particulat topic in mind? Take one of our specialized courses in a range of skill levels.</h4></div>
+		
+    <div class="row">
+    	<div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div class="panel with-nav-tabs panel-primary">
+                <div class="panel-heading">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#tab1primary" data-toggle="tab">Web Development Technology</a></li>
+                            <li><a href="#tab2primary" data-toggle="tab">Open Source Technology</a></li>
+                            <li><a href="#tab3primary" data-toggle="tab">Mobile Technology</a></li>
+                            <li><a href="#tab4primary" data-toggle="tab">Microsoft Technology</a></li>
+                            
+                        </ul>
+                </div>
+                <div class="panel-body">
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="tab1primary">
+                        	<a href="{% url 'angularjs' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/ajs.jpg' alt="" height="100" width="170"/></a>
+		<a href="{% url 'mdotnet' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/asp.jpg' alt="" height="100" width="170"/></a>
+		<a href="{% url 'bootstrap' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/bootstrap1.jpg' alt="" height="100" width="170"/></a>
+		<a href="{% url 'css3' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/css3.jpg' alt="" height="100" width="170"/></a>
+		<a href="{% url 'html5' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/html51.jpg' alt="" height="100" width="170"/></a>
+		<a href="{% url 'jquery' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/jquery.jpg' alt="" height="100" width="170"/></a>
+		<a href="" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/php1.jpg' alt="" height="100" width="170"/></a>
+		<a href="" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/python.jpg' alt="" height="100" width="170"/></a>		
+						</div>
+                        <div class="tab-pane fade" id="tab2primary"><a href="{% url 'apachetomcat' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/apache.jpg' alt="" height="100" width="170"/></a>
+		<a href="{% url 'django' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/django.jpg' alt="" height="100" width="170"/></a>
+		<a href="{% url 'hadoop' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/hadoop.jpg' alt="" height="100" width="170"/></a>
+		<a href="{% url 'java' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/java.jpg' alt="" height="100" width="170"/></a>
+		<a href="{% url 'mongodb' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/mongodb.jpg' alt="" height="100" width="170"/></a>
+		<!--<a href="{% url 'mysql' %}" style="padding-right: 17px"><img src='/static/images/mysql.jpg' alt="" height="100" width="170"/></a>-->
+		<a href="{% url 'redhat' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/redhat.jpg' alt="" height="100" width="170"/></a>
+		<a href="{% url 'rubyonrails' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/ruby.jpg' alt="" height="100" width="170"/></a>
+		<a href="{% url 'wordpress' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/wordpress.jpg' alt="" height="100" width="170"/></a></div>
+                        <div class="tab-pane fade" id="tab3primary"><a href="{% url 'android' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/android1.jpg' alt="" height="100" width="170"/></a>
+		<a href="{% url 'ios' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/ios.jpg' alt="" height="100" width="170"/></a>
+		<a href="{% url 'jqmob' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/jquerym.jpg' alt="" height="100" width="170"/></a>
+		<a href="{% url 'phonegap' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/pg.jpg' alt="" height="100" width="170"/></a></div>
+                        <div class="tab-pane fade" id="tab4primary"><a href="{% url 'mvc' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/mvs.jpg' alt="" height="100" width="170"/></a>
+		<a href="{% url 'mdotnet' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/aspNet.png' alt="" height="100" width="170"/></a>
+		<a href="{% url 'csharp' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/c-sharp-logo-1.png' alt="" height="100" width="170"/></a></div>
+                        <div class="tab-pane fade" id="tab5primary">Primary 5</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div>
+	<div class="row" style="text-align: center;"><h2><span style="color:#0099BB; font-style:italic; "> Confused! </span> Not Very Sure,What to Choose</h2></div>
+	<div class="row" style="text-align: center;"><div class="btn btn-danger btn-lg">Ask From Expert Now</div></div>
+</div>
+
+
+
+		<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,130 @@
+{% extends "base_dashboard.html" %}
+{% load crispy_forms_tags %}
+{% block head %}
+
+{% endblock %}
+{% block content %}
+    <div class="wrapper ">
+        <div class="sidebar" style="background:#4bb4e8 !important">
+            <!--
+        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+    -->
+            <div class="logo">
+                <a href="#" class="simple-text logo-mini">
+                    <i class="now-ui-icons design_app"></i>
+                </a>
+                <a href="#" class="simple-text logo-normal">
+                    GKTCS HOME PAGE1
+                </a>
+            </div>
+            <div class="sidebar-wrapper">
+                <ul class="nav">
+					<li class="active">
+                        <a href="#">
+                            <i style="color:#3188c0" class="now-ui-icons education_agenda-bookmark"></i>
+                            <p style="color:#3188c0">My Courses</p>
+                        </a>
+                    </li>
+					<li>
+                        <a href="#">
+                            <i class="now-ui-icons files_single-copy-04"></i>
+                            <p>Add New Course</p>
+                        </a>
+                    </li>
+					<li>
+                        <a href="#">
+                            <i class="now-ui-icons education_paper"></i>
+                            <p>Edit Course</p>
+                        </a>
+                    </li>
+					<li>
+                        <a href="#">
+                            <i class="now-ui-icons users_single-02"></i>
+                            <p>User Profile</p>
+                        </a>
+                    </li>
+                    <li class="active-pro">
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-panel">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute bg-primary fixed-top">
+                <div class="container-fluid">
+                    <div class="navbar-wrapper">
+                        <div class="navbar-toggle">
+                            <button type="button" class="navbar-toggler">
+                                <span class="navbar-toggler-bar bar1"></span>
+                                <span class="navbar-toggler-bar bar2"></span>
+                                <span class="navbar-toggler-bar bar3"></span>
+                            </button>
+                        </div>
+                        <a class="navbar-brand" href="#"><h3>Trainer Dashboard</h3></a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-bar navbar-kebab"></span>
+                        <span class="navbar-toggler-bar navbar-kebab"></span>
+                        <span class="navbar-toggler-bar navbar-kebab"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navigation">
+                        <form>
+                            <div class="input-group no-border">
+                                <input type="text" value="" class="form-control" placeholder="Search...">
+                                <span class="input-group-addon">
+                                    <i class="now-ui-icons ui-1_zoom-bold"></i>
+                                </span>
+                            </div>
+                        </form>
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#pablo">
+                                    <i class="now-ui-icons media-2_sound-wave"></i>
+                                    <p>
+                                        <span class="d-lg-none d-md-block">Stats</span>
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="now-ui-icons location_world"></i>
+                                    <p>
+                                        <span class="d-lg-none d-md-block">Some Actions</span>
+                                    </p>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#pablo">
+                                    <i class="now-ui-icons users_single-02"></i>
+                                    <p>
+                                        <span class="d-lg-none d-md-block">Account</span>
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div> 
+					
+                </div>
+            </nav>
+            <!-- End Navbar -->
+            <div class="panel-header panel-header-sm">
+            </div>
+            <div class="content">
+                <div class="row">
+                    <div class="col-md-12">
+
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+
+            </footer>
+        </div>
+    </div>
+{% endblock %}

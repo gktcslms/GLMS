@@ -1,0 +1,91 @@
+{% extends "index2.html" %}
+
+{% block home %}
+<head>
+	<style type="text/css">
+
+#toggle-view {
+	list-style:none;	
+	font-family:arial;
+	font-size:16px;
+	margin:0;
+	padding:0;
+	width:500px;
+}
+
+	#toggle-view li {
+		margin:10px;
+		border-bottom:1px solid #ccc;
+		position:relative;
+		cursor:pointer;
+	}
+	
+	#toggle-view h3 {
+		margin:0;
+		font-size:16px;
+	}
+
+	#toggle-view span {
+		position:absolute;
+		right:5px; top:0;
+		color:#ccc;
+		font-size:13px;
+	}
+	
+	#toggle-view p {
+		margin:5px 0;
+		display:none;
+	}	
+
+</style>
+
+<script type="text/javascript">
+
+$(document).ready(function () {
+	
+	$('#toggle-view li').click(function () {
+
+		var text = $(this).children('p');
+
+		if (text.is(':hidden')) {
+			text.slideDown('200');
+			$(this).children('span').html('-');		
+		} else {
+			text.slideUp('200');
+			$(this).children('span').html('+');		
+		}
+		
+	});
+
+});
+
+</script>
+</head>
+<body>
+<div class="container well">
+<div class ="row">      <div class="col-md-12"> <h2 style="color: #FF4400" >Career @ GKTCS</h2></div></div>
+	
+<div align="justify">
+<br/>
+GKTCS is  an organization that strives for the betterment of its employees, we aim to provide the best working atmosphere to our people. There are ample opportunities to exhibit your talents. We inculcate the habit of sharing new and innovative ideas with an open-door policy.
+<br/>
+<br/>
+GKTCS objective of providing cutting edge solution is not limited to just one department but at different facets of business be it marketing, finance, delivery or support to name a few which makes the job challenging , enriching and equally rewarding.career
+<br/>
+</div>
+<br/>
+<div class ="row">      <div class="col-md-12"> <h2 style="color: #FF4400" >Current Openings</h2></div></div>
+
+<ul id="toggle-view">
+	{% for i in c %}
+	<li>
+		<h3>{{i.post_name}}</h3>
+		
+		<span>+</span>
+		<p>{{i.post_desc}}</p>
+	</li>
+	{% endfor %}
+</ul>
+</div>
+</body>
+{% endblock %}

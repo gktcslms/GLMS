@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+{% extends "index.html" %}
+{% load staticfiles %}
+{% block home %}
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="http://api.html5media.info/1.1.5/html5media.min.js"></script>
+      {% block flash%} {% endblock %}
+    
+    <style type="text/css">
+        body {
+            background: #fff;
+            font-family: verdana;
+            padding-top: 0px;
+            background-color: #027fcf;
+        }
+        #vtab {
+            margin: 10;
+            width: 700px;
+            height: 100%;
+        }
+        #vtab > ul > li {
+            width: 150px;
+            height: 80px;
+            background-color: #fff !important;
+            list-style-type: none;
+            display: block;
+            text-align: center;
+            margin: auto;
+            padding-bottom: 10px;
+            border: 1px solid #fff;
+            position: relative;
+            border-right: none;
+            opacity: .3;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+            filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+        }
+        #vtab > ul > li.home {
+            background: url('http://gktcs.in/GLMS/public/static/images/about1.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.login {
+            background: url('http://gktcs.in/GLMS/public/static/images/demo4.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.support {
+            background: url('http://gktcs.in/GLMS/public/static/images/content.jpg') no-repeat center center;
+        }
+         #vtab > ul > li.support1 {
+            background: url('http://gktcs.in/GLMS/public/static/images/batches.jpg') no-repeat center center;
+        }
+        
+        #vtab > ul > li.support2 {
+            background: url('http://gktcs.in/GLMS/public/static/images/interview.jpg') no-repeat center center;
+        }
+         #vtab > ul > li.support3 {
+            background: url('http://gktcs.in/GLMS/public/static/images/training.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.support4 {
+            background: url('http://gktcs.in/GLMS/public/static/images/FAQ.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.support5 {
+            background: url('http://gktcs.in/GLMS/public/static/images/testi.jpg') no-repeat center center;
+        }
+         #vtab > ul > li.support6 {
+            background: url('http://gktcs.in/GLMS/public/static/images/certification.jpg') no-repeat center center;
+        }
+        
+        
+        #vtab > ul > li.selected {
+            opacity: 1;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+            filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+            border: 1px solid #ddd;
+            border-right: none;
+            z-index: 10;
+            background-color: #fafafa !important;
+            position: relative;
+        }
+        #vtab > ul {
+            float: left;
+            width: 110px;
+            text-align: left;
+            display: block;
+            margin: auto 0;
+            padding: 0;
+            position: relative;
+            top: 30px;
+        }
+        #vtab > div {
+            background-color: #fafafa;
+            margin-left:150px;
+            border: 1px solid #ddd;
+            min-height: 700px;
+            padding: 12px;
+            position: relative;
+            z-index: 9;
+            -moz-border-radius: 20px;
+        }
+        #vtab > div > h4 {
+            color: #800;
+            font-size: 1.2em;
+            border-bottom: 1px dotted #800;
+            padding-top: 5px;
+            margin-top: 0;
+        }
+        #loginForm label {
+            float: left;
+            width: 100px;
+            text-align: right;
+            clear: left;
+            margin-right: 15px;
+        }
+        #loginForm fieldset {
+            border: none;
+        }
+        #loginForm fieldset > div {
+            padding-top: 3px;
+            padding-bottom: 3px;
+        }
+        #loginForm #login {
+            margin-left: 115px;
+        }
+        
+     a {text-decoration: none}
+    </style>
+
+    <script type="text/javascript">
+        $(function() {
+            var $items = $('#vtab>ul>li');
+            $items.mouseover(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('#vtab>div').hide().eq(index).show();
+            }).eq(0).mouseover();
+        });
+    </script>
+
+</head>
+<body>
+
+	<h2 align="center" > mongoDB </h2>
+	
+	<table width="980" height="700"> 
+		<tr> 
+			<td width='100'>
+		
+    <div id="vtab">
+        <ul>
+            <li class="home selected"></li>
+            <li class="login"></li>
+            <li class="support"></li>
+            <li class="support1"></li>
+            <li class="support2"></li>
+            <li class="support3"></li>
+            <li class="support4"></li>
+            <li class="support5"></li>
+            <li class="support6"></li>
+        </ul>
+        <div>
+        	<h4>About Course</h4>
+        	<br/>
+           <table align="justify">
+           	<tr align="justify">
+           		<td valign="top">
+           		<img src='http://gktcs.in/GLMS/public/static/images/mongodb.jpg' width='90' height="60" />
+           		</td>
+           		<td>
+           			
+<b>Course Duration:</b>45hrs<br/>
+<br/>
+<b>Course Description:</b><br/>
+<br/>
+<b>MongoDB</b> is a document database that provides high performance, high availability, and easy scalability. Document Database. Documents (objects) map nicely to programming language data types. Embedded documents and arrays reduce need for joins.
+<br/>
+<br/>
+<b>Who Should Attend:</b>
+<br/>
+<br/>
+This course is intended for those  who have knows what is programming language basically and and what is database.
+<br/><br/>
+<b>Benefits of Attendance:</b>
+<br/>
+<br/>
+Upon completion of this course, students will get following advantages of mongodb.:<br/>
+<br/>
+<ul>
+<li>MongoDB is document database in which one collection holds different different documents. Number of fields, content and size of the document can be differ from one document to another.</li><br/>
+<li>Structure of a single object is clear</li><br/>
+<li>No complex joins</li><br/>
+<li>MongoDB supports dynamic queries on documents using a document-based query language that's nearly as powerful as SQL</li>
+<br/>
+</ul>
+
+<b>Prerequisites:</b><br/>
+<br/>
+Students should be known to the concept of database and some what knowledge of javascript.
+           		</td>
+           	</tr>
+           	
+           	
+           </table>
+            
+        </div>     
+         <div>
+         	<h4>Sample Demo</h4>
+         	<br/>
+         	<div>
+   <video id="abc" width="500px" height="360px" autoplay controls > <source src="http://gktcs.in/GLMS/public/static/abc.mp4" type="video/mp4"> </source>
+     
+        </video></div>
+
+</div>
+           <div>
+            <h4>
+              Content </h4>
+              <br/>
+					
+        </div>
+        
+           <div>
+        
+ <h4>Upcoming Batches</h4>
+ <br/>
+<div class="pricing_table">
+
+<table width=500px>
+		<tr width=500px ></tr>
+		<b><th width=280 bgcolor="#333333" style="color:#FFFFFF;">Start date</th>
+			
+		<th width=95 bgcolor="#333333" style="color:#FFFFFF;">Duration</th>
+		<th width=700 bgcolor="#333333" style="color:#FFFFFF;">Days</th>
+		<th width=100 bgcolor="#333333" style="color:#FFFFFF;">Time</th>
+		<th width=100 bgcolor="#333333" style="color:#FFFFFF;">Price</th></b>
+		</tr>
+		
+		
+		{% for j in batch %}
+		<tr width=500px>
+			
+<td width=350 bgcolor="#CCCCCC" style="text-align: center"> {{j.Start}}</td>
+<td width=220 bgcolor="#CCCCCC" style="text-align: center">{{j.Duration}}</td>
+<td width=350 bgcolor="#CCCCCC" style="text-align: center">{{j.Days}}</td>
+
+<td width=150 bgcolor="#CCCCCC" style="text-align: center">{{j.Time}}</td>
+<td width=100 bgcolor="#CCCCCC" style="text-align: center">{{j.Price}}/-</td>
+
+		
+		</tr>
+		{% endfor %}
+		
+		
+	</table>	
+
+</div>
+	 <br><br>
+	<br/>
+		
+
+<a href="/Enroll" style="padding-left: 320px; "><img src="http://gktcs.in/GLMS/public/static/images/enroll.png" height=40px width="190px" align="center"/></a>
+        </div>
+        
+           <div align="justify">
+           	<h4>Interview Questions</h4>
+           	<br/>
+           	<br/>
+           	
+           	<b>Question: What do you understand by NoSQL databases? Is MongoDB a NoSQL database? explain.</b><br/>
+Ans. At the present time, the internet is loaded with big data, big users, big complexity etc. and also becoming more complex day by day. NoSQL is answer of all these problems, It is not a traditional database management system, not even a relational database management system (RDBMS). NoSQL stands for "Not Only SQL". NoSQL is a type of database that can handle and sort all type of unstructured, messy and complicated data. It is just a new way to think about the database.
+<br><Br>
+Yes. MongoDB is a NoSQL database.
+            <br/>
+            <br/>         
+            
+            <b>Question:What are the different types of NoSQL databases? Give some example.
+            	</b><br/>
+Ans:NoSQL database can be classified as 4 basic types:
+<br><BR>
+<li>Key value store NoSQL database</li><br>
+<li>Document store NoSQL database</li><br>
+<li>Column store NoSQL database</li><br>
+<li>Graph base NoSQL databse</li><br>
+There are many NoSQL databases. MongoDB, Cassandra, CouchBD, Hypertable, Redis, Riak, Neo4j, HBASE, Couchbase, MemcacheDB, Voldemort, RevenDB etc. are the examples of NoSQL databases. 
+<br>
+<br/>
+
+<b>Question: What type of DBMS is MongoDB?</b><br/>
+Ans: MongoDB is a document oriented DBMS>
+<br/>
+<br/>
+<b>Question: What is the difference between MongoDB and MySQL?</b><br/>
+Ans.Although MongoDB and MySQL both are free and open source databases, there is a lot of difference between them in the term of data representation, relationship, transaction, querying data, schema design and definition, performance speed, normalization and many more. To compare MySQL with MongoDB is like a comparison between Relational and Non-relational databases.
+<br/>
+<br/>
+
+<b>Question: Why MongoDB is known as best NoSQL database?</b><br>
+Ans. MongoDb is the best NoSQL database because, it is:
+<br><br>
+<li>Document Oriented</li><br>
+
+<li>Rich Query language</li><br>
+
+<li>High Performance</li><br>
+
+<li>Highly Available</li><br>
+
+<li>Easily Scalable</li>
+<br/>
+<bR>
+<b>Question:  What is the difference b/w MongoDB and CouchDB?</b><br/>
+Ans. MongoDB and CouchDB both are the great example of open source NoSQL database. both are document oriented databases. Although both stores data but there is a lot of difference between them in terms of implementation of their data models, interfaces, object storage and replication methods etc.
+<br/>
+<br/>
+<b>Question: What is a Namespace in MongoDB?
+</b><br/>
+Ans. Namespace is a concatenation of the database name and the collection name. Collection, in which MongoDB stores BSON objects.
+<br><Br>
+
+<b>Question:  Why does Profiler use in MongoDB?</b><br/>
+Ans:MongoDB uses a database profiler to perform characteristics of each operation against the database. You can use a profiler to find queries and write operations
+<br><Br>
+
+<b>Question: If you remove an object attribute, is it deleted from the database?
+</b>?<br/>
+Ans. Yes, it be. Remove the attribute and then re-save() the object.
+<br/>
+<br/>
+<b>Question: In which language MongoDB is written?
+</b><br/>
+Ans. MongoDB is written and implemented in C++.
+<br/>
+<br/>
+<b>Question: Does MongoDB need a lot space of Random Access Memory (RAM)?
+</b><br/>
+Ans. No. MongoDB can be run on small free space of RAM.
+<br/>
+<br/>
+<b>Question: What language you can use with MongoDB?
+</b><br/>
+Ans. MongoDB client drivers supports all the popular programming languages so there is no issue of language, you can use any language that you want.
+<br><Br>
+
+         	  	
+        </div>
+         <div align="justify">
+         	<h4>
+                Training Mode</h4>
+                <br/>
+   
+         	
+         	<table width=620><tr align="justify">
+         		<td width="330" align="justify">
+         		<br/>
+         	
+         	<b>Corporate Training :</b><br/>
+         	
+Corporate Training Solutions
+
+Corporate training is the act of grooming the workforce in order to make them capable of handling modern business challenges by improving their approach and productivity and thus, making effective utilization of resources. We at GKTCS work hand in hand with Industry on various fronts. GKTCS’s business cycle is aligned very closely to Industry needs and structured to fulfil the industry needs in terms of Training and Recruitment.
+
+We always believe our customers speak for our services based on their rich experience with our kind of services.
+</td>
+<td align="right">
+	<img src="http://gktcs.in/GLMS/public/static/images/corporate.jpg"  width="200" height="150"/> 
+</td>
+</tr>
+<tr>
+	<td>
+		<br/>
+<b>Retail Training :</b>
+<br/>
+GKTCS Innovations has a set of best trainers who are constantly engaged in spreading technical and non technical knowledge to individual who are seeking an opportunity in their respective industries and would like to straight away face the challenges of the continuously improving and changing world.
+
+The retail Training services provided by GKTCS Innovations are designed as per the needs of corporate and also as per the guidelines provided by them.
+ </td>
+ <td align="right">
+	<img src="http://gktcs.in/GLMS/public/static/images/retail.jpg"  width="200" height="150"/>
+</td>
+ </tr>
+ <tr>    <td>   
+ 	<br/>	
+ <b>Online Training </b>
+ <br/>
+ GKTCS offers Online Training , so you get trained from where you are from our experienced trainers, In the weekdays as well as weekends by the Real Time Professionals. The program is designed to provide rich learning experience for students using Internet.         	
+      </td>   
+      <td align="right">
+      	<img src="http://gktcs.in/GLMS/public/static/images/online.jpg"  width="200" height="150"/>
+      </td>  
+      </tr>	
+    </table>     	
+         	
+         </div>
+		
+
+           <div align="justify">
+           	<h4>
+                FAQs</h4>
+           	
+           	<br/>
+    
+          <b> Does MongoDB database have tables for storing records?
+</b><br/>
+No. Instead of tables, MongoDB uses "Collections" to store data.
+<br/>
+<br/>
+<b>Do the MongoDB databases have schema?
+</b><br/>
+Yes. MongoDB databases have dynamic schema. There is no need to define the structure to create collections.
+<br><Br>
+<b>What is the method to configure the cache size in MongoDB?
+</b><br/>
+MongoDB's cache is not configurable. Actually MongoDb uses all the free spaces on the system automatically by way of memory mapped files.
+<br/>
+<br/>
+<b>How to do Transaction/locking in MongoDB?
+</b><br/>
+MongoDB doesn't use traditional locking or complex transaction with Rollback. MongoDB is designed to be light weighted, fast and predictable to its performance. It keeps transaction support simple to enhance performance.
+<br><BR>
+<b> Why 32 bit version of MongoDB are not preferred ?
+</b><br/>
+Because MongoDB uses memory mapped files so when you run a 32-bit build of MongoDB, the total storage size of server is 2 GB. But when you run a 64-bit build of MongoDB, this provides virtually unlimited storage size. So 64-bit is preferred over 32-bit.
+<br/>
+<br/>
+<b> Is it possible to remove old files in the moveChunk directory?
+</b><br/>
+Yes, These files can be deleted once the operations are done because these files are made as backups during normal shard balancing operation. This is a manual cleanup process and necessary to free up space.
+<br><Br>
+
+<b>What will have to do if a shard is down or slow and you do a query?
+</b><br/>
+If a shard is down and you even do query then your query will be returned with an error unless you set a partial query option. But if a shard is slow them Mongos will wait for them till response.
+<br><Br>
+<b>What are typical uses for MongoDB?
+</b><br/>
+MongoDB has a general-purpose design, making it appropriate for a large number of use cases. Examples include content management systems, mobile applications, gaming, e-commerce, analytics, archiving, and logging.
+<br><br />
+Do not use MongoDB for systems that require SQL, joins, and multi-object transactions.
+<bR><br>
+<b>Does MongoDB support transactions?
+</b><bR>
+MongoDB does not support multi-document transactions. However, MongoDB does provide atomic operations on a single document.
+<br><Br>
+<b>Does MongoDB require a lot of RAM?
+</b><br>
+Not necessarily. It’s certainly possible to run MongoDB on a machine with a small amount of free RAM.
+<br><Br>
+MongoDB automatically uses all free memory on the machine as its cache. System resource monitors show that MongoDB uses a lot of memory, but its usage is dynamic. If another process suddenly needs half the server’s RAM, MongoDB will yield cached memory to the other process.
+<br><Br>
+Technically, the operating system’s virtual memory subsystem manages MongoDB’s memory. This means that MongoDB will use as much free memory as it can, swapping to disk as needed. Deployments with enough memory to fit the application’s working data set in RAM will achieve the best performance.
+
+<br><Br>
+<b>
+</b><br>		
+ static variables are class level variables where all objects of the class refer to the same variable. If one object changes the value then the change gets reflected in all the objects.
+<br><Br>
+        </div>
+           <div>
+        <h4>Testimonials</h4> 
+           
+        </div>
+   
+        <div align="justify">
+            <h4>
+                Certification</h4>
+                <br/>
+           
+             At the end of the course we provide  Certification.  <br/><br/>
+           <b>Process for Certification :</b>
+          
+  <li>You will receive a real time project Problem Statement along with a dataset to work. </li>
+  <li>After complition of your project(Reviewed by an Expert),you will be awarded a certificate with a performance-based grading. </li>
+ <li>If your project is not completed on time , you can take extra training for any of your doubts to understand the concepts better and re-attempt the Project free of cost.</li>
+<br/>
+GKTCS will help you at every stage of your learning and our 24/7 expert support team will ensure that you don't get stuck. Once you submit the project, our subject matter experts will review the same and share feedback to optimize it, if required.
+        </div>
+        </div>
+    
+    </td>
+    
+    <td valign="top" width="500">
+  		
+    <table valign="top">
+    	<tr valign="top">
+    		 <h3 align="center">Course Features</h3>  
+    		<td align="left" valign="top" width="500" height="200">
+    		
+ 
+  <br/>
+ <br/>
+ <li>Expert and qualified trainers</li>
+<li>Practical Project Based Approach</li>
+<li>Regular Assessment & feedback</li>
+<li>Total customized as per the client needs</li> 
+<li>Lifetime Access</li> 
+<li>  24 x 7 Support</li> 
+<li>  Get Certified</li>
+ 
+
+    			
+     		</td>
+     	
+    		
+    		
+    	</tr>
+    	
+    	<tr valign="top">
+    		<td height="20" valign="top" align="center">
+    		
+    		
+    			<h3 align="center">Placed Candidate </h3>
+    			<br/>
+    			<marquee direction="up" scrollamount="4" height="300">
+    			<table>
+    				<tr>
+    	   						
+    					<table>
+    						<tr>
+    							<td valign="top" height="30">
+    								
+    								<img src="http://gktcs.in/GLMS/public/static/images/AhilanShankar.jpg" width="100" height="100"/>
+    							</td>
+    							<td>
+    								<b>Alihan shanakar</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/capegemini.png" width="150" height="80"/> 
+    							</td>
+    						</tr>
+    						
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/sounavdas.jpg" width="100" height="100"/>
+    							</td>
+    							<td>
+    								<b>Sonav Das</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150" height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/ShashankVerma.jpg" width="60" height="80"/>
+    							</td>
+    							<td>
+    								<b>Shashank Verma</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/leoinfotech.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/rasika1.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Rasika</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/renuka.jpg" width="100" height="100"/>
+    							</td>
+    							<td>
+    								<b>Renuka Shirbhate</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/inetsoft.jpg" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/Neha.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Neha Kottarwar</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/GauravKotarwar.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Gaurav Kotarwar</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/leoinfotech.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/PrajaktaSakale.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Prajkta Sakale</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    							<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/SohailShaikh.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Sohail Shaikh</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/leoinfotech.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/ApurvaBhat.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Apurva Bhat</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/AshishSoni.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Ashish Soni</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    					
+    					    						
+    						
+    						
+    						
+    					</table>
+    					
+    						
+    						
+    					</td>
+    		
+    		
+    	</tr>
+    </table>
+    
+    </td>
+    
+    
+    </tr>
+	</table>
+	
+</body>
+</html>
+{% endblock %}

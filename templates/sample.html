@@ -1,0 +1,297 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container" style="margin-top: 16px;">
+							<ul class="breadcrumb well" id="course_desc1" style="margin-left: 0px;">
+								<li><a href="/">HOME</a>
+								</li>
+								<li><a href="/all-courses">MY COURSES</a></li>
+								<li>APPIUM</li>
+							</ul>
+<div class="row">	
+
+	<div class="col-md-4 col-md-push-8 ">
+		<div class="well">
+			<div class="row">
+			<div class="col-md-12 col-sm-12">
+			<div class="col-md-3 col-sm-3 profile_strength_links pull-left">
+			<a href="/my-profile">
+			<img id="profile_strength_pic" width="60px" height="60px" class="img-circle" alt="image" src="{{MEDIA_URL}}{{ user.userprofile.picture.url }}">
+			</a>
+			</div>
+			<div class="col-md-9 col-sm-9 pull-left">
+			<h4 class="margin-bottom10 display_name">
+			{{ user.first_name }} {{ user.last_name }}
+			<a class="label label-primary editproflink pull-right" style="font-size: 12px; display: none;" href="/my-profile">Edit</a>
+			</h4>
+			<div class="progress progress-mouseover" style="height: 8px; cursor: pointer;">
+			<div class="progress-bar progress-bar-success mypopover progress-fillbar" style="width: 10%;"></div>
+			</div>
+			<span class="regular text-muted" style="font-size:12px;">Profile Strength 10%</span>
+			<br><br>
+			<div class="runs-list">
+			<div class="run very-slow">
+			<a class="regular prof_prog_text" style="color: #428bca;font-size:12px;" href="/myprofile">Adding your preferred contact time increases profile strength by 10% </a>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-8 col-md-pull-4">	
+			<div class="well" style="background: #EEE">
+				<div class="row">
+								<div class="col-md-4 col-sm-4">
+									<img class="img-responsive" id="header-logo" src="http://gktcs.in/GLMS/public/static/images/appium.jpg" />
+								</div>
+								<div class="col-md-8 col-sm-8">
+									<h1 style="margin-top: 10;">Appium</h1>
+									<div id="span1">Appium is an open-source tool for automating native, mobile web, and hybrid applications on iOS and Android platforms. Native apps are those written using the iOS or Android SDKs.</div>
+								</div>
+				</div>				
+			</div>
+			<div id="descripti" style="margin-bottom:20px;" >
+						<ul id = "myTab" class = "nav nav-tabs">
+						   <li class = "active">
+							  <a href = "#start" data-toggle = "tab">
+								 Getting Started
+							  </a>
+						   </li>
+						   
+						   <li><a href = "#recorded" data-toggle = "tab">Pre-recorded Classes</a></li>
+						   
+						   <li><a href = "#content" data-toggle = "tab">Course Content</a></li>
+							
+							
+						</ul>
+
+						<div id = "myTabContent" class = "tab-content">
+
+						   <div class = "tab-pane fade in active" id = "start" style="padding-left:30px;">
+								<br>
+								<div id="custom-show-hide-example">
+							   
+								  <h4 class="open circ">Getting Started with Appium</h4>
+									<div style="margin-left:10px;">
+									  <br>Welcome, Let's Get Going on our Appium Journey... <br><br>
+										How it Works?<br><br>
+										1. This is an Online Course.<br><br>
+										2. We have 30-hourse LIVE and Interactive Sessions.<br><br>
+										3. We have 40 hours of Practical Work involving Lab Assignment, Case Studies and Project every week which can be done at your own pace. We can also provide you Remote Access to our Hadoop Cluster for doing Practicals.<br><br>
+										4. We have 24X7 One-on-One Live Technical Support to help you with any problems you might face or any clarifications you may require during the course.<br><br>
+										5. At the end of the training you will have to work on Real Time Project on which we will provide you a Grade and a Verified Certificate!<br><br>
+									</div>
+								</div>
+								<br>
+						   </div>
+						   
+						   <div class = "tab-pane fade" id = "recorded">
+								<br>
+								<hr><div><a class="bla-2" href="https://youtu.be/4RiieiylcnU"><span style="font-size:18px; color:#00A4CB">Class 1 Recording</span></a> <a style="float:right" class="" href="https://youtu.be/4RiieiylcnU"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/play_icon.png"></a></div> 
+								<hr><div><a class="bla-2" href="https://youtu.be/4RiieiylcnU"><span style="font-size:18px; color:#00A4CB">Class 2 Recording</span></a> <a style="float:right" class="" href="https://youtu.be/4RiieiylcnU"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/play_icon.png"></a></div> 
+						    	<hr><div><a class="bla-2" href="https://youtu.be/4RiieiylcnU"><span style="font-size:18px; color:#00A4CB">Class 3 Recording</span></a> <a style="float:right" class="" href="https://youtu.be/4RiieiylcnU"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/play_icon.png"></a></div> 
+								<hr><div><a class="bla-2" href="https://youtu.be/4RiieiylcnU"><span style="font-size:18px; color:#00A4CB">Class 4 Recording</span></a> <a style="float:right" class="" href="https://youtu.be/4RiieiylcnU"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/play_icon.png"></a></div><hr><br>
+
+						   </div>
+						   
+								<div class = "tab-pane fade" id = "content" style="padding-left:30px;text-align: left;">
+							<!-- BEGIN Custom show and hide -->
+							  <div id="custom-show-hide-example2" style="padding-bottom:20px;">
+								<h4 class="open circ" style="font-weight: 500;">Appium Installation Guide</h4>
+								<div style="margin-left:10px;">
+								  <hr><a href="http://doctuts.readthedocs.org/en/latest/hadoop.html"><p style="font-size:18px; color:#00A4CB">Hadoop Installation Guide for Windows</p></a><hr>
+								  <a href="http://doctuts.readthedocs.org/en/latest/hadoop.html"><p style="font-size:18px; color:#00A4CB">Hadoop Installation Guide for Linux</p></a><hr>
+								  <a href="http://doctuts.readthedocs.org/en/latest/hadoop.html"><p style="font-size:18px; color:#00A4CB">Hadoop Installation Guide for Mac OS</p></a><hr>
+								</div>
+							  <h4 class="circ" style="margin-top:20px;">Module 1: Appium Introduction</h4>
+								<div style="padding:10px;">
+
+									<p><b>Topics - </b>Course Agenda,	 Appium Feautures, What makes Appium a future of mobile Automation, Appium Internal Architecture.</p>
+										<hr><div><a class="bla-2" href="https://youtu.be/4RiieiylcnU"><span style="font-size:18px; color:#00A4CB">Class 1 Recording</span></a> <a style="float:right" class="" href="https://youtu.be/4RiieiylcnU"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/play_icon.png"></a></div> 
+										<hr><div><a class="" href="http://gktcs.in/GLMS/public/static/appium.pdf"><span style="font-size:18px; color:#00A4CB">Module 1 - Presentation</span></a> <a style="float:right" class="" href="http://gktcs.in/GLMS/public/static/appium.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/view_icon.png"></a></div>
+										<hr><div><a class="" href="/appium.pdf"><span style="font-size:18px; color:#00A4CB">Hadoop Introduction</span></a> <a style="float:right" class="" href="/appium.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+										<hr><div><a class="" href="/appium.pdf"><span style="font-size:18px; color:#00A4CB">Module 1 - Assignment</span></a> <a style="float:right" class="" href="/appium.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+										<hr><div><a class="" href="/appium.pdf"><span style="font-size:18px; color:#00A4CB">Module 1 - Assignment Solution</span></a> <a style="float:right" class="" href="/appium.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+										<hr><div><a class="" href="/appium.pdf"><span style="font-size:18px; color:#00A4CB">Pre-work for Module 2</span></a> <a style="float:right" class="" href="/appium.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div><hr>
+								</div>
+							  <h4 class="circ" style="margin-top:20px;">Module 2: Appium Installation on WINDOWS for Android Automation</h4>
+									<div style="padding:10px;">
+
+									<p><b>Topics - </b>Installing Android Studio and Java, Configuring System variables for both Android SDK and Java, Downloading Eclipse and Installing ADT Plugin, New update on Installation, Configuring ADT plugin settings in Eclipse,Installing Appium Server and Jars,Creating Eclipse project and Configuring Appium selenium jars,13 steps Installation Guide download,	Brushup Java concepts -1,Brushup Java concepts -2,Brushup Java concepts -3.</p>
+										<hr><div><a class="bla-2" href="https://youtu.be/4RiieiylcnU"><span style="font-size:18px; color:#00A4CB">Class 2 Recording</span></a> <a style="float:right" class="" href="https://youtu.be/4RiieiylcnU"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/play_icon.png"></a></div> 
+										<hr><div><a class="" href="http://gktcs.in/GLMS/public/static/appium.pdf"><span style="font-size:18px; color:#00A4CB">Module 2 - Presentation</span></a> <a style="float:right" class="" href="http://gktcs.in/GLMS/public/static/appium.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/view_icon.png"></a></div>
+										<hr><div><a class="" href="/appium.pdf"><span style="font-size:18px; color:#00A4CB">Module 2 - Assignment</span></a> <a style="float:right" class="" href="/appium.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+										<hr><div><a class="" href="/appium.pdf"><span style="font-size:18px; color:#00A4CB">Module 2 - Assignment Solution</span></a> <a style="float:right" class="" href="/appium.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+										<hr><div><a class="" href="/appium.pdf"><span style="font-size:18px; color:#00A4CB">Pre-work for Module 3</span></a> <a style="float:right" class="" href="/appium.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div><hr>
+									</div>
+							  <h4 class="circ" style="margin-top:20px;">Module 3: Appium Installation on MAC for IOS Automation</h4>
+									<div style="padding:10px;">
+										<p><b>Topics - </b>What is Xcode? Install Xcode,Validating IOS Simulator and Downloading Java,Installing Eclipse IDE for MAC,Downloading Appium/Selenium Jars.</p>
+										<hr><div><a class="bla-2" href="https://youtu.be/4RiieiylcnU"><span style="font-size:18px; color:#00A4CB">Class 3 Recording</span></a> <a style="float:right" class="" href="https://youtu.be/4RiieiylcnU"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/play_icon.png"></a></div> 
+										<hr><div><a class="" href="http://gktcs.in/GLMS/public/static/appium.pdf"><span style="font-size:18px; color:#00A4CB">Module 3 - Presentation</span></a> <a style="float:right" class="" href="http://gktcs.in/GLMS/public/static/appium.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/view_icon.png"></a></div>
+										<hr><div><a class="" href="/appium.pdf"><span style="font-size:18px; color:#00A4CB">Module 3 - Assignment</span></a> <a style="float:right" class="" href="/appium.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+										<hr><div><a class="" href="/appium.pdf"><span style="font-size:18px; color:#00A4CB">Module 3 - Assignment Solution</span></a> <a style="float:right" class="" href="/appium.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+										<hr><div><a class="" href="/appium.pdf"><span style="font-size:18px; color:#00A4CB">Pre-work for Module 4</span></a> <a style="float:right" class="" href="/appium.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div><hr>
+
+									</div>
+							  <h4 class="circ" style="margin-top:20px;">Module 4: APPIUM first program</h4>
+									<div style="padding:10px;">
+	
+										<p><b>Topics - </b>Desired Capabalities concepts,Invoking Android Virtual Device,First Program explaining Mobile Capablities,Android Driver Invocation.</p>
+										<hr><div><a class="bla-2" href="https://youtu.be/4RiieiylcnU"><span style="font-size:18px; color:#00A4CB">Class 4 Recording</span></a> <a style="float:right" class="" href="https://youtu.be/4RiieiylcnU"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/play_icon.png"></a></div> 
+										<hr><div><a class="" href="http://gktcs.in/GLMS/public/static/appium.pdf"><span style="font-size:18px; color:#00A4CB">Module 4 - Presentation</span></a> <a style="float:right" class="" href="http://gktcs.in/GLMS/public/static/appium.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/view_icon.png"></a></div>
+										<hr><div><a class="" href="/appium.pdf"><span style="font-size:18px; color:#00A4CB">Module 4 - Assignment</span></a> <a style="float:right" class="" href="/appium.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+										<hr><div><a class="" href="/appium.pdf"><span style="font-size:18px; color:#00A4CB">Module 4 - Assignment Solution</span></a> <a style="float:right" class="" href="/appium.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+										<hr><div><a class="" href="/appium.pdf"><span style="font-size:18px; color:#00A4CB">Pre-work for Module 5</span></a> <a style="float:right" class="" href="/appium.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div><hr>
+									</div>
+							  <h4 class="circ" style="margin-top:20px;">Module 5: Native APPS Automation</h4>
+									<div style="padding:10px;">
+	
+										<p><b>Topics - </b>Program on Invoking Apps, UI Automator Tool to identify objects, Automating app UI Using of ID,Xpath ClassNames,Appium API's for UI interaction,Mobile Gestures Automation -1,Mobile Gestures Automation -2,Mobile Gestures Automation -3,UI Selector class in handling Advanced API's,AndroidKeyEvents Handling,Procedure for downloading App in Emulator(Virtual devices),Automation on real devices,Invoking App with package Activity,Example on package name and Activity Invoking apps.</p>
+										<hr><div><a class="bla-2" href="https://youtu.be/4RiieiylcnU"><span style="font-size:18px; color:#00A4CB">Class 5 Recording</span></a> <a style="float:right" class="" href="https://youtu.be/4RiieiylcnU"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/play_icon.png"></a></div> 
+										<hr><div><a class="" href="http://gktcs.in/GLMS/public/static/appium.pdf"><span style="font-size:18px; color:#00A4CB">Module 5 - Presentation</span></a> <a style="float:right" class="" href="http://gktcs.in/GLMS/public/static/appium.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/view_icon.png"></a></div>
+										<hr><div><a class="" href="/appium.pdf"><span style="font-size:18px; color:#00A4CB">Module 5 - Assignment</span></a> <a style="float:right" class="" href="/appium.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+										<hr><div><a class="" href="/appium.pdf"><span style="font-size:18px; color:#00A4CB">Module 5 - Assignment Solution</span></a> <a style="float:right" class="" href="/appium.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+										<hr><div><a class="" href="/appium.pdf"><span style="font-size:18px; color:#00A4CB">Pre-work for Module 6</span></a> <a style="float:right" class="" href="/appium.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div><hr>
+
+									</div>
+							  <h4 class="circ" style="margin-top:20px;">Module 6: Live Examples on Device APPS</h4>
+									<div style="padding:10px;">
+	
+										<p><b>Topics - </b>Music App- Testcases to Automate,Practise Exercise-1 (Covers Mobile Gestures),	Practise Exercise- 1.2 (Covers Core Appium Api),Code-Exercise-1 and Teststeps,Languages App- Testcases to Automate, Practise Exercise 2.1-(Appium+Webdriver logic),Practise Exercise 2.2- (Android Key Events),Code -Exercise 2 and Test steps,ecommerce App-Installing app into Device,Practise Exercise -3.1-Handling Image Banners,Practise Exercise -3.2-Handling Scrollable Menu,Popups,Practise Exercise -3.3-Handling checkboxes,Radiobuttons,Dynamic Texts,code& Commands.</p>
+										<hr><div><a class="bla-2" href="https://youtu.be/4RiieiylcnU"><span style="font-size:18px; color:#00A4CB">Class 6 Recording</span></a> <a style="float:right" class="" href="https://youtu.be/4RiieiylcnU"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/play_icon.png"></a></div> 
+										<hr><div><a class="" href="http://gktcs.in/GLMS/public/static/appium.pdf"><span style="font-size:18px; color:#00A4CB">Module 1 - Presentation</span></a> <a style="float:right" class="" href="http://gktcs.in/GLMS/public/static/appium.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/view_icon.png"></a></div>
+										<hr><div><a class="" href="/appium.pdf"><span style="font-size:18px; color:#00A4CB">Module 6 - Assignment</span></a> <a style="float:right" class="" href="/appium.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+										<hr><div><a class="" href="/appium.pdf"><span style="font-size:18px; color:#00A4CB">Module 6 - Assignment Solution</span></a> <a style="float:right" class="" href="/appium.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+										<hr><div><a class="" href="/appium.pdf"><span style="font-size:18px; color:#00A4CB">Pre-work for Module 7</span></a> <a style="float:right" class="" href="/appium.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div><hr>
+
+									</div>
+							  <h4 class="circ" style="margin-top:20px;">Module 7: Web APPS Automation</h4>
+									<div style="padding:10px;">
+	
+										<p><b>Topics - </b>Chrome Browser Configuration setup in Mobile,Automating the Chrome Mobile Browser,UserAgent-Identifying objects in Mobile Browser,Automating Mobile Specific Web Sites,Exercise on Real Device-Mobile Browser Automation,TroubleShooting the Real device to make recognize,Testcase- Automating Udemy Mobile View Site,Exercise 1.2 -Getting Xpaths from Mobile Browser,Exercise-1.1 -Chrome Remote Debugging Technique,Exercise-1.3 -Automating Udemy Site in Mobile Browser,Executing in Real device-Video.</p>
+										<hr><div><a class="bla-2" href="https://youtu.be/4RiieiylcnU"><span style="font-size:18px; color:#00A4CB">Class 7 Recording</span></a> <a style="float:right" class="" href="https://youtu.be/4RiieiylcnU"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/play_icon.png"></a></div> 
+										<hr><div><a class="" href="http://gktcs.in/GLMS/public/static/appium.pdf"><span style="font-size:18px; color:#00A4CB">Module 7 - Presentation</span></a> <a style="float:right" class="" href="http://gktcs.in/GLMS/public/static/appium.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/view_icon.png"></a></div>
+										<hr><div><a class="" href="/appium.pdf"><span style="font-size:18px; color:#00A4CB">Module 7 - Assignment</span></a> <a style="float:right" class="" href="/appium.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+										<hr><div><a class="" href="/appium.pdf"><span style="font-size:18px; color:#00A4CB">Module 7 - Assignment Solution</span></a> <a style="float:right" class="" href="/appium.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+										<hr><div><a class="" href="/appium.pdf"><span style="font-size:18px; color:#00A4CB">Pre-work for Module 8</span></a> <a style="float:right" class="" href="/appium.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div><hr>
+									</div>
+							  <h4 class="circ" style="margin-top:20px;">Module 8: Practical Problems and solutions with Mobile Browsers</h4>
+									<div style="padding:10px;">
+	
+										<p><b>Topics - </b>Description,Idenitifying frames from Html view,Element Hidden or Invisible-How to validate,Writing Generic functions to Identify Frames/Windows,Example Demonstrating Multiple Frames,Handling Auto suggestive dropdown options,Dynamic data loading- Excpetion Techniques</p>
+										<hr><div><a class="bla-2" href="https://youtu.be/4RiieiylcnU"><span style="font-size:18px; color:#00A4CB">Class 8 Recording</span></a> <a style="float:right" class="" href="https://youtu.be/4RiieiylcnU"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/play_icon.png"></a></div> 
+										<hr><div><a class="" href="http://gktcs.in/GLMS/public/static/appium.pdf"><span style="font-size:18px; color:#00A4CB">Module 8 - Presentation</span></a> <a style="float:right" class="" href="http://gktcs.in/GLMS/public/static/appium.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/view_icon.png"></a></div>
+										<hr><div><a class="" href="/appium.pdf"><span style="font-size:18px; color:#00A4CB">Module 8 - Assignment</span></a> <a style="float:right" class="" href="/appium.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+										<hr><div><a class="" href="/appium.pdf"><span style="font-size:18px; color:#00A4CB">Module 8 - Assignment Solution</span></a> <a style="float:right" class="" href="/appium.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+										<hr><div><a class="" href="/appium.pdf"><span style="font-size:18px; color:#00A4CB">Pre-work for Module 9</span></a> <a style="float:right" class="" href="/appium.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div><hr>
+									</div>
+							  <h4 class="circ" style="margin-top:20px;">Module 9: Hybrid APPS Automation</h4>
+									<div style="padding:10px;">
+	
+										<p><b>Topics - </b>Hybrid Apps features and ways to test them,Views switching Mechanisim,Example on Hybrid App handling – 1,Example on Hybrid App handling – 2.</p>
+										<hr><div><a class="bla-2" href="https://youtu.be/4RiieiylcnU"><span style="font-size:18px; color:#00A4CB">Class 9 Recording</span></a> <a style="float:right" class="" href="https://youtu.be/4RiieiylcnU"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/play_icon.png"></a></div> 
+										<hr><div><a class="" href="http://gktcs.in/GLMS/public/static/appium.pdf"><span style="font-size:18px; color:#00A4CB">Module 9 - Presentation</span></a> <a style="float:right" class="" href="http://gktcs.in/GLMS/public/static/appium.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/view_icon.png"></a></div>
+										<hr><div><a class="" href="/appium.pdf"><span style="font-size:18px; color:#00A4CB">Module 9 - Assignment</span></a> <a style="float:right" class="" href="/appium.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+										<hr><div><a class="" href="/appium.pdf"><span style="font-size:18px; color:#00A4CB">Module 9 - Assignment Solution</span></a> <a style="float:right" class="" href="/appium.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+										<hr><div><a class="" href="/appium.pdf"><span style="font-size:18px; color:#00A4CB">Pre-work for Module 10</span></a> <a style="float:right" class="" href="/appium.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div><hr>
+									</div>
+							  <h4 class="circ" style="margin-top:20px;">Module 10: IOS Automation with Appium on MAC</h4>
+									<div style="padding:10px;">
+	
+										<p><b>Topics - </b>IOS Testing Introduction,IOS App Download,Desired Capabilities for invoking IOS Apps,IOS Driver Invocation,Running IOS first Automation Testcase,Desired capabilities code,How to Identify objects in IOS App- Appium Inspector,Magic of Appium Inspector on IOS Apps,Handling IOS Controlls with Appium,Practise Exercise on Switches -1,Practise Exercise on Scrolling Cycles -2,Practise Exercise on Scrolling wheels -2.1,Handling IOS Alerts Buttons with Appium,Practise Exercise on Alerts -3,IOS Apps Exercises code download,Safari Mobile Browser Automation configuration,Useragent to get Safari Browser objects,Practise Exercise on Safari Mobile Browser,Safari Program code download</p>
+										<hr><div><a class="bla-2" href="https://youtu.be/4RiieiylcnU"><span style="font-size:18px; color:#00A4CB">Class 10 Recording</span></a> <a style="float:right" class="" href="https://youtu.be/4RiieiylcnU"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/play_icon.png"></a></div> 
+										<hr><div><a class="" href="http://gktcs.in/GLMS/public/static/appium.pdf"><span style="font-size:18px; color:#00A4CB">Module 10 - Presentation</span></a> <a style="float:right" class="" href="http://gktcs.in/GLMS/public/static/appium.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/view_icon.png"></a></div>
+										<hr><div><a class="" href="/appium.pdf"><span style="font-size:18px; color:#00A4CB">Module 10 - Assignment</span></a> <a style="float:right" class="" href="/appium.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+										<hr><div><a class="" href="/appium.pdf"><span style="font-size:18px; color:#00A4CB">Module 10 - Assignment Solution</span></a> <a style="float:right" class="" href="/appium.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+									</div>
+								<h4 class="circ" style="margin-top:20px;">Module 11: Mobile Cloud Testing with Appium</h4>
+								<div style="padding:10px;">
+									<p><b>Topics - </b>Sauce labs Cloud testing Introduction(**Newly Added videos from here**),Registering Sauce Labs Account for running IOS Apps on cloud,Automating Safari Browser in Iphone with Sauce Cloud,Exercise-1.1 Getting Safari Browser objects with Useragents,Desired Capabilities for Safari on IOS,Safari Browser Code,Exercise-1 : Automating Udemy Browser App on Safari -IOS Platform,Exercise-2 Automating IOS Native Apps on IPhone Simulator,Desired capabilities and cloud connectivity to run IOS Apps in Iphone,IOS App code,Following up Appium Latest Updates,Good to Go.</p>
+										<hr><div><a class="bla-2" href="https://youtu.be/A02SRdyoshM"><span style="font-size:18px; color:#00A4CB">Class 1 Recording</span></a> <a style="float:right" class="" href="https://youtu.be/A02SRdyoshM"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/play_icon.png"></a></div> 
+										<hr><div><a class="" href="http://gktcs.in/GLMS/public/static/Hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Module 1 - Presentation</span></a> <a style="float:right" class="" href="http://gktcs.in/GLMS/public/static/Hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/view_icon.png"></a></div>
+										<hr><div><a class="" href="/hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Hadoop Introduction</span></a> <a style="float:right" class="" href="/hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+										<hr><div><a class="" href="/hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Module 1 - Assignment</span></a> <a style="float:right" class="" href="/hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+										<hr><div><a class="" href="/hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Module 1 - Assignment Solution</span></a> <a style="float:right" class="" href="/hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+										<hr><div><a class="" href="/hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Pre-work for Module 2</span></a> <a style="float:right" class="" href="/hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div><hr>
+								</div>
+							    <h4 class="circ" style="margin-top:20px;">Module 12: Appium Framemwork- Part 1- Learn TestNG Basics</h4>
+								<div style="padding:10px;">
+									<p><b>Topics - </b>TestNG Installation and Setup in Eclipse,TestNG Basic Annotations role in desigining Framework,TestNg Annotations in depth,Importance of TestNG Prerequiste Annotations,Annotations code dump download,Importance of TestNG xml file in Framework,Including and excluding the Testcases from Execution with TestNG xml file</p>
+										<hr><div><a class="bla-2" href="https://youtu.be/A02SRdyoshM"><span style="font-size:18px; color:#00A4CB">Class 1 Recording</span></a> <a style="float:right" class="" href="https://youtu.be/A02SRdyoshM"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/play_icon.png"></a></div> 
+										<hr><div><a class="" href="http://gktcs.in/GLMS/public/static/Hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Module 1 - Presentation</span></a> <a style="float:right" class="" href="http://gktcs.in/GLMS/public/static/Hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/view_icon.png"></a></div>
+										<hr><div><a class="" href="/hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Hadoop Introduction</span></a> <a style="float:right" class="" href="/hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+										<hr><div><a class="" href="/hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Module 1 - Assignment</span></a> <a style="float:right" class="" href="/hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+										<hr><div><a class="" href="/hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Module 1 - Assignment Solution</span></a> <a style="float:right" class="" href="/hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+										<hr><div><a class="" href="/hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Pre-work for Module 2</span></a> <a style="float:right" class="" href="/hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div><hr>
+								</div>	
+							  </div>
+							  <!-- END Custom show and hide -->
+							</div>s
+						      
+						</div>			
+			</div>
+			<div class="well" >		
+			<div class=" row" id="course_wrap_row">
+				<h2 style="text-align:center; color:#0464BB;margin-bottom: 20px;margin-top: 30px;">Recommended Courses</h2>
+				<div class="col-md-3 col-sm-6 course_wrap">
+				<a href="{% url 'python' %}">
+					<div class="course_inner">
+						<div>
+							<img class="img-responsive" src="http://gktcs.in/GLMS/public/static/images/Pyt1.png"/>
+						</div>
+						<h3>Mastering Python</h3>
+						<p>100 Learners</p>
+						<p>Jan 16 Onwards</p>
+						<h3><b style="padding-bottom:5px;"> ?16000</b></h3>
+					</div>
+				</a>	
+				</div>
+				<div class="col-md-3 col-sm-6 course_wrap">
+				<a href="{% url 'rubyonrails' %}">
+					<div class="course_inner">
+						<div>
+							<img style="width: 100%" class="img-responsive" src="http://gktcs.in/GLMS/public/static/images/ruby.jpg"/>
+						</div>
+						<h3>Ruby On Rails</h3>
+						<p>100 Learners</p>
+						<p>Jan 16 Onwards</p>
+						<h3><b style="padding-bottom:5px;"> ?15000</b></h3>
+					</div>
+				</a>	
+				</div>
+				<div class="col-md-3 col-sm-6 course_wrap">
+				<a href="{% url 'hadoop' %}">
+					<div class="course_inner">
+						<div>
+							<img class="img-responsive" src="http://gktcs.in/GLMS/public/static/images/hadoop1.jpg"/>
+						</div>
+						<h3>Hadoop</h3>
+						<p>100 Learners</p>
+						<p>Jan 16 Onwards</p>
+						<h3><b style="padding-bottom:5px;"> ?16000</b></h3>
+					</div>
+				</a>	
+				</div>
+				<div class="col-md-3 col-sm-6 course_wrap">
+				<a href="{% url 'datascience' %}">
+					<div class="course_inner">
+						<div>
+							<img style="width: 100%" class="img-responsive" src="http://gktcs.in/GLMS/public/static/images/datasci1.jpg"/>
+						</div>
+						<h3>Data Science</h3>
+						<p>100 Learners</p>
+						<p>Jan 16 Onwards</p>
+						<h3><b style="padding-bottom:5px;"> ?15000</b></h3>
+					</div>
+				</a>	
+				</div>
+			</div>
+			</div>
+					
+	</div>
+	
+</div>
+</div>
+
+{% endblock %}

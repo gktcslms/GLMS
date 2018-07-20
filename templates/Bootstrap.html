@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+{% extends "index.html" %}
+{% load staticfiles %}
+{% block home %}
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="http://api.html5media.info/1.1.5/html5media.min.js"></script>
+
+      {% block flash%} {% endblock %}
+    
+    <style type="text/css">
+        body {
+            background: #fff;
+            font-family: verdana;
+            padding-top: 0px;
+            background-color: #027fcf;
+        }
+        #vtab {
+            margin: 10;
+            width: 700px;
+            height: 100%;
+        }
+        #vtab > ul > li {
+            width: 150px;
+            height: 80px;
+            background-color: #fff !important;
+            list-style-type: none;
+            display: block;
+            text-align: center;
+            margin: auto;
+            padding-bottom: 10px;
+            border: 1px solid #fff;
+            position: relative;
+            border-right: none;
+            opacity: .3;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+            filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+        }
+        #vtab > ul > li.home {
+            background: url('http://gktcs.in/GLMS/public/static/images/about1.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.login {
+            background: url('http://gktcs.in/GLMS/public/static/images/demo4.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.support {
+            background: url('http://gktcs.in/GLMS/public/static/images/content.jpg') no-repeat center center;
+        }
+         #vtab > ul > li.support1 {
+            background: url('http://gktcs.in/GLMS/public/static/images/batches.jpg') no-repeat center center;
+        }
+        
+        #vtab > ul > li.support2 {
+            background: url('http://gktcs.in/GLMS/public/static/images/interview.jpg') no-repeat center center;
+        }
+         #vtab > ul > li.support3 {
+            background: url('http://gktcs.in/GLMS/public/static/images/training.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.support4 {
+            background: url('http://gktcs.in/GLMS/public/static/images/FAQ.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.support5 {
+            background: url('http://gktcs.in/GLMS/public/static/images/testi.jpg') no-repeat center center;
+        }
+         #vtab > ul > li.support6 {
+            background: url('http://gktcs.in/GLMS/public/static/images/certification.jpg') no-repeat center center;
+        }
+        
+        
+        #vtab > ul > li.selected {
+            opacity: 1;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+            filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+            border: 1px solid #ddd;
+            border-right: none;
+            z-index: 10;
+            background-color: #fafafa !important;
+            position: relative;
+        }
+        #vtab > ul {
+            float: left;
+            width: 110px;
+            text-align: left;
+            display: block;
+            margin: auto 0;
+            padding: 0;
+            position: relative;
+            top: 30px;
+        }
+        #vtab > div {
+            background-color: #fafafa;
+            margin-left:150px;
+            border: 1px solid #ddd;
+            min-height: 700px;
+            padding: 12px;
+            position: relative;
+            z-index: 9;
+            -moz-border-radius: 20px;
+        }
+        #vtab > div > h4 {
+            color: #800;
+            font-size: 1.2em;
+            border-bottom: 1px dotted #800;
+            padding-top: 5px;
+            margin-top: 0;
+        }
+        #loginForm label {
+            float: left;
+            width: 100px;
+            text-align: right;
+            clear: left;
+            margin-right: 15px;
+        }
+        #loginForm fieldset {
+            border: none;
+        }
+        #loginForm fieldset > div {
+            padding-top: 3px;
+            padding-bottom: 3px;
+        }
+        #loginForm #login {
+            margin-left: 115px;
+        }
+        
+     a {text-decoration: none}
+    </style>
+
+    <script type="text/javascript">
+        $(function() {
+            var $items = $('#vtab>ul>li');
+            $items.mouseover(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('#vtab>div').hide().eq(index).show();
+            }).eq(0).mouseover();
+        });
+    </script>
+
+</head>
+<body>
+
+		<font color="#366D9C" size=6px style="font-family: Georgia; padding-left: 400px"><b>Bootstrap </b></font>
+	
+	<table width="980" height="700"> 
+		<tr> 
+			<td width='100'>
+		
+    <div id="vtab">
+        <ul>
+            <li class="home selected"></li>
+            <li class="login"></li>
+            <li class="support"></li>
+            <li class="support1"></li>
+            <li class="support2"></li>
+            <li class="support3"></li>
+            <li class="support4"></li>
+            <li class="support5"></li>
+            <li class="support6"></li>
+        </ul>
+       <div>
+        	<h4>About Course</h4>
+        	<br/>
+           <table align="justify">
+           	<tr align="justify">
+           		<td valign="top">
+           			<img src='http://gktcs.in/GLMS/public/static/images/bootstrap.jpg' width='100' height="80" />
+           		</td>
+           		<td>
+           			
+<b>Course Duration:</b>45hrs<br/>
+<br/>
+<b>Course Description:</b><br/>
+<br/>
+ <b>Bootstrap</b> is a free and open-source collection of tools for creating websites and web applications. It contains HTML- and CSS-based design templates for typography, forms, buttons, navigation and other interface components, as well as optional JavaScript extensions.          			
+<br/>
+<br/>
+<b>Who Should Attend:</b>
+<br/>
+<br/>
+This course is intended for experienced HTML developers with some JavaScript and css experience.
+<br/><br/>
+<b>Benefits of Attendance:</b>
+<br/>
+<br/>
+Upon completion of this course, students will get these benefits of Bootstrap:<br/>
+<br/>
+<ul>
+<li>Speed of Development</li>
+<li>It supports responsive design.</li><br>
+<li>Saves Time. Bootstrap will save you time, because libraries offer convenient pieces of code that will give a website life.</li><br>
+<li>Customizable. Bootstrap will allow you to make it your own</li><br>
+<li>Bootstrap has a very detailed documentation and a vast community supporting it.</li><br>
+</ul>
+<br/>
+
+<b>Prerequisites:</b><br/>
+<br/>
+Students must be experienced with HTML and have experience with CSS and JavaScript. Prior knowledge of MVC(Model-View-Controller) and DOM (Document-Object-Model) concept.
+           		</td>
+           	</tr>
+           	
+           	
+           </table>
+            
+        </div>   
+         <div>
+         	<h4>Sample Demo</h4>
+         	<br/>
+               	<div>
+   <video id="abc" width="500px" height="360px" autoplay controls > <source src="{% static 'C:/GLMS/static/abc.mp4' %}" type="video/mp4"> </source>
+     
+        </video></div>   
+        
+        
+   
+</div>
+           <div>
+            <h4>
+              Content </h4>
+              <br/>
+<h3> Bootstrap</h3><br/>
+<li>BS Get Started</li>
+<li>BS Grid Basic</li>
+<li>BS Typography</li>
+<li>BS Table</li> 
+<li>BS Images</li>
+<li>BS Jumbotron</li>
+<li>BS Wells</li>
+<li>BS Alert</li>
+<li>BS Button</li>
+<li>BS Button Groups</li>
+<li>BS Labels</li>
+<li>BS Progress Bar</li>
+<li>BS Pagination</li>
+<li>BS Pager</li>
+<li>BS List Group</li>
+<li>BS Panels</li>
+<li>BS Dropdown</li>
+<li>BS Tabs/Pills</li>
+<li>BS NavBar</li>
+<li>BS Forms</li>
+<li>BS Input</li>
+<li>BS Input2</li>
+<li>BS Input Sizing</li>
+<li>BS Carusel</li>
+<li>BS Modal</li>
+<li>BS Tooltip</li>	
+<li>BS Popover</li>
+<li>BS Scrollspy</li>
+
+
+<br/>
+
+<h3>Bootstrap Grids</h3><br/>
+<li>BS Grid system</li>
+<li>BS Stacked/Horizontal</li>
+<li>BS Grid small</li>
+<li>BS Grid medium</li>
+<li>BS Grid LArge</li>
+
+<br/>
+
+<h3>Bootstrap Case</h3><br/>
+<li>Case Container</li>
+<li>Case jumbotron</li>
+<li>Case Button/Icon</li>
+<li>Case Multicolumn</li>
+<li>Case Menu</li>
+<li>Case Navegation Bar</li>
+<br>
+
+
+<br/>
+
+
+        </div>
+           <div>
+        
+ <h4>Upcoming Batches</h4>
+ <div class="pricing_table">
+
+<table width=500px>
+		<tr width=500px ></tr>
+		<b><th width=280 bgcolor="#333333" style="color:#FFFFFF;">Start date</th>
+			
+		<th width=95 bgcolor="#333333" style="color:#FFFFFF;">Duration</th>
+		<th width=700 bgcolor="#333333" style="color:#FFFFFF;">Days</th>
+		<th width=100 bgcolor="#333333" style="color:#FFFFFF;">Time</th>
+		<th width=100 bgcolor="#333333" style="color:#FFFFFF;">Price</th></b>
+		</tr>
+		
+		
+		{% for j in batch %}
+		<tr width=500px>
+			
+<td width=350 bgcolor="#CCCCCC" style="text-align: center"> {{j.Start}}</td>
+<td width=220 bgcolor="#CCCCCC" style="text-align: center">{{j.Duration}}</td>
+<td width=350 bgcolor="#CCCCCC" style="text-align: center">{{j.Days}}</td>
+
+<td width=150 bgcolor="#CCCCCC" style="text-align: center">{{j.Time}}</td>
+<td width=100 bgcolor="#CCCCCC" style="text-align: center">{{j.Price}}/-</td>
+
+		
+		</tr>
+		{% endfor %}
+		
+		
+	</table>	
+
+</div>
+	 <br><br>
+	<br/>
+		
+
+<a href="/Enroll" style="padding-left: 320px; "><img src="http://gktcs.in/GLMS/public/static/images/enroll.png" height=40px width="190px" align="center"/></a>
+        </div>
+        
+       <div align="justify">
+           	<h4>Interview Questions</h4>
+           	<br/>
+           	<br/>
+           	
+           	<b>Question:Explain what is Bootstrap?</b><br/>
+			Bootstrap is Javascript framework for building the rich web applications with minimal effort. This framework emphasis more on building mobile web applications.
+            <br/>
+            <br/>
+              <b>Question: Explain why to choose Bootstrap for building the websites?</b><br/>
+				Ans: There are few reason why we choose Bootstrap for building websites<br><br>
+
+<li>Mobile Support: For mobile devices it provides full support in one single file rather than in separate file. It supports the responsive design including adjusting the CSS based on the different types of device, size of the screen etc. It reduces extra effort for developers.</li><br>
+<li>Easy to learn: Writing application in bootstrap is easy if you know CSS and HTML</li><br>
+<li>Browser Support: It supports all the popular browsers like Firefox, Opera, Safari, IE etc.</li><br>
+<br/><br>
+
+<b>Question: What are the key components of Bootstrap?</b><br/>
+Ans. The key components of Bootstrap are<br><Br>
+<li>CSS : It comes with plenty of CSS files</li><br>
+<li>Scaffolding : It provides a basic structure with Grid system , link styles and background</li><br>
+<li>Layout Components : List of layout components</li><br>
+
+<b>Question: Explain what are class loaders in Bootstrap?</b><br/>
+Ans. Class loader is a part of JRE (Java Runtime Environment) which loads Java classes into Java virtual environment. Class loaders also does the process of converting a named class into its equivalent binary form.
+<br/>
+<br/>
+
+<b>Question:  What are the types of layout available in Bootstrap?</b><br/>
+Ans:
+In Bootstrap there are two types of Layout available<br><br>
+
+<li>Fluid Layout: Fluid layout is used when you want to create a app that is 100% wide and use up all the width of the screen</li><br>
+<li>Fixed Layout: For a standard screen you will use fixed layout (940 px) option</li><br>
+<br/>
+<br/>
+<b>Question: Explain what is Bootstrap Grid System?</b><br/>
+Ans. For creating page layout through a series of rows and columns that house your content Bootstrap Grid Sytem is used.
+
+<br/>
+<br/>
+<b>Question: What are offset columns in Bootstrap?</b><br/>
+Ans. For more specialized layouts offsets are a useful feature. For more spacing they can be used by pushing column over.
+<br>
+For example, .col-xs=* classes do not support offset but they are easily replicated using an empty cell 
+<br><br>
+
+<b>Question: What is column ordering in Bootstrap?</b>?<br/>
+Ans:Column ordering is one of the feature available in bootstrap and you can easily write columns in an order and show them in another one. With .col-md-push-* and .col-md-pull-*
+
+the order of the column can be easily changed.
+<br>
+<br/>
+<b>Question: What function you can use to wrap a page content?</b><br>
+Ans. To wrap a page content you can use .container and using that you can also center the content.
+<bR><br>
+<b>Question:  Explain what pagination in bootstrap is and how they are classified?</b><br>	
+Ams. Pagination is the handling of an unordered list by bootstrap. To handle pagination bootstrap provides following classes
+<bR><br>
+<li>pagination: To get pagination on your page you have to add this class</li><br>
+<li>active: Customize links by .disabled for unclickable links and .active to indicate the current page</li><br>
+<li>pagination-Ig, .pagination-sm: Use these classes to get different size item         	  </li><br>	
+        </div>
+         <div align="justify">
+         	<h4>
+                Training Mode</h4>
+                <br/>
+   
+         	
+         	<table width=620><tr><td width="330">
+         		<br/>
+         	
+         	<b>Corporate Training :</b><br/>
+         	
+Corporate Training Solutions
+
+Corporate training is the act of grooming the workforce in order to make them capable of handling modern business challenges by improving their approach and productivity and thus, making effective utilization of resources. We at GKTCS work hand in hand with Industry on various fronts. GKTCS’s business cycle is aligned very closely to Industry needs and structured to fulfil the industry needs in terms of Training and Recruitment.
+
+We always believe our customers speak for our services based on their rich experience with our kind of services.
+</td>
+<td align="right">
+	<img src="http://gktcs.in/GLMS/public/static/images/corporate.jpg"  width="200" height="150"/> 
+</td>
+</tr>
+<tr>
+	<td>
+		<br/>
+<b>Retail Training :</b>
+<br/>
+GKTCS Innovations has a set of best trainers who are constantly engaged in spreading technical and non technical knowledge to individual who are seeking an opportunity in their respective industries and would like to straight away face the challenges of the continuously improving and changing world.
+
+The retail Training services provided by GKTCS Innovations are designed as per the needs of corporate and also as per the guidelines provided by them.
+ </td>
+ <td align="right">
+	<img src="http://gktcs.in/GLMS/public/static/images/retail.jpg"  width="200" height="150"/>
+</td>
+ </tr>
+ <tr>    <td>   
+ 	<br/>	
+ <b>Online Training </b>
+ <br/>
+ GKTCS offers Online Training , so you get trained from where you are from our experienced trainers, In the weekdays as well as weekends by the Real Time Professionals. The program is designed to provide rich learning experience for students using Internet.         	
+      </td>   
+      <td align="right">
+      	<img src="http://gktcs.in/GLMS/public/static/images/online.jpg"  width="200" height="150"/>
+      </td>  
+      </tr>	
+    </table>     	
+         	
+         </div>
+		
+
+           <div align="justify">
+           	<h4>
+                FAQs</h4>
+           	
+           	<br/>
+    
+          <b> Are the JavaScripts here free? What is the catch?</b><br/>
+		Yes, we offer our site as a free "public service" resource. Simply stated, all the scripts on this site are free for personal or business use. The only requirement for use of archives is that you leave the credit information inside the script. We also don't think it's too much to ask if you would please link back to The JavaScript Source site to help spread the word about our site.<br><br>
+		
+<br/>
+<b>What is JavaScript? Is it the same as Java?</b><br/>
+JavaScript is NOT Java. JavaScript is a basic scripting language that allows Web authors to create dynamic pages that react to user interaction.<br/>
+<br/>
+<b>What browsers do the scripts work with?</b><br/>
+The scripts *should* all work in current versions of all major browsers unless otherwise noted in the script's description.
+<br/>
+<br/>
+<b>What's a "run time" error?</b><br/>
+There are three distinct areas where errors can occur in any computer program:<br><br>
+Load-time errors<br><br>
+
+Run-time errors<br><br>
+
+Logic errors<br><br>
+Load-time errors: Errors detected when loading the Web page (leaving off a parenthesis, improper syntax, etc.)<br><br>
+Run-time errors: Loaded fine, but a misuse of the language's commands caused an error while running.<br><Br>
+Logic errors: Reaches the wrong answer after being run - a "bug". Test and test and test again to find these.<br>	
+<br/>
+<b>What are the most common scripting mistakes?</b><br/>
+Here are the most common mistakes programmers run into with JavaScript:<br>
+<br>
+- Missing or mismatched quotation marks ' and "<br>
+<br>
+- Missing or mismatched '{' or '}'<br/><br/>
+- Confusing '=' (assign) and '==' compare)<br/><br/>
+
+- Improperly nesting IF-THEN-ELSE statements
+<br/><br/>
+- Calling objects through window not document property
+<br/><br/>
+- Endless loops that lock up the browser
+<br/><br/>
+
+<b>How can I display content in the form of a Tree using JSP?</b><br/>
+There are a few ways that you could try, although it all depends on any restrictions you have on deployment. First off, you could use Swing's JTree in a small applet
+<br/><br>
+<b> What is a closure in JavaScript?</b><br/>
+JavaScript allows you to declare a function within another function, and the local variables still can be accessible even after returning from the function you called.
+
+In other words, a closure is the local variables for a function which is kept alive after the function has returned.
+<br/>
+<br/>
+<b> Is JavaScript case sensitive? </b><br/>
+Yes!
+A function getElementById is not the same as getElementbyID.<br>
+<br/>
+<b>How do we add JavaScript onto a web page? </b><br/>
+There are several way for adding JavaScript on a web page, but there are two ways which are commonly used by developers
+If your script code is very short and only for single page, then following ways are the best:
+You can place script tag inside the head element.
+<br/>
+<br/>
+
+        </div>
+           <div align="justify">
+        <h4>Testimonials</h4> 
+           
+        </div>
+  
+        <div align="justify">
+            <h4>
+                Certification</h4>
+                <br/>
+           
+             At the end of the course we provide  Certification.  <br/><br/>
+           <b>Process for Certification :</b>
+          
+  <li>You will receive a real time project Problem Statement along with a dataset to work. </li>
+  <li>After complition of your project(Reviewed by an Expert),you will be awarded a certificate with a performance-based grading. </li>
+ <li>If your project is not completed on time , you can take extra training for any of your doubts to understand the concepts better and re-attempt the Project free of cost.</li>
+<br/>
+GKTCS will help you at every stage of your learning and our 24/7 expert support team will ensure that you don't get stuck. Once you submit the project, our subject matter experts will review the same and share feedback to optimize it, if required.
+        </div>
+        </div>
+    
+    </td>
+    
+    <td valign="top" width="500">
+  		
+    <table valign="top">
+    	<tr valign="top">
+    		<font color="#366D9C" size=5px style="font-family: Georgia; padding-left:25px"><b>Course Features</b></font>  
+    		<td align="left" valign="top" width="500" height="200">
+    		
+ 
+  <br/>
+ <br/>
+ <li>Expert and qualified trainers</li>
+<li>Practical Project Based Approach</li>
+<li>Regular Assessment & feedback</li>
+<li>Total customized as per the client needs</li> 
+<li>Lifetime Access</li> 
+<li>  24 x 7 Support</li> 
+<li>  Get Certified</li>
+ 
+
+    			
+     		</td>
+     	
+    		
+    		
+    	</tr>
+    	
+    	<tr valign="top">
+    		<td height="20" valign="top" align="center">
+    		
+    		
+    		<font color="#366D9C" size=5px style="font-family: Georgia; padding-left:25px"><b>Placed Candidate</b></font>  
+    			<br/>
+    			<marquee direction="up" scrollamount="4" height="300">
+    			<table>
+    				<tr>
+    	   						
+    					<table>
+    						<tr>
+    							<td valign="top" height="30">
+    								
+    								<img src="http://gktcs.in/GLMS/public/static/images/AhilanShankar.jpg" width="100" height="100"/>
+    							</td>
+    							<td>
+    								<b>Alihan shanakar</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/capegemini.png" width="150" height="80"/> 
+    							</td>
+    						</tr>
+    						
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/sounavdas.jpg" width="100" height="100"/>
+    							</td>
+    							<td>
+    								<b>Sonav Das</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150" height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/ShashankVerma.jpg" width="60" height="80"/>
+    							</td>
+    							<td>
+    								<b>Shashank Verma</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/leoinfotech.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/rasika1.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Rasika</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/renuka.jpg" width="100" height="100"/>
+    							</td>
+    							<td>
+    								<b>Renuka Shirbhate</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/inetsoft.jpg" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/Neha.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Neha Kottarwar</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/GauravKotarwar.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Gaurav Kotarwar</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/leoinfotech.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/PrajaktaSakale.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Prajkta Sakale</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    							<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/SohailShaikh.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Sohail Shaikh</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/leoinfotech.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/ApurvaBhat.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Apurva Bhat</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/AshishSoni.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Ashish Soni</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    					
+    					    						
+    						
+    						
+    						
+    					</table>
+    					
+    						
+    						
+    					</td>
+    		
+    		
+    	</tr>
+    </table>
+    
+    </td>
+    
+    
+    </tr>
+	</table>
+	
+</body>
+</html>
+{% endblock %}

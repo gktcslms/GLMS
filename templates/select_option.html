@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+	<head>
+	<style>
+		input:checked + label { color: green; }
+		
+		h4{
+			font-size:24px;
+		}
+		input[type="checkbox"]{
+			zoom:2;
+			margin: 3px 6px 0px 4px;
+		}
+	</style>
+	</head>
+	<body>
+		<form action="." method="post" style="padding: 40px 0 100px 100px; font-size:30px"> </h4>
+			<label style="font-size:24px;">Name: <input type="text" name="Name" style="font-size:30px; border-width: 2px;border-style: solid; border-color:black;" /></label><br/><br/>
+			<label style="font-size:24px;">Email ID: <input type="text" name="Email" style="font-size:30px; border-width: 2px;border-style: solid; border-color:black;" /></label><br/><br/>
+			<label style="font-size:24px;">Remark: <input type="text" name="Remark" style="font-size:30px; border-width: 2px;border-style: solid; border-color:black;" /></label><br/><br/>
+			<h4>Select Modules</h4>
+			<h4><label><input type="checkbox" name="checks" value="1.Introduction to Python"/>1.Introduction to Python </label></h4>
+			<h4><label><input type="checkbox" name="checks" value="2.Simple Program Using Basic Python"/>2.Simple Program Using Basic Python</label></h4>
+			<h4><label><input type="checkbox" name="checks" value="3.Basic Language Construct"/>3.Basic Language Construct </label></h4>
+			<h4><label><input type="checkbox" name="checks" value="4.Data Structures"/>4.Data Structures</label></h4>
+			<h4><label><input type="checkbox" name="checks" value="5.Control Structure and Functions"/>5.Control Structure and Functions </label></h4>
+			<h4><label><input type="checkbox" name="checks" value="6.Advance Built In Functions"/>6.Advance Built In Functions </label></h4>
+			<h4><label><input type="checkbox" name="checks" value="7.Modules"/>7.Modules </label></h4>
+			<h4><label><input type="checkbox" name="checks" value="8.Object Oriented Programming"/> 8.Object Oriented Programming </label></h4>
+			<h4><label><input type="checkbox" name="checks" value="9.Files Objects and Methods"/>9.Files Objects and Methods </label></h4>
+			<h4><label><input type="checkbox" name="checks" value="10.Exception Handling"/>10.Exception Handling </label></h4>
+			<h4><label><input type="checkbox" name="checks" value="11.Regular expressions"/>11.Regular expressions </label></h4>
+			<br/><input type = "submit" value= "Submit" style = "font-size:30px">
+		</form>	
+	</body>
+</html>	

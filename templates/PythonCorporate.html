@@ -1,0 +1,1540 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+<div style="background-color:#337ab7; padding:10px" class="row"><!––<img src="python_banner.jpg" class="img-fluid" style="width:100%" alt="Responsive image">
+<div class="col-md-4" style="padding-left:30px">	
+  <video class="afterglow" id="myvideo" width="420" height="230" poster="http://gktcs.com/GLMS/public/static/images/Pyt1.png" data-overscale="false"  data-autoresize="fit" data-skin="dark">
+      <source type="video/mp4" src="http://gktcs.com/GLMS/public/media/Videos/Surendra%20Panpaliya/Python%20selenium/Python_Session3.mp4" />
+    </video>
+</div>
+<div class="col-md-8">
+	<h1 style="color:#fff; text-shadow: 2px 2px #212020;">Python</h1><h3 style="color:#fff;text-shadow: 2px 2px #212020;">Anyone can learn Python, whether they are from Networking, Administration, manual testing or may be from IT support. </h3>
+</div>
+</div>
+</div>
+<div class="container" style="background-color: #e8e8e8; padding-bottom: 15px;">
+<div class="row">
+<div class="col-md-6">  
+  <h3>Python Course objectives</h3>
+  Some of the key skills you will gain upon completion of this program include:
+                     
+<ul style="padding-left: 15px">  
+<li>Basic Language Syntax</li>
+<li>Object Oriented Features in Python</li>
+<li>Exception Handling</li>
+<li>Regular Expression</li>
+<li>Working with inbuilt database support (SQLite)</li>
+<li>Itertools and Collections framework</li>
+<div id="objlist" class="panel-collapse collapse">
+<li>Threading</li>
+<li>Python Decorators</li>
+<li>Tesseract OCR</li>
+<li>NLP/NLTK</li>
+<li>ChatterBot </li>
+<li>Working with inbuilt database support (SQLite)</li>
+<li>Itertools and Collections framework</li>
+<li>Testing</li>
+<li>Py.test</li>
+<li>Selenium Webframwork</li>
+<li>Robot Framework for Automation Testing</li>
+</div>
+<a role="button" style="color:#337ab7" data-toggle="collapse" data-parent="" href="#objlist" aria-expanded="true" aria-controls="objlist">
+    More...
+</a>
+</ul>
+</div>
+<div class="col-md-6">  
+<h3>Prerequisite</h3>
+<p>This course is for the beginners. The participants need not have any prior exposure to Python programming language. Prior familiarity with some other programming language (such as Java or C++) would be useful, but it is not mandatory.</p>
+</div> 
+</div> 
+<div>
+<div class="">
+<span style="margin:2px"><a target="_blank" href="http://gktcs.com/GLMS/public/static/pdf/python_content.pdf" class = "btn btn-primary"><i class="fa fa-download"></i> Python Basic + Intermediate Content  (PDF)</a></span>
+<span style="margin:2px"><a target="_blank" href="http://gktcs.com/GLMS/public/static/pdf/python_data_science.pdf" class = "btn btn-primary"><i class="fa fa-download"></i> Python for Data Science and Web Scraping Content (PDF)</a></span>
+<span style="margin:2px"><a target="_blank" href="http://gktcs.com/GLMS/public/static/pdf/python_machine_learning.pdf" class = "btn btn-primary"><i class="fa fa-download"></i> Python for Data Science and Machine Learning Content (PDF)</a></span>
+</div>
+<br/>
+</div>
+  <ul class="nav nav-pills rwo" style="background-color:#fafafa">
+    <li class="active col-md-4 col-xs-12" style="padding:0px; margin:0px; text-align: center"><a data-toggle="pill" href="#basicpy"><h4>Basic Python</h4></a></li>
+    <li class="col-md-4 col-xs-12" style="padding:0px; margin:0px; text-align: center"><a data-toggle="pill" href="#intermediatepy"><h4>Intermediate Python</h4></a></li>
+    <li class="col-md-4 col-xs-12" style="padding:0px; margin:0px; text-align: center"><a data-toggle="pill" href="#advancedpy"><h4>Advanced Python</h4></a></li>
+  </ul>
+	<form action="." method="post" style="">
+	{% csrf_token %}
+	<div class="tab-content">
+    <div id="basicpy" class="tab-pane fade in active">
+      <h3>Basic Python Modules</h3>
+		<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingOne">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="1.Introduction to Python">
+						<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							1.Introduction to Python
+						</a>
+					</h4>
+				</div>
+				<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+					<div class="panel-body">
+						<ul>
+							<li>Introduction to Python</li> 
+							<li>Dynamic Typing, Object Types</li>
+							<li>Complex Object Type</li>
+							<li>Operators</li>
+							<li>Unbounded Integers</li>
+							<li>Useful functions</li>
+							<li>type()</li>
+							<li>id()</li>
+							<li>dir()</li>
+							<li>help()</li>
+							<li>chr()</li>
+							<li>unichr()</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingTwo">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="2.Simple Program Using Basic Python">
+						<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							2.Simple Program Using Basic Python
+						</a>
+					</h4>
+				</div>
+				<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+					<div class="panel-body">
+						<ul>
+							<li>Simple Program Using Basic Python</li>
+							<li>Python shell</li>
+							<li>Python command</li>
+							<li>Prepare source File and execute the code</li>
+							<li>Print “Hello World”</li>
+							<li>Comments</li>
+							<li>Help command</li>
+							<li>Anaconda Installation /Sublime Text Editor / or Eclipse Pydev</li>
+						</ul>					
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingThree">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="3.Basic Language Construct">
+						<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							3.Basic Language Construct
+						</a>
+					</h4>
+				</div>
+				<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+					<div class="panel-body">
+						<ul>
+							<li>Basic Language Construct</li>
+							<li>Data types and Variables</li>
+							<li>String type</li>
+							<li>Format method</li>
+							<li>Operators and Expressions</li>
+							<li>Indentation</li>
+						<ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="heading4">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="4.Data Structures">
+						<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							4.Data Structures
+						</a>
+					</h4>
+				</div>
+				<div id="collapse4" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Data Structures</li>
+							<li>Mutable and Immutable Data Structures</li>
+							<ul>
+								<li>List, Subscripting, Nested List </li>
+								<li>Tuple, Use cases</li>
+								<li>String Manipulation </li>
+								<li>Dictionary with Case Study</li>
+								<li>Use Cases and Assignment</li>
+							</ul>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading5">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="5.Control Structure and Functions">
+						<a data-toggle="collapse" href="#collapse5" data-parent="#accordion">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							5.Control Structure and Functions
+						</a>
+					</h4>
+				</div>
+				<div id="collapse5" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Control Structure</li>
+							<ul>
+								<li>Indentation</li>
+								<li>if elif else</li>
+								<li>while</li>
+								<li>for ( nested )</li>
+								<li>Use Cases and Assignments</li>
+							</ul>
+							<li>Functions</li>
+							<li>User Define Functions</li>
+							<ul>
+								<li>global variable</li>
+								<li>default arguments</li>
+								<li>variable arguments *arg</li>
+								<li>Multiple Variable Default Argument</li>
+								<li>**kwarg</li>
+								<li>Use Case Design Multiplier</li>
+							</ul>
+							<li>Assignments </li>
+							<li>Rapid Questions Round / Quiz </li>
+							<li>Conclusion and Summary</li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading6">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="6.Advance Built In Functions">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							6.Advance Built In Functions
+						</a>
+					</h4>
+				</div>
+				<div id="collapse6" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Advance Built In Functions</li>
+							<li>Sequence Operation using </li>
+							<ul>
+								<li>lambda </li>
+								<li>filter</li>
+								<li>map</li>
+								<li>reduce</li>
+								<li>sum/max/min</li>
+								<li>set</li>
+								<li>enumerate</li>
+								<li>sorted</li>
+								<li>reversed</li>
+								<li>range/ xrange</li>
+							</ul>
+							<li>Operation Using</li> 
+							<ul>
+								<li>List /Tuple Comprehension</li>
+								<li>Dictionary Comprehension</li>
+								<li>Dictionary Use Case</li>
+							</ul>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading7">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="7.Modules">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse7">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							7.Modules
+						</a>
+					</h4>
+				</div>
+				<div id="collapse7" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>User Define Modules</li>
+							<li>Import Categories </li>
+							<ul>
+								<li>using import</li>
+								<li>using from </li>
+							</ul>
+							<li>Built In Modules</li>
+							<ul>
+								<li>math</li>
+								<li>os</li>
+								<li>sys</li>
+								<li>random</li>
+								<li>pickle / Unpickle ( Object Serialization )</li>
+								<li>json etc</li>
+							</ul>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading8">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="8.Object Oriented Programming">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse8">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							8.Object Oriented Programming
+						</a>
+					</h4>
+				</div>
+				<div id="collapse8" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Classes and Objects</li>
+							<li>The “self” keyword</li>
+							<li>Methods and Attributes</li>
+							<li>Constructor and Destructor</li>
+							<li>Instance and static member</li>
+							<li>Class Inheritance</li>
+							<li>Built In Attributes</li>
+							<li>__private </li>
+							<li>public </li>
+							<li>_protected </li>
+							<li>Multiple Inheritance</li>
+							<li>Locking Attributes </li>
+							<li>Super keyword</li>
+							<li>Case Study </li>
+							<li>Assignments </li>
+							<li>Rapid Questions Round / Quiz</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading9">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="9.Files Objects and Methods">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse9">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							9.Files Objects and Methods
+						</a>
+					</h4>
+				</div>
+				<div id="collapse9" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>open()</li>
+							<li>read(), readlines()</li>
+							<li>write(), writelines()</li>
+							<li>tell()</li>
+							<li>using with statements</li>
+							<li>Use Case using File Handling</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading10">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="10.Exception Handling">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse10">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							10.Exception Handling
+						</a>
+					</h4>
+				</div>
+				<div id="collapse10" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Exception Handling</li>
+							<li>Built in Exceptions</li>
+							<li>exceptions module</li>
+							<li>User Define Exceptions</li>
+							<li>Assignments </li>
+							<li>Rapid Questions Round / Quiz </li>
+							<li>Conclusion and Summary</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading11">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="11.Regular expressions">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse11">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							11.Regular expressions
+						</a>
+					</h4>
+				</div>
+				<div id="collapse11" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Pattern Writing</li>
+							<li>Compiling </li>
+							<li>Match/Search</li>
+							<li>Group/Groups</li>
+							<li>findall</li>
+							<li>re.sub</li>
+							<li>re.split</li>
+							<li>Use Case using Regular Expression and Pattern</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div><!-- panel-group -->	
+    </div>
+    <div id="intermediatepy" class="tab-pane fade">
+      <h3>Intermediate Python Modules</h3>
+		<div class="panel-group" id="interpy" role="tablist" aria-multiselectable="true">
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading12">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="12.File and Directory handling">
+						<a data-toggle="collapse" data-parent="#interpy" href="#collapse12">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							12.File and Directory handling
+						</a>
+					</h4>
+				</div>
+				<div id="collapse12" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>File and Directory handling</li>
+							<li>Fileinput</li>
+							<li>glob</li>
+							<li>Regular Expression</li>
+							<li>Case Study for Extraction of Data from Multiple Files and Generating Reports</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading13">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="13.Itertools and Collections framework">
+						<a data-toggle="collapse" data-parent="#interpy" href="#collapse13">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							13.Itertools and Collections framework
+						</a>
+					</h4>
+				</div>
+				<div id="collapse13" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>imap/ ifilter /izip</li>
+							<li>Iterator</li>
+							<li>file iteration using map</li>
+							<li>Overriding iterator functions</li>
+							<li>Generator</li>
+							<li>yield</li>
+							<li>Use Case of yield </li>
+							<li>Assignments </li>
+							<li>Rapid Questions Round / Quiz</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading14">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="14.Testing">
+						<a data-toggle="collapse" data-parent="#interpy" href="#collapse14">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							14.Testing
+						</a>
+					</h4>
+				</div>
+				<div id="collapse14" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Testing Fundamental</li>
+							<li>Types of Testing</li>
+							<li>Unittest Framework</li>
+							<li>Run Test</li>
+							<li>Write Unittest.TestCase for Python Code</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading15">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="15.Python Debugging and Testing">
+						<a data-toggle="collapse" data-parent="#interpy" href="#collapse15">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							15.Python Debugging and Testing
+						</a>
+					</h4>
+				</div>
+				<div id="collapse15" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Use of pdb</li>
+							<li>Calling pytest through python</li>
+							<li>py.test</li>
+							<li>py.test --pdb</li>
+							<li>Assignments </li>
+							<li>Rapid Questions Round / Quiz </li>
+							<li>Conclusion and Summary</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading16">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="16.Threading">
+						<a data-toggle="collapse" data-parent="#interpy" href="#collapse16">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							16.Threading
+						</a>
+					</h4>
+				</div>
+				<div id="collapse16" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Processes & Threads</li>
+							<li>Threading Life Cycle</li>
+							<li>Logging</li>
+							<li>Demon Thread</li>
+							<li>Thread Synchronization</li>
+							<li>Real Time Case Study using Multithreading</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading17">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="17.Python Decorators">
+						<a data-toggle="collapse" data-parent="#interpy" href="#collapse17">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							17.Python Decorators
+						</a>
+					</h4>
+				</div>
+				<div id="collapse17" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Introduction</li>
+							<li>Types of Decorators</li>
+							<li>User Define Decorators</li>
+							<ul>
+								<li>Write a Trace Decorators using Python and trace any functions or Class methods</li>
+								<li>Built in Decorators</li>
+								<li>@classmethod</li>
+								<li>@staticmethod</li>
+								<li>@property </li>
+							</ul>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading18">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="18.XML Parsing">
+						<a data-toggle="collapse" data-parent="#interpy" href="#collapse18">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							18.XML Parsing
+						</a>
+					</h4>
+				</div>
+				<div id="collapse18" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>XML Parsing</li>
+							<li>Assignments </li>
+							<li>Rapid Questions Round / Quiz </li>
+							<li>Four Days Conclusion and Summary</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading19">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="19.Sockets Programming">
+						<a data-toggle="collapse" data-parent="#interpy" href="#collapse19">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							19.Sockets Programming
+						</a>
+					</h4>
+				</div>
+				<div id="collapse19" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>TCP/IP Sockets </li>
+							<li>UDP Sockets</li>
+							<li>Server and Client Program</li>
+							<li>XML processing</li>
+							<li>Assignments </li>
+							<li>Rapid Questions Round / Quiz</li>
+							<li>Five Days Conclusion and Summary</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+    <div id="advancedpy" class="tab-pane fade">
+      <h3>Advanced Python Modules</h3>
+		<div class="panel-group" id="advpy" role="tablist" aria-multiselectable="true">
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading20">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#advpy" href="#collapse20">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							20.Introduction to Web Crawling
+						</a>
+					</h4>
+				</div>
+				<div id="collapse20" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Introduction to Crawling</li>
+							<li>Do’s and Don’ts Approach</li>
+							<li>Robots.txt and other legal compliances about Crawling Polite Crawling</li>
+							<li>Lxml and Beautifulsoup with Requests module¨ urllib¨ urllib2</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading21">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#advpy" href="#collapse21">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							21.Web Crawling
+						</a>
+					</h4>
+				</div>
+				<div id="collapse21" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Firebug and usage of developer tools under chrome and firefox</li>
+
+							<li>Postman optional Xpather</li>
+
+							<li>Practice 1</li>
+
+							<li>Native way of crawling and write the extracted data into file Youtube. Simple youtube channel page where to extract Image¨ Title and any information that is available without navigation to next page theHindu</li>
+
+							<li>Get the latest news heading and links No drill down crawling</li>
+
+							<li>MySql Practice 2 Write the extracted data from Practice 1 into database created locally Scrapy</li>
+
+							<li>Practice 3 Youtube Extract the data using Scrapy framework  Dump the extracted data into Mysql DB</li>
+
+							<li>Practice 4 Extract data navigating to 2 levels</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading22">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#advpy" href="#collapse22">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							22.JSON and Introduction to Selenium
+						</a>
+					</h4>
+				</div>
+				<div id="collapse22" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Writing data into JSON file</li>
+							<li>Advanced concepts</li>
+							<li>Introduce to Selenium</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading23">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#advpy" href="#collapse23">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							23.Selenium Frameworks
+						</a>
+					</h4>
+				</div>
+				<div id="collapse23" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Selenium installation on Python</li>
+
+							<li>Introduction of any IDE for easy programming (like, Eclipse)</li>
+
+							<li>Python Unit Test & Sample Python Selenium Frameworks</li>
+
+							<li>Running Test cases & suites and obtaining results</li>
+
+							<li>Selenium Webdriver API introduction</li>
+
+							<li>Webdriver Python Basic Programming with different Browsers</li>
+
+							<li>Running Test cases & suites and obtaining results</li>
+
+							<li>Case Study using Selenium Framework</li>
+							
+							<li>Conclusion and Summary</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading24">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#advpy" href="#collapse24">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							24.Introduction to DataScience for Web Scraping
+						</a>
+					</h4>
+				</div>
+				<div id="collapse24" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Introduction to DataScience for Web Scraping</li>
+
+							<li>Numpy Hands On Session </li>
+
+							<li>Pandas Hands On Session</li>
+
+							<li>Matplotlib Hands on Session</li>
+
+							<li>Anaconda Qtconsole / Notebook / Spyder</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading25">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#advpy" href="#collapse25">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							25.Case Study / Mini Project IMDB Data Scraping using following modules
+						</a>
+					</h4>
+				</div>
+				<div id="collapse25" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>BeautifulSoup</li>
+							<li>urllib2 </li>
+							<li>numpy</li>
+							<li>Scipy</li>
+							<li>matplotlib</li>
+							<li>matplotlib.pyplot</li>
+							<li>pylab</li>
+							<li>pandas</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading26">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#advpy" href="#collapse26">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							26.Scrapy Project
+						</a>
+					</h4>
+				</div>
+				<div id="collapse26" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Creating a new Scrapy project</li>
+							<li>Writing a spider to crawl a site and extract data</li>
+							<li>Exporting the scraped data using the command line</li>
+							<li>Changing spider to recursively follow links</li>
+							<li>Using spider arguments</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading27">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#advpy" href="#collapse27">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							27.Web Scraping With Scrapy and MongoDB
+						</a>
+					</h4>
+				</div>
+				<div id="collapse27" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Scrapy Project</li>
+							<li>PyMongo</li>
+							<li>Specify Data</li>
+							<li>Create the Spider</li>
+							<li>XPath Selectors</li>
+							<li>Extract the Data</li>
+							<li>Store the Data in MongoDB</li>
+							<li>Pipeline Management</li>
+							<li>Conclusion and Summary</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading28">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#advpy" href="#collapse28">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							28.SVN Lifecycle
+						</a>
+					</h4>
+				</div>
+				<div id="collapse28" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Lifecycle of SVN</li>
+							<li>Create Repository</li>
+							<li>Checkout</li>
+							<li>Update</li>
+							<li>Perform Changes</li>
+							<li>Review Changes</li>
+							<li>Fix Mistakes</li>
+							<li>Resolve Conflicts</li>
+							<li>Commit Changes</li>
+							<li>Tags and Branching</li>
+							<li>Creating Tags</li>
+							<li>Creating Branches</li>
+							<li>Merging Branches</li>
+							<li>Exercises</li>
+							<li>Automate SVN Tasks using Python Scripting</li>
+							<li>Assignments </li>
+							<li>Rapid Questions Round / Quiz </li>
+							<li>Ten Days Conclusion and Summary</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading29">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#advpy" href="#collapse29">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							29.OCR and Tesseract
+						</a>
+					</h4>
+				</div>
+				<div id="collapse29" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Tesseract OCR</li>
+							<li>What is OCR?</li>
+							<li>What is PyOCR?</li>
+							<li>Installation and Usage</li>
+							<li>Orientation detection</li>
+							<li>Writing and reading text files</li>
+							<li>Writing and reading hOCR files</li>
+							<li>Introducing Tesseract</li>
+							<li>PyTesseract</li>
+							<li>The App: Love In A Snap</li>
+							<li>Adding the Tesseract Framework</li>
+							<li>Implementing Tesseract OCR</li>
+							<li>Processing Your First Image</li>
+							<li>Finding and Replacing Text</li>
+							<li>Chatbot frameworks</li>
+							<li>Assignment</li>
+							<li>Summary and Conclusion</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading30">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#advpy" href="#collapse30">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							30.Language Processing and Python
+						</a>
+					</h4>
+				</div>
+				<div id="collapse30" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Language Processing and Python</li>
+							<li>Introduction to NLTK</li>
+							<li>Searching Text</li>
+							<li>Counting Vocabulary</li>
+							<li>Texts as Lists of Words</li>
+							<li>Computing with Language: Simple Statistics</li>
+							<li>Frequency Distributions</li>
+							<li>Fine-grained Selection of Words</li>
+							<li>Collocations and Bigrams</li>
+							<li>Counting Other Things</li>
+							<li>Making Decisions and Taking Control</li>
+							<li>Operating on Every Element</li>
+							<li>Nested Code Blocks</li>
+							<li>Automatic Natural Language Understanding</li>
+							<li>Word Sense Disambiguation</li>
+							<li>Pronoun Resolution<li>
+							<li>Generating Language Output<li>
+							<li>Machine Translation<li>
+							<li>Limitations of NLP<li>
+							<li>Accessing Text Corpora and Lexical Resources <li>
+							<li>Accessing Text Corpora<li>
+							<li>Web and Chat Text<li>
+							<li>Brown Corpus<li>
+							<li>Reuters Corpus<li>
+							<li>Inaugural Address Corpus<li>
+							<li>Processing Raw Text <li>
+							<li>Writing Structured Programs<li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading31">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#advpy" href="#collapse31">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							31.Introduction ChatterBot
+						</a>
+					</h4>
+				</div>
+				<div id="collapse31" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Installation</li>
+							<li>Training classes</li>
+							<li>Training with corpus data</li>
+							<li>ChatterBot Corpus</li>
+							<li>Preprocessors</li>
+							<li>Logic Adapters</li>
+							<li>Input Adapters</li>
+							<li>Output Adapters</li>
+							<li>Storage Adapters</li>
+							<li>Filters</li>
+							<li>ChatterBot</li>
+							<li>Conversations</li>
+							<li>Sessions</li>
+							<li>Utility Methods</li>
+							<li>Conclusion and Summary</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading32">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#advpy" href="#collapse32">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							32.Robot Framework
+						</a>
+					</h4>
+				</div>
+				<div id="collapse32" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Robot Framework Introduction</li>
+							<li>Installation </li>
+							<li>Demonstrations</li>
+							<li>Creating test data</li>
+							<li>Test data syntax</li>
+							<li>Creating test cases</li>
+							<li>Creating test suites</li>
+							<li>Using test libraries</li>
+							<li>Variables</li>
+							<li>Creating test cases using keyword-driven, data-driven, and gherkin (BDD) style.</li>
+							<li>Creating user keywords</li>
+							<li>Resource and variable files</li>
+							<li>Advanced features</li>
+							<li>Executing test cases</li>
+							<li>Basic usage</li>
+							<li>Test execution</li>
+							<li>Post-processing outputs</li>
+							<li>Configuring execution</li>
+							<li>Created outputs</li>
+							<li>Use Case using Robot Framework</li>
+							<li>Assignment</li>
+							<li>Summary and Conclusion</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading33">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#advpy" href="#collapse33">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							33.Introduction to Machine Learning
+						</a>
+					</h4>
+				</div>
+				<div id="collapse33" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Introduction to Machine Learning</li>
+							<li>Supervised, Unsupervised and Reinforcement Learning with Examples</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading34">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#advpy" href="#collapse34">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							34.Machine Learning
+						</a>
+					</h4>
+				</div>
+				<div id="collapse34" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Univariate Statistics</li>
+							<li>High level explanation of Probability distribution<</li>
+							<li>Classification, Regression Clustering Algorithms</li>
+						</ul>	
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading35">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#advpy" href="#collapse35">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							35.Scikit-learn API
+						</a>
+					</h4>
+				</div>
+				<div id="collapse35" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Scikit-learn API</li>
+							<li>Linear Regression Examples</li>
+							<li>Cluster Data Sets Example</li>
+							<li>Face Recognition Example</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading36">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#advpy" href="#collapse36">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							36.Scikit-learn API
+						</a>
+					</h4>
+				</div>
+				<div id="collapse36" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Support vector machines , neutral networks, tree based methods, selection & regularisation</li>
+							<li>Python Sample Modules :</li>
+							<li>sklearn.tree</li>
+							<li>tree.DecisionTreeClassifier</li>
+							<li>sklearn.neural_network</li>
+							<li>MLPClassifier</li>
+							<li>Case studies</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading37">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#advpy" href="#collapse37">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							37.Hadoop
+						</a>
+					</h4>
+				</div>
+				<div id="collapse37" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Hadoop, HDFS Commands</li>
+							<li>Python Script for Map</li>
+							<li>Reducing</li>
+							<li>Introduction to Pydoop</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading38">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#advpy" href="#collapse38">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							38.SparkApi
+						</a>
+					</h4>
+				</div>
+				<div id="collapse38" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Spark Api</li>
+							<li>Spark Examples</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading39">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#advpy" href="#collapse39">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							39.Database Programming
+						</a>
+					</h4>
+				</div>
+				<div id="collapse39" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>MySQL Database</li>
+							<ul>
+								<li>Installation of ‘mysqlclient’ Module</li>
+								<li>Connecting to the database and the connection object</li>
+								<li>Exception Handling</li>
+								<li>Executing the SQLs (CRUD Operations)</li>
+								<li>Fetching the recordset (only for SELECT query)</li>
+								<li>Disconnecting from the database</li>
+							</ul>	
+							<li>PostgreSQL Database</li>
+							<ul>
+								<li>Installation of ‘psycopg2’ Module</li>
+								<li>Connecting to the database and the connection object</li>
+								<li>Creating the Cursor object</li>
+								<li>Executing the SQLs (CRUD Operations)</li>
+								<li>Fetching the recordset (only for SELECT query)</li>
+								<li>Disconnecting from the database</li>
+							</ul>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading40">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#advpy" href="#collapse40">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							40.CSV Module
+						</a>
+					</h4>
+				</div>
+				<div id="collapse40" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>CSV Format</li>
+							<li>Tab delimiters instead of ‘,’</li>
+							<li>Reading CSV Files</li>
+							<li>Writing to a CSV File</li>
+							<li>Dictionary References</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading41">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#advpy" href="#collapse41">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							41.XML Processing
+						</a>
+					</h4>
+				</div>
+				<div id="collapse41" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>XML Processing
+							<li>XML Format</li>
+							<li>XML Tags, Attributes</li>
+							<li>Recursive Tags</li>
+							<li>Searching within XML</li>
+							<li>Modifying the XML</li>
+							<li>Writing the output to the XML File</li>
+							<li>Preserving the XML Structure</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading42">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#advpy" href="#collapse42">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							42.Logging Module
+						</a>
+					</h4>
+				</div>
+				<div id="collapse42" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Logging Module
+							<li>Creating a Logger</li>
+							<li>Log Handler</li>
+							<li>Formatter</li>
+							<li>Filter</li>
+							<li>Logging Levels</li>
+							<li>Multiprocess Logging and Synchronization</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading43">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#advpy" href="#collapse43">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							43.JSON Module
+						</a>
+					</h4>
+				</div>
+				<div id="collapse43" class="panel-collapse collapse">
+					<div class="panel-body">
+						<ul>
+							<li>JSON Format</li>
+							<li>Field data and Formats</li>
+							<li>JSON data parsed to various collections</li>
+							<li>Modifying the data</li>
+							<li>Writing the output data to JSON</li>
+							<li>HTTP Call to URL using GET/POST Method</li>
+							<li>Web Service call with JSON data</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading44">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#advpy" href="#collapse44">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							44.Multithreaded
+						</a>
+					</h4>
+				</div>
+				<div id="collapse44" class="panel-collapse collapse">
+					<div class="panel-body">
+						<ul>
+							<li>Introduction to Multithreaded Programming</li>
+							<li>Use of ‘thread’ and ‘threading’ Modules</li>
+							<li>Exception Handling with Threads</li>
+							<li>Creating Threads</li>
+							<li>Synchronizing Threads</li>
+							<li>Priority Queue</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading45">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#advpy" href="#collapse45">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							45.Multiprocessing Programming
+						</a>
+					</h4>
+				</div>
+				<div id="collapse45" class="panel-collapse collapse">
+					<div class="panel-body">
+						<ul>
+							<li>Introduction to Multiprocessing Programming</li>
+							<li>Use of ‘multiprocessing’ Module</li>
+							<li>Spawning Multiple Processes</li>
+							<li>Distributing to Multiple Workers using ‘RQ’ Module</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading46">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#advpy" href="#collapse46">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							46.Asynchronous Programming
+						</a>
+					</h4>
+				</div>
+				<div id="collapse46" class="panel-collapse collapse">
+					<div class="panel-body">
+						<ul>
+							<li>Introducing to Asynchrous Programming</li>
+							<li>Using ‘Asyncio’ Module</li>
+							<li>Decorator – coroutine</li>
+							<li>Aync/Await</li>
+							<li>‘yield from’ expression</li>
+							<li>Running the event loop</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading47">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#advpy" href="#collapse47">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							47.Data Analysis
+						</a>
+					</h4>
+				</div>
+				<div id="collapse47" class="panel-collapse collapse">
+					<div class="panel-body">
+						<ul>
+							<li>Introduction to Data Analysis</li>
+							<li>Exploring Data Analysis</li>
+							<li>Exploring ‘NumPy’ Package</li>
+							<li>Exploring ‘Matplotlib’ Package</li>
+							<li>Exploring ‘Pandas’ Package</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading48">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#advpy" href="#collapse48">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							48.Network Programming
+						</a>
+					</h4>
+				</div>
+				<div id="collapse48" class="panel-collapse collapse">
+					<div class="panel-body">
+						<ul>
+							<li>Sockets</li>
+							<li>Clients and Servers</li>
+							<li>Application Protocols</li>
+							<li>Threaded Servers</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading49">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#advpy" href="#collapse49">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							49.Using ‘sh’ Module
+						</a>
+					</h4>
+				</div>
+				<div id="collapse49" class="panel-collapse collapse">
+					<div class="panel-body">
+						<ul>
+							<li>The ‘sh’ Namespace</li>
+							<li>Running a Simple Command</li>
+							<li>Keyword Arguments</li>
+							<li>Running Commands in the Background</li>
+							<li>Piping and Redirection</li>
+							<li>Working with STDIN</li>
+							<li>Exit Code</li>
+							<li>Advanced Features</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading50">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#advpy" href="#collapse50">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							50.CGI Programming
+						</a>
+					</h4>
+				</div>
+				<div id="collapse50" class="panel-collapse collapse">
+					<div class="panel-body">
+						<ul>
+							<li>CGI Environment Setup</li>
+							<li>The ‘cgi’ Module</li>
+							<li>Calling CGI Scripts</li>
+							<li>The FieldStorage Object</li>
+							<li>Sending the HTTP Object</li>
+							<li>Outputting HTML</li>
+							<li>HTML from Templates</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading51">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#advpy" href="#collapse51">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							51.Selenium WebDriver
+						</a>
+					</h4>
+				</div>
+				<div id="collapse51" class="panel-collapse collapse">
+					<div class="panel-body">
+						<ul>
+							<li>Installing Selenium Package</li>
+							<li>Selenium WebDriver Documentation</li>
+							<li>First Program using Chrome</li>
+							<li>Cross Browser Testing</li>
+							<li>Generating the HTML Test Report</li>
+							<li>Finding Elements</li>
+							<li>Inspecting Pages in Firefox, Chrome and Internet Explorer</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading52">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#advpy" href="#collapse52">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							52.Finding Elements with Selenium WebDriver
+						</a>
+					</h4>
+				</div>
+				<div id="collapse52" class="panel-collapse collapse">
+					<div class="panel-body">
+						<ul>
+							<li>Find Element By Id</li>
+							<li>Find Element By Name</li>
+							<li>Find Element By Class Name</li>
+							<li>Find Element By Tag Name</li>
+							<li>Find Element By XPATH</li>
+							<li>Find Element By CSS Selector</li>
+							<li>Find Element By Link</li>
+							<li>Find Element By Partial Link Text</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading53">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#advpy" href="#collapse53">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							53.Elements and Class
+						</a>
+					</h4>
+				</div>
+				<div id="collapse53" class="panel-collapse collapse">
+					<div class="panel-body">
+						<ul>
+							<li>Elements of HTML Forms</li>
+							<li>Properties and Methods of WebDriver Class</li>
+							<li>Properties and Methods of WebElement Class</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading54">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#advpy" href="#collapse54">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							54.Working with Controls
+						</a>
+					</h4>
+				</div>
+				<div id="collapse54" class="panel-collapse collapse">
+					<div class="panel-body">
+						<ul>
+							<li>Working with Forms, textboxes, checkboxes and radio buttons</li>
+							<li>Checking whether the element is displayed or not</li>
+							<li>Finding the elements attribute value</li>
+							<li>Using the is_selected() method</li>
+							<li>Using the clear() method</li>
+							<li>Using the send_keys() method</li>
+							<li>Understanding the Select class</li>
+							<li>Properties of the Select class</li>
+							<li>Methods of the Select class</li>
+							<li>Understanding the Alert class</li>
+							<li>Properties of the Alert class</li>
+							<li>Methods of the Alert class</li>
+							<li>Automating the browser navigation</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading55">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#advpy" href="#collapse55">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							55.Synchronizing Tests
+						</a>
+					</h4>
+				</div>
+				<div id="collapse55" class="panel-collapse collapse">
+					<div class="panel-body">
+						<ul>
+							<li>Synchronizing Tests</li>
+							<li>Using implicit wait</li>
+							<li>Using explicit wait</li>
+							<li>The expected condition class</li>
+							<li>Waiting for an element to be enabled</li>
+							<li>Waiting for Alerts</li>
+							<li>Implementing custom wait conditions</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading56">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#advpy" href="#collapse56">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							56.Data Driven Testing
+						</a>
+					</h4>
+				</div>
+				<div id="collapse56" class="panel-collapse collapse">
+					<div class="panel-body">
+						<ul>
+							<li>Introduction to Data Driven Testing</li>
+							<li>Using ddt for Data Driven Testing</li>
+							<li>Installing ddt</li>
+							<li>Creating a simple data driven test with ddt in unittest</li>
+							<li>Using external data sources for Data Driven Testing</li>
+							<li>Reading values from CSV</li>
+							<li>Reading values from Excel</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading57">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#advpy" href="#collapse57">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							57.Report Generation
+						</a>
+					</h4>
+				</div>
+				<div id="collapse57" class="panel-collapse collapse">
+					<div class="panel-body">
+						<ul>
+							<li>Capturing Screenshots of Failures</li>
+							<li>Recording a Video of the test run</li>
+							<li>Generating the Report</li>
+							<li>Handling Pop-up Windows</li>
+							<li>Emailing the Report Generation</li>
+						</ul>
+					</div>
+				</div>
+			</div>			
+		</div>
+    </div>
+  </div>
+	<input type = "submit" class="btn btn-primary" value= "Submit Choices" style = "">
+	</form>
+</div>
+<script>
+function toggleIcon(e) {
+    $(e.target)
+        .prev('.panel-heading')
+        .find(".more-less")
+        .toggleClass('glyphicon-plus glyphicon-minus');
+}
+$('.panel-group').on('hidden.bs.collapse', toggleIcon);
+$('.panel-group').on('shown.bs.collapse', toggleIcon);
+</script>
+{% endblock %}

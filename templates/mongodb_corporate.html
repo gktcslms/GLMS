@@ -1,0 +1,272 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+<div style="background-color:#337ab7; padding:10px" class="row"><!––<img src="python_banner.jpg" class="img-fluid" style="width:100%" alt="Responsive image">
+<div class="col-md-5 hidden-sm hidden-xs" style="padding-left:30px">	
+	<iframe width="420" height="230" src="https://www.youtube.com/embed/GtD93tVZDX4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+<div class="hidden-lg hidden-md col-sm-12" style="padding-left:30px">	
+	<iframe width="315" height="173" src="https://www.youtube.com/embed/GtD93tVZDX4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+<div class="col-md-7">
+	<h1 style="color:#fff; text-shadow: 2px 2px #212020;">MongoDB</h1><h3 style="color:#fff;text-shadow: 2px 2px #212020;">MongoDB is the leading NoSQL database, empowering businesses to be more agile and scalable. .</h3>
+</div>
+</div>
+</div>
+<div class="container" style="background-color: #e8e8e8; padding-bottom: 15px;">
+<div class="row">
+<div class="col-md-6">  
+  <h3>MongoDB Course objectives</h3>
+  Some of the key skills you will gain upon completion of this program include:
+                     
+<ul style="padding-left: 15px">  
+<li>MongoDB core concepts and architecture</li>
+<li>CRUD operations</li>
+<li>Aggregation functions</li>
+<li>Availability and Performance through Sharding, Replication & Indexes</li>
+<li>MongoDB Java driver API</li>
+</ul>
+</div>
+<div class="col-md-6">
+<h3>Prerequisite</h3>
+<p>
+<ul style="padding-left: 15px">
+<li>• Band – B2 or higher</li>
+<li>• Knowledge of any RDBMS</li>
+<li>• Core Java programming</li>
+</ul>
+</p>
+</div> 
+</div>
+<div>
+<p class=""><a target="_blank" href="http://gktcs.com/GLMS/public/static/pdf/mongodb_content.pdf" class = "btn btn-primary"><i class="fa fa-download"></i> Download Course Content [3 Days] (PDF)</a></p>
+</div>
+<div>
+  <ul class="nav nav-pills rwo" style="background-color:#fafafa">
+    <li class="active col-md-12 col-xs-12" style="padding:0px; margin:0px; text-align: center"><a data-toggle="pill" href="#basicpy"><h4>MongoDB: Modules </h4></a></li>
+  </ul>
+	<form action="." method="post" style="">{% csrf_token %}
+	<div class="tab-content"> 
+    <div id="basicpy" class="tab-pane fade in active">
+      <br/>
+		<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingOne">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="1.NoSQL paradigm">
+						<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							1.NoSQL paradigm
+						</a>
+					</h4>
+				</div>
+				<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+					<div class="panel-body">
+						<ul>
+							<li>RDBMS to NoSQL</li>
+							<li>New data models</li>
+							</ul>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingTwo">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="2.MongoDB overview">
+						<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							2.MongoDB overview
+						</a>
+					</h4>
+				</div>
+				<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+					<div class="panel-body">
+						<ul>
+							<li>Features</li>
+							<li>Document database</li>
+							<li>JSON</li>
+						</ul>					
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingThree">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="3.MongoDB architecture">
+						<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							3.MongoDB architecture
+						</a>
+					</h4>
+				</div>
+				<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+					<div class="panel-body">
+						<ul>
+							<li>Data model</li>
+							<li>Query model</li>
+							<li>Data management</li>
+						</ul>					
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="heading4">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="4.MongoDB installation and configuration">
+						<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							4.MongoDB installation and configuration
+						</a>
+					</h4>
+				</div>
+				<div id="collapse4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4">
+					<div class="panel-body">
+						<ul>
+							<li>Driver support</li>
+							<li>Initial setup</li>
+							<li>Interacting with MongoDB</li>
+						</ul>					
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading5">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="5.CRUD operations">
+						<a data-toggle="collapse" href="#collapse5" data-parent="#accordion">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							5.CRUD operations
+						</a>
+					</h4>
+				</div>
+				<div id="collapse5" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>MongoDB terminologies</li>
+							<li>Documents and Collections</li>
+							<li>Arrays</li>
+							<li>Cursor</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading6">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="6.Indexes">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							6.Indexes
+						</a>
+					</h4>
+				</div>
+				<div id="collapse6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading6">
+					<div class="panel-body">
+						<ul>
+							<li>Types of indexes</li>
+							<li>Creating indexes</li>
+							<li>Compound indexes</li>
+						</ul>					
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading7">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="7.Aggregation operations">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse7">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							7.Aggregation operations
+						</a>
+					</h4>
+				</div>
+				<div id="collapse7" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Aggregation pipelines</li>
+							<li>Map-reduce</li>
+							<li>Single purpose aggregation</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading8">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="8.Data models">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse8">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							8.Data models
+						</a>
+					</h4>
+				</div>
+				<div id="collapse8" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Document structure</li>
+							<li>Reference data considerations</li>
+							<li>Embedded data</li>
+							<li>Atomic operations</li>
+							<li>Document growth considerations</li>
+							<li>Data use and performance</li>
+							<li>Capped collections</li>
+							<li>GridFS</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading9">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="9.Analyzing query performance">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse9">
+							9.Analyzing query performance
+						</a>
+					</h4>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading10">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="10.Two phase commit.">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse10">
+							10.Two phase commit
+						</a>
+					</h4>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading11">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="11.Replication">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse11">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							11.Replication
+						</a>
+					</h4>
+				</div>
+			</div>
+		</div><!-- panel-group -->	
+    </div>
+  </div>
+	<input type = "submit" class="btn btn-primary" value= "Submit Choices" style = "">
+	</form>
+</div>	
+</div>
+<script>
+function toggleIcon(e) {
+    $(e.target)
+        .prev('.panel-heading')
+        .find(".more-less")
+        .toggleClass('glyphicon-plus glyphicon-minus');
+}
+$('.panel-group').on('hidden.bs.collapse', toggleIcon);
+$('.panel-group').on('shown.bs.collapse', toggleIcon);
+</script>
+{% endblock %}

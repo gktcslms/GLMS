@@ -1,0 +1,499 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+<div style="background-color:#337ab7; padding:10px" class="row"><!––<img src="python_banner.jpg" class="img-fluid" style="width:100%" alt="Responsive image">
+<div class="col-md-5" style="padding-left:30px">	
+	<iframe width="420" height="230" src="https://www.youtube.com/embed/qgGIqRFvFFk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+<div class="col-md-7">
+	<h1 style="color:#fff; text-shadow: 2px 2px #212020;">Django</h1><h3 style="color:#fff;text-shadow: 2px 2px #212020;">Django is a free and open source web application framework, written in Python. A web framework is a set of components that helps you to develop websites faster and easier.</h3>
+</div>
+</div>
+</div>
+<div class="container" style="background-color: #e8e8e8; padding-bottom: 15px;">
+<div class="row">  
+<div class="col-md-6">
+  <h3>Django Course objectives</h3>
+  Some of the key skills you will gain upon completion of this program include:
+                     
+<ul style="padding-left: 15px">  
+<li>Database abstraction (Object Relational Mapper)</li>
+<li>Creation of a model</li>
+<li>Model validation</li>
+<li>Export and import of data (via JSON)</li>
+<li>Working with an ORM on the command line</li>
+<li>Using Django's admin</li>
+<div id="objlist" class="panel-collapse collapse">
+<li>Defining URLs at one place (Routing)</li>
+<li>In-depth explanation of function based views</li>
+<li>How to use class-based views</li>
+<li>Creating templates using Django's template engine</li>
+<li>How to handle static files in Django </li>
+<li>Managing Django's settings</li>
+<li>Different debugging techniques</li>
+<li>Logging</li>
+<li>Forms and their validation</li>
+<li>Sending email using a form</li>
+<li>Pagination</li>
+<li>Authentication</li>
+<li>Sessions and messages</li>
+<li>Security</li>
+</div>
+<a role="button" style="color:#337ab7" data-toggle="collapse" data-parent="" href="#objlist" aria-expanded="true" aria-controls="objlist">
+    More...
+</a>
+</ul>
+</div>
+<div class="col-md-6">
+<h3>Prerequisite</h3>
+<p>This course is for the beginners. The participants must have any prior exposure to Python programming language. Prior familiarity with some other programming language (such as Java or C++) would be useful, but it is not mandatory.</p>
+</div>  
+</div>
+<div>
+<p class=""><a href="#" class = "btn btn-primary"><i class="fa fa-download"></i> Download Course Content (PDF)</a></p>
+</div>
+  <ul class="nav nav-pills rwo" style="background-color:#fafafa">
+    <li class="active col-md-6 col-xs-12" style="padding:0px; margin:0px; text-align: center"><a data-toggle="pill" href="#basicpy"><h4>Basic Django</h4></a></li>
+    <li class="col-md-6 col-xs-12" style="padding:0px; margin:0px; text-align: center"><a data-toggle="pill" href="#advancedpy"><h4>Advanced Django</h4></a></li>
+  </ul>
+	<form action="." method="post" style="">{% csrf_token %}
+	<div class="tab-content">
+    <div id="basicpy" class="tab-pane fade in active">
+      <h3>Basic Django Modules</h3>
+		<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingOne">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="1.Introduction to Django">
+						<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							1.Introduction to Django
+						</a>
+					</h4>
+				</div>
+				<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+					<div class="panel-body">
+						<ul>
+							<li>Introduction to Django Web Framework</li> 
+							<li>Django and Python</li>
+							<li>Features of Django</li>
+							<li>Installing Django</li>
+							<li>MVC model</li>
+							<li>HTTP concepts</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingTwo">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="2.Getting started with Django">
+						<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							2.Getting started with Django
+						</a>
+					</h4>
+				</div>
+				<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+					<div class="panel-body">
+						<ul>
+							<li>Setting up database connections</li>
+							<li>Managing Users & the Django admin tool</li>
+							<li>Installing and using ‘out of the box’ Django features</li>
+						</ul>					
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingThree">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="3.Django Model Basics">
+						<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							3.Django Model Basics
+						</a>
+					</h4>
+				</div>
+				<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+					<div class="panel-body">
+						<ul>
+							<li>Creating models</li>
+							<li>Fields, Field types and Field Options</li>
+							<li>Handling relationships - OneToOne, OneToMany, ManyToOne</li>
+							<li>Object Relational Mapping (ORM) </li>
+							<li>Object CRUD</li>
+							<li>Creating objects</li>
+							<li>Retrieving objects</li>
+							<li>Filters when retrieving objects</li>
+							<li>Comparing objects</li>
+							<li>Updating objects</li>
+							<li>Deleting objects</li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+						<ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="heading4">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="4.Advanced Model Handling">
+						<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							4.Advanced Model Handling
+						</a>
+					</h4>
+				</div>
+				<div id="collapse4" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Data Structures</li>
+							<li>Mutable and Immutable Data Structures</li>
+							<ul>
+								<li>Model Inheritance</li>
+								<li>Model Validation</li>
+								<li>Aggregation</li>
+								<li>Joins and Aggregates</li>
+								<li>filter() and exclude()</li>
+								<li>order_by()</li>
+								<li>values()</li>
+								<li>Managers</li>
+								<li>Working with NoSQL stores</li>
+								<li>Performing raw SQL queries</li>
+								<li>Transactions</li>
+								<li>Working with multiple databases</li>
+							</ul>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading5">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="5.Handling Migrations">
+						<a data-toggle="collapse" href="#collapse5" data-parent="#accordion">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							5.Handling Migrations
+						</a>
+					</h4>
+				</div>
+				<div id="collapse5" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Introduction to migrations</li>
+							<li>Writing Migrations</li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading6">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="6.Django Views">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							6.Django Views
+						</a>
+					</h4>
+				</div>
+				<div id="collapse6" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Designing a good URL scheme </li>
+							<li>In-depth explanation of function based views</li>
+							<li>How to use class-based views</li> 
+							<li>Decorators</li>
+							<li>Request / Response objects</li>
+							<li>Class Based Views</li>
+							<li>File Uploads</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading7">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="7.Forms">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse7">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							7.Forms
+						</a>
+					</h4>
+				</div>
+				<div id="collapse7" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Form classes</li>
+							<li>Validation</li>
+							<li>Authentication</li>
+							<li>Built in fields and widgets</li>
+							<li>Forms for models</li>
+							<li>Custom Validation Rules</li>
+							<li>Creating forms from models</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading8">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="8.Template Engine">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse8">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							8.Template Engine
+						</a>
+					</h4>
+				</div>
+				<div id="collapse8" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Using the template system</li>
+							<li>Template, Context, Variables, Template Tags and Filters</li>
+							<li>HTML escaping</li>
+							<li>Using templates in views</li>
+							<li>Template Inheritance</li>
+							<li>Template Loaders</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading9">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="9.Extending the Template System">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse9">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							9.Extending the Template System
+						</a>
+					</h4>
+				</div>
+				<div id="collapse9" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Creating a template library</li>
+							<li>Writing custom template filters</li>
+							<li>Writing custom template tags</li>
+							<li>Writing custom template loaders</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div><!-- panel-group -->	
+    </div>
+    <div id="advancedpy" class="tab-pane fade">
+      <h3>Advanced Django Modules</h3>
+		<div class="panel-group" id="advpy" role="tablist" aria-multiselectable="true">
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading10">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="10.Middleware">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse10">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							10.Middleware
+						</a>
+					</h4>
+				</div>
+				<div id="collapse10" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Exception Handling</li>
+							<li>Enabling sessions</li>
+							<li>Configuring session engine</li>
+							<li>Using sessions in views</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading11">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="11.Request and Response Objects">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse11">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							11.Request and Response Objects
+						</a>
+					</h4>
+				</div>
+				<div id="collapse11" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>HttpRequest object</li>
+							<li>UploadedFile object</li>
+							<li>QueryDict object</li>
+							<li>HttpResponse object</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading12">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="12.Parsing XML and JSON with Python">
+						<a data-toggle="collapse" data-parent="#interpy" href="#collapse12">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							12.Parsing XML and JSON with Python
+						</a>
+					</h4>
+				</div>
+				<div id="collapse12" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>XML-RPC</li>
+							<li>XML, parsing object to XML and back</li>
+							<li>JSON, parsing object to JSON and back</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading13">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="13.Admin site">
+						<a data-toggle="collapse" data-parent="#interpy" href="#collapse13">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							13.Admin site
+						</a>
+					</h4>
+				</div>
+				<div id="collapse13" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Activating the admin site</li>
+							<li>Customizing the admin form</li>
+							<li>Adding related objects</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading14">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="14.Authentication">
+						<a data-toggle="collapse" data-parent="#interpy" href="#collapse14">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							14.Authentication
+						</a>
+					</h4>
+				</div>
+				<div id="collapse14" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Authentication Overview: Users, Permissions and Groups</li>
+							<li>User Management</li>
+							<li>How passwords are stored</li>
+							<li>Using authentication in web requests — login, logout and password changes</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading15">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="15.Logging">
+						<a data-toggle="collapse" data-parent="#interpy" href="#collapse15">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							15.Logging
+						</a>
+					</h4>
+				</div>
+				<div id="collapse15" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Loggers, Handlers, Filters and Formatters</li>
+							<li>Using logging in code</li>
+							<li>Configuring logging via settings.py</li>
+							<li>Installing and testing Sentry via Raven</li>
+							<li>Using Sentry in Django Applications</li>
+							<li>Configuring Sentry</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading16">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="16.Django & REST APIs">
+						<a data-toggle="collapse" data-parent="#interpy" href="#collapse16">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							16.Django & REST APIs
+						</a>
+					</h4>
+				</div>
+				<div id="collapse16" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Django REST framework</li>
+							<li>Django-piston</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading17">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="17.Testing">
+						<a data-toggle="collapse" data-parent="#interpy" href="#collapse17">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							17.Testing
+						</a>
+					</h4>
+				</div>
+				<div id="collapse17" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Unit testing using the builtin django test framework</li>
+							<li>Use of fixtures</li>
+							<li>Testing models</li>
+							<li>Testing views</li>
+							<li>Advantages of nose</li>
+							<li>@staticmethod</li>
+							<li>@property </li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading18">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="18.Security">
+						<a data-toggle="collapse" data-parent="#interpy" href="#collapse18">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							18.Security
+						</a>
+					</h4>
+				</div>
+				<div id="collapse18" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+    </div>
+  </div>
+	<input type = "submit" class="btn btn-primary" value= "Submit Choices" style = "">
+	</form>
+</div>
+<script>
+function toggleIcon(e) {
+    $(e.target)
+        .prev('.panel-heading')
+        .find(".more-less")
+        .toggleClass('glyphicon-plus glyphicon-minus');
+}
+$('.panel-group').on('hidden.bs.collapse', toggleIcon);
+$('.panel-group').on('shown.bs.collapse', toggleIcon);
+</script>
+{% endblock %}

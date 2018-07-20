@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+{% extends "index.html" %}
+{% load staticfiles %}
+{% block home %}
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="http://api.html5media.info/1.1.5/html5media.min.js"></script>
+    
+      {% block flash%} {% endblock %}
+    
+    <style type="text/css">
+        body {
+            background: #fff;
+            font-family: verdana;
+            padding-top: 0px;
+            background-color: #027fcf;
+        }
+        #vtab {
+            margin: 10;
+            width: 700px;
+            height: 100%;
+        }
+        #vtab > ul > li {
+            width: 150px;
+            height: 80px;
+            background-color: #fff !important;
+            list-style-type: none;
+            display: block;
+            text-align: center;
+            margin: auto;
+            padding-bottom: 10px;
+            border: 1px solid #fff;
+            position: relative;
+            border-right: none;
+            opacity: .3;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+            filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+        }
+        #vtab > ul > li.home {
+            background: url('http://gktcs.in/GLMS/public/static/images/about1.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.login {
+            background: url('http://gktcs.in/GLMS/public/static/images/demo4.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.support {
+            background: url('http://gktcs.in/GLMS/public/static/images/content.jpg') no-repeat center center;
+        }
+         #vtab > ul > li.support1 {
+            background: url('http://gktcs.in/GLMS/public/static/images/batches.jpg') no-repeat center center;
+        }
+        
+        #vtab > ul > li.support2 {
+            background: url('http://gktcs.in/GLMS/public/static/images/interview.jpg') no-repeat center center;
+        }
+         #vtab > ul > li.support3 {
+            background: url('http://gktcs.in/GLMS/public/static/images/training.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.support4 {
+            background: url('http://gktcs.in/GLMS/public/static/images/FAQ.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.support5 {
+            background: url('http://gktcs.in/GLMS/public/static/images/testi.jpg') no-repeat center center;
+        }
+         #vtab > ul > li.support6 {
+            background: url('http://gktcs.in/GLMS/public/static/images/certification.jpg') no-repeat center center;
+        }
+        
+        
+        #vtab > ul > li.selected {
+            opacity: 1;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+            filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+            border: 1px solid #ddd;
+            border-right: none;
+            z-index: 10;
+            background-color: #fafafa !important;
+            position: relative;
+        }
+        #vtab > ul {
+            float: left;
+            width: 110px;
+            text-align: left;
+            display: block;
+            margin: auto 0;
+            padding: 0;
+            position: relative;
+            top: 30px;
+        }
+        #vtab > div {
+            background-color: #fafafa;
+            margin-left:150px;
+            border: 1px solid #ddd;
+            min-height: 700px;
+            padding: 12px;
+            position: relative;
+            z-index: 9;
+            -moz-border-radius: 20px;
+        }
+        #vtab > div > h4 {
+            color: #800;
+            font-size: 1.2em;
+            border-bottom: 1px dotted #800;
+            padding-top: 5px;
+            margin-top: 0;
+        }
+        #loginForm label {
+            float: left;
+            width: 100px;
+            text-align: right;
+            clear: left;
+            margin-right: 15px;
+        }
+        #loginForm fieldset {
+            border: none;
+        }
+        #loginForm fieldset > div {
+            padding-top: 3px;
+            padding-bottom: 3px;
+        }
+        #loginForm #login {
+            margin-left: 115px;
+        }
+        
+     a {text-decoration: none}
+    </style>
+
+    <script type="text/javascript">
+        $(function() {
+            var $items = $('#vtab>ul>li');
+            $items.mouseover(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('#vtab>div').hide().eq(index).show();
+            }).eq(0).mouseover();
+        });
+    </script>
+
+</head>
+<body>
+
+		<font color="#366D9C" size=6px style="font-family: Georgia; padding-left: 400px"><b>AngularJS </b></font>
+
+	
+	<table width="980" height="700"> 
+		<tr> 
+			<td width='100'>
+		
+    <div id="vtab">
+        <ul>
+            <li class="home selected"></li>
+            <li class="login"></li>
+            <li class="support"></li>
+            <li class="support1"></li>
+            <li class="support2"></li>
+            <li class="support3"></li>
+            <li class="support4"></li>
+            <li class="support5"></li>
+            <li class="support6"></li>
+        </ul>
+        <div>
+        	<h4>About Course</h4>
+        	<br/>
+           <table align="justify">
+           	<tr align="justify">
+           		<td valign="top">
+           			<img src='http://gktcs.in/GLMS/public/static/images/angularjs.jpg' width='100' height="80" />
+           		</td>
+           		<td>
+           			
+<b>Course Duration:</b>45hrs<br/>
+<br/>
+<b>Course Description:</b><br/>
+<br/>
+<b>AngularJS</b> is a structural framework for dynamic web apps. It lets you use HTML as your template language and lets you extend HTML's syntax to express your application's components clearly and succinctly           			
+<br/>
+<br/>
+<b>Who Should Attend:</b>
+<br/>
+<br/>
+This course is intended for experienced HTML developers with some JavaScript and css experience.
+<br/><br/>
+<b>Benefits of Attendance:</b>
+<br/>
+<br/>
+Upon completion of this course, students will get these benefits of AngularJS:<br/>
+<br/>
+<ul>
+<li>AngularJS Gives XAML Developers a Place to Go on the Web</li>
+<li>AngularJS Gets Rid of Ritual and Ceremony</li><br>
+<li>AngularJS Handles Dependencies</li><br>
+<li>AngularJS Allows Developers to Express UI Declaratively and Reduce Side Effects</li><br>
+<li>AngularJS Enables Massively Parallel Development.</li><br>
+<li>AngularJS Gives Developers Controls.</li><br>
+</ul>
+<br/>
+
+<b>Prerequisites:</b><br/>
+<br/>
+Students must be experienced with HTML and have experience with CSS and JavaScript. Prior knowledge of MVC(Model-View-Controller) and DOM (Document-Object-Model) concept.
+           		</td>
+           	</tr>
+           	
+           	
+           </table>
+            
+        </div>     
+         <div>
+         	<h4>Sample Demo</h4>
+         	<br/>
+         	<div>
+   <video src="{% static 'html.mp4' %}" width="500px" height="360px" controls> 
+        </video></div>
+
+</div>
+           <div>
+            <h4>
+              Content </h4>
+              <br/>
+		<h3>AngularJS </h3><br>
+		<li>Angular Intro</li>
+		<li>Angular Expressions</li>
+		<li>Angular Directives</li>
+		<li>Angular Controller</li>
+		<li>Angular Filter</li>
+		<li>Angular http</li>
+		<li>Angular Table</li>
+		<li>Angular SQL</li>
+		<li>Angular DOM</li>
+		<li>Angular Event</li>
+		<li>Angular Module</li>
+		<li>Angular Forms</li>
+		<li>Angular Validations</li>
+		<li>Angular API</li>
+		<li>Angular Bootstrap</li>
+		<li>Angular Includes</li>
+		<li>Angular Applications</li>
+
+        </div>
+           <div>
+        
+ <h4>Upcoming Batches</h4>
+ <br/>
+<div class="pricing_table">
+
+<table width=500px>
+		<tr width=500px ></tr>
+		<b><th width=280 bgcolor="#333333" style="color:#FFFFFF;">Start date</th>
+			
+		<th width=95 bgcolor="#333333" style="color:#FFFFFF;">Duration</th>
+		<th width=700 bgcolor="#333333" style="color:#FFFFFF;">Days</th>
+		<th width=100 bgcolor="#333333" style="color:#FFFFFF;">Time</th>
+		<th width=100 bgcolor="#333333" style="color:#FFFFFF;">Price</th></b>
+		</tr>
+		
+		
+		{% for j in batch %}
+		<tr width=500px>
+			
+<td width=350 bgcolor="#CCCCCC" style="text-align: center"> {{j.Start}}</td>
+<td width=220 bgcolor="#CCCCCC" style="text-align: center">{{j.Duration}}</td>
+<td width=350 bgcolor="#CCCCCC" style="text-align: center">{{j.Days}}</td>
+
+<td width=150 bgcolor="#CCCCCC" style="text-align: center">{{j.Time}}</td>
+<td width=100 bgcolor="#CCCCCC" style="text-align: center">{{j.Price}}/-</td>
+
+		
+		</tr>
+		{% endfor %}
+		
+		
+	</table>	
+
+</div>
+	 <br><br>
+	<br/>
+		
+
+<a href="/Enroll" style="padding-left: 320px; "><img src="http://gktcs.in/GLMS/public/static/images/enroll.png" height=40px width="190px" align="center"/></a>
+        </div>
+        
+           <div align="justify">
+           	<h4>Interview Questions</h4>
+           	<br/>
+           	<br/>
+           	
+           	<b>Question:What is Angular.js?</b><br/>
+			AngularJS is a javascript framework used for creating single web page applications.  It allows you to use HTML as your template language and enables you to extend HTML’s syntax to express your application’s components clearly
+            <br/>
+            <br/>
+            
+            
+            <b>Question: Explain what are the key features of Angular.js ?</b><br/>
+				Ans: The key features of angular.js are:
+				<li>Scope</li><br>
+				<li>Controller</li><br>
+				<li>Model</li><br>
+				<li>View</li><br>
+				<li>Services</li><br>
+				<li>Data Binding</li><br>
+				<li>Directives</li><br>
+				<li>Filters</li><br>
+				<li>Testable</li>
+<br/><br>
+
+<b>Question: Explain what is scope in Angular.js ?</b><br/>
+Ans: Scope refers to the application model, it acts like glue between application controller and the view.  Scopes are arranged in hierarchical structure and impersonate the DOM ( Document Object Model) structure of the application.  It can watch expressions and propagate events.
+<br/>
+<br/>
+<b>Question: Explain what is services in Angular.js ?</b><br/>
+In angular.js services are the singleton objects or functions that are used for carrying out specific tasks.  It holds some business logic and these function can be called as controllers, directive, filters and so on.
+<br/>
+<br/>
+
+<b>Question: Explain what are directives ? Mention some of the most commonly used directives in Angular.js application ? </b><br/>
+ Ans:A directive is something that introduces new syntax, they are like markers on DOM element which attaches a special behavior to it. In any Angular.js application, directives are the most important components.
+<br>
+Some of the commonly used directives are ng-model, ng-App, ng-bind, ng-repeat , ng-show etc.
+ 
+<br/>
+<br/>
+
+<b>Question: Mention what are the advantages of using Angular.js ?</b><br/>
+Ans:
+Angular.js has several advantages in web development.<br><Br>
+
+<li>Angular.js supports MVS pattern</li><br>
+<li>Can do two ways data binding using Angular.js</li><br>
+<li>It has per-defined form validations</li><br>
+<li>It supports both client server communication</li><br>
+<li>It supports animations</li>
+<br/>
+<br/>
+<b>Question: Explain what Angular JS routes does ?</b><br/>
+Ans:Angular js routes enable you to create different URLs for different content in your application.  Different URLs for different content enables user to bookmark URLs to specific content.  Each such bookmarkable URL in Angular.js is called a route
+<br>
+A value in Angular JS is a simple object.  It can be a number, string or JavaScript object.  Values are typically used as configuration injected into factories, services or controllers. A value should be belong to an Angular.js module.
+<br>
+Injecting a value into an Angular.js controller function is done by adding a parameter with the same name as the value
+<br/>
+<br/>
+<b>Question: Explain what is data binding in Angular.js ?</b><br/>
+Ans:Automatic synchronization of data between the model and view components is referred as data binding in Angular.js.  There are two ways for data binding
+<br><br>
+<li>Data mining in classical template systems</li><br>
+<li>Data binding in angular templates</li><br>
+<br/>
+<br/>
+<b>Question:  What makes angular.js better ?</b>?<br/>
+Ans:
+<li><b>Registering Callbacks:</b> There is no need to register callbacks . This makes your code simple and easy to debug.</li><br>
+<li><b>Control HTML DOM programmatically:</b> All the application that are created using Angular never have to manipulate the DOM although it can be done if it is required</li>
+<li><b>Transfer data to and from the UI:</b> Angular.js helps to eliminate almost all of the boiler plate like validating the form, displaying validation errors, returning to an internal model and so on which occurs due to flow of marshalling data</li>
+<li><b>No initilization code:</b> With angular.js you can bootstrap your app easily using services, which auto-injected into your application in Guice like dependency injection style</li>
+<br/>
+<br/>
+
+         	  	
+        </div>
+         <div align="justify">
+         	<h4>
+                Training Mode</h4>
+                <br/>
+   
+         	
+         	<table width=620><tr><td width="400">
+         		<br/>
+         	
+         	<b>Corporate Training :</b><br/>
+         	
+Corporate Training Solutions
+
+Corporate training is the act of grooming the workforce in order to make them capable of handling modern business challenges by improving their approach and productivity and thus, making effective utilization of resources. We at GKTCS work hand in hand with Industry on various fronts. GKTCS’s business cycle is aligned very closely to Industry needs and structured to fulfil the industry needs in terms of Training and Recruitment.
+
+We always believe our customers speak for our services based on their rich experience with our kind of services.
+</td>
+<td align="right">
+	<img src="http://gktcs.in/GLMS/public/static/images/corporate.jpg"  width="200" height="150"/> 
+</td>
+</tr>
+<tr>
+	<td>
+		<br/>
+<b>Retail Training :</b>
+<br/>
+GKTCS Innovations has a set of best trainers who are constantly engaged in spreading technical and non technical knowledge to individual who are seeking an opportunity in their respective industries and would like to straight away face the challenges of the continuously improving and changing world.
+
+The retail Training services provided by GKTCS Innovations are designed as per the needs of corporate and also as per the guidelines provided by them.
+ </td>
+ <td align="right">
+	<img src="http://gktcs.in/GLMS/public/static/images/retail.jpg"  width="200" height="150"/>
+</td>
+ </tr>
+ <tr>    <td>   
+ 	<br/>	
+ <b>Online Training </b>
+ <br/>
+ GKTCS offers Online Training , so you get trained from where you are from our experienced trainers, In the weekdays as well as weekends by the Real Time Professionals. The program is designed to provide rich learning experience for students using Internet.         	
+      </td>   
+      <td align="right">
+      	<img src="http://gktcs.in/GLMS/public/static/images/online.jpg"  width="200" height="150"/>
+      </td>  
+      </tr>	
+    </table>     	
+         	
+         </div>
+		
+
+           <div align="justify">
+           	<h4>
+                FAQs</h4>
+           	
+           	<br/>
+    
+          <b> Is AngularJS a library, framework, plugin or a browser extension?</b><br/>
+AngularJS fits the definition of a framework the best, even though it's much more lightweight than a typical framework and that's why many confuse it with a library.
+<br>
+AngularJS is 100% JavaScript, 100% client-side and compatible with both desktop and mobile browsers. So it's definitely not a plugin or some other native browser extension.
+<br/>
+<br/>
+<b>Is AngularJS a templating system?</b><br/>
+At the highest level, Angular does look like just another templating system. But there is one important reason why the Angular templating system is different, that makes it very good fit for application development: bidirectional data binding. The template is compiled in the browser and the compilation step produces a live view. This means you, the developers, don't need to write code to constantly sync the view with the model and the model with the view as in other templating systems.<br/>
+<br/><br>
+<b>Do I need to worry about security holes in AngularJS?</b><br/>
+Like any other technology, AngularJS is not impervious to attack. Angular does, however, provide built-in protection from basic security holes, including cross-site scripting and HTML injection attacks. AngularJS does round-trip escaping on all strings for you and even offers XSRF protection for server-side communication.
+<br>
+AngularJS was designed to be compatible with other security measures like Content Security Policy (CSP), HTTPS (SSL/TLS) and server-side authentication and authorization that greatly reduce the possible attack vectors and we highly recommend their use.
+<br/>
+<br/>
+<b>Can I download the source, build, and host the AngularJS environment locally?
+</b><br/>
+Yes
+<br/>
+<br/>
+<b>What browsers does Angular work with?</b><br/>
+We run our extensive test suite against the following browsers: Safari, Chrome, Firefox, Opera 15, IE9 and mobile browsers (Android, Chrome Mobile, iOS Safari). See Internet Explorer Compatibility for more details on supporting legacy IE browsers.
+<br/>
+<br/>
+<b>What's Angular's performance like?</b><br/>
+The startup time heavily depends on your network connection, state of the cache, browser used and available hardware, but typically we measure bootstrap time in tens or hundreds of milliseconds.
+<br>
+The runtime performance will vary depending on the number and complexity of bindings on the page as well as the speed of your backend (for apps that fetch data from the backend). For an illustration, we typically build snappy apps with hundreds or thousands of active bindings.
+<br/>
+<br/>
+<b>How big is the angular.js file that I need to include?</b><br/>
+The size of the file is ~50KB compressed and minified.
+<br/>
+<br/>
+<b>Can I use the open-source Closure Library with Angular?</b><br/>
+Yes, you can use widgets from the Closure Library in Angular.
+<br/>
+<br/>
+<b>Does Angular use the jQuery library?</b><br/>
+Yes, Angular can use jQuery if it's present in your app when the application is being bootstrapped. If jQuery is not present in your script path, Angular falls back to its own implementation of the subset of jQuery that we call jQLite.
+<bR>
+Angular 1.3 only supports jQuery 2.1 or above. jQuery 1.7 and newer might work correctly with Angular but we don't guarantee that.
+<br/>
+<br/>
+<b>What is testability like in Angular?</b><br/>
+Very testable and designed this way from the ground up. It has an integrated dependency injection framework, provides mocks for many heavy dependencies (server-side communication). See ngMock for details.
+<br/>
+<br/>
+<b>Who created Angular JS ?</b><br/>
+Intially it was developed by Misko Hevery and Adam Abrons. Currently it is being developed by Google.
+
+<br/>
+<br/> 
+        </div>
+           <div>
+        <h4>Testimonials</h4> 
+           
+        </div>
+   
+        <div align="justify">
+            <h4>
+                Certification</h4>
+                <br/>
+           
+             At the end of the course we provide  Certification.  <br/><br/>
+           <b>Process for Certification :</b>
+          
+  <li>You will receive a real time project Problem Statement along with a dataset to work. </li>
+  <li>After complition of your project(Reviewed by an Expert),you will be awarded a certificate with a performance-based grading. </li>
+ <li>If your project is not completed on time , you can take extra training for any of your doubts to understand the concepts better and re-attempt the Project free of cost.</li>
+<br/>
+GKTCS will help you at every stage of your learning and our 24/7 expert support team will ensure that you don't get stuck. Once you submit the project, our subject matter experts will review the same and share feedback to optimize it, if required.
+        </div>
+        </div>
+    
+    </td>
+    
+    <td valign="top" width="500">
+  		
+    <table valign="top">
+    	<tr valign="top">
+    		<font color="#366D9C" size=5px style="font-family: Georgia; padding-left:25px"><b>Course Features</b></font>  
+    		<td align="left" valign="top" width="500" height="200">
+    		
+ 
+  <br/>
+ <br/>
+ <li>Expert and qualified trainers</li>
+<li>Practical Project Based Approach</li>
+<li>Regular Assessment & feedback</li>
+<li>Total customized as per the client needs</li> 
+<li>Lifetime Access</li> 
+<li>  24 x 7 Support</li> 
+<li>  Get Certified</li>
+ 
+
+    			
+     		</td>
+     	
+    		
+    		
+    	</tr>
+    	
+    	<tr valign="top">
+    		<td height="20" valign="top" align="center">
+    		
+    		
+    		<font color="#366D9C" size=5px style="font-family: Georgia; padding-left:25px"><b>Placed Candidate</b></font>  
+    			<br/>
+    			<marquee direction="up" scrollamount="4" height="300">
+    			<table>
+    				<tr>
+    	   						
+    					<table>
+    						<tr>
+    							<td valign="top" height="30">
+    								
+    								<img src="http://gktcs.in/GLMS/public/static/images/AhilanShankar.jpg" width="100" height="100"/>
+    							</td>
+    							<td>
+    								<b>Alihan shanakar</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/capegemini.png" width="150" height="80"/> 
+    							</td>
+    						</tr>
+    						
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/sounavdas.jpg" width="100" height="100"/>
+    							</td>
+    							<td>
+    								<b>Sonav Das</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150" height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/ShashankVerma.jpg" width="60" height="80"/>
+    							</td>
+    							<td>
+    								<b>Shashank Verma</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/leoinfotech.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/rasika1.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Rasika</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/renuka.jpg" width="100" height="100"/>
+    							</td>
+    							<td>
+    								<b>Renuka Shirbhate</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/inetsoft.jpg" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/Neha.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Neha Kottarwar</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/GauravKotarwar.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Gaurav Kotarwar</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/leoinfotech.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/PrajaktaSakale.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Prajkta Sakale</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    							<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/SohailShaikh.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Sohail Shaikh</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/leoinfotech.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/ApurvaBhat.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Apurva Bhat</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/AshishSoni.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Ashish Soni</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    					
+    					    						
+    						
+    						
+    						
+    					</table>
+    					
+    						
+    						
+    					</td>
+    		
+    		
+    	</tr>
+    </table>
+    
+    </td>
+    
+    
+    </tr>
+	</table>
+	
+</body>
+</html>
+{% endblock %}

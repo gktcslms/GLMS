@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+{% extends "index.html" %}
+{% load staticfiles %}
+{% block home %}
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="http://api.html5media.info/1.1.5/html5media.min.js"></script>
+       {% block flash%} {% endblock %}
+    
+    <style type="text/css">
+        body {
+            background: #fff;
+            font-family: verdana;
+            padding-top: 0px;
+            background-color: #027fcf;
+        }
+        #vtab {
+            margin: 10;
+            width: 700px;
+            height: 100%;
+        }
+        #vtab > ul > li {
+            width: 150px;
+            height: 80px;
+            background-color: #fff !important;
+            list-style-type: none;
+            display: block;
+            text-align: center;
+            margin: auto;
+            padding-bottom: 10px;
+            border: 1px solid #fff;
+            position: relative;
+            border-right: none;
+            opacity: .3;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+            filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+        }
+        #vtab > ul > li.home {
+            background: url('http://gktcs.in/GLMS/public/static/images/about1.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.login {
+            background: url('http://gktcs.in/GLMS/public/static/images/demo4.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.support {
+            background: url('http://gktcs.in/GLMS/public/static/images/content.jpg') no-repeat center center;
+        }
+         #vtab > ul > li.support1 {
+            background: url('http://gktcs.in/GLMS/public/static/images/batches.jpg') no-repeat center center;
+        }
+        
+        #vtab > ul > li.support2 {
+            background: url('http://gktcs.in/GLMS/public/static/images/interview.jpg') no-repeat center center;
+        }
+         #vtab > ul > li.support3 {
+            background: url('http://gktcs.in/GLMS/public/static/images/training.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.support4 {
+            background: url('http://gktcs.in/GLMS/public/static/images/FAQ.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.support5 {
+            background: url('http://gktcs.in/GLMS/public/static/images/testi.jpg') no-repeat center center;
+        }
+         #vtab > ul > li.support6 {
+            background: url('http://gktcs.in/GLMS/public/static/images/certification.jpg') no-repeat center center;
+        }
+        
+        
+        #vtab > ul > li.selected {
+            opacity: 1;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+            filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+            border: 1px solid #ddd;
+            border-right: none;
+            z-index: 10;
+            background-color: #fafafa !important;
+            position: relative;
+        }
+        #vtab > ul {
+            float: left;
+            width: 110px;
+            text-align: left;
+            display: block;
+            margin: auto 0;
+            padding: 0;
+            position: relative;
+            top: 30px;
+        }
+        #vtab > div {
+            background-color: #fafafa;
+            margin-left:150px;
+            border: 1px solid #ddd;
+            min-height: 700px;
+            padding: 12px;
+            position: relative;
+            z-index: 9;
+            -moz-border-radius: 20px;
+        }
+        #vtab > div > h4 {
+            color: #800;
+            font-size: 1.2em;
+            border-bottom: 1px dotted #800;
+            padding-top: 5px;
+            margin-top: 0;
+        }
+        #loginForm label {
+            float: left;
+            width: 100px;
+            text-align: right;
+            clear: left;
+            margin-right: 15px;
+        }
+        #loginForm fieldset {
+            border: none;
+        }
+        #loginForm fieldset > div {
+            padding-top: 3px;
+            padding-bottom: 3px;
+        }
+        #loginForm #login {
+            margin-left: 115px;
+        }
+        
+     a {text-decoration: none}
+    </style>
+
+    <script type="text/javascript">
+        $(function() {
+            var $items = $('#vtab>ul>li');
+            $items.mouseover(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('#vtab>div').hide().eq(index).show();
+            }).eq(0).mouseover();
+        });
+    </script>
+
+</head>
+<body>
+
+					<font color="#366D9C" size=6px style="font-family: Georgia; padding-left: 350px"><b>MVC Framework</b></font>
+
+	
+	<table width="980" height="700"> 
+		<tr> 
+			<td width='100'>
+		
+    <div id="vtab">
+        <ul>
+            <li class="home selected"></li>
+            <li class="login"></li>
+            <li class="support"></li>
+            <li class="support1"></li>
+            <li class="support2"></li>
+            <li class="support3"></li>
+            <li class="support4"></li>
+            <li class="support5"></li>
+            <li class="support6"></li>
+        </ul>
+        <div>
+        	<h4>About Course</h4>
+        	<br/>
+           <table align="justify">
+           	<tr align="justify">
+           		<td valign="top">
+           		<img src='http://gktcs.in/GLMS/public/static/images/mvs.jpg' width='90' height="60" />
+           		</td>
+           		<td>
+           			
+<b>Course Duration:</b>45hrs<br/>
+<br/>
+<b>Course Description:</b><br/>
+<br/>
+					<b>ASP.NET MVC</b> is an open source web application framework that implements the model–view–controller (MVC) pattern. In the latter versions of ASP.NET, ASP.NET MVC, ASP.NET Web API, and ASP.NET, Web Pages (a platform using only Razor pages) will merge into a unified MVC 6.
+<br/>
+<b>Who Should Attend:</b>
+<br/>
+<br/>
+This course is intended for those  who is familier with Asp.Net and C#.
+<br/><br/>
+<b>Benefits of Attendance:</b>
+<br/>
+<br/>
+Upon completion of this course, students will get following advantages of ASP .NET:<br/>
+<br/>
+<ul>
+<li> It is compiled to an intermediate language (CIL) indepently of the language it was developed or the target architecture and operating system</li><br/>
+<li>Automatic garbage collection</li><br/>
+<li>Pointers no longer needed (but optional)</li><br/>
+<li>Definition of classes and functions can be done in any order</li>
+<br/>
+</ul>
+
+<b>Prerequisites:</b><br/>
+<br/>
+The student should know about the basic concepts of Web Development and Should have knowledge of HTML, CSS, Javascript and Asp.Net very well.</td>
+           	</tr>
+           	
+           	
+           </table>
+            
+        </div>     
+         <div>
+         	<h4>Sample Demo</h4>
+         	<br/>
+         	<div>
+   <video id="abc" width="500px" height="360px" autoplay controls > <source src="{% static 'C:/GLMS/static/abc.mp4' %}" type="video/mp4"> </source>
+     
+        </video></div>
+
+</div>
+           <div>
+            <h4>
+              Content </h4>
+              <br/>
+              
+<li>	Getting Started with ASP.NET MVC</li><br>
+<li>Creating a Complete ASP.NET MVC Application</li><br>
+<li>Using the Razor View Engine</li><br>
+<li>	Implementing Navigation in MVC web Apps</li><br>
+<li>MVC State Management</li><br>
+<li>Using AJAX and JQuery with ASP.NET MVC</li><br>
+<li>ASP.NET MVC and LINQ – working with Data</li><br>
+<li>ASP.NET Web API with MVC</li><br>
+
+
+
+
+        </div>
+        
+           <div>
+        
+ <h4>Upcoming Batches</h4>
+ <br/>
+<div class="pricing_table">
+
+<table width=500px>
+		<tr width=500px ></tr>
+		<b><th width=280 bgcolor="#333333" style="color:#FFFFFF;">Start date</th>
+			
+		<th width=95 bgcolor="#333333" style="color:#FFFFFF;">Duration</th>
+		<th width=700 bgcolor="#333333" style="color:#FFFFFF;">Days</th>
+		<th width=100 bgcolor="#333333" style="color:#FFFFFF;">Time</th>
+		<th width=100 bgcolor="#333333" style="color:#FFFFFF;">Price</th></b>
+		</tr>
+		
+		
+		{% for j in batch %}
+		<tr width=500px>
+			
+<td width=350 bgcolor="#CCCCCC" style="text-align: center"> {{j.Start}}</td>
+<td width=220 bgcolor="#CCCCCC" style="text-align: center">{{j.Duration}}</td>
+<td width=350 bgcolor="#CCCCCC" style="text-align: center">{{j.Days}}</td>
+
+<td width=150 bgcolor="#CCCCCC" style="text-align: center">{{j.Time}}</td>
+<td width=100 bgcolor="#CCCCCC" style="text-align: center">{{j.Price}}/-</td>
+
+		
+		</tr>
+		{% endfor %}
+		
+		
+	</table>	
+
+</div>
+	 <br><br>
+	<br/>
+		
+
+<a href="/Enroll" style="padding-left: 320px; "><img src="http://gktcs.in/GLMS/public/static/images/enroll.png" height=40px width="190px" align="center"/></a>
+        </div>
+        
+           <div align="justify">
+           	<h4>Interview Questions</h4>
+           	<br/>
+           	<br/>
+           	
+           	<b>Question: What is MVC (Model View Controller)?</b><br/>
+Ans. MVC is an architectural pattern which separates the representation and user interaction. It’s divided into three broader sections, Model, View, and Controller. Below is how each one of them handles the task.
+<br><bR>
+<li>The View is responsible for the look and feel.</li><br>
+<li>Model represents the real world object and provides data to the View.</li><br>
+<li>The Controller is responsible for taking the end user request and loading the appropriate Model and View.</li>
+<br><BR>
+         
+            <b>Question: Is MVC suitable for both Windows and Web applications? </b><br/>
+Ans.  
+The MVC architecture is suited for a web application than Windows. For Window applications, MVP, i.e., “Model View Presenter” is more applicable. If you are using WPF and Silverlight, MVVM is more suitable due to bindings.
+<br><br>
+
+<b>Question:  What are the benefits of using MVC?
+</b><br/>
+Ans.   
+There are two big benefits of MVC:
+<br><Br>
+<li>Separation of concerns is achieved as we are moving the code-behind to a separate class file. By moving the binding code to a separate class file we can reuse the code to a great extent.</li><bR>
+<li>Automated UI testing is possible because now the behind code (UI interaction code) has moved to a simple .NET class. This gives us opportunity to write unit tests and automate manual testing.</li><bR>
+<br/>
+
+<b>Question: What is the latest version of MVC?
+</b><br/>
+Ans. 
+MVC 6 is the latest version which is also termed as ASP VNEXT.
+<br><Br>
+<b>Question:  Where is the route mapping code written?
+</b><br>
+Ans. The route mapping code is written in "RouteConfig.cs" file and registered using "global.asax" application start event.
+<br>
+<bR>
+<b>Question:  Can we map multiple URL’s to the same action?
+</b><br/>
+Ans.
+Yes, you can, you just need to make two entries with different key names and specify the same controller and action.
+<br><Br>
+<b>Question: Explain attribute based routing in MVC?
+</b><br/>
+Ans. This is a feature introduced in MVC 5. By using the "Route" attribute we can define the URL structure. For example in the below code we have decorated the "GotoAbout" action with the route attribute. The route attribute says that the "GotoAbout" can be invoked using the URL structure "Users/about".
+<br><Br>
+
+<b>Question: What is the advantage of defining route structures in the code?
+</b><br/>
+Ans. 
+Most of the time developers code in the action methods. Developers can see the URL structure right upfront rather than going to the “routeconfig.cs” and see the lengthy codes. For instance in the below code the developer can see right upfront that the “GotoAbout” action can be invoked by four different URL structure.
+<bR><br>
+This is much user friendly as compared to scrolling through the “routeconfig.cs” file and going through the length line of code to figure out which URL structure is mapped to which action.
+<br><br>
+<b>Question: How can we maintain sessions in MVC?
+</b><bR>
+Ans.
+Sessions can be maintained in MVC by three ways: tempdata, viewdata, and viewbag.
+<br><br>
+
+<b>Question:  What is difference between TempData and ViewData ?
+</b><br>  	
+Ans. 
+“TempData” maintains data for the complete request while “ViewData” maintains data only from Controller to the view.
+
+<bR>
+	
+        </div>
+         <div align="justify">
+         	<h4>
+                Training Mode</h4>
+                <br/>
+   
+         	
+         	<table width=620><tr align="justify">
+         		<td width="330" align="justify">
+         		<br/>
+         	
+         	<b>Corporate Training :</b><br/>
+         	
+Corporate Training Solutions
+
+Corporate training is the act of grooming the workforce in order to make them capable of handling modern business challenges by improving their approach and productivity and thus, making effective utilization of resources. We at GKTCS work hand in hand with Industry on various fronts. GKTCS’s business cycle is aligned very closely to Industry needs and structured to fulfil the industry needs in terms of Training and Recruitment.
+
+We always believe our customers speak for our services based on their rich experience with our kind of services.
+</td>
+<td align="right">
+	<img src="http://gktcs.in/GLMS/public/static/images/corporate.jpg"  width="200" height="150"/> 
+</td>
+</tr>
+<tr>
+	<td>
+		<br/>
+<b>Retail Training :</b>
+<br/>
+GKTCS Innovations has a set of best trainers who are constantly engaged in spreading technical and non technical knowledge to individual who are seeking an opportunity in their respective industries and would like to straight away face the challenges of the continuously improving and changing world.
+
+The retail Training services provided by GKTCS Innovations are designed as per the needs of corporate and also as per the guidelines provided by them.
+ </td>
+ <td align="right">
+	<img src="http://gktcs.in/GLMS/public/static/images/retail.jpg"  width="200" height="150"/>
+</td>
+ </tr>
+ <tr>    <td>   
+ 	<br/>	
+ <b>Online Training </b>
+ <br/>
+ GKTCS offers Online Training , so you get trained from where you are from our experienced trainers, In the weekdays as well as weekends by the Real Time Professionals. The program is designed to provide rich learning experience for students using Internet.         	
+      </td>   
+      <td align="right">
+      	<img src="http://gktcs.in/GLMS/public/static/images/online.jpg"  width="200" height="150"/>
+      </td>  
+      </tr>	
+    </table>     	
+         	
+         </div>
+		
+
+           <div align="justify">
+           	<h4>
+                FAQs</h4>
+           	
+           	<br/>
+    
+          <b>Does “TempData” preserve data in the next request also?</b><br/>
+
+“TempData” is available through out for the current request and in the subsequent request it’s available depending on whether “TempData” is read or not.
+<br><Br>
+So if “TempData” is once read it will not be available in the subsequent request.<br><BR>
+<b>What is the use of Keep and Peek in “TempData”?
+</b>
+<br><BR>
+Once “TempData” is read in the current request it’s not available in the subsequent request. If we want “TempData” to be read and also available in the subsequent request then after reading we need to call “Keep” method as shown in the code below.
+<br><Br>
+	
+<b>What are partial views in MVC?
+</b><br/>
+Partial view is a reusable view (like a user control) which can be embedded inside other view. For example let’s say all your pages of your site have a standard structure with left menu, header, and footer.
+<br><Br>
+For every page you would like to reuse the left menu, header, and footer controls. So you can go and create partial views for each of these items and then you call that partial view in the main view.
+<br><br>
+
+<b>How can we do validations in MVC?
+</b><br/>
+One of the easiest ways of doing validation in MVC is by using data annotations. Data annotations are nothing but attributes which can be applied on model properties. For example, in the below code snippet we have a simple Customer class with a property customercode.
+<br><Br>
+This CustomerCode property is tagged with a Required data annotation attribute. In other words if this model is not provided customer code, it will not accept it.
+<br><Br>
+	
+<b>What is the difference between ActionResult and ViewResult?
+</b><br/>
+ActionResult is an abstract class while ViewResult derives from the ActionResult class. ActionResult has several derived classes like ViewResult, JsonResult, FileStreamResult, and so on.
+<br><bR>
+ActionResult can be used to exploit polymorphism and dynamism. So if you are returning different types of views dynamically, ActionResult is the best thing. For example in the below code snippet, you can see we have a simple action called DynamicView. Depending on the flag (IsHtmlView) it will either return a ViewResult or JsonResult.
+<br><BR>
+<b>What are the different types of action filters?
+</b><br/>
+<li>Authorization filters</li><br>
+<li>Action filters</li><br>
+<li>Result filters</li><br>
+<li>Exception filters</li>
+<br><Br>
+<b>If we have multiple filters, what’s the sequence for execution?
+</b><br/>
+<li>Authorization filters</li><bR>
+<li>Action filters</li><bR>
+<li>Response filters</li><bR>
+<li>Exception filters</li>
+<br><Br>
+
+<b>Can we create our custom view engine using MVC?
+</b><br/>
+Yes, we can create our own custom view engine in MVC. To create our own custom view engine we need to follow three steps:
+<br><Br>
+Let’ say we want to create a custom view engine where in the user can type a command like <pre>“<DateTime>”</pre> and it should display the current date and time.
+<br><Br>
+<li>Step 1: We need to create a class which implements the IView interface. In this class we should write the logic of how the view will be rendered in the render function.<br>
+
+<li>Step 2: We need to create a class which inherits from VirtualPathProviderViewEngine and in this class we need to provide the folder path and the extension of the view name. For instance, for Razor the extension is “cshtml”; for aspx, the view extension is “.aspx”, so in the same way for our custom view, we need to provide an extension. Below is how the code looks like. You can see the ViewLocationFormats is set to the Views folder and the extension is “.myview”.</li><br>
+
+<li>Step 3: We need to register the view in the custom view collection. The best place to register the custom view engine in the ViewEngines collection is the global.asax file.</li><br> 
+
+<br><Br>
+
+<b>
+What is WebAPI?
+</b><bR>
+HTTP is the most used protocol. For the past many years, browser was the most preferred client by which we consumed data exposed over HTTP. But as years passed by, client variety started spreading out. We had demand to consume data on HTTP from clients like mobile, JavaScript, Windows applications, etc.
+<br><br>
+For satisfying the broad range of clients REST was the proposed approach. You can read more about REST from the WCF chapter.
+<Br><br>
+WebAPI is the technology by which you can expose data over HTTP following REST principles.
+<br><br>
+<b> With WCF you can implement REST, so why WebAPI?
+</b>	<br>
+WCF was brought into implement SOA, the intention was never to implement REST. WebAPI is built from scratch and the only goal is to create HTTP services using REST. Due to the one point focus for creating REST service, WebAPI is more preferred.
+</div>
+           <div>
+        <h4>Testimonials</h4> 
+           
+        </div>
+   
+        <div align="justify">
+            <h4>
+                Certification</h4>
+                <br/>
+           
+             At the end of the course we provide  Certification.  <br/><br/>
+           <b>Process for Certification :</b>
+          
+  <li>You will receive a real time project Problem Statement along with a dataset to work. </li>
+  <li>After complition of your project(Reviewed by an Expert),you will be awarded a certificate with a performance-based grading. </li>
+ <li>If your project is not completed on time , you can take extra training for any of your doubts to understand the concepts better and re-attempt the Project free of cost.</li>
+<br/>
+GKTCS will help you at every stage of your learning and our 24/7 expert support team will ensure that you don't get stuck. Once you submit the project, our subject matter experts will review the same and share feedback to optimize it, if required.
+        </div>
+        </div>
+    
+    </td>
+    
+    <td valign="top" width="500">
+  		
+    <table valign="top">
+    	<tr valign="top">
+    		<font color="#366D9C" size=5px style="font-family: Georgia; padding-left:25px"><b>Course Features</b></font>  
+    		<td align="left" valign="top" width="500" height="200">
+    		
+ 
+  <br/>
+ <br/>
+ <li>Expert and qualified trainers</li>
+<li>Practical Project Based Approach</li>
+<li>Regular Assessment & feedback</li>
+<li>Total customized as per the client needs</li> 
+<li>Lifetime Access</li> 
+<li>  24 x 7 Support</li> 
+<li>  Get Certified</li>
+ 
+
+    			
+     		</td>
+     	
+    		
+    		
+    	</tr>
+    	
+    	<tr valign="top">
+    		<td height="20" valign="top" align="center">
+    		
+    		
+    		<font color="#366D9C" size=5px style="font-family: Georgia; padding-left:25px"><b>Placed Candidate</b></font>  
+    			<br/>
+    			<marquee direction="up" scrollamount="4" height="300">
+    			<table>
+    				<tr>
+    	   						
+    					<table>
+    						<tr>
+    							<td valign="top" height="30">
+    								
+    								<img src="http://gktcs.in/GLMS/public/static/images/AhilanShankar.jpg" width="100" height="100"/>
+    							</td>
+    							<td>
+    								<b>Alihan Shanakar</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/capegemini.png" width="150" height="80"/> 
+    							</td>
+    						</tr>
+    						
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/sounavdas.jpg" width="100" height="100"/>
+    							</td>
+    							<td>
+    								<b>Sonav Das</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150" height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/ShashankVerma.jpg" width="60" height="80"/>
+    							</td>
+    							<td>
+    								<b>Shashank Verma</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/leoinfotech.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/rasika1.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Rasika</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/renuka.jpg" width="100" height="100"/>
+    							</td>
+    							<td>
+    								<b>Renuka Shirbhate</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/inetsoft.jpg" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/Neha.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Neha Kottarwar</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/Gaurav Kotarwar.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Gaurav Kotarwar</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/leoinfotech.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="/static/images/Prajakta Sakale.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Prajkta Sakale</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    							<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/SohailShaikh.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Sohail Shaikh</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/leoinfotech.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/ApurvaBhat.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Apurva Bhat</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/Ashish Soni.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Ashish Soni</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    					
+    					    						
+    						
+    						
+    						
+    					</table>
+    					
+    						
+    						
+    					</td>
+    		
+    		
+    	</tr>
+    </table>
+    
+    </td>
+    
+    
+    </tr>
+	</table>
+	
+</body>
+</html>
+{% endblock %}

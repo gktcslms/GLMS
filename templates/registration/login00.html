@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block head %}
+<style>
+label[for='id_username']:{
+	content:'Email ID' !important
+}
+
+label[for="share_me"]:before{content:'Post this question to my friends on '}
+
+label{color:white}
+
+.help-block {color: #f1a695 !important}
+
+.has-error .control-label {color: #f1a695 !important}
+</style>
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+<div class="row well"  style="margin-left: 3px; margin-right: 3px;border-radius:20px;" >
+<div class="col-md-4 col-md-offset-4"style="background:#42628b;padding-left: 0px;padding-right: 0px;border-radius: 10px;">
+<div class="heading" style="text-align:center; background-color:#00A4CB; color:#fff;font-size: 20px; position:relative; width:100%;padding:5px 0px;border-radius: 10px 10px 0px 0px;"><span>LOGIN</span></div>
+<br/>
+<div class="addinstructor form_decoration no-ripple" style="padding-left: 15px;padding-right: 15px;">
+<form enctype="multipart/form-data" method="post"> {% csrf_token %}
+{{ form|crispy }}
+			<p class="p-container">
+				<input class="btn btn-info pull-right" type="submit" value="Login">
+			    <span><a style="border-radius:10px" class="btn btn-success" href="{% url 'auth_password_reset' %}">Forgot password? </a> </span>
+				<span><a style="border-radius:10px" class="btn btn-success" href="/register/">Sign Up </a> </span>
+			 </p>
+			<input type="hidden" class="btn btn-info" name="next" value="{{ next }}" /><br/>
+</form>
+</div>
+</div>
+</div>
+</div>
+
+{% endblock %}
+{% block lower %}
+<script type="text/javascript">
+$(document).ready(function()
+{
+$("label[for*='id_username']").html("Email ID*");
+});
+
+</script>
+{% endblock %}

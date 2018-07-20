@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+{% extends "index.html" %}
+{% load staticfiles %}
+{% block home %}
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="http://api.html5media.info/1.1.5/html5media.min.js"></script>
+	{% block flash%} {% endblock %}
+    
+    <style type="text/css">
+        body {
+            background: #fff;
+            font-family: verdana;
+            padding-top: 0px;
+            background-color: #027fcf;
+        }
+        #vtab {
+            margin: 10;
+            width: 700px;
+            height: 100%;
+        }
+        #vtab > ul > li {
+            width: 150px;
+            height: 80px;
+            background-color: #fff !important;
+            list-style-type: none;
+            display: block;
+            text-align: center;
+            margin: auto;
+            padding-bottom: 10px;
+            border: 1px solid #fff;
+            position: relative;
+            border-right: none;
+            opacity: .3;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+            filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+        }
+        #vtab > ul > li.home {
+            background: url('http://gktcs.in/GLMS/public/static/images/about1.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.login {
+            background: url('http://gktcs.in/GLMS/public/static/images/demo4.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.support {
+            background: url('http://gktcs.in/GLMS/public/static/images/content.jpg') no-repeat center center;
+        }
+         #vtab > ul > li.support1 {
+            background: url('http://gktcs.in/GLMS/public/static/images/batches.jpg') no-repeat center center;
+        }
+        
+        #vtab > ul > li.support2 {
+            background: url('http://gktcs.in/GLMS/public/static/images/interview.jpg') no-repeat center center;
+        }
+         #vtab > ul > li.support3 {
+            background: url('http://gktcs.in/GLMS/public/static/images/training.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.support4 {
+            background: url('http://gktcs.in/GLMS/public/static/images/FAQ.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.support5 {
+            background: url('http://gktcs.in/GLMS/public/static/images/testi.jpg') no-repeat center center;
+        }
+         #vtab > ul > li.support6 {
+            background: url('http://gktcs.in/GLMS/public/static/images/certification.jpg') no-repeat center center;
+        }
+        
+        
+        #vtab > ul > li.selected {
+            opacity: 1;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+            filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+            border: 1px solid #ddd;
+            border-right: none;
+            z-index: 10;
+            background-color: #fafafa !important;
+            position: relative;
+        }
+        #vtab > ul {
+            float: left;
+            width: 110px;
+            text-align: left;
+            display: block;
+            margin: auto 0;
+            padding: 0;
+            position: relative;
+            top: 30px;
+        }
+        #vtab > div {
+            background-color: #fafafa;
+            margin-left:150px;
+            border: 1px solid #ddd;
+            min-height: 700px;
+            padding: 12px;
+            position: relative;
+            z-index: 9;
+            -moz-border-radius: 20px;
+        }
+        #vtab > div > h4 {
+            color: #800;
+            font-size: 1.2em;
+            border-bottom: 1px dotted #800;
+            padding-top: 5px;
+            margin-top: 0;
+        }
+        #loginForm label {
+            float: left;
+            width: 100px;
+            text-align: right;
+            clear: left;
+            margin-right: 15px;
+        }
+        #loginForm fieldset {
+            border: none;
+        }
+        #loginForm fieldset > div {
+            padding-top: 3px;
+            padding-bottom: 3px;
+        }
+        #loginForm #login {
+            margin-left: 115px;
+        }
+        
+     a {text-decoration: none}
+    </style>
+
+    <script type="text/javascript">
+        $(function() {
+            var $items = $('#vtab>ul>li');
+            $items.mouseover(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('#vtab>div').hide().eq(index).show();
+            }).eq(0).mouseover();
+        });
+    </script>
+
+</head>
+<body>
+
+		<font color="#366D9C" size=6px style="font-family: Georgia; padding-left: 400px"><b>JavaScript </b></font>
+	
+	<table width="980" height="700"> 
+		<tr> 
+			<td width='100'>
+		
+    <div id="vtab">
+        <ul>
+            <li class="home selected"></li>
+            <li class="login"></li>
+            <li class="support"></li>
+            <li class="support1"></li>
+            <li class="support2"></li>
+            <li class="support3"></li>
+            <li class="support4"></li>
+            <li class="support5"></li>
+            <li class="support6"></li>
+        </ul>
+        <div>
+        	<h4>About Course</h4>
+        	<br/>
+           <table align="justify">
+           	<tr align="justify">
+           		<td valign="top">
+           			<img src='http://gktcs.in/GLMS/public/static/images/JavaScript.png' width='100' height="80" />
+           		</td>
+           		<td>
+           			
+<b>Course Duration:</b>45hrs<br/>
+<br/>
+<b>Course Description:</b><br/>
+<br/>
+JavaScript is an object-oriented computer programming language commonly used to create interactive effects within web browsers.<br><br>
+It runs on your visitor's computer and doesn't require constant downloads from your website. JavaScript is often used to create polls and quizzes.
+<br/>
+<br/>
+<b>Who Should Attend:</b>
+<br/>
+<br/>
+This course is intended for those who are interested in developing web applications as well as having little bit knowledge of html. 
+<br/><br/>
+<b>Benefits of Attendance:</b>
+<br/>
+<br/>
+Upon completion of this course, students will be able to:<br/>
+<br/>
+<ul>
+<li>basic knowledge of javascript and how to apply it.</li><br/>
+<li>Understand the major benefits of javascript.</li><br/>
+<li>understands the extended functionality to the end user.</li><br/>
+<li>understands the real execution of javascript pages.</li><br/>
+</ul>
+<br/>
+<br/>
+<b>Prerequisites:</b><br/>
+<br/>
+Students must be experienced with HTML and have experience with CSS and Prior knowledge of JSON, DOM, and Ajax is helpful, but not required.
+           		</td>
+           	</tr>
+           	
+           	
+           </table>
+            
+        </div>     
+         <div>
+         	<h4>Sample Demo</h4>
+         	<br/>
+               	<div>
+   <video id="abc" width="500px" height="360px" autoplay controls > <source src="{% static 'C:/GLMS/static/abc.mp4' %}" type="video/mp4"> </source>
+     
+        </video></div>   
+        
+        
+   
+</div>
+           <div>
+            <h4>
+              Content </h4>
+              <br/>
+<h3> JavaSCript</h3><br/>
+	
+<li>JS Introduction</li>
+<li>JS output</li>
+<li>JS Syntax</li>
+<li>JS Statement</li>
+<li>JS comments</li>
+<li>JS Variable</li>
+<li>JS Operator</li>
+<li>JS arithmetic</li>
+<li>JS Data Types</li>
+<li>JS Function</li>
+<li>JS Object</li>
+<li>JS Scope </li>
+<li>JS Events</li>
+
+<li>JS Strings</li>
+<li>JS Stirng methods</li>
+<li>JS Number</li>
+<li>JS Number Methods</li>
+<li>JS Math</li>
+<li>JS Date</li>
+<li>JS Date Format</li>
+<li>JS Date Methods</li>
+<li>JS Array</li>
+<li>JS Array Methods</li>
+<li>JS Boolean</li>
+<li>JS Comparison</li>
+<li>JS Conditions</li>
+<li>JS Switch</li>
+<li>JS Loop for</li>
+<li>JS Loop While</li>
+<li>JS Break</li>
+<li>JS Type Conversion</li>
+<li>JS RegExp</li>
+<li>JS Errors</li>
+<li>JS Debuging</li>
+<li>JS hoisting</li>
+<li>JS Strict Mode </li>
+<li>JS Style Guide</li>
+
+<br/>
+
+<h3>JS Forms</h3><br/>
+
+<li>Form Validation</li>
+<li>Form API</li>
+<br/>
+
+<h3>JS Objects</h3>
+<br/>
+<li>Object definiton</li>
+<li>Object Properties</li>
+<li>Object Methods</li>
+<li>Object Prototype</li>
+
+<br/>
+<h3>JS Functions</h3>
+<br/>
+<li>Function Definition</li>
+<li>Function Parameters</li>
+<li>Function Invocation</li>
+<li>Function Closure</li>
+
+<br/>
+
+<h3>JS HTML DOM</h3><br/>
+<li>DOM INTRO</li>
+<li>DOM Method</li>
+<li>DOM Document</li>
+<li>DOM Element</li>
+<li>DOM HTML</li>
+<li>DOM CSS</li>
+<li>DOM Event</li>
+<li>DOM Event Listener</li>
+<li>DOM Navigation</li>
+<li>DOM Node</li>
+<li>DOM Nodelist</li>
+<br>
+<h3>JS Browser BOM</h3><br/>
+<li>JS Window</li>
+<li>JS Screen</li>
+<li>JS Location</li>
+<li>JS History</li>
+<li>JS Navigator</li>
+<li>JS Popup Alert</li>
+<li>JS Timing</li>
+<li>JS Cookies</li>
+<br>
+<h3>JS Libraries</h3><br>
+<li>JS Library</li>
+<li>JS JQuery</li>
+<li>JS Prototype</li>
+
+        </div>
+        
+        
+        
+        
+           <div>
+        
+ <h4>Upcoming Batches</h4>
+ <br/>
+
+<div class="pricing_table">
+
+<table width=500px>
+		<tr width=500px ></tr>
+		<b><th width=280 bgcolor="#333333" style="color:#FFFFFF;">Start date</th>
+			
+		<th width=95 bgcolor="#333333" style="color:#FFFFFF;">Duration</th>
+		<th width=700 bgcolor="#333333" style="color:#FFFFFF;">Days</th>
+		<th width=100 bgcolor="#333333" style="color:#FFFFFF;">Time</th>
+		<th width=100 bgcolor="#333333" style="color:#FFFFFF;">Price</th></b>
+		</tr>
+		
+		
+		{% for j in batch %}
+		<tr width=500px>
+			
+<td width=350 bgcolor="#CCCCCC" style="text-align: center"> {{j.Start}}</td>
+<td width=220 bgcolor="#CCCCCC" style="text-align: center">{{j.Duration}}</td>
+<td width=350 bgcolor="#CCCCCC" style="text-align: center">{{j.Days}}</td>
+
+<td width=150 bgcolor="#CCCCCC" style="text-align: center">{{j.Time}}</td>
+<td width=100 bgcolor="#CCCCCC" style="text-align: center">{{j.Price}}/-</td>
+
+		
+		</tr>
+		{% endfor %}
+		
+		
+	</table>	
+
+</div>
+	 <br><br>
+	<br/>
+		
+
+<a href="/Enroll" style="padding-left: 320px; "><img src="http://gktcs.in/GLMS/public/static/images/enroll.png" height=40px width="190px" align="center"/></a>
+        </div>
+        
+           <div align="justify">
+           	<h4>Interview Questions</h4>
+           	<br/>
+           	<br/>
+           	
+           	<b>Question:What is JavaScript?</b><br/>
+           	
+           	Ans. JavaScript is a client-side scripting language that can be inserted into HTML pages and is understood by web browsers.
+
+            <br/>
+            <br/>
+            
+            
+            <b>Question:  Enumerate the differences between Java and JavaScript?</b><br/>
+Ans: Java is a complete programming language. In contrast, JavaScript is a coded program that can be introduced to HTML pages. These two languages are not at all inter-dependent and are designed for the different intent.  Java is an object – oriented programming (OOPS) or structured programming language like C++ or C whereas JavaScript is a client-side scripting language and it is said to be unstructured programming.
+<br/>
+<br/>
+
+<b>What are JavaScript types?</b><br/>
+Ans: Following are the JavaScript types:<br>
+<li>Number</li>
+<li>String</li>
+<li>Boolean</li>
+<li>Function</li>
+<li>Object</li>
+<li>Null</li>
+<li>Undefined</li>
+<br><br>
+
+<b>Question: What is the use of isNaN function?</b><br/>
+Ans: isNan function returns true if the argument is not a number otherwise it is false.
+
+<b>Question: Between JavaScript and an ASP script, which is faster?</b><br/>
+ Ans:JavaScript is faster. JavaScript is a client-side language and thus it does not need the assistance of the web server to execute. On the other hand, ASP is a server-side language and hence is always slower than JavaScript.
+<br/>
+<br/>
+
+<b>Question: What is a prompt box?</b><br/>
+Ans:A prompt box is a box which allows the user to enter input by providing a text box.  Label and box will be provided to enter the text or number.
+<br><br>
+
+<b>Question: What is ‘this’ keyword in JavaScript?</b><br/>
+Ans:‘This’ keyword is used to point at the current object in the code. For instance: If the code is presently at an object created by the help of the ‘new’ keyword, then ‘this’ keyword will point to the object being created.
+<br/>
+<br>
+<b>Question:  Explain the working of timers in JavaScript? Also elucidate the drawbacks of using the timer, if any?</b><br/>
+Ans:Timers are used to execute a piece of code at a set time or also to repeat the code in a given interval of time. This is done by using the functions setTimeout, setInterval and clearInterval.<br>
+The setTimeout(function, delay) function is used to start a timer that calls a particular function after the mentioned delay. The setInterval(function, delay) function is used to repeatedly execute the given function in the mentioned delay and only halts when cancelled. The clearInterval(id) function instructs the timer to stop.<br>
+Timers are operated within a single thread, and thus events might queue up, waiting to be executed.
+<br/>
+<br/>
+<b>Question: What is the difference between ViewState and SessionState?</b>?<br/>
+Ans:ViewState’ is specific to a page in a session.
+<br>
+‘SessionState’ is specific to user specific data that can be accessed across all pages in the web application.
+<br/>
+<br/>
+<b>Question:  Explain how can you submit a form using JavaScript?</b><br/>
+Ans: To submit a form using JavaScript use document.form[0].submit();<br><br>
+document.form[0].submit();
+<br/>
+<br>
+<b>Question: Does JavaScript support automatic type conversion?</b><br/>
+Ans:
+Yes JavaScript does support automatic type conversion, it is the common way of type conversion used by JavaScript developers
+<br/>
+<br/>
+<b>Question: Explain how to read and write a file using JavaScript?</b><br/>
+Ans:There are two ways to read and write a file using JavaScript:
+<li>Using JavaScript extensions</li>
+<li>Using a web page and Active X objects</li>
+<br/>
+<br/>       	  	
+        </div>
+         <div align="justify">
+         	<h4>
+                Training Mode</h4>
+                <br/>
+   
+         	
+         	<table width=620><tr><td width="330">
+         		<br/>
+         	
+         	<b>Corporate Training :</b><br/>
+         	
+Corporate Training Solutions
+
+Corporate training is the act of grooming the workforce in order to make them capable of handling modern business challenges by improving their approach and productivity and thus, making effective utilization of resources. We at GKTCS work hand in hand with Industry on various fronts. GKTCS’s business cycle is aligned very closely to Industry needs and structured to fulfil the industry needs in terms of Training and Recruitment.
+
+We always believe our customers speak for our services based on their rich experience with our kind of services.
+</td>
+<td align="right">
+	<img src="http://gktcs.in/GLMS/public/static/images/corporate.jpg"  width="200" height="150"/> 
+</td>
+</tr>
+<tr>
+	<td>
+		<br/>
+<b>Retail Training :</b>
+<br/>
+GKTCS Innovations has a set of best trainers who are constantly engaged in spreading technical and non technical knowledge to individual who are seeking an opportunity in their respective industries and would like to straight away face the challenges of the continuously improving and changing world.
+
+The retail Training services provided by GKTCS Innovations are designed as per the needs of corporate and also as per the guidelines provided by them.
+ </td>
+ <td align="right">
+	<img src="http://gktcs.in/GLMS/public/static/images/retail.jpg"  width="200" height="150"/>
+</td>
+ </tr>
+ <tr>    <td>   
+ 	<br/>	
+ <b>Online Training </b>
+ <br/>
+ GKTCS offers Online Training , so you get trained from where you are from our experienced trainers, In the weekdays as well as weekends by the Real Time Professionals. The program is designed to provide rich learning experience for students using Internet.         	
+      </td>   
+      <td align="right">
+      	<img src="http://gktcs.in/GLMS/public/static/images/online.jpg"  width="200" height="150"/>
+      </td>  
+      </tr>	
+    </table>     	
+         	
+         </div>
+		
+
+           <div align="justify">
+           	<h4>
+                FAQs</h4>
+           	
+           	<br/>
+    
+          <b> Are the JavaScripts here free? What is the catch?</b><br/>
+		Yes, we offer our site as a free "public service" resource. Simply stated, all the scripts on this site are free for personal or business use. The only requirement for use of archives is that you leave the credit information inside the script. We also don't think it's too much to ask if you would please link back to The JavaScript Source site to help spread the word about our site.<br><br>
+		
+<br/>
+<b>What is JavaScript? Is it the same as Java?</b><br/>
+JavaScript is NOT Java. JavaScript is a basic scripting language that allows Web authors to create dynamic pages that react to user interaction.<br/>
+<br/>
+<b>What browsers do the scripts work with?</b><br/>
+The scripts *should* all work in current versions of all major browsers unless otherwise noted in the script's description.
+<br/>
+<br/>
+<b>What's a "run time" error?</b><br/>
+There are three distinct areas where errors can occur in any computer program:<br><br>
+Load-time errors<br><br>
+
+Run-time errors<br><br>
+
+Logic errors<br><br>
+Load-time errors: Errors detected when loading the Web page (leaving off a parenthesis, improper syntax, etc.)<br><br>
+Run-time errors: Loaded fine, but a misuse of the language's commands caused an error while running.<br><Br>
+Logic errors: Reaches the wrong answer after being run - a "bug". Test and test and test again to find these.<br>	
+<br/>
+<b>What are the most common scripting mistakes?</b><br/>
+Here are the most common mistakes programmers run into with JavaScript:<br>
+<br>
+- Missing or mismatched quotation marks ' and "<br>
+<br>
+- Missing or mismatched '{' or '}'<br/><br/>
+- Confusing '=' (assign) and '==' compare)<br/><br/>
+
+- Improperly nesting IF-THEN-ELSE statements
+<br/><br/>
+- Calling objects through window not document property
+<br/><br/>
+- Endless loops that lock up the browser
+<br/><br/>
+
+<b>How can I display content in the form of a Tree using JSP?</b><br/>
+There are a few ways that you could try, although it all depends on any restrictions you have on deployment. First off, you could use Swing's JTree in a small applet
+<br/><br>
+<b> What is a closure in JavaScript?</b><br/>
+JavaScript allows you to declare a function within another function, and the local variables still can be accessible even after returning from the function you called.
+
+In other words, a closure is the local variables for a function which is kept alive after the function has returned.
+<br/>
+<br/>
+<b> Is JavaScript case sensitive? </b><br/>
+Yes!
+A function getElementById is not the same as getElementbyID.<br>
+<br/>
+<b>How do we add JavaScript onto a web page? </b><br/>
+There are several way for adding JavaScript on a web page, but there are two ways which are commonly used by developers
+If your script code is very short and only for single page, then following ways are the best:
+You can place script tag inside the head element.
+<br/>
+<br/>
+
+        </div>
+           <div>
+        <h4>Testimonials</h4> 
+        <div style="padding-top: 20px">
+           		<table border="2" >
+           			<tr>
+           				<td rowspan="2"><img height="140" width="110" src="http://gktcs.in/GLMS/public/static/images/ShashankVerma.jpg" /> </td>
+           				<td style="color: blue; "><b>Shashank Verma<br>Senior Developer, Leo Infotech Pune</b></td>
+           			</tr>
+           			<tr>
+           				<td>  This course of JavaScript is verymuch helpful and we get the complete practical knowledge of the same. All the PPT's are very much effective and can be used as a reference after the completion of course.</td>
+           			</tr>
+           			<tr><td colspan="2" style="background: gray"></td></tr>
+           			<tr>
+           				<td rowspan="2"><img height="140" width="110" src="http://gktcs.in/GLMS/public/static/images/SohailShaikh.jpg" /> </td>
+           				<td style="color: blue"><b>Sohail Shaikh<br>Junior Developer, Leo Infotech, Pune</b></td>
+           			</tr>
+           			<tr>
+           				<td>  Course of JavaScript done here is effective while working in the industry and the trainers are very good in their training. The training quality provided is international level training and the contents are also easy and understandable.</td>
+           			</tr>
+           			<tr><td colspan="2" style="background: gray"></td></tr>
+           			<tr>
+           				<td rowspan="2"><img height="140" width="110" src="http://gktcs.in/GLMS/public/static/images/VaishnaviPande.jpg" /> </td>
+           				<td style="color: blue; "><b>Vaishnavi Pande<br>Developer, Upside Learning, Pune</b></td>
+           			</tr>
+           			<tr>
+           				<td>  I personally feel that learning in GKTCS is an opportuinity to gain the knowledge of niche Technologies with updated skills. The trainers those who give training are expert level trainers and with a huge experience.</td>
+           			</tr>
+           			<tr><td colspan="2" style="background: gray"></td></tr>
+           			<tr>
+           				<td rowspan="2"><img height="140" width="110" src="http://gktcs.in/GLMS/public/static/images/PrajaktaSakale.jpg" /> </td>
+           				<td style="color: blue; "><b>Prajakta Sakale<br>Senior Developer, Upside Learning, Pune</b></td>
+           			</tr>
+           			<tr>
+           				<td>   It is a great training firm where I learnt the various technologies including JavaScript. It also helped me to get into IT industry with the complete knowledge of this technology.</td>
+           			</tr>
+           			<tr><td colspan="2" style="background: gray"></td></tr>
+           			
+           		</table>	
+           		
+           		
+           </div>	
+           
+        </div>
+  
+        <div align="justify">
+            <h4>
+                Certification</h4>
+                <br/>
+           
+             At the end of the course we provide  Certification.  <br/><br/>
+           <b>Process for Certification :</b>
+          
+  <li>You will receive a real time project Problem Statement along with a dataset to work. </li>
+  <li>After complition of your project(Reviewed by an Expert),you will be awarded a certificate with a performance-based grading. </li>
+ <li>If your project is not completed on time , you can take extra training for any of your doubts to understand the concepts better and re-attempt the Project free of cost.</li>
+<br/>
+GKTCS will help you at every stage of your learning and our 24/7 expert support team will ensure that you don't get stuck. Once you submit the project, our subject matter experts will review the same and share feedback to optimize it, if required.
+        </div>
+        </div>
+    
+    </td>
+    
+    <td valign="top" width="500">
+  		
+    <table valign="top">
+    	<tr valign="top">
+    		<font color="#366D9C" size=5px style="font-family: Georgia; padding-left:25px"><b>Course Features</b></font>  
+    		<td align="left" valign="top" width="500" height="200">
+    		
+ 
+  <br/>
+ <br/>
+ <li>Expert and qualified trainers</li>
+<li>Practical Project Based Approach</li>
+<li>Regular Assessment & feedback</li>
+<li>Total customized as per the client needs</li> 
+<li>Lifetime Access</li> 
+<li>  24 x 7 Support</li> 
+<li>  Get Certified</li>
+ 
+
+    			
+     		</td>
+     	
+    		
+    		
+    	</tr>
+    	
+    	<tr valign="top">
+    		<td height="20" valign="top" align="center">
+    		
+    		
+    		<font color="#366D9C" size=5px style="font-family: Georgia; padding-left:25px"><b>Placed Candidate</b></font>  
+    			<br/>
+    			<marquee direction="up" scrollamount="4" height="300">
+    			<table>
+    				<tr>
+    	   						
+    					<table>
+    						<tr>
+    							<td valign="top" height="30">
+    								
+    								<img src="http://gktcs.in/GLMS/public/static/images/AhilanShankar.jpg" width="100" height="100"/>
+    							</td>
+    							<td>
+    								<b>Alihan shanakar</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/capegemini.png" width="150" height="80"/> 
+    							</td>
+    						</tr>
+    						
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/sounavdas.jpg" width="100" height="100"/>
+    							</td>
+    							<td>
+    								<b>Sonav Das</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150" height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/ShashankVerma.jpg" width="60" height="80"/>
+    							</td>
+    							<td>
+    								<b>Shashank Verma</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/leoinfotech.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/rasika1.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Rasika</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/renuka.jpg" width="100" height="100"/>
+    							</td>
+    							<td>
+    								<b>Renuka Shirbhate</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/inetsoft.jpg" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/Neha.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Neha Kottarwar</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/GauravKotarwar.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Gaurav Kotarwar</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/leoinfotech.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/PrajaktaSakale.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Prajkta Sakale</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    							<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/SohailShaikh.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Sohail Shaikh</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/leoinfotech.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/ApurvaBhat.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Apurva Bhat</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/AshishSoni.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Ashish Soni</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    					
+    					    						
+    						
+    						
+    						
+    					</table>
+    					
+    						
+    						
+    					</td>
+    		
+    		
+    	</tr>
+    </table>
+    
+    </td>
+    
+    
+    </tr>
+	</table>
+	
+</body>
+</html>
+{% endblock %}

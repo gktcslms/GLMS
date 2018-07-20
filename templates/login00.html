@@ -1,0 +1,47 @@
+{% extends "logbase.html" %}
+<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="utf-8">
+		<link href="http://gktcs.in/GLMS/public/static/css/logstyle.css" rel='stylesheet' type='text/css' />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+		<!--webfonts-->
+		<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text.css'/>
+		<!--//webfonts-->
+</head>
+
+<body>
+{% block content %}
+	<!--<div class="main">
+		<form>
+    		<h1><lable> Login </lable> </h1>
+  			<div class="inset">
+	  			<p>
+	    		 <label for="email">EMAIL ADDRESS</label>
+   	 			<input type="text" placeholder="" required/>
+				</p>
+  				<p>
+				    <label for="password">PASSWORD</label>
+				    <input type="password" placeholder="" required/>
+  				</p>
+				  <p>
+				    <input type="checkbox" name="remember" id="remember">
+				    <label for="remember">Remember me</label>
+				  </p>
+ 			 </div>
+
+			  <p class="p-container">
+			    <span><a href="#">Forgot password ?</a></span>
+			    <input type="submit" value="Login">
+			  </p>
+		</form>
+	</div>-->
+	<form action="" method="POST">{% csrf_token %}
+	    {{ form }}
+	    <input type="submit" value="login">
+	</form>
+
+{% endblock %}
+</body>
+</html>

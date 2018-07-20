@@ -1,0 +1,93 @@
+{% extends "base_dashboard.html" %}
+{% block head %}
+<style>
+.cg{
+	color:#999999;
+	margin-bottom:2px;	
+}
+.btn_write{
+    position: absolute;
+    margin-top: -47px;
+    right: 23px;
+}
+
+</style>
+{% endblock %}
+	<div style="text-align:right;" class=""><a href="/add_course/" class="btn btn-primary ">+ADD NEW COURSE</a></div>
+{% block content %}
+<div class="container">
+	<div class="card" style="">
+		<div class="card-header">
+			<h5 class="title">SEARCH RESULT</h5>
+		</div>
+		<div class="card-body">
+		{% if course.count < 1 %}
+			<h3 style="text-align:center">There are no results that match your search</h3>
+		{% else %}
+		{% for course in course %} 
+		<div class="row">
+            <div class="col-md-4">
+				<a href=""><img src="{{ course.thumbnail.url }}" class="img-responsive"></a>
+			</div>
+			<div class="col-md-8">
+			<a href="{% url 'preview_course' course.id %}" class="btn btn-primary"><h3 style="margin-top:2px; margin-bottom:2px;">{{ course.course_name }}</h3></a>
+			<div class="cg">
+				<span title="Written By"><i class="fa fa-user"></i> {{ course.course_by.user.user.get_full_name }} &nbsp;</span>
+			</div>
+			<p>{{ course.description|truncatechars:140}}</p> 
+			<a href="{% url 'preview_course' course.id %}" class="btn btn-primary">PREVIEW</a>
+			</div>
+		</div>
+			<hr/>
+		{% endfor %}
+		{% endif %}
+	</div>
+</div>	
+</div>
+{% endblock %}
+
+{% block lower %}
+<script>
+$("#my_courses").addClass("active");
+</script>
+{% endblock %}
+
+<!--
+<div class="container" style="margin-top: 16px;">
+<div class="row">	
+
+	
+			
+					
+					{% for i in course %}
+					<div class="well"><h2 style="margin-top: 0;"><a href="{% url 'Courses' %}" style="color: #3366AA; text-decoration:none">{{ i.course_name }}</a></h2>
+					<b>Description:</b> {{ i.course_desc }}</div>
+					{% endfor %}
+</div>
+</div>-->
+<!--<div id="div1" style="margin-top:10px;">
+			<div class="container">
+				<div class="row">
+<h4>Hello</h4>
+					<div class="col-md-12">
+						<div id="course_desc">
+						<h2 style="color:#00A4CB; text-align:center; padding-top: 20px; margin-top: 0; margin-bottom: 15px;">Search Results</h2>
+							{% for i in course %}
+							<div class="row" style="background: rgba(40, 55, 73, 0.1);margin:10px; padding-top:4px;padding-bottom:4px;">
+								<div class="col-md-3 col-sm-3">
+									<a href="#"><img class="img-responsive" id="header-logo" src="#" /></a>
+								</div>
+								<div class="col-md-9 col-sm-9">
+									<a href="#"><h3 style="margin-bottom: 1px; margin-top: 2px;">{{ i.course_name }}</h3></a>
+									<div id="span1">{{ i.description }} <a href="#"><span style="color: #00a4cb;">More....</span></a></div>
+								</div>
+							</div><hr/>
+							{% endfor %}
+						<br/><br/>	
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>		
+-->

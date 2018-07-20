@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container" style="margin-top: 16px;">
+							<ul class="breadcrumb well" id="course_desc1" style="margin-left: 0px;">
+								<li><a href="/">HOME</a>
+								</li>
+								<li><a href="/all-courses">MY COURSES</a></li>
+								<li>JAVA</li>
+							</ul>
+<div class="row">	
+
+		<div class="col-md-4 col-md-push-8 ">
+		<div class="well">
+			<div class="row">
+			<div class="col-md-12 col-sm-12">
+			<div class="col-md-3 col-sm-3 profile_strength_links pull-left">
+			<a href="/my-profile">
+			<img id="profile_strength_pic" width="60px" height="60px" class="img-circle" alt="image" src="http://gktcs.in/GLMS/public/static/images/ShashankVerma.jpg">
+			</a>
+			</div>
+			<div class="col-md-9 col-sm-9 pull-left">
+			<h4 class="margin-bottom10 display_name">
+			Shashank Verma
+			<a class="label label-primary editproflink pull-right" style="font-size: 12px; display: none;" href="/my-profile">Edit</a>
+			</h4>
+			<div class="progress progress-mouseover" style="height: 8px; cursor: pointer;">
+			<div class="progress-bar progress-bar-success mypopover progress-fillbar" style="width: 10%;"></div>
+			</div>
+			<span class="regular mute" style="font-size:12px;">Profile Strength 10%</span>
+			<br>
+			<div class="runs-list">
+			<div class="run very-slow">
+			<a class="regular prof_prog_text" style="color: #428bca;font-size:12px;" href="/my-profile">Adding your preferred contact time increases profile strength by 10% </a>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-8 col-md-pull-4">	
+			<div class="well" style="background: #EEE">
+				<div class="row">
+								<div class="col-md-4 col-sm-4">
+									<img class="img-responsive" id="header-logo" src="http://gktcs.in/GLMS/public/static/images/java1.jpg" />
+								</div>
+								<div class="col-md-8 col-sm-8">
+									<h1 style="margin-top: 10;">Java</h1>
+									<div id="span1">An online course designed on one of the most popular platform 'Java', to train you on its basic and advanced concepts of Java and gain an entry into the programming world as a Java Developer.</div>
+								</div>
+				</div>				
+			</div>
+			<div id="descripti" style="margin-bottom:20px;" >
+				<div id="">
+						<ul id = "myTab" class = "nav nav-tabs">
+						   <li class = "active">
+							  <a href = "#start" data-toggle = "tab">
+								 Getting Started
+							  </a>
+						   </li>
+						   
+						   <li><a href = "#recorded" data-toggle = "tab">Pre-recorded Classes</a></li>
+						   
+						   <li><a href = "#content" data-toggle = "tab">Course Content</a></li>
+							
+							
+						</ul>
+
+						<div id = "myTabContent" class = "tab-content">
+
+						   <div class = "tab-pane fade in active" id = "start">
+								<br>
+							   <ul style="list-style-type:circle">
+								  <li><strong>Getting Started with Java</strong>
+									<dl>
+									  <dd><br>Welcome, Let's Get Going on our Java Journey... <br><br>
+										How it Works?<br><br>
+										1. This is an Online Course.<br><br>
+										2. We have 30-hourse LIVE and Interactive Sessions.<br><br>
+										3. We have 40 hours of Practical Work involving Lab Assignment, Case Studies and Project every week which can be done at your own pace. We can also provide you Remote Access to our Hadoop Cluster for doing Practicals.<br><br>
+										4. We have 24X7 One-on-One Live Technical Support to help you with any problems you might face or any clarifications you may require during the course.<br><br>
+										5. At the end of the training you will have to work on Real Time Project on which we will provide you a Grade and a Verified Certificate!<br><br>
+
+									  </dd>
+									</dl> 
+								  </li>
+								  <li><strong>Software and Hardware Requirements for Java</strong></li><br>
+								  <li><strong>Guide for your Learning Management System </strong></li>
+								</ul> <br>
+						   </div>
+						   
+						   <div class = "tab-pane fade" id = "recorded">
+								recorded
+
+						   </div>
+						   
+						   <div class = "tab-pane fade" id = "content">
+								content
+						   </div>
+						      
+						</div>
+							
+						
+				</div>				
+			
+			</div>
+			<div class="well" >		
+			<div class=" row" id="course_wrap_row">
+				<h2 style="text-align:center; color:#0464BB;margin-bottom: 20px;margin-top: 30px;">Recommended Courses</h2>
+				<div class="col-md-3 col-sm-6 course_wrap">
+				<a href="{% url 'python' %}">
+					<div class="course_inner">
+						<div>
+							<img class="img-responsive" src="http://gktcs.in/GLMS/public/static/images/Pyt1.png"/>
+						</div>
+						<h3>Mastering Python</h3>
+						<p>100 Learners</p>
+						<p>Jan 16 Onwards</p>
+						<h3><b style="padding-bottom:5px;"> ?16000</b></h3>
+					</div>
+				</a>	
+				</div>
+				<div class="col-md-3 col-sm-6 course_wrap">
+				<a href="{% url 'rubyonrails' %}">
+					<div class="course_inner">
+						<div>
+							<img style="width: 100%" class="img-responsive" src="http://gktcs.in/GLMS/public/static/images/ruby.jpg"/>
+						</div>
+						<h3>Ruby On Rails</h3>
+						<p>100 Learners</p>
+						<p>Jan 16 Onwards</p>
+						<h3><b style="padding-bottom:5px;"> ?15000</b></h3>
+					</div>
+				</a>	
+				</div>
+				<div class="col-md-3 col-sm-6 course_wrap">
+				<a href="{% url 'hadoop' %}">
+					<div class="course_inner">
+						<div>
+							<img class="img-responsive" src="http://gktcs.in/GLMS/public/static/images/hadoop1.jpg"/>
+						</div>
+						<h3>Hadoop</h3>
+						<p>100 Learners</p>
+						<p>Jan 16 Onwards</p>
+						<h3><b style="padding-bottom:5px;"> ?16000</b></h3>
+					</div>
+				</a>	
+				</div>
+				<div class="col-md-3 col-sm-6 course_wrap">
+				<a href="{% url 'datascience' %}">
+					<div class="course_inner">
+						<div>
+							<img style="width: 100%" class="img-responsive" src="http://gktcs.in/GLMS/public/static/images/datasci1.jpg"/>
+						</div>
+						<h3>Data Science</h3>
+						<p>100 Learners</p>
+						<p>Jan 16 Onwards</p>
+						<h3><b style="padding-bottom:5px;"> ?15000</b></h3>
+					</div>
+				</a>	
+				</div>
+			</div>
+			</div>
+					
+	</div>
+	
+</div>
+</div>
+
+{% endblock %}

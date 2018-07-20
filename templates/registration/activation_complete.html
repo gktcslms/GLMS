@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<br/>
+<br/>
+<br/>
+<br/>
+<div class="container">
+	<div class="row">
+		<div class="well" style="text-align:center;">
+			<h3 class='lead' style="text-align:center">{% trans "Your account is now activated. Now you can Login to your account" %}</h3>
+			<a href="/authentication/login/" class="btn btn-primary">Click here to Login</a>
+		</div>
+	</div>
+</div>
+{% endblock %}

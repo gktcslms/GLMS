@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+{% extends "index.html" %}
+{% block home %}
+<html>
+<head>
+    <!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>-->
+   
+    
+    <style type="text/css">
+        body {
+            font-family: Times;
+            padding-top: -19px;
+            background-color: #027fcf;
+          
+        }
+        #vtab {
+            margin: 10;
+            width: 700px;
+            height: 100%;
+        }
+        #vtab > ul > li {
+            width: 150px;
+            height: 80px;
+            background-color: #fff !important;
+            list-style-type: none;
+            display: block;
+            text-align: center;
+            margin: auto;
+            padding-bottom: 10px;
+            border: 1px solid #fff;
+            position: relative;
+            border-right: none;
+            opacity: .3;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+            filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+        }
+        #vtab > ul > li.home {
+            background: url('http://gktcs.com/GLMS/public/static/images/web44.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.login {
+            background: url('http://gktcs.com/GLMS/public/static/images/open.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.support {
+            background: url('http://gktcs.com/GLMS/public/static/images/mobil1.jpg') no-repeat center center;
+        }
+         #vtab > ul > li.support1 {
+            background: url('http://gktcs.com/GLMS/public/static/images/microsoft.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.selected {
+            opacity: 1;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+            filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+            border: 1px solid #ddd;
+            border-right: none;
+            z-index: 10;
+            background-color: #fafafa !important;
+            position: relative;
+        }
+        #vtab > ul {
+            float: left;
+            width: 110px;
+            text-align: left;
+            display: block;
+            margin: auto 0;
+            padding: 0;
+            position: relative;
+            top: 30px;
+        }
+        #vtab > div {
+            background-color: #fafafa;
+            margin-left: 150px;
+            border: 1px solid #ddd;
+            min-height: 500px;
+            padding: 12px;
+            position: relative;
+            z-index: 9;
+            -moz-border-radius: 20px;
+        }
+        #vtab > div > h4 {
+            color: #800;
+            font-size: 1.2em;
+            border-bottom: 1px dotted #800;
+            padding-top: 5px;
+            margin-top: 0;
+        }
+        #loginForm label {
+            float: left;
+            width: 100px;
+            text-align: right;
+            clear: left;
+            margin-right: 15px;
+        }
+        #loginForm fieldset {
+            border: none;
+        }
+        #loginForm fieldset > div {
+            padding-top: 3px;
+            padding-bottom: 3px;
+        }
+        #loginForm #login {
+            margin-left: 115px;
+        }
+        
+     a {text-decoration: none}
+    </style>
+
+    <script type="text/javascript">
+        $(function() {
+            var $items = $('#vtab>ul>li');
+            $items.mouseover(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('#vtab>div').hide().eq(index).show();
+            }).eq(0).mouseover();
+        });
+    </script>
+
+</head>
+<body>
+	  {% block html5 %}
+	<div>
+		<font color="#366D9C" size=6px style="font-family: Georgia; padding-left: 400px"><b>Courses </b></font>
+	
+	<table width="1000" height="500"> <tr> <td width='300'>
+		
+    <div id="vtab">
+        <ul>
+            <li class="home selected"></li>
+            <li class="login"></li>
+            <li class="support"></li>
+            <li class="support1"></li>
+        </ul>
+        <div align="justify">
+           <table align="justify">
+           	<tr align="justify">
+           		<td>
+           			<a href="{% url 'html5' %}" ><img src='http://gktcs.com/GLMS/public/static/images/html554.png' width='100' height="80" /></a>
+           		</td>
+           		<td align="justify">
+           			<b>HTML5</b> is a revision of the Hypertext Markup Language (HTML), the standard programming language for describing the contents and appearance of Web pages.
+           		<a href="{% url 'html5' %}" >More....</a>
+           		<br/>
+           		
+           	</tr>
+           	<tr align="justify">
+           		<td>
+           			<a href="{% url 'css3' %}"><img src='http://gktcs.com/GLMS/public/static/images/css3.png' width='100' height="80" /></a>
+           		</td>
+           		<td align="justify">
+           		<b>CSS3</b>(Cascading Style Sheets) is a style sheet language used for describing the look and formatting of a document written in a markup language. 
+           		<a href="{% url 'css3' %}" >More....</a>
+           		</td>
+           		</td>
+           	</tr>	
+           	
+           		<tr align="justify">
+           		<td>
+           			<a href="{% url 'javascript' %}"><img src='http://gktcs.com/GLMS/public/static/images/JavaScript.png' width='100' height="80" /></a>
+           		</td>
+           		<td align="justify">
+  <b>JavaScript</b>  is an interpreted language, so no special program is required to create usable code. Any plain text editor such as Notepad is quite satisfactory for being able to write JavaScript.        			
+           		<a href="{% url 'javascript' %}" >More....</a>
+           		</td>
+           	</tr>
+           	
+           		<tr align="justify">
+           		<td>
+           			<a href="{% url 'jquery' %}"><img src='http://gktcs.com/GLMS/public/static/images/jQurery.gif' width='100' height="80" /></a>
+           		</td>
+           		<td align="justify">
+ <b>jQuery</b> is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers.          			
+           		<a href="{% url 'jquery' %}" >More....</a><br><br>
+           		</td>
+           	</tr><br>
+           	
+           	<tr align="justify">
+           		<td>
+           			<a href="{% url 'python' %}"><img src='http://gktcs.com/GLMS/public/static/images/python.jpg' width='100' height="80" /></a>
+           		</td>
+           		<td align="justify">
+<b>Python</b> is a general-purpose interpreted, interactive, object-oriented, and high-level programming language.Its design philosophy emphasizes code readability, and its syntax allows programmers to express concepts in fewer lines of code than would be possible in languages such as C++ or Java.
+				<a href="{% url 'python' %}" >More....</a><br><br>
+           		</td>
+           	</tr>
+           	<br>
+           	<tr align="justify">
+           		<td>
+           			<a href="{% url 'angularjs' %}"><img src='http://gktcs.com/GLMS/public/static/images/angularjs.jpg' width='100' height="80" /></a>
+           		</td>
+           		<td align="justify">
+<b>AngularJS</b> is a structural framework for dynamic web apps. It lets you use HTML as your template language and lets you extend HTML's syntax to express your application's components clearly and succinctly           			
+           		<a href="{% url 'angularjs' %}" >More....</a><br><br>
+           		</td>
+           	</tr>
+           	<tr align="justify">
+           		<td>
+           			<a href="{% url 'bootstrap' %}" ><img src='http://gktcs.com/GLMS/public/static/images/boot.jpg' width='100' height="80" /></a>
+           		</td>
+           		<td align="justify">
+ <b>Bootstrap</b> is a free and open-source collection of tools for creating websites and web applications. It contains HTML- and CSS-based design templates for typography, forms, buttons, navigation and other interface components, as well as optional JavaScript extensions.          			
+           		<a href="{% url 'bootstrap' %}" >More....</a><br>
+           		</td>
+           	</tr>
+           	
+           	
+           </table>
+            
+        </div>     
+         <div>
+         	 <table align="justify">
+         	 	<tr align="justify">
+           		<td>
+           			<a href="{% url 'apachetomcat' %}" ><img src='http://gktcs.com/GLMS/public/static/images/apache-tomcat-logo.jpg' width='100' height="80" /></a>
+           		</td>
+           		<td align="justify">
+					<b>Apache Tomcat</b> is an open-source web server and servlet container developed by the Apache Software Foundation (ASF). Tomcat implements several Java EE specifications including Java Servlet, JavaServer Pages 
+           		<a href="{% url 'apachetomcat' %}" >More....</a>
+           		<br/><br>
+              	</tr>
+                	<tr align="justify">
+           		<td>
+           			<a href="{% url 'django' %}" ><img src='http://gktcs.com/GLMS/public/static/images/django.png' width='90' height="70" /></a>
+           		</td>
+           		<td align="justify">
+				<b>Django</b> is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of Web development.
+           		<a href="{% url 'django' %}" >More....</a>
+           		<br/><br/>
+              	</tr>
+              	
+              	<tr align="justify">
+           		<td>
+           			<a href="{% url 'hadoop' %}" ><img src='http://gktcs.com/GLMS/public/static/images/hadoop.jpg' width='90' height="70" /></a>
+           		</td>
+           		<td align="justify">
+				<b>Hadoop</b> is an open-source software framework written in Java for distributed storage and distributed processing of very large data sets on computer clusters built from commodity hardware.
+           		<a href="{% url 'hadoop' %}" >More....</a>
+           		<br/><br/>
+              	</tr>
+         	 	
+         	 	         	 	
+           	<tr align="justify">
+           		<td>
+           			<a href="{% url 'java' %}" ><img src='http://gktcs.com/GLMS/public/static/images/java-logo.jpg' width='100' height="80" /></a>
+           		</td>
+           		<td align="justify">
+           			<b>JAVA</b>is a programming language and computing platform first released by Sun Microsystems in 1995. There are lots of applications and websites that will not work unless you have Java installed, and  
+           		<a href="{% url 'java' %}" >More....</a>
+           		<br/><br>
+              	</tr>
+              	
+              	<tr align="justify">
+           		<td>
+           			<a href="{% url 'mongodb' %}" ><img src='http://gktcs.com/GLMS/public/static/images/mongodb.jpg' width='100' height="80" /></a>
+           		</td>
+           		<td align="justify">
+					<b>MongoDB</b> is a document database that provides high performance, high availability, and easy scalability. Document Database. Documents (objects) map nicely to programming language data types. Embedded documents and arrays reduce need for joins.
+					
+           		<a href="{% url 'mongodb' %}" >More....</a>
+           		<br/><br>
+              	</tr>
+         		
+         		<tr align="justify">
+           		<td>
+           			<a href="{% url 'mysql' %}" ><img src='http://gktcs.com/GLMS/public/static/images/mysql.jpg' width='100' height="80" /></a>
+           		</td>
+           		<td align="justify">
+					<b>MySQL</b> is a freely available open source Relational Database Management System (RDBMS) that uses Structured Query Language (SQL). SQL is the most popular language for adding, accessing and managing content in a database.
+           		<a href="{% url 'mysql' %}" >More....</a>
+           		<br/><br/>
+              	</tr>
+              	
+              	<tr align="justify">
+           		<td>
+           			<a href="{% url 'redhat' %}" ><img src='http://gktcs.com/GLMS/public/static/images/redhat.jpg' width='100' height="80" /></a>
+           		</td>
+           		<td align="justify">
+					<b>Red Hat</b> is a leading software company in the business of assembling open source components for the Linux operating system and related programs into a distribution package that can easily be ordered and implemented.
+           		<a href="{% url 'redhat' %}" >More....</a>
+           		<br/><br/>
+              	</tr>
+              	
+              	<tr align="justify">
+           		<td>
+           			<a href="{% url 'rubyonrails' %}" ><img src='http://gktcs.com/GLMS/public/static/images/Ruby-on-Rails.jpg' width='100' height="80" /></a>
+           		</td>
+           		<td align="justify">
+				<b>Ruby on Rails</b> or simply Rails, is an open source web application framework written in Ruby. Rails is a model–view–controller (MVC) framework, providing default structures for a database, a web service, and web pages.
+           		<a href="{% url 'rubyonrails' %}" >More....</a>
+           		<br/><br/>
+              	</tr>
+              	
+              	<tr align="justify">
+           		<td>
+           			<a href="{% url 'wordpress' %}" ><img src='http://gktcs.com/GLMS/public/static/images/wordpress.jpg' width='100' height="80" /></a>
+           		</td>
+           		<td align="justify">
+				<b>WordPress</b> is a free and open-source tool and a content management system (CMS) based on PHP and MySQL. Features include a plugin architecture and a template system. WordPress was used by more than 23.3% of the top 10 million websites as of January 2015 [update].
+           		<a href="{% url 'wordpress' %}" >More....</a>
+           		<br/>
+              	</tr>
+              	
+         	</table>    
+            
+            
+        </div>
+        
+        <div>
+            <h4>
+               Mobile Technologies</h4>
+            <table align="justify">
+         	 	<tr align="justify">
+           		<td>
+           			<a href="{% url 'android' %}" ><img src='http://gktcs.com/GLMS/public/static/images/android.jpg' width='80' height="90" /></a>
+           		</td>
+           		<td align="justify">
+					<b>Android</b> is a mobile operating system (OS) based on the Linux kernel and currently developed by Google. With a user interface based on direct manipulation
+           		<a href="{% url 'android' %}" >More....</a>
+           		<br/><br>
+              	</tr>
+              	
+              	<tr align="justify">
+           		<td>
+           			<a href="{% url 'ios' %}" ><img src='http://gktcs.com/GLMS/public/static/images/ios.jpg' width='90' height="65" /></a>
+           		</td>
+           		<td align="justify">
+					<b>iOS</b> is the operating system that runs on iPad, iPhone, and iPod touch devices. The operating system manages the device hardware and provides the technologies required to implement native apps.
+				 		<a href="{% url 'ios' %}" >More....</a>
+           		<br/><br>
+              	</tr>
+              	
+              	
+              	<tr align="justify">
+           		<td>
+           			<a href="{% url 'jqmob' %}" ><img src='http://gktcs.com/GLMS/public/static/images/jquerym.jpg' width='90' height="65" /></a>
+           		</td>
+           		<td align="justify">
+					<b>JQuery Mobile</b> is a cross platform mobile framework designed to simplify and enhance the development of mobile web applications by integrating HTML5, CSS3, jQuery and jQuery UI into one framework that is not only robust, 
+					<a href="{% url 'jqmob' %}" >More....</a>
+           		<br/><br>
+              	</tr>
+              
+              <tr align="justify">
+           		<td>
+           			<a href="{% url 'phonegap' %}" ><img src='http://gktcs.com/GLMS/public/static/images/pg.jpg' width='90' height="65" /></a>
+           		</td>
+           		<td align="justify">
+					<b>PhoneGap</b>	is an open source framework for quickly building cross-platform mobile apps using HTML5, Javascript and CSS. Wrap your app with PhoneGap Deploy to mobile platforms! Build your app with web technology Wrap your app with PhoneGap Deploy to mobile platforms!
+						<a href="{% url 'phonegap' %}" >More....</a>
+           		<br/><br>
+              	</tr>
+              </table>	        
+        </div>
+        <div>
+            <h4>Microsoft Technologies</h4>
+          
+          
+           			<table align="justify">
+         	 	<tr align="justify">
+           		<td>
+           			<a href="{% url 'mdotnet' %}" ><img src='http://gktcs.com/GLMS/public/static/images/aspNet.png' width='100' height="100" /></a>
+           		</td>
+           		<td align="justify">
+						<b>Asp.net</b> is an open source server-side Web application framework designed for Web development to produce dynamic Web pages. It was developed by Microsoft to allow programmers to build dynamic sites.
+           		<a href="{% url 'mdotnet' %}" >More....</a>
+           		
+              	</tr>
+              	
+              	
+              		
+              	<tr align="justify">
+           		<td>
+           			<a href="{% url 'csharp' %}" ><img src='http://gktcs.com/GLMS/public/static/images/c-sharp-logo-1.png' width='100' height="70" /></a>
+           		</td>
+           		<td align="justify">
+					.NET languages come in different flavours such as: C#.NET, VB.NET, Managed C++, F#. .NET languages compile to CIL (Common Intermediate Language) which means they all start "talking" the same language and can therefore interoperate.   
+					  	<a href="{% url 'csharp' %}" >More....</a>
+           		<br/><br>
+              	</tr>
+              	
+              	  	
+              	<tr align="justify">
+           		<td>
+           			<a href="{% url 'mvc' %}" ><img src='http://gktcs.com/GLMS/public/static/images/mvs.jpg' width='80' height="90" /></a>
+           		</td>
+           		<td align="justify">
+					<b>ASP.NET MVC</b> is an open source web application framework that implements the model–view–controller (MVC) pattern. In the latter versions of ASP.NET, ASP.NET MVC, ASP.NET Web API, and ASP.NET, Web Pages (a platform using only Razor pages) will merge into a unified MVC 6.
+           		<a href="{% url 'mvc' %}" >More....</a>
+           		<br/><br>
+              	</tr>
+              </table>
+          
+                
+        </div>
+    </div>
+    </td>
+    
+    <td valign="top">
+  		
+    <table valign="top" width="280">
+    	<tr valign="top" align="center">
+    		<font color="#366D9C" size=5px style="font-family: Georgia; padding-left:25px"><b>Course Features</b></font>  
+    		<td align="left" valign="top" width="50" height="170">
+    		
+ 
+  <br/>
+ <br/>
+
+
+ <li>Expert and qualified trainers</li>
+<li>Practical Project Based Approach</li>
+<li>Regular Assessment & feedback</li>
+ <li>Lifetime Access </li>
+ <li> 24 x 7 Support</li> 
+<li>Customized Training</li>
+<li>Co-operative staff support</li>
+ <li> Get Certified</li>
+<br/>
+<br/>
+
+
+     		</td>
+     	
+    		
+    	</tr>
+    	<br/>
+    	<tr valign="top" align="center">
+    		<td height="20" valign="top" align="center">
+    		
+    		
+    		<font color="#366D9C" size=5px style="font-family: Georgia; padding-left:25px"><b>Placed Candidate</b></font>  
+    			<br/>
+    			<marquee direction="up" scrollamount="4" height="300">
+    			<table>
+    				<tr>
+    	   						
+    					<table>
+    						<tr>
+    							<td valign="top" height="30">
+    								
+    								<img src="http://gktcs.com/GLMS/public/static/images/AhilanShankar.jpg" width="100" height="100"/>
+    							</td>
+    							<td>
+    								<b>Alihan shanakar</b> <br/>
+    								<img src="http://gktcs.com/GLMS/public/static/images/capegemini.png" width="150" height="80"/> 
+    							</td>
+    						</tr>
+    						
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.com/GLMS/public/static/images/sounavdas.jpg" width="100" height="100"/>
+    							</td>
+    							<td>
+    								<b>Sonav Das</b> <br/>
+    								<img src="http://gktcs.com/GLMS/public/static/images/upsidelearning.png" width="150" height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.com/GLMS/public/static/images/ShashankVerma.jpg" width="60" height="80"/>
+    							</td>
+    							<td>
+    								<b>Shashank Verma</b> <br/>
+    								<img src="http://gktcs.com/GLMS/public/static/images/leoinfotech.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.com/GLMS/public/static/images/rasika1.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Rasika</b> <br/>
+    								<img src="http://gktcs.com/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.com/GLMS/public/static/images/renuka.jpg" width="100" height="100"/>
+    							</td>
+    							<td>
+    								<b>Renuka Shirbhate</b> <br/>
+    								<img src="http://gktcs.com/GLMS/public/static/images/inetsoft.jpg" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.com/GLMS/public/static/images/Neha.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Neha Kottarwar</b> <br/>
+    								<img src="http://gktcs.com/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.com/GLMS/public/static/images/GauravKotarwar.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Gaurav Kotarwar</b> <br/>
+    								<img src="http://gktcs.com/GLMS/public/static/images/leoinfotech.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.com/GLMS/public/static/images/PrajaktaSakale.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Prajkta Sakale</b> <br/>
+    								<img src="http://gktcs.com/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    							<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.com/GLMS/public/static/images/SohailShaikh.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Sohail Shaikh</b> <br/>
+    								<img src="http://gktcs.com/GLMS/public/static/images/leoinfotech.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.com/GLMS/public/static/images/ApurvaBhat.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Apurva Bhat</b> <br/>
+    								<img src="http://gktcs.com/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.com/GLMS/public/static/images/AshishSoni.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Ashish Soni</b> <br/>
+    								<img src="http://gktcs.com/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    					
+    					    						
+    						
+    						
+    						
+    					</table>
+    					
+    						
+    						
+    					</td>
+    				</tr>
+    			
+    				</marquee>
+    				
+    			</table>
+    		</td>
+    		
+
+    </table>
+    
+    </td>
+    
+    
+    </tr>
+	</table>
+	</div>
+{% endblock %}
+</body>
+</html>
+{% endblock %}

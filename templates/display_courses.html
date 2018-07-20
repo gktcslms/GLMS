@@ -1,0 +1,53 @@
+{% extends "base_dashboard.html" %}
+{% block head %}
+<style>
+.cg{
+	color:#999999;
+	margin-bottom:2px;	
+}
+.btn_write{
+    position: absolute;
+    margin-top: -47px;
+    right: 23px;
+}
+
+</style>
+{% endblock %}
+	<div style="text-align:right;" class=""><a href="/add_course/" class="btn btn-primary ">+ADD NEW COURSE</a></div>
+{% block content %}
+<div class="container">
+	<div class="card" style="">
+		<div class="card-header">
+			<h5 class="title">MY COURSES</h5>
+			<a href="/add_course/" class="btn btn-primary btn_write">+ADD NEW COURSE</a>
+		</div>
+		<div class="card-body">
+		{% for course in trainer_courses %} 
+		<div class="row">
+            <div class="col-md-4">
+				<a href=""><img src="{{ course.thumbnail.url }}" class="img-responsive"></a>
+			</div>
+			<div class="col-md-8">
+			<h3 style="margin-top:2px; margin-bottom:2px;">{{ course.course_name }}</h3>
+			<div class="cg">
+				<span title="Written By"><i class="fa fa-user"></i> {{ course.course_by.user.user.get_full_name }} &nbsp;</span>
+			</div>
+			<p>{{ course.description|truncatechars:140}}</p> 
+			<a href="{% url 'edit_course_modules' course.id %}" class="btn btn-primary">ADD OR UPDATE CONTENT</a>
+			<a href="{% url 'update_course_details' course.id %}" class="btn btn-primary">UPDATE DETAILS</a>
+			<a href="{% url 'preview_course' course.id %}" class="btn btn-primary">PREVIEW</a>
+			<a href="{% url 'delete_course' course.id %}" class="btn btn-primary confirm_delete">DELETE</a>
+			</div>
+		</div>
+			<hr/>
+		{% endfor %}
+	</div>
+</div>	
+</div>
+{% endblock %}
+
+{% block lower %}
+<script>
+$("#my_courses").addClass("active");
+</script>
+{% endblock %}

@@ -1,0 +1,404 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+<div style="background-color:#337ab7; padding:10px" class="row"><!––<img src="python_banner.jpg" class="img-fluid" style="width:100%" alt="Responsive image">
+<div class="col-md-5 hidden-sm hidden-xs" style="padding-left:30px">	
+	<iframe width="420" height="230" src="https://www.youtube.com/embed/CD6zA_76Pp0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+<div class="hidden-lg hidden-md col-sm-12" style="padding-left:30px">	
+	<iframe width="315" height="173" src="https://www.youtube.com/embed/CD6zA_76Pp0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+<div class="col-md-7">
+	<h1 style="color:#fff; text-shadow: 2px 2px #212020;">Spark with Scala</h1><h3 style="color:#fff;text-shadow: 2px 2px #212020;">Spark is an open source computing framework up to 100 times faster than Mapreduce and Scala is a general-purpose programming language providing support for functional programming.</h3>
+</div>
+</div>
+</div>
+<div class="container" style="background-color: #e8e8e8; padding-bottom: 15px;">
+<div class="row">
+<div class="col-md-6">  
+  <h3>Spark with Scala Course objectives</h3>
+  Some of the key skills you will gain upon completion of this program include:
+                     
+<ul style="padding-left: 15px">  
+<li>Program in Scala</li>
+<li>Understand Scala's approach to object-orientation</li>
+<li>Master the use of functional programming techniques in Scala</li>
+<li>Understand how to perform TDD (test-driven development) using Scala</li>
+<li>Install Spark and implement Spark operations on Spark Shell</li>
+<li>Understand the role of Spark RDD</li>
+<div id="objlist" class="panel-collapse collapse">
+<li>Implement Spark applications on YARN (Hadoop)</li>
+<li>Learn Spark Streaming API</li>
+</div>
+<a role="button" style="color:#337ab7" data-toggle="collapse" data-parent="" href="#objlist" aria-expanded="true" aria-controls="objlist">
+    More...
+</a>
+</ul>
+</div>
+<div class="col-md-6">
+<h3>Prerequisite</h3>
+<p>
+<ul style="padding-left: 15px">
+<li>• Attendees should be Java developers planning to develop Scala applications. Hadoop Map Reducing, Hadoop Architecture. </li>
+<li>• A basic understanding of functional programming and object oriented programming will help. Knowledge of Scala will definitely be a plus, but is not mandatory.</li>
+</ul>
+</p>
+</div> 
+</div>
+<div>
+<p class=""><a target="_blank" href="http://gktcs.com/GLMS/public/static/pdf/sparkscala_content.pdf" class = "btn btn-primary"><i class="fa fa-download"></i> Download Course Content [5 Days] (PDF)</a></p>
+</div>
+<div>
+  <ul class="nav nav-pills rwo" style="background-color:#fafafa">
+    <li class="active col-md-12 col-xs-12" style="padding:0px; margin:0px; text-align: center"><a data-toggle="pill" href="#basicpy"><h4>Spark with Scala: Modules </h4></a></li>
+  </ul>
+	<form action="." method="post" style="">{% csrf_token %}
+	<div class="tab-content"> 
+    <div id="basicpy" class="tab-pane fade in active">
+      <h3>Basic Modules</h3>
+		<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingOne">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="1.Key Features of the Scala Language">
+						<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							1.Key Features of the Scala Language
+						</a>
+					</h4>
+				</div>
+				<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+					<div class="panel-body">
+						<ul>
+<li> Everything is an object
+<li> Class declarations
+<li> Data typing
+<li> Operators and methods
+<li> Pattern matching
+<li> Functions
+<li> Anonymous and nested functions
+<li> Traits
+							</ul>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingTwo">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="2.Basic Programming in Scala">
+						<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							2.Basic Programming in Scala
+						</a>
+					</h4>
+				</div>
+				<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+					<div class="panel-body">
+						<ul>
+							o Built in types, literals and operators
+<li> Testing for equality of state and reference
+<li> Conditionals, simple matching and external iteration
+<li> Working with lists, arrays, sets and maps
+<li> Throwing and catching exceptions
+<li> Adding annotations to your code
+<li> Using standard Java libraries
+<li> Using Scala with in java application and vice-versa
+						</ul>					
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingThree">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="3.OO Development in Scala">
+						<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							3.OO Development in Scala
+						</a>
+					</h4>
+				</div>
+				<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+					<div class="panel-body">
+						<ul>
+							o A minimal class declaration
+<li> Understanding primary constructors
+<li> Specifying alternative constructors
+<li> Declaring and overriding methods
+<li> Creating base classes and class hierarchies
+<li> Creating traits and mixing them into classes
+<li> How a Scala inheritance tree is linearised
+						<ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="heading4">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="4.Functional Programming in Scala">
+						<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							4.Functional Programming in Scala
+						</a>
+					</h4>
+				</div>
+				<div id="collapse4" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							o Advanced uses of for expressions
+<li> Understanding function values and closures
+<li> Using closures to create internal iterators
+<li> Creating and using higher order functions
+<li> Practical examples of higher order functions
+<li> Currying and partially applied functions
+<li> Creating your own Domain Specific Languages(DSL’s)
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading5">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="5.Exception handling in Scala">
+						<a data-toggle="collapse" href="#collapse5" data-parent="#accordion">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							5.Exception handling in Scala
+						</a>
+					</h4>
+				</div>
+				<div id="collapse5" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Try catch with case</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading6">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="6.Pattern Matching in Depth">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							6.Pattern Matching in Depth
+						</a>
+					</h4>
+				</div>
+				<div id="collapse6" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li> Using the match keyword to return a value
+<li> Using case classes for pattern matching
+<li> Adding pattern guards to match conditions
+<li> Partially specifying matches with wildcards
+<li> Deep matching using case constructors
+<li> Matching against collections of items
+<li> Using extractors instead of case classes
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading7">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="7.Test Driven Development in Scala">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse7">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							7.Test Driven Development in Scala
+						</a>
+					</h4>
+				</div>
+				<div id="collapse7" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li> Writing standard JUnit tests in Scala
+<li> Conventional TDD using the ScalaTest tool
+<li> Behaviour Driven Development using ScalaTest
+<li> Using functional concepts in TDD
+<li> Conclusion and Summary
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading8">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="8.Introduction Big-data ecosystem">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse8">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							8.Introduction Big-data ecosystem
+						</a>
+					</h4>
+				</div>
+				<div id="collapse8" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+<li> Hadoop Ecosystem Overview
+<li> HDFS Overview
+<li> YARN Overview
+<li> Spark Overview
+							</ul>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading9">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="9.Introduction to SPARK">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse9">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							9.Introduction to SPARK
+						</a>
+					</h4>
+				</div>
+				<div id="collapse9" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+<li> Introduction to Spark Scala API
+<li> Hadoop Map Reducing Concept
+<li> Execute Apache Spark Tasks
+<li> Configuring Apache Spark
+<li> Building and Running Spark Applications
+<li> Resilient Distributed datasets
+<li> Hands On Session using SPARK API
+<li> Conclusion and Summary
+
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading10">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="10.Spark Basics">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse10">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							10.Spark Basics
+						</a>
+					</h4>
+				</div>
+				<div id="collapse10" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+<li>	Using the Spark Shell
+<li>	Introduction to RDDs (Resilient Distributed Datasets)
+<li>	Functional Programming in Spark
+
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading11">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="11.Working with RDDs in Spark">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse11">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							11.Working with RDDs in Spark
+						</a>
+					</h4>
+				</div>
+				<div id="collapse11" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+<li>	Purpose and Structure of RDDs
+<li>	Transformation, Actions and DAG
+<li>	RDD Programming API
+<li>	RDD Operations
+<li>	Creating RDDs from a File (example)
+<li>	Other General RDD Operations
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading12">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="12.Aggregating Data with Pair RDDs">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse12">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							12.Aggregating Data with Pair RDDs
+						</a>
+					</h4>
+				</div>
+				<div id="collapse12" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+<li>	Key-Value Pair RDDs
+<li>	Map-Reduce
+<li>	Other Pair RDD Operations
+
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading13">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="13.Spark RDD Persistence">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse13">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							13.Spark RDD Persistence
+						</a>
+					</h4>
+				</div>
+				<div id="collapse13" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+<li>	RDD Lineage
+<li>	RDD Persistence Overview
+<li>	Distributed Persistence
+
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading14">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="14.Writing and Deploying Spark Applications">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse14">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							14.Writing and Deploying Spark Applications
+						</a>
+					</h4>
+				</div>
+				<div id="collapse14" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+<li>	Spark Applications vs. Spark Shell
+<li>	Creating the SparkContext
+<li>	Building a Spark Application
+<li>	Running a Spark Application
+<li>	The Spark Application Web UI
+<li>	Configuring Spark Properties
+<li>	Logging
+
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div><!-- panel-group -->	
+    </div>
+  </div>
+	<input type = "submit" class="btn btn-primary" value= "Submit Choices" style = "">
+	</form>
+</div>	
+</div>
+<script>
+function toggleIcon(e) {
+    $(e.target)
+        .prev('.panel-heading')
+        .find(".more-less")
+        .toggleClass('glyphicon-plus glyphicon-minus');
+}
+$('.panel-group').on('hidden.bs.collapse', toggleIcon);
+$('.panel-group').on('shown.bs.collapse', toggleIcon);
+</script>
+{% endblock %}

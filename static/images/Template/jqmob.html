@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+{% extends "index.html" %}
+{% load staticfiles %}
+{% block home %}
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="http://api.html5media.info/1.1.5/html5media.min.js"></script>
+
+      {% block flash%} {% endblock %}
+    
+    <style type="text/css">
+        body {
+            background: #fff;
+            font-family: verdana;
+            padding-top: 0px;
+            background-color: #027fcf;
+        }
+        #vtab {
+            margin: 10;
+            width: 700px;
+            height: 100%;
+        }
+        #vtab > ul > li {
+            width: 150px;
+            height: 80px;
+            background-color: #fff !important;
+            list-style-type: none;
+            display: block;
+            text-align: center;
+            margin: auto;
+            padding-bottom: 10px;
+            border: 1px solid #fff;
+            position: relative;
+            border-right: none;
+            opacity: .3;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+            filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+        }
+        #vtab > ul > li.home {
+            background: url('http://gktcs.in/GLMS/public/static/images/about1.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.login {
+            background: url('http://gktcs.in/GLMS/public/static/images/demo4.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.support {
+            background: url('http://gktcs.in/GLMS/public/static/images/content.jpg') no-repeat center center;
+        }
+         #vtab > ul > li.support1 {
+            background: url('http://gktcs.in/GLMS/public/static/images/batches.jpg') no-repeat center center;
+        }
+        
+        #vtab > ul > li.support2 {
+            background: url('http://gktcs.in/GLMS/public/static/images/interview.jpg') no-repeat center center;
+        }
+         #vtab > ul > li.support3 {
+            background: url('http://gktcs.in/GLMS/public/static/images/training.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.support4 {
+            background: url('http://gktcs.in/GLMS/public/static/images/FAQ.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.support5 {
+            background: url('http://gktcs.in/GLMS/public/static/images/testi.jpg') no-repeat center center;
+        }
+         #vtab > ul > li.support6 {
+            background: url('http://gktcs.in/GLMS/public/static/images/certification.jpg') no-repeat center center;
+        }
+        
+        
+        #vtab > ul > li.selected {
+            opacity: 1;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+            filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+            border: 1px solid #ddd;
+            border-right: none;
+            z-index: 10;
+            background-color: #fafafa !important;
+            position: relative;
+        }
+        #vtab > ul {
+            float: left;
+            width: 110px;
+            text-align: left;
+            display: block;
+            margin: auto 0;
+            padding: 0;
+            position: relative;
+            top: 30px;
+        }
+        #vtab > div {
+            background-color: #fafafa;
+            margin-left:150px;
+            border: 1px solid #ddd;
+            min-height: 700px;
+            padding: 12px;
+            position: relative;
+            z-index: 9;
+            -moz-border-radius: 20px;
+        }
+        #vtab > div > h4 {
+            color: #800;
+            font-size: 1.2em;
+            border-bottom: 1px dotted #800;
+            padding-top: 5px;
+            margin-top: 0;
+        }
+        #loginForm label {
+            float: left;
+            width: 100px;
+            text-align: right;
+            clear: left;
+            margin-right: 15px;
+        }
+        #loginForm fieldset {
+            border: none;
+        }
+        #loginForm fieldset > div {
+            padding-top: 3px;
+            padding-bottom: 3px;
+        }
+        #loginForm #login {
+            margin-left: 115px;
+        }
+        
+     a {text-decoration: none}
+    </style>
+
+    <script type="text/javascript">
+        $(function() {
+            var $items = $('#vtab>ul>li');
+            $items.mouseover(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('#vtab>div').hide().eq(index).show();
+            }).eq(0).mouseover();
+        });
+    </script>
+
+</head>
+<body>
+
+			<font color="#366D9C" size=6px style="font-family: Georgia; padding-left: 375px"><b>jQuery Mobile</b></font>
+
+	
+	<table width="980" height="700"> 
+		<tr> 
+			<td width='100'>
+		
+    <div id="vtab">
+        <ul>
+            <li class="home selected"></li>
+            <li class="login"></li>
+            <li class="support"></li>
+            <li class="support1"></li>
+            <li class="support2"></li>
+            <li class="support3"></li>
+            <li class="support4"></li>
+            <li class="support5"></li>
+            <li class="support6"></li>
+        </ul>
+        <div>
+        	<h4>About Course</h4>
+        	<br/>
+           <table align="justify">
+           	<tr align="justify">
+           		<td valign="top">
+           		<img src='http://gktcs.in/GLMS/public/static/images/jquerym.jpg' width='90' height="60" />
+           		</td>
+           		<td>
+           			
+<b>Course Duration:</b>45hrs<br/>
+<br/>
+<b>Course Description:</b><br/>
+<br/>
+ <b>jQuery Mobile</b> is a framework for creating mobile web applications.jQuery Mobile  framework takes the "write less, do more" mantra to the next level: Instead of writing unique applications for each mobile device or OS, the jQuery mobile framework allows you to design a single highly-branded responsive web site or application that will work on all popular smartphone, tablet, and desktop platforms.
+
+<br/>
+<br/>
+<b>Who Should Attend:</b>
+<br/>
+<br/>
+This course is intended for experienced HTML developers with some CSS experience. 
+<br/><br/>
+<b>Benefits of Attendance:</b>
+<br/>
+<br/>
+Upon completion of this course, students will get following advantages:<br/>
+<br/>
+<ul>
+<li>Basic knowledge of jQuery Mobile.</li><br/>
+<li>How to use jQuery Mobile Framework to develop mobile web applications.</li><br/>
+<li>How to develope UI widgets that are touch-optimized and platform-agnostic.</li><br/>
+<li>Learn to improve websites through adding touch-friendly form inputs, more efficient page loads</li><br/>
+<li>Creation of custom themes using theming framework.</li>
+<br/>
+</ul>
+<br/>
+<br/>
+<b>Prerequisites:</b><br/>
+<br/>
+Students must be experienced with HTML and have experience with CSS.
+           		</td>
+           	</tr>
+           	
+           	
+           </table>
+            
+        </div>     
+         <div>
+         	<h4>Sample Demo</h4>
+         	<br/>
+         	<div>
+   <video id="abc" width="500px" height="360px" autoplay controls > <source src="{% static 'C:/GLMS/static/abc.mp4' %}" type="video/mp4"> </source>
+     
+        </video></div>
+
+</div>
+           <div>
+            <h4>
+              Content </h4>
+              <br/>
+				<br><h3>1. Meet jQuery Mobile</h3><br>
+				<li>Overview of the jQuery Mobile Library 
+				<li>How jQuery Mobile Works
+				<li>Create Your First jQuery Mobile Application
+				<li>Under The Hood: the jqmData() Custom Selector</li>
+				<br><h3>2. Application Structure and Navigation Pages </h3><br>
+				<li>Internal Pages
+				<li>External Pages
+				<li>Under The Hood: Page Initialization in jQuery Mobile
+				<li>Page Hide and Show Events
+				<li>Dialogs
+				<li>Navigation and History
+				<li>Transitions
+				<li>Under The Hood: Animations in a jQuery Mobile Application</li>
+				<br><h3>3. Page Elements</h3><br>
+				<li>Under The Hood: jQuery Plug-ins and Widgets
+				<li>List Views
+				<li>Basic List View
+				<li>Advanced List Views
+				<li>Under The Hood: Updating a List View
+				<li>Toolbars
+				<li>Navigation Bars
+				<li>Positioning the Header and Footer
+				<li>Buttons
+				<li>Button Control Groups
+				<li>Button Icons
+				<li>vForm Elements
+				<li>Accessing Form Elements with JavaScript
+				<li>Checkboxes and Radio Buttons
+				<li>Flip Toggle
+				<li>Input Fields and Textareas
+				<li>Search Fields
+				<li>Select Menus
+				<li>Sliders
+				<li>Layout Grids</li>
+				<br><h3>4. Theming jQuery Mobile</h3><br>
+				<li>Themes and Swatches
+				<li>Under The Hood: Customizing a Swatch
+				<li>Theming List View Elements</li>
+	
+				<br>
+				<h3>5. jQuery Mobile API</h3><br>
+				<li>jQuery Mobile Methods
+				<li>changePage
+				<li>pageLoading
+				<li>silentScroll
+				<li>addResolutionBreakpoints
+				<li>Events
+				<li>Touch Events
+				<li>Initialization Events
+				<li>Page Hide and Show Events
+				<li>Scroll Events
+				<li>Orientation Change Events
+				<li>Responsive Layout API
+				<li>CSS Selectors
+				<li>Configuring jQuery Mobile
+				<li>Available Options
+				<li>Changing an Option via mobileinit
+				<li>Under The Hood: Namespacing Data Attributes</li>
+				<br><h3>6. jQuery Mobile in Action</h3><br>
+				<li>Application Pages
+				<li>Initializing the Application
+				<li>The initMainPage Method
+				<li>The initSettings Method
+				<li>The initDetailPage Method
+				<li>Error Dialog
+				<li>jqmTweet Take One
+				<li>Improving the Interface
+
+  	    
+        
+        </div>
+        
+           <div>
+        
+ <h4>Upcoming Batches</h4>
+ <br/>
+<div class="pricing_table">
+
+<table width=500px>
+		<tr width=500px ></tr>
+		<b><th width=280 bgcolor="#333333" style="color:#FFFFFF;">Start date</th>
+			
+		<th width=95 bgcolor="#333333" style="color:#FFFFFF;">Duration</th>
+		<th width=700 bgcolor="#333333" style="color:#FFFFFF;">Days</th>
+		<th width=100 bgcolor="#333333" style="color:#FFFFFF;">Time</th>
+		<th width=100 bgcolor="#333333" style="color:#FFFFFF;">Price</th></b>
+		</tr>
+		
+		
+		{% for j in batch %}
+		<tr width=500px>
+			
+<td width=350 bgcolor="#CCCCCC" style="text-align: center"> {{j.Start}}</td>
+<td width=220 bgcolor="#CCCCCC" style="text-align: center">{{j.Duration}}</td>
+<td width=350 bgcolor="#CCCCCC" style="text-align: center">{{j.Days}}</td>
+
+<td width=150 bgcolor="#CCCCCC" style="text-align: center">{{j.Time}}</td>
+<td width=100 bgcolor="#CCCCCC" style="text-align: center">{{j.Price}}/-</td>
+
+		
+		</tr>
+		{% endfor %}
+		
+		
+	</table>	
+
+</div>
+	 <br><br>
+	<br/>
+		
+
+<a href="/Enroll" style="padding-left: 320px; "><img src="http://gktcs.in/GLMS/public/static/images/enroll.png" height=40px width="190px" align="center"/></a>
+        </div>
+        
+           <div align="justify">
+           	<h4>Interview Questions</h4>
+           	<br/>
+           	<br/>
+           	
+           	<b>Question: What is jQuery Mobile and how is it different from jQuery and jQueryUI?</b><br/>
+Ans. JQuery Mobile is a touch-optimized HTML5 UI development framework that allows you to develop cross platform 
+websites as well as apps which work across all popular smart-phones, tablets and desktops.The jQuery Mobile framework is built on top of jQuery library which provides a number of facilities, including HTML and XML DOM traversing and manipulation, handling events, performing server communication using Ajax, animation etc. 
+jQuery Mobile framework itself has separate library to develop websites as well as apps.
+            <br/>
+            <br/>         
+            
+            <b>Question:Why jQuery Mobile?
+            	</b><br/>
+Ans: There are a variety of mobile devices having different OS like Android, Blackberry, iOS, Windows Phone, Nokia Symbian etc. These devices have own apps and different browsers which present challenges for us in web or apps development. Instead of developing an app for each mobile device, jQuery mobile allows you to create cross platform website or apps which are easy to develop and maintain, since it only uses HTML, CSS and JavaScript, which is standard for all mobile devices and mobile web browsers.
+<br/>
+<br/>
+
+<b>Question: Features of jQuery Mobile ?</b><br/>
+Ans: 01.Touch-optimized JavaScript framework for smart-phones & tablets.
+<br>02.Open-source and freely available for all kind of usages.
+<br>03.Cross-platform, cross-device and cross-browser compatible.
+<br>04.Built on jQuery and jQuery UI foundation.
+<br>05.HTML5 based configuration for developing web pages with minimal scripting.
+<br>06.Unified user interface system across all popular mobile platforms.
+<br>07.Minimal image dependencies and light weight in size (12KB) to optimize speed.
+<br>08.Responsive design techniques allow the same underlying UI to automatically scale from smart-phones to tablet and desktop-sized screens.
+<br>09.AJAX-based navigation system to enable animated page transitions while maintaining back button, bookmarking and clean URLs.
+<br>10.Support for touch and mouse events for better user experience.
+<br/>
+<br/>
+<b>Question: Why Use jQuery Mobile?</b><br/>
+Ans.1. Write Less, Do more<br>
+2. Its works on Android, Blackberry, iOS and Iphone<br>
+3. Its optimized
+<br/>
+<br/>
+
+<b>Question: Describe few HTML tags used in jQuery Mobile?</b><br>
+Ans.data-role="page": Page displayed in the browser.
+<br>data-role="header": Creates a toolbar at the top of the page.
+<br>data-role="main": Content of the page, like text, images, buttons and forms etc.
+<br>"ui-content": Adds extra padding and margin inside the page content
+<br>data-role="footer": creates a toolbar at the bottom of the page
+
+<br/>
+<bR>
+<b>Question: What is jQuery Mobile Themeing?</b><br/>
+Ans. jQuery Mobile provides a powerful theming that allows developers to customize color schemes & CSS aspects of UI features.
+<br/>
+<br/>
+<b>Question:What is Initial release of JQuery Mobile?
+</b><br/>
+Ans. October 16, 2010
+<br><Br>
+
+<b>Question: What is Latest version of jQuery Mobile?</b>
+Ans:Version: 1.4.5<br>
+Dated: October 31, 2014 
+<br><Br>
+
+<b>Question: In which language, jQuery mobile is written?</b>
+</b>?<br/>
+Ans: JavaScript
+<br/>
+<br/>
+<b>Question: Where it is used?</b>
+</b><br/>
+Ans.It is "Mobile application framework" which is used for creating mobile web applications.
+<br/>
+<br/>
+<b>Question: What is offical website of jQuery Mobile?</b><br/>
+Ans:http://jquerymobile.com/<br/>
+
+<br><Br>
+
+         	  	
+        </div>
+         <div align="justify">
+         	<h4>
+                Training Mode</h4>
+                <br/>
+   
+         	
+         	<table width=620><tr align="justify">
+         		<td width="330" align="justify">
+         		<br/>
+         	
+         	<b>Corporate Training :</b><br/>
+         	
+Corporate Training Solutions
+
+Corporate training is the act of grooming the workforce in order to make them capable of handling modern business challenges by improving their approach and productivity and thus, making effective utilization of resources. We at GKTCS work hand in hand with Industry on various fronts. GKTCS’s business cycle is aligned very closely to Industry needs and structured to fulfil the industry needs in terms of Training and Recruitment.
+
+We always believe our customers speak for our services based on their rich experience with our kind of services.
+</td>
+<td align="right">
+	<img src="http://gktcs.in/GLMS/public/static/images/corporate.jpg"  width="200" height="150"/> 
+</td>
+</tr>
+<tr>
+	<td>
+		<br/>
+<b>Retail Training :</b>
+<br/>
+GKTCS Innovations has a set of best trainers who are constantly engaged in spreading technical and non technical knowledge to individual who are seeking an opportunity in their respective industries and would like to straight away face the challenges of the continuously improving and changing world.
+
+The retail Training services provided by GKTCS Innovations are designed as per the needs of corporate and also as per the guidelines provided by them.
+ </td>
+ <td align="right">
+	<img src="http://gktcs.in/GLMS/public/static/images/retail.jpg"  width="200" height="150"/>
+</td>
+ </tr>
+ <tr>    <td>   
+ 	<br/>	
+ <b>Online Training </b>
+ <br/>
+ GKTCS offers Online Training , so you get trained from where you are from our experienced trainers, In the weekdays as well as weekends by the Real Time Professionals. The program is designed to provide rich learning experience for students using Internet.         	
+      </td>   
+      <td align="right">
+      	<img src="http://gktcs.in/GLMS/public/static/images/online.jpg"  width="200" height="150"/>
+      </td>  
+      </tr>	
+    </table>     	
+         	
+         </div>
+		
+
+           <div align="justify">
+           	<h4>
+                FAQs</h4>
+           	
+           	<br/>
+    
+          <b> Can a class declared as private be accessed outside it's package?
+</b><br/>
+Not possible.
+<br/>
+<br/>
+<b>Why jQuery Mobile?
+</b><br/>
+There are a variety of mobile devices having different OS like Android, Blackberry, iOS, Windows Phone, Nokia Symbian etc. 
+These devices have own apps and different browsers which present challenges for us in web or apps development. Instead of 
+developing an app for each mobile device, jQuery mobile allows you to create cross platform website or apps which are easy 
+to develop and maintain, since it only uses HTML, CSS and JavaScript, which is standard for all mobile devices and mobile web browsers.
+<br><Br>
+<b>What is jQuery Mobile and how is it different from jQuery and jQueryUI?
+</b><br/>
+jQuery Mobile is a touch-optimized HTML5 UI development framework that allows you to develop cross platform websites as well as apps which 
+work across all popular smart-phones, tablets and desktops.The jQuery Mobile framework is built on top of jQuery library which provides a 
+number of facilities, including HTML and XML DOM traversing and manipulation, handling events, performing server communication using Ajax, 
+animation etc. jQuery Mobile framework itself has separate library to develop websites as well as apps.<br/>
+<br/>
+<b>What is the difference between jQuery VS jQueryUI VS jQuery Mobile ?
+</b><br/>
+jQuery is purely designed to simplify and standardise scripting across browsers. It focuses on the low-level stuff: creating elements, 
+manipulating the DOM, managing attributes, performing HTTP requests, etc.<br>
+jQueryUI is a set of user interface components & features built on top of jQuery (i.e. it needs jQuery to work): buttons, dialog boxes, 
+sliders, tabs, more advanced animations, drag/drop functionality. jQuery and jQueryUI are both designed to be added to your web site, 
+if you want to add a particular feature, jQuery or jQueryUI might be able to help.<br>
+However, jQuery Mobile is a full framework which is built on jQuery and jQuery UI foundation. It makes use of features of both jQuery and 
+jQueryUI to provide both UI components and API features for building mobile-friendly sites. In addition, jQuery Mobile also offers various 
+native features that are especially made for mobile devices.<br>
+Moreover, jQuery and jQueryUI act as a layer on top of your HTML and CSS. Using jQuery and jQueryUI, you just leave your markup alone and 
+enhance it with the help of jQuery. However, jQuery Mobile provides ways to define your components using HTML5 data-* attributes.
+<br><BR>
+<b>How to keep the submit text from showing with jQuery Mobile?
+</b><br/>
+Suppose we are working on a website that has a submit button and forms and such. On this website we using jQuery Mobile, but to keep its stylesheet from interfering we using some jQuery.<br>
+jQuery Mobile is doing a weird thing where it is printing the value of the button, in this case "Submit", to the page, even though under it there is a button under it that says "Submit" and actually works.	<br/>
+<br/>
+<b>Why HTML 5 inputs look different across devices and browsers?
+</b><br/>
+jQuery Mobile does not have control over the the UI for most of the newer HTML5 input elements like date, color and number. The keyboards 
+and pickers provided are browser-dependent but will safely fall back to a standard input if it's not supported. We do apply basic border 
+and color styles to inputs for these elements so there is some visual consistency.	<br><Br>
+
+<br><Br>
+        </div>
+           <div>
+        <h4>Testimonials</h4> 
+           
+        </div>
+   
+        <div align="justify">
+            <h4>
+                Certification</h4>
+                <br/>
+           
+             At the end of the course we provide  Certification.  <br/><br/>
+           <b>Process for Certification :</b>
+          
+  <li>You will receive a real time project Problem Statement along with a dataset to work. </li>
+  <li>After complition of your project(Reviewed by an Expert),you will be awarded a certificate with a performance-based grading. </li>
+ <li>If your project is not completed on time , you can take extra training for any of your doubts to understand the concepts better and re-attempt the Project free of cost.</li>
+<br/>
+GKTCS will help you at every stage of your learning and our 24/7 expert support team will ensure that you don't get stuck. Once you submit the project, our subject matter experts will review the same and share feedback to optimize it, if required.
+        </div>
+        </div>
+    
+    </td>
+    
+    <td valign="top" width="500">
+  		
+    <table valign="top">
+    	<tr valign="top">
+    		<font color="#366D9C" size=5px style="font-family: Georgia; padding-left:25px"><b>Course Features</b></font>  
+    		<td align="left" valign="top" width="500" height="200">
+    		
+ 
+  <br/>
+ <br/>
+ <li>Expert and qualified trainers</li>
+<li>Practical Project Based Approach</li>
+<li>Regular Assessment & feedback</li>
+<li>Total customized as per the client needs</li> 
+<li>Lifetime Access</li> 
+<li>  24 x 7 Support</li> 
+<li>  Get Certified</li>
+ 
+
+    			
+     		</td>
+     	
+    		
+    		
+    	</tr>
+    	
+    	<tr valign="top">
+    		<td height="20" valign="top" align="center">
+    		
+    		
+    		<font color="#366D9C" size=5px style="font-family: Georgia; padding-left:25px"><b>Placed Candidate</b></font>  
+    			<br/>
+    			<marquee direction="up" scrollamount="4" height="300">
+    			<table>
+    				<tr>
+    	   						
+    					<table>
+    						<tr>
+    							<td valign="top" height="30">
+    								
+    								<img src="http://gktcs.in/GLMS/public/static/images/AhilanShankar.jpg" width="100" height="100"/>
+    							</td>
+    							<td>
+    								<b>Alihan shanakar</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/capegemini.png" width="150" height="80"/> 
+    							</td>
+    						</tr>
+    						
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/sounavdas.jpg" width="100" height="100"/>
+    							</td>
+    							<td>
+    								<b>Sonav Das</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150" height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/ShashankVerma.jpg" width="60" height="80"/>
+    							</td>
+    							<td>
+    								<b>Shashank Verma</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/leoinfotech.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/rasika1.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Rasika</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/renuka.jpg" width="100" height="100"/>
+    							</td>
+    							<td>
+    								<b>Renuka Shirbhate</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/inetsoft.jpg" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/Neha.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Neha Kottarwar</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/GauravKotarwar.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Gaurav Kotarwar</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/leoinfotech.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/PrajaktaSakale.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Prajkta Sakale</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    							<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/SohailShaikh.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Sohail Shaikh</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/leoinfotech.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/ApurvaBhat.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Apurva Bhat</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/AshishSoni.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Ashish Soni</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    					
+    					    						
+    						
+    						
+    						
+    					</table>
+    					
+    						
+    						
+    					</td>
+    		
+    		
+    	</tr>
+    </table>
+    
+    </td>
+    
+    
+    </tr>
+	</table>
+	
+</body>
+</html>
+{% endblock %}

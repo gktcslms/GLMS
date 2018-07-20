@@ -1,0 +1,33 @@
+<html>
+	{% extends "index.html" %}
+{% load staticfiles %}
+{% block home %}
+	<head>
+		<script>
+			function enrollfun() {
+    alert("Thanks for Your Registration");
+    }
+		</script>
+	</head>
+	
+	<div style="padding-left:300">
+		<img src="http://gktcs.in/GLMS/public/static/images/enroll.png"/ height="75" width="300">
+		<br>
+	<form  method='post' action="" > {% csrf_token %}
+					<table valign="top">
+						<tr><td><b>Name :</b</td><td>{{ form.Name }}</td></tr>
+						<tr><td><b>Email :</b</td><td>{{ form.email }}</td></tr>
+						<tr><td><b>Contact :</b</td><td>{{ form.Contact}}</td></tr>
+						<tr><td><b>Technology :</b</td><td>{{ form.Technology }}</td></tr>
+						<tr><td><b>Batch :</b</td><td>{{ form.Batch }}</td></tr>	
+					</table>
+				
+				
+				<div style="padding-left:130">	<input type="submit" onclick="enrollfun()" >
+					
+				</div>
+					
+				</form>
+			</div>	
+</html>
+{% endblock %}

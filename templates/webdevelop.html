@@ -1,0 +1,594 @@
+{% load staticfiles %}
+<title>Gktcs LMS</title>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title> GKTCS LMS</title>
+		<link rel="shortcut icon" href="http://gktcs.in/GLMS/public/static/images/favicon.ico" type="image/x-icon" />
+		<link rel="icon" href="http://gktcs.in/GLMS/public/static/images/favicon.ico" type="image" />
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="http://gktcs.in/GLMS/public/static/css/course.css">
+		<script type="text/javascript">
+
+$(document).ready(function () {
+	
+	$('#toggle-view li').click(function () {
+
+		var text = $(this).children('p');
+
+		if (text.is(':hidden')) {
+			text.slideDown('200');
+			$(this).children('span').html('-');		
+		} else {
+			text.slideUp('200');
+			$(this).children('span').html('+');		
+		}
+		
+	});
+
+});
+
+</script>
+	</head>
+	<body style="background: #283749 url() no-repeat scroll 0 0;">
+		<header>
+			<div id="tophead">
+			<div id="head">
+				<div class="container">	
+					<a id="gklogo" href="#"><img src="http://gktcs.in/GLMS/public/static/images/gktcs_logo.png"></a>
+					<div class="row">
+						
+						<div class="col-xs-10">
+							<div class="row" id="toprow">	
+								<div class="col-md-2" >
+			
+							
+								
+								</div>
+								
+								<div class="col-md-3" id="call1" >
+								
+										
+											<div id="calldiv" ><img src="http://gktcs.in/GLMS/public/static/images/call.png" /><span id="callspan">+91 - 9975072320</span></div>
+									
+								</div>		
+								
+								<div class="col-md-3 col-md-offset-4" id="mail">	
+										
+											<div id="maildiv"><img src="http://gktcs.in/GLMS/public/static/images/envelop.png" /><span id="mailspan">support@gktcs.in</span></div>
+								</div>
+									
+								</div>
+							</div>
+						</div>	
+					</div>	
+				</div>
+				</div>
+										<div class="container" id="navcol00">
+							<nav class="navbar navbar-default">
+						  	<div class="">
+						    <!-- Brand and toggle get grouped for better mobile display -->
+						    <div class="navbar-header">
+						      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="true">
+						        <span class="sr-only">Toggle navigation</span>
+						        <span class="icon-bar"></span>
+						        <span class="icon-bar"></span>
+						        <span class="icon-bar"></span>
+						      </button>
+						      
+						    </div>
+	
+						    <!-- Collect the nav links, forms, and other content for toggling -->
+						    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						      <ul class="nav navbar-nav" id="cnav">
+								<li><a href="{% url 'Courses' %}">COURSES</a></li>
+								<li><a href="{% url 'blog' %}">BLOGS</a></li>
+								<li><a href="{% url 'Aboutus' %}">ABOUT US</a></li>
+								<li><a href="{% url 'contact' %}">CONTACT</a></li> 
+								<li><a href="#">LOGIN</a></li>
+								<li><a href="#">SIGN UP</a></li>
+						      </ul>
+						    </div><!-- /.navbar-collapse -->
+						   
+						  </div><!-- /.container-fluid -->
+						</nav>
+						</div>
+				
+		</header>
+		<div id="div1">
+			<div class="container">
+				<div class="row">
+
+					<div class="col-md-8">
+						<div id="course_desc">
+							<div id="desc1">
+							
+							<ul class="breadcrumb" id="course_desc1">
+								<li><a href="/">HOME</a>
+								</li>
+								<li><a href="/all-courses">ALL COURSES</a>
+								</li>
+								<li class="current">HTML5 + CSS3 + JavaScript
+								</li>
+							</ul>
+							<div class="row" style="background: rgba(40, 55, 73, 0.2);;">
+								<div class="col-md-4 col-sm-4">
+									<img class="img-responsive" id="header-logo" src="http://gktcs.in/GLMS/public/static/images/htmlcss.png" />
+								</div>
+								<div class="col-md-8 col-sm-8">
+									<h1 style="margin-top: 10;">HTML5 + CSS3 + JavaScript</h1>
+									<div id="span1">Become an expert in Responsive Web Development' by mastering the advanced concepts of HTML5, CSS3 and JavaScript, also develop creative UI (User Interface) with JQuery.</div>
+								</div>
+							</div>	
+							<div>
+								<div id="screen1">
+									<iframe width="560" height="315" src="//www.youtube.com/embed/3Xly2W1Cisc" frameborder="0" allowfullscreen></iframe>
+								</div>
+							</div>
+							
+							<h4 id="upcom"><b>Upcoming Batches : </b></h4>
+							<table class="table" id="table1">
+							    <thead>
+							      <tr id="head1">
+							        <th>STARTS</th>
+							        <th>DURATION</th>
+							        <th>DAYS</th>
+							        <th>TIME(IST)</th>
+							        <th>PRICE</th>
+							        <th>&nbsp</th>
+							      </tr>
+							    </thead>
+							    <tbody>
+							      <tr>
+							        <td>12-Jan</td>
+							        <td>5 Weeks</td>
+							        <td>Sat,Sun</td>
+							        <td>07:00 AM-10:00 AM</td>
+							        <td>15,000</td>
+							        <td id="enr">Enroll>></td>
+							      </tr>
+							      <tr>
+							        <td>18-Jan</td>
+							        <td>5 Weeks</td>
+							        <td>Sat,Sun</td>
+							        <td>08:30 PM-11:30 PM</td>
+							        <td>15,000</td>
+							        <td id="enr">Enroll>></td>
+							      </tr>
+							      <tr>
+							        <td>24-Jan</td>
+							        <td>5 Weeks</td>
+							        <td>Sat,Sun</td>
+							        <td>07:00 AM-10:00 AM</td>
+							        <td>15,000</td>
+							        <td id="enr">Enroll>></td>
+							      </tr>
+							      <tr>
+							        <td>01-Feb</td>
+							        <td>5 Weeks</td>
+							        <td>Sat,Sun</td>
+							        <td>08:30 PM-11:30 PM</td>
+							        <td>15,000</td>
+							        <td id="enr">Enroll>></td>
+							      </tr>
+							    </tbody>
+							 </table>								
+						</div>
+						</div>
+						
+					<div id="descripti">
+						<ul id = "myTab" class = "nav nav-tabs">
+						   <li class = "active">
+							  <a href = "#about" data-toggle = "tab">
+								 About The Course
+							  </a>
+						   </li>
+						   
+						   <li><a href = "#Curriculum" data-toggle = "tab">Curriculum</a></li>
+						   
+						   <li><a href = "#FAQ" data-toggle = "tab">FAQ's</a></li>
+						   
+						   <li><a href = "#Certification" data-toggle = "tab">Certification</a></li>
+						   
+						   <li><a href = "#Reviews" data-toggle = "tab">Reviews</a></li>
+							
+							
+						</ul>
+
+						<div id = "myTabContent" class = "tab-content">
+
+						   <div class = "tab-pane fade in active" id = "about">
+							<h4>About The Course</h4>
+										<p><div style="text-align: justify;">GKTCS's  HTML5 + CSS + JavaScript course covers  all the concepts like HTML,  HTML-5
+							  tags, CSS and CSS-3 styles. Also, JavaScript  programming
+							  and handling Javascripts events with HTML, JQuery and  AngularJS is introduced.</div></p>
+											<h4>Course Objectives</h4>
+										<p><div style="text-align: justify;">After the completion of the 'HTML5 + CSS + JavaScript' Course at GKTCS, you should be able to:</div>
+							<div style="text-align: justify;">
+							  <br></div>
+							<div style="text-align: justify;">1. Design Websites using HTML</div>
+							<div style="text-align: justify;">2. Style the Websites developed in
+							  HTML using CSS</div>
+							<div style="text-align: justify;">3. Develop JavaScript codes</div>
+							<div style="text-align: justify;">4. Write JQuery codes for UI development</div>
+							<div style="text-align: justify;">5. Understand Angular Js</div></p>
+											<h4>Who should go for this course?</h4>
+										<p><div style="text-align: justify;">This  course can be taken by anyone
+							  who wants to be a web developer or  design websites for blogs. Besides
+							  this, anyone who wants to learn  HTML, CSS, JSP and JQuery to create a
+							  website can enroll for this course.</div></p>
+											<h4>Pre-requisites</h4>
+										<p><div style="text-align: justify;">Basic  computer science knowledge will
+							  help you learn HTML5 + CSS + JavaScript.</div></p>
+											<h4>Why learn HTML5 + CSS + JavaScript?</h4>
+										<p><div style="text-align: justify;">With  the commercialization of the
+							  web, web development has become one of  the blooming industries.
+							  Learning web development enables you to  create attractive websites
+							  using HTML, CSS, JQuery and JavaScript.  Web development includes
+							  developing simple and complex web-based  applications, electronic
+							  businesses and social networking sites. Being  a web developer you can
+							  deliver applications as web services which is  only available in
+							  desktop applications.</div></p>
+
+						   </div>
+						   
+						   <div class = "tab-pane fade" id = "Curriculum">
+							<h4>
+											1. HTML Part-1 
+										</h4>  
+										<p><div style="text-align: justify;">
+							  <b>Learning Objectives</b> - In this module, you will  understand the
+							  role of HTML, CSS and JavaScript in a web page and  through
+							  understanding of HTML Elements. You will also understand the  role of
+							  different elements of a HTML document.</div>
+									 <div style="text-align: justify;">
+							  <br /></div>
+							<div style="text-align: justify;">
+							  <b>Topics</b> - HTML History and Origins,  HTML  Document/Page Types,
+							  Mark-up Components, Elements, Tags, Document  Structure, Element
+							  Structure,  Element Attributes, Heading and  Paragraphs, Block and
+							  Inline Elements, Character and Entity  References, Sub-elements of
+							  &lt;head&gt; element.</div> </p>
+													<h4>
+											2. HTML Part-2 
+										</h4>  
+										<p><div style="text-align: justify;">
+							  <b>Learning Objectives</b> - In this module, you will learn  about
+							  developing websites using lists, anchors, tables, and images.   You
+							  will understand how to develop a page containing various form
+							  elements and controls.</div>
+								   <div style="text-align: justify;">
+							  <br /></div>
+							<div style="text-align: justify;">
+							  <b>Topics</b> - Images, Formatting and Styling images,  Using images a
+							  background and bullets, Hyperlinks, URLs, Use of anchor  tag, Ordered
+							  and Unordered List, Styling Lists, Tables, Styling  Tables, Form
+							  Elements, Various types of Input types in Forms, Form Controls.</div> </p>
+													<h4>
+											3. CSS 
+										</h4>  
+										<p><div style="text-align: justify;">
+							  <b>Learning Objectives</b> - In this module, you will learn how to
+							  style your websites using CSS (Cascading Style Sheets). You will also
+							  learn about CSS Box-Model, Selectors, Properties and styling lists and tables.</div>
+							<div style="text-align: justify;">
+							  <br /></div>
+							<div style="text-align: justify;">
+							  <b>Topics</b> - CSS Placement in HTML, CSS Syntax, CSS Box Model, CSS
+							  Selectors, Attribute Selectors, Pseudo-class Selectors, Pseudo-element
+							  Selectors, Units of Measure, Color, Font and Text Properties, CSS
+							  Backgrounds, Box-Model Properties, Position and Display Properties,
+							  List Properties, Table Properties.</div> </p>
+													<h4>
+											4. HTML5 
+										</h4>  
+										<p><div style="text-align: justify;">
+							  <b>Learning Objectives</b> - In this module, you will learn about
+							  developing websites using HTML5 tags. You will understand role of
+							  &lt;div&gt; tag, when to use id/class attributes in an HTML element.</div>
+							<div style="text-align: justify;">
+							  <br /></div>
+							<div style="text-align: justify;">
+							  <b>Topics</b> - Exploring Prior HTML Standards, Why HTML5?, HTML5
+							  Support in Browsers, HTML4 Vs. HTML5, Deprecated Elements, New HTML5
+							  Structural Elements, HTML5 API Overview (covered in Module-10:
+							  Advanced Web Programming), HTML5 Content Model, Role of &lt;div&gt;
+							  tag, Using ID and Class Attributes, HTML5 Page Structure.</div> </p>
+													<h4>
+											5. HTML5 Forms, Audio and Video 
+										</h4>  
+										<p><div style="text-align: justify;">
+							  <b>Learning Objectives</b> - In this module, you will learn about
+							  developing websites using new HTML5 form inputs types and
+							  attributes. You will understand how to embed audio and video using
+							  HTML5 tags in a web page and display of Google maps.</div>
+									  <div style="text-align: justify;">
+							  <br /></div>
+							<div style="text-align: justify;">
+							  <b>Topics</b> - HTML5 Input Types, HTML Form Attributes, Embedding
+							  Audio and Video in HTML5, Display of Google maps.</div> </p>
+													<h4>
+											6. CSS3 
+										</h4>  
+										<p><div style="text-align: justify;">
+							  <b>Learning Objectives</b> - In this module, you will learn the new
+							  topics of CSS3 such as Rounded Borders, Use of Transforms and
+							  Transitions, displaying text in multiple columns etc.</div>
+								  <div style="text-align: justify;">
+							  <br /></div>
+							<div style="text-align: justify;">
+							  <b>Topics</b> - Rounded and Elliptical Borders, Box Shades,  New CSS3
+							  Selectors, Using @font-face, Typography, Text in Multiple Columns, 2-D
+							  Transforms, Transitions, CSS Cascade and Inheritance, CSS Specificity,
+							  Media Queries.</div> </p>
+													<h4>
+											7. JavaScript Part-1 
+										</h4>  
+										<p><div style="text-align: justify;">
+							  <b>Learning Objectives</b> - In this module, you will learn to code
+							  with JavaScript. You will learn to define different data types,
+							  operators, Arrays, Conditional and Loop Statements, and Objects.</div>
+							<div style="text-align: justify;">
+							  <br /></div>
+							<div style="text-align: justify;">
+							  <b>Topics</b> - JavaScript Values, Variables, Operators, Type
+							  Conversions, Arrays, Conditional Statements, Objects, Loop Statements.</div> </p>
+													<h4>
+											8. JavaScript- Part 2 
+										</h4>  
+										<p><div style="text-align: justify;">
+							  <b>Learning Objectives</b> - In this module, you will learn the next
+							  level of&nbsp;JavaScript&nbsp;coding. You will learn to access HTML elements
+							  through DOM, different methods of DOM, modifying the contents of HTML
+							  elements using DOM and change the style of the HTML elements using DOM
+							  etc. In this module, you will learn the advanced topics of JavaScript.
+							  You will learn about events of DOM, event listeners of DOM,
+							  identifying the elements of HTML using DOM and the performing options
+							  with them, working on various functionalities of BOM (Browser Object
+							  Model) like Screen, window, History etc.&nbsp;</div>
+								  <div style="text-align: justify;">
+							  <br></div>
+							<div style="text-align: justify;">
+							  <b>Topics </b>- Functions, Browser Object Model, Document Object
+							  Model, JavaScript Object Notation, DOM Methods and Events, Ajax.</div> </p>
+													<h4>
+											9. jQuery and AngularJS 
+										</h4>  
+										<p><div style="text-align: justify;">
+							  <b>Learning Objectives </b>- In this module, you will learn to write
+							  jQuery code to enhance the HTML Websites. You will learn to handle the
+							  events of jQuery as in JavaScript, display or hide the elements of
+							  HTML, perform the animations like fading and sliding the elements, get
+							  and set the contents of HTML elements using jQuery, append and remove
+							  the data to the HTML elements using jQuery. In this module, you will
+							  learn to change the style of the HTML elements using JQuery, iterate
+							  the elements of HTML using JQuery, change the style for both the
+							  parental and child elements of the HTML, narrow the search elements
+							  using filtering of JQuery.</div>
+								  <div style="text-align: justify;">
+							  <br></div>
+							<div style="text-align: justify;">
+							  <b>Topics</b> - Selectors, Events, Effects, Hide/Show, Fade/Slide,
+							  Animate, Call-backs, Chaining, CSS Classes, jQuery css(), Dimensions,
+							  Traversing, Ancestors, Descendants, Siblings, Filtering, jQuery Ajax,
+							  AngularJS Introduction.</div> </p>
+													<h4>
+											10. Advanced Web Programming 
+										</h4>  
+										<p><div style="text-align: justify;">
+							  <b>Learning Objectives</b> - In this module, you will learn the
+							  advanced concepts of web programming. You will learn created graphics
+							  are using SVG and Canvas, Use of GeoLocation API, Drag and Drop API,
+							  how to use storage information in browser, programming with multiple
+							  threads of execution and Server-Side events. </div>
+									   <div style="text-align: justify;">
+							  <b>
+								<br /></b></div>
+							<div style="text-align: justify;">
+							  <b>Topics</b> - Canvas, Scalable Vector Graphics,  GeoLocation API,
+							  Drag and Drop,  Web Storage,  Web Workers,  Server-side Events,  Plug-ins.</div> </p>
+										
+
+						   </div>
+						   
+						   <div class = "tab-pane fade" id = "FAQ">
+							  <p></p>
+						   </div>
+						   
+						   <div class = "tab-pane fade" id = "Certification">
+							  <h4>GKTCS Certification Process:</h4>
+									<p>
+										<div style="text-align: justify;">At the end of your course, you will
+								  work on a real time Project. You will  receive a Problem Statement
+								  along with a dataset to work. </div>
+								<div style="text-align: justify;">
+								  <br /></div>
+								<div style="text-align: justify;">Once you are successfully through with
+								  the project (reviewed by an expert),  you will be awarded a
+								  certificate with a performance based grading. </div>
+								<div style="text-align: justify;">
+								  <br /></div>
+								<div style="text-align: justify;">If your project is not approved in 1st
+								  attempt, you can take additional  assistance to understand the
+								  concepts better and reattempt the Project  free of cost.</div>    </p>
+
+						   </div>
+						   
+						   <div class = "tab-pane fade" id = "Reviews">
+							  <p></p>
+						   </div>
+						   
+						</div>
+							
+						
+					</div>
+					</div>
+						
+
+					
+					<div class="col-md-4">
+						<div id="contact1">
+							<div id="contact2">	
+								<ul>
+									<li><img src="http://gktcs.in/GLMS/public/static/images/flagin.png"/> India : +91-9975072320</li>
+									<li><img src="http://gktcs.in/GLMS/public/static/images/flagus.png"/> Us : +1(847)809-6866</li>
+									<li><img src="http://gktcs.in/GLMS/public/static/images/eml.jpg"/> Email Us : support@gktcs.in</li>
+								</ul>	
+							</div>
+						</div>
+						<div id="query1">
+							<h3 style="margin-top:10px; margin-bottom: 5px !important;">Drop Us a Query:</h3>
+							  <div id="form-div">
+								<form class="form" id="form1">
+								  
+								  <p class="name">
+									<input name="name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Name" id="eqname" />
+								  </p>
+								  
+								  <p class="email">
+									<input name="email" type="text" class="validate[required,custom[email]] feedback-input" id="eqemail" placeholder="Email" />
+								  </p>
+								  
+								  <p class="eqtext">
+									<textarea name="text" class="validate[required,length[6,270]] feedback-input" id="eqcomment" placeholder="Enquiry"></textarea>
+								  </p>
+								  
+								  
+								  <div class="submit">
+									<input type="submit" value="SEND" id="button-blue"/>
+									<div class="ease"></div>
+								  </div>
+								</form>
+							  </div>
+						</div>
+						
+					</div>
+				</div>
+			</div>	
+		</div>	
+		<div id="footerdiv">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 ">
+					<div class="row">
+							<div class="col-md-12">
+								<h3 id="listedcourses">Listed courses</h3>
+							</div>	
+					</div>	
+					<div class="row" id="courserow">	
+					<div class="col-md-6 ">	
+						<div class="row">
+							<div class="col-md-12">
+								Big data and Hadoop<br>
+								Hadoop Administration<br>
+								Apache spark and scala<br>
+								JAVA/J2EE and SOA<br>
+								PMP Exam Preparation<br>
+								informatica PowerCenter 9.X<br>
+								Mastering Python<br>
+								Data Science<br>
+								Android Development<br>
+								AWS Architect certification training<br>
+								DevOps<br>
+								Data Visualization With Tableau<br>
+								Mastering Data Analytics With R<br>
+								Talend For Big Data<br>
+							</div>	
+						</div>		
+					</div>
+					<div class="col-md-6 ">
+												
+						<div class="row">
+							<div class="col-md-12">
+								Manual Testing For Beginers<br>
+								AngularJS<br>
+								Mastering Node.js<br>
+								Red Hat Linux Administration<br>
+								Microsoft SharePoint 2013<br>
+								Map Reduce Design Patterns<br>
+								Spring Framework<br>
+								Persistance With Hibernate<br>
+								Mastering Perl Scripting<br>
+								HTML5 + CSS + JavaScript<br>
+								Testing With Selenium WebDriver<br>
+								PHP & MYSQL With MVC Frameworks<br>
+								iOS App Development<br>
+								Microsoft BI<br><br>
+							</div>	
+						</div>
+						
+					</div>
+					</div>
+					</div>
+					<div class="col-md-4">
+						
+						<div class="row">
+							<div class="col-md-12">
+								<h3 id="stay">Stay Connected With Us</h3>
+							</div>	
+						</div>
+						
+						<div class="row" id="address">
+							<div class="col-md-12">
+								Head Office<br><br>
+								11,4th Floor,Sneh Deep, Near Warje FlyOver Bridge<br>
+								Warje-Malwadi,Pune,Maharashtra,India-411058<br>
+								Contact Person-Mr. Surendra Panpaliya<br>
+								Contact no.-9975072320<br>
+								Email-surendra@gktcs.com<br><br>
+								
+								Global Office<Br><br>
+								227 W Wellington Dr,Palatine,IL 60067 USA<br>
+								Contact Person- Mr. Satish Panpaliya<Br>
+								Contact no.- +1(847)809-6866<br>
+								Email-srpanpaliya@gktcs.com<br><br>
+								
+							</div>	
+						</div>
+							
+							
+						
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<div id="socialdiv">
+						<div class="container">
+						<div class="row" id="socialrow">
+						<div class="col-md-9" id="socialcol">
+							@2015 GKTCS Innovations Pvt. Ltd. All Rights reserved | Privacy Policy | Site Map
+						</div>
+						<div class="col-md-3" >
+						<div id="floatr">
+							<img src="http://gktcs.in/GLMS/public/static/images/facebook.png"/>
+							<img src="http://gktcs.in/GLMS/public/static/images/google+.png"/>
+							<img src="http://gktcs.in/GLMS/public/static/images/tweeter.png"/>
+							<img src="http://gktcs.in/GLMS/public/static/images/play.png"/>
+						</div>	
+						</div>
+						</div>
+						</div>
+						
+					</div>
+		
+		
+		
+		
+		
+		
+		
+		<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script type="text/javascript" src="http://gktcs.in/GLMS/public/static/js/smoothscroll.js"></script>
+		<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+
+		
+	</body>
+</html>

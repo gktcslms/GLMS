@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+<div class="row">
+<h2 style="color:#FFF"> Blogs </h3>
+{% for i in b %}
+<div class="well">
+<h3 style="color:#00A4CB"> {{i.blog_title}} </h3>
+<h4>By: {{i.blog_writer}}</h4>
+<h5>Last Updated:{{i.blog_date}}</h5>
+<br>
+<p>{{i.blog_content}}</p>
+</div><hr>
+{% endfor %}
+</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block head %}
+<style>
+    #id_message { height: 75px }
+	
+	label{color:white}
+</style>
+{% endblock %}
+{% block content %}
+<div class="container">
+<div class="row well"  style="margin-left: 3px; margin-right: 3px;border-radius:20px;" >
+<h2 style="color:#00A4CB; text-align:center;">Need Support !</h2>
+<div class="col-md-4 col-md-offset-4"style="background:#42628b;padding-left: 0px;padding-right: 0px;border-radius: 10px;">
+<div class="heading" style="text-align:center; background-color:#00A4CB; color:#fff;font-size: 20px; position:relative; width:100%;padding:5px 0px;border-radius: 10px 10px 0px 0px;"><span>Fill in the form below</span></div>
+<br/>
+<div class="addinstructor form_decoration no-ripple" style="padding-left: 15px;padding-right: 15px;">
+<form enctype="multipart/form-data" method="post"> {% csrf_token %}
+{{ form|crispy }}
+<input type="submit" class="btn btn-info" value="Submit" >
+</form>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,2250 @@
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+<title>GKTCS LMS</title>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title> GKTCS LMS</title>
+		<link rel="shortcut icon" href="https://gktcs.com/static/images/favicon.ico" type="image/x-icon" />
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+		<script src="https://cdn.jsdelivr.net/npm/afterglowplayer@1.x"></script>
+		
+    	<style>
+		
+		
+    		p {
+        		text-align: justify;
+			}
+    		
+			
+			.navbar-default {
+				background-color: transparent;
+    			border-color: transparent;
+    			background-image: none;
+    			box-shadow: none;
+			}
+			
+			.navbar-brand, .navbar-nav > li > a {
+				text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+			}
+			
+			#cnav{
+				float: right
+			}
+			
+			#cnav li a {
+				color:#FFFFFF;
+			}
+
+			
+			#search00{
+				font-size:120%;
+				border-color:#00A4CB;
+				height: 50px; 
+				width: 100%; 
+				color: #EEEEEE;
+				border-width:2px;
+				background-color: rgb(173, 175, 195);
+			}
+
+			.nav-pills>li.active>a,
+			.nav-pills>li.active>a:hover, 
+			.nav-pills>li.active>a:focus{
+				background-color:#F15C22;
+				border-radius:0;
+				outline: 0;
+					
+			}
+			.nav-pills>li > a {
+				width:284px;
+				text-align:center;
+				color:#484848;
+				border-radius:0px;
+				border-left: 1px solid #F15C22;
+			}
+			#bli{
+				width:285px;
+			}
+			.nav-pills li a{
+				height:48px;
+				font-size:120%;
+			}
+			.nav-pills
+			{
+				border-radius:5px;
+				border: 1px solid #F15C22;
+			}
+				.nav-pills > li > a:hover {
+      			background-color: #F9E3DB;
+      			border-radius:3px;
+      			outline: 0;
+    		}
+    		#navul >li{
+    			
+    			margin:0%;
+    			
+    		}
+    		#tophead{
+    			
+    		}
+    		#head{
+    			height:40px; 
+    			background-color:#00A4CB;
+				z-index: 999;
+    		}
+			#logocol{
+				z-index: 5;
+			}
+			#logo{
+				position: absolute;
+			}
+			#toprow{
+				background-color:#00A4CB;
+			}
+			#demoa{
+				float: right;
+			}
+			#demodiv{
+				background-color:#F15C22; 
+				width:143px; height:33px;
+			}
+			#demo{
+				color:#FFFFFF; 
+				padding:6px 0px 0px 5px;
+			}
+			#call1{
+				background-color:#00A4CB;
+				float: right; 
+				padding-top: 8px;
+				margin-right:15px;
+			}
+			
+			#calldiv{
+				float: right;
+			}
+			
+			#callspan{
+				color:#FFFFFF;
+			}
+			#mail{
+				background-color:#00A4CB; 
+				float: right; 
+				padding-top: 8px;
+				margin-right:30px;
+			}
+			
+			#maildiv{
+				float: right
+			}
+			
+			#mailspan{
+				color:#FFFFFF;
+			}
+			#navcol{
+				
+			}
+			#logsign{
+				float: left; 
+				margin-top: -1%; 
+				position: static; 
+				padding: 0px 10px 0px 23px;
+			}
+			#logsign1{
+				float: right; 
+				margin-top: -5%;
+			}
+			
+			#signbtn{
+				background-color:#F15C22; 
+				border-radius:5px 0px 0px 5px; 
+				color:#FFFFFF; 
+				width: 93px; 
+				height: 31px; 
+				margin-top: -18%;
+			}
+			
+			#loginbtn{
+				background-color:#F15C22; 
+				border-radius:0px 5px 5px 0px; 
+				color:#FFFFFF; 
+				width: 93px; 
+				height: 31px;
+				margin-top: -18%
+			}
+			
+			#bgbanner{
+				background :
+					linear-gradient(
+						rgba(0, 0, 0, 0.4), 
+						rgba(0, 0, 0, 0.4)
+					  ),
+					url(https://study.com/images/reDesign/home/hero-woman-coffee-desktop.jpg); 
+				height:512px;
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position:center;
+			}
+			#what{
+				color:#FFFFFF;
+				text-align: center; 
+				margin-top: 7%;
+				font-family: ProximaNovaRegular;
+				font-size:58px;
+				text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+			}
+			h1,h2,h3,h4{
+				font-family: ProximaNovaRegular;
+			}
+			#own{
+				color:#FFFFFF; 
+				font-size:25; 
+				text-align: center; 
+				margin-top: 2%; 
+				font-family: ProximaNovaLightItalic;
+			}
+			#searchcon{
+				
+			}
+			
+			#searchdiv{
+				padding-top: 2%;
+			}
+			
+			#searchbdiv{
+				float:right;
+			}
+			#searchbtn{
+				background-color: #00A4CB; 
+				height: 40px;
+			}
+			
+			#search00::-webkit-input-placeholder {
+			  color: #EEEEEE;
+			}
+			#search00::-moz-placeholder { /* Firefox 19+ */
+			  color: #EEEEEE;
+			}
+			#search00:-ms-input-placeholder {
+			  color: #EEEEEE;
+			}
+			#search00:-moz-placeholder { /* Firefox 18- */
+			  color: #EEEEEE;
+			}
+			
+			#find{
+				color: #FFFFFF; 
+				font-size: 110%;
+			}
+			
+			#poplr{
+				text-align:center; 
+				color:#0464BB;
+				margin-bottom: 20px;
+				margin-top: 30px;
+				padding-top: 5px;
+			}
+			
+			#wlcm{
+				border-right: 2px solid; 
+				border-color:#F3F4F8; 
+				padding-bottom:45px; 
+				padding-top: 40px
+			}
+			#wlcmh2{
+				color:#F15C22;
+			}
+			#welcorpdesc{
+				padding-top:20px; 
+				line-height:2;
+				color:#746C6C
+			}
+			#readspan{
+				color:#F15C22; 
+				font-size:120%
+			}
+			#welcorp{
+				padding-top:10px;
+			}
+			#corp{
+				padding-top: 40px;
+			}
+			#course{
+				background-color:#F3F4F8; 
+				padding-top:20px; 
+				padding-bottom:70px
+			}
+			#choose{
+				padding-top:22px;  
+				color:#746C6C; 
+				text-align:center;
+			}
+			#doyou{
+				padding-top:22px; 
+				padding-bottom:22px; 
+				color:#746C6C; 
+				text-align:center;
+			}
+			#coursecon{
+				padding-top: 15px;
+			}
+			#wta{
+				border-left: none;
+			}
+			#tabcontent{
+				padding-top: 40px;
+			}
+			#tc{
+				padding-bottom: 30px;
+			}
+			#iconpad{
+				padding-top:10px; 
+				padding-bottom: 10px;
+			}
+			#iconbtn{
+				background-color: transparent; 
+				color:#FFFFFF; 
+				border-color: #FFFFFF; 
+				border-width: 2px;
+			}
+			#btnpad{
+				padding: 0px 7px 0px 7px;
+			}
+			#lhtml{
+				padding: 20px 0px 0px 94px;
+			}
+			#lcss{
+				padding: 20px 0px 0px 90px;
+			}
+			#ldesign{
+				padding: 20px 0px 0px 97px;
+			}
+			#ljs{
+				padding: 20px 0px 0px 100px;
+			}
+			#lruby{
+				padding: 20px 0px 0px 100px;
+			}
+			#lphp{
+				padding: 20px 0px 0px 94px;
+			}
+			#lwt{
+				padding: 20px 0px 0px 98px;
+			}
+			#lios{
+				padding: 20px 0px 0px 96px;
+			}
+			#dhtml{
+				width:255px; 
+				height: 180px; 
+				background-color: #39ADD1; 
+				border-radius: 5px;
+			}
+			#dcss{
+				width:255px; 
+				height: 180px; 
+				background-color: #3079AB; 
+				border-radius: 5px;
+			}
+			#ddesign{
+				width:255px; 
+				height: 180px; 
+				background-color: #E59A13; 
+				border-radius: 5px;
+			}
+			#djs{
+				width:255px; 
+				height: 180px; 
+				background-color: #C25975; 
+				border-radius: 5px;
+			}
+			#druby{
+				width:255px; 
+				height: 180px; 
+				background-color: #E15258; 
+				border-radius: 5px;
+			}
+			#dphp{
+				width:255px; 
+				height: 180px; 
+				background-color: #7D669E; 
+				border-radius: 5px;
+			}
+			#dwt{
+				width:255px; 
+				height: 180px; 
+				background-color: #838CC7; 
+				border-radius: 5px;
+			}
+			#dios{
+				width:255px; 
+				height: 180px; 
+				background-color: #53BBB4; 
+				border-radius: 5px;
+			}
+			#conf{
+				text-align: center;
+				color:#746C6C;
+			}
+			#pt45{
+				padding-top:45px;
+			}
+			#confus{
+				color:#42C3D3;
+				font-family:ProximaNovaBoldIt;
+			}
+			#askbtn{
+				background-color:#F15C22; 
+				border-radius:5px 5px 5px 5px; 
+				color:#FFFFFF; 
+				height: 65px;
+			}
+			#revrow{
+				text-align: center; 
+				padding-top:40px;
+			}
+			#p20{
+				padding:20px;
+			}
+			#askh1{
+				margin-top:4px;
+			}
+			#pl402{
+				padding-left: 40px;
+				line-height:1.5;
+			}
+			.glyphicon-star{
+				color:gold;
+			}
+			#rimg{
+				border:3px solid; 
+				border-color:#C2C9C2; 
+				width: 75px; 
+				height: 75px;
+			}
+			#revdesc{
+				line-height:2;
+				color:#746C6C;
+			}
+			#tp15{
+				padding-top: 15px;
+			}
+			#readall{
+				color: #42C3D3;
+			}
+			#footerbnr{
+				background-image:url(https://gktcs.com/static/images/footer.png); 
+				height:408px;
+			}
+			#pt64{
+				padding-top:64px;
+			}
+			#btncol{
+				text-align: center; 
+				padding-top: 10px
+			}
+			#cntrwt{
+				text-align: center;
+				color:#FFFFFF;
+			}
+			#pt108{
+				padding-top:108px
+			}
+			#getbtn{
+				background-color:#F15C22; 
+				border-radius:5px 5px 5px 5px; 
+				color:#FFFFFF; 
+				height: 65px;
+			}
+			#tp4{
+				margin-top:4px;
+			}
+			#large{
+				padding-top:50px;
+				color:#393A3A;
+			}
+			#bridging{
+				color:#746C6C;
+			}
+			#footerdiv{
+				background-color:#363636; 
+				color:#BBB7B7;
+				padding-top:40px; 
+				padding-bottom:30px; 
+				margin-top: 50px;
+			}
+			#listedcourses{
+				color:#EEEEF0;
+			}
+			#courserow{
+				padding-top:35px;
+				line-height:2;
+			}
+			#stay{
+				color:#EEEEF0;
+				text-align:center;
+			}
+			#address{
+				padding-top:34px; 
+				line-height:2
+			}
+			#socialdiv{
+				background-color:#272727;
+			}
+			#socialrow{
+				color:#BBB7B7;
+				padding-top:10px; 
+				padding-bottom:12px;
+			}
+			#socialcol{
+				padding-top:5px;
+			}
+			#floatr{
+				float:right
+			}
+			hr {
+				border-style: inset;
+				border-width: 1px;
+				display: block;
+				margin: 0.5em auto;
+			}
+			@font-face {
+			    font-family: 'ProximaNovaRegular';
+			    src: url('https://gktcs.com/static/fonts/ProximaNovaRegular/ProximaNovaRegular.eot');
+			    src: url('https://gktcs.com/static/fonts/ProximaNovaRegular/ProximaNovaRegular.eot') format('embedded-opentype'),
+			         url('https://gktcs.com/static/fonts/ProximaNovaRegular/ProximaNovaRegular.woff2') format('woff2'),
+			         url('https://gktcs.com/static/fonts/ProximaNovaRegular/ProximaNovaRegular.woff') format('woff'),
+			         url('https://gktcs.com/static/fonts/ProximaNovaRegular/ProximaNovaRegular.ttf') format('truetype'),
+			         url('https://gktcs.com/static/fonts/ProximaNovaRegular/ProximaNovaRegular.svg#ProximaNovaRegular') format('svg');
+			}	
+			@font-face {
+			    font-family: 'ProximaNovaLightItalic';
+			    src: url('https://gktcs.com/static/fonts/ProximaNovaLightItalic/ProximaNovaLightItalic.eot');
+			    src: url('https://gktcs.com/static/fonts/ProximaNovaLightItalic/ProximaNovaLightItalic.eot') format('embedded-opentype'),
+			         url('https://gktcs.com/static/fonts/ProximaNovaLightItalic/ProximaNovaLightItalic.woff2') format('woff2'),
+			         url('https://gktcs.com/static/fonts/ProximaNovaLightItalic/ProximaNovaLightItalic.woff') format('woff'),
+			         url('https://gktcs.com/static/fonts/ProximaNovaLightItalic/ProximaNovaLightItalic.ttf') format('truetype'),
+			         url('https://gktcs.com/static/fonts/ProximaNovaLightItalic/ProximaNovaLightItalic.svg#ProximaNovaLightItalic') format('svg');
+			}
+			@font-face {
+			    font-family: 'ProximaNovaLight';
+			    src: url('https://gktcs.com/static/fonts/ProximaNovaLight/ProximaNovaLight.eot');
+			    src: url('https://gktcs.com/static/fonts/ProximaNovaLight/ProximaNovaLight.eot') format('embedded-opentype'),
+			         url('https://gktcs.com/static/fonts/ProximaNovaLight/ProximaNovaLight.woff2') format('woff2'),
+			         url('https://gktcs.com/static/fonts/ProximaNovaLight/ProximaNovaLight.woff') format('woff'),
+			         url('https://gktcs.com/static/fonts/ProximaNovaLight/ProximaNovaLight.ttf') format('truetype'),
+			         url('https://gktcs.com/static/fonts/ProximaNovaLight/ProximaNovaLight.svg#ProximaNovaLight') format('svg');
+			}
+			@font-face {
+			    font-family: 'ProximaNovaBold';
+			    src: url('https://gktcs.com/static/fonts/ProximaNovaBold/ProximaNovaBold.eot');
+			    src: url('https://gktcs.com/static/fonts/ProximaNovaBold/ProximaNovaBold.eot') format('embedded-opentype'),
+			         url('https://gktcs.com/static/fonts/ProximaNovaBold/ProximaNovaBold.woff2') format('woff2'),
+			         url('https://gktcs.com/static/fonts/ProximaNovaBold/ProximaNovaBold.woff') format('woff'),
+			         url('https://gktcs.com/static/fonts/ProximaNovaBold/ProximaNovaBold.ttf') format('truetype'),
+			         url('https://gktcs.com/static/fonts/ProximaNovaBold/ProximaNovaBold.svg#ProximaNovaBold') format('svg');
+			}
+			@font-face {
+			    font-family: 'ProximaNovaBoldIt';
+			    src: url('https://gktcs.com/static/fonts/ProximaNovaBoldIt/ProximaNovaBoldIt.eot');
+			    src: url('https://gktcs.com/static/fonts/ProximaNovaBoldIt/ProximaNovaBoldIt.eot') format('embedded-opentype'),
+			         url('https://gktcs.com/static/fonts/ProximaNovaBoldIt/ProximaNovaBoldIt.woff2') format('woff2'),
+			         url('https://gktcs.com/static/fonts/ProximaNovaBoldIt/ProximaNovaBoldIt.woff') format('woff'),
+			         url('https://gktcs.com/static/fonts/ProximaNovaBoldIt/ProximaNovaBoldIt.ttf') format('truetype'),
+			         url('https://gktcs.com/static/fonts/ProximaNovaBoldIt/ProximaNovaBoldIt.svg#ProximaNovaBoldIt') format('svg');
+			}
+			body{
+				font-family: ProximaNovaRegular;
+				font-size:15;
+				height: 100%;
+			}
+			#name{
+				font-size: 19;
+				font-weight: bold;
+			}
+			#desig{
+				font-size:17;
+				font-weight: bold;
+			}
+			#gklogo{
+				position:absolute; 
+				z-index: 555; 
+				margin-top: 7px;
+			}
+			#gklogo img{
+				width: 90px;
+			}
+			#screen1 {
+			    position: relative;
+			    padding-top: 25px;
+			    padding-bottom: 67.5%;
+			    height: 0;
+			}
+			#screen1 iframe {
+			    box-sizing: border-box;
+			    background: url(https://gktcs.com/static/images/laptop.png) center center no-repeat;
+			    background-size: contain;
+			    padding: 11.9% 13% 14.8%;
+			    position: absolute;
+			    top: 0;
+			    left: 0;
+			    width: 100%;
+			    height: 100%;
+			}
+			#lap_screen {
+			    box-sizing: border-box;
+			    background: url(https://gktcs.com/static/images/laptop.png) center center no-repeat;
+			    background-size: contain;
+			    padding: 11.9% 13% 14.8%;
+			    position: absolute;
+			    top: 0;
+			    left: 0;
+			    width: 100%;
+			    height: 100%;
+			}
+			.course_inner{
+				background: #FFFFFF;
+				margin: 15px 0px;
+				padding-bottom:15px;
+				border-radius: 10px;
+			}
+			.course_inner a img{
+				border-radius: 10px 10px 0 0;
+			}
+			
+			.course_wrap h3{
+				text-align: center;
+			}
+			#course_bg{
+				background: #DDDDDD;
+			}
+			.course_wrap p{
+				text-align: center;
+				color:#444444;
+			}
+			#form-div {
+				background-color:rgba(28, 28, 45, 0.65);
+				padding-left:25px;
+				padding-right:25px;
+				padding-top:35px;
+				padding-bottom:40px;
+				border-radius: 7px;
+				-moz-border-radius: 7px;
+				-webkit-border-radius: 7px;
+			}
+
+			.feedback-input {
+				color:#3c3c3c;
+				font-family: Helvetica, Arial, sans-serif;
+			  font-weight:500;
+				font-size: 16px;
+				border-radius: 0;
+				line-height: 20px;
+				background-color: #fbfbfb;
+				padding: 8px 8px 8px 50px;
+				margin-bottom: 10px;
+				width:100%;
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				-ms-box-sizing: border-box;
+				box-sizing: border-box;
+			  border: 3px solid rgba(0,0,0,0);
+			}
+
+			.feedback-input:focus{
+				background: #fff;
+				box-shadow: 0;
+				border: 3px solid #3498db;
+				color: #3498db;
+				outline: none;
+			  padding: 8px 8px 8px 50px;
+			}
+
+			.focused{
+				color:#30aed6;
+				border:#30aed6 solid 3px;
+			}
+
+			/* Icons ---------------------------------- */
+			#id_Name{
+				background-image: url(https://rexkirby.com/kirbyandson/images/name.svg);
+				background-size: 25px 25px;
+				background-position: 11px 6px;
+				background-repeat: no-repeat;
+			}
+
+			#id_Name:focus{
+				background-image: url(https://rexkirby.com/kirbyandson/images/name.svg);
+				background-size: 25px 25px;
+				background-position: 8px 5px;
+			  background-position: 11px 6px;
+				background-repeat: no-repeat;
+			}
+
+			#id_Email{
+				background-image: url(https://rexkirby.com/kirbyandson/images/email.svg);
+				background-size: 25px 25px;
+				background-position: 11px 6px;
+				background-repeat: no-repeat;
+			}
+
+			#id_Email:focus{
+				background-image: url(https://rexkirby.com/kirbyandson/images/email.svg);
+				background-size: 25px 25px;
+			  background-position: 11px 6px;
+				background-repeat: no-repeat;
+			}
+			#id_Contact{
+				background-image: url(https://rexkirby.com/kirbyandson/images/email.svg);
+				background-size: 25px 25px;
+				background-position: 11px 6px;
+				background-repeat: no-repeat;
+			}
+
+			#id_Contact:focus{
+				background-image: url(https://rexkirby.com/kirbyandson/images/email.svg);
+				background-size: 25px 25px;
+			  background-position: 11px 6px;
+				background-repeat: no-repeat;
+			}
+
+			#id_Message{
+				background-image: url(https://rexkirby.com/kirbyandson/images/comment.svg);
+				background-size: 25px 25px;
+				background-position: 11px 8px;
+				background-repeat: no-repeat;
+			}
+
+			#id_Message {
+				width: 100%;
+				height: 120px;
+				line-height: 150%;
+				resize:vertical;
+			}
+
+			#button-blue{
+				font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+				float:left;
+				width: 100%;
+				border: #fbfbfb solid 4px;
+				cursor:pointer;
+				background-color: #3498db;
+				color:white;
+				font-size:18px;
+				padding-top:5px;
+				padding-bottom:5px;
+				-webkit-transition: all 0.3s;
+				-moz-transition: all 0.3s;
+				transition: all 0.3s;
+				font-weight:700;
+			}
+
+			#button-blue:hover{
+				background-color: rgba(0,0,0,0);
+				color: #0493bd;
+			}
+			#form1 p{
+				margin:0px;
+			}
+				
+			.submit:hover {
+				color: #3498db;
+			}
+				
+			.ease {
+				width: 0px;
+				height: 35px;
+				background-color: #fbfbfb;
+				-webkit-transition: .3s ease;
+				-moz-transition: .3s ease;
+				-o-transition: .3s ease;
+				-ms-transition: .3s ease;
+				transition: .3s ease;
+			}
+
+			.submit:hover .ease{
+			  width:100%;
+			  background-color:white;
+			}
+			*{margin:0;}
+
+
+
+			#panel{
+			  z-index:1050;
+			  position:fixed;
+			  color:#fff;
+			  width:270px;
+			  top:12px;
+			  right:-270px;
+			  transition: right 0.4s ease-in-out;
+			  -o-transition: right 0.4s ease-in-out;
+			  -ms-transition: right 0.4s ease-in-out;
+			  -moz-transition: right 0.4s ease-in-out;
+			  -webkit-transition: right 0.4s ease-in-out;
+			}
+			#panel h2, #panel p{
+			  padding-top:7px;
+			  padding-bottom:7px;
+			}
+			#panelCaller{
+			  position:absolute;
+			  top:60px;
+			  right:270px;
+			}
+			#panel:hover{
+			  right:0px;
+			}
+			#panelCaller > img {
+			  width:44px;
+			}
+			#div_nb{
+				position:absolute;
+				top:40px; 
+				left:0px; 
+				right:0px;
+				z-index:999;
+			}
+html {
+  height: 100%;
+}
+
+
+.v-center {
+  height: 100vh;
+  width: 100%;
+  display: table;
+  position: relative;
+  text-align: center;
+}
+
+.v-center > div {
+  display: table-cell;
+  vertical-align: middle;
+  position: relative;
+  top: -10%;
+}
+
+.navbar-toggle {
+    background-color: #eee;
+}	
+
+	
+.modal-box {
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  width: 98%;
+  background: white;
+  border-bottom: 1px solid #aaa;
+  border-radius: 4px;
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-clip: padding-box;
+}
+@media (min-width: 32em) {
+
+.modal-box { width: 60%; }
+}
+
+.modal-box header,
+.modal-box .modal-header {
+  padding: 1.25em 1.5em;
+  border-bottom: 1px solid #ddd;
+}
+
+.modal-box header h3,
+.modal-box header h4,
+.modal-box .modal-header h3,
+.modal-box .modal-header h4 { margin: 0; }
+
+.modal-box .modal-body { padding: 2em 1.5em; }
+
+.modal-box footer,
+.modal-box .modal-footer {
+  padding: 1em;
+  border-top: 1px solid #ddd;
+  background: rgba(0, 0, 0, 0.02);
+  text-align: right;
+}
+
+.modal-overlay {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 900;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3) !important;
+}
+
+a.close {
+  line-height: 1;
+  font-size: 50px;
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  text-decoration: none;
+  color: #283749;
+  opacity: 0.8;
+}
+
+a.close:hover {
+  color: #222;
+  -webkit-transition: color 1s ease;
+  -moz-transition: color 1s ease;
+  transition: color 1s ease;
+}
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 100%;
+      margin: auto;
+}
+.info_show{ 
+display: none;
+}
+.course_inner:hover .info_show{
+display : block;
+}
+
+.course_inner:hover .inner_info{
+display : block;
+}
+
+.course_inner:hover {
+background:#eee; 
+}
+
+@import "netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css";
+
+.search3 {
+  display: inline-block;
+  position: absolute;
+  right: 204px;
+  top: 4px;
+}
+
+[class^="icon-search"]{
+  background: #00a4cb;
+  color:#fff;
+  border-radius:5px;
+  display:inline-block;
+  padding:6px 7px 7px;
+  font-size:22px;
+  text-shadow:1px 1px 2px #21638F;
+  transition:all 0.5s ease;
+  -webkit-transition:all 0.5s ease;
+  cursor: pointer;
+  z-index:10;
+  position:relative;
+}
+[class^="icon-search"]:hover{
+  background: #00a4cb;
+  text-shadow:0px 0px 0px #21638F;
+  box-shadow: inset 0px 0px 8px #21638F;
+  transition:all 0.5s ease;
+  -webkit-transition:all 0.5s ease;
+}
+.search_form{
+  background: #0a829e;
+  position:absolute;
+  z-index:0;
+  padding:0px 5px;
+  top:15px;
+  border-radius:10px;
+  left: 10px;
+  width:235px;
+  z-index:999999;
+  height:0px;
+  margin-top:15px;
+  transition: height 0.2s ease-out 0.5s , top 0.2s ease-out 0.5s, padding 0.2s ease-out 0.5s, width 0.3s ease-out 0.2s;
+  -webkit-transition: height 0.2s ease-out 0.5s , top 0.2s ease-out 0.5s, padding 0.2s ease-out 0.5s, width 0.3s ease-out 0.2s;
+}
+.search_form form{
+  opacity:0;
+   transition:all 0.3s ease-out;
+  -webkit-transition:all 0.3s ease-out;
+}
+.search_form input{
+  background:#fff;
+  border:none;
+}
+.search_form input[type='text']{
+  border-radius:5px;
+  width:100%;
+  margin:0px 1px 0px 0;
+  padding:0px 5px 1px;
+  min-height:23px;
+}
+.search_form input[type='submit']{
+  border-radius:0 5px  5px 0;
+  text-transform:uppercase;
+  font-size:11px;
+  padding:0px 5px;
+  min-height:24px;
+  margin:0px 0px 0px 0;
+  cursor: pointer;
+}
+.search_box{
+  visibility: hidden;
+}
+.search_box:checked~.search_form{
+  min-height:44px;
+  padding:5px;
+  top:25px;
+  transition: height 0.2s ease-out, top 0.2s ease-out, padding 0.2s ease-out, 0.3s width ease-out 0.2s;
+  -webkit-transition: height 0.2s ease-out, top 0.2s ease-out, padding 0.2s ease-out, 0.3s width ease-out 0.2s;
+}
+.search_box:checked~.search_form form{
+  opacity:1;
+  transition:0.3s all ease-out 0.5s;
+  -webkit-transition:0.3s all ease-out 0.5s;
+}
+.modal-box {
+    width: 35%;
+}
+#btn-rotate{
+	vertical-align:top;
+	width:136px;height:36px;
+	transform:rotate(70deg);
+	-ms-transform:rotate(270deg); /* IE 9 */
+	-moz-transform:rotate(270deg); /* Firefox */
+	-webkit-transform:rotate(270deg); /* Safari and Chrome */
+	-o-transform:rotate(270deg); /* Opera */
+	border: 2px solid #fff;
+	border-radius: 7px 7px 0px 0px;
+	font-size: 19px;
+	color: #fff;
+	text-shadow: 0 0 0;
+	outline: 0;
+	letter-spacing: 2px;
+	text-shadow: 0 1px 4px #111;
+	/*box-shadow*/
+	box-shadow: 0 1px 4px rgba(0,0,0,.2), inset 0 1px 0 rgba(255,255,255,.2), inset 0 -1px 1px rgba(255,255,255,.1);
+	/*linear-gradient*/
+	background: linear-gradient(#239cd6,#3682bb);
+	position: fixed;
+	right:-55px;
+	top: 130px;
+	z-index: 1;
+}
+
+#btn-rotate:hover{box-shadow:0px 0px 4px #fff;}
+#btn-rotate2:hover{box-shadow:0px 0px 4px #fff;}
+#btn-rotate2{
+	vertical-align:top;
+	width:136px;height:36px;
+	transform:rotate(70deg);
+	-ms-transform:rotate(90deg); /* IE 9 */
+	-moz-transform:rotate(90deg); /* Firefox */
+	-webkit-transform:rotate(90deg); /* Safari and Chrome */
+	-o-transform:rotate(90deg); /* Opera */
+	border: 2px solid #fff;
+	border-radius: 7px 7px 0px 0px;
+	font-size: 19px;
+	color: #fff;
+	text-shadow: 0 0 0;
+	outline: 0;
+	letter-spacing: 2px;
+	text-shadow: 0 1px 4px #111;
+	/*box-shadow*/
+	box-shadow: 0 1px 4px rgba(0,0,0,.2), inset 0 1px 0 rgba(255,255,255,.2), inset 0 -1px 1px rgba(255,255,255,.1);
+	/*linear-gradient*/
+	background: linear-gradient(#239cd6,#3682bb);
+	position: fixed;
+	left:-55px;
+	top: 130px;
+	z-index: 1;
+}
+
+  /* Tooltip */
+  .side_button > .tooltip-inner {
+      background-color: #00a4cb; 
+      color: #FFFFFF; 
+      border: 1px solid #00a4cb; 
+      padding: 10px;
+      font-size: 15px;
+  }
+  
+.load-modal {
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .8 ) 
+                url('https://sampsonresume.com/labs/pIkfp.gif') 
+                50% 50% 
+                no-repeat;
+}
+
+			@media only screen and (max-width: 480px) {
+				#form-div{
+					
+				}
+				#what {
+					font-size: 30px;
+				}
+				#own {
+					font-size: 18px;
+				}
+				#call1 {
+					display: none;
+				}
+				#poplr{
+				margin-bottom: 20px;
+				margin-top: 20px;
+				font-size: 25;
+				}
+				.modal-box {
+					width: 75%;
+				}
+			}
+			@media only screen and (max-width: 380px) {
+				#poplr{
+				font-size: 25;
+				}
+			}
+			@media only screen and (max-width: 1000px) {
+				.nav > li > a {
+					padding: 15px 10px;
+				}
+			
+			}
+			.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover {
+				background-color: #00a4cb;
+				background-image: none;
+			}
+			.dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover{
+				background-color: #0093CB;
+				background-image: none;
+			
+			}
+			@media screen and (max-width: 770px) {
+			    .navbar-default {
+				background-color: #444444;
+				}
+				#cnav{
+				float: left;
+				}
+				#gklogo{ 
+				margin-top: 4px;
+				}
+				#gklogo img{
+					width: 65px;
+				}
+				#what{
+				font-size: 40px;
+				}
+				#myCarousel {
+					top:40px;
+				}
+				.main_nb{
+					background: #00A4CB;
+					min-height: 40px;
+				}
+				#div_nb {
+					top:0;
+				}
+				.navbar-nav {
+					width: 100%;
+					text-align: center;
+				}
+				.log_btn {
+				  margin-top: 5px;
+				  padding: 3px 8px;
+				}
+				#course_bg {
+				  background: #dddddd none repeat scroll 0 0;
+				  margin-top: 40px;
+				  padding-left:20px;
+				  padding-right:20px;
+				}
+				.modal-box {
+					width: 60%;
+				}
+
+				
+			}
+	</style>
+	<script>
+	function validateName(name){
+      // Validation rule
+      var re = /[A-Za-z -']$/;
+      // Check input
+      if(re.test(name)){
+        // Style green
+        document.getElementById('id_Name').style.borderColor = "transparent";
+        // Hide error prompt
+        document.getElementById('NameError').style.display = "none";
+        return true;
+      }else{
+        // Style red
+        document.getElementById('id_Name').style.borderColor ='#ff8888';
+        // Show error prompt
+        document.getElementById('NameError').style.display = "block";
+        return false; 
+      }
+    }
+    function validatefName(name){
+      // Validation rule
+      var re = /[A-Za-z -']$/;
+      // Check input
+      if(re.test(name)){
+        // Style green
+        document.getElementById('id_f_name').style.background ='';
+        // Hide error prompt
+        document.getElementById('fnameError').style.display = "none";
+        return true;
+      }else{
+        // Style red
+        document.getElementById('id_f_name').style.borderColor ='#ff8888';
+        // Show error prompt
+        document.getElementById('fnameError').style.display = "block";
+        return false; 
+      }
+    }
+	function validatelName(name){
+      // Validation rule
+      var re = /[A-Za-z -']$/;
+      // Check input
+      if(re.test(name)){
+        // Style green
+        document.getElementById('id_l_name').style.background ='';
+        // Hide error prompt
+        document.getElementById('lnameError').style.display = "none";
+        return true;
+      }else{
+        // Style red
+        document.getElementById('id_l_name').style.borderColor ='#ff8888';
+        // Show error prompt
+        document.getElementById('lnameError').style.display = "block";
+        return false; 
+      }
+    }
+	function validateContact(number){
+      // Validation rule
+      var re = /^\d{10}$/;
+      // Check input
+      if(re.test(number)){
+        // Style green
+        document.getElementById('id_mobile').style.background ='';
+        // Hide error prompt
+        document.getElementById('mobileError').style.display = "none";
+        return true;
+      }else{
+        // Style red
+        document.getElementById('id_mobile').style.borderColor ='#ff8888';
+        // Show error prompt
+        document.getElementById('mobileError').style.display = "block";
+        return false; 
+      }
+    }
+	function validateContact1(number){
+      // Validation rule
+      var re = /^\d{10}$/;
+      // Check input
+      if(re.test(number)){
+        // Style green
+        document.getElementById('id_Contact').style.borderColor = "transparent";
+        // Hide error prompt
+        document.getElementById('ContactError').style.display = "none";
+        return true;
+      }else{
+        // Style red
+        document.getElementById('id_Contact').style.borderColor ='#ff8888';
+        // Show error prompt
+        document.getElementById('ContactError').style.display = "block";
+        return false; 
+      }
+    }
+    // Validate email
+    function validateEmail(email){ 
+      var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      if(re.test(email)){
+        document.getElementById('id_email').style.background ='#ccffcc';
+        document.getElementById('emailError').style.display = "none";
+        return true;
+      }else{
+        document.getElementById('id_email').style.borderColor ='#ff8888';
+		document.getElementById('emailError').style.display = "block";
+        return false;
+      }
+    }
+	function validateEmail1(email){ 
+      var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      if(re.test(email)){
+        document.getElementById('id_Email').style.borderColor = "transparent";
+        document.getElementById('emailError').style.display = "none";
+        return true;
+      }else{
+        document.getElementById('id_Email').style.borderColor ='#ff8888';
+		document.getElementById('emailError').style.display = "block";
+        return false;
+      }
+    }
+    // Validate Select boxes
+    function validateSelect(x){
+      if(document.getElementById(x).selectedIndex !== 0){
+        document.getElementById(x).style.background ='#ccffcc';
+        document.getElementById(x + 'Error').style.display = "none";
+        return true;
+        }else{
+        document.getElementById(x).style.background ='#e35152';
+        return false; 
+      }
+    }
+    function validateRadio(x){
+      if(document.getElementById(x).checked){
+        return true;
+      }else{
+        return false;
+      }
+    }
+    function validateCheckbox(x){
+      if(document.getElementById(x).checked){
+        return true;
+      }
+      return false;
+    }   
+    function validateForm(){
+      // Set error catcher
+      var error = 0;
+      // Check name
+      if(!validateName('name')){
+        document.getElementById('nameError').style.display = "block";
+        error++;
+      }
+      // Validate email
+      if(!validateEmail(document.getElementById('id_email').value)){
+        document.getElementById('emailError').style.display = "block";
+        error++;
+      }
+      // Validate animal dropdown box
+      if(!validateSelect('animal')){
+        document.getElementById('animalError').style.display = "block";
+        error++;
+      }
+      // Validate Radio
+      if(validateRadio('left')){
+ 
+      }else if(validateRadio('right')){
+         
+      }else{
+        document.getElementById('handError').style.display = "block";
+        error++;
+      }
+      if(!validateCheckbox('accept')){
+        document.getElementById('termsError').style.display = "block";
+        error++;
+      }
+      // Don't submit form if there are errors
+      if(error > 0){
+        return false;
+      }
+    }     
+  </script>
+	</head>
+	<body>
+		<div>
+		<div id="popup1" class="modal-box">
+		  <header> <a class="js-modal-close close">×</a>
+			<h3 style="color: #00A4CB">Register for free!</h3>
+		  </header>
+		<div class="modal-body">
+			<form method="post"> {% csrf_token %}
+			<!--<div class="inset">  
+
+				<div class="form-group required" id="div_id_username"> 
+					<label class="control-label  requiredField" for="id_username">Username<span class="asteriskField">*</span> </label> 
+					<div class="controls "> <input type="text" name="username" maxlength="30" id="id_username" class="textinput textInput form-control">  </div> 
+				</div> 
+				<div class="form-group required" id="div_id_email"> 
+					<label class="control-label  requiredField" for="id_email">E-mail<span class="asteriskField">*</span> </label> 
+					<div class="controls "> <input type="email" name="email" id="id_email" class="emailinput form-control" style="background-image:none;"> </div> 
+				</div> 
+				<div class="form-group required" id="div_id_password1"> 
+					<label class="control-label  requiredField" for="id_password1">Password<span class="asteriskField">*</span> </label> 
+					<div class="controls "> <input type="password" name="password1" id="id_password1" class="textinput textInput form-control"> </div> 
+				</div> 
+				<div class="form-group required" id="div_id_password2"> 
+					<label class="control-label  requiredField" for="id_password2">Password confirmation<span class="asteriskField">*</span> </label> 
+					<div class="controls "> <input type="password" name="password2" id="id_password2" class="textinput textInput form-control"> </div> 
+				</div>
+
+			</div>-->
+				{{ form2|crispy }}
+				<div >
+					<div>
+					<input type="submit" class="btn btn-info" value="Join Now" style="float:right">
+					</div>
+					<div>
+					<span style="float:right;margin-top:7px;margin-right:25px;"><a href="/authentication/login/" style="padding:14px">Need to Login ? </a> </span>
+					</div>
+					<br>
+				</div>
+			<p></p>
+			</form>
+		</div>
+		</div>
+		<div id="popup2" class="modal-box" style="margin-top: 40px; top:0px !important">
+		  <header> <a class="js-modal-close close">×</a>
+			<h3 style="color: #00A4CB;text-align:center;">Login</h3>
+		  </header>
+		<div class="modal-body">
+			<form method="post">{% csrf_token %}
+				<div class="inset">  
+
+					<div class="form-group" id="div_id_username"> 
+						<input type="text" name="username" maxlength="254" id="id_username" class="textinput textInput form-control" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'" placeholder="Username"> </div> 
+					</div> 
+					<div class="form-group" id="div_id_password">
+						<div class="controls "> <input type="password" name="password" id="id_password" class="textinput textInput form-control" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password*'" placeholder="Password*"> </div> 
+					</div>
+
+				</div>
+				<div>
+					<div>
+					<input type="submit" class="btn btn-info" value="Login" style="float:right;margin-right: 24px;margin-bottom: 24px;">
+					</div>
+					<div>
+					<span class="pull-left" style="float:right;margin-right:25px;padding-left:25px;"><a class="btn btn-primary" href="/accounts/password/reset/" style="">Forgot password ? Reset it ! </a></span>
+					</div>
+					<br>
+				</div>
+				<p></p>
+			
+			</form>
+		</div>
+		</div>
+		</div>
+	 <div id="panel" class="hidden">
+		<div id="panelCaller"><img width="5px" src="https://gktcs.com/static/images/enquiry.png"></div>
+		<div id="form-div">
+			<form method="post" action="" class="form" id="form1" onSubmit="alert('Thanks!!  We will get back to you soon.');">
+			<p class="name">
+			<input style="color:black" id="id_Name" type="text" name="Name" maxlength="30" placeholder="Name" class="feedback-input" onblur="validateName(value)" required="">
+			<span id="NameError" style="display: none;color:#FFF;">*You must enter a valid name</span>
+			</p>
+			<p class="email">
+			<input style="color:black" id="id_Email" type="email" name="Email" maxlength="70" placeholder="Email" class="feedback-input" onblur="validateEmail1(value)" required="">
+			<span id="emailError" style="display: none;color:#FFF;">*Enter a valid email address</span>
+			</p>
+			<p class="email">
+			<input style="color:black;-moz-appearance: textfield; -webkit-appearance: textfield; appearance: textfield;" id="id_Contact" type="number"  name="Contact" placeholder="Contact No." class="feedback-input" onblur="validateContact1(value)" required="">
+			<span id="ContactError" style="display: none;color:#fff;">*You must enter a valid 10 digit mobile number</span>
+			</p>
+			<p class="eqsubject">
+			<input style="color:black" id="id_subject" type="text" name="subject" maxlength="70" placeholder="Subject" class="feedback-input" required="">
+			</p>
+			<p class="eqtext">
+			<textarea style="color:black" id="id_Message" rows="2" name="Message" cols="26" placeholder="Enquiry" class="validate[required,length[6,270]] feedback-input" required=""></textarea>
+			</p>
+			<div class="submit">
+				<input type="submit" value="SEND" id="button-blue"/>
+				<div class="ease"></div>
+			  </div>
+			</form>	
+		</div>
+	 </div>
+		<header>
+			<div id="tophead">
+			<div id="head" class="hidden-xs">
+				<div>	
+					<div class="container"><a id="gklogo" href="{% url 'home' %}"><img src="https://gktcs.com/static/images/main_logo.png"></a></div>
+					<div class="container">
+					<div class="row">
+						<div class="col-md-4 col-lg-5 hidden-sm hidden-xs " style="padding-left:110px;">
+							<div class="" id="toprow" style="float:left;">	
+			
+								
+								<div class="hidden-md" id="call1" >
+								
+											<div id="calldiv" ><img src="https://gktcs.com/static/images/call.png" /><span id="callspan">+91 - 9975072320</span></div>
+									
+								</div>		
+								
+								<div class="" id="mail">	
+										
+											<div id="maildiv"><img src="https://gktcs.com/static/images/envelop.png" /><span id="mailspan">support@gktcs.com</span></div>
+								</div>
+									
+							</div>
+						</div>
+						<div class="col-md-5 col-lg-4 hidden-xs">
+								  <form class="navbar-form navbar-right" role="search" action="/search2/" method="get" style="margin-top: 3px;margin-bottom: 2px;">
+									<div class="form-group">
+										<input autocomplete="off" size="25" type="text" id="search" name="q" class="form-control search" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Find a course here'" placeholder="Find a course here">
+										<div style="position:relative">
+										<div id="search-results" class="search-results" style="position:absolute; z-index:9999; background: #EEE; width:100%;">
+
+										</div>
+										</div>
+									</div>
+									<button type="submit" class="btn btn-default">FIND COURSES</button>
+								  </form>
+
+						</div>		  
+						<div class="col-md-3 col-lg-3 hidden-xs">
+							{% if not request.user.is_authenticated %}
+							<div style="float:right;padding-top:3px;padding-right:5px;">
+								<!--<a class="js-open-modal" data-modal-id="popup2" ><button type="button" class="btn btn-warning">LOGIN</button></a>-->
+								<a href="/authentication/login/"> <button type="button" class="btn btn-warning">LOGIN</button></a>
+								<a href="/authentication/register/"><button type="button" class="btn btn-warning">SIGN UP</button></a>
+							</div>
+							{% endif %}
+						</div>
+					</div>
+				</div>	
+				</div>	
+				</div>
+				</div>
+		</header>	
+  <div id="myCarousel" class="carousel slide" data-ride="carousel" >
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+
+      <div class="item active">
+		<img src="https://gktcs.com/static/images/banner2.jpg" alt="" width="460" height="345">
+        <div class="carousel-caption">
+          <h3></h3>
+          <p></p>
+        </div>
+      </div>
+
+      <div class="item">
+		<img src="https://gktcs.com/static/images/study1.jpg" alt="" width="460" height="345">
+        <div class="carousel-caption">
+          <h3></h3>
+          <p></p>
+        </div>
+      </div>
+	  
+	  <div class="item">
+		<img src="https://gktcs.com/static/images/banner3.jpg" alt="" width="460" height="345">
+        <div class="carousel-caption">
+          <h3></h3>
+          <p></p>
+        </div>
+      </div>
+	  
+	  <div class="item">
+		<img src="https://gktcs.com/static/images/banner4.jpg" alt="" width="460" height="345">
+        <div class="carousel-caption">
+          <h3></h3>
+          <p></p>
+        </div>
+      </div>
+  
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  		<div id="div_nb">
+			<div>
+				<div class="container">
+					<div class="row" >
+						
+						<div class=" " id="navcol00">
+						<nav style="border-radius:0px;" class="navbar navbar-default main_nb">
+						  	<div class="container-fluid">
+						    <!-- Brand and toggle get grouped for better mobile display -->
+						    <div class="navbar-header">
+							<div class="container visible-xs"><a id="gklogo" href="{% url 'home' %}"><img src="https://gktcs.com/static/images/main_logo.png"></a></div>
+						    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="true">
+						        <span class="sr-only">Toggle navigation</span>
+						        <span class="icon-bar"></span>
+						        <span class="icon-bar"></span>
+						    </button>
+
+							<div class="col-md-3 col-lg-3 visible-xs">
+							<div class="">
+							<div class="search3">
+							  <input class="search_box" type="checkbox" id="search_box">
+							  <label class="icon-search glyphicon glyphicon-search" for="search_box"></label>
+							  <div class="search_form">
+								<form  role="search" action="/search2/" method="get">
+								  <input autocomplete="off" height="40px" size="25" type="text" id="search2" name="q" class="form-control" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Find a course here'" placeholder="Find a course here">
+									<div style="position:relative">
+											<div id="search-results" class="search-results" style="position:absolute; z-index:500; background: #EEE; width:100%;">
+
+											</div>
+									</div>
+								</form>
+							  </div>
+							</div>
+							</div>
+							{% if not request.user.is_authenticated %}
+							<div style="float:right;padding-top:3px;padding-right:5px;">
+								<a href="/authentication/login/" ><button type="button" class="btn btn-warning log_btn">LOGIN</button></a>
+								<a href="/authentication/register/"><button type="button" class="btn btn-warning log_btn">SIGN UP</button></a>
+							</div>
+							{% endif %}
+							</div>  
+							  
+						      
+						    </div>
+	
+						    <!-- Collect the nav links, forms, and other content for toggling -->
+						    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						      <ul class="nav navbar-nav" id="cnav" style="margin-right: -22px;">
+								<li><a href="#">BLOGS</a></li>
+								<li><a href="/surendra">ABOUT US</a></li>
+								<li><a href="#">COURSES</a></li>
+								<li><a href="/contact">CONTACT</a></li> 
+								{% if request.user.is_authenticated %}
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+									{% if not user.userprofile.picture %}
+										<img src="https://gktcs.com/static/placement/placement/default_pic.jpg" width="25px" height="25px" class="profile-image img-circle"/>
+									{% else %}
+										<img src="{{MEDIA_URL}}{{ user.userprofile.picture.url }}" width="25px" height="25px" class="profile-image img-circle"/>
+									{% endif %}
+									{{user.first_name}} <span class="caret"></span></a>
+									<ul class="dropdown-menu" style="background-color: #00a4cb; min-width: 100px; border:0px; border-top: 1px solid rgba(0, 0, 0, 0.15);">
+										<li><a href="{% url 'my_dashboard' %}">MY DASHBOARD</a></li>
+										<li role="separator" class="divider"></li>
+										<li><a href="{% url 'auth_logout' %}?next=/">LOGOUT</a></li>
+										
+									</ul>
+								</li>
+								{% endif %}
+								<!--<li><a href=" url 'myprofile' user.id ">PROFILE</a></li>-->
+								<!--<li><a href="/accounts/login/">LOGIN</a></li>
+								<li><a href="/accounts/register/">SIGN UP</a></li>-->
+						      </ul>
+						    </div><!-- /.navbar-collapse -->
+						   
+						  </div><!-- /.container-fluid -->
+						</nav>
+						</div>
+					</div>	
+				</div>	
+			</div>
+				
+		</div>
+		<div class="side_button">
+		<a class="side_button" data-toggle="tooltip" data-placement="right" title="Become a Trainer" href="/trainer_form/" ><button id="btn-rotate2" type="button">TRAINERS</button></a>
+		<a class="side_button" data-toggle="tooltip" data-placement="right" title="Become a Vendor" href="/vendor_enquiry_form/" ><button id="btn-rotate2" style="top:276" type="button">VENDORS</button></a>
+		<a class="side_button" data-toggle="tooltip" data-placement="right" title="Become a Client" href="/client_enquiry_form/" ><button id="btn-rotate2" style="top:422" type="button">CLIENTS</button></a>
+		<a class="side_button" data-toggle="tooltip" data-placement="left" title="Become a Learner" href="/learner_enquiry_form/" class="course_inner"><span class="info_show">Register here</span><button id="btn-rotate" style=" " type="button">LEARNERS</button></a>
+		<a class="side_button" data-toggle="tooltip" data-placement="left" title="Job Enquiry" href="/jobs_form/" ><button id="btn-rotate" style="top:276 " type="button">JOBS</button></a>
+		<a class="side_button" data-toggle="tooltip" data-placement="left" title="Get Support" href="/support_form/" ><button id="btn-rotate" style="top:422 " type="button">SUPPORT</button></a>
+		</div>
+		<div id="course_bg">
+		<div class="container">
+		{% if request.user.is_superuser %}
+		<div class="" style="margin-top: 5px;">
+			<div class="row">
+			 <div class="col-md-2 col-sm-4 col-xs-6"><a href="/basic_registraion_details/" style="width:100%; margin-top: 8px;margin-bottom: 8px;" class="btn btn-primary">REGISTRATIONS</a></div>
+			 <div class="col-md-2 col-sm-4 col-xs-6"><a href="/trainer_enquiry/" style="width:100%; margin-top: 8px;margin-bottom: 8px;" class="btn btn-primary">TRAINERS</a></div>
+			 <div class="col-md-2 col-sm-4 col-xs-6"><a href="/vendor_enquiry/" style="width:100%; margin-top: 8px;margin-bottom: 8px;" class="btn btn-primary">VENDORS</a></div>
+			 <div class="col-md-2 col-sm-4 col-xs-6"><a href="/client_enquiry/" style="width:100%; margin-top: 8px;margin-bottom: 8px;" class="btn btn-primary">CLIENTS</a></div>
+			 <div class="col-md-2 col-sm-4 col-xs-6"><a href="/learner_enquiry/" style="width:100%; margin-top: 8px;margin-bottom: 8px;" class="btn btn-primary">LEARNERS</a></div>
+			 <div class="col-md-2 col-sm-4 col-xs-6"><a href="/jobs_enquiry/" style="width:100%; margin-top: 8px;margin-bottom: 8px;" class="btn btn-primary">JOBS</a></div>
+			 <div class="col-md-2 col-sm-4 col-xs-6"><a href="/support/" style="width:100%; margin-top: 8px;margin-bottom: 8px;" class="btn btn-primary">SUPPORT</a></div>
+			</div>
+		</div>
+		{% endif %}
+			<hr/>
+			<div class="row" style="background-color: #bbbbbb;border-radius: 10px;" id="course_wrap_row">
+				<div class="" style="background-color:#fff"><h1 id="poplr">Corporate Courses</h1></div>
+				<div class="col-md-3 col-sm-6 course_wrap">
+					<a href="#">
+					<div class="course_inner">
+						<div>
+							 <img class="img-responsive" src="https://gktcs.com/static/images/python_corp.jpg"/>
+						</div>
+						<div class="inner_info" style="position:relative">
+						<div class="info_show" style="position:absolute; background:#eee; width:100%; height:100%;">
+						<ul>
+							<li>Object-oriented Features</li>
+							<li>Regular Expression</li>
+							<li>Threading</li>
+							<li>Testing</li>
+						</ul>
+						</div>
+						<a href="#"> <h3>Python Corporate Course</h3> </a>
+						<p>New Batches <br/>Starting Soon</p><br/>
+						</div>
+					</div>
+					</a>
+				</div>
+				<div class="col-md-3 col-sm-6 course_wrap">
+					<a href="#">
+					<div class="course_inner">
+						<div>
+							<img style="width: 100%" class="img-responsive" src="https://gktcs.com/static/images/django.jpg"/> 
+						</div>
+						<div class="inner_info" style="position:relative">
+						<div class="info_show" style="position:absolute; background:#eee; width:100%; height:100%;">
+						<ul>
+							<li>Python Web Framework</li>
+							<li>Quick Development</li>
+							<li>Model, View, Template</li>
+							<li>Object-Relational Mapper</li>
+						</ul>
+						</div>
+						<a href="#"> <h3>Django Corporate Course</h3> </a>
+						<p>New Batches <br/>Starting Soon</p><br/>
+						</div>
+					</div>
+					</a>
+				</div>
+				<div class="col-md-3 col-sm-6 course_wrap">
+					<a href="#">
+					<div class="course_inner">
+						<div>
+							<img class="img-responsive" src="https://gktcs.com/static/images/pyspark.jpg"/> 
+						</div>
+						<div class="inner_info" style="position:relative">
+						<div class="info_show" style="position:absolute; background:#eee; width:100%; height:100%;">
+						<ul>
+							<li>Learn about Apache Spark and the Spark 2.0 architecture</li>
+							<li>Build and interact with Spark DataFrames using Spark SQL</li>
+						</ul>
+						</div>
+						<a href="#"><h3>PySpark and Machine Learning</h3> </a>
+						<p>New Batches <br/>Starting Soon</p><br/>
+						</div>
+					</div>
+					</a>
+				</div>
+				<div class="col-md-3 col-sm-6 course_wrap">
+					<a href="#">
+					<div class="course_inner">
+						<div>
+							<img style="width: 100%" class="img-responsive" src="https://gktcs.com/static/images/ruby.jpg"/>
+						</div>
+						<div class="inner_info" style="position:relative">
+						<div class="info_show" style="position:absolute; background:#eee; width:100%; height:100%;">
+						<ul>
+							<li>Ruby is a dynamic, reflective, object-oriented programming language.</li>
+							<li>Rails, is a web application framework written in Ruby.</li>
+						</ul>
+						</div>
+						<a href="#"><h3>Ruby On Rails Corporate Course</h3></a>
+						<p>New Batches <br/>Starting Soon</p></br>
+						</div>
+					</div>
+					</a>
+				</div>
+				<div class="col-md-3 col-sm-6 course_wrap">
+					<a href="#">
+					<div class="course_inner">
+						<div>
+							<img class="img-responsive" src="https://gktcs.com/static/images/r_programming.jpg"/>
+						</div>
+						<div class="inner_info" style="position:relative">
+						<div class="info_show" style="position:absolute; background:#eee; width:100%; height:100%;">
+						<ul>
+							<li>R language, R-studio, and R packages</li>
+							<li>linear and logistic regression, cluster analysis and forecasting.</li>
+						</ul>
+						</div>
+						<a href="#"> <h3>R Programming Corporate Course</h3></a>
+						<p>New Batches <br/>Starting Soon</p><br/>
+						</div>
+					</div>
+					</a>
+				</div>
+				<div class="col-md-3 col-sm-6 course_wrap">
+					<a href="#">
+					<div class="course_inner">
+						<div>
+							<img class="img-responsive" src="https://gktcs.com/static/images/hadoop1.jpg"/>
+						</div>
+						<div class="inner_info" style="position:relative">
+						<div class="info_show" style="position:absolute; background:#eee; width:100%; height:100%;">
+						<ul>
+							<li>Big data is a massive volume of structured and unstructured data.</li>
+							<li>Hadoop is an open-source framework that allows to store and process big data.</li>
+						</ul>
+						</div>
+						<a href="#"> <h3>Big Data & Hadoop Corporate Course</h3></a>
+						<p>New Batches <br/>Starting Soon</p><br/>
+						</div>
+					</div>
+					</a>
+				</div>
+				<div class="col-md-3 col-sm-6 course_wrap">
+					<a href="#">
+					<div class="course_inner">
+						<div>
+							<img class="img-responsive" src="https://gktcs.com/static/images/appium.jpg"/>
+						</div>
+						<div class="inner_info" style="position:relative">
+						<div class="info_show" style="position:absolute; background:#eee; width:100%; height:100%;">
+						<ul>
+							<li>The most versatile among all other mobile automation tool</li>
+							<li>An open-source tool for automating native, mobile web, and hybrid applications on iOS and Android platforms.</li>
+						</ul>
+						</div>
+						<a href="#"> <h3>Appium for Mobile Automation Testing</h3></a>
+						<p>New Batches <br/>Starting Soon</p><br/>
+						</div>
+					</div>
+					</a>
+				</div>
+				<div class="col-md-3 col-sm-6 course_wrap">
+					<a href="#">
+					<div class="course_inner">
+						<div>
+							<img class="img-responsive" src="https://gktcs.com/static/images/jython.jpg"/>
+						</div>
+						<div class="inner_info" style="position:relative">
+						<div class="info_show" style="position:absolute; background:#eee; width:100%; height:100%;">
+						<ul>
+							<li>High-level, object-oriented, open-source programming language</li>
+							<li>Access Java classes and libraries and extend them</li>
+						</ul>
+						</div>
+						<a href="#"> <h3>Jython Corporate Course</h3></a>
+						<p>New Batches <br/>Starting Soon</p><br/>
+						</div>
+					</div>
+					</a>
+				</div>
+				<div class="col-md-3 col-sm-6 course_wrap">
+					<a href="#">
+					<div class="course_inner">
+						<div>
+							<img class="img-responsive" src="https://gktcs.com/static/images/ansible.jpg"/>
+						</div>
+						<div class="inner_info" style="position:relative">
+						<div class="info_show" style="position:absolute; background:#eee; width:100%; height:100%;">
+						<ul>
+							<li>Software that automates software provisioning, configuration management, and application deployment. </li>
+							<li>Open source automation platform. It's simple yet powerful.</li>
+						</ul>
+						</div>
+						<a href="#"> <h3>Ansible Corporate Course</h3></a>
+						<p>New Batches <br/>Starting Soon</p><br/>
+						</div>
+					</div>
+					</a>
+				</div>
+				<div class="col-md-3 col-sm-6 course_wrap">
+					<a href="#">
+					<div class="course_inner">
+						<div>
+							<img class="img-responsive" src="https://gktcs.com/static/images/mongodb1.png"/>
+						</div>
+						<div class="inner_info" style="position:relative">
+						<div class="info_show" style="position:absolute; background:#eee; width:100%; height:100%;">
+						<ul>
+							<li>NoSQL database, empowering businesses to be more agile and scalable.</li>
+							<li>an open-source database used by companies of all sizes</li>
+						</ul>
+						</div>
+						<a href="#"> <h3>MongoDB Corporate Course</h3></a>
+						<p>New Batches <br/>Starting Soon</p><br/>
+						</div>
+					</div>
+					</a>
+				</div>
+				<div class="col-md-3 col-sm-6 course_wrap">
+					<a href="#">
+					<div class="course_inner">
+						<div>
+							<img class="img-responsive" src="https://gktcs.com/static/images/devops.jpg"/>
+						</div>
+						<div class="inner_info" style="position:relative">
+						<div class="info_show" style="position:absolute; background:#eee; width:100%; height:100%;">
+						<ul>
+							<li>Ruby is a dynamic, object-oriented programming language</li>
+							<li>DevOps is a software engineering culture and practice that aims at unifying software development and software operation.</li>
+						</ul>
+						</div>
+						<a href="#"> <h3>Ruby and DevOps Corporate Course</h3></a>
+						<p>New Batches <br/>Starting Soon</p><br/>
+						</div>
+					</div>
+					</a>
+				</div>
+				<div class="col-md-3 col-sm-6 course_wrap">
+					<a href="#">
+					<div class="course_inner">
+						<div>
+							<img class="img-responsive" src="https://gktcs.com/static/images/sparkscala.jpg"/>
+						</div>
+						<div class="inner_info" style="position:relative">
+						<div class="info_show" style="position:absolute; background:#eee; width:100%; height:100%;">
+						<ul>
+							<li>Scala is a general-purpose programming language providing support for functional programming</li>
+							<li>Spark is an open source computing framework up to 100 times faster than Mapreduce</li>
+						</ul>
+						</div>
+						<a href="#"> <h3>Spark with Scala Corporate Course</h3></a>
+						<p>New Batches <br/>Starting Soon</p><br/>
+						</div>
+					</div>
+					</a>
+				</div>
+				
+					</a>
+			</div>
+			<hr/>
+			<div class="row hidden" style="background-color: #bbbbbb;border-radius: 10px;"  id="course_wrap_row">
+				<div class="" style="background-color:#fff"><h1 id="poplr">Online Courses</h1></div>
+				<div class="col-md-3 col-sm-6 course_wrap">
+					<a href="#">
+					<div class="course_inner">
+						<div>
+							<img class="img-responsive" src="https://gktcs.com/static/images/Pyt1.png"/>
+						</div>
+						<div class="inner_info" style="position:relative">
+						<div class="info_show" style="position:absolute; background:#eee; width:100%; height:100%;">
+						<ul>
+							<li>Object-oriented programming</li>
+							<li>Structured programming</li>
+							<li>Functional programming</li>
+							<li>Aspect-oriented programming</li>
+						</ul>
+						</div>
+						<a href="#"><h3>Mastering Python</h3></a>
+						<p>New Batches <br/>Starting Soon</p></br>
+						</div>
+					</div>
+					</a>
+				</div>
+				<div class="col-md-3 col-sm-6 course_wrap">
+					<a href="#">
+					<div class="course_inner">
+						<div>
+							<img style="width: 100%" class="img-responsive" src="https://gktcs.com/static/images/ruby.jpg"/>
+						</div>
+						<div class="inner_info" style="position:relative">
+						<div class="info_show" style="position:absolute; background:#eee; width:100%; height:100%;">
+						<ul>
+							<li>Ruby is a dynamic, reflective, object-oriented programming language.</li>
+							<li>Rails, is a web application framework written in Ruby.</li>
+						</ul>
+						</div>
+						<a href="#"><h3>Ruby On Rails</h3></a>
+						<p>New Batches <br/>Starting Soon</p></br>
+						</div>
+					</div>
+					</a>
+				</div>
+				<div class="col-md-3 col-sm-6 course_wrap">
+					<a href="#">
+					<div class="course_inner">
+						<div>
+							<img class="img-responsive" src="https://gktcs.com/static/images/hadoop1.jpg"/>
+						</div>
+						<div class="inner_info" style="position:relative">
+						<div class="info_show" style="position:absolute; background:#eee; width:100%; height:100%;">
+						<ul>
+							<li>Big data is a massive volume of structured and unstructured data.</li>
+							<li>Hadoop is an open-source framework that allows to store and process big data.</li>
+						</ul>
+						</div>
+						<a href="#"> <h3>Big Data & Hadoop</h3></a>
+						<p>New Batches <br/>Starting Soon</p><br/>
+						</div>
+					</div>
+					</a>
+				</div>
+				<div class="col-md-3 col-sm-6 course_wrap">
+					<a href="#">
+					<div class="course_inner">
+						<div>
+							<img style="width: 100%" class="img-responsive" src="https://gktcs.com/static/images/datasci1.jpg"/> 
+						</div>
+						<div class="inner_info" style="position:relative">
+						<div class="info_show" style="position:absolute; background:#eee; width:100%; height:100%;">
+						<ul>
+							<li>Data science is making us smarter and more innovative in so many ways.</li>
+							<li>Data Analysis with Statistics and Machine Learning</li>
+						</ul>
+						</div>
+						<a href="#"> <h3>Data Science</h3> </a>
+						<p>New Batches <br/>Starting Soon</p><br/>
+						</div>
+					</div>
+					</a>
+				</div>
+			</div>
+			<hr/>
+			</div>
+		</div>
+		<a href="#"><h3 style="text-align:center; color:#0464BB; text-decoration:underline;"> View all courses</h3></a></br>
+		</div>
+		<div style="background: #dddddd none repeat scroll 0 0;">
+		<div class="container" style="background: #bbb none repeat scroll 0 0;">
+		<div class="row">
+			<div class="col-md-6">
+				<div id="screen1"><div id="lap_screen">
+					  <video class="afterglow" width="420" height="260" poster="https://gktcs.com/static/images/main_logo.png" data-overscale="false" data-autoresize="fit" data-skin="dark">
+					      <source type="video/mp4" src="https://gktcs.com/GLMS/public/media/Videos/Surendra%20Panpaliya/Python%20selenium/Built_in_functions2.mp4" />
+					  </video></div>
+				</div>
+			</div>
+			<div id="footerbnr" class="col-md-6">
+				<div id="cntrwt">
+					<div class="row">
+						<h1  id="pt108">Train your employees with exclusive batches and offers</h1>
+					</div>
+				
+					<div class="row" id="pt45">
+						<a href="/authentication/register/"><div class="btn" id="getbtn"><h1 id="tp4"> Get Started Now!</h1></div></a>
+					</div>
+				</div>				
+			</div>
+		</div>	
+		</div>
+		</div>
+		<div style="background: #eee none repeat scroll 0 0;">
+		<div class="container">
+			<div class="row" id="revrow"><h2>Reviews - That Matters Most</h2></div><br>
+			<div class="row">
+				<div class="col-sm-4">
+					<div id="p20">
+					<div class="row">
+						<span class="col-xs-3">
+						   <img src="https://gktcs.com/static/images/AhilanShankar.jpg" class="img-circle" id="rimg"/>
+	
+						</span>	
+						<span class="col-xs-9" id="pl402">
+							<span id="name">Ahilan Shankar</span><br><span id="desig">Senior Developer, Capgemini Pune</span>
+						
+						<span>
+							<br>
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span>
+						</span>
+						</span>
+	
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<p id="revdesc"><br>This course of Python is helpful and we get the complete practical knowledge of the same. All the PPT's are very..... <a href="#"><b><span id="readspan">Read More </span></b></a></p>
+						</div>
+					</div>	
+				</div></div>
+				<div class="col-sm-4">
+					<div id="p20">
+					<div class="row">
+						<span class="col-xs-3">
+						   <img src="https://gktcs.com/static/images/VaishnaviPande.jpg" class="img-circle" id="rimg"/>
+						</span>	
+						<span class="col-xs-9" id="pl402">
+							<span id="name">Vaishnavi Pande</span><br><span id="desig">Developer, Upside Learning, Pune</span>
+						
+						<span><br>
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span>
+						</span>
+						</span>
+	
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<p id="revdesc"><br>  I personally feel that learning in GKTCS is an opportuinity to gain the knowledge of niche Technologies ..... <a href="#"><b><span id="readspan">Read More </span></b></a></p>
+						</div>	
+					</div>					
+					
+				</div>
+				</div>
+				<div class="col-sm-4">
+					<div id="p20">
+					<div class="row">
+						<span class="col-xs-3">
+						   <img src="https://gktcs.com/static/images/ApurvaBhat.jpg" class="img-circle" id="rimg"/>
+						</span>	
+						<span class="col-xs-9" id="pl402">
+							<span id="name">Apurva Bhat</span><br><span id="desig">Developer, Upside Learning,Pune</span>
+						
+						<span><br>
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span>
+							<span class="glyphicon glyphicon-star"></span>
+						</span>
+						</span>
+	
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<p id="revdesc"><br>Course of Basic and Advance Android done here is effective while working in the industry and the trainers are very good..... <a href="#"><b><span id="readspan">Read More </span></b></a></p>
+						</div>					
+					</div>
+				</div>
+			</div>
+			</div>
+			
+			
+		</div>
+		
+		<div class="container">
+			
+			<div class="row" id="tp15">
+				
+				<a href="#"><h4 align="center" id="readall"><u>READ ALL REVIEWS</u></h4></a>
+			</div>
+		</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h1 align="center" id="large">As a large number of people look to upgrade their skills online</h1>
+					<h2 align="center" id="bridging">bridging this gap with its unique learning methodology </h2>
+				</div>
+			</div>
+		</div>
+			
+		<div id="footerdiv">
+			<div class="container">
+
+						
+						<div class="row">
+							<div class="col-md-12">
+								<h3 id="stay">Stay Connected With Us</h3>
+							</div>	
+						</div>
+						
+						<div class="row" id="address">
+							<div class="col-md-6">
+								Head Office<br><br>
+								1st Floor, Teerth Technospace, Block-C,<br>
+								Mumbai Bangalore Highway, Baner.Pune-411045<br>
+								Contact Person-Mr. Surendra Panpaliya<br>
+								Contact no.-9975072320<br>
+								Email-surendra@gktcs.com<br><br>
+							</div>	
+							<div class="col-md-6">	
+								Global Office<Br><br>
+								227 W Wellington Dr,Palatine,IL 60067 USA<br>
+								Contact Person- Mr. Satish Panpaliya<Br>
+								Contact no.- +1(847)809-6866<br>
+								Email-srpanpaliya@gktcs.com<br><br>
+								<div id="">
+									<img src="https://gktcs.com/static/images/facebook.png"/>
+									<img src="https://gktcs.com/static/images/google+.png"/>
+									<img src="https://gktcs.com/static/images/tweeter.png"/>
+									<img src="https://gktcs.com/static/images/play.png"/>
+								</div>
+								
+							</div>	
+						</div>
+			</div>
+		</div>		
+					<div id="socialdiv">
+						<div class="container">
+						<div class="row" id="socialrow">
+						<div class="col-md-9" id="socialcol">
+							@2018 GKTCS Innovations Pvt. Ltd. All Rights reserved | Privacy Policy | Site Map
+						</div>
+						<div class="col-md-3" >
+	
+						</div>
+						</div>
+						</div>
+					</div>
+		<div class="load-modal"></div>
+		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script type="text/javascript" src="https://gktcs.com/static/js/ajax.js"></script>
+		<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script> 
+		<script>
+		$(window).load(function() {
+			$(".load-modal").fadeOut("fast");
+		})
+		</script>
+		<script>
+		$(function(){
+
+		var appendthis =  ("<div class='modal-overlay js-modal-close'></div>");
+
+			$('a[data-modal-id]').click(function(e) {
+				e.preventDefault();
+			$("body").append(appendthis);
+			$(".modal-overlay").fadeTo(500, 0.7);
+			//$(".js-modalbox").fadeIn(500);
+				var modalBox = $(this).attr('data-modal-id');
+				$('#'+modalBox).fadeIn($(this).data());
+			});  
+		  
+		  
+		$(".js-modal-close, .modal-overlay").click(function() {
+			$(".modal-box, .modal-overlay").fadeOut(500, function() {
+				$(".modal-overlay").remove();
+			});
+		 
+		});
+		 
+		$(window).resize(function() {
+			$(".modal-box").css({
+				top: ($(window).height() - $(".modal-box").outerHeight()) / 2,
+				left: ($(window).width() - $(".modal-box").outerWidth()) / 2
+			});
+		});
+		 
+		$(window).resize();
+		 
+		});
+		</script>
+		<script>
+		{% if messages %}
+		    {% for message in messages %}
+			    alert('{{ message }}');
+		    {% endfor %}
+        {% endif %}		
+		</script>
+		<script>
+		$(document).ready(function () {
+			$(form).on('submit', function(e) {
+				e.preventDefault();
+				$.ajax({
+					url : $(this).attr('action') || window.location.pathname,
+					type: "GET",
+					data: $(this).serialize(),
+					success: function (data) {
+						$("#form_output").html(data);
+					},
+					error: function (jXHR, textStatus, errorThrown) {
+						alert(errorThrown);
+					}
+				});
+			});
+		});
+		</script>
+		<script>
+		$(document).ready(function(){
+			$('[data-toggle="tooltip"]').tooltip();   
+		});
+		</script>
+		
+	</body>
+</html>

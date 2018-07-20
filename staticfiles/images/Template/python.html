@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+{% extends "index.html" %}
+{% load staticfiles %}
+{% block home %}
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="http://api.html5media.info/1.1.5/html5media.min.js"></script>
+    {% block flash%} {% endblock %}
+    
+    <style type="text/css">
+        body {
+            background: #fff;
+            font-family: verdana;
+            padding-top: 0px;
+            background-color: #027fcf;
+        }
+        #vtab {
+            margin: 10;
+            width: 700px;
+            height: 100%;
+        }
+        #vtab > ul > li {
+            width: 150px;
+            height: 80px;
+            background-color: #fff !important;
+            list-style-type: none;
+            display: block;
+            text-align: center;
+            margin: auto;
+            padding-bottom: 10px;
+            border: 1px solid #fff;
+            position: relative;
+            border-right: none;
+            opacity: .3;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+            filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+        }
+        #vtab > ul > li.home {
+            background: url('http://gktcs.in/GLMS/public/static/images/about1.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.login {
+            background: url('http://gktcs.in/GLMS/public/static/images/demo4.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.support {
+            background: url('http://gktcs.in/GLMS/public/static/images/content.jpg') no-repeat center center;
+        }
+         #vtab > ul > li.support1 {
+            background: url('http://gktcs.in/GLMS/public/static/images/batches.jpg') no-repeat center center;
+        }
+        
+        #vtab > ul > li.support2 {
+            background: url('http://gktcs.in/GLMS/public/static/images/interview.jpg') no-repeat center center;
+        }
+         #vtab > ul > li.support3 {
+            background: url('http://gktcs.in/GLMS/public/static/images/training.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.support4 {
+            background: url('http://gktcs.in/GLMS/public/static/images/FAQ.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.support5 {
+            background: url('http://gktcs.in/GLMS/public/static/images/testi.jpg') no-repeat center center;
+        }
+         #vtab > ul > li.support6 {
+            background: url('http://gktcs.in/GLMS/public/static/images/certification.jpg') no-repeat center center;
+        }
+        
+        
+        #vtab > ul > li.selected {
+            opacity: 1;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+            filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+            border: 1px solid #ddd;
+            border-right: none;
+            z-index: 10;
+            background-color: #fafafa !important;
+            position: relative;
+        }
+        #vtab > ul {
+            float: left;
+            width: 110px;
+            text-align: left;
+            display: block;
+            margin: auto 0;
+            padding: 0;
+            position: relative;
+            top: 30px;
+        }
+        #vtab > div {
+            background-color: #fafafa;
+            margin-left:150px;
+            border: 1px solid #ddd;
+            min-height: 700px;
+            padding: 12px;
+            position: relative;
+            z-index: 9;
+            -moz-border-radius: 20px;
+        }
+        #vtab > div > h4 {
+            color: #800;
+            font-size: 1.2em;
+            border-bottom: 1px dotted #800;
+            padding-top: 5px;
+            margin-top: 0;
+        }
+        #loginForm label {
+            float: left;
+            width: 100px;
+            text-align: right;
+            clear: left;
+            margin-right: 15px;
+        }
+        #loginForm fieldset {
+            border: none;
+        }
+        #loginForm fieldset > div {
+            padding-top: 3px;
+            padding-bottom: 3px;
+        }
+        #loginForm #login {
+            margin-left: 115px;
+        }
+        
+     a {text-decoration: none}
+    </style>
+
+    <script type="text/javascript">
+        $(function() {
+            var $items = $('#vtab>ul>li');
+            $items.mouseover(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('#vtab>div').hide().eq(index).show();
+            }).eq(0).mouseover();
+        });
+        
+        
+    </script>
+
+</head>
+<body>
+
+		<font color="#366D9C" size=6px style="font-family: Georgia; padding-left: 400px"><b>Python </b></font>
+	
+	<table width="980" height="700"> 
+		<tr> 
+			<td width='100'>
+		
+    <div id="vtab">
+        <ul>
+            <li class="home selected"></li>
+            <li class="login"></li>
+            <li class="support"></li>
+            <li class="support1"></li>
+            <li class="support2"></li>
+            <li class="support3"></li>
+            <li class="support4"></li>
+            <li class="support5"></li>
+            <li class="support6"></li>
+        </ul>
+        <div>
+        	<h4>About Course</h4>
+        	<br/>
+           <table align="justify">
+           	<tr align="justify">
+           		<td valign="top">
+           			<img src='http://gktcs.in/GLMS/public/static/images/python.jpg' width='100' height="80" />
+           		</td>
+           		<td>
+           			
+<b>Course Duration:</b>45hrs<br/>
+<br/>
+<b>Course Description:</b><br/>
+<br/>
+
+Python is a general-purpose interpreted, interactive, object-oriented, and high-level programming language.Its design philosophy emphasizes code readability, and its syntax allows programmers to express concepts in fewer lines of code than would be possible in languages such as C++ or Java. The language provides constructs intended to enable clear programs on both a small and large scale.
+<br/>
+<br/>
+<b>Who Should Attend:</b>
+<br/>
+<br/>
+This course is intended for experienced HTML and CSS developers with some JavaScript experience.
+<br/><br/>
+<b>Benefits of Attendance:</b>
+<br/>
+<br/>
+Upon completion of this course, students will be able to:<br/>
+<br/>
+<ul>
+<li>Understand the major benefits of Python</li><br/>
+<li>Learn to build web pages using Python</li><br/>
+<li>Understand the current state of browser support for Python and how to make your sites degrade gracefully.</li><br/>
+<li>Use the new elements and attributes of Python</li><br/>
+<li>All – Experienced, Freshers and Students</li><br/>
+</ul>
+<br/>
+<br/>
+<b>Prerequisites:</b><br/>
+<br/>
+Students must be experienced with HTML and have experience with CSS and JavaScript. Prior knowledge of JSON, DOM, and Ajax is helpful, but not required.
+           		</td>
+           	</tr>
+           	
+           	
+           </table>
+            
+        </div>     
+         <div>
+         	<h4>Sample Demo</h4>
+         	<br/>
+         	<div>
+   <video id="abc" width="500px" height="360px" autoplay controls > <source src="{% static 'abc.mp4' %}" type="video/mp4"> </source>
+     
+        </video></div>
+
+</div>
+           <div>
+            <h4>
+              Content </h4>
+              <br/>
+ <br><br><h3><u>Part I : Core Python</u><br><br>
+ Chapter 1 —Welcome to Python!<br><br>
+ Chapter 2 —Getting Started<br><br>
+ Chapter 3 —Syntax and Style<br><br>
+ Chapter 4 —Python Objects<br><br>
+ Chapter 5 —Numbers<br><br>
+ Chapter 6 —Sequences: Strings, Lists, and Tuples<br><br>
+ Chapter 7 —Dictionaries<br><br>
+ Chapter 8 —Conditionals and Loops<br><br>
+ Chapter 9 —Files and Input/Output<br><br>
+ Chapter 10 —Errors and Exceptions<br><br>
+ Chapter 11 —Functions<br><br>
+ Chapter 12 —Modules<br><br>
+ Chapter 13 —Classes and OOP<br><br>
+ Chapter 14 —Execution Environment<br><br>
+ <u>Part II : Advanced Topics</u><br><br>
+ Chapter 15 —Regular Expressions<br><br>
+ Chapter 16 —Network Programming with Sockets<br><br>
+ Chapter 17 —Multithreaded Programming<br><br>
+ Chapter 18 —GUI Programming with Tkinter<br><br>
+ Chapter 19 —Web Programming<br><br>
+ Chapter 20 —Extending Python<br><br><h3>
+        </div>
+           <div>
+        
+ <h4>Upcoming Batches</h4>
+ <br/>
+<div class="pricing_table">
+
+<table width=500px>
+		<tr width=500px ></tr>
+		<b><th width=280 bgcolor="#333333" style="color:#FFFFFF;">Start date</th>
+			
+		<th width=95 bgcolor="#333333" style="color:#FFFFFF;">Duration</th>
+		<th width=700 bgcolor="#333333" style="color:#FFFFFF;">Days</th>
+		<th width=100 bgcolor="#333333" style="color:#FFFFFF;">Time</th>
+		<th width=100 bgcolor="#333333" style="color:#FFFFFF;">Price</th></b>
+		</tr>
+		
+		
+		{% for j in batch %}
+		<tr width=500px>
+			
+<td width=350 bgcolor="#CCCCCC" style="text-align: center"> {{j.Start}}</td>
+<td width=220 bgcolor="#CCCCCC" style="text-align: center">{{j.Duration}}</td>
+<td width=350 bgcolor="#CCCCCC" style="text-align: center">{{j.Days}}</td>
+
+<td width=150 bgcolor="#CCCCCC" style="text-align: center">{{j.Time}}</td>
+<td width=100 bgcolor="#CCCCCC" style="text-align: center">{{j.Price}}/-</td>
+
+		
+		</tr>
+		{% endfor %}
+		
+		
+	</table>	
+
+</div>
+	 <br><br>
+	<br/>
+		
+
+<a href="/Enroll" style="padding-left: 320px; "><img src="http://gktcs.in/GLMS/public/static/images/enroll.png" height=40px width="190px" align="center"/></a>
+	
+	
+		
+	
+        </div>
+           <div align="justify">
+           	<h4>Interview Questions</h4>
+           	<br/>
+           	<br/>
+           	
+           	<b>Question:.What is Python? State some programming language features of Python</b><br/>
+Ans: Python is a modern powPython is a modern powerful interpreted language with objects, modules, threads, exceptions, and automatic memory managements.<br>
+Python was introduced to the world in the year 1991 by Guido van Rossum
+Salient features of Python are<br>
+-Simple & Easy: Python is simple language & easy to learn.<br>
+-Free/open source: it means everybody can use python without purchasing license.<br>
+-High level language: when coding in Python one need not worry about low-level details.<br>
+-Portable: Python codes are Machine & platform independent.<br>
+-Extensible: Python program supports usage of C/ C++ codes.<br>
+-Embeddable Language: Python code can be embedded within C/C++ codes & can be used a scripting language.<br>
+-Standard Library: Python standard library contains prewritten tools for programming.<br>
+-Build-in Data Structure: contains lots of data structure like lists, numbers & dictionaries.erful interpreted language with objects, modules, threads, exceptions, and automatic memory managements.
+           	<br/>
+            <br/>
+            
+            
+            <b>Question: Explain how python is interpreted.</b><br/>
+Ans: Python program runs directly from the source code. Each type Python programs are executed code is required. Python converts source code 
+written by the programmer into intermediate language which is again translated it into the native language / machine language that is executed. 
+So Python is an Interpreted language.
+<br/>
+<br/>
+
+<b>Question: Describe how to use Sessions for Web python.</b><br/>
+Ans: Sessions are the server side version of cookies. While a cookie preserves state at the client side, sessions preserves state at server side.<br>
+
+The session state is kept in a file or in a database at the server side. Each session is identified by a unique session id (SID). To make it possible 
+to the client to identify himself to the server the SID must be created by the server and sent to the client whenever the client makes a request.<br>
+
+Session handling is done through the web.session module in the following manner:<br>
+
+import web.session session = web.session.start( option1, Option2,... )<br>
+session['myVariable'] = 'It can be requested'
+<br/>
+<br/>
+<b>Question: What is used to create Unicode string in Python?</b><br/>
+Ans: Unicode is a system to represent characters from all the world's different languages.
+<br>
+Two methods can be used to create unicode string:
+<br>
+unicode() method is unicode(string[, encoding, errors]), its arguments should be 8-bit strings. The first argument is converted to Unicode using the specified encoding, if encoding argument left, the ASCII encoding is used for the conversion.
+<br>
+encode() method is encode([encoding], [errors='strict']), which returns an 8-bit string version of the Unicode string.
+<br/>
+<br/>
+
+<b>Question: Explain the disadvantages of python.</b><br/>
+ Ans:Disadvantages of Python are:<br>
+Python isn't the best for memory intensive tasks.<br>
+Python is interpreted language & is slow compared to C/C++ or java.<br>
+Python not a great choice for a high-graphic 3d game that takes up a lot of CPU.<br>
+Python is evolving continuously, with constant evolution there is little substantial documentation available for the language.
+
+<br/>
+<br/>
+
+<b>Question: Explain how python is interpreted.</b><br/>
+Ans:Python program runs directly from the source code. Each type Python programs are executed code is required. 
+Python converts source code written by the programmer into intermediate language which is again translated it into the native 
+language / machine language that is executed. So Python is an Interpreted language.
+<br/>
+<br/>
+<b>Question: Explain the dictionary in Python.</b><br/>
+Ans:Python's built-in data type is dictionary, which defines one-to-one relationships between keys and values.<br>
+Dictionaries consist of pairs of keys and their corresponding values.<br>
+Dictionaries are indexed by keys.<br>
+Dictionary is similar to associative array or hash table of other languages.<br>
+As following example explains further- India, Angel & Cartoon are keys & their corresponding values are Bharat, Mother Teresa & Mickey respectively.<br>
+>>> dict = {'India': 'Bharat', 'Angel': ‘Mother Teresa’, 'Cartoon': 'Mickey'}<br>
+>>>print dict[India]<br>
+Bharat<br>
+>>>print dict[Angel]<br>
+Mother Teresa
+<br/>
+<br/>
+<b>Question: Explain indexing and slicing operation in sequences</b><br/>
+Ans:Different types of sequences in python are strings, Unicode strings, lists, tuples, buffers, and xrange objects
+Slicing & indexing operations are salient features of sequence.<br>
+indexing operation allows to access a particular item in the sequence directly ( similar to the array/list indexing) and the slicing operation allows to retrieve a part of the sequence.<br>
+The slicing operation is used by specifying the name of the sequence followed by an optional pair of numbers separated by a colon within square brackets say S[startno.:stopno].<br>
+The startno in the slicing operation indicates the position from where the slice starts and the stopno indicates where the slice will stop at.<br>
+If the startno is ommited, Python will start at the beginning of the sequence. If the stopno is ommited, Python will stop at the end of the sequence..<br>
+Following code will further explain indexing & slicing operation:<br>
+>>> cosmeticList =[‘lipsstick’,’facepowder’,eyeliner’,’blusher’,kajal’] <br>
+>>> print “Slicing operation :”,cosmeticList[2:]<br>
+Slicing operation :[‘eyeliner’,’blusher’,kajal’]<br>
+>>>print “Indexing operation :”,cosmeticList[0]<br>
+“Indexing operation :lipsstick
+<br/>
+<br/>
+<b>Question: Explain pickling and unpickling.</b>?<br/>
+Ans:pickle is a standard module which serializes & de-serializes a python object structure.
+
+pickle module accepts any python object converts it into a string representation & dumps it into a file(by using dump() function) which can be used
+later, process is called pickling. Whereas unpickling is process of retrieving original python object from the stored string representation for use.
+<br/>
+<br/>
+<b>Question: What is HTML5 Web Storage?</b><br/>
+Ans:It store the data locally in the user's browser
+<br/>
+<br/>
+<b>Question: Differentiate between session Storage and local Storage objects?</b><br/>
+Ans:Session Storage object stores the data only for one session while local Storage object stores the data without an expiry date.
+<br/>
+<br/>
+<b>Question: What is a Manifest file?</b><br/>
+Ans:A Manifest file is a simple text file that tells the browser what to cache and what not to cache. 
+<br/>
+<br/>
+<b>Question: What is a Web Worker?</b><br/>
+Ans:A web worker is a JavaScript which runs in the background.<br/>
+<br/>
+
+<b>Question: What is the purpose of HTML5 versus XHTML?</b><br/>
+Ans:HTML5 is the next version of HTML 4.01, XHTML 1.0 and DOM Level 2 HTML. Its aim to reduce the need for proprietary plug-in-based rich internet application (RIA) technologies such as Adobe Flash, Microsoft Silverlight etc.
+<br/>
+<br/>
+<b>Question: WHAT are some other advantages of HTML5?</b><br/>
+Ans:Cleaner markup than earlier versions of HTML
+Additional semantics of new elements like header, nav, and time
+<br/>
+<br/>
+<b>Question: What is the !DOCTYPE? Is it mandatory to use in HTML5?</b><br/>
+Ans:The !DOCTYPE is an instruction to the web browser about what version of HTML the page is written in. The !DOCTYPE tag does not have an end tag. It is not case sensitive.
+<br/>
+         	  	
+        </div>
+         <div align="justify">
+         	<h4>
+                Training Mode</h4>
+                <br/>
+   
+         	
+         	<table width=620><tr align="justify">
+         		<td width="330" align="justify">
+         		<br/>
+         	
+         	<b>Corporate Training :</b><br/>
+         	
+Corporate Training Solutions
+
+Corporate training is the act of grooming the workforce in order to make them capable of handling modern business challenges by improving their approach and productivity and thus, making effective utilization of resources. We at GKTCS work hand in hand with Industry on various fronts. GKTCS’s business cycle is aligned very closely to Industry needs and structured to fulfil the industry needs in terms of Training and Recruitment.
+
+We always believe our customers speak for our services based on their rich experience with our kind of services.
+</td>
+<td align="right">
+	<img src="http://gktcs.in/GLMS/public/static/images/corporate.jpg"  width="200" height="150"/> 
+</td>
+</tr>
+<tr>
+	<td>
+		<br/>
+<b>Retail Training :</b>
+<br/>
+GKTCS Innovations has a set of best trainers who are constantly engaged in spreading technical and non technical knowledge to individual who are seeking an opportunity in their respective industries and would like to straight away face the challenges of the continuously improving and changing world.
+
+The retail Training services provided by GKTCS Innovations are designed as per the needs of corporate and also as per the guidelines provided by them.
+ </td>
+ <td align="right">
+	<img src="http://gktcs.in/GLMS/public/static/images/retail.jpg"  width="200" height="150"/>
+</td>
+ </tr>
+ <tr>    <td>   
+ 	<br/>	
+ <b>Online Training </b>
+ <br/>
+ GKTCS offers Online Training , so you get trained from where you are from our experienced trainers, In the weekdays as well as weekends by the Real Time Professionals. The program is designed to provide rich learning experience for students using Internet.         	
+      </td>   
+      <td align="right">
+      	<img src="http://gktcs.in/GLMS/public/static/images/online.jpg"  width="200" height="150"/>
+      </td>  
+      </tr>	
+    </table>     	
+         	
+         </div>
+		
+
+           <div align="justify">
+           	<h4>
+                FAQs</h4>
+           	
+           	<br/>
+    
+          <b> How memory is managed in Python?</b><br/>
+ Python memory is managed by Python private heap space. All Python objects and data structures are located in a private heap. The programmer does not have an access to this private heap and interpreter takes care of this Python private heap.
+The allocation of Python heap space for Python objects is done by Python memory manager.  The core API gives access to some tools for the programmer to code.
+Python also have an inbuilt garbage collector, which recycle all the unused memory and frees the memory and makes it available to the heap space.
+<br/>
+<br/>
+<b> How Python is interpreted?</b><br/>
+Python language is an interpreted language. Python program runs directly from the source code. It converts the source code that is written by the programmer into an intermediate language, which is again translated into machine language that has to be executed.
+<br/>
+<br/>
+<b>What is PEP 8?</b><br/>
+PEP 8 is a coding convention, a set of recommendation, about how to write your Python code more readable.
+<br/>
+<br/>
+<b> What are the tools that help to find bugs or perform static analysis?</b><br/>
+PyChecker is a static analysis tool that detects the bugs in Python source code and warns about the style and complexity of the bug. Pylint is another tool that verifies whether the module meets the coding standard.
+<br/>
+<br/>
+<b>What are Python decorators?</b><br/>
+A Python decorator is a specific change that we make in Python syntax to alter functions easily.<br/>
+<br/>
+<b>What is the difference between list and tuple?</b><br/>
+The difference between list and tuple is that list is mutable while tuple is not. Tuple can be hashed for e.g as a key for dictionaries.
+<br/>
+<br/>
+<b>How are arguments passed by value or by reference?</b><br/>
+Everything in Python is an object and all variables hold references to the objects. The references values are according to the functions; as a result you cannot change the value of the references. However, you can change the objects if it is mutable.
+<br/>
+<br/>
+<b> What is Dict and List comprehensions are?</b><br/>
+They are syntax constructions to ease the creation of a Dictionary or List based on existing iterable.
+<br/>
+<br/>
+<b>What is namespace in Python?</b><br/>
+In Python, every name introduced has a place where it lives and can be hooked for. This is known as namespace. It is like a box where a variable name is mapped to the object placed.  Whenever the variable is searched out, this box will be searched, to get corresponding object.
+<br/>
+<br/>
+<b>What is lambda in Python?</b><br/>
+It is a single expression anonymous function often used as inline function.<br/>
+<br/>
+<b> Why lambda forms in python does not have statements?</b><br/>
+A lambda form in python does not have statements as it is used to make new function object and then return them at runtime.<br/>
+<br/>
+<b>How can you copy an object in Python?</b><br/>
+To copy an object in Python, you can try copy.copy () or copy.deepcopy() for the general case. You cannot copy all objects but most of them.<br/>
+<br/>
+<b>What is negative index in Python?</b><br/>
+Python sequences can be index in positive and negative numbers.   For positive index, 0 is the first index, 1 is the second index and so forth.  For negative index, (-1) is the last index and (-2) is the second last index and so forth.
+<br/>
+<br/>
+<b>How you can convert a number to a string?</b><br/>
+In order to convert a number into a string, use the inbuilt function str().  If you want a octal or hexadecimal representation, use the inbuilt function oct() or hex().
+<br/>
+<br/>
+<b>What is the difference between Xrange and range?</b><br/>
+Xrange returns the xrange object while range returns the list, and uses the same memory and no matter what the range size is.
+
+ 
+        </div>
+           <div>
+        <h4>Testimonials</h4> 
+        <div style="padding-top: 20px">
+           		<table border="2" >
+           			<tr>
+           				<td rowspan="2"><img height="140" width="110" src="http://gktcs.in/GLMS/public/static/images/AhilanShankar.jpg" /> </td>
+           				<td style="color: blue; "><b>Ahilan Shankar<br>Senior Developer, Capgemini Pune</b></td>
+           			</tr>
+           			<tr>
+           				<td> This course of Python is helpful and we get the complete practical knowledge of the same. All the PPT's are very much effective and can be used as a reference after the completion of course.</td>
+           			</tr>
+           			<tr><td colspan="2" style="background: gray"></td></tr>
+           			<tr>
+           				<td rowspan="2"><img height="140" width="110" src="http://gktcs.in/GLMS/public/static/images/ApurvaBhat.jpg" /> </td>
+           				<td style="color: blue"><b>Apurva Bhat<br>Junior Developer, Upside Learning, Pune</b></td>
+           			</tr>
+           			<tr>
+           				<td>  Course of Basic and Advance Python done here is effective while working in the industry and the trainers are very good in their training. The training quality provided is international level training and the contents are also easy and understandable.</td>
+           			</tr>
+           			<tr><td colspan="2" style="background: gray"></td></tr>
+           			<tr>
+           				<td rowspan="2"><img height="140" width="110" src="http://gktcs.in/GLMS/public/static/images/Neha.jpg" /> </td>
+           				<td style="color: blue; "><b>Ashish Soni<br>Senior Developer, Upside Learning, Pune</b></td>
+           			</tr>
+           			<tr>
+           				<td> It is a great training firm where I learnt the various web technologies including Python. It also helped me to get into IT industry with the complete knowledge of this technology.</td>
+           			</tr>
+           			<tr><td colspan="2" style="background: gray"></td></tr>
+           			
+           		</table>	
+           		
+           		
+           </div>	 
+           
+        </div>
+   
+        <div align="justify">
+            <h4>
+                Certification</h4>
+                <br/>
+           
+             At the end of the course we provide  Certification.  <br/><br/>
+           <b>Process for Certification :</b>
+          
+  <li>You will receive a real time project Problem Statement along with a dataset to work. </li>
+  <li>After complition of your project(Reviewed by an Expert),you will be awarded a certificate with a performance-based grading. </li>
+ <li>If your project is not completed on time , you can take extra training for any of your doubts to understand the concepts better and re-attempt the Project free of cost.</li>
+<br/>
+GKTCS will help you at every stage of your learning and our 24/7 expert support team will ensure that you don't get stuck. Once you submit the project, our subject matter experts will review the same and share feedback to optimize it, if required.
+        </div>
+        </div>
+    
+    </td>
+    
+    <td valign="top" width="500">
+  		
+    <table valign="top">
+    	<tr valign="top">
+    		<font color="#366D9C" size=5px style="font-family: Georgia; padding-left:25px"><b>Course Features</b></font>  
+    		<td align="left" valign="top" width="500" height="200">
+    		
+ 
+  <br/>
+ <br/>
+ <li>Expert and qualified trainers</li>
+<li>Practical Project Based Approach</li>
+<li>Regular Assessment & feedback</li>
+<li>Total customized as per the client needs</li> 
+<li>Lifetime Access</li> 
+<li>  24 x 7 Support</li> 
+<li>  Get Certified</li>
+ 
+
+    			
+     		</td>
+     	
+    		
+    		
+    	</tr>
+    	
+    	<tr valign="top">
+    		<td height="20" valign="top" align="center">
+    		
+    		
+    		<font color="#366D9C" size=5px style="font-family: Georgia; padding-left:25px"><b>Placed Candidate</b></font>  
+    			<br/>
+    			<marquee direction="up" scrollamount="4" height="300">
+    			<table>
+    				<tr>
+    	   						
+    					<table>
+    						<tr>
+    							<td valign="top" height="30">
+    								
+    								<img src="http://gktcs.in/GLMS/public/static/images/AhilanShankar.jpg" width="100" height="100"/>
+    							</td>
+    							<td>
+    								<b>Alihan shanakar</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/capegemini.png" width="150" height="80"/> 
+    							</td>
+    						</tr>
+    						
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/sounavdas.jpg" width="100" height="100"/>
+    							</td>
+    							<td>
+    								<b>Sonav Das</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150" height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/ShashankVerma.jpg" width="60" height="80"/>
+    							</td>
+    							<td>
+    								<b>Shashank Verma</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/leoinfotech.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/rasika1.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Rasika</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/renuka.jpg" width="100" height="100"/>
+    							</td>
+    							<td>
+    								<b>Renuka Shirbhate</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/inetsoft.jpg" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/Neha.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Neha Kottarwar</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/GauravKotarwar.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Gaurav Kotarwar</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/leoinfotech.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/PrajaktaSakale.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Prajkta Sakale</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    							<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/SohailShaikh.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Sohail Shaikh</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/leoinfotech.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/ApurvaBhat.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Apurva Bhat</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/AshishSoni.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Ashish Soni</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    					
+    					    						
+    						
+    						
+    						
+    					</table>
+    					
+    						
+    						
+    					</td>
+    		
+    		
+    	</tr>
+    </table>
+    
+    </td>
+    
+    
+    </tr>
+	</table>
+	
+</body>
+</html>
+{% endblock %}

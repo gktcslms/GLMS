@@ -1,0 +1,118 @@
+{% extends "index.html" %}
+{% block home %}
+{% load staticfiles %}
+<html>
+	<head>
+		<link rel="stylesheet" href="{% static 'css/enquiry.css' %}">
+		<script src="{% static 'js/enquiry.js' %}"></script>
+		<script src="{% static 'js/hscroll.js' %}"></script>
+	</head>
+	<div style="padding-left: 34px;padding-top: 10px;padding-bottom: 7px; float:left"> <b><font color="#366D9C" size=6px style="font-family: Georgia">Welcome to ILMS</font></b></div><br>
+	<table width="900" height="100" style="font-family:Times;font-size:20">
+	<tr align="justify">
+		<td valign="top" height="100" align="justify">
+			<div align="justify" style="padding-left: 30px; width: 890px">
+		<p>Interactive Learning Management Solution is the Learning management System where you can online from anywhere in the world, Today’s world is a highly competitive world and almost all organisation’s are exposed to best raw materials, supply chains, marketing and cost control opinions etc. But the human resource is the most important of all the assets. To improve the competency and capability of human resource. Training and development has become an integrated part of any organisations to do list. Just like we add manure to nurture the plant which would give fruits. In similar manner we need to add manure to human resources by the way of training to deliver desired results.
+		<br/>
+		<br/>GKTCS Innovations is a result of professionals from training and development coming together with a common vision “to deliver most optimized training solutions to the organisation which are result oriented and cost effective”. </p>
+		<br/>
+		<br/></div></td><br>
+		<td>
+			<!--<div id="slideout" style="padding-left:50px ; height:200px">	
+			<div id="slidecontent" align="center" style="background-color:#DDDDDD; ">
+   			 	
+			<form  method= 'post' action="" > 
+				{% csrf_token %}
+					<table align="right">
+						<tr><td><b>Name :</b</td><td>{{ form.Name }}</td></tr>
+						<tr><td><b>Email :</b</td><td>{{ form.Email }}</td></tr>
+						<tr><td><b>Contact:</b</td><td>{{ form.Contact}}</td></tr>
+						<tr><td><b>Message:</b</td><td>{{ form.Message }}</td></tr>
+					<br></table>
+					
+					<input type="submit" onclick="myFunction()" align="center">
+					
+			</form>
+			</div>
+			<div id="clickme"><img src="http://gktcs.in/GLMS/public/static/images/enquiry.png" height="90"/>
+    		</div>-->
+			
+			<div style="float:right; position: fixed; top: 40%; left: 96% "><a href="#formScreen"><img src="http://gktcs.in/GLMS/public/static/images/enquiry.png" height="200"/></a> 
+			</div> 
+			</td>
+	</tr>
+	</table>
+			<div style="position:absolute; right:66%; top:10%; ">
+			<div id="formScreen">
+			<div align=center style="padding-top: 5%"> <font color="#002299" size=4px style="font-family: Georgia; font-weight: bold;"> Enquiry Form</font></div>
+			<form  method= 'post' action="http://gktcs.in/" > 
+				{% csrf_token %}
+					<table>
+						<tr><td><b>Name :</b</td><td>{{ form.Name }}</td></tr>
+						<tr><td><b>Email :</b</td><td>{{ form.Email }}</td></tr>
+						<tr><td><b>Contact:</b</td><td>{{ form.Contact}}</td></tr>
+						<tr><td><b>Message:</b</td><td>{{ form.Message }}</td></tr>
+					</table>
+					<div style="padding-left: 30%; padding-top: 5% "><input type="submit" onclick="myFunction()" align="center"> &nbsp &nbsp &nbsp <a href="http://gktcs.in/"><input type="button" value="Cancel"></a></div>
+					<br>
+					
+					
+					
+			</form>
+			</div> 
+			<div id="cover" >
+			</div>
+   			</div>    		
+		
+	<div style=" padding-left: 230px "><b><font color="#366D9C" size=6px style="font-family: Georgia">Web Development Technology</font></b></div><br>
+	<div class='marquee-with-options'>
+ 		<a href="{% url 'angularjs' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/ajs.jpg' alt="" height="100" width="170"/></a>
+		<a href="{% url 'mdotnet' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/asp.jpg' alt="" height="100" width="170"/></a>
+		<a href="{% url 'bootstrap' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/bootstrap1.jpg' alt="" height="100" width="170"/></a>
+		<a href="{% url 'css3' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/css3.jpg' alt="" height="100" width="170"/></a>
+		<a href="{% url 'html5' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/html51.jpg' alt="" height="100" width="170"/></a>
+		<a href="{% url 'jquery' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/jquery.jpg' alt="" height="100" width="170"/></a>
+		<a href="" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/php1.jpg' alt="" height="100" width="170"/></a>
+		<a href="" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/python.jpg' alt="" height="100" width="170"/></a>		
+	    
+	</div><br><br>
+	<div style="padding-left: 270px "><b><font color="#366D9C" size=6px style="font-family: Georgia">Open Source Technology</font></b></div><br>
+	<div class='marquee-with-options'>
+ 		<a href="{% url 'apachetomcat' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/apache.jpg' alt="" height="100" width="170"/></a>
+		<a href="{% url 'django' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/django.jpg' alt="" height="100" width="170"/></a>
+		<a href="{% url 'hadoop' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/hadoop.jpg' alt="" height="100" width="170"/></a>
+		<a href="{% url 'java' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/java.jpg' alt="" height="100" width="170"/></a>
+		<a href="{% url 'mongodb' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/mongodb.jpg' alt="" height="100" width="170"/></a>
+		<a href="{% url 'mysql' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/mysql.jpg' alt="" height="100" width="170"/></a>
+		<a href="{% url 'redhat' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/redhat.jpg' alt="" height="100" width="170"/></a>
+		<a href="{% url 'rubyonrails' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/ruby.jpg' alt="" height="100" width="170"/></a>
+		<a href="{% url 'wordpress' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/wordpress.jpg' alt="" height="100" width="170"/></a>
+	   
+	</div><br><br>
+
+	<div style="padding-left: 320px"><b><font color="#366D9C" size=6px style="font-family: Georgia">Mobile Technology</font></b></div><br>
+	<div class='marquee-with-options'>
+ 		<a href="{% url 'android' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/android1.jpg' alt="" height="100" width="170"/></a>
+		<a href="{% url 'ios' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/ios.jpg' alt="" height="100" width="170"/></a>
+		<a href="{% url 'jqmob' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/jquerym.jpg' alt="" height="100" width="170"/></a>
+		<a href="{% url 'phonegap' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/pg.jpg' alt="" height="100" width="170"/></a>
+		<a href="{% url 'android' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/android1.jpg' alt="" height="100" width="170"/></a>
+		<a href="{% url 'ios' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/ios.jpg' alt="" height="100" width="170"/></a>
+		<a href="{% url 'jqmob' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/jquerym.jpg' alt="" height="100" width="170"/></a>
+		<a href="{% url 'phonegap' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/pg.jpg' alt="" height="100" width="170"/></a>
+	    
+	</div><br><br>
+
+
+	<div style="padding-left: 295px"><b><font color="#366D9C" size=6px style="font-family: Georgia">Microsoft Technology</font></b></div><br>
+	<div class='marquee-with-options'>
+ 		<a href="{% url 'mvc' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/mvs.jpg' alt="" height="100" width="170"/></a>
+		<a href="{% url 'mdotnet' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/aspNet.png' alt="" height="100" width="170"/></a>
+		<a href="{% url 'csharp' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/c-sharp-logo-1.png' alt="" height="100" width="170"/></a>
+		<a href="{% url 'mvc' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/mvs.jpg' alt="" height="100" width="170"/></a>
+		<a href="{% url 'mdotnet' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/aspNet.png' alt="" height="100" width="170"/></a>
+		<a href="{% url 'csharp' %}" style="padding-right: 17px"><img src='http://gktcs.in/GLMS/public/static/images/c-sharp-logo-1.png' alt="" height="100" width="170"/></a>
+	    
+	</div>
+	</html>
+{% endblock %}

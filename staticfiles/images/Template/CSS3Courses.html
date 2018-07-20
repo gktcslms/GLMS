@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+{% extends "index.html" %}
+{% load staticfiles %}
+{% block home %}
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="http://api.html5media.info/1.1.5/html5media.min.js"></script>
+    
+
+      {% block flash%} {% endblock %}
+    
+    <style type="text/css">
+        body {
+            background: #fff;
+            font-family: verdana;
+            padding-top: 0px;
+            background-color: #027fcf;
+        }
+        #vtab {
+            margin: 10;
+            width: 700px;
+            height: 100%;
+        }
+        #vtab > ul > li {
+            width: 150px;
+            height: 80px;
+            background-color: #fff !important;
+            list-style-type: none;
+            display: block;
+            text-align: center;
+            margin: auto;
+            padding-bottom: 10px;
+            border: 1px solid #fff;
+            position: relative;
+            border-right: none;
+            opacity: .3;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+            filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+        }
+        #vtab > ul > li.home {
+            background: url('http://gktcs.in/GLMS/public/static/images/about1.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.login {
+            background: url('http://gktcs.in/GLMS/public/static/images/demo4.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.support {
+            background: url('http://gktcs.in/GLMS/public/static/images/content.jpg') no-repeat center center;
+        }
+         #vtab > ul > li.support1 {
+            background: url('http://gktcs.in/GLMS/public/static/images/batches.jpg') no-repeat center center;
+        }
+        
+        #vtab > ul > li.support2 {
+            background: url('http://gktcs.in/GLMS/public/static/images/interview.jpg') no-repeat center center;
+        }
+         #vtab > ul > li.support3 {
+            background: url('http://gktcs.in/GLMS/public/static/images/training.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.support4 {
+            background: url('http://gktcs.in/GLMS/public/static/images/FAQ.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.support5 {
+            background: url('http://gktcs.in/GLMS/public/static/images/testi.jpg') no-repeat center center;
+        }
+         #vtab > ul > li.support6 {
+            background: url('http://gktcs.in/GLMS/public/static/images/certification.jpg') no-repeat center center;
+        }
+        
+        
+        #vtab > ul > li.selected {
+            opacity: 1;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+            filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+            border: 1px solid #ddd;
+            border-right: none;
+            z-index: 10;
+            background-color: #fafafa !important;
+            position: relative;
+        }
+        #vtab > ul {
+            float: left;
+            width: 110px;
+            text-align: left;
+            display: block;
+            margin: auto 0;
+            padding: 0;
+            position: relative;
+            top: 30px;
+        }
+        #vtab > div {
+            background-color: #fafafa;
+            margin-left:150px;
+            border: 1px solid #ddd;
+            min-height: 700px;
+            padding: 12px;
+            position: relative;
+            z-index: 9;
+            -moz-border-radius: 20px;
+        }
+        #vtab > div > h4 {
+            color: #800;
+            font-size: 1.2em;
+            border-bottom: 1px dotted #800;
+            padding-top: 5px;
+            margin-top: 0;
+        }
+        #loginForm label {
+            float: left;
+            width: 100px;
+            text-align: right;
+            clear: left;
+            margin-right: 15px;
+        }
+        #loginForm fieldset {
+            border: none;
+        }
+        #loginForm fieldset > div {
+            padding-top: 3px;
+            padding-bottom: 3px;
+        }
+        #loginForm #login {
+            margin-left: 115px;
+        }
+        
+     a {text-decoration: none}
+    </style>
+
+    <script type="text/javascript">
+        $(function() {
+            var $items = $('#vtab>ul>li');
+            $items.mouseover(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('#vtab>div').hide().eq(index).show();
+            }).eq(0).mouseover();
+        });
+    </script>
+
+</head>
+<body>
+
+		<font color="#366D9C" size=6px style="font-family: Georgia; padding-left: 400px"><b>CSS3 </b></font>
+	
+	<table width="980" height="700"> 
+		<tr> 
+			<td width='100'>
+		
+    <div id="vtab">
+        <ul>
+            <li class="home selected"></li>
+            <li class="login"></li>
+            <li class="support"></li>
+            <li class="support1"></li>
+            <li class="support2"></li>
+            <li class="support3"></li>
+            <li class="support4"></li>
+            <li class="support5"></li>
+            <li class="support6"></li>
+        </ul>
+        <div>
+        	<h4>About Course</h4>
+        	<br/>
+           <table align="justify">
+           	<tr align="justify">
+           		<td valign="top">
+           			<img src='http://gktcs.in/GLMS/public/static/images/css3.png' width='100' height="80" />
+           		</td>
+           		<td>
+           			
+<b>Course Duration:</b>45hrs<br/>
+<br/>
+<b>Course Description:</b><br/>
+<br/>
+
+Students will learn about CSS3 and how to incorporate its features in web pages and applications. They will learn the basics as well as advanced topics to design the web page in dynamic manner.
+<br/>
+<br/>
+<b>Who Should Attend:</b>
+<br/>
+<br/>
+This course is intended for experienced HTML developers with some JavaScript experience.
+<br/><br/>
+<b>Benefits of Attendance:</b>
+<br/>
+<br/>
+Upon completion of this course, students will be able to:<br/>
+<br/>
+<ul>
+<li>Build HTML5 pages with dynamic feature.</li><br/>
+<li>Understand the major benefits of CSS3</li><br/>
+<li>Understand the difference between CSS3 and CSS2</li><br/>
+<li>Use the new elements and attributes of CSS3 to reduce the code</li><br/>
+
+<li>CSS3 is very usuful for those who  are intrested in front end designing</li><br/>
+<li>CSS3 allows you to handle more graphics.</li><br/>
+</ul>
+<br/>
+<br/>
+<b>Prerequisites:</b><br/>
+<br/>
+Students must be experienced with HTML and have experience with CSS and JavaScript. Prior knowledge of JSON, DOM, and Ajax is helpful, but not required.
+           		</td>
+           	</tr>
+           	
+           	
+           </table>
+            
+        </div>     
+         <div>
+         	<h4>Sample Demo</h4>
+         	<br/>
+         	      	<div>
+   <video id="abc" width="500px" height="360px" autoplay controls > <source src="{% static 'C:/GLMS/static/abc.mp4' %}" type="video/mp4"> </source>
+     
+        </video></div>
+
+</div>
+           <div>
+            <h4>
+              Content </h4>
+              <br/>
+<h3>CSS Tutorial</h3><br/>
+<li>CSS Introduction</li>
+<li>CSS Syntax</li>
+<li>CSS Selector</li><bR>
+	
+<h3>CSS How to...</h3><br/>
+<li>CSS File linking</li>
+<li>CSS Background</li>
+<li>CSS Text</li>
+<li>CSS Fonts</li>
+<li>CSS Links</li>
+<li>CSS List</li>
+<li>CSS Table</li>
+<li>CSS Box Model</li>
+<li>CSS Border</li>
+<li>CSS Outline</li>
+<li>CSS Margin</li>
+<li>CSS Padding</li>
+
+<li>CSS Dimension</li>
+<li>CSS Display</li>
+<li>CSS positioning</li>
+<li>CSS floating</li>
+<li>CSS align</li>
+<li>CSS combinators</li>
+<li>CSS Pseudo-class </li>
+<li>CSS Navigation Bar</li>
+<li>CSS Image gallery</li>
+<li>CSS Image Opacity</li>
+<li>CSS Image Sprite</li>
+<li>CSS Media Type</li>
+<li>CSS Attr selector</li>
+<br/>
+
+<h3>CSS3</h3><br/>
+
+<li>RWD Intro</li>
+<li>RWD Viewport</li>
+<li>RWD Gridview</li>
+<li>RWD Media Queires</li>
+<li>RWD Image</li>
+<li>RWD Video</li>
+<li>RWD Framework</li>
+ 
+
+        </div>
+           <div>
+        
+ <h4>Upcoming Batches</h4>
+ <br/>
+<div class="pricing_table">
+
+<table width=500px>
+		<tr width=500px ></tr>
+		<b><th width=280 bgcolor="#333333" style="color:#FFFFFF;">Start date</th>
+			
+		<th width=95 bgcolor="#333333" style="color:#FFFFFF;">Duration</th>
+		<th width=700 bgcolor="#333333" style="color:#FFFFFF;">Days</th>
+		<th width=100 bgcolor="#333333" style="color:#FFFFFF;">Time</th>
+		<th width=100 bgcolor="#333333" style="color:#FFFFFF;">Price</th></b>
+		</tr>
+		
+		
+		{% for j in batch %}
+		<tr width=500px>
+			
+<td width=350 bgcolor="#CCCCCC" style="text-align: center"> {{j.Start}}</td>
+<td width=220 bgcolor="#CCCCCC" style="text-align: center">{{j.Duration}}</td>
+<td width=350 bgcolor="#CCCCCC" style="text-align: center">{{j.Days}}</td>
+
+<td width=150 bgcolor="#CCCCCC" style="text-align: center">{{j.Time}}</td>
+<td width=100 bgcolor="#CCCCCC" style="text-align: center">{{j.Price}}/-</td>
+
+		
+		</tr>
+		{% endfor %}
+		
+		
+	</table>	
+
+</div>
+	 <br><br>
+	<br/>
+		
+
+<a href="/Enroll" style="padding-left: 320px; "><img src="http://gktcs.in/GLMS/public/static/images/enroll.png" height=40px width="190px" align="center"/></a>
+        </div>
+        
+           <div align="justify">
+           	<h4>Interview Questions</h4>
+           	<br/>
+           	<br/>
+           	
+           	<b>Question:What is CSS3?</b><br/>
+           	CSS3 is a technology which is  used to implement the graphics in html pages.CSS3 is the latest version of the CSS specification. The term “CSS3” is not just a reference to the new features in CSS, but the third level in the progress of the CSS specification. CSS3 contains just about everything that's included in CSS2.1 (the previous version of the specification). 
+            <br/>
+            <br/>
+            
+            
+            <b>Question: What is file extension of CSS3?</b><br/>
+Ans: .css
+<br/>
+<br/>
+
+<b>Question: What is the difference between css2 and css3?</b><br/>
+Ans: Following are new features in css3<br>
+<li>CSS3 is divided into many different documents called Modules. Every module adds new capability or extends features defined in CSS2 over preserving backward compatibility. Work on CSS3 started around the time of publication of the original CSS2 recommendation</li>
+<br>
+<li>Because of the modularization in CSS3, every modules has different stability and is in different status.</li>
+<br>  
+<li>The CSS3 version supports many more browsers than CSS2.</li>
+<br>
+<li>CSS3 has other added features such as new combinator, new CSS selectors, new pseudo-elements and new style properties</li>
+<br/>
+<br/>
+
+<b>Question: What is grouping and what is it used for?</b><br/>
+<li>Grouping allows you to apply the same style to multiple elements with a single declaration.</li><br>
+<li> This is done by grouping the selectors into a list, separated by commas.</li><br>
+e.g.)  h1, h2  { font-family: Helvetica; font-size: 20; }<br>
+<li>Grouping helps memory usage and enhances readability.</li>
+
+<br/>
+
+<b>Question: What is an ID selector and how is it used?</b><br/>
+ Ans:<li>IDs are used to identify and apply styling to a single specific HTML element. IDs are defined within the HTML page by inserting an ID selector in the HTML element.<br></li>
+ <li>ID selectors are defined within the CSS page by calling a ‘#’ followed by the name of the ID</li><br>
+ <li>ID selectors are unique and can only be applied to a single element.</li><br>
+<br/>
+<br/>
+
+<b>Question: What are the advantages and disadvantages of External Style Sheets?</b><br/>
+Ans:<li>The biggest advantages of external style sheets are that they can be applied to multiple documents while being managed from a single style sheet. This keeps code DRY and improves efficiency and convenience.</li>
+	<li>The disadvantages are that it may decrease loading time in some situations. It may also not be practical if there are not enough styling conditions to justify an external sheet.</li>
+<br/>
+<b>Question: What are the various techniques for clearing floats?</b><br/>
+Ans:<li>At some point or another, you will likely experience a collapsed float, which you will need to address.</li><br>
+<li>This can be accomplished several ways, including using a clearfix2, by floating the parent element of the collapsed element, or by using an overflow property3.</li>
+<br/>
+<br/>
+<b>Question:  What is the difference between an ID selector and CLASS?</b><br/>
+Ans:An ID selector identifies and sets style to only one occurrence of an element, while CLASS can be attached to any number of elements.
+<br/>
+<br/>
+<b>Question: What is Grouping?</b>?<br/>
+Ans:<li>When more than one selector shares the same declaration, they may be grouped together via a comma-separated list; this allows you to reduce the size of the CSS (every bit and byte is important) and makes it more readable. The following snippet applies the same background to the first three heading elements.</li><br>
+e.g.)
+<li>h1, h2, h3 {background: red;}</li>
+<br/>
+<br/>
+<b>Question: Which online resources do you refer to when having issues with CSS?</b><br/>
+Ans <li>No real correct answer here, save for being able to discuss  your favorite online CSS community forums and resources. e.g. Mozilla Developer Network, StackOverflow, etc.</li><br>
+<li>This is just your opportunity to discuss larger CSS issues and show how plugged-in you are to the community.</li>
+<br/>
+<br/>
+<b>Question: What are some of the new features and properties in CSS3?</b><br/>
+Ans:
+<li>Box model</li>
+<li>New Web fonts</li>
+<li>Rounded corners</li>
+<li>Border Images</li>
+<li>Box Shadows, Text Shadows</li>
+<li>New Color schemes (RGBA)</li>
+<li>Transform property</li>
+<li>New Pseudo-classes</li>
+<li>Multi-column layout</li>
+<li>New Gradients</li>
+<br/>
+<br/>
+<b>Question: Which font names are available on all platforms ?</b><br/>
+Ans:<li>Only five basic font families( serif, sans-serif, cursive, fantasy, and monsospace) are recognized across platforms, rather than specific fonts.</li><br>
+<li>Specific font name recognitions will vary by browser.</li>
+<br/>
+<br/>       	  	
+        </div>
+         <div align="justify">
+         	<h4>
+                Training Mode</h4>
+                <br/>
+   
+         	
+         	<table width=620><tr><td width="330">
+         		<br/>
+         	
+         	<b>Corporate Training :</b><br/>
+         	
+Corporate Training Solutions
+
+Corporate training is the act of grooming the workforce in order to make them capable of handling modern business challenges by improving their approach and productivity and thus, making effective utilization of resources. We at GKTCS work hand in hand with Industry on various fronts. GKTCS’s business cycle is aligned very closely to Industry needs and structured to fulfil the industry needs in terms of Training and Recruitment.
+
+We always believe our customers speak for our services based on their rich experience with our kind of services.
+</td>
+<td align="right">
+	<img src="http://gktcs.in/GLMS/public/static/images/corporate.jpg"  width="200" height="150"/> 
+</td>
+</tr>
+<tr>
+	<td>
+		<br/>
+<b>Retail Training :</b>
+<br/>
+GKTCS Innovations has a set of best trainers who are constantly engaged in spreading technical and non technical knowledge to individual who are seeking an opportunity in their respective industries and would like to straight away face the challenges of the continuously improving and changing world.
+
+The retail Training services provided by GKTCS Innovations are designed as per the needs of corporate and also as per the guidelines provided by them.
+ </td>
+ <td align="right">
+	<img src="http://gktcs.in/GLMS/public/static/images/retail.jpg"  width="200" height="150"/>
+</td>
+ </tr>
+ <tr>    <td>   
+ 	<br/>	
+ <b>Online Training </b>
+ <br/>
+ GKTCS offers Online Training , so you get trained from where you are from our experienced trainers, In the weekdays as well as weekends by the Real Time Professionals. The program is designed to provide rich learning experience for students using Internet.         	
+      </td>   
+      <td align="right">
+      	<img src="http://gktcs.in/GLMS/public/static/images/online.jpg"  width="200" height="150"/>
+      </td>  
+      </tr>	
+    </table>     	
+         	
+         </div>
+		
+
+           <div align="justify">
+           	<h4>
+                FAQs</h4>
+           	
+           	<br/>
+    
+          <b> What is CSS?</b><br/>
+CSS stands for Cascading Style Sheets and is a simple styling language which allows attaching style to HTML elements. Every element type as well as every occurance of a specific element within that type can be declared an unique style, e.g. margins, positioning, color or size.<br/>
+<br/>
+<b>What are Style Sheets?</b><br/>
+Style Sheets are templates, very similar to templates in desktop publishing applications, containing a collection of rules declared to various selectors (elements).
+<br/>
+<br/>
+<b>How do I combine multiple sheets into one?</b><br/>
+To combine multiple/partial style sheets into one set the TITLE attribute taking one and the same value to the LINK element. The combined style will apply as a preferred style.
+<br/>
+<br/>
+<b>What is property?</b><br/>
+Property is a stylistic parameter (attribute) that can be influenced through CSS, e.g. FONT or WIDTH. There must always be a corresponing value or values set to each property, e.g. font: bold or font: bold san-serif.<br/>
+<br/>
+<b>What is value?</b><br/>
+Value is a 'physical' characteristic of the property. Property declares what should be formatted, e.g. FONT  while value suggests how the property should be formatted, e.g. 12pt. By setting the value 12pt to the property FONT it is suggested that the formatted text be displayed in a 12 point font. There must always be a corresponding property to each value or set of values.<br/>
+<br/>
+<b>What is initial value?</b><br/>
+Initial value is a default value of the property, that is the value given to the root element of the document tree. All properties have an initial value. If no specific value is set and/or if a property is not inherited the initial value is used. For example the background property is not inherited, however, the background of the parent element shines through because the initial value of background property is transparent. <br/>
+<br/>
+<b>Can I attach more than one declaration to a selector?</b><br/>
+Yes. If more than one declaration is attached to a selector they must appear in a semi colon separated list, <br>e.g.:<br>
+
+Selector {declaration1; declaration2}<br>
+P {background: white; color: black}<br>
+
+<br/>
+<br/>
+<b>What is cascade??</b><br/>
+Cascade is a method of defining the weight (importance) of individual styling rules thus allowing conflicting rules to be sorted out should such rules apply to the same selector. <br/>
+Declarations with increased weight take precedence over declaration with normal weight:<br><br>
+P {color: white ! important}  /* increased weight */<br>
+P (color: black} /* normal weight */<br>
+
+<br/>
+<b>Are Style Sheets case sensitive?</b><br/>
+No. Style sheets are case insensitive. Whatever is case insensitive in HTML is also case insensitive in CSS. However, parts that are not under control of CSS like font family names and URLs can be case sensitive - IMAGE.gif and image.gif is not the same file.<br/>
+<br/>
+<b>Can I include comments in my Style Sheet?</b><br/>
+Yes. Comments can be written anywhere where whitespace is allowed and are treated as white space themselves. Anything written between /* and */ is treated as a comment (white space). NOTE: Comments cannot be nested.<br/>
+<br/>
+<b>Can Style Sheets and HTML stylistic elements be used in the same document?</b><br/>
+Yes. Style Sheets will be ignored in browsers without CSS-support and HTML stylistic elements used.
+
+<br/>
+<br/>
+<b>Can CSS be used with other than HTML documents?</b><br/>
+Yes. CSS can be used with any ny structured document format. e.g. XML, however, the method of linking CSS with other document types has not been decided yet (Feb 98).<br/>
+        </div>
+           <div>
+        <h4>Testimonials</h4> 
+           <div style="padding-top: 20px">
+           		<table border="2" >
+           			<tr>
+           				<td rowspan="2"><img height="140" width="110" src="http://gktcs.in/GLMS/public/static/images/AhilanShankar.jpg" /> </td>
+           				<td style="color: blue; "><b>Ahilan Shankar<br>Senior Developer, Capgemini Pune</b></td>
+           			</tr>
+           			<tr>
+           				<td> This course of HTML5 is helpful and we get the complete practical knowledge of the same. All the PPT's are very much effective and can be used as a reference after the completion of course.</td>
+           			</tr>
+           			<tr><td colspan="2" style="background: gray"></td></tr>
+           			<tr>
+           				<td rowspan="2"><img height="140" width="110" src="http://gktcs.in/GLMS/public/static/images/ApurvaBhat.jpg" /> </td>
+           				<td style="color: blue"><b>Apurva Bhat<br>Junior Developer, Upside Learning, Pune</b></td>
+           			</tr>
+           			<tr>
+           				<td>  Course of Basic and Advance CSS3 done here is effective while working in the industry and the trainers are very good in their training. The training quality provided is international level training and the contents are also easy and understandable.</td>
+           			</tr>
+           			<tr><td colspan="2" style="background: gray"></td></tr>
+           			<tr>
+           				<td rowspan="2"><img height="140" width="110" src="http://gktcs.in/GLMS/public/static/images/Neha.jpg" /> </td>
+           				<td style="color: blue; "><b>Ashish Soni<br>Senior Developer, Upside Learning, Pune</b></td>
+           			</tr>
+           			<tr>
+           				<td> It is a great training firm where I learnt the various web technologies including CSS3. It also helped me to get into IT industry with the complete knowledge of this technology.</td>
+           			</tr>
+           			<tr><td colspan="2" style="background: gray"></td></tr>
+           			
+           		</table>	
+           		
+           		
+           </div>	 
+           
+        </div>
+   
+        <div align="justify">
+            <h4>
+                Certification</h4>
+                <br/>
+           
+             At the end of the course we provide  Certification.  <br/><br/>
+           <b>Process for Certification :</b>
+          
+  <li>You will receive a real time project Problem Statement along with a dataset to work. </li>
+  <li>After complition of your project(Reviewed by an Expert),you will be awarded a certificate with a performance-based grading. </li>
+ <li>If your project is not completed on time , you can take extra training for any of your doubts to understand the concepts better and re-attempt the Project free of cost.</li>
+<br/>
+GKTCS will help you at every stage of your learning and our 24/7 expert support team will ensure that you don't get stuck. Once you submit the project, our subject matter experts will review the same and share feedback to optimize it, if required.
+        </div>
+        </div>
+    
+    </td>
+    
+    <td valign="top" width="500">
+  		
+    <table valign="top">
+    	<tr valign="top">
+    		<font color="#366D9C" size=5px style="font-family: Georgia; padding-left:25px"><b>Course Features</b></font>  
+    		<td align="left" valign="top" width="500" height="200">
+    		
+ 
+  <br/>
+ <br/>
+ <li>Expert and qualified trainers</li>
+<li>Practical Project Based Approach</li>
+<li>Regular Assessment & feedback</li>
+<li>Total customized as per the client needs</li> 
+<li>Lifetime Access</li> 
+<li>  24 x 7 Support</li> 
+<li>  Get Certified</li>
+ 
+
+    			
+     		</td>
+     	
+    		
+    		
+    	</tr>
+    	
+    	<tr valign="top">
+    		<td height="20" valign="top" align="center">
+    		
+    		
+    		<font color="#366D9C" size=5px style="font-family: Georgia; padding-left:25px"><b>Placed Candidate</b></font>  
+    			<br/>
+    			<marquee direction="up" scrollamount="4" height="300">
+    			<table>
+    				<tr>
+    	   						
+    					<table>
+    						<tr>
+    							<td valign="top" height="30">
+    								
+    								<img src="http://gktcs.in/GLMS/public/static/images/AhilanShankar.jpg" width="100" height="100"/>
+    							</td>
+    							<td>
+    								<b>Alihan shanakar</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/capegemini.png" width="150" height="80"/> 
+    							</td>
+    						</tr>
+    						
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/sounavdas.jpg" width="100" height="100"/>
+    							</td>
+    							<td>
+    								<b>Sonav Das</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150" height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/ShashankVerma.jpg" width="60" height="80"/>
+    							</td>
+    							<td>
+    								<b>Shashank Verma</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/leoinfotech.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/rasika1.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Rasika</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/renuka.jpg" width="100" height="100"/>
+    							</td>
+    							<td>
+    								<b>Renuka Shirbhate</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/inetsoft.jpg" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/Neha.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Neha Kottarwar</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/GauravKotarwar.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Gaurav Kotarwar</b> <br/>
+    								<img src="/static/images/leoinfotech.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/PrajaktaSakale.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Prajkta Sakale</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    							<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/SohailShaikh.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Sohail Shaikh</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/leoinfotech.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/ApurvaBhat.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Apurva Bhat</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/AshishSoni.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Ashish Soni</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    					
+    					    						
+    						
+    						
+    						
+    					</table>
+    					
+    						
+    						
+    					</td>
+    		
+    		
+    	</tr>
+    </table>
+    
+    </td>
+    
+    
+    </tr>
+	</table>
+	
+</body>
+</html>
+{% endblock %}

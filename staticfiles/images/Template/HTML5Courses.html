@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+{% extends "index.html" %}
+{% load staticfiles %}
+{% block home %}
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="{% static 'css/.css' %}">
+    
+      {% block flash%} {% endblock %}
+    
+    <style type="text/css">
+        body {
+            background: #fff;
+            font-family: verdana;
+            padding-top: 0px;
+            background-color: #027fcf;
+        }
+        #vtab {
+            margin: 10;
+            width: 700px;
+            height: 100%;
+        }
+        #vtab > ul > li {
+            width: 150px;
+            height: 80px;
+            background-color: #fff !important;
+            list-style-type: none;
+            display: block;
+            text-align: center;
+            margin: auto;
+            padding-bottom: 10px;
+            border: 1px solid #fff;
+            position: relative;
+            border-right: none;
+            opacity: .3;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+            filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+        }
+        #vtab > ul > li.home {
+            background: url('http://gktcs.in/GLMS/public/static/images/about1.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.login {
+            background: url('http://gktcs.in/GLMS/public/static/images/demo4.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.support {
+            background: url('http://gktcs.in/GLMS/public/static/images/content.jpg') no-repeat center center;
+        }
+         #vtab > ul > li.support1 {
+            background: url('http://gktcs.in/GLMS/public/static/images/batches.jpg') no-repeat center center;
+        }
+        
+        #vtab > ul > li.support2 {
+            background: url('http://gktcs.in/GLMS/public/static/images/interview.jpg') no-repeat center center;
+        }
+         #vtab > ul > li.support3 {
+            background: url('http://gktcs.in/GLMS/public/static/images/training.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.support4 {
+            background: url('http://gktcs.in/GLMS/public/static/images/FAQ.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.support5 {
+            background: url('http://gktcs.in/GLMS/public/static/images/testi.jpg') no-repeat center center;
+        }
+         #vtab > ul > li.support6 {
+            background: url('http://gktcs.in/GLMS/public/static/images/certification.jpg') no-repeat center center;
+        }
+        
+        
+        #vtab > ul > li.selected {
+            opacity: 1;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+            filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+            border: 1px solid #ddd;
+            border-right: none;
+            z-index: 10;
+            background-color: #fafafa !important;
+            position: relative;
+        }
+        #vtab > ul {
+            float: left;
+            width: 110px;
+            text-align: left;
+            display: block;
+            margin: auto 0;
+            padding: 0;
+            position: relative;
+            top: 30px;
+        }
+        #vtab > div {
+            background-color: #fafafa;
+            margin-left:150px;
+            border: 1px solid #ddd;
+            min-height: 700px;
+            padding: 12px;
+            position: relative;
+            z-index: 9;
+            -moz-border-radius: 20px;
+        }
+        #vtab > div > h4 {
+            color: #800;
+            font-size: 1.2em;
+            border-bottom: 1px dotted #800;
+            padding-top: 5px;
+            margin-top: 0;
+        }
+        #loginForm label {
+            float: left;
+            width: 100px;
+            text-align: right;
+            clear: left;
+            margin-right: 15px;
+        }
+        #loginForm fieldset {
+            border: none;
+        }
+        #loginForm fieldset > div {
+            padding-top: 3px;
+            padding-bottom: 3px;
+        }
+        #loginForm #login {
+            margin-left: 115px;
+        }
+        
+     a {text-decoration: none}
+     
+     
+     
+    </style>
+
+    <script type="text/javascript">
+        $(function() {
+            var $items = $('#vtab>ul>li');
+            $items.mouseover(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('#vtab>div').hide().eq(index).show();
+            }).eq(0).mouseover();
+        });
+        
+        
+    </script>
+
+</head>
+<body>
+
+		<font color="#366D9C" size=6px style="font-family: Georgia; padding-left: 400px"><b>HTML5 </b></font>
+	
+	<table width="980" height="700"> 
+		<tr> 
+			<td width='100'>
+		
+    <div id="vtab">
+        <ul>
+            <li class="home selected"></li>
+            <li class="login"></li>
+            <li class="support"></li>
+            <li class="support1"></li>
+            <li class="support2"></li>
+            <li class="support3"></li>
+            <li class="support4"></li>
+            <li class="support5"></li>
+            <li class="support6"></li>
+        </ul>
+        <div>
+        	<h4>About Course</h4>
+        	<br/>
+           <table align="justify">
+           	<tr align="justify">
+           		<td valign="top">
+           			<img src='http://gktcs.in/GLMS/public/static/images/html554.png' width='100' height="80" />
+           		</td>
+           		<td>
+           			
+<b>Course Duration:</b>45hrs<br/>
+<br/>
+<b>Course Description:</b><br/>
+<br/>
+
+Students will learn about HTML5 and how to incorporate its features in web pages and applications. They will learn the basics as well as advanced topics like layouts, forms, offline support, geolocation, audio and video, graphics, communication APIs, storage, and new JavaScript web-workers.
+<br/>
+<br/>
+<b>Who Should Attend:</b>
+<br/>
+<br/>
+This course is intended for experienced HTML developers with some JavaScript experience.
+<br/><br/>
+<b>Benefits of Attendance:</b>
+<br/>
+<br/>
+Upon completion of this course, students will be able to:<br/>
+<br/>
+<ul>
+<li>Build HTML5 pages</li><br/>
+<li>Understand the major benefits of HTML5</li><br/>
+<li>Understand the difference between HTML5 and HTML 4</li><br/>
+<li>Use the new elements and attributes of HTML5</li><br/>
+<li>Work with audio and video in HTML5</li><br/>
+<li>Work with new Canvas element to create code-based drawings in HTML5</li><br/>
+<li>Use Web Storage for offline applications</li><br/>
+<li>Use all of the new HTML5 form elements</li><br/>
+<li>Understand the current state of browser support for HTML5 and how to make your HTML5 sites degrade gracefully.</li>
+</ul>
+<br/>
+<br/>
+<b>Prerequisites:</b><br/>
+<br/>
+Students must be experienced with HTML and have experience with CSS and JavaScript. Prior knowledge of JSON, DOM, and Ajax is helpful, but not required.
+           		</td>
+           	</tr>
+           	
+           	
+           </table>
+            
+        </div>     
+         <div>
+         	<h4>Sample Demo</h4>
+         	<br/>
+         	<div>
+   <video id="abc" width="500px" height="360px" controls > <source src="{% static 'abc.mp4' %}" type="video/mp4"> </source>
+     
+        </video></div>
+
+</div>
+           <div>
+            <h4>
+              Content </h4>
+              <br/>
+<h3> HTML5 Page Structure</h3><br/>
+	
+<li>Page Structure</li>
+<li>New HTML5 Structural Tags</li>
+<li>Page Simplification</li>
+<br/>
+
+<h3>Sections and Articles</h3><br/>
+
+<li>The section Tag</li>
+<li>The article Tag</li>
+<li>Outlining</li>
+<li>Accessibility</li>
+<br/>
+
+<h3>HTML5 Audio and Video</h3><br/>
+
+<li>Supported Media Types</li>
+<li>The audio Element</li>
+<li>The video Element</li>
+<li>Accessibility</li>
+<li>Scripting Media Elements</li>
+<li>Dealing with Non-Supporting Browsers</li>
+<br/>
+
+<h3>HTML5 Forms</h3><br/>
+
+<li>Modernizr</li>
+<li>New Input Types</li>
+<br/>
+
+<h3>HTML5 New Form Attributes</h3><br/>
+
+<li>autocomplete</li>
+<li>novalidate</li>
+<li>HTML5 New Form Field Attributes</li>
+<li>required</li>
+<li>placeholder</li>
+<li>autofocus</li>
+<li>autocomplete</li>
+<li>form</li>
+<li>pattern</li>
+<br/>
+
+<h3>New Form Elements</h3><br/>
+
+<li>datalist</li>
+<li>progress and meter</li>
+<br/>
+
+<h3>HTML5 Web Storage</h3>
+<br/>
+<li>Overview of HTML5 Web Storage</li>
+<li>Web Storage</li>
+<li>Other Storage Methods</li>
+
+<br/>
+<h3>HTML5 Canvas</h3>
+<br/>
+<li>Getting Started with Canvas</li>
+<li>Drawing Lines</li>
+<li>Color and Transparency</li>
+<li>Rectangles</li>
+<li>Circles and Arcs</li>
+<li>Quadratic and Bezier Curves</li>
+<li>Images</li>
+<li>Text</li>
+<br/>
+
+<h3>Integrated APIs</h3><br/>
+
+<li>Offline Application API</li>
+<li>Drag and Drop API</li>
+        </div>
+           <div>
+        
+ <h4>Upcoming Batches</h4>
+ <br/>
+<div class="pricing_table">
+
+<table width=500px>
+		<tr width=500px ></tr>
+		<b><th width=280 bgcolor="#333333" style="color:#FFFFFF;">Start date</th>
+			
+		<th width=95 bgcolor="#333333" style="color:#FFFFFF;">Duration</th>
+		<th width=700 bgcolor="#333333" style="color:#FFFFFF;">Days</th>
+		<th width=100 bgcolor="#333333" style="color:#FFFFFF;">Time</th>
+		<th width=100 bgcolor="#333333" style="color:#FFFFFF;">Price</th></b>
+		</tr>
+		
+		
+		{% for j in batch %}
+		<tr width=500px>
+			
+<td width=350 bgcolor="#CCCCCC" style="text-align: center"> {{j.Start}}</td>
+<td width=220 bgcolor="#CCCCCC" style="text-align: center">{{j.Duration}}</td>
+<td width=350 bgcolor="#CCCCCC" style="text-align: center">{{j.Days}}</td>
+
+<td width=150 bgcolor="#CCCCCC" style="text-align: center">{{j.Time}}</td>
+<td width=100 bgcolor="#CCCCCC" style="text-align: center">{{j.Price}}/-</td>
+
+		
+		</tr>
+		{% endfor %}
+		
+		
+	</table>	
+
+</div>
+	 <br><br>
+	<br/>
+		
+
+<a href="/Enroll" style="padding-left: 320px; "><img src="http://gktcs.in/GLMS/public/static/images/enroll.png" height=40px width="190px" align="center"/></a>
+        </div>
+        
+           <div align="justify">
+           	<h4>Interview Questions</h4>
+           	<br/>
+           	<br/>
+           	
+           	<b>Question:What is html5?</b><br/>
+           	HTML5 is a core technology markup language of the Internet used for structuring and presenting content for the World Wide Web. As of October 2014 [update] this is the final and complete fifth revision of the HTML standard of the World Wide Web Consortium (W3C). The previous version, HTML 4, was standardised in 1997.
+            <br/>
+            <br/>
+            
+            
+            <b>Question: What is file extension of HTML5?</b><br/>
+Ans: .html
+<br/>
+<br/>
+
+<b>Question: What are the new features in HTML5?</b><br/>
+Ans: Following are new features in HTML5
+<li>Local storage.</li>
+<li>New form controls like calendar, date, time, email, URL and search etc.</li>
+<li>canvas element is provided for 2D drawing.</li>
+<li>video and audio elements for media playback.</li>
+<li>New elements are provided. For e.g. article, header, footer, nav, section.</li>
+<br/>
+<br/>
+<b>Question: What are the various elements provided by HTML 5 for media content?</b><br/>
+<b>audio</b> - It defines sound content.
+<br/>
+<b>video</b> - It defines a video. 
+<br/>
+<b>source</b> - This tag defines the source of video and audio.
+<br/>
+<b>embed</b> - It provides a container for an external application. 
+<br/>
+<b>track</b> - It defines text tracks for videoand audio.
+<br/>
+<br/>
+
+<b>Question: What are the new Form elements made available in HTML5?</b><br/>
+ Ans:<b>datalist</b> - It specifies a list of options for input controls <br/>
+<b>keygen</b> - This tag defines a key-pair generator field. <br/>
+<b>output</b> - It defines the result of a calculation.<br/>
+
+<br/>
+<br/>
+
+<b>Question: What are the various tags provided for better structuring in HTML5?</b><br/>
+Ans:<b>article </b>- This tag defines an article. <br/>
+<b>aside</b> - It defines content other than the page content.<br/>
+<b>bdi</b> - This tag isolates a part of text for formatting. <br/>
+<b>command</b> - It defines a command button to be invoked by the user. <br/>
+<b>details</b> - It defines additional details that can be viewed . <br/>
+<b>dialog</b> - It defines a dialog box. <br/>
+<b>figure</b> - This tag specifies content like illustrations, diagrams, photos, code listings etc.<br/> 
+<b>figcaption</b> - It is used to provide a caption for a figure element .<br/>
+<b>footer</b> - This tag defines a footer for a document or section. <br/>
+<b>header</b> - This tag is used to define a header for a document . <br/>
+<b>hgroup</b> - When there are multiple levels in a heading, it groups a set of h1 to h6 elements. <br/>
+<b>mark</b> - It defines highlighted text. <br/>
+<b>meter</b> - It defines a scalar measurement within a known range. <br/>
+<b>nav</b> - It defines links for navigation. <br/>
+<b>progress</b> - This tag exhibits the progress of a task. <br/>
+<b>ruby</b> - It defines a ruby annotation for East Asian typography. <br/>
+<b>rt</b>- It defines an explanation/pronunciation of characters for East Asian typography.<br/>
+<b>rp</b>- This tag tells the system what to display in browsers that do not support ruby annotations. <br/>
+<b>section</b> - It defines a section in a document. <br/>
+<b>summary</b> - It provides a visible heading for a details element. <br/>
+<b>time</b> - This tag defines a date/time. <br/>
+<b>wbr</b> - This tag defines a line-break.<br/>
+<br/>
+<br/>
+<b>Question: What is SVG?</b><br/>
+Ans:SVG is the abbreviation for Scalable Vector Graphics and is recommended by W3C. 
+It is used to define vector-based graphics for the Web
+<br/>
+<br/>
+<b>Question: What is a Canvas? What is the default border size of a canvas?</b><br/>
+Ans:Canvas is a rectangular area on a HTML page, specified with the canvas tag. 
+By default, It has no border. To get a border style attribute can be used.
+<br/>
+<br/>
+<b>Question: Differentiate between Canvas and SVG</b>?<br/>
+Ans:Canvas is resolution dependent while SVG is not. 
+Canvas does not provide any support for event handlers while SVG does provide the support for event handlers. 
+Canvas is suitable for graphic-intensive games while SVG is not suitable for gaming.
+Canvas is suitable for small rendering areas while SVG is suitable for large rendering areas like Google maps.
+<br/>
+<br/>
+<b>Question: What is HTML5 Web Storage?</b><br/>
+Ans:It store the data locally in the user's browser
+<br/>
+<br/>
+<b>Question: Differentiate between session Storage and local Storage objects?</b><br/>
+Ans:Session Storage object stores the data only for one session while local Storage object stores the data without an expiry date.
+<br/>
+<br/>
+<b>Question: What is a Manifest file?</b><br/>
+Ans:A Manifest file is a simple text file that tells the browser what to cache and what not to cache. 
+<br/>
+<br/>
+<b>Question: What is a Web Worker?</b><br/>
+Ans:A web worker is a JavaScript which runs in the background.<br/>
+<br/>
+
+<b>Question: What is the purpose of HTML5 versus XHTML?</b><br/>
+Ans:HTML5 is the next version of HTML 4.01, XHTML 1.0 and DOM Level 2 HTML. Its aim to reduce the need for proprietary plug-in-based rich internet application (RIA) technologies such as Adobe Flash, Microsoft Silverlight etc.
+<br/>
+<br/>
+<b>Question: WHAT are some other advantages of HTML5?</b><br/>
+Ans:Cleaner markup than earlier versions of HTML
+Additional semantics of new elements like header, nav, and time
+<br/>
+<br/>
+<b>Question: What is the !DOCTYPE? Is it mandatory to use in HTML5?</b><br/>
+Ans:The !DOCTYPE is an instruction to the web browser about what version of HTML the page is written in. The !DOCTYPE tag does not have an end tag. It is not case sensitive.
+<br/>
+         	  	
+        </div>
+         <div align="justify">
+         	<h4>
+                Training Mode</h4>
+                <br/>
+   
+         	
+         	<table width=620><tr align="justify">
+         		<td width="330" align="justify">
+         		<br/>
+         	
+         	<b>Corporate Training :</b><br/>
+         	
+Corporate Training Solutions
+
+Corporate training is the act of grooming the workforce in order to make them capable of handling modern business challenges by improving their approach and productivity and thus, making effective utilization of resources. We at GKTCS work hand in hand with Industry on various fronts. GKTCS’s business cycle is aligned very closely to Industry needs and structured to fulfil the industry needs in terms of Training and Recruitment.
+
+We always believe our customers speak for our services based on their rich experience with our kind of services.
+</td>
+<td align="right">
+	<img src="http://gktcs.in/GLMS/public/static/images/corporate.jpg"  width="200" height="150"/> 
+</td>
+</tr>
+<tr>
+	<td>
+		<br/>
+<b>Retail Training :</b>
+<br/>
+GKTCS Innovations has a set of best trainers who are constantly engaged in spreading technical and non technical knowledge to individual who are seeking an opportunity in their respective industries and would like to straight away face the challenges of the continuously improving and changing world.
+
+The retail Training services provided by GKTCS Innovations are designed as per the needs of corporate and also as per the guidelines provided by them.
+ </td>
+ <td align="right">
+	<img src="http://gktcs.in/GLMS/public/static/images/retail.jpg"  width="200" height="150"/>
+</td>
+ </tr>
+ <tr>    <td>   
+ 	<br/>	
+ <b>Online Training </b>
+ <br/>
+ GKTCS offers Online Training , so you get trained from where you are from our experienced trainers, In the weekdays as well as weekends by the Real Time Professionals. The program is designed to provide rich learning experience for students using Internet.         	
+      </td>   
+      <td align="right">
+      	<img src="http://gktcs.in/GLMS/public/static/images/online.jpg"  width="200" height="150"/>
+      </td>  
+      </tr>	
+    </table>     	
+         	
+         </div>
+		
+
+           <div align="justify">
+           	<h4>
+                FAQs</h4>
+           	
+           	<br/>
+    
+          <b> Is HTML5 is the new standard for creating Web pages?</b><br/>
+ Not Quite. HTML5 is a draft proposal for a standard that will eventually be submitted to international standards organizations which may adopt HTML5 as a standard or may choose to adopt a competing proposal. Right now there’s no serious contender to HTML5 and all of the big players: Apple, Google, Mozilla, Microsoft and Adobe are behind it, so it is becoming the de-facto standard. However, it is still early in the process. The World Wide Web Consortium (W3C) expects to finalize the draft and start the process of final review and requests for comments in 2012. Final acceptance as a standard will happen several years after that.
+<br/>
+<br/>
+<b>Is HTML5 a new technology?</b><br/>
+No. It’s an extension of existing HTML, adding new elements to the set recognized by HTML4 level browsers and removing some of the restrictions of xhtml.
+<br/>
+<br/>
+<b>How does HTML5 affect my existing HTML4 website?</b><br/>
+It doesn’t. The HTML5 specifications require browser makers to support valid HTML4 web pages. You should update your HTML editing tools when new versions are available. If your web pages require a diet of strict xhtml, you should validate any third-party HTML5 code to one of the xhtml standards before embedding that code into your own pages.
+<br/>
+<br/>
+<b>What is new about HTML5?</b><br/>
+Several things. The biggest change is that HTML5 documents are explicitly recognized as interactive applications. Every document element in HTML5 has a corresponding JavaScript API that describes how that element should behave in response to user actions and other events.
+<br/>
+<br/>
+<b>Are there new HTML5 tags?</b><br/>
+Yes, there are new HTML5 elements that provide richer semantic descriptions of documents: section, article, header, hgroup, footer, aside and nav; new media elements: audio, video and canvas; new form input types: email, url, number range and search; and a bunch of new element attributes.
+<br/>
+<br/>
+<b>Have any HTML elements changed their meaning or how they are used?</b><br/>
+Yes, but not many. The small element, which in HTML4 has no semantic value—it just means make the text smaller—is used in HTML5 to markup disclaimers, legal notices and the like—the small print. The anchor element, which creates hyperlinks, can now enclose any other elements excluding other links and buttons. In HTML4, the anchor was strictly an inline element.
+<br/>
+<br/>
+<b>Are there things in HTML4 that are not in HTML5?</b><br/>
+Yes, but only a handful of elements and these are not really gone; they are just marked as obsolete. Browser makers can continue to support these elements in their new versions and most will. Among the elements marked as obsolete in HTML5 are: frame, frameset, big, center, font, strike, acronym, applet, isindex and dir.
+<br/>
+<br/>
+<b>What exactly is HTML5 Video?</b><br/>
+Nothing, really. The term HTML5 video is used to differentiate the playing of a video directly by a browser encountering a web page’s video element, as opposed to being played by a third-party browser plugin via an object or embed element. There is nothing intrinsic about any video that makes it HTML5-ish as opposed to Flash-ish. The distinction is entirely a matter of how the a web page is coded to present the video.
+<br/>
+<br/>
+<b>Is HTML5 video better than Flash video?</b><br/>
+Yes, but not in terms of video quality which is a function of how the video data is encoded. HTML5 video is better because the video element can interact with other elements on the page and can be styled using CSS. Also, HTML5 video should use less resources because it is built into the browser.
+<br/>
+<br/>
+<b>Will HTML5 kill Adobe’s Flash?</b><br/>
+Nope, Flash will be around for a long time. As a media player, Flash accommodates digital rights management (DRM) which hasn’t been addressed in the HTML5 specs. As an applications platform, Flash has a large, installed base in corporate environments where there’s no compelling rationale for rewriting working applications in HTML5. For new applications, HTML5 has advantages over Flash: content is better exposed to search engines, there’s complete integration with other document elements, no plugins are required and HTML5 tools are free.
+<br/>
+<br/>
+<b>Is HTML5 is a threat to Microsoft?</b><br/>
+No. Microsoft embraces HTML5. The IE9 beta has received high marks for its HTML5 support. Silverlight is not the only path to interactivity in Redmond.
+<br/>
+<br/>
+<b>Is HTML5 ready for prime time?</b><br/>
+Some of it is and some of it isn’t. New HTML5 semantic elements have good support in all modern browsers, including IE if an HTML5 shim or the Modernizer JavaScript library is loaded into a web page. The audio, video and canvas elements are not supported in Internet Explorer yet, but these elements are designed to gracefully fail and fallback to other technologies, like Flash and Silverlight, in legacy browsers. Other technologies that are associated with HTML5 such as Mathematical Markup Language (MathML), Scalable Vector Graphics (SVG), Web Sockets, Web Storage and Geo-location have only limited support in the current crop of browsers.
+<br/>
+<br/>
+<b>Where can I get an HTML5 browser?</b><br/>
+Opera, Chrome and Safari provide pretty solid support for HTML5 in their current versions including their browsers for iPhones, iPads and Droids. Firefox’s support for HTML5 is weak in its current version (3.6) but quite robust in the Firefox4 public beta.
+<br/>
+<br/>
+<b>What about Internet Explorer?</b><br/>
+Internet Explorer is late to the HTML5 party. There’s no HTML5 support in IE8 or previous versions. However, adding a JavaScript library such as Google’s HTML5 shim or Modernizer enables IE 6, 7 & 8 to recognize the new semantic level elements so they can be styled with CSS. HTML5 support is good in the beta version of IE9 which is available for Windows Vista and Seven users. Unfortunately, the Windows 7 mobile browser is built largely on the IE7 code base.
+<br/>
+<br/>
+<b>What is an HTML5 application?</b><br/>
+There are several new capabilities in HTML5 which directly address the need for creating interactive applications. Of course, HTML has had interactive capabilities since its early days with text-based input forms and HMTL5 expands these with new input types. New capabilities include page and session-based data storage in the user’s browser, Web sockets for inter-application communications, and a drawing environment,  the canvas element, for creating and manipulating image data.
+
+ 
+        </div>
+           <div>
+        <h4>Testimonials</h4> 
+        <div style="padding-top: 20px">
+           		<table border="2" >
+           			<tr>
+           				<td rowspan="2"><img height="140" width="110" src="http://gktcs.in/GLMS/public/static/images/AhilanShankar.jpg" /> </td>
+           				<td style="color: blue; "><b>Ahilan Shankar<br>Senior Developer, Capgemini Pune</b></td>
+           			</tr>
+           			<tr>
+           				<td> This course of HTML5 is helpful and we get the complete practical knowledge of the same. All the PPT's are very much effective and can be used as a reference after the completion of course.</td>
+           			</tr>
+           			<tr><td colspan="2" style="background: gray"></td></tr>
+           			<tr>
+           				<td rowspan="2"><img height="140" width="110" src="http://gktcs.in/GLMS/public/static/images/ApurvaBhat.jpg" /> </td>
+           				<td style="color: blue"><b>Apurva Bhat<br>Junior Developer, Upside Learning, Pune</b></td>
+           			</tr>
+           			<tr>
+           				<td>  Course of Basic and Advance HTML5 done here is effective while working in the industry and the trainers are very good in their training. The training quality provided is international level training and the contents are also easy and understandable.</td>
+           			</tr>
+           			<tr><td colspan="2" style="background: gray"></td></tr>
+           			<tr>
+           				<td rowspan="2"><img height="140" width="110" src="http://gktcs.in/GLMS/public/static/images/Neha.jpg" /> </td>
+           				<td style="color: blue; "><b>Ashish Soni<br>Senior Developer, Upside Learning, Pune</b></td>
+           			</tr>
+           			<tr>
+           				<td> It is a great training firm where I learnt the various web technologies including HTML5. It also helped me to get into IT industry with the complete knowledge of this technology.</td>
+           			</tr>
+           			<tr><td colspan="2" style="background: gray"></td></tr>
+           			
+           		</table>	
+           		
+           		
+           </div>	 
+           
+        </div>
+   
+        <div align="justify">
+            <h4>
+                Certification</h4>
+                <br/>
+           
+             At the end of the course we provide  Certification.  <br/><br/>
+           <b>Process for Certification :</b>
+          
+  <li>You will receive a real time project Problem Statement along with a dataset to work. </li>
+  <li>After complition of your project(Reviewed by an Expert),you will be awarded a certificate with a performance-based grading. </li>
+ <li>If your project is not completed on time , you can take extra training for any of your doubts to understand the concepts better and re-attempt the Project free of cost.</li>
+<br/>
+GKTCS will help you at every stage of your learning and our 24/7 expert support team will ensure that you don't get stuck. Once you submit the project, our subject matter experts will review the same and share feedback to optimize it, if required.
+        </div>
+        </div>
+    
+    </td>
+    
+    <td valign="top" width="500">
+  		
+    <table valign="top">
+    	<tr valign="top">
+    		<font color="#366D9C" size=5px style="font-family: Georgia; padding-left:25px"><b>Course Features</b></font>  
+    		<td align="left" valign="top" width="500" height="200">
+    		
+ 
+  <br/>
+ <br/>
+ <li>Expert and qualified trainers</li>
+<li>Practical Project Based Approach</li>
+<li>Regular Assessment & feedback</li>
+<li>Total customized as per the client needs</li> 
+<li>Lifetime Access</li> 
+<li>  24 x 7 Support</li> 
+<li>  Get Certified</li>
+ 
+
+    			
+     		</td>
+     	
+    		
+    		
+    	</tr>
+    	
+    	<tr valign="top">
+    		<td height="20" valign="top" align="center">
+    		
+    		
+    		<font color="#366D9C" size=5px style="font-family: Georgia; padding-left:25px"><b>Placed Candidate</b></font>  
+    			<br/>
+    			<marquee direction="up" scrollamount="4" height="300">
+    			<table>
+    				<tr>
+    	   						
+    					<table>
+    						<tr>
+    							<td valign="top" height="30">
+    								
+    								<img src="http://gktcs.in/GLMS/public/static/images/AhilanShankar.jpg" width="100" height="100"/>
+    							</td>
+    							<td>
+    								<b>Alihan shanakar</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/capegemini.png" width="150" height="80"/> 
+    							</td>
+    						</tr>
+    						
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/sounavdas.jpg" width="100" height="100"/>
+    							</td>
+    							<td>
+    								<b>Sonav Das</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150" height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/ShashankVerma.jpg" width="60" height="80"/>
+    							</td>
+    							<td>
+    								<b>Shashank Verma</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/leoinfotech.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/rasika1.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Rasika</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/renuka.jpg" width="100" height="100"/>
+    							</td>
+    							<td>
+    								<b>Renuka Shirbhate</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/inetsoft.jpg" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/Neha.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Neha Kottarwar</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/GauravKotarwar.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Gaurav Kotarwar</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/leoinfotech.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/PrajaktaSakale.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Prajkta Sakale</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    							<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/SohailShaikh.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Sohail Shaikh</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/leoinfotech.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/ApurvaBhat.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Apurva Bhat</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/AshishSoni.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Ashish Soni</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    					
+    					    						
+    						
+    						
+    						
+    					</table>
+    					
+    						
+    						
+    					</td>
+    		
+    		
+    	</tr>
+    </table>
+    
+    </td>
+    
+    
+    </tr>
+	</table>
+	
+</body>
+</html>
+{% endblock %}

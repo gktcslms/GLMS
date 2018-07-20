@@ -1,0 +1,33 @@
+<html>
+	{% extends "index.html" %}
+{% load staticfiles %}
+{% block home %}
+	<head>
+		<script>
+			function registerfun() {
+    alert("Thanks for Your Registration");
+    }
+		</script>
+	</head>
+	
+	<div style="padding-left:300; padding-top:40 ">
+		<img style="padding-left:40" src="http://gktcs.in/GLMS/public/static/images/Register.jpg" height="68" width="260">
+		<br>
+	<form  method='post' action="" > {% csrf_token %}
+					<table valign="top">
+						<tr><td><b>Name :</b</td><td>{{ form.name }}</td></tr>
+						<tr><td><b>Email :</b</td><td>{{ form.email }}</td></tr>
+						<tr><td><b>Contact :</b</td><td>{{ form.contact }}</td></tr>
+						<tr><td><b>Enter Password :</b</td><td>{{ form.enter_password }}</td></tr>
+						<tr><td><b>Re-enter Password :</b</td><td>{{ form.re_enter_password }}</td></tr>	
+					</table>
+				
+				
+				<div style="padding-left:130">	<input type="submit" value="Register" onclick="registerfun()" >
+					
+				</div>
+					
+				</form>
+			</div>	
+</html>
+{% endblock %}

@@ -1,0 +1,110 @@
+{% extends "base_dashboard.html" %}
+{% block head %}
+<style>
+textarea{
+	width:100%;
+	border-radius:5px;
+	border:1px solid rgb(169, 169, 169);
+}
+
+#id_course_name{
+	width:100%;
+	border-radius:5px;
+	border:1px solid rgb(169, 169, 169);
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+        <form enctype="multipart/form-data" action="" method="POST">{% csrf_token %}
+					<div class="card">
+					<div class="card-header">
+						<h5 class="title">ADD NEW COURSES</h5>
+					</div>
+					<div class="card-body">
+					<div class="row">
+					<div class="col-md-6"><label for="id_course_name">Course Name:</label><input id="id_course_name" style="font-size: 20px;" maxlength="200" name="course_name" type="text" required ></div>				
+					<div class="col-md-6">
+					<img id="profile_strength_pic" width="100px" height="80px" class="" alt="image" src="/static/images/course_thumbnails/default_course.jpg" required > <br/>
+					<label for="id_thumbnail">Upload Course Image: </label><input id="id_thumbnail" name="thumbnail" type="file" required> 
+					</div><br/>
+					<div class="col-md-12"><label for="id_description">Description:</label><textarea cols="40" id="id_description" name="description" rows="5" required></textarea></div>
+					<div class="col-md-12"><label for="id_objectives">Objectives:</label><textarea cols="40" id="id_objectives" name="objectives" rows="5" required></textarea></div>
+					<div class="col-md-12"><label for="id_prerequisite">Prerequisite:</label><textarea cols="40" id="id_prerequisite" name="prerequisite" rows="5" required></textarea></div>
+					<div class="col-md-12"><label for="id_requirements">Requirements:</label><textarea cols="40" id="id_requirements" name="requirements" rows="5"required ></textarea></div>
+					<div class="col-md-12"><input type="submit" value="submit" name="submit" class="btn btn-primary"></div>
+					</div>
+					</div>
+					</div>
+		</form>	
+</div>
+{% endblock %}
+
+{% block lower %}
+<script>
+$("#add_course").addClass("active");
+</script>
+<script>
+(function($) {
+    $.fn.checkFileType = function(options) {
+        var defaults = {
+            allowedExtensions: [],
+            success: function() {},
+            error: function() {}
+        };
+        options = $.extend(defaults, options);
+
+        return this.each(function() {
+
+            $(this).on('change', function() {
+                var value = $(this).val(),
+                    file = value.toLowerCase(),
+                    extension = file.substring(file.lastIndexOf('.') + 1);
+
+                if ($.inArray(extension, options.allowedExtensions) == -1) {
+                    options.error();
+                    $(this).focus();
+                } else {
+                    options.success();
+
+                }
+
+            });
+
+        });
+    };
+
+})(jQuery);
+
+$(function() {
+		var value = "#id_thumbnail"
+    $(value).checkFileType({
+        allowedExtensions: ['jpg', 'jpeg','png'],
+        success: function() {
+            
+        },
+        error: function() {
+            alert("Please select image(.jpg,.jpeg or .png) file only");
+            $(value).val("");
+        }
+    });
+
+});
+
+$(function() {
+		var value = "#doc"
+    $(value).checkFileType({
+        allowedExtensions: ['pdf'],
+        success: function() {
+            
+        },
+        error: function() {
+            alert("Please select PDF file only");
+            $(value).val("");
+        }
+    });
+
+});
+</script>
+{% endblock %}

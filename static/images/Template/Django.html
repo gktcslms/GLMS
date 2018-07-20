@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+{% extends "index.html" %}
+{% load staticfiles %}
+{% block home %}
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="http://api.html5media.info/1.1.5/html5media.min.js"></script>
+	{% block flash%} {% endblock %}
+    
+    <style type="text/css">
+        body {
+            background: #fff;
+            font-family: verdana;
+            padding-top: 0px;
+            background-color: #027fcf;
+        }
+        #vtab {
+            margin: 10;
+            width: 700px;
+            height: 100%;
+        }
+        #vtab > ul > li {
+            width: 150px;
+            height: 80px;
+            background-color: #fff !important;
+            list-style-type: none;
+            display: block;
+            text-align: center;
+            margin: auto;
+            padding-bottom: 10px;
+            border: 1px solid #fff;
+            position: relative;
+            border-right: none;
+            opacity: .3;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+            filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+        }
+        #vtab > ul > li.home {
+            background: url('http://gktcs.in/GLMS/public/static/images/about1.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.login {
+            background: url('http://gktcs.in/GLMS/public/static/images/demo4.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.support {
+            background: url('http://gktcs.in/GLMS/public/static/images/content.jpg') no-repeat center center;
+        }
+         #vtab > ul > li.support1 {
+            background: url('http://gktcs.in/GLMS/public/static/images/batches.jpg') no-repeat center center;
+        }
+        
+        #vtab > ul > li.support2 {
+            background: url('http://gktcs.in/GLMS/public/static/images/interview.jpg') no-repeat center center;
+        }
+         #vtab > ul > li.support3 {
+            background: url('http://gktcs.in/GLMS/public/static/images/training.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.support4 {
+            background: url('http://gktcs.in/GLMS/public/static/images/FAQ.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.support5 {
+            background: url('http://gktcs.in/GLMS/public/static/images/testi.jpg') no-repeat center center;
+        }
+         #vtab > ul > li.support6 {
+            background: url('http://gktcs.in/GLMS/public/static/images/certification.jpg') no-repeat center center;
+        }
+        
+        
+        #vtab > ul > li.selected {
+            opacity: 1;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+            filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+            border: 1px solid #ddd;
+            border-right: none;
+            z-index: 10;
+            background-color: #fafafa !important;
+            position: relative;
+        }
+        #vtab > ul {
+            float: left;
+            width: 110px;
+            text-align: left;
+            display: block;
+            margin: auto 0;
+            padding: 0;
+            position: relative;
+            top: 30px;
+        }
+        #vtab > div {
+            background-color: #fafafa;
+            margin-left:150px;
+            border: 1px solid #ddd;
+            min-height: 700px;
+            padding: 12px;
+            position: relative;
+            z-index: 9;
+            -moz-border-radius: 20px;
+        }
+        #vtab > div > h4 {
+            color: #800;
+            font-size: 1.2em;
+            border-bottom: 1px dotted #800;
+            padding-top: 5px;
+            margin-top: 0;
+        }
+        #loginForm label {
+            float: left;
+            width: 100px;
+            text-align: right;
+            clear: left;
+            margin-right: 15px;
+        }
+        #loginForm fieldset {
+            border: none;
+        }
+        #loginForm fieldset > div {
+            padding-top: 3px;
+            padding-bottom: 3px;
+        }
+        #loginForm #login {
+            margin-left: 115px;
+        }
+        
+     a {text-decoration: none}
+    </style>
+
+    <script type="text/javascript">
+        $(function() {
+            var $items = $('#vtab>ul>li');
+            $items.mouseover(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('#vtab>div').hide().eq(index).show();
+            }).eq(0).mouseover();
+        });
+    </script>
+
+</head>
+<body>
+
+		<font color="#366D9C" size=6px style="font-family: Georgia; padding-left: 400px"><b>Django </b></font>
+	
+	<table width="980" height="700"> 
+		<tr> 
+			<td width='100'>
+		
+    <div id="vtab">
+        <ul>
+            <li class="home selected"></li>
+            <li class="login"></li>
+            <li class="support"></li>
+            <li class="support1"></li>
+            <li class="support2"></li>
+            <li class="support3"></li>
+            <li class="support4"></li>
+            <li class="support5"></li>
+            <li class="support6"></li>
+        </ul>
+        <div>
+        	<h4>About Course</h4>
+        	<br/>
+           <table align="justify">
+           	<tr align="justify">
+           		<td valign="top">
+           		<img src='http://gktcs.in/GLMS/public/static/images/django.jpg' width='90' height="60" />
+           		</td>
+           		<td>
+           			
+<b>Course Duration:</b>45hrs<br/>
+<br/>
+<b>Course Description:</b><br/>
+<br/>
+<b>Django</b> is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of Web development.
+
+<br/>
+<br/>
+<b>Who Should Attend:</b>
+<br/>
+<br/>
+This course is intended for experienced Python developers with some HTML, CSS and JavaScript knowledge.
+<br/><br/>
+<b>Benefits of Attendance:</b>
+<br/>
+<br/>
+Upon completion of this course, students will get following advantages:<br/>
+<br/>
+<ul>
+<li>Get the knowledge how to impliment  the python knowledge.</li><br/>
+<li>Understand the major benefits of Python as well as Django.</li><br/>
+<li>Django has Simple but useful design</li><br/>
+<li>It has Better database handling </li><br/>
+
+</ul>
+<br/>
+<br/>
+<b>Prerequisites:</b><br/>
+<br/>
+Students must be experienced with Python and HTML and have experience with  CSS and JavaScript. Prior knowledge of JSON, DOM, and Ajax is helpful, but not required.
+
+           		</td>
+           	</tr>
+           	
+           	
+           </table>
+            
+        </div>     
+         <div>
+         	<h4>Sample Demo</h4>
+         	<br/>
+         	<div>
+   <video id="abc" width="500px" height="360px" autoplay controls > <source src="{% static 'abc.mp4' %}" type="video/mp4"> </source>
+     
+        </video></div>
+
+</div>
+           <div>
+            <h4>
+              Content </h4>
+              <br/>
+					<li>Getting started</li><br>
+					<li>Quick install guide</li><br>
+					<li>Writing your first Django app, part 1</li><br>
+					<li>Writing your first Django app, part 2</li><br>
+					<li>Advanced tutorial: How to write reusable apps</li><br>
+					<li>Writing your first patch for Django</li><br>
+					<li>Using Django</li><br>
+					<li>Models and databases</li><br>
+					<li>Handling HTTP requests</li><br>
+					<li>Working with forms</li><br>
+					<li>Templates</li><br>
+					<li>Class-based views</li><br>
+					<li>Migrations</li><br>
+					<li>Managing files</li><br>
+					<li>Testing in Django</li><br>
+					<li>User authentication in Django</li><br>
+					<li>Django’s cache framework</li><br>
+					<li>Conditional View Processing</li><br>
+					<li>Sending email</li><br>
+					<li>Internationalization and localization</li><br>
+					<li>Pagination</li><br>
+        			<li>Porting to Python 3</li><br>
+        			<li>Security in Django</li><br>
+        			<li>Performance and optimization</li><br>
+        			<li>Serializing Django objects</li><br>
+        			<li>Django settings</li><br>
+        			<li>Signals</li><br>
+        			<li>Custom template tags and filters</li><br>
+        			<li>Upgrading Django to a newer version</li><br>
+        			<li>Error reporting</li><br>
+        			<li>Providing initial data for models</li><br>
+        			<li>Running Django on Jython</li><br>
+        			<li>Integrating Django with a legacy database</li><br>
+        			<li>Outputting CSV with Django</li><br>
+        			<li>Outputting PDFs with Django</li><br>
+        			<li>Managing static files (CSS, images)</li><br>
+        			<li>Deploying static files</li><br>
+        			<li>Writing database migrations</li><br>
+        
+        </div>
+        
+           <div>
+        
+ <h4>Upcoming Batches</h4>
+ <br/>
+
+<div class="pricing_table">
+
+<table width=500px>
+		<tr width=500px ></tr>
+		<b><th width=280 bgcolor="#333333" style="color:#FFFFFF;">Start date</th>
+			
+		<th width=95 bgcolor="#333333" style="color:#FFFFFF;">Duration</th>
+		<th width=700 bgcolor="#333333" style="color:#FFFFFF;">Days</th>
+		<th width=100 bgcolor="#333333" style="color:#FFFFFF;">Time</th>
+		<th width=100 bgcolor="#333333" style="color:#FFFFFF;">Price</th></b>
+		</tr>
+		
+		
+		{% for j in batch %}
+		<tr width=500px>
+			
+<td width=350 bgcolor="#CCCCCC" style="text-align: center"> {{j.Start}}</td>
+<td width=220 bgcolor="#CCCCCC" style="text-align: center">{{j.Duration}}</td>
+<td width=350 bgcolor="#CCCCCC" style="text-align: center">{{j.Days}}</td>
+
+<td width=150 bgcolor="#CCCCCC" style="text-align: center">{{j.Time}}</td>
+<td width=100 bgcolor="#CCCCCC" style="text-align: center">{{j.Price}}/-</td>
+
+		
+		</tr>
+		{% endfor %}
+		
+		
+	</table>	
+
+</div>
+	 <br><br>
+	<br/>
+		
+
+<a href="/Enroll" style="padding-left: 320px; "><img src="http://gktcs.in/GLMS/public/static/images/enroll.png" height=40px width="190px" align="center"/></a>
+        </div>
+        
+           <div align="justify">
+           	<h4>Interview Questions</h4>
+           	<br/>
+           	<br/>
+           	
+           	<b>Question: Explain what is Django?</b><br/>
+Ans. Django is a web framework in python to develop a web application in python.
+            <br/>
+            <br/>
+            
+            
+            <b>Question:Mention what are the features available in Django?</b><br/>
+Ans: Features available in Django are<br><Br>
+
+<li>Admin Interface (CRUD)</li><br>
+<li>Templating</li><br>
+<li>Form handling</li><br>
+<li>Internationalization</li><br>
+<li>Session, user management, role-based permissions</li><br>
+<li>Object-relational mapping (ORM)</li><br>
+<li>Testing Framework</li><br>
+<li>Fantastic Documentation</li>
+<br/>
+<br/>
+
+<b>Question: Mention the architecture of Django architecture?</b><br/>
+Ans: Django architecture consists of<br><Br>
+<li>Models: It describes your database schema and your data structure</li><bR>
+<li>Views: It controls what a user sees, the view retrieves data from appropriate models and execute any calculation made to the data and pass it to the template</li><bR>
+<li>Templates: It determines how the user sees it. It describes how the data received from the views should be changed or formatted for display on the page</li><bR>
+<li>Controller: The Django framework and URL parsing</li>
+<br/>
+<br/>
+<b>Question: Why Django should be used for web-development?</b><br/>
+<li>It allows you to divide code modules into logical groups to make it flexible to change</li><bR>
+<li>To ease the website administration, it provides auto-generated web admin</li><bR>
+<li>It provides pre-packaged API for common user tasks</li><bR>
+<li>It gives you template system to define HTML template for your web page to avoid code duplication</li><bR>
+<li>It enables you to define what URL be for a given function</li><bR>
+<li>It enables you to separate business logic from the HTML</li><bR>
+<li>Everything is in python</li>
+<br/>
+<br/>
+
+<b>Question: Explain how you can create a project in Django?</b><br/>
+ To start a project in Django, you use command $ django-admin.py and then use the command<br><br>
+
+Project
+<br><br>
+_init_.py
+<br><br>
+manage.py
+<br><br>
+settings.py
+<br><br>
+urls.py
+<br/>
+<br/>
+
+<b>Question: Explain how you can set up the Database in Django?</b><br/>
+Ans:You can use the command edit mysite/setting.py , it is a normal python module with module level representing Django settings.
+<br><Br>
+Django uses SQLite by default; it is easy for Django users as such it won’t require any other type of installation. In the case your database choice is different that you have to the following keys in the DATABASE ‘default’ item to match your database connection settings
+<br><Br>
+<b>Engines:</b> you can change database by using ‘django.db.backends.sqlite3’ , ‘django.db.backeneds.mysql’, ‘django.db.backends.postgresql_psycopg2’, ‘django.db.backends.oracle’ and so on<br><br>
+
+<b>Name:</b> The name of your database. In the case if you are using SQLite as your database, in that case database will be a file on your computer, Name should be a full absolute path, including file name of that file.<br><br>
+<br/>
+<br/>
+<b>Question:Give an example how you can write a VIEW in Django??</b><br/>
+Ans:Views are Django functions that take a request and return a response.  To write a view in Django we take a simple example of “Guru99_home” which uses the template Guru99_home.html and uses the date-time module to tell us what the time is whenever the page is refreshed.  The file we required to edit is called view.py, and it will be inside mysite/myapp/
+<br><Br>
+Copy the below code into it and save the file
+<br><br>
+       from datatime import datetime
+<br><br>
+      from django.shortcuts import render
+<br><Br>
+     def home (request):
+<br><br>
+return render(request, ‘Guru99_home.html’, {‘right_now’: datetime.utcnow()})
+<br><Br>
+Once you have determined the VIEW, you can uncomment this line in urls.py
+<br><Br>
+# url ( r ‘^$’ , ‘mysite.myapp.views.home’ , name ‘Guru99’),
+<br><BR>
+The last step will reload your web app so that the changes are noticed by the web server.
+<br/>
+<br/>
+<b>Question: Explain how you can setup static files in Django?</b><br/>
+Ans:There are three main things required to set up static files in Django
+<br><Br>
+Set STATIC_ROOT in settings.py<br><Br>
+run manage.py collectsatic<br><Br>
+set up a Static Files entry on the PythonAnywhere web tab
+<br/>
+<br/>
+<b>Question:  Mention what does the Django templates consists of?</b>?<br/>
+Ans:The template is a simple text file.  It can create any text-based format like XML, CSV, HTML, etc.  A template contains variables that get replaced with values when the template is evaluated and tags (% tag %) that controls the logic of the template.
+<br/>
+<br/>
+<b>Question: Explain the use of session framework in Django?</b><br/>
+Ans:In Django, the session framework enables you to store and retrieve arbitrary data on a per-site-visitor basis.  It stores data on the server side and abstracts the receiving and sending of cookies.  Session can be implemented through a piece of middleware.
+<br/>
+<br/>
+<b>Question:  Explain how you can use file based sessions?</b><br/>
+Ans:To use file based session you have to set the SESSION_ENGINE settings to “django.contrib.sessions.backends.file”
+
+<br/>
+<br/>
+<b>Question: Explain the migration in Django and how you can do in SQL?</b><br/>
+Ans:Migration in Django is to make changes to your models like deleting a model, adding a field, etc. into your database schema.  There are several commands you use to interact with migrations.
+<bR><BR>
+<li>Migrate</li><br>
+<li>Makemigrations</li><br>
+<li>Sqlmigrate </li><br>
+<br/>
+<br/>
+         	  	
+        </div>
+         <div align="justify">
+         	<h4>
+                Training Mode</h4>
+                <br/>
+   
+         	
+         	<table width=620><tr align="justify">
+         		<td width="330" align="justify">
+         		<br/>
+         	
+         	<b>Corporate Training :</b><br/>
+         	
+Corporate Training Solutions
+
+Corporate training is the act of grooming the workforce in order to make them capable of handling modern business challenges by improving their approach and productivity and thus, making effective utilization of resources. We at GKTCS work hand in hand with Industry on various fronts. GKTCS’s business cycle is aligned very closely to Industry needs and structured to fulfil the industry needs in terms of Training and Recruitment.
+
+We always believe our customers speak for our services based on their rich experience with our kind of services.
+</td>
+<td align="right">
+	<img src="http://gktcs.in/GLMS/public/static/images/corporate.jpg"  width="200" height="150"/> 
+</td>
+</tr>
+<tr>
+	<td>
+		<br/>
+<b>Retail Training :</b>
+<br/>
+GKTCS Innovations has a set of best trainers who are constantly engaged in spreading technical and non technical knowledge to individual who are seeking an opportunity in their respective industries and would like to straight away face the challenges of the continuously improving and changing world.
+
+The retail Training services provided by GKTCS Innovations are designed as per the needs of corporate and also as per the guidelines provided by them.
+ </td>
+ <td align="right">
+	<img src="http://gktcs.in/GLMS/public/static/images/retail.jpg"  width="200" height="150"/>
+</td>
+ </tr>
+ <tr>    <td>   
+ 	<br/>	
+ <b>Online Training </b>
+ <br/>
+ GKTCS offers Online Training , so you get trained from where you are from our experienced trainers, In the weekdays as well as weekends by the Real Time Professionals. The program is designed to provide rich learning experience for students using Internet.         	
+      </td>   
+      <td align="right">
+      	<img src="http://gktcs.in/GLMS/public/static/images/online.jpg"  width="200" height="150"/>
+      </td>  
+      </tr>	
+    </table>     	
+         	
+         </div>
+		
+
+           <div align="justify">
+           	<h4>
+                FAQs</h4>
+           	
+           	<br/>
+    
+          <b> Is this intended to go into Django contrib?</b><br/>
+No.<br><BR>
+Reasons why it won’t be going into Django core:
+
+<br><br>
+<b>1. We want to rely on external dependencies</b></br><bR>
+We think certain packages can do a lot of the heavy lifting for us, and rewriting them is more time taken away from fixing bugs and implementing features. Since the Django core team isn’t likely to accept external dependencies, especially ones that rely on Django itself, this alone is reason enough for django-admin2 to never make it into Django contrib.
+<br><br>
+<b>2. We want increased Speed of Development</b><br><br>
+Django is a huge project with a lot of people relying on it. The conservative pace at which any change or enhancement is accepted is usually boon to the community of developers who work with it. Also, the committee-based management system means everyone gets a voice. This means things often happen at a slow and steady pace.
+<br><BR>
+However, there are times when it’s good to be outside of core, especially for experimental replacements for core functionality. Working outside of Django core means we can do what we want, when we want it.
+
+<br/>
+<br/>
+<b>What does “Django” mean, and how do you pronounce it??</b><br/>
+Django is named after Django Reinhardt, a gypsy jazz guitarist from the 1930s to early 1950s. To this day, he’s considered one of the best guitarists of all time.
+<br><Br>
+Listen to his music. You’ll like it.
+<br><br>
+Django is pronounced JANG-oh. Rhymes with FANG-oh. The “D” is silent.
+<br><BR>
+We’ve also recorded an audio clip of the pronunciation.<br/>
+<br/>
+<b>Is Django stable?</b><br/>
+Yes, it’s quite stable. Companies like Disqus, Instagram, Pinterest, and Mozilla have been using Django for many years. Sites built on Django have weathered traffic spikes of over 50 thousand hits per second.
+<br/>
+<br/>
+<b>Does Django scale?
+</b><br/>
+Yes. Compared to development time, hardware is cheap, and so Django is designed to take advantage of as much hardware as you can throw at it.
+<br><BR>
+Django uses a “shared-nothing” architecture, which means you can add hardware at any level – database servers, caching servers or Web/application servers.
+<br><BR>
+The framework cleanly separates components such as its database layer and application layer. And it ships with a simple-yet-powerful cache framework.
+<br/>
+<br/>
+<b>Who’s behind this?
+</b><br/>
+Django was originally developed at World Online, the Web department of a newspaper in Lawrence, Kansas, USA. Django’s now run by an international team of volunteers.
+<br/>
+<br/>
+<b>Why did you write all of Django from scratch, instead of using other Python libraries?
+</b><br/>
+When Django was originally written a couple of years ago, Adrian and Simon spent quite a bit of time exploring the various Python Web frameworks available.
+<br><Br>
+In our opinion, none of them were completely up to snuff.
+<br><Br>
+We’re picky. You might even call us perfectionists. (With deadlines.)
+<br><Br>
+Over time, we stumbled across open-source libraries that did things we’d already implemented. It was reassuring to see other people solving similar problems in similar ways, but it was too late to integrate outside code: We’d already written, tested and implemented our own framework bits in several production settings – and our own code met our needs delightfully.
+<br><Br>
+In most cases, however, we found that existing frameworks/tools inevitably had some sort of fundamental, fatal flaw that made us squeamish. No tool fit our philosophies 100%.
+<br><Br>
+Like we said: We’re picky.
+<br><Br>
+We’ve documented our philosophies on the design philosophies page.
+<br/>
+<br/>
+<b>Where can I find Django developers for hire?
+</b><br/>
+Consult our developers for hire page for a list of Django developers who would be happy to help you.
+<br><bR>
+You might also be interested in posting a job to https://djangogigs.com/ . If you want to find Django-capable people in your local area, try https://people.djangoproject.com/ .
+<br/>
+<br/>
+<b>How do I cite Django?</b><br/>
+It’s difficult to give an official citation format, for two reasons: citation formats can vary wildly between publications, and citation standards for software are still a matter of some debate.
+<br><Br>
+For example, APA style, would dictate something like:
+<br><Br>
+Django (Version 1.5) [Computer Software]. (2013). Retrieved from https://djangoproject.com.<br><Br>
+However, the only true guide is what your publisher will accept, so get a copy of those guidelines and fill in the gaps as best you can.
+<br><Br>
+If your referencing style guide requires a publisher name, use “Django Software Foundation”.<br><Br>
+
+If you need a publishing location, use “Lawrence, Kansas”.<br><Br>
+
+If you need a web address, use https://djangoproject.com.<br><Br>
+
+If you need a name, just use “Django”, without any tagline.<br><Br>
+
+If you need a publication date, use the year of release of the version you’re referencing (e.g., 2013 for v1.5)
+
+ 
+        </div>
+           <div>
+        <h4>Testimonials</h4> 
+           
+        </div>
+   
+        <div align="justify">
+            <h4>
+                Certification</h4>
+                <br/>
+           
+             At the end of the course we provide  Certification.  <br/><br/>
+           <b>Process for Certification :</b>
+          
+  <li>You will receive a real time project Problem Statement along with a dataset to work. </li>
+  <li>After complition of your project(Reviewed by an Expert),you will be awarded a certificate with a performance-based grading. </li>
+ <li>If your project is not completed on time , you can take extra training for any of your doubts to understand the concepts better and re-attempt the Project free of cost.</li>
+<br/>
+GKTCS will help you at every stage of your learning and our 24/7 expert support team will ensure that you don't get stuck. Once you submit the project, our subject matter experts will review the same and share feedback to optimize it, if required.
+        </div>
+        </div>
+    
+    </td>
+    
+    <td valign="top" width="500">
+  		
+    <table valign="top">
+    	<tr valign="top">
+    		<font color="#366D9C" size=5px style="font-family: Georgia; padding-left:25px"><b>Course Features</b></font>  
+    		<td align="left" valign="top" width="500" height="200">
+    		
+ 
+  <br/>
+ <br/>
+ <li>Expert and qualified trainers</li>
+<li>Practical Project Based Approach</li>
+<li>Regular Assessment & feedback</li>
+<li>Total customized as per the client needs</li> 
+<li>Lifetime Access</li> 
+<li>  24 x 7 Support</li> 
+<li>  Get Certified</li>
+ 
+
+    			
+     		</td>
+     	
+    		
+    		
+    	</tr>
+    	
+    	<tr valign="top">
+    		<td height="20" valign="top" align="center">
+    		
+    		
+    		<font color="#366D9C" size=5px style="font-family: Georgia; padding-left:25px"><b>Placed Candidate</b></font>  
+    			<br/>
+    			<marquee direction="up" scrollamount="4" height="300">
+    			<table>
+    				<tr>
+    	   						
+    					<table>
+    						<tr>
+    							<td valign="top" height="30">
+    								
+    								<img src="http://gktcs.in/GLMS/public/static/images/AhilanShankar.jpg" width="100" height="100"/>
+    							</td>
+    							<td>
+    								<b>Alihan shanakar</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/capegemini.png" width="150" height="80"/> 
+    							</td>
+    						</tr>
+    						
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/sounavdas.jpg" width="100" height="100"/>
+    							</td>
+    							<td>
+    								<b>Sonav Das</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150" height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/ShashankVerma.jpg" width="60" height="80"/>
+    							</td>
+    							<td>
+    								<b>Shashank Verma</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/leoinfotech.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/rasika1.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Rasika</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/renuka.jpg" width="100" height="100"/>
+    							</td>
+    							<td>
+    								<b>Renuka Shirbhate</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/inetsoft.jpg" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/Neha.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Neha Kottarwar</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/GauravKotarwar.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Gaurav Kotarwar</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/leoinfotech.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/PrajaktaSakale.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Prajkta Sakale</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    							<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/SohailShaikh.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Sohail Shaikh</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/leoinfotech.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/ApurvaBhat.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Apurva Bhat</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/Ashish Soni.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Ashish Soni</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    					
+    					    						
+    						
+    						
+    						
+    					</table>
+    					
+    						
+    						
+    					</td>
+    		
+    		
+    	</tr>
+    </table>
+    
+    </td>
+    
+    
+    </tr>
+	</table>
+	
+</body>
+</html>
+{% endblock %}

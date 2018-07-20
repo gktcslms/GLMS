@@ -1,0 +1,283 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container" style="margin-top: 16px;">
+							<ul class="breadcrumb well" id="course_desc1" style="margin-left: 0px;">
+								<li><a href="/">HOME</a>
+								</li>
+								<li><a href="/all-courses">MY COURSES</a></li>
+								<li>BIG DATA AND HADOOP</li>
+							</ul>
+<div class="row">	
+
+	<div class="col-md-4 col-md-push-8 ">
+		<div class="well">
+			<div class="row">
+			<div class="col-md-12 col-sm-12">
+			<div class="col-md-3 col-sm-3 profile_strength_links pull-left">
+			<a href="/my-profile">
+			<img id="profile_strength_pic" width="60px" height="60px" class="img-circle" alt="image" src="{{MEDIA_URL}}{{ user.userprofile.picture.url }}">
+			</a>
+			</div>
+			<div class="col-md-9 col-sm-9 pull-left">
+			<h4 class="margin-bottom10 display_name">
+			{{ user.first_name }} {{ user.last_name }}
+			<a class="label label-primary editproflink pull-right" style="font-size: 12px; display: none;" href="/my-profile">Edit</a>
+			</h4>
+			<div class="progress progress-mouseover" style="height: 8px; cursor: pointer;">
+			<div class="progress-bar progress-bar-success mypopover progress-fillbar" style="width: 10%;"></div>
+			</div>
+			<span class="regular text-muted" style="font-size:12px;">Profile Strength 10%</span>
+			<br><br>
+			<div class="runs-list">
+			<div class="run very-slow">
+			<a class="regular prof_prog_text" style="color: #428bca;font-size:12px;" href="/myprofile">Adding your preferred contact time increases profile strength by 10% </a>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-8 col-md-pull-4">	
+			<div class="well" style="background: #EEE">
+				<div class="row">
+								<div class="col-md-4 col-sm-4">
+									<img class="img-responsive" id="header-logo" src="http://gktcs.in/GLMS/public/static/images/hadoop1.jpg" />
+								</div>
+								<div class="col-md-8 col-sm-8">
+									<h1 style="margin-top: 10;">Big Data and Hadoop</h1>
+									<div id="span1">Become a Hadoop Expert by mastering MapReduce, Yarn, Pig, Hive, HBase, Oozie, Flume and Sqoop while working on industry based Use-cases and Projects.</div>
+								</div>
+				</div>				
+			</div>
+			<div id="descripti" style="margin-bottom:20px;" >
+				<div id="">
+						<ul id = "myTab" class = "nav nav-tabs">
+						   <li class = "active">
+							  <a href = "#start" data-toggle = "tab">
+								 Getting Started
+							  </a>
+						   </li>
+						   
+						   <li><a href = "#recorded" data-toggle = "tab">Pre-recorded Classes</a></li>
+						   
+						   <li><a href = "#content" data-toggle = "tab">Course Content</a></li>
+							
+							
+						</ul>
+
+						<div id = "myTabContent" class = "tab-content">
+
+						   <div class = "tab-pane fade in active" id = "start" style="padding-left:30px;">
+								<br>
+								<div id="custom-show-hide-example">
+							   
+								  <h4 class="open circ">Getting Started with Big Data and Hadoop</h4>
+									<div style="margin-left:10px;">
+									  <br>Welcome, Let's Get Going on our Big Data and Hadoop Analytics Journey... <br><br>
+										How it Works?<br><br>
+										1. This is an Online Course.<br><br>
+										2. We have 30-hourse LIVE and Interactive Sessions.<br><br>
+										3. We have 40 hours of Practical Work involving Lab Assignment, Case Studies and Project every week which can be done at your own pace. We can also provide you Remote Access to our Hadoop Cluster for doing Practicals.<br><br>
+										4. We have 24X7 One-on-One Live Technical Support to help you with any problems you might face or any clarifications you may require during the course.<br><br>
+										5. At the end of the training you will have to work on Real Time Project on which we will provide you a Grade and a Verified Certificate!<br><br>
+									</div>
+								</div>
+								<br>
+						   </div>
+						   
+						   <div class = "tab-pane fade" id = "recorded">
+								<br>
+								<hr><div><a class="bla-2" href="https://youtu.be/A02SRdyoshM"><span style="font-size:18px; color:#00A4CB">Class 1 Recording</span></a> <a style="float:right" class="" href="https://youtu.be/A02SRdyoshM"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/play_icon.png"></a></div> 
+								<hr><div><a class="bla-2" href="https://youtu.be/A02SRdyoshM"><span style="font-size:18px; color:#00A4CB">Class 2 Recording</span></a> <a style="float:right" class="" href="https://youtu.be/A02SRdyoshM"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/play_icon.png"></a></div> 
+						    	<hr><div><a class="bla-2" href="https://youtu.be/A02SRdyoshM"><span style="font-size:18px; color:#00A4CB">Class 3 Recording</span></a> <a style="float:right" class="" href="https://youtu.be/A02SRdyoshM"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/play_icon.png"></a></div> 
+								<hr><div><a class="bla-2" href="https://youtu.be/A02SRdyoshM"><span style="font-size:18px; color:#00A4CB">Class 4 Recording</span></a> <a style="float:right" class="" href="https://youtu.be/A02SRdyoshM"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/play_icon.png"></a></div><hr><br>
+
+						   </div>
+						   
+								<div class = "tab-pane fade" id = "content" style="padding-left:30px;text-align: left;">
+							<!-- BEGIN Custom show and hide -->
+							  <div id="custom-show-hide-example2" style="padding-bottom:20px;">
+								<h4 class="open circ" style="font-weight: 500;">Big Data & Hadoop Installation Guide</h4>
+								<div style="margin-left:10px;">
+								  <hr><a href="http://doctuts.readthedocs.org/en/latest/hadoop.html"><p style="font-size:18px; color:#00A4CB">Hadoop Installation Guide for Windows</p></a><hr>
+								  <a href="http://doctuts.readthedocs.org/en/latest/hadoop.html"><p style="font-size:18px; color:#00A4CB">Hadoop Installation Guide for Linux</p></a><hr>
+								  <a href="http://doctuts.readthedocs.org/en/latest/hadoop.html"><p style="font-size:18px; color:#00A4CB">Hadoop Installation Guide for Mac OS</p></a><hr>
+								</div>
+							  <h4 class="circ" style="margin-top:20px;">Module 1: Understanding Big Data and Hadoop</h4>
+								<div style="padding:10px;">
+									<p><b>Learning Objectives - </b>In this module, you will understand Big Data, the limitations of the existing solutions for Big Data problem, how Hadoop solves the Big Data problem, the common Hadoop ecosystem components, Hadoop Architecture, HDFS, Anatomy of File Write and Read, how MapReduce Framework works.</p>
+									<p><b>Topics - </b>Big Data, Limitations and Solutions of existing Data Analytics Architecture, Hadoop, Hadoop Features, Hadoop Ecosystem, Hadoop 2.x core components, Hadoop Storage: HDFS, Hadoop Processing: MapReduce Framework, Hadoop Different Distributions.</p>
+										<hr><div><a class="bla-2" href="https://youtu.be/A02SRdyoshM"><span style="font-size:18px; color:#00A4CB">Class 1 Recording</span></a> <a style="float:right" class="" href="https://youtu.be/A02SRdyoshM"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/play_icon.png"></a></div> 
+										<hr><div><a class="" href="http://gktcs.in/GLMS/public/static/Hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Module 1 - Presentation</span></a> <a style="float:right" class="" href="http://gktcs.in/GLMS/public/static/Hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/view_icon.png"></a></div>
+										<hr><div><a class="" href="/hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Hadoop Introduction</span></a> <a style="float:right" class="" href="/hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+										<hr><div><a class="" href="/hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Module 1 - Assignment</span></a> <a style="float:right" class="" href="/hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+										<hr><div><a class="" href="/hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Module 1 - Assignment Solution</span></a> <a style="float:right" class="" href="/hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+										<hr><div><a class="" href="/hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Pre-work for Module 2</span></a> <a style="float:right" class="" href="/hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div><hr>
+								</div>
+							  <h4 class="circ" style="margin-top:20px;">Module 2: Hadoop Architecture and HDFS</h4>
+									<div style="padding:10px;">
+										<p><b>Learning Objectives - </b>  In this module, you will learn the Hadoop Cluster Architecture, Important Configuration files in a Hadoop Cluster, Data Loading Techniques, how to setup single node and multi node hadoop cluster.  </p>
+										<p><b>Topics - </b> Hadoop 2.x Cluster Architecture - Federation and High Availability, A Typical Production Hadoop Cluster, Hadoop Cluster Modes, Common Hadoop Shell Commands, Hadoop 2.x Configuration Files, Single node cluster and Multi node cluster set up Hadoop Administration.</p>
+										<hr><div><a class="bla-2" href="https://youtu.be/A02SRdyoshM"><span style="font-size:18px; color:#00A4CB">Class 2 Recording</span></a> <a style="float:right" class="" href="https://youtu.be/A02SRdyoshM"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/play_icon.png"></a></div> 
+										<hr><div><a class="" href="http://gktcs.in/GLMS/public/static/Hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Module 2 - Presentation</span></a> <a style="float:right" class="" href="http://gktcs.in/GLMS/public/static/Hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/view_icon.png"></a></div>
+										<hr><div><a class="" href="/hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Module 2 - Assignment</span></a> <a style="float:right" class="" href="/hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+										<hr><div><a class="" href="/hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Module 2 - Assignment Solution</span></a> <a style="float:right" class="" href="/hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+										<hr><div><a class="" href="/hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Pre-work for Module 3</span></a> <a style="float:right" class="" href="/hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div><hr>
+									</div>
+							  <h4 class="circ" style="margin-top:20px;">Module 3: Hadoop MapReduce Framework</h4>
+									<div style="padding:10px;">
+										<p><b>Learning Objectives - </b>In this module, you will understand Hadoop MapReduce framework and the working of MapReduce on data stored in HDFS. You will understand concepts like Input Splits in MapReduce, Combiner & Partitioner and Demos on MapReduce using different data sets.  </p>
+										<p><b>Topics - </b>MapReduce Use Cases, Traditional way Vs MapReduce way, Why MapReduce, Hadoop 2.x MapReduce Architecture, Hadoop 2.x MapReduce Components, YARN MR Application Execution Flow, YARN Workflow, Anatomy of MapReduce Program, Demo on MapReduce. Input Splits, Relation between Input Splits and HDFS Blocks, MapReduce: Combiner & Partitioner, Demo on de-identifying Health Care Data set, Demo on Weather Data set.</p>
+										<hr><div><a class="bla-2" href="https://youtu.be/A02SRdyoshM"><span style="font-size:18px; color:#00A4CB">Class 3 Recording</span></a> <a style="float:right" class="" href="https://youtu.be/A02SRdyoshM"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/play_icon.png"></a></div> 
+										<hr><div><a class="" href="http://gktcs.in/GLMS/public/static/Hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Module 3 - Presentation</span></a> <a style="float:right" class="" href="http://gktcs.in/GLMS/public/static/Hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/view_icon.png"></a></div>
+										<hr><div><a class="" href="/hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Module 3 - Assignment</span></a> <a style="float:right" class="" href="/hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+										<hr><div><a class="" href="/hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Module 3 - Assignment Solution</span></a> <a style="float:right" class="" href="/hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+										<hr><div><a class="" href="/hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Pre-work for Module 4</span></a> <a style="float:right" class="" href="/hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div><hr>
+
+									</div>
+							  <h4 class="circ" style="margin-top:20px;">Module 4: Advanced MapReduce</h4>
+									<div style="padding:10px;">
+										<p><b>Learning Objectives - </b>In this module, you will learn Advanced MapReduce concepts such as Counters, Distributed Cache, MRunit, Reduce Join, Custom Input Format, Sequence Input Format and XML parsing. </p>
+										<p><b>Topics - </b>Counters, Distributed Cache, MRunit, Reduce Join, Custom Input Format, Sequence Input Format, Xml file Parsing using MapReduce.</p>
+										<hr><div><a class="bla-2" href="https://youtu.be/A02SRdyoshM"><span style="font-size:18px; color:#00A4CB">Class 4 Recording</span></a> <a style="float:right" class="" href="https://youtu.be/A02SRdyoshM"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/play_icon.png"></a></div> 
+										<hr><div><a class="" href="http://gktcs.in/GLMS/public/static/Hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Module 4 - Presentation</span></a> <a style="float:right" class="" href="http://gktcs.in/GLMS/public/static/Hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/view_icon.png"></a></div>
+										<hr><div><a class="" href="/hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Module 4 - Assignment</span></a> <a style="float:right" class="" href="/hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+										<hr><div><a class="" href="/hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Module 4 - Assignment Solution</span></a> <a style="float:right" class="" href="/hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+										<hr><div><a class="" href="/hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Pre-work for Module 5</span></a> <a style="float:right" class="" href="/hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div><hr>
+									</div>
+							  <h4 class="circ" style="margin-top:20px;">Module 5: Pig</h4>
+									<div style="padding:10px;">
+										<p><b>Learning Objectives - </b> In this module, you will learn Pig, types of use case we can use Pig, tight coupling between Pig and MapReduce, and Pig Latin scripting, PIG running modes, PIG UDF, Pig Streaming, Testing PIG Scripts. Demo on healthcare dataset. </p>
+										<p><b>Topics - </b>About Pig, MapReduce Vs Pig, Pig Use Cases, Programming Structure in Pig, Pig Running Modes, Pig components, Pig Execution, Pig Latin Program, Data Models in Pig, Pig Data Types, Shell and Utility Commands, Pig Latin : Relational Operators, File Loaders, Group Operator, COGROUP Operator, Joins and COGROUP, Union, Diagnostic Operators, Specialized joins in Pig, Built In Functions ( Eval Function, Load and Store Functions, Math function, String Function, Date Function, Pig UDF, Piggybank, Parameter Substitution ( PIG macros and Pig Parameter substitution ), Pig Streaming, Testing Pig scripts with Punit, Aviation use case in PIG, Pig Demo on Healthcare Data set.</p>
+										<hr><div><a class="bla-2" href="https://youtu.be/A02SRdyoshM"><span style="font-size:18px; color:#00A4CB">Class 5 Recording</span></a> <a style="float:right" class="" href="https://youtu.be/A02SRdyoshM"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/play_icon.png"></a></div> 
+										<hr><div><a class="" href="http://gktcs.in/GLMS/public/static/Hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Module 5 - Presentation</span></a> <a style="float:right" class="" href="http://gktcs.in/GLMS/public/static/Hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/view_icon.png"></a></div>
+										<hr><div><a class="" href="/hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Module 5 - Assignment</span></a> <a style="float:right" class="" href="/hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+										<hr><div><a class="" href="/hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Module 5 - Assignment Solution</span></a> <a style="float:right" class="" href="/hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+										<hr><div><a class="" href="/hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Pre-work for Module 6</span></a> <a style="float:right" class="" href="/hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div><hr>
+
+									</div>
+							  <h4 class="circ" style="margin-top:20px;">Module 6: Hive</h4>
+									<div style="padding:10px;">
+										<p><b>Learning Objectives - </b> This module will help you in understanding Hive concepts, Hive Data types, Loading and Querying Data in Hive, running hive scripts and Hive UDF. </p>
+										<p><b>Topics - </b> Hive Background, Hive Use Case, About Hive, Hive Vs Pig, Hive Architecture and Components, Metastore in Hive, Limitations of Hive, Comparison with Traditional Database, Hive Data Types and Data Models, Partitions and Buckets, Hive Tables(Managed Tables and External Tables), Importing Data, Querying Data, Managing Outputs, Hive Script, Hive UDF, Retail use case in Hive, Hive Demo on Healthcare Data set.</p>
+										<hr><div><a class="bla-2" href="https://youtu.be/A02SRdyoshM"><span style="font-size:18px; color:#00A4CB">Class 6 Recording</span></a> <a style="float:right" class="" href="https://youtu.be/A02SRdyoshM"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/play_icon.png"></a></div> 
+										<hr><div><a class="" href="http://gktcs.in/GLMS/public/static/Hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Module 1 - Presentation</span></a> <a style="float:right" class="" href="http://gktcs.in/GLMS/public/static/Hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/view_icon.png"></a></div>
+										<hr><div><a class="" href="/hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Module 6 - Assignment</span></a> <a style="float:right" class="" href="/hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+										<hr><div><a class="" href="/hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Module 6 - Assignment Solution</span></a> <a style="float:right" class="" href="/hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+										<hr><div><a class="" href="/hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Pre-work for Module 7</span></a> <a style="float:right" class="" href="/hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div><hr>
+
+									</div>
+							  <h4 class="circ" style="margin-top:20px;">Module 7: Advanced Hive and HBase</h4>
+									<div style="padding:10px;">
+										<p><b>Learning Objectives - </b> In this module, you will understand Advanced Hive concepts such as UDF, Dynamic Partitioning, Hive indexes and views, optimizations in hive. You will also acquire in-depth knowledge of HBase, HBase Architecture, running modes and its components. </p>
+										<p><b>Topics - </b>Hive QL: Joining Tables, Dynamic Partitioning, Custom Map/Reduce Scripts, Hive Indexes and views Hive query optimizers, Hive : Thrift Server, User Defined Functions, HBase: Introduction to NoSQL Databases and HBase, HBase v/s RDBMS, HBase Components, HBase Architecture, Run Modes & Configuration, HBase Cluster Deployment.</p>
+										<hr><div><a class="bla-2" href="https://youtu.be/A02SRdyoshM"><span style="font-size:18px; color:#00A4CB">Class 7 Recording</span></a> <a style="float:right" class="" href="https://youtu.be/A02SRdyoshM"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/play_icon.png"></a></div> 
+										<hr><div><a class="" href="http://gktcs.in/GLMS/public/static/Hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Module 7 - Presentation</span></a> <a style="float:right" class="" href="http://gktcs.in/GLMS/public/static/Hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/view_icon.png"></a></div>
+										<hr><div><a class="" href="/hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Module 7 - Assignment</span></a> <a style="float:right" class="" href="/hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+										<hr><div><a class="" href="/hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Module 7 - Assignment Solution</span></a> <a style="float:right" class="" href="/hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+										<hr><div><a class="" href="/hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Pre-work for Module 8</span></a> <a style="float:right" class="" href="/hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div><hr>
+									</div>
+							  <h4 class="circ" style="margin-top:20px;">Module 8: Advanced HBase</h4>
+									<div style="padding:10px;">
+										<p><b>Learning Objectives - </b>This module will cover Advanced HBase concepts. We will see demos on Bulk Loading , Filters. You will also learn what Zookeeper is all about, how it helps in monitoring a cluster, why HBase uses Zookeeper. </p>
+										<p><b>Topics - </b>HBase Data Model, HBase Shell, HBase Client API, Data Loading Techniques, ZooKeeper Data Model, Zookeeper Service, Zookeeper, Demos on Bulk Loading, Getting and Inserting Data, Filters in HBase.</p>
+										<hr><div><a class="bla-2" href="https://youtu.be/A02SRdyoshM"><span style="font-size:18px; color:#00A4CB">Class 8 Recording</span></a> <a style="float:right" class="" href="https://youtu.be/A02SRdyoshM"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/play_icon.png"></a></div> 
+										<hr><div><a class="" href="http://gktcs.in/GLMS/public/static/Hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Module 8 - Presentation</span></a> <a style="float:right" class="" href="http://gktcs.in/GLMS/public/static/Hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/view_icon.png"></a></div>
+										<hr><div><a class="" href="/hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Module 8 - Assignment</span></a> <a style="float:right" class="" href="/hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+										<hr><div><a class="" href="/hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Module 8 - Assignment Solution</span></a> <a style="float:right" class="" href="/hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+										<hr><div><a class="" href="/hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Pre-work for Module 9</span></a> <a style="float:right" class="" href="/hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div><hr>
+									</div>
+							  <h4 class="circ" style="margin-top:20px;">Module 9: Processing Distributed Data with Apache Spark</h4>
+									<div style="padding:10px;">
+										<p><b>Learning Objectives - </b>In this module you will learn Spark ecosystem and its components, how scala is used in Spark, SparkContext. You will learn how to work in RDD in Spark. Demo will be there on running application on Spark Cluster, Comparing performance of MapReduce and Spark.  </p>
+										<p><b>Topics - </b>What is Apache Spark, Spark Ecosystem, Spark Components, History of Spark and Spark Versions/Releases, Spark a Polyglot, What is Scala?, Why Scala?, SparkContext, RDD. </p>
+										<hr><div><a class="bla-2" href="https://youtu.be/A02SRdyoshM"><span style="font-size:18px; color:#00A4CB">Class 9 Recording</span></a> <a style="float:right" class="" href="https://youtu.be/A02SRdyoshM"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/play_icon.png"></a></div> 
+										<hr><div><a class="" href="http://gktcs.in/GLMS/public/static/Hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Module 9 - Presentation</span></a> <a style="float:right" class="" href="http://gktcs.in/GLMS/public/static/Hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/view_icon.png"></a></div>
+										<hr><div><a class="" href="/hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Module 9 - Assignment</span></a> <a style="float:right" class="" href="/hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+										<hr><div><a class="" href="/hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Module 9 - Assignment Solution</span></a> <a style="float:right" class="" href="/hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+										<hr><div><a class="" href="/hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Pre-work for Module 10</span></a> <a style="float:right" class="" href="/hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div><hr>
+									</div>
+							  <h4 class="circ" style="margin-top:20px;">Module 10: Oozie and Hadoop Project</h4>
+									<div style="padding:10px;">
+										<p><b>Learning Objectives - </b>In this module, you will understand working of multiple Hadoop ecosystem components together in a Hadoop implementation to solve Big Data problems. We will discuss multiple data sets and specifications of the project. This module will also cover Flume & Sqoop demo, Apache Oozie Workflow Scheduler for Hadoop Jobs, and Hadoop Talend integration. </p>
+										<p><b>Topics - </b>Flume and Sqoop Demo, Oozie, Oozie Components, Oozie Workflow, Scheduling with Oozie, Demo on Oozie Workflow, Oozie Co-ordinator, Oozie Commands, Oozie Web Console, Oozie for MapReduce, PIG, Hive, and Sqoop, Combine flow of MR, PIG, Hive in Oozie, Hadoop Project Demo, Hadoop Integration with Talend.</p>
+										<hr><div><a class="bla-2" href="https://youtu.be/A02SRdyoshM"><span style="font-size:18px; color:#00A4CB">Class 10 Recording</span></a> <a style="float:right" class="" href="https://youtu.be/A02SRdyoshM"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/play_icon.png"></a></div> 
+										<hr><div><a class="" href="http://gktcs.in/GLMS/public/static/Hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Module 10 - Presentation</span></a> <a style="float:right" class="" href="http://gktcs.in/GLMS/public/static/Hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/view_icon.png"></a></div>
+										<hr><div><a class="" href="/hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Module 10 - Assignment</span></a> <a style="float:right" class="" href="/hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+										<hr><div><a class="" href="/hadoop.pdf"><span style="font-size:18px; color:#00A4CB">Module 10 - Assignment Solution</span></a> <a style="float:right" class="" href="/hadoop.pdf"><img height="20px" src="http://gktcs.in/GLMS/public/static/images/download_icon.png"></a></div>
+								</div>
+							  </div>
+							  <!-- END Custom show and hide -->
+							</div>s
+						      
+						</div>
+							
+						
+				</div>				
+			
+			</div>
+			<div class="well" >		
+			<div class=" row" id="course_wrap_row">
+				<h2 style="text-align:center; color:#0464BB;margin-bottom: 20px;margin-top: 30px;">Recommended Courses</h2>
+				<div class="col-md-3 col-sm-6 course_wrap">
+				<a href="{% url 'python' %}">
+					<div class="course_inner">
+						<div>
+							<img class="img-responsive" src="http://gktcs.in/GLMS/public/static/images/Pyt1.png"/>
+						</div>
+						<h3>Mastering Python</h3>
+						<p>100 Learners</p>
+						<p>Jan 16 Onwards</p>
+						<h3><b style="padding-bottom:5px;"> ?16000</b></h3>
+					</div>
+				</a>	
+				</div>
+				<div class="col-md-3 col-sm-6 course_wrap">
+				<a href="{% url 'rubyonrails' %}">
+					<div class="course_inner">
+						<div>
+							<img style="width: 100%" class="img-responsive" src="http://gktcs.in/GLMS/public/static/images/ruby.jpg"/>
+						</div>
+						<h3>Ruby On Rails</h3>
+						<p>100 Learners</p>
+						<p>Jan 16 Onwards</p>
+						<h3><b style="padding-bottom:5px;"> ?15000</b></h3>
+					</div>
+				</a>	
+				</div>
+				<div class="col-md-3 col-sm-6 course_wrap">
+				<a href="{% url 'hadoop' %}">
+					<div class="course_inner">
+						<div>
+							<img class="img-responsive" src="http://gktcs.in/GLMS/public/static/images/hadoop1.jpg"/>
+						</div>
+						<h3>Hadoop</h3>
+						<p>100 Learners</p>
+						<p>Jan 16 Onwards</p>
+						<h3><b style="padding-bottom:5px;"> ?16000</b></h3>
+					</div>
+				</a>	
+				</div>
+				<div class="col-md-3 col-sm-6 course_wrap">
+				<a href="{% url 'datascience' %}">
+					<div class="course_inner">
+						<div>
+							<img style="width: 100%" class="img-responsive" src="http://gktcs.in/GLMS/public/static/images/datasci1.jpg"/>
+						</div>
+						<h3>Data Science</h3>
+						<p>100 Learners</p>
+						<p>Jan 16 Onwards</p>
+						<h3><b style="padding-bottom:5px;"> ?15000</b></h3>
+					</div>
+				</a>	
+				</div>
+			</div>
+			</div>
+					
+	</div>
+	
+</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,404 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+<div style="background-color:#337ab7; padding:10px" class="row"><!––<img src="python_banner.jpg" class="img-fluid" style="width:100%" alt="Responsive image">
+<div class="col-md-5 hidden-sm hidden-xs" style="padding-left:30px">	
+	<iframe width="420" height="230" src="https://www.youtube.com/embed/iVWmbStE1MM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+<div class="hidden-lg hidden-md col-sm-12" style="padding-left:30px">	
+	<iframe width="315" height="173" src="https://www.youtube.com/embed/iVWmbStE1MM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+<div class="col-md-7">
+	<h1 style="color:#fff; text-shadow: 2px 2px #212020;">Ansible</h1><h3 style="color:#fff;text-shadow: 2px 2px #212020;">Ansible is an open source automation platform. It is very, very simple to setup and yet powerful. Ansible can help you with configuration management, application deployment, task automation</h3>
+</div>
+</div>
+</div>
+<div class="container" style="background-color: #e8e8e8; padding-bottom: 15px;">
+<div class="row">
+<div class="col-md-6">  
+  <h3>Ansible Course objectives</h3>
+  Some of the key skills you will gain upon completion of this program include:
+                     
+<ul style="padding-left: 15px">  
+<li>Install and setup Ansible</li>
+<li>Learn to Execute ad-hoc commands against servers using Ansible</li>
+<li>Learn the fundamentals of Ansible</li>
+<li>Learn to Optimize Ansible playbooks to reduce playbook execution time.</li>
+<li>Comprehend loops, blocks, strategies, and galaxies</li>
+<li>Understand the use of Ansible in Cloud domain</li>
+<li>Learn to Test and troubleshoot Ansible playbook execution.</li>
+<div id="objlist" class="panel-collapse collapse">
+<li>Learn to write operational playbooks to check cluster status and perform a cluster restart.</li>
+<li>Learn to write Ansible configuration playbooks to deploy a 3-tier web application</li>
+</div>
+<a role="button" style="color:#337ab7" data-toggle="collapse" data-parent="" href="#objlist" aria-expanded="true" aria-controls="objlist">
+    More...
+</a>
+</ul>
+</div>
+<div class="col-md-6">
+<h3>Prerequisite</h3>
+<p>
+<ul style="padding-left: 15px">
+<li>• Linux or Mac OS X computer, or access to at lease one Linux virtual machine for installing Ansible.</li>
+<li>• Prior exposure to Linux administrator skills</li>
+<li>• A terminal and ssh client for running Ansible against target hosts.</li>
+</ul>
+</p>
+</div> 
+</div>
+<div>
+<p class=""><a target="_blank" href="http://gktcs.com/GLMS/public/static/pdf/ansible_content.pdf" class = "btn btn-primary"><i class="fa fa-download"></i> Download Course Content [3 Days] (PDF)</a></p>
+</div>
+<div>
+  <ul class="nav nav-pills rwo" style="background-color:#fafafa">
+    <li class="active col-md-12 col-xs-12" style="padding:0px; margin:0px; text-align: center"><a data-toggle="pill" href="#basicpy"><h4>Ansible: Modules </h4></a></li>
+  </ul>
+	<form action="." method="post" style="">{% csrf_token %}
+	<div class="tab-content"> 
+    <div id="basicpy" class="tab-pane fade in active">
+      <br/>
+		<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingOne">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="1.Introduction to Ansible">
+						<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							1.Introduction to Ansible
+						</a>
+					</h4>
+				</div>
+				<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+					<div class="panel-body">
+						<ul>
+							<li>How Ansible Works?</li>
+							<li>Push-Based</li>
+							<li>Ansible Scales Down</li>
+							<li>Built-in Modules</li>
+							<li>Prerequisites for Ansible</li>
+							</ul>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingTwo">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="2.Installing Ansible and Managing Servers">
+						<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							2.Installing Ansible and Managing Servers
+						</a>
+					</h4>
+				</div>
+				<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+					<div class="panel-body">
+						<ul>
+							<li>Setting Up a Server for Testing</li>
+							<li>Using Vagrant to Set Up a Test Server</li>
+							<li>Telling Ansible About Your Test Server</li>
+							<li>Simplifying with the ansible.cfg File</li>
+						</ul>					
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingThree">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="3.Basic: Running Commands">
+						<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+							3.Basic: Running Commands
+						</a>
+					</h4>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="heading4">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="4.Modules">
+						<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+							4.Modules
+						</a>
+					</h4>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading5">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="5.Playbooks: A Beginning">
+						<a data-toggle="collapse" href="#collapse5" data-parent="#accordion">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							5.Playbooks: A Beginning
+						</a>
+					</h4>
+				</div>
+				<div id="collapse5" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Specifying an nginx Config File</li>
+							<li>Creating a Custom Homepage</li>
+							<li>Types of Apply FunctionCreating a Webservers Groups</li>
+							<li>Running the Playbook</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading6">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="6.Handlers">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
+							6.Handlers
+						</a>
+					</h4>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading7">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="7.Playbooks Are YAML">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse7">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							7.Playbooks Are YAML
+						</a>
+					</h4>
+				</div>
+				<div id="collapse7" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Start of File</li>
+							<li>Comments</li>
+							<li>Strings</li>
+							<li>Booleans</li>
+							<li>Lists</li>
+							<li>Dictionaries</li>
+							<li>Line Folding</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading8">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="8.Anatomy of a Playbook">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse8">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							8.Anatomy of a Playbook
+						</a>
+					</h4>
+				</div>
+				<div id="collapse8" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Plays</li>
+							<li>Tasks</li>
+							<li>Modules</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading9">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="9.TLS Support">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse9">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							9.TLS Support
+						</a>
+					</h4>
+				</div>
+				<div id="collapse9" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Generating TLS certificate</li>
+							<li>Variables</li>
+							<li>Generating the Nginx Configuration Template</li>
+							<li>Handlers</li>
+							<li>Running the Playbook</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading10">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="10.Inventory: Describing Your Servers.">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse10">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							10.Inventory: Describing Your Servers.
+						</a>
+					</h4>
+				</div>
+				<div id="collapse10" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>The Inventory File</li>
+							<li>Preliminaries: Multiple Vagrant Machines</li>
+							<li>Behavioral Inventory Parameters</li>
+							<li>Groups and Groups and Groups</li>
+							<li>Aliases and Ports</li>
+							<li>Groups of Groups</li>
+							</ul>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading11">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="11.Dynamic Inventory">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse11">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							11.Dynamic Inventory
+						</a>
+					</h4>
+				</div>
+				<div id="collapse11" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>The Interface for a Dynamic Inventory Script Writing a Dynamic Inventory Script Pre-Existing Inventory Scripts</li>
+							<li>Breaking Out the Inventory into Multiple Files Adding Entries at Runtime with add_host and group_by</li>
+							<li>add_host group_by</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading12">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="12.Variables and Facts.">
+						<a data-toggle="collapse" data-parent="#interpy" href="#collapse12">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							12.Variables and Facts.
+						</a>
+					</h4>
+				</div>
+				<div id="collapse12" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Defining Variables in Playbooks</li>
+							<li>Viewing the Values of Variables</li>
+							<li>Registering Variables Facts</li>
+							<li>Viewing All Facts Associated with a Server Viewing a Subset of Facts Any Module Can Return Facts Local Facts</li>
+							<li>Using set_fact to Define a New Variable Built-in Variables</li>
+							<li>hostvars inventory_hostname Groups</li>
+							<li>Setting Variables on the Command Line Precedence</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading13">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="13.Introducing Mezzanine">
+						<a data-toggle="collapse" data-parent="#interpy" href="#collapse13">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							13.Introducing Mezzanine
+						</a>
+					</h4>
+				</div>
+				<div id="collapse13" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Why Deploying to Production Is Complicated PostgreSQL: The Database Gunicorn: The Application Server Nginx: The Web Server</li>
+							<li>Supervisor: The Process Manager</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading14">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="14.Deploying Mezzanine with Ansible">
+						<a data-toggle="collapse" data-parent="#interpy" href="#collapse14">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							14.Deploying Mezzanine with Ansible
+						</a>
+					</h4>
+				</div>
+				<div id="collapse14" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Listing Tasks in a Playbook Organization of Deployed Files Variables and Secret Variables Using Iteration (with_items) to Install Multiple Packages Adding the Sudo Clause to a Task</li>
+							<li>Updating the Apt Cache Checking Out the Project Using Git Installing Mezzanine and Other Packages into a virtualenv Complex Arguments in Tasks: A Brief Digression</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading15">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="15.Creating the Database and Database User">
+						<a data-toggle="collapse" data-parent="#interpy" href="#collapse15">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							15.Creating the Database and Database User
+						</a>
+					</h4>
+				</div>
+				<div id="collapse15" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Generating the local_settings.py File from a Template</li>
+							<li>Running django-manage Commands</li>
+							<li>Running Custom Python Scripts in the Context of the Application</li>
+							<li>Setting Service Configuration Files</li>
+							<li>Enabling the Nginx Configuration</li>
+							<li>Installing TLS Certificates</li>
+							<li>Installing Twitter Cron Job</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading16">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="16.The Full Playbook">
+						<a data-toggle="collapse" data-parent="#interpy" href="#collapse16">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							16.The Full Playbook
+						</a>
+					</h4>
+				</div>
+				<div id="collapse16" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Running the Playbook Against a Vagrant Machine</li>
+							<li>Deploying Mezzanine on Multiple Machines</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading17">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="17.Lab Exercise using Django and Mezzanine.">
+						<a data-toggle="collapse" data-parent="#interpy" href="#collapse17">
+							17.Lab Exercise using Django and Mezzanine.
+						</a>
+					</h4>
+				</div>
+			</div>
+		</div><!-- panel-group -->	
+    </div>
+  </div>
+	<input type = "submit" class="btn btn-primary" value= "Submit Choices" style = "">
+	</form>
+</div>	
+</div>
+<script>
+function toggleIcon(e) {
+    $(e.target)
+        .prev('.panel-heading')
+        .find(".more-less")
+        .toggleClass('glyphicon-plus glyphicon-minus');
+}
+$('.panel-group').on('hidden.bs.collapse', toggleIcon);
+$('.panel-group').on('shown.bs.collapse', toggleIcon);
+</script>
+{% endblock %}

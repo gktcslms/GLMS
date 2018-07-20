@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+<div style="background-color:#337ab7; padding:10px" class="row"><!––<img src="python_banner.jpg" class="img-fluid" style="width:100%" alt="Responsive image">
+<div class="col-md-5 hidden-sm hidden-xs" style="padding-left:30px">	
+	<iframe width="420" height="230" src="https://www.youtube.com/embed/OOGFxVzW35w" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+<div class="hidden-lg hidden-md col-sm-12" style="padding-left:30px">	
+	<iframe width="315" height="173" src="https://www.youtube.com/embed/OOGFxVzW35w" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+<div class="col-md-7">
+	<h1 style="color:#fff; text-shadow: 2px 2px #212020;">Ruby and DevOps</h1><h3 style="color:#fff;text-shadow: 2px 2px #212020;">Ruby is a dynamic, reflective, object-oriented programming language. DevOps is a software engineering culture and practice that aims at unifying software development and software operation.</h3>
+</div>
+</div>
+</div>
+<div class="container" style="background-color: #e8e8e8; padding-bottom: 15px;">
+<div class="row">
+<div class="col-md-6">  
+  <h3>Ruby and DevOps Course objectives</h3>
+  Some of the key skills you will gain upon completion of this program include:
+                     
+<ul style="padding-left: 15px">  
+<li>Configure and install Ruby</li>
+<li>Learn the basics of the Ruby language.</li>
+<li>Learn DevOps Concepts</li>
+<li>Learn Infrastructure Management using Chef</li>
+</ul>
+</div>
+<div class="col-md-6">
+<h3>Prerequisite</h3>
+<p>
+<ul style="padding-left: 15px">
+<li>• The participants taking Ruby and ChefTraining course must be familiar with the general principles of object oriented programming (OOP).</li>
+<li>• Familiarity with IT environments & server administration for at least 6 months would be beneficial.</li>
+</ul>
+</p>
+</div> 
+</div>
+<div>
+<p class=""><a target="_blank" href="http://gktcs.com/GLMS/public/static/pdf/ruby_devops_content.pdf" class = "btn btn-primary"><i class="fa fa-download"></i> Download Course Content [3 Days] (PDF)</a></p>
+</div>
+<div>
+  <ul class="nav nav-pills rwo" style="background-color:#fafafa">
+    <li class="active col-md-12 col-xs-12" style="padding:0px; margin:0px; text-align: center"><a data-toggle="pill" href="#basicpy"><h4>Ruby and DevOps: Modules </h4></a></li>
+  </ul>
+	<form action="." method="post" style="">{% csrf_token %}
+	<div class="tab-content"> 
+    <div id="basicpy" class="tab-pane fade in active">
+      <br/>
+		<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingOne">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="1.Introduction to Ruby and Data Structure">
+						<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							1.Introduction to Ruby and Data Structure
+						</a>
+					</h4>
+				</div>
+				<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+					<div class="panel-body">
+						<ul>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingTwo">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="2.Object Oriented Programming and File Handling">
+						<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							2.Object Oriented Programming and File Handling
+						</a>
+					</h4>
+				</div>
+				<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+					<div class="panel-body">
+						<ul>
+						</ul>					
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingThree">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="3.Introduction to DevOps">
+						<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							3.Introduction to DevOps
+						</a>
+					</h4>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="heading4">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="4.Introduction to DevOps & Chef">
+						<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							4.Introduction to DevOps & Chef
+						</a>
+					</h4>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading5">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="5.Chef Cookbooks for Infrastructure Automation">
+						<a data-toggle="collapse" href="#collapse5" data-parent="#accordion">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							5.Chef Cookbooks for Infrastructure Automation
+						</a>
+					</h4>
+				</div>
+				<div id="collapse5" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div><!-- panel-group -->	
+    </div>
+  </div>
+	<input type = "submit" class="btn btn-primary" value= "Submit Choices" style = "">
+	</form>
+</div>	
+</div>
+<script>
+function toggleIcon(e) {
+    $(e.target)
+        .prev('.panel-heading')
+        .find(".more-less")
+        .toggleClass('glyphicon-plus glyphicon-minus');
+}
+$('.panel-group').on('hidden.bs.collapse', toggleIcon);
+$('.panel-group').on('shown.bs.collapse', toggleIcon);
+</script>
+{% endblock %}

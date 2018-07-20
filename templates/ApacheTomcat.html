@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+{% extends "index.html" %}
+{% load staticfiles %}
+{% block home %}
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="http://api.html5media.info/1.1.5/html5media.min.js"></script>
+    
+
+      {% block flash%} {% endblock %}
+    
+    <style type="text/css">
+        body {
+            background: #fff;
+            font-family: verdana;
+            padding-top: 0px;
+            background-color: #027fcf;
+        }
+        #vtab {
+            margin: 10;
+            width: 700px;
+            height: 100%;
+        }
+        #vtab > ul > li {
+            width: 150px;
+            height: 80px;
+            background-color: #fff !important;
+            list-style-type: none;
+            display: block;
+            text-align: center;
+            margin: auto;
+            padding-bottom: 10px;
+            border: 1px solid #fff;
+            position: relative;
+            border-right: none;
+            opacity: .3;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+            filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+        }
+        #vtab > ul > li.home {
+            background: url('http://gktcs.in/GLMS/public/static/images/about1.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.login {
+            background: url('http://gktcs.in/GLMS/public/static/images/demo4.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.support {
+            background: url('http://gktcs.in/GLMS/public/static/images/content.jpg') no-repeat center center;
+        }
+         #vtab > ul > li.support1 {
+            background: url('http://gktcs.in/GLMS/public/static/images/batches.jpg') no-repeat center center;
+        }
+        
+        #vtab > ul > li.support2 {
+            background: url('http://gktcs.in/GLMS/public/static/images/interview.jpg') no-repeat center center;
+        }
+         #vtab > ul > li.support3 {
+            background: url('http://gktcs.in/GLMS/public/static/images/training.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.support4 {
+            background: url('http://gktcs.in/GLMS/public/static/images/FAQ.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.support5 {
+            background: url('http://gktcs.in/GLMS/public/static/images/testi.jpg') no-repeat center center;
+        }
+         #vtab > ul > li.support6 {
+            background: url('http://gktcs.in/GLMS/public/static/images/certification.jpg') no-repeat center center;
+        }
+        
+        
+        #vtab > ul > li.selected {
+            opacity: 1;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+            filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+            border: 1px solid #ddd;
+            border-right: none;
+            z-index: 10;
+            background-color: #fafafa !important;
+            position: relative;
+        }
+        #vtab > ul {
+            float: left;
+            width: 110px;
+            text-align: left;
+            display: block;
+            margin: auto 0;
+            padding: 0;
+            position: relative;
+            top: 30px;
+        }
+        #vtab > div {
+            background-color: #fafafa;
+            margin-left:150px;
+            border: 1px solid #ddd;
+            min-height: 700px;
+            padding: 12px;
+            position: relative;
+            z-index: 9;
+            -moz-border-radius: 20px;
+        }
+        #vtab > div > h4 {
+            color: #800;
+            font-size: 1.2em;
+            border-bottom: 1px dotted #800;
+            padding-top: 5px;
+            margin-top: 0;
+        }
+        #loginForm label {
+            float: left;
+            width: 100px;
+            text-align: right;
+            clear: left;
+            margin-right: 15px;
+        }
+        #loginForm fieldset {
+            border: none;
+        }
+        #loginForm fieldset > div {
+            padding-top: 3px;
+            padding-bottom: 3px;
+        }
+        #loginForm #login {
+            margin-left: 115px;
+        }
+        
+     a {text-decoration: none}
+    </style>
+
+    <script type="text/javascript">
+        $(function() {
+            var $items = $('#vtab>ul>li');
+            $items.mouseover(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('#vtab>div').hide().eq(index).show();
+            }).eq(0).mouseover();
+        });
+    </script>
+
+</head>
+<body>
+
+		<font color="#366D9C" size=6px style="font-family: Georgia; padding-left: 350px"><b>Apache Tomcat </b></font>
+	
+	<table width="980" height="700"> 
+		<tr> 
+			<td width='100'>
+		
+    <div id="vtab">
+        <ul>
+            <li class="home selected"></li>
+            <li class="login"></li>
+            <li class="support"></li>
+            <li class="support1"></li>
+            <li class="support2"></li>
+            <li class="support3"></li>
+            <li class="support4"></li>
+            <li class="support5"></li>
+            <li class="support6"></li>
+        </ul>
+        <div>
+        	<h4>About Course</h4>
+        	<br/>
+           <table align="justify">
+           	<tr align="justify">
+           		<td valign="top">
+           			<img src='http://gktcs.in/GLMS/public/static/images/apache.jpg' width='100' height="80" />
+           		</td>
+           		<td>
+           			
+<b>Course Duration:</b>45hrs<br/>
+<br/>
+<b>Course Description:</b><br/>
+<br/>
+Broadly the Apache Tomcat can be called as an open-source web server and servlet container developed by the Apache Software Foundation (ASF). Tomcat implements several Java EE specifications including Java Servlet, JavaServer Pages 
+<br>
+The course will include detailed study of Apache Tomcat and their related topics. 
+<br/>
+<b>Who Should Attend:</b>
+<br/>
+<br/>
+This course is intended for experienced HTML developers with some JavaScript experience.
+<br/><br/>
+<b>Benefits of Attendance:</b>
+<br/>
+<br/>
+Upon completion of this course, students will be able to:<br/>
+<br/>
+<ul>
+<li>Basic idea about what actually apache tomcat is?</li><br/>
+<li>How to impliment their knowledge of apache tomcat</li><br/>
+<li>Get an idea about the differences of multiple servers</li><br/>
+<li>Get an idea about what apache does and what  is the work of tomcat</li><br/>
+<li>Get the knowledge about how to use apache tomcat when there is need to run light web sites</li>
+
+</ul>
+<br/>
+<br/>
+<b>Prerequisites:</b><br/>
+<br/>
+The bacis thing to learn apache tomcat, students should known to the java. Students must be experienced with HTML and have experience with CSS and JavaScript. Prior knowledge of JSON, DOM, and Ajax is helpful, but not required.
+           		</td>
+           	</tr>
+           	
+           	
+           </table>
+            
+        </div>     
+         <div>
+         	<h4>Sample Demo</h4>
+         	<br/>
+         	<div>
+   <video id="abc" width="500px" height="360px" autoplay controls > <source src="{% static 'C:/GLMS/static/abc.mp4' %}" type="video/mp4"> </source>
+     
+        </video></div>
+
+</div>
+           <div>
+            <h4>
+              Content </h4>
+              <br/>
+<h3> HTML5 Page Structure</h3><br/>
+	
+<li>Page Structure</li>
+<li>New HTML5 Structural Tags</li>
+<li>Page Simplification</li>
+<br/>
+
+<h3>Sections and Articles</h3><br/>
+
+<li>The section Tag</li>
+<li>The article Tag</li>
+<li>Outlining</li>
+<li>Accessibility</li>
+<br/>
+
+<h3>HTML5 Audio and Video</h3><br/>
+
+<li>Supported Media Types</li>
+<li>The audio Element</li>
+<li>The video Element</li>
+<li>Accessibility</li>
+<li>Scripting Media Elements</li>
+<li>Dealing with Non-Supporting Browsers</li>
+<br/>
+
+<h3>HTML5 Forms</h3><br/>
+
+<li>Modernizr</li>
+<li>New Input Types</li>
+<br/>
+
+<h3>HTML5 New Form Attributes</h3><br/>
+
+<li>autocomplete</li>
+<li>novalidate</li>
+<li>HTML5 New Form Field Attributes</li>
+<li>required</li>
+<li>placeholder</li>
+<li>autofocus</li>
+<li>autocomplete</li>
+<li>form</li>
+<li>pattern</li>
+<br/>
+
+<h3>New Form Elements</h3><br/>
+
+<li>datalist</li>
+<li>progress and meter</li>
+<br/>
+
+<h3>HTML5 Web Storage</h3>
+<br/>
+<li>Overview of HTML5 Web Storage</li>
+<li>Web Storage</li>
+<li>Other Storage Methods</li>
+
+<br/>
+<h3>HTML5 Canvas</h3>
+<br/>
+<li>Getting Started with Canvas</li>
+<li>Drawing Lines</li>
+<li>Color and Transparency</li>
+<li>Rectangles</li>
+<li>Circles and Arcs</li>
+<li>Quadratic and Bezier Curves</li>
+<li>Images</li>
+<li>Text</li>
+<br/>
+
+<h3>Integrated APIs</h3><br/>
+
+<li>Offline Application API</li>
+<li>Drag and Drop API</li>
+        </div>
+           <div>
+        
+ <h4>Upcoming Batches</h4>
+ <br/>
+
+<div class="pricing_table">
+
+<table width=500px>
+		<tr width=500px ></tr>
+		<b><th width=280 bgcolor="#333333" style="color:#FFFFFF;">Start date</th>
+			
+		<th width=95 bgcolor="#333333" style="color:#FFFFFF;">Duration</th>
+		<th width=700 bgcolor="#333333" style="color:#FFFFFF;">Days</th>
+		<th width=100 bgcolor="#333333" style="color:#FFFFFF;">Time</th>
+		<th width=100 bgcolor="#333333" style="color:#FFFFFF;">Price</th></b>
+		</tr>
+		
+		
+		{% for j in batch %}
+		<tr width=500px>
+			
+<td width=350 bgcolor="#CCCCCC" style="text-align: center"> {{j.Start}}</td>
+<td width=220 bgcolor="#CCCCCC" style="text-align: center">{{j.Duration}}</td>
+<td width=350 bgcolor="#CCCCCC" style="text-align: center">{{j.Days}}</td>
+
+<td width=150 bgcolor="#CCCCCC" style="text-align: center">{{j.Time}}</td>
+<td width=100 bgcolor="#CCCCCC" style="text-align: center">{{j.Price}}/-</td>
+
+		
+		</tr>
+		{% endfor %}
+		
+		
+	</table>	
+
+</div>
+	 <br><br>
+	<br/>
+		
+
+<a href="/Enroll" style="padding-left: 320px; "><img src="http://gktcs.in/GLMS/public/static/images/enroll.png" height=40px width="190px" align="center"/></a>
+        </div>
+        
+           <div align="justify">
+           	<h4>Interview Questions</h4>
+           	<br/>
+           	<br/>
+           	
+           	<b>Question:What is apache tomcat?</b><br/>
+			Apache Tomcat is an open-source web server and servlet container developed by the Apache Software Foundation (ASF). Tomcat implements several Java EE specifications including Java Servlet, JavaServer Pages 
+
+            <br/>
+            <br/>
+            
+            
+            <b>Question: How do you create multiple virtual hosts?</b><br/>
+Ans:  If you want tomcat to accept requests for different hosts e.g. www.myhostname.com then you must<br><br>
+
+<li>Create ${catalina.home}/www/appBase , ${catalina.home}/www/deploy, and ${catalina.home}/conf/Catalina/www.myhostname.com</li><br>
+<li>Add a host entry in the server.xml file </li><br>
+<li>Create the the following file under conf/Catalina/www.myhostname.com/ROOT.xml </li><br>
+<li>Add any parameters specific to this hosts webapp to this context file </li><br>
+<li>Put your war file in ${catalina.home}/www/deploy </li><br>
+<li>When tomcat starts, it finds the host entry, then looks for any context files and will start any apps with a context.</li><br>
+<li>To add more sites just repeat and rinse, all webapps can share the same war file location and appbase.</li>
+<br/>
+<br/>
+
+<b>Question: How will you load properties file?</b><br/>
+Ans: <li>Use a ResourceBundle. See the Java docs for the specifics of how the ResourceBundle class works. Using this method, the properties file must go into the WEB-INF/classes directory or in a jar file contained in the WEB-INF/lib directory.</li><br> 
+<li>Another way is to use the method getResourceAsStream() from the ServletContext class. This allows you update the file without having to reload the webapp as required by the first method. Here is an example code snippet, without any error trapping:</li><br> 
+// Assuming you are in a Servlet extending HttpServlet
+// This will look for a file called "/more/cowbell.properties" relative
+// to your servlet Root Context
+<li>InputStream is=getServletContext().getResourceAsStream("/more/cowbell.properties");</li><br>
+Properties p = new Properties();<br>
+p.load(is);<br>
+is.close();<Br>
+<br/>
+<br/>
+<b>Question: How can I access members of a custom Realm or Principal?</b><br/>
+When you create a custom subclass of RealmBase or GenericPrincipal and attempt to use those classes in your webapp code, you'll probably have problems with ClassCastException. This is because the instance returned by request.getUserPrincipal() is of a class loaded by the server's classloader, and you are trying to access it through you webapp's classloader. While the classes maybe otherwise exactly the same, different (sibling) classloaders makes them different classes.
+<br/>
+<br/>
+
+<b>Question:  How do I use DataSources with Tomcat?</b><br/>
+ Ans:<li>When developing J2EE web applications, the task of database connection management can be daunting. Best practice involves using a J2EE DataSource to provide connection pooling, but configuring DataSources in web application servers and connecting your application to them is often a cumbersome process and poorly documented.</li><br> 
+<li>The usual procedure requires the application developer to set up a DataSource in the web application server, specifying the driver class, JDBC URL (connect string), username, password, and various pooling options. Then, the developer must reference the DataSource in his application's web.xml configuration file, and then access it properly in his servlet or JSP. Particularly during development, setting all of this up is tedious and error-prone. </li><br>
+
+<li>With Tomcat 5.5, the process is vastly simplified. Tomcat allows you to configure DataSources for your J2EE web application in a context.xml file that is stored in your web application project. You don't have to mess with configuring the DataSource separately in the Tomcat server.xml, or referencing it in your application's web.xml file.  </li><br>
+<li>Install the JDBC Driver Install the .jar file(s) containing the JDBC driver in Tomcat's common/lib folder. You do not need to put them in your application's WEB-INF/lib folder. When working with J2EE DataSources, the web application server manages connections for your application. </li><br>
+<li>Create META-INF/context.xml In the root of your web app directory structure, create a folder named META-INF (all caps). Inside that folder, create a file named context.xml that contains a Resource </li>
+
+<br/>
+<br/>
+
+
+         	  	
+        </div>
+         <div align="justify">
+         	<h4>
+                Training Mode</h4>
+                <br/>
+   
+         	
+         	<table width=620><tr align="justify">
+         		<td width="330" align="justify">
+         		<br/>
+         	
+         	<b>Corporate Training :</b><br/>
+         	
+Corporate Training Solutions
+
+Corporate training is the act of grooming the workforce in order to make them capable of handling modern business challenges by improving their approach and productivity and thus, making effective utilization of resources. We at GKTCS work hand in hand with Industry on various fronts. GKTCS’s business cycle is aligned very closely to Industry needs and structured to fulfil the industry needs in terms of Training and Recruitment.
+
+We always believe our customers speak for our services based on their rich experience with our kind of services.
+</td>
+<td align="right">
+	<img src="http://gktcs.in/GLMS/public/static/images/corporate.jpg"  width="200" height="150"/> 
+</td>
+</tr>
+<tr>
+	<td>
+		<br/>
+<b>Retail Training :</b>
+<br/>
+GKTCS Innovations has a set of best trainers who are constantly engaged in spreading technical and non technical knowledge to individual who are seeking an opportunity in their respective industries and would like to straight away face the challenges of the continuously improving and changing world.
+
+The retail Training services provided by GKTCS Innovations are designed as per the needs of corporate and also as per the guidelines provided by them.
+ </td>
+ <td align="right">
+	<img src="http://gktcs.in/GLMS/public/static/images/retail.jpg"  width="200" height="150"/>
+</td>
+ </tr>
+ <tr>    <td>   
+ 	<br/>	
+ <b>Online Training </b>
+ <br/>
+ GKTCS offers Online Training , so you get trained from where you are from our experienced trainers, In the weekdays as well as weekends by the Real Time Professionals. The program is designed to provide rich learning experience for students using Internet.         	
+      </td>   
+      <td align="right">
+      	<img src="http://gktcs.in/GLMS/public/static/images/online.jpg"  width="200" height="150"/>
+      </td>  
+      </tr>	
+    </table>     	
+         	
+         </div>
+		
+
+           <div align="justify">
+           	<h4>
+                FAQs</h4>
+           	
+           	<br/>
+    
+          <b> I have a bug, what do I do?</b><br/>
+Unless you have the source code reference in Tomcat which is wrong, it may not be a bug. E-mail the Tomcat user list and confirm its a bug. Also read this first from the tomcat site about reporting a bug.
+<br/>
+<br/>
+<b>Why does feature ABC work in Servlet Container XYZ but not in Tomcat?
+</b><br/>
+There could be a good chance that the other servlet container could be implementing the spec wrong.
+<br/>
+<br/>
+
+<b>What is the default character encoding of the request or response body?
+
+</b><br/>
+If a character encoding is not specified, the Servlet specification requires that an encoding of ISO-8859-1 is used. The character encoding for the body of an HTTP message (request or response) is specified in the Content-Type header field. An example of such a header is Content-Type: text/html; charset=ISO-8859-1 which explicitly states that the default (ISO-8859-1) is being used.
+<br/>
+<br/>
+<b>How do I change how GET parameters are interpreted?</b><br/>
+Tomcat will use ISO-8859-1 as the default character encoding of the entire URL, including the query string ("GET parameters") (though see Tomcat 8 notice below).
+
+There are two ways to specify how GET parameters are interpreted:<br><BR>
+
+<li>Set the URIEncoding attribute on the <pre><Connector></pre> element in server.xml to something specific (e.g. URIEncoding="UTF-8").</li><br>
+<li>Set the useBodyEncodingForURI attribute on the <pre><Connector></pre> element in server.xml to true. This will cause the Connector to use the request body's encoding for GET parameters.</li><br>
+	
+<br/>
+<br/>
+<b>How do I change how POST parameters are interpreted?</b><br/>
+POST requests should specify the encoding of the parameters and values they send. Since many clients fail to set an explicit encoding, the default is used (ISO-8859-1). In many cases this is not the preferred interpretation so one can employ a javax.servlet.Filter to set request encodings. Writing such a filter is trivial.
+<br/>
+<br/>
+<b>Can I configure a cluster at the Engine level?</b><br/>
+Yes, beginning with Tomcat 5.5.10 you can configure clusters at both the Engine and Host levels. This helps support clustering for web hosting companies.
+<br/>
+<br/>
+<b>How do I turn on transport logging?</b><br/>
+* Use "org.apache.catalina.cluster" as logger category and switch to info, debug or trace as log level. * Configure the clusterLog attribute (logging category) to get and send and receive message log.
+<br/>
+<br/>
+<b>Can I pause the message sending?</b><br/>
+Yes, the async senders buffer the messages, but make sure the membership ping is active. With fastasyncqueue mode you can limit the max queue size.
+<br/>
+<br/>
+<b>Can I add more senders (pooled mode)?</b><br/>
+Yes, with sender attribute maxPoolSocketLimit="40" you can have more than the default 25 sockets to transfer more parallel messages.
+<br/>
+<br/>
+<b>What happens when I pull the network cable?</b><br/>
+The other members will remove the instance from the cluster, but when you insert the cable again, the Tomcat instance might have completely flipped out. This is because the OS might start using 100% of the CPU when a multicast message is sent. There has not yet been a good solution for this, I will let you know when I have come up with one. (pero: I test this and I works correct with java 5 and exists when you use the cluster with JDK 1.4.x)
+<br/>
+<br/>
+<b>Is it safe to use JDBC-ODBC bridge in production environment?
+</b><br/>
+No, do not use JDBC-ODBC bridge bundled with Sun's JDK with Tomcat. It was never meant for a production server environment. If you ask a question about it, everyone will tell you to not use it. If you do need to use ODBC, there are 3rd party drivers which do a pretty good job at being thread safe.
+<br/>
+<br/>
+<b>How to use Oracle thin driver?
+</b><br/>
+If you use the oracle thin driver, be sure to rename it to a jar file from a zip file. Tomcat only auto-magically loads files ending in .jar placed in a lib directory. It ignores all other file extensions.
+<br/>
+<br/>
+<b>How to use JDBC 3 driver with Tomcat 8 / DBCP 2?
+</b><br/>
+One of the connection pool implementations in Tomcat 8 is DBCP 2, and DBCP 2 calls Connection.isValid(int) method when no validationQuery is specified. IsValid(int) method is introduced with JDBC 4. If you must use JDBC 3 driver with Tomcat 8 / DBCP 2, make sure that you specify validationQuery attribute in pool configuration.
+<br/>
+<br/>
+ 
+        </div>
+           <div>
+        <h4>Testimonials</h4> 
+           
+        </div>
+   
+        <div align="justify">
+            <h4>
+                Certification</h4>
+                <br/>
+           
+             At the end of the course we provide  Certification.  <br/><br/>
+           <b>Process for Certification :</b>
+          
+  <li>You will receive a real time project Problem Statement along with a dataset to work. </li>
+  <li>After complition of your project(Reviewed by an Expert),you will be awarded a certificate with a performance-based grading. </li>
+ <li>If your project is not completed on time , you can take extra training for any of your doubts to understand the concepts better and re-attempt the Project free of cost.</li>
+<br/>
+GKTCS will help you at every stage of your learning and our 24/7 expert support team will ensure that you don't get stuck. Once you submit the project, our subject matter experts will review the same and share feedback to optimize it, if required.
+        </div>
+        </div>
+    
+    </td>
+    
+    <td valign="top" width="500">
+  		
+    <table valign="top">
+    	<tr valign="top">
+    		<font color="#366D9C" size=5px style="font-family: Georgia; padding-left:25px"><b>Course Features</b></font>  
+    		<td align="left" valign="top" width="500" height="200">
+    		
+ 
+  <br/>
+ <br/>
+ <li>Expert and qualified trainers</li>
+<li>Practical Project Based Approach</li>
+<li>Regular Assessment & feedback</li>
+<li>Total customized as per the client needs</li> 
+<li>Lifetime Access</li> 
+<li>  24 x 7 Support</li> 
+<li>  Get Certified</li>
+ 
+
+    			
+     		</td>
+     	
+    		
+    		
+    	</tr>
+    	
+    	<tr valign="top">
+    		<td height="20" valign="top" align="center">
+    		
+    		
+    		<font color="#366D9C" size=5px style="font-family: Georgia; padding-left:25px"><b>Placed Candidate</b></font>  
+    			<br/>
+    			<marquee direction="up" scrollamount="4" height="300">
+    			<table>
+    				<tr>
+    	   						
+    					<table>
+    						<tr>
+    							<td valign="top" height="30">
+    								
+    								<img src="http://gktcs.in/GLMS/public/static/images/AhilanShankar.jpg" width="100" height="100"/>
+    							</td>
+    							<td>
+    								<b>Alihan shanakar</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/capegemini.png" width="150" height="80"/> 
+    							</td>
+    						</tr>
+    						
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/sounavdas.jpg" width="100" height="100"/>
+    							</td>
+    							<td>
+    								<b>Sonav Das</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150" height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/ShashankVerma.jpg" width="60" height="80"/>
+    							</td>
+    							<td>
+    								<b>Shashank Verma</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/leoinfotech.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/rasika1.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Rasika</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/renuka.jpg" width="100" height="100"/>
+    							</td>
+    							<td>
+    								<b>Renuka Shirbhate</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/inetsoft.jpg" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/Neha.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Neha Kottarwar</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/GauravKotarwar.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Gaurav Kotarwar</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/leoinfotech.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/PrajaktaSakale.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Prajkta Sakale</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    							<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/SohailShaikh.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Sohail Shaikh</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/leoinfotech.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/ApurvaBhat.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Apurva Bhat</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/AshishSoni.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Ashish Soni</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    					
+    					    						
+    						
+    						
+    						
+    					</table>
+    					
+    						
+    						
+    					</td>
+    		
+    		
+    	</tr>
+    </table>
+    
+    </td>
+    
+    
+    </tr>
+	</table>
+	
+</body>
+</html>
+{% endblock %}

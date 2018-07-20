@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block head %}
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<style>
+.cg{
+	color:#999999;
+	margin-bottom:2px;	
+}
+</style>	
+{% endblock %}
+{% block content %}
+    <div class="well">
+	{% for message in messages %} {{ message }} {% endfor %}
+	<div class="row">
+	<div class="col-md-8 col-md-offset-2">
+	<div class="" style="background-color:#fff; padding:10px">
+		<div style="text-align:center"><h2>BLOGS</h2><br/></div>
+        {% for blog in blogs %} 
+		<div class="row">
+		
+            <div class="col-md-4">
+				<a href="{{ blog.get_absolute_url }}"><img src="{{ blog.image.url }}" class="img-responsive"></a>
+			</div>
+			<div class="col-md-8">
+			<h3 style="margin-top:2px; margin-bottom:2px;"><a href="{{ blog.get_absolute_url }}">{{ blog.title }}</a></h3>
+			<div class="cg">
+				<span title="Written By"><i class="fa fa-user"></i> {{ blog.blogger.user.get_full_name }} &nbsp;</span>
+				<span title="Uploaded On"><i class="fa fa-calendar"></i> {{ blog.created }} &nbsp; </span>
+				<span title="Updated On"><i class="fa fa-refresh"></i> {{ blog.updated }} </span><br/>
+			</div>
+            <a href="{{ blog.get_absolute_url }}" class="btn btn-primary">Read More</a>
+			</div>
+        </div>    
+			<hr/>
+        {% endfor %}
+		
+		{% if blogs.has_other_pages %}
+			<ul class="pagination">
+				{% if blogs.has_previous %}
+				<li><a href="?page={{ blogs.previous_page_number }}">&laquo;</a></li>
+				{% else %}
+				<li class="disabled"><span>&laquo;</span></li>
+				{% endif %}
+				{% for i in blogs.paginator.page_range %}
+				{% if blogs.number == i %}
+					<li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+				{% else %}
+					<li><a href="?page={{ i }}">{{ i }}</a></li>
+				{% endif %}
+				{% endfor %}
+				{% if blogs.has_next %}
+				<li><a href="?page={{ blogs.next_page_number }}">&raquo;</a></li>
+				{% else %}
+				<li class="disabled"><span>&raquo;</span></li>
+				{% endif %}
+			</ul>
+		{% endif %}
+    </div>
+	</div>
+	</div>
+	</div>
+    
+    
+	
+{% endblock %}

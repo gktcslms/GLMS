@@ -1,0 +1,163 @@
+{% extends "base.html" %}    <!-- 
+	<title>Surendra Panpaliya</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="http://gktcs.com/GLMS/public/static/images/favicon.ico" type="image/x-icon" /> 
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> 
+	<link id="theme-style" rel="stylesheet" href="http://gktcs.com/GLMS/public/static/css/p_style.css">
+    -->
+{% block head %}
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+	<link id="theme-style" rel="stylesheet" href="http://gktcs.com/GLMS/public/static/css/p_style.css">
+
+<style>
+    	.rowss{
+		    margin-top:40px;
+		    padding: 0 10px;
+		}
+		.panel-primary>.panel-heading{
+			background-image: linear-gradient(to bottom,#00a4cb 0,#00a4cb 100%) !important;
+		}
+		.clickable{
+		    cursor: pointer;   
+		}
+
+		.panel-heading div {
+			margin-top: -20px;
+			font-size: 18px;
+			margin-right: 10px;
+		}
+		.panel-heading div span{
+			margin-left:10px;
+			margin-top: -5px;
+		}
+		.panel-body{
+			display: none;
+		}
+		.panel-primary {
+			border-color: #00a4cb !important;
+		}
+		.panel-heading div span {
+			
+		}
+		@media only screen and (max-width: 780px) {
+			.tbldiv {
+				margin-top: 20px;
+			}
+		}
+		label{color:white}
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- https://bootsnipp.com/snippets/43W9 filter table-->
+<div class="container">
+    	<div class="row">
+			<div class="col-md-12 tbldiv">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">Learner Enquiry Detail</h3>
+						<div class="pull-right">
+							<span class="clickable filter btn btn-success" data-toggle="tooltip" title="Toggle table filter" data-container="body">
+								Filter<i class="glyphicon glyphicon-filter"></i>
+							</span>
+						</div>
+					</div>
+					<div class="panel-body">
+						<input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter Details" />
+					</div>
+					<div style="overflow-x: auto; max-height:450px">
+					<table class="table table-hover" id="dev-table">
+						<thead>
+							<tr><th>#</th>
+								<th>Date Time</th>
+								<th>Name</th>
+								<th>Mobile No.</th>
+								<th>Email ID</th>
+								<th>City</th>
+								<th>State</th>
+								<th>Qualification</th>
+								<th>Course interest</th>
+								<th>Message</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for i in v reversed %}
+							<tr>
+								<td>{{forloop.counter }}</td>
+								<td>{{i.date}} </td>
+								<td>{{i.name}} </td>
+								<td>{{i.mobile}}</td>
+								<td><a style="color:#0000EE" href="mailto:{{i.email}}">{{i.email}}</a></td>
+								<td>{{i.city}}</td>
+								<td>{{i.state}}</td>
+								<td>{{i.qualification}}</td>
+								<td>{{i.course_interest}}</td>
+								<td>{{i.message}}</td>					
+							</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+{% block lower %}
+
+<script>
+(function(){
+    'use strict';
+	var $ = jQuery;
+	$.fn.extend({
+		filterTable: function(){
+			return this.each(function(){
+				$(this).on('keyup', function(e){
+					$('.filterTable_no_results').remove();
+					var $this = $(this), 
+                        search = $this.val().toLowerCase(), 
+                        target = $this.attr('data-filters'), 
+                        $target = $(target), 
+                        $rows = $target.find('tbody tr');
+                        
+					if(search == '') {
+						$rows.show(); 
+					} else {
+						$rows.each(function(){
+							var $this = $(this);
+							$this.text().toLowerCase().indexOf(search) === -1 ? $this.hide() : $this.show();
+						})
+						if($target.find('tbody tr:visible').size() === 0) {
+							var col_count = $target.find('tr').first().find('td').size();
+							var no_results = $('<tr class="filterTable_no_results"><td colspan="'+col_count+'">No results found</td></tr>')
+							$target.find('tbody').append(no_results);
+						}
+					}
+				});
+			});
+		}
+	});
+	$('[data-action="filter"]').filterTable();
+})(jQuery);
+</script>
+
+<script>
+$(function(){
+    // attach table filter plugin to inputs
+	$('[data-action="filter"]').filterTable();
+	
+	$('.container').on('click', '.panel-heading span.filter', function(e){
+		var $this = $(this), 
+			$panel = $this.parents('.panel');
+		
+		$panel.find('.panel-body').slideToggle();
+		if($this.css('display') != 'none') {
+			$panel.find('.panel-body input').focus();
+		}
+	});
+	$('[data-toggle="tooltip"]').tooltip();
+})
+</script>
+{% endblock %}
+{% endblock %}

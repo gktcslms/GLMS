@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+{% extends "index.html" %}
+{% load staticfiles %}
+{% block home %}
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="http://api.html5media.info/1.1.5/html5media.min.js"></script>
+      {% block flash%} {% endblock %}
+    
+    <style type="text/css">
+        body {
+            background: #fff;
+            font-family: verdana;
+            padding-top: 0px;
+            background-color: #027fcf;
+        }
+        #vtab {
+            margin: 10;
+            width: 700px;
+            height: 100%;
+        }
+        #vtab > ul > li {
+            width: 150px;
+            height: 80px;
+            background-color: #fff !important;
+            list-style-type: none;
+            display: block;
+            text-align: center;
+            margin: auto;
+            padding-bottom: 10px;
+            border: 1px solid #fff;
+            position: relative;
+            border-right: none;
+            opacity: .3;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+            filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+        }
+        #vtab > ul > li.home {
+            background: url('http://gktcs.in/GLMS/public/static/images/about1.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.login {
+            background: url('http://gktcs.in/GLMS/public/static/images/demo4.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.support {
+            background: url('http://gktcs.in/GLMS/public/static/images/content.jpg') no-repeat center center;
+        }
+         #vtab > ul > li.support1 {
+            background: url('http://gktcs.in/GLMS/public/static/images/batches.jpg') no-repeat center center;
+        }
+        
+        #vtab > ul > li.support2 {
+            background: url('http://gktcs.in/GLMS/public/static/images/interview.jpg') no-repeat center center;
+        }
+         #vtab > ul > li.support3 {
+            background: url('http://gktcs.in/GLMS/public/static/images/training.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.support4 {
+            background: url('http://gktcs.in/GLMS/public/static/images/FAQ.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.support5 {
+            background: url('http://gktcs.in/GLMS/public/static/images/testi.jpg') no-repeat center center;
+        }
+         #vtab > ul > li.support6 {
+            background: url('http://gktcs.in/GLMS/public/static/images/certification.jpg') no-repeat center center;
+        }
+        
+        
+        #vtab > ul > li.selected {
+            opacity: 1;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+            filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+            border: 1px solid #ddd;
+            border-right: none;
+            z-index: 10;
+            background-color: #fafafa !important;
+            position: relative;
+        }
+        #vtab > ul {
+            float: left;
+            width: 110px;
+            text-align: left;
+            display: block;
+            margin: auto 0;
+            padding: 0;
+            position: relative;
+            top: 30px;
+        }
+        #vtab > div {
+            background-color: #fafafa;
+            margin-left:150px;
+            border: 1px solid #ddd;
+            min-height: 700px;
+            padding: 12px;
+            position: relative;
+            z-index: 9;
+            -moz-border-radius: 20px;
+        }
+        #vtab > div > h4 {
+            color: #800;
+            font-size: 1.2em;
+            border-bottom: 1px dotted #800;
+            padding-top: 5px;
+            margin-top: 0;
+        }
+        #loginForm label {
+            float: left;
+            width: 100px;
+            text-align: right;
+            clear: left;
+            margin-right: 15px;
+        }
+        #loginForm fieldset {
+            border: none;
+        }
+        #loginForm fieldset > div {
+            padding-top: 3px;
+            padding-bottom: 3px;
+        }
+        #loginForm #login {
+            margin-left: 115px;
+        }
+        
+     a {text-decoration: none}
+    </style>
+
+    <script type="text/javascript">
+        $(function() {
+            var $items = $('#vtab>ul>li');
+            $items.mouseover(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('#vtab>div').hide().eq(index).show();
+            }).eq(0).mouseover();
+        });
+    </script>
+
+</head>
+<body>
+
+		<font color="#366D9C" size=6px style="font-family: Georgia; padding-left: 400px"><b>Java</b></font>
+	
+	<table width="980" height="700"> 
+		<tr> 
+			<td width='100'>
+		
+    <div id="vtab">
+        <ul>
+            <li class="home selected"></li>
+            <li class="login"></li>
+            <li class="support"></li>
+            <li class="support1"></li>
+            <li class="support2"></li>
+            <li class="support3"></li>
+            <li class="support4"></li>
+            <li class="support5"></li>
+            <li class="support6"></li>
+        </ul>
+        <div>
+        	<h4>About Course</h4>
+        	<br/>
+           <table align="justify">
+           	<tr align="justify">
+           		<td valign="top">
+           		<img src='http://gktcs.in/GLMS/public/static/images/java.jpg' width='90' height="60" />
+           		</td>
+           		<td>
+           			
+<b>Course Duration:</b>45hrs<br/>
+<br/>
+<b>Course Description:</b><br/>
+<br/>
+ <b>JAVA</b> is a programming language and computing platform first released by Sun Microsystems in 1995. There are lots of applications and websites that will not work unless you have Java installed, and  
+
+<br/>
+<br/>
+<b>Who Should Attend:</b>
+<br/>
+<br/>
+This course is intended for those  who have knowledge of programmming languages like C and  C++.
+<br/><br/>
+<b>Benefits of Attendance:</b>
+<br/>
+<br/>
+Upon completion of this course, students will get following advantages:<br/>
+<br/>
+<ul>
+<li>Basic knowledge of core java.</li><br/>
+<li>How to use java to develop applications.</li><br/>
+<li>Write Once, Run Anywhere this is the key benefit of using java</li><br/>
+<li>JAVA will provide the bset security for web application.
+<br/>
+</ul>
+<br/>
+<br/>
+<b>Prerequisites:</b><br/>
+<br/>
+Students should be known to the basic programming languages like C, C++ and should have some knowledge of HTML and CSS.
+           		</td>
+           	</tr>
+           	
+           	
+           </table>
+            
+        </div>     
+         <div>
+         	<h4>Sample Demo</h4>
+         	<br/>
+         	<div>
+   <video id="abc" width="500px" height="360px" autoplay controls > <source src="{% static 'C:/GLMS/static/abc.mp4' %}" type="video/mp4"> </source>
+     
+        </video></div>
+
+</div>
+           <div>
+            <h4>
+              Content </h4>
+              <br/>
+					<h3>CORE JAVA SYLLABUS MODULE 1:</h3><br>
+					<li> INTRODUCTION TO JAVA</li>
+					<li> What is java?</li>
+					<li> Object oriented programming </li>
+					<li> Internet programming</li>
+					<li> Platform Independency</li>
+					<li> Internet Security </li>
+					<li> C,C++ VS Java</li>
+						<bR>
+					<h3> MODULE 2: </h3><br>
+					<li>OOPS CONCEPTS AND THEIR IMPLEMENTATION IN JAVA </li>
+					<li> OOPs concept , its properties and uses </li>
+					<li>Defining methods and variables in java</li> 
+					<li> Class Member and instance members</li>
+					<li> Java First Program </li>
+					<li> Role of Constructor</li>
+					<li> Use of Final Keywords</li>
+					<li>Memory Management Using Garbage collector</li> 
+					<li> Overloading and Overriding</li>
+					<li> Use of this and supper Keywords</li>
+					<li> Inheritance</li>
+					<li>Dynamic Binding and Static Binding</li>  
+					<li>Runtime Polymorphism and its Power</li>
+					<li> Abstract class and Interfaces</li>
+					<li> Inner / Nested classes and its uses</li>
+					<br>
+					 <h3>MODULE 3: PACKAGES</h3><br>
+					 <li> Introduction of Package</li>
+					 <li> Programs related to Packages </li>
+					 <li> Scope of Access Modifiers</li>
+					 <br>
+					  <h3>MODULE 4: EXCEPTION HANDLING</h3>
+					  <li> Introduction of exception and Error</li>
+					  <li> Throwable class</li>
+					  <li> Try, catch and finally blocks</li>
+					  <li> Throw and throws Keywords</li>
+					  <li> Checked and Unchecked Exception</li>
+					  <li> User Define Exception</li>
+					  <br>
+					  <h3> MODULE 5: MULTITHREADING</h3>
+					  <li> What is Program, Process, Thread </li>
+					  <li>Multiprocessing, multithreading and Multitasking </li> 
+					  <li> Use of sleep() and suspend Methods </li>
+					   <li>Integrated Thread Synchronization</li>
+					   <li> Use of wait(), noitify() and notifyAll() Mwthods</li>
+					   <li> What Is the JDBC API? Driver Types</li>
+					   <li> Two-tier and Three-tier Models</li>
+					   <li> Connection Overview</li>
+					   <li> Statement Overview</li> 
+					   <li> Sending Batch Updates</li>
+					   <li> ResultSet Overview </li>
+					   <li> Concurrency Types</li>
+					   <li> PreparedStatement Overview </li>
+					   <li> CallableStatement Overview</li>
+						<br>
+<h3>3. MODULE 6: STRING HANDLING </h3>
+<li> String class </li>
+<li> StringBuffer class</li>
+<li> StringBuilder class</li>
+<li> StringTokenizer class </li>
+<br>
+ <h3>MODULE 7: APPLETS</h3>
+ 	 <li> Started With Applets</li>
+ 	 <li> Defining an Applet Subclass </li>
+ 	 <li>Life Cycle of an Applet </li>
+ 	 <li> Applet's Execution Environment</li>
+ 	 <li> Developing an Applet </li>
+ 	 <li> Deploying an Applet</li>
+ 	 <li> Deploying With the Applet Tag </li>
+ 	 <li> Doing More With Applets</li>
+ 	 <li> Displaying Short Status Strings </li>
+ 	 <br>
+ 	  <h3>MODULE 8: WINDOWS PROGRAMMING USING AWT AND SWING</h3>
+ 	  <li> Learning Swing with the Net Beans IDE</li>
+ 	  <li> Using Swing Components </li>
+ 	  <li> Concurrency in Swing </li>
+ 	  <li> Using Other Swing Features </li>
+ 	  <li> Laying Out Components Within a Container</li>
+ 	  <li> Drag and Drop and Data Transfer</li>
+ 	  <li> Writing Event Listeners</li>
+ 	  <br>
+  	  <h3> MODULE 9: STREAM BASED I/O IN JAVA</h3>
+  	  
+  	  <li> Introduction to Input Output </li>
+  	  <li> Introduction and Implementation of Byte Stream </li>
+  	  <li> Introduction and Implementation of Character Stream </li> 
+  	  <li>Introduction and Implementation of Buffered Stream</li>
+  	  <li>Introduction and Implementation of Data Stream and Object Stream </li> 
+  	  <li>Introduction and Implementation of File I/O</li>
+  	  <br>
+  	   <h3>MODULE 10: NETWORKING </h3>
+  	    <li>Introduction to Networking in Java</li>
+  	    <li> What is TCP and UDDP</li>
+  	    <li> What is Socket and Port</li>
+  	    <li> Implementation of Socket and InetAddress class </li>
+  	    <li> URL in terms of Java Networking Programing </li>
+  	    <li> Datagram in Network environment</li>
+  	    <li> To retrieve the IP address from Host Name, vice-versa </li>
+  	    <br>
+  	    <h3>MODULE 11: </h3>
+  	    <li> Serialization </li>
+  	    <li> Generics</li>
+  	    <li> Internationalization </li>
+  	    <br>
+  	    <h3>MODULE 12: REMOTE METHOD INVOCATION (RMI) </h3>
+  	    <li>Introduction to RMI </li> 
+  	    <li> Writing an RMI Server </li>
+  	    <li> Creating a RMI Client </li>
+  	    <li> Compiling and Running Program</li>
+  	    
+        
+        </div>
+        
+           <div>
+        
+ <h4>Upcoming Batches</h4>
+ <br/>
+<div class="pricing_table">
+
+<table width=500px>
+		<tr width=500px ></tr>
+		<b><th width=280 bgcolor="#333333" style="color:#FFFFFF;">Start date</th>
+			
+		<th width=95 bgcolor="#333333" style="color:#FFFFFF;">Duration</th>
+		<th width=700 bgcolor="#333333" style="color:#FFFFFF;">Days</th>
+		<th width=100 bgcolor="#333333" style="color:#FFFFFF;">Time</th>
+		<th width=100 bgcolor="#333333" style="color:#FFFFFF;">Price</th></b>
+		</tr>
+		
+		
+		{% for j in batch %}
+		<tr width=500px>
+			
+<td width=350 bgcolor="#CCCCCC" style="text-align: center"> {{j.Start}}</td>
+<td width=220 bgcolor="#CCCCCC" style="text-align: center">{{j.Duration}}</td>
+<td width=350 bgcolor="#CCCCCC" style="text-align: center">{{j.Days}}</td>
+
+<td width=150 bgcolor="#CCCCCC" style="text-align: center">{{j.Time}}</td>
+<td width=100 bgcolor="#CCCCCC" style="text-align: center">{{j.Price}}/-</td>
+
+		
+		</tr>
+		{% endfor %}
+		
+		
+	</table>	
+
+</div>
+	 <br><br>
+	<br/>
+		
+
+<a href="/Enroll" style="padding-left: 320px; "><img src="http://gktcs.in/GLMS/public/static/images/enroll.png" height=40px width="190px" align="center"/></a>
+        </div>
+        
+           <div align="justify">
+           	<h4>Interview Questions</h4>
+           	<br/>
+           	<br/>
+           	
+           	<b>Question: What is the most important feature of Java?</b><br/>
+Ans. Java is a platform independent language.
+            <br/>
+            <br/>         
+            
+            <b>Question:What do you mean by platform independence?
+            	</b><br/>
+Ans: Platform independence means that we can write and compile the java code in one platform (eg Windows) and can execute the class in any other supported platform eg (Linux,Solaris,etc).
+<br/>
+<br/>
+
+<b>Question: What is a JVM?</b><br/>
+Ans: JVM is Java Virtual Machine which is a run time environment for the compiled java class files.
+<br/>
+<br/>
+<b>Question: Are JVM's platform independent?</b><br/>
+Ans.JVM's are not platform independent. JVM's are platform specific run time implementation provided by the vendor.
+<br/>
+<br/>
+
+<b>Question: What is the difference between a JDK and a JVM?</b><br>
+Ans. JDK is Java Development Kit which is for development purpose and it includes execution environment also. But JVM is purely a run time environment and hence you will not be able to compile your source files using a JVM.
+
+<br/>
+<bR>
+<b>Question:  What is the base class of all classes?</b><br/>
+Ans. java.lang.Object 
+<br/>
+<br/>
+<b>Question:Does Java support multiple inheritance?
+</b><br/>
+Ans. Java doesn't support multiple inheritance.
+<br><Br>
+
+<b>Question:  Is Java a pure object oriented language?</b><br/>
+Ans:Java uses primitive data types and hence is not a pure object oriented language.
+<br><Br>
+
+<b>Question: What is difference between Path and Classpath?
+</b>?<br/>
+Ans, Path and Classpath are operating system level environment variales. Path is used define where the system can find the executables(.exe) files and classpath is used to specify the location .class files.
+<br/>
+<br/>
+<b>Question: What are local variables?
+</b><br/>
+Ans.Local varaiables are those which are declared within a block of code like methods. Local variables should be initialised before accessing them.
+<br/>
+<br/>
+<b>Question: What are instance variables?</b><br/>
+Ans:Instance variables are those which are defined at the class level. Instance variables need not be initialized before using them as they are automatically initialized to their default values.
+<br/>
+<br/>
+<b>Question:How to define a constant variable in Java?</b><br/>
+Ans.The variable should be declared as static and final. So only one copy of the variable exists for all instances of the class and the value can't be changed also.
+<br><Br>
+
+         	  	
+        </div>
+         <div align="justify">
+         	<h4>
+                Training Mode</h4>
+                <br/>
+   
+         	
+         	<table width=620><tr align="justify">
+         		<td width="330" align="justify">
+         		<br/>
+         	
+         	<b>Corporate Training :</b><br/>
+         	
+Corporate Training Solutions
+
+Corporate training is the act of grooming the workforce in order to make them capable of handling modern business challenges by improving their approach and productivity and thus, making effective utilization of resources. We at GKTCS work hand in hand with Industry on various fronts. GKTCS’s business cycle is aligned very closely to Industry needs and structured to fulfil the industry needs in terms of Training and Recruitment.
+
+We always believe our customers speak for our services based on their rich experience with our kind of services.
+</td>
+<td align="right">
+	<img src="http://gktcs.in/GLMS/public/static/images/corporate.jpg"  width="200" height="150"/> 
+</td>
+</tr>
+<tr>
+	<td>
+		<br/>
+<b>Retail Training :</b>
+<br/>
+GKTCS Innovations has a set of best trainers who are constantly engaged in spreading technical and non technical knowledge to individual who are seeking an opportunity in their respective industries and would like to straight away face the challenges of the continuously improving and changing world.
+
+The retail Training services provided by GKTCS Innovations are designed as per the needs of corporate and also as per the guidelines provided by them.
+ </td>
+ <td align="right">
+	<img src="http://gktcs.in/GLMS/public/static/images/retail.jpg"  width="200" height="150"/>
+</td>
+ </tr>
+ <tr>    <td>   
+ 	<br/>	
+ <b>Online Training </b>
+ <br/>
+ GKTCS offers Online Training , so you get trained from where you are from our experienced trainers, In the weekdays as well as weekends by the Real Time Professionals. The program is designed to provide rich learning experience for students using Internet.         	
+      </td>   
+      <td align="right">
+      	<img src="http://gktcs.in/GLMS/public/static/images/online.jpg"  width="200" height="150"/>
+      </td>  
+      </tr>	
+    </table>     	
+         	
+         </div>
+		
+
+           <div align="justify">
+           	<h4>
+                FAQs</h4>
+           	
+           	<br/>
+    
+          <b> Can a class declared as private be accessed outside it's package?
+</b><br/>
+Not possible.
+<br/>
+<br/>
+<b>Can a class be declared as protected?
+</b><br/>
+The protected access modifier cannot be applied to class and interfaces. Methods, fields can be declared protected, however methods and fields in a interface cannot be declared protected.
+<br><Br>
+<b>What is the access scope of a protected method?
+</b><br/>
+A protected method can be accessed by the classes within the same package or by the subclasses of the class in any package.
+<br/>
+<br/>
+<b>What is the purpose of declaring a variable as final?
+</b><br/>
+A final variable's value can't be changed. final variables should be initialized before using them.
+<br><BR>
+<b>What is the impact of declaring a method as final?
+</b><br/>
+A method declared as final can't be overridden. A sub-class can't have the same method signature with a different implementation.
+<br/>
+<br/>
+<b>I don't want my class to be inherited by any other class. What should i do?
+</b><br/>
+You should declared your class as final. But you can't define your class as final, if it is an abstract class. A class declared as final can't be extended by any other class.
+<br><Br>
+
+<b>How is final different from finally and finalize()?
+</b><br/>
+final is a modifier which can be applied to a class or a method or a variable. final class can't be inherited, final method can't be overridden and final variable can't be changed. 
+<br><Br>
+finally is an exception handling code section which gets executed whether an exception is raised or not by the try block code segment. 
+<br><Br>
+finalize() is a method of Object class which will be executed by the JVM just before garbage collecting object to give a final chance for resource releasing activity.
+<br/><Br>
+<b>When will you define a method as static?
+</b><br/>
+When a method needs to be accessed even before the creation of the object of the class then we should declare the method as static.
+<bR><br>
+<b>What are the restriction imposed on a static method or a static block of code?
+</b><bR>
+A static method should not refer to instance variables without creating an instance and cannot use "this" operator to refer the instance.
+<br><bR>
+<b>I want to print "Hello" even before main() is executed. How will you acheive that?
+</b><br>
+Print the statement inside a static block of code. Static blocks get executed when the class gets loaded into the memory and even before the creation of an object. Hence it will be executed before the main() method. And it will be executed only once.
+<br><Br>
+<b>What is the importance of static variable?
+</b><br>		
+ static variables are class level variables where all objects of the class refer to the same variable. If one object changes the value then the change gets reflected in all the objects.
+<br><Br>
+        </div>
+           <div>
+        <h4>Testimonials</h4> 
+        <div style="padding-top: 20px">
+           		<table border="2" >
+           			<tr>
+           				<td rowspan="2"><img height="140" width="110" src="http://gktcs.in/GLMS/public/static/images/ShashankVerma.jpg" /> </td>
+           				<td style="color: blue; "><b>Shashank Verma<br>Senior Developer, Leo Infotech Pune</b></td>
+           			</tr>
+           			<tr>
+           				<td>  This course of JAVA is verymuch helpful and we get the complete practical knowledge of the same. All the PPT's are very much effective and can be used as a reference after the completion of course.</td>
+           			</tr>
+           			<tr><td colspan="2" style="background: gray"></td></tr>
+           			<tr>
+           				<td rowspan="2"><img height="140" width="110" src="http://gktcs.in/GLMS/public/static/images/SohailShaikh.jpg" /> </td>
+           				<td style="color: blue"><b>Sohail Shaikh<br>Junior Developer, Leo Infotech, Pune</b></td>
+           			</tr>
+           			<tr>
+           				<td>  Course of JAVA done here is effective while working in the industry and the trainers are very good in their training. The training quality provided is international level training and the contents are also easy and understandable.</td>
+           			</tr>
+           			<tr><td colspan="2" style="background: gray"></td></tr>
+           			<tr>
+           				<td rowspan="2"><img height="140" width="110" src="http://gktcs.in/GLMS/public/static/images/VaishnaviPande.jpg" /> </td>
+           				<td style="color: blue; "><b>Vaishnavi Pande<br>Developer, Upside Learning, Pune</b></td>
+           			</tr>
+           			<tr>
+           				<td>  I personally feel that learning in GKTCS is an opportuinity to gain the knowledge of niche Technologies with updated skills. The trainers those who give training are expert level trainers and with a huge experience.</td>
+           			</tr>
+           			<tr><td colspan="2" style="background: gray"></td></tr>
+           			<tr>
+           				<td rowspan="2"><img height="140" width="110" src="http://gktcs.in/GLMS/public/static/images/PrajaktaSakale.jpg" /> </td>
+           				<td style="color: blue; "><b>Prajakta Sakale<br>Senior Developer, Upside Learning, Pune</b></td>
+           			</tr>
+           			<tr>
+           				<td>   It is a great training firm where I learnt the various technologies including Java. It also helped me to get into IT industry with the complete knowledge of this technology.</td>
+           			</tr>
+           			<tr><td colspan="2" style="background: gray"></td></tr>
+           			
+           		</table>	
+           		
+           		
+           </div>	 
+           
+        </div>
+   
+        <div align="justify">
+            <h4>
+                Certification</h4>
+                <br/>
+           
+             At the end of the course we provide  Certification.  <br/><br/>
+           <b>Process for Certification :</b>
+          
+  <li>You will receive a real time project Problem Statement along with a dataset to work. </li>
+  <li>After complition of your project(Reviewed by an Expert),you will be awarded a certificate with a performance-based grading. </li>
+ <li>If your project is not completed on time , you can take extra training for any of your doubts to understand the concepts better and re-attempt the Project free of cost.</li>
+<br/>
+GKTCS will help you at every stage of your learning and our 24/7 expert support team will ensure that you don't get stuck. Once you submit the project, our subject matter experts will review the same and share feedback to optimize it, if required.
+        </div>
+        </div>
+    
+    </td>
+    
+    <td valign="top" width="500">
+  		
+    <table valign="top">
+    	<tr valign="top">
+    		<font color="#366D9C" size=5px style="font-family: Georgia; padding-left:25px"><b>Course Features</b></font>  
+    		<td align="left" valign="top" width="500" height="200">
+    		
+ 
+  <br/>
+ <br/>
+ <li>Expert and qualified trainers</li>
+<li>Practical Project Based Approach</li>
+<li>Regular Assessment & feedback</li>
+<li>Total customized as per the client needs</li> 
+<li>Lifetime Access</li> 
+<li>  24 x 7 Support</li> 
+<li>  Get Certified</li>
+ 
+
+    			
+     		</td>
+     	
+    		
+    		
+    	</tr>
+    	
+    	<tr valign="top">
+    		<td height="20" valign="top" align="center">
+    		
+    		
+    		<font color="#366D9C" size=5px style="font-family: Georgia; padding-left:25px"><b>Placed Candidate</b></font>  
+    			<br/>
+    			<marquee direction="up" scrollamount="4" height="300">
+    			<table>
+    				<tr>
+    	   						
+    					<table>
+    						<tr>
+    							<td valign="top" height="30">
+    								
+    								<img src="http://gktcs.in/GLMS/public/static/images/AhilanShankar.jpg" width="100" height="100"/>
+    							</td>
+    							<td>
+    								<b>Alihan shanakar</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/capegemini.png" width="150" height="80"/> 
+    							</td>
+    						</tr>
+    						
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/sounavdas.jpg" width="100" height="100"/>
+    							</td>
+    							<td>
+    								<b>Sonav Das</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150" height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/ShashankVerma.jpg" width="60" height="80"/>
+    							</td>
+    							<td>
+    								<b>Shashank Verma</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/leoinfotech.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/rasika1.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Rasika</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/renuka.jpg" width="100" height="100"/>
+    							</td>
+    							<td>
+    								<b>Renuka Shirbhate</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/inetsoft.jpg" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/Neha.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Neha Kottarwar</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/GauravKotarwar.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Gaurav Kotarwar</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/leoinfotech.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/PrajaktaSakale.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Prajkta Sakale</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    							<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/SohailShaikh.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Sohail Shaikh</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/leoinfotech.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/ApurvaBhat.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Apurva Bhat</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/AshishSoni.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Ashish Soni</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    					
+    					    						
+    						
+    						
+    						
+    					</table>
+    					
+    						
+    						
+    					</td>
+    		
+    		
+    	</tr>
+    </table>
+    
+    </td>
+    
+    
+    </tr>
+	</table>
+	
+</body>
+</html>
+{% endblock %}

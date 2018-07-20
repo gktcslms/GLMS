@@ -1,0 +1,29 @@
+<html>
+	{% extends "index.html" %}
+{% load staticfiles %}
+{% block home %}
+	<head>
+		<script>
+			function forgotfun() {
+    alert("Password sent on your email account.");
+    }
+		</script>
+	</head>
+	
+	<div style="padding-left:300; padding-top:40 ">
+		<img style="padding-left:40" src="http://gktcs.com/GLMS/public/static/images/forgot.png"/ height="50" width="220">
+		<br>
+	<form  method='post' action="" > {% csrf_token %}
+					<table valign="top">
+						<tr><td><b>Email :</b</td><td>{{ form.email }}</td></tr>
+					</table>
+				
+				
+				<div style="padding-left:130">	<input type="submit" onclick="forgotfun()" >
+					
+				</div>
+					
+				</form>
+			</div>	
+</html>
+{% endblock %}

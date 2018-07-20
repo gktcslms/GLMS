@@ -1,0 +1,58 @@
+{% extends "index.html" %}
+
+{% block home %}
+<table  width="960" height="500" style="padding-left: 15px">
+	<tr>
+		<td valign="top" width="650" align="justify">
+    		<font color="#366D9C" size=4px style="font-family: Georgia;"><b>Who can be a Corporate Trainer?</b></font>  
+			<br/>
+
+ who has an in-depth working knowledge of the particular domain and is very passionate about teaching and sharing his/her expert knowledge with students and professionals can teach at GKTCS. Good oral communication skills are mandatory.
+<br/>
+<br/>
+
+
+<font color="#366D9C" size=4px style="font-family: Georgia;"><b>The Process Of Selection</b></font>
+<bR>
+First thing first! You need to fill this form. If you are shortlisted and finally selected, you will undergo a training based on GKTCS’s Learning Methodology. You will also get the opportunity to co-create the content with us to make ‘learning’ a very rich and fruitful experience for the learners.
+		<br/>
+		<br/>
+<font color="#366D9C" size=4px style="font-family: Georgia;"><b>Advantages in GKTCS</b></font><br>
+Apart from working with a very young and talented team, you will also get the revenue-sharing opportunity at the fastest growing online training company in India! You will be provided with a great platform to showcase your practical knowledge and skills that you have acquired over a period of time. What more, you can conduct your training from any part of the world!
+		<br/>
+		
+		
+		</td>
+		<td align="left" valign="top">
+			
+	<div align="right">
+		<font color="#366D9C" size=4px style="font-family: Georgia;"><b> Trainer Registration</b></font>
+		<br/>
+		<br/>
+			<form  method='post' action=""> {% csrf_token %}
+					<table valign="top">
+						<tr><td><b>Name :</b</td><td>{{ form.name }}</td></tr>
+						<tr><td><b>Email :</b</td><td>{{ form.Email }}</td></tr>
+						<tr><td><b>Contact :</b</td><td>{{ form.contactno}}</td></tr>
+						<tr><td><b>Skills :</b</td><td>{{ form.skills }}</td></tr>
+						<tr><td><b>About Course :</b</td><td>{{ form.aboutCourse }}</td></tr>
+						<tr><td><b>About Ourself :</b</td><td>{{ form.about_ourself }}</td></tr>
+						<tr><td><b>LinkedIn :</b</td><td>{{ form.linkedin}}</td></tr>
+						
+					
+					
+					</table>
+					
+					<input type="submit" onclick="myFunction()" align="left">
+					
+				</form>
+			</div>
+			 
+	
+	
+</td>
+	</tr>
+</table>
+ 
+
+{% endblock %}

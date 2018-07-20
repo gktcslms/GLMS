@@ -1,0 +1,545 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+<div style="background-color:#337ab7; padding:10px" class="row"><!––<img src="python_banner.jpg" class="img-fluid" style="width:100%" alt="Responsive image">
+<div class="col-md-5 hidden-sm hidden-xs" style="padding-left:30px">	
+	<iframe width="420" height="230" src="https://www.youtube.com/embed/PoZiPuNMSJc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+<div class="hidden-lg hidden-md col-sm-12" style="padding-left:30px">	
+	<iframe width="315" height="173" src="https://www.youtube.com/embed/PoZiPuNMSJc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+<div class="col-md-7">
+	<h1 style="color:#fff; text-shadow: 2px 2px #212020;">Jython</h1><h3 style="color:#fff;text-shadow: 2px 2px #212020;">Jython is a high-level, object-oriented, open-source programming language. In addition to the Python library, Jython programs can also seamlessly access Java classes and libraries and extend them.</h3>
+</div>
+</div>
+</div>
+<div class="container" style="background-color: #e8e8e8; padding-bottom: 15px;">
+<div class="row">
+<div class="col-md-6">  
+  <h3>Jython Course objectives</h3>
+  Some of the key skills you will gain upon completion of this program include:
+                     
+<ul style="padding-left: 15px">  
+<li>Grasp Jython language constructs</li>
+<li>Write Jython scripts</li>
+<li>Advanced OOPS</li>
+<li>Exception Handling</li>
+<li>File I/O</li>
+<li>Using Jython in IDE</li>
+<div id="objlist" class="panel-collapse collapse">
+<li>Jython and Java Integration</li>
+<li>Creating Custom Modules</li>
+<li>Database Access</li>
+<li>Network programming</li>
+<li>Debugging</li>
+<li>Design patterns</li>
+<li>Unittesting</li>
+</div>
+<a role="button" style="color:#337ab7" data-toggle="collapse" data-parent="" href="#objlist" aria-expanded="true" aria-controls="objlist">
+    More...
+</a>
+</ul>
+</div>
+<div class="col-md-6">
+<h3>Prerequisite</h3>
+<p>
+<ul style="padding-left: 15px">
+<li>• Knowledge of OOPs, Java </li>
+<li>• Knowledge of Python would be an added advantage </li>
+</ul>
+</p>
+</div> 
+</div>
+<div>
+<p class=""><a target="_blank" href="http://gktcs.com/GLMS/public/static/pdf/jython_content.pdf" class = "btn btn-primary"><i class="fa fa-download"></i> Download Course Content [5 Days] (PDF)</a></p>
+</div>
+<div>
+  <ul class="nav nav-pills rwo" style="background-color:#fafafa">
+    <li class="active col-md-12 col-xs-12" style="padding:0px; margin:0px; text-align: center"><a data-toggle="pill" href="#basicpy"><h4>Jython: Modules </h4></a></li>
+  </ul>
+	<form action="." method="post" style="">{% csrf_token %}
+	<div class="tab-content"> 
+    <div id="basicpy" class="tab-pane fade in active">
+      <h3>Basic Modules</h3>
+		<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingOne">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="1.Introduction to Jython">
+						<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							1.Introduction to Jython
+						</a>
+					</h4>
+				</div>
+				<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+					<div class="panel-body">
+						<ul>
+							<li>Jython Requirements</li> 
+							<li>Welcome to Jython</li>
+							<ul>
+								<li>Starting Jython</li>
+								<li>Adding Items to the Window</li>
+								<li>Adding Behavior</li>
+							</ul>
+							<li>What’s Jython Good For?</li>
+							<li>The Benefits of Jython</li>
+							<ul>
+								<li>For Java Programmers</li>
+								<li>For Python Programmers</li>
+							</ul>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingTwo">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="2.Jython Basics">
+						<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							2.Jython Basics
+						</a>
+					</h4>
+				</div>
+				<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+					<div class="panel-body">
+						<ul>
+							<li>Running Jython</li>
+							<li>Basic Types</li>
+							<li>Operators</li>
+							<li>Numeric Types</li>
+							<ul>
+								<li>Integer</li>
+								<li>Long</li>
+								<li>Float</li>
+								<li>Complex</li>
+								<li>Numerical Functions</li>
+							</ul>
+							<li>Sequences: Lists and Tuples</li>
+							<ul>
+								<li>Sequence Access</li>
+								<li>Sequence Functions and Functions</li>
+								<li>Functional Programming</li>
+								<li>Tuples: Immutable Sequences</li>
+							</ul>
+							<li>Strings</li>
+							<ul>
+								<li>String Formatting</li>
+								<li>String Functions</li>
+							</ul>
+							<li>Mappings and Dictionaries</li>
+							<li>Jython Files</li>
+						</ul>					
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingThree">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="3.Jython Control Flow">
+						<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							3.Jython Control Flow
+						</a>
+					</h4>
+				</div>
+				<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+					<div class="panel-body">
+						<ul>
+							<li>Statements and Expressions</li>
+							<li>Assignment</li>
+							<ul>
+								<li>Unpacking Assignment</li>
+								<li>Augmented Assignment</li>
+							</ul>
+							<li>Printing<li>
+							<li>Blocks<li>
+							<li>Conditional Logic<li>
+							<li>Loops<li>
+							<li>List Comprehensions</li>
+							<li>Exceptions</li>
+							<li>Evaluating Code Dynamically</li>
+						<ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="heading4">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="4.Modules and Functions">
+						<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							4.Modules and Functions
+						</a>
+					</h4>
+				</div>
+				<div id="collapse4" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Modules</li>
+							<li>Functions</li>
+							<li>Parameter Passing with Style</li>
+							<ul>
+								<li>Scoping Rules</li>
+								<li>Flying First Class</li>
+							</ul>
+							<li>Import Statements and Packages</li>
+							<ul>
+								<li>Import Statements</li>
+								<li>Importing Java Classes</li>
+								<ul>
+									<li>Auto-loading through lookup</li>
+								</ul>
+								<li>Reload</li>
+								</ul>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading5">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="5.Object-Oriented Jython">
+						<a data-toggle="collapse" href="#collapse5" data-parent="#accordion">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							5.Object-Oriented Jython
+						</a>
+					</h4>
+				</div>
+				<div id="collapse5" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Creating Classes</li>
+							<li>Methods</li>
+							<li>Classes, Instances, and Access Control</li>
+							<ul>
+								<li>Class and Static Attributes</li>
+								<li>Access Control</li>
+								<li>Get and Set Methods</li>
+								<li>Using __getattr__</li>
+								<li>Using __setattr__</li>
+							</ul>
+							<li>Inheritance</li>
+							<li>Special Methods</li>
+							<ul>
+								<li>General Instance Special Methods</li>
+								<li>Sequences and Mappings</li>
+								<li>Numbers</li>
+							</ul>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading6">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="6.Using Java from Jython">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							6.Using Java from Jython
+						</a>
+					</h4>
+				</div>
+				<div id="collapse6" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Basic Object Usage</li>
+							<li>Automatic Type Conversion</li>
+							<ul>
+								<li>Managing Overloaded Methods</li>
+								<li>Basic Data Conversions</li>
+								<li>Converting Arrays</li>
+							</ul>
+							<li>Java Arrays and the jarray Module</li>
+							<li>Java-to-Python Types: Automatic Conversion</li>
+							<li>Collection Wrappers</li>
+							<li>Avoiding Name Collisions</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading7">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="7.Inheriting from Java">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse7">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							7.Inheriting from Java
+						</a>
+					</h4>
+				</div>
+				<div id="collapse7" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Basic Mechanics</li>
+							<li>Java Interoperation and Overriding</li>
+							<li>Calling Super Methods and Constructors</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading8">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="8.Reflection and JavaBeans">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse8">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							8.Reflection and JavaBeans
+						</a>
+					</h4>
+				</div>
+				<div id="collapse8" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Bean-Based Reflection</li>
+							<ul>
+								<li>Using Beans in Jython</li>
+								<li>Indexed Properties</li>
+								<li>Event Properties</li>
+							</ul>
+							<li>Python-Based Reflection</li>
+							<ul>
+								<li>Reflecting on Java Objects</li>
+								<li>Active Reflection</li>
+							</ul>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading9">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="9.Using Swing">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse9">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							9.Using Swing
+						</a>
+					</h4>
+				</div>
+				<div id="collapse9" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Java Versus Jython</li>
+							<li>A Calculator</li>
+							<li>An HTML Browser</li>
+							<li>An HTML Source Browser</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading10">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="10.Using Java Libraries">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse10">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							10.Using Java Libraries
+						</a>
+					</h4>
+				</div>
+				<div id="collapse10" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>JDBC and the Python Database API</li>
+							<ul>
+								<li>Using zxJDBC</li>
+								<li>Connection Objects</li>
+								<li>Cursor Objects</li>
+							</ul>
+							<li>Servlets and PyServlet</li>
+							<ul>
+								<li>Using PyServlet</li>
+								<li>A Python Template Tool</li>
+								<li>Reloading Servlet Modules</li>
+							</ul>
+							<li>Jython and XML</li>
+							<ul>
+								<li>SAX and DOM</li>
+								<li>JDOM and Jython</li>
+							</ul>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading11">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="11.Jython Standard Library">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse11">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							11.Jython Standard Library
+						</a>
+					</h4>
+				</div>
+				<div id="collapse11" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Using Python Modules</li>
+							<li>System and File Modules</li>
+							<ul>
+								<li>The sys Module</li>
+								<li>The os Module</li>
+								<li>The os.path module</li>
+								<li>File Pattern Matching with glob</li>
+							</ul>
+							<li>Regular Expressions</li>
+							<ul>
+								<li>The re Module</li>
+								<li>Match Objects</li>
+								<li>Regular Expression Objects</li>
+								<li>Special Characters</li>
+							</ul>
+							<li>Serialization and Pickling</li>
+							<li>Unit Testing with PyUnit</li>
+							<ul>
+								<li>Simple Tests</li>
+								<li>Tests in Groups</li>
+							</ul>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading12">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="12.Embedding Jython Inside Java">
+						<a data-toggle="collapse" data-parent="#interpy" href="#collapse12">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							12.Embedding Jython Inside Java
+						</a>
+					</h4>
+				</div>
+				<div id="collapse12" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Setting Up an Interpreter</li>
+							<li>Executing Code</li>
+							<li>Accessing the Interpreter Namespace</li>
+							<li>Using PyObjects</li>
+							<li>PyObject Subclasses</li>
+							<li>Catching Exceptions</li>
+							<li>Embedding Examples</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading13">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="13.Compiling Jython">
+						<a data-toggle="collapse" data-parent="#interpy" href="#collapse13">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							13.Compiling Jython
+						</a>
+					</h4>
+				</div>
+				<div id="collapse13" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Why Compile?</li>
+							<li>The Compiler in Action</li>
+							<ul>
+								<li>Java Source</li>
+								<li>Top-Level Java</li>
+							</ul>
+							<li>Packaging in Java Archives</li>
+							<li>Using Jython in Java</li>
+							<li>A Simple Applet</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading14">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="14.Installing Jython">
+						<a data-toggle="collapse" data-parent="#interpy" href="#collapse14">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							14.Installing Jython
+						</a>
+					</h4>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading15">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="15.Jython Options and Registry">
+						<a data-toggle="collapse" data-parent="#interpy" href="#collapse15">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							15.Jython Options and Registry
+						</a>
+					</h4>
+				</div>
+				<div id="collapse15" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Jython Options</li>
+							<li>Jython Compiler Options</li>
+							<li>The Jython Registry</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading16">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="16.Jython Exceptions">
+						<a data-toggle="collapse" data-parent="#interpy" href="#collapse16">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							16.Jython Exceptions
+						</a>
+					</h4>
+				</div>
+				<div id="collapse16" class="panel-collapse collapse" >
+					<div class="panel-body">
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading17">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="17.Object-relational mapping with ActiveRecord">
+						<a data-toggle="collapse" data-parent="#interpy" href="#collapse17">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							17.Jython and CPython Differences
+						</a>
+					</h4>
+				</div>
+				<div id="collapse17" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Jython Extensions</li>
+							<li>Major Design Differences</li>
+							<li>Minor Design Differences</li>
+							<li>Differences Due to Java Details</li>
+							<li>Differences Due to Java Limitations</li>
+							<li>Minor Issues</li>
+							<li>Java Objects Versus Python Objects</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div><!-- panel-group -->	
+    </div>
+  </div>
+	<input type = "submit" class="btn btn-primary" value= "Submit Choices" style = "">
+	</form>
+</div>	
+</div>
+<script>
+function toggleIcon(e) {
+    $(e.target)
+        .prev('.panel-heading')
+        .find(".more-less")
+        .toggleClass('glyphicon-plus glyphicon-minus');
+}
+$('.panel-group').on('hidden.bs.collapse', toggleIcon);
+$('.panel-group').on('shown.bs.collapse', toggleIcon);
+</script>
+{% endblock %}

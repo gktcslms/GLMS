@@ -1,0 +1,19 @@
+#cover{ position:fixed;
+top:0; 
+left:0; 
+background:rgba(0,0,0,0.6); 
+z-index:88888; 
+width:100%; 
+height:100%; 
+display:none; } 
+
+#formScreen { height:340px; width:410px; 
+margin:40; 
+position:fixed; 
+z-index:99999; 
+display:none; 
+background:#3399CC; 
+border:5px solid #cccccc; 
+border-radius:10px; } 
+
+#formScreen:target, #formScreen:target + #cover{ display:block; opacity:2; }

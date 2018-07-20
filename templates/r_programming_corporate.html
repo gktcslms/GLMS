@@ -1,0 +1,580 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+<div style="background-color:#337ab7; padding:10px" class="row"><!––<img src="python_banner.jpg" class="img-fluid" style="width:100%" alt="Responsive image">
+<div class="col-md-5 hidden-sm hidden-xs" style="padding-left:30px">	
+	<iframe width="420" height="230" src="https://www.youtube.com/embed/UYclmg1_KLk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+<div class="hidden-lg hidden-md col-sm-12" style="padding-left:30px">	
+	<iframe width="315" height="173" src="https://www.youtube.com/embed/UYclmg1_KLk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+<div class="col-md-7">
+	<h1 style="color:#fff; text-shadow: 2px 2px #212020;">R programming</h1><h3 style="color:#fff;text-shadow: 2px 2px #212020;">The Data Science with R has been designed to give you in-depth knowledge of the various data analytics techniques that can be performed using R. The data science course is packed with real-life projects and case studies, and includes R Studio Lab for practice.</h3>
+</div>
+</div>
+</div>
+<div class="container" style="background-color: #e8e8e8; padding-bottom: 15px;">
+<div class="row">
+<div class="col-md-6">  
+  <h3>R programming Course objectives</h3>
+  Some of the key skills you will gain upon completion of this program include:
+                     
+<ul style="padding-left: 15px">  
+<li>Gain a foundational understanding of business analytics</li>
+<li>Install R, R-studio, and workspace setup, and learn about the various R packages</li>
+<li>Master R programming and understand how various statements are executed in R</li>
+<li>Gain an in-depth understanding of data structure used in R and learn to import export data in R</li>
+<li>Define, understand and use the various apply functions and DPLYR functions</li>
+<li>Understand and use the various graphics in R for data visualisation</li>
+<div id="objlist" class="panel-collapse collapse">
+<li>Gain a basic understanding of various statistical concepts</li>
+<li>Understand and use hypothesis testing method to drive business decisions</li>
+<li>Understand and use linear, non-linear regression models, and classification techniques for data analysis</li>
+<li>Learn and use the various association rules and Apriori algorithm</li>
+<li>Learn and use clustering methods including K-means, DBSCAN, and hierarchical clustering</li>
+</div>
+<a role="button" style="color:#337ab7" data-toggle="collapse" data-parent="" href="#objlist" aria-expanded="true" aria-controls="objlist">
+    More...
+</a>
+</ul>
+</div>
+<div class="col-md-6">
+<h3>Prerequisite</h3>
+<p>
+<ul style="padding-left: 15px">
+<li>• There are no prerequisites for this data science online training course. If you are new in the field of data science, this is the best course to start with.</li>
+</ul>
+</p>
+</div> 
+</div>
+<div>
+<p class=""><a target="_blank" href="http://gktcs.com/GLMS/public/static/pdf/r_programming_content.pdf" class = "btn btn-primary"><i class="fa fa-download"></i> Download Course Content [5 Days] (PDF)</a></p>
+</div>
+<div>
+  <ul class="nav nav-pills rwo" style="background-color:#fafafa">
+    <li class="active col-md-12 col-xs-12" style="padding:0px; margin:0px; text-align: center"><a data-toggle="pill" href="#basicpy"><h4>R Programming: Modules </h4></a></li>
+  </ul>
+	<form action="." method="post" style="">{% csrf_token %}
+	<div class="tab-content"> 
+    <div id="basicpy" class="tab-pane fade in active">
+		<br/>
+		<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingOne">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="1.Introduction to Business Analytics">
+						<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							1.Introduction to Business Analytics
+						</a>
+					</h4>
+				</div>
+				<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+					<div class="panel-body">
+						<ul>
+							<li>Introduction</li>
+							<li>Objectives</li>
+							<li>Need of Business Analytics</li>
+							<li>Business Decisions</li>
+							<li>Introduction to Business Analytics</li>
+							<li>Features of Business Analytics</li>
+							<li>Types of Business Analytics</li>
+							<li>Business Decisions</li>
+							<li>Business Intelligence (BI)</li>
+							<li>Data Science</li>
+							<li>Importance of Data Science</li>
+							<li>Data Science as a Strategic Asset</li>
+							<li>Big Data</li>
+							<li>Analytical Tools</li>
+							<li>Quiz</li>
+							<li>Summary</li>
+							</ul>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingTwo">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="2.Introduction to R">
+						<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							2.Introduction to R
+						</a>
+					</h4>
+				</div>
+				<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+					<div class="panel-body">
+						<ul>
+							<li>Introduction</li>
+							<li>Objectives</li>
+							<li>An Introduction to R</li>
+							<li>Comprehensive R Archive Network (CRAN)</li>
+							<li>Cons of R</li>
+							<li>Companies Using R</li>
+							<li>Understanding R</li>
+							<li>Installing R on Various Operating Systems</li>
+							<li>Installing R on Windows from CRAN Website</li>
+							<li>Demo - Install R</li>
+							<li>Install R</li>
+							<li>IDEs for R</li>
+							<li>Install RStudio</li>
+							<li>Steps in R Initiation</li>
+							<li>Functions and Help in R</li>
+							<li>R Packages</li>
+							<li>Installing an R Package</li>
+							<li>Quiz</li>
+							<li>Summary</li>
+						</ul>					
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingThree">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="3.R Programming">
+						<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							3.R Programming
+						</a>
+					</h4>
+				</div>
+				<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+					<div class="panel-body">
+						<ul>
+							<li>Introduction</li>
+							<li>Objectives</li>
+							<li>Operators in R</li>
+							<li>Arithmetic Operators</li>
+							<li>Relational Operators</li>
+							<li>Logical Operators</li>
+							<li>Assignment Operators</li>
+							<li>Conditional Statements in R</li>
+							<li>Ifelse() Function</li>
+							<li>Switch Function</li>
+							<li>Loops in R</li>
+							<li>Break Statement</li>
+							<li>Next Statement</li>
+							<li>Scan() Function</li>
+							<li>Running an R Script</li>
+							<li>Running a Batch Script</li>
+							<li>R Functions</li>
+							<li>Use Commonly Used Functions</li>
+							<li>Demo - Use String Functions</li>
+							<li>Quiz</li>
+							<li>Summary</li>
+						<ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="heading4">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="4.R Data Structure">
+						<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							4.R Data Structure
+						</a>
+					</h4>
+				</div>
+				<div id="collapse4" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Introduction</li>
+							<li>Objectives</li>
+							<li>Types of Data Structures in R</li>
+							<li>Vectors</li>
+							<li>Matrices</li>
+							<li>Accessing Matrix Elements</li>
+							<li>Arrays</li>
+							<li>Data Frames</li>
+							<li>Elements of Data Frames</li>
+							<li>Factors</li>
+							<li>Lists</li>
+							<li>Importing Files in R</li>
+							<li>Read Data from a File</li>
+							<li>Exporting Files from R</li>
+							<li>Quiz</li>
+							<li>Summary</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading5">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="5.Apply Functions">
+						<a data-toggle="collapse" href="#collapse5" data-parent="#accordion">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							5.Apply Functions
+						</a>
+					</h4>
+				</div>
+				<div id="collapse5" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Introduction</li>
+							<li>Objectives</li>
+							<li>Types of Apply Functions</li>
+							<li>Apply() Function</li>
+							<li>Lapply() Function</li>
+							<li>Sapply() Function</li>
+							<li>Tapply() Function</li>
+							<li>Vapply() Function</li>
+							<li>Mapply() Function</li>
+							<li>Dplyr Package - An Overview</li>
+							<li>Dplyr Package - The Five Verbs</li>
+							<li>Installing the Dplyr Package</li>
+							<li>Use the Select Function</li>
+							<li>Functions of Dplyr-Package - Filter()</li>
+							<li>Functions of Dplyr Package - Arrange()</li>
+							<li>Use Arrange Function</li>
+							<li>Functions of Dplyr Package - Mutate()</li>
+							<li>Functions of Dply Package - Summarise()</li>
+							<li>Use Summarise Function</li>
+							<li>Quiz</li>
+							<li>Summary	</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading6">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="6.Data Visualization">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							6.Data Visualization
+						</a>
+					</h4>
+				</div>
+				<div id="collapse6" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Introduction</li>
+							<li>Objectives</li>
+							<li>Graphics in R</li>
+							<li>Types of Graphics</li>
+							<li>Bar Charts</li>
+							<li>Pie Charts</li>
+							<li>Histograms</li>
+							<li>Kernel Density Plots</li>
+							<li>Line Charts</li>
+							<li>Box Plots</li>
+							<li>Heat Maps</li>
+							<li>Word Clouds</li>
+							<li>File Formats for Graphic Outputs</li>
+							<li>Saving a Graphic Output as a File</li>
+							<li>Exporting Graphs in RStudio</li>
+							<li>Exporting Graphs as PDFs in RStudio</li>
+							<li>Demo - Save Graphics Using RStudio</li>
+							<li>Quiz</li>
+							<li>Summary</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading7">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="7.Introduction to Statistics">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse7">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							7.Introduction to Statistics
+						</a>
+					</h4>
+				</div>
+				<div id="collapse7" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Introduction</li>
+							<li>Objectives</li>
+							<li>Basics of Statistics</li>
+							<li>Types of Data</li>
+							<li>Qualitative vs. Quantitative Analysis</li>
+							<li>Types of Measurements in Order</li>
+							<li>Statistical Investigation</li>
+							<li>Normal Distribution</li>
+							<li>Use Probability Distribution Functions</li>
+							<li>Distance Measures</li>
+							<li>Euclidean Distance</li>
+							<li>Manhattan Distance</li>
+							<li>Minkowski Distance</li>
+							<li>Mahalanobis Distance</li>
+							<li>Cosine Similarity</li>
+							<li>Correlation</li>
+							<li>Correlation Measures Explained</li>
+							<li>Pearson Product Moment Correlation (PPMC)</li>
+							<li>Pearson Correlation - Case Study</li>
+							<li>Dist() Function in R</li>
+							<li>Demo - Perform the Distance Matrix Computations</li>
+							<li>Perform the Distance Matrix Computations</li>
+							<li>Quiz</li>
+							<li>Summary</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading8">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="8.Hypothesis Testing">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse8">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							8.Hypothesis Testing
+						</a>
+					</h4>
+				</div>
+				<div id="collapse8" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Introduction</li>
+							<li>Objectives</li>
+							<li>Hypothesis</li>
+							<li>Need of Hypothesis Testing in Businesses</li>
+							<li>Null Hypothesis</li>
+							<li>Alternate Hypothesis</li>
+							<li>Null vs. Alternate Hypothesis</li>
+							<li>Chances of Errors in Sampling</li>
+							<li>Types of Errors</li>
+							<li>Contingency Table</li>
+							<li>Decision Making</li>
+							<li>Critical Region</li>
+							<li>Level of Significance</li>
+							<li>Confidence Coefficient</li>
+							<li>Bita Risk</li>
+							<li>Power of Test</li>
+							<li>Factors Affecting the Power of Test</li>
+							<li>Types of Statistical Hypothesis Tests</li>
+							<li>Upper Tail Test</li>
+							<li>Test Statistic</li>
+							<li>Factors Affecting Test Statistic</li>
+							<li>Critical Value Using Normal Probability Table</li>
+							<li>Quiz</li>
+							<li>Summary</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading9">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="9.Hypothesis Testing II">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse9">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							9.Hypothesis Testing II
+						</a>
+					</h4>
+				</div>
+				<div id="collapse9" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Introduction</li>
+							<li>Objectives</li>
+							<li>Parametric Tests</li>
+							<li>Z-Test</li>
+							<li>T-Test</li>
+							<li>Use Normal and Student Probability Distribution Functions</li>
+							<li>Testing Null Hypothesis</li>
+							<li>Objectives of Null Hypothesis Test</li>
+							<li>Three Types of Hypothesis Tests</li>
+							<li>Hypothesis Tests About Population Means</li>
+							<li>Decision Rules</li>
+							<li>Chi-Square Test</li>
+							<li>Steps of Chi-Square Test</li>
+							<li>Degree of Freedom</li>
+							<li>Use Chi-Squared Test Statistics</li>
+							<li>Introduction to ANOVA Test</li>
+							<li>One-Way ANOVA Test</li>
+							<li>The F-Distribution and F-Ratio</li>
+							<li>F-Ratio Test</li>
+							<li>F-Ratio Test in R - Example</li>
+							<li>Perform ANOVA</li>
+							<li>Quiz</li>
+							<li>Summary</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading10">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="10.Regression Analysis">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse10">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							10.Regression Analysis
+						</a>
+					</h4>
+				</div>
+				<div id="collapse10" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Introduction</li>
+							<li>Objectives</li>
+							<li>Introduction to Regression Analysis</li>
+							<li>Use of Regression Analysis - Examples</li>
+							<li>Types Regression Analysis</li>
+							<li>Simple Linear Regression Model</li>
+							<li>Correlation</li>
+							<li>Find Correlation</li>
+							<li>Method of Least Squares Regression Model</li>
+							<li>Coefficient of Multiple Determination Regression Model</li>
+							<li>Standard Error of the Estimate Regression Model</li>
+							<li>Dummy Variable Regression Model</li>
+							<li>Interaction Regression Model</li>
+							<li>Non-Linear Regression Models</li>
+							<li>Demo - Perform Regression Analysis with Multiple Variables</li>
+							<li>Perform Regression Analysis with Multiple Variables</li>
+							<li>Non-Linear Models to Linear Models</li>
+							<li>Algorithms for Complex Non-Linear Models</li>
+							<li>Quiz</li>
+							<li>Summary</li>
+							<li>Conclusion</li>
+							</ul>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading11">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="11.Classification">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse11">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							11.Classification
+						</a>
+					</h4>
+				</div>
+				<div id="collapse11" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Introduction</li>
+							<li>Objectives</li>
+							<li>Introduction to Classification</li>
+							<li>Examples of Classification</li>
+							<li>Classification vs. Prediction</li>
+							<li>Issues Regarding Classification and Prediction</li>
+							<li>Data Preparation Issues</li>
+							<li>Evaluating Classification Methods Issues</li>
+							<li>Decision Tree</li>
+							<li>Classification Rules of Trees</li>
+							<li>Overfitting in Classification</li>
+							<li>Tips to Find the Final Tree Size</li>
+							<li>Basic Algorithm for a Decision Tree</li>
+							<li>Statistical Measure - Information Gain</li>
+							<li>Enhancing a Basic Tree</li>
+							<li>Demo - Model a Decision Tree</li>
+							<li>Model a Decision Tree</li>
+							<li>Naive Bayes Classifier Model</li>
+							<li>Bayesian Theorem</li>
+							<li>Naive Bayes Classifier</li>
+							<li>Naive Bayes Classifier - Advantages and Disadvantages</li>
+							<li>Nearest Neighbor Classifiers</li>
+							<li>Computing Distance and Determining Class</li>
+							<li>Choosing the Value of K</li>
+							<li>Support Vector Machines</li>
+							<li>Geometric Margin in SVMs</li>
+							<li>Linear SVMs</li>
+							<li>Non-Linear SVMs</li>
+							<li>Demo - Support a Vector Machine</li>
+							<li>Support a Vector Machine</li>
+							<li>Quiz</li>
+							<li>Summary</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading12">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="12.Clustering">
+						<a data-toggle="collapse" data-parent="#interpy" href="#collapse12">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							12.Clustering
+						</a>
+					</h4>
+				</div>
+				<div id="collapse12" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Introduction</li>
+							<li>Objectives</li>
+							<li>Introduction to Clustering</li>
+							<li>Clustering vs. Classification</li>
+							<li>Use Cases of Clustering</li>
+							<li>Clustering Models</li>
+							<li>K-means Clustering</li>
+							<li>Pseudo Code of K-means</li>
+							<li>K-means Clustering - Case Study</li>
+							<li>Perform Clustering Using Kmeans</li>
+							<li>Hierarchical Clustering</li>
+							<li>Requirements of Hierarchical Clustering Algorithms</li>
+							<li>Agglomerative Clustering Process</li>
+							<li>Perform Hierarchical Clustering</li>
+							<li>DBSCAN Clustering</li>
+							<li>Quiz</li>
+							<li>Summary</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading13">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="13.Association">
+						<a data-toggle="collapse" data-parent="#interpy" href="#collapse13">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							13.Association
+						</a>
+					</h4>
+				</div>
+				<div id="collapse13" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Introduction</li>
+							<li>Objectives</li>
+							<li>Association Rule Mining</li>
+							<li>Application Areas of Association Rule Mining</li>
+							<li>Parameters of Interesting Relationships</li>
+							<li>Association Rules</li>
+							<li>Limitations of Support and Confidence</li>
+							<li>Apriori Algorithm</li>
+							<li>Step 1 - Mine All Frequent Item Sets</li>
+							<li>Algorithm to Find Frequent Item Set</li>
+							<li>Finding Frequent Item Set - Example</li>
+							<li>Ordering Items</li>
+							<li>Candidate Generation</li>
+							<li>Step 2 - Generate Rules from Frequent Item Sets</li>
+							<li>Perform Association Using the Apriori Algorithm</li>
+							<li>Demo - Perform Visualization on Associated Rules</li>
+							<li>Problems with Association Mining</li>
+							<li>Quiz</li>
+							<li>Summary</li>
+							<li>Conclusion</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div><!-- panel-group -->	
+    </div>
+  </div>
+	<input type = "submit" class="btn btn-primary" value= "Submit Choices" style = "">
+	</form>
+</div>	
+</div>
+<script>
+function toggleIcon(e) {
+    $(e.target)
+        .prev('.panel-heading')
+        .find(".more-less")
+        .toggleClass('glyphicon-plus glyphicon-minus');
+}
+$('.panel-group').on('hidden.bs.collapse', toggleIcon);
+$('.panel-group').on('shown.bs.collapse', toggleIcon);
+</script>
+{% endblock %}

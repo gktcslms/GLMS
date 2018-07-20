@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+<!--<div class="container" style="margin-top: 16px;">
+<div class="row">	
+
+	
+			
+					
+					{% for i in course %}
+					<div class="well"><h2 style="margin-top: 0;"><a href="{% url 'Courses' %}" style="color: #3366AA; text-decoration:none">{{ i.course_name }}</a></h2>
+					<b>Description:</b> {{ i.course_desc }}</div>
+					{% endfor %}
+</div>
+</div>--><div id="div1" style="margin-top:10px;">
+			<div class="container">
+				<div class="row">
+
+					<div class="col-md-12">
+						<div id="course_desc">
+						<h2 style="color:#00A4CB; text-align:center; padding-top: 20px; margin-top: 0; margin-bottom: 15px;">Search Results</h2>
+							{% for i in course %}
+							<div class="row" style="background: rgba(40, 55, 73, 0.1);margin:10px; padding-top:4px;padding-bottom:4px;">
+								<div class="col-md-3 col-sm-3">
+									<a href="{{ i.course_url }}"><img class="img-responsive" id="header-logo" src="{{ i.course_img_url }}" /></a>
+								</div>
+								<div class="col-md-9 col-sm-9">
+									<a href="{{ i.course_url }}"><h3 style="margin-bottom: 1px; margin-top: 2px;">{{ i.course_name }}</h3></a>
+									<div id="span1">{{ i.course_desc }} <a href="{{ i.course_url }}"><span style="color: #00a4cb;">More....</span></a></div>
+								</div>
+							</div><hr/>
+							{% endfor %}
+						<br/><br/>	
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>		
+{% endblock %}

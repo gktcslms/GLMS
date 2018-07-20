@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+{% extends "index.html" %}
+{% load staticfiles %}
+{% block home %}
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="http://api.html5media.info/1.1.5/html5media.min.js"></script>
+      {% block flash%} {% endblock %}
+    
+    <style type="text/css">
+        body {
+            background: #fff;
+            font-family: verdana;
+            padding-top: 0px;
+            background-color: #027fcf;
+        }
+        #vtab {
+            margin: 10;
+            width: 700px;
+            height: 100%;
+        }
+        #vtab > ul > li {
+            width: 150px;
+            height: 80px;
+            background-color: #fff !important;
+            list-style-type: none;
+            display: block;
+            text-align: center;
+            margin: auto;
+            padding-bottom: 10px;
+            border: 1px solid #fff;
+            position: relative;
+            border-right: none;
+            opacity: .3;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+            filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+        }
+        #vtab > ul > li.home {
+            background: url('http://gktcs.in/GLMS/public/static/images/about1.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.login {
+            background: url('http://gktcs.in/GLMS/public/static/images/demo4.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.support {
+            background: url('http://gktcs.in/GLMS/public/static/images/content.jpg') no-repeat center center;
+        }
+         #vtab > ul > li.support1 {
+            background: url('http://gktcs.in/GLMS/public/static/images/batches.jpg') no-repeat center center;
+        }
+        
+        #vtab > ul > li.support2 {
+            background: url('http://gktcs.in/GLMS/public/static/images/interview.jpg') no-repeat center center;
+        }
+         #vtab > ul > li.support3 {
+            background: url('http://gktcs.in/GLMS/public/static/images/training.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.support4 {
+            background: url('http://gktcs.in/GLMS/public/static/images/FAQ.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.support5 {
+            background: url('http://gktcs.in/GLMS/public/static/images/testi.jpg') no-repeat center center;
+        }
+         #vtab > ul > li.support6 {
+            background: url('http://gktcs.in/GLMS/public/static/images/certification.jpg') no-repeat center center;
+        }
+        
+        
+        #vtab > ul > li.selected {
+            opacity: 1;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+            filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+            border: 1px solid #ddd;
+            border-right: none;
+            z-index: 10;
+            background-color: #fafafa !important;
+            position: relative;
+        }
+        #vtab > ul {
+            float: left;
+            width: 110px;
+            text-align: left;
+            display: block;
+            margin: auto 0;
+            padding: 0;
+            position: relative;
+            top: 30px;
+        }
+        #vtab > div {
+            background-color: #fafafa;
+            margin-left:150px;
+            border: 1px solid #ddd;
+            min-height: 700px;
+            padding: 12px;
+            position: relative;
+            z-index: 9;
+            -moz-border-radius: 20px;
+        }
+        #vtab > div > h4 {
+            color: #800;
+            font-size: 1.2em;
+            border-bottom: 1px dotted #800;
+            padding-top: 5px;
+            margin-top: 0;
+        }
+        #loginForm label {
+            float: left;
+            width: 100px;
+            text-align: right;
+            clear: left;
+            margin-right: 15px;
+        }
+        #loginForm fieldset {
+            border: none;
+        }
+        #loginForm fieldset > div {
+            padding-top: 3px;
+            padding-bottom: 3px;
+        }
+        #loginForm #login {
+            margin-left: 115px;
+        }
+        
+     a {text-decoration: none}
+    </style>
+
+    <script type="text/javascript">
+        $(function() {
+            var $items = $('#vtab>ul>li');
+            $items.mouseover(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('#vtab>div').hide().eq(index).show();
+            }).eq(0).mouseover();
+        });
+    </script>
+
+</head>
+<body>
+
+		<font color="#366D9C" size=6px style="font-family: Georgia; padding-left: 400px"><b>iOS</b></font>
+
+	
+	<table width="980" height="700"> 
+		<tr> 
+			<td width='100'>
+		
+    <div id="vtab">
+        <ul>
+            <li class="home selected"></li>
+            <li class="login"></li>
+            <li class="support"></li>
+            <li class="support1"></li>
+            <li class="support2"></li>
+            <li class="support3"></li>
+            <li class="support4"></li>
+            <li class="support5"></li>
+            <li class="support6"></li>
+        </ul>
+        <div>
+        	<h4>About Course</h4>
+        	<br/>
+           <table align="justify">
+           	<tr align="justify">
+           		<td valign="top">
+           		<img src='http://gktcs.in/GLMS/public/static/images/ios.jpg' width='90' height="60" />
+           		</td>
+           		<td>
+           			
+<b>Course Duration:</b>45hrs<br/>
+<br/>
+<b>Course Description:</b><br/>
+<br/>
+			<b>iOS</b> is the operating system that runs on iPad, iPhone, and iPod touch devices. The operating system manages the device hardware and provides the technologies required to implement native apps.
+<br/>
+<br/>
+<b>Who Should Attend:</b>
+<br/>
+<br/>
+This course is intended for those  who is familier Mac Operating System.
+<br/><br/>
+<b>Benefits of Attendance:</b>
+<br/>
+<br/>
+Upon completion of this course, students will get following advantages of iOS:<br/>
+<br/>
+<ul>
+<li> Multi-touch events and controls</li><br/>
+<li>Accelerometer support</li><br/>
+<li>View hierarchy</li><br/>
+<li>View hierarchy</li>
+<br/>
+</ul>
+
+<b>Prerequisites:</b><br/>
+<br/>
+The student should know about the basic concepts of mobile Application Development and Should have knowledge of Mac operating system.</td>
+           	</tr>
+           	
+           	
+           </table>
+            
+        </div>     
+         <div>
+         	<h4>Sample Demo</h4>
+         	<br/>
+         	<div>
+   <video id="abc" width="500px" height="360px" autoplay controls > <source src="{% static 'C:/GLMS/static/abc.mp4' %}" type="video/mp4"> </source>
+     
+        </video></div>
+
+</div>
+           <div>
+            <h4>
+              Content </h4>
+              <br/>
+              
+            <h3> GETTING STARTED </h3><br>
+				<li>General Overview </li>
+				<li>Registering as an Apple Developer</li>
+				<li>Apple iOS Developer Program </li><br>
+							
+			<h3> ENVIRONMENT SETUP </h3><br>
+				<li>iOS – Xcode Installation </li>
+				<li>Interface Builder</li>
+				<li>iOS Simulator</li>		<br>
+			
+			<h3> OBJECTIVE C</h3><br>
+				<li>Interface and Implementation </li>
+			<li>	Object Creation</li>
+				<li>Methods </li>
+				<li>Important Data Types in Objective C </li>
+				<li>Printing Logs </li>
+				<li>Control Structures </li>
+				<li>Properties</li>
+				<li>Categories </li>
+				<li>Arrays</li>
+				<li>Dictionary </li><br>
+					
+			<h3>FIRST IPHONE APPLICATION </h3><br>
+				<li>Creating the First App </li>
+				<li>Code of the First iOS Application</li> 
+				<li>AppDelegate.h </li>
+				<li>AppDelegate.m </li>
+				<li>ViewController.h </li>
+				<li>ViewController.m </li><br>
+				
+			<h3>ACTIONS AND OUTLETS</h3><br>
+				<li>Actions and Outlets – Steps Involved</li> <br>
+
+			<h3>DELEGATES </h3><br>
+				<li>Example for Delegate</li> 
+				<li>Steps in Creating a Delegate </li><br>
+				
+			<h3>UI ELEMENTS</h3><br>
+				<li>What UI Elements are? </li>
+				<li>How to Add UI Elements? </li>
+				<li>Our Focus</li>
+				<li>Our Approach </li>
+				<li>List of UI Elements</li>
+				<li>Text Fields </li>
+				<li>Input Types – TextFields</li>
+				<li>Buttons </li>
+				<li>Label </li>
+				<li>Toolbar </li>
+				<li>Status Bar </li>
+				<li>Navigation Bar </li>
+				<li>	Tab Bar</li>
+				<li>	Image View </li>
+				<li>	Scroll View</li>
+				<li>	Table View </li>
+				<li>	Split View </li>
+				<li>	Text View </li>
+				<li>	View Transition</li> 
+				<li>	Pickers </li>
+				<li>	Switches</li>
+				<li>	Sliders</li> 
+				<li>	Alerts </li>
+				<li>	Icons </li><br>
+				
+				<h3>ACCELEROMETER </h3><br>
+					<li>Accelerometer – Steps Involved</li><br> 
+					
+				<h3>UNIVERSAL APPLICATIONS</h3><br> 
+					<li>Universal Application – Steps Involved </li><br>
+				
+				<h3>CAMERA MANAGEMENT </h3><br>
+					<li>Camera Management – Steps Involved</li><br> 
+					
+				<h3>LOCATION HANDLING </h3><br>
+					<li>Location Handling – Steps Involved </li><br>
+					
+				<h3>SQLITE DATABASE</h3><br>
+				<li>Steps Involved</li><br>
+
+				<h3>SENDING EMAIL </h3><br>
+					<li>Steps Involved		</li><br>		
+				
+				<h3>AUDIO AND VIDEO </h3><br>
+					<li>Steps Involved</li><br>
+					
+				<h3>FILE HANDLING</h3><br> 
+					<li>Methods used in File Handling</li> 
+					<li>Check if a File Exists at a Path </li>
+					<li>Comparing Two File Contents </li>
+					<li>Check if Writable, Readable, and Executable</li> 
+					<li>Move File</li> 
+					<li>Copy File </li>
+					<li>Remove File</li>
+					<li>Read File</li>
+					<li>Write File</li><br> 
+					
+				<h3>ACCESSING MAPS</h3><br>
+					<li>Steps Involved</li><br> 
+					
+				<h3>IN-APP PURCHASE</h3><br> 
+					<li>Steps Involved </li><br>
+					
+				<h3>IAD INTEGRATION</h3><Br>
+					<li>iAd Integration – Steps Involved </li><br>
+
+				<h3>GAMEKIT </h3><br>
+					<li>Steps Involved</li><bR> 
+						
+				<h3>STORYBOARDS </h3><br>
+					<li>Steps Involved</li><br> 
+			
+				<h3> AUTO-LAYOUTS </h3><Br>
+					<li>Our Approach </li><br>
+					<li>Steps Involved</li><br> 
+					
+				<h3>TWITTER AND FACEBOOK </h3><br>
+					<li>Steps Involved</li><br> 
+					
+				<h3>MEMORY MANAGEMENT</h3><Br>
+					<li>Memory Management Issues</li> 
+					<li>Memory Management Rules </li>
+					<li>Handling Memory in ARC </li>
+					<li>Memory Management Tools </li>
+					<li>Steps for Analyzing Memory Allocations</li>
+					
+				<h3>APPLICATION DEBUGGING </h3><br>
+					<li>Selecting a Debugger </li>
+					<li>How to Find Coding Errors?</li> 
+					<li>Set Breakpoints</li> 
+					<li>Exception Breakpoint</li> 
+				
+        </div>
+        
+           <div>
+        
+ <h4>Upcoming Batches</h4>
+ <br/>
+<div class="pricing_table">
+
+<table width=500px>
+		<tr width=500px ></tr>
+		<b><th width=280 bgcolor="#333333" style="color:#FFFFFF;">Start date</th>
+			
+		<th width=95 bgcolor="#333333" style="color:#FFFFFF;">Duration</th>
+		<th width=700 bgcolor="#333333" style="color:#FFFFFF;">Days</th>
+		<th width=100 bgcolor="#333333" style="color:#FFFFFF;">Time</th>
+		<th width=100 bgcolor="#333333" style="color:#FFFFFF;">Price</th></b>
+		</tr>
+		
+		
+		{% for j in batch %}
+		<tr width=500px>
+			
+<td width=350 bgcolor="#CCCCCC" style="text-align: center"> {{j.Start}}</td>
+<td width=220 bgcolor="#CCCCCC" style="text-align: center">{{j.Duration}}</td>
+<td width=350 bgcolor="#CCCCCC" style="text-align: center">{{j.Days}}</td>
+
+<td width=150 bgcolor="#CCCCCC" style="text-align: center">{{j.Time}}</td>
+<td width=100 bgcolor="#CCCCCC" style="text-align: center">{{j.Price}}/-</td>
+
+		
+		</tr>
+		{% endfor %}
+		
+		
+	</table>	
+
+</div>
+	 <br><br>
+	<br/>
+		
+
+<a href="/Enroll" style="padding-left: 320px; "><img src="http://gktcs.in/GLMS/public/static/images/enroll.png" height=40px width="190px" align="center"/></a>
+        </div>
+        
+           <div align="justify">
+           	<h4>Interview Questions</h4>
+           	<br/>
+           	<br/>
+           	
+           	<b>Question:  . Where can you test Apple iPhone apps if you don’t have the device?</b><br/>
+Ans. iOS Simulator can be used to test mobile applications. Xcode tool that comes along with iOS SDK includes Xcode IDE as well as the iOS Simulator. Xcode also includes all required tools and frameworks for building iOS apps.  However, it is strongly recommended to test the app on the real device before publishing it.
+<br><BR>
+         
+            <b>Question: Does iOS support multitasking? </b><br/>
+Ans.  iOS 4 and above supports multi-tasking and allows apps to remain in the background until they are launched again or until they are terminated.  
+<br><br>
+
+<b>Question: Which JSON framework is supported by iOS? </b><br/>
+Ans. SBJson framework is supported by iOS.  It is a JSON parser and generator for Objective-C. SBJson provides flexible APIs and additional control that makes JSON handling easier.
+<br/>
+<br/>
+<b>Question: What are the tools required to develop iOS applications? </b><br/>
+Ans.  iOS development requires Intel-based Macintosh computer and iOS SDK.<br><Br>
+	
+<b>Question: Name the framework that is used to construct application’s user interface for iOS. </b><br>
+Ans.The UIKit framework is used to develop application’s user interface for iOS. UIKit framework provides event handling, drawing model, windows, views, and controls specifically designed for a touch screen interface. 
+<br>
+<bR>
+<b>Question:  Name the application thread from where UIKit classes should be used? </b><br/>
+Ans.
+UIKit classes should be used only from an application’s main thread.  Note: The derived classes of UIResponder and the classes which manipulate application’s user interface should be used from application’s main thread. 
+<b>Question: Which API is used to write test scripts that help in exercising the application's user interface elements? 
+</b><br/>
+Ans.UI Automation API is used to automate test procedures. Tests scripts are written in JavaScript to the UI Automation API.  This in turn simulates user interaction with the application and returns log information to the host computer.
+<br><Br>
+<b>Question: Why an app on iOS device behaves differently when running in foreground than in background? </b><br/>
+Ans.  An application behaves differently when running in foreground than in background because of the limitation of resources on iOS devices
+<br><br>
+<b>Question: How can an operating system improve battery life while running an app? </b><bR>
+Ans.
+. An app is notified whenever the operating system moves the apps between foreground and background.  The operating system improves battery life while it bounds what your app can do in the background. This also improves the user experience with foreground app.
+<br><br>
+
+<b>Question: Which framework delivers event to custom object when app is in foreground? </b><br>  	
+Ans. The UIKit infrastructure takes care of delivering events to custom objects. As an app developer, you have to override methods in the appropriate objects to process those events.<br><br>
+
+
+
+        </div>
+         <div align="justify">
+         	<h4>
+                Training Mode</h4>
+                <br/>
+   
+         	
+         	<table width=620><tr align="justify">
+         		<td width="330" align="justify">
+         		<br/>
+         	
+         	<b>Corporate Training :</b><br/>
+         	
+Corporate Training Solutions
+
+Corporate training is the act of grooming the workforce in order to make them capable of handling modern business challenges by improving their approach and productivity and thus, making effective utilization of resources. We at GKTCS work hand in hand with Industry on various fronts. GKTCS’s business cycle is aligned very closely to Industry needs and structured to fulfil the industry needs in terms of Training and Recruitment.
+
+We always believe our customers speak for our services based on their rich experience with our kind of services.
+</td>
+<td align="right">
+	<img src="http://gktcs.in/GLMS/public/static/images/corporate.jpg"  width="200" height="150"/> 
+</td>
+</tr>
+<tr>
+	<td>
+		<br/>
+<b>Retail Training :</b>
+<br/>
+GKTCS Innovations has a set of best trainers who are constantly engaged in spreading technical and non technical knowledge to individual who are seeking an opportunity in their respective industries and would like to straight away face the challenges of the continuously improving and changing world.
+
+The retail Training services provided by GKTCS Innovations are designed as per the needs of corporate and also as per the guidelines provided by them.
+ </td>
+ <td align="right">
+	<img src="http://gktcs.in/GLMS/public/static/images/retail.jpg"  width="200" height="150"/>
+</td>
+ </tr>
+ <tr>    <td>   
+ 	<br/>	
+ <b>Online Training </b>
+ <br/>
+ GKTCS offers Online Training , so you get trained from where you are from our experienced trainers, In the weekdays as well as weekends by the Real Time Professionals. The program is designed to provide rich learning experience for students using Internet.         	
+      </td>   
+      <td align="right">
+      	<img src="http://gktcs.in/GLMS/public/static/images/online.jpg"  width="200" height="150"/>
+      </td>  
+      </tr>	
+    </table>     	
+         	
+         </div>
+		
+
+           <div align="justify">
+           	<h4>
+                FAQs</h4>
+           	
+           	<br/>
+    
+          <b>Do I need a Mac laptop for class, or can I bring my iMac?</b><br/>
+          You must have a laptop for class. Although you can program for iOS on a desktop like an iMac, you will be working in different teams and moving around a lot in the office. We will also be attending events outside the office such as conferences or meetups. You will need to be able to move quickly and work in a variety of places, and for that you will need a laptop. 
+<br><BR>
+<b>Why does Coder Camps focus on Objective-C and only spend one week on Swift?</b>
+<br><BR>
+Today, Swift is what you should learn if you want to build your first app quickly, but Objective-C is what you need to learn to get an entry-level job at a large enterprise with an existing iOS codebase. 
+Objective-C is the main programming language of Mac and iOS, and is what you need to know for most of the entry-level jobs currently out there, so that's what we focus on. But in the not-too-distant future that may all change with Swift. 
+<br><Br>
+Apple introduced Swift very recently at WWDC in 2014, and although the jobs that require it are still very few, it's important that you are prepared for the future of iOS. So we do spend a week talking about Swift, and you will build projects that use both languages so you can see how to integrate Swift into an existing Objective-C codebase. We'll also introduce you to Xamarin, PhoneGap/Apache Cordova, and other cross-platform options for building iOS apps, and discuss when those options are better, and why most companies today are still building and maintaining iOS apps with native code, and why most of those companies are still working on legacy Objective-C codebases. 
+<br/><bR>
+<b>What device(s) do I need for class? Can I use my iPhone/iPad/iPod touch? Can I use my Apple Watch?
+</b><br/>
+You need at least one iOS device that runs the latest version of iOS. That can be an iPhone, an iPad, or an iPod touch. If you want to write apps that work on multiple devices (e.g. an app that works on both iPhone and iPad), we suggest you bring one of each. 
+<br><br>
+You can see what devices support the latest version on the bottom of the iOS what's new page HERE. 
+<br><br>
+Apple Watch: you can bring an Apple Watch, but if you do you will also need at least one iPhone running the latest iOS. 
+<br><BR>
+<b>iOS or Android? Which is better to learn for an entry-level job?
+</b><br/>
+There are lots of jobs out there for both iOS and Android, but if you are looking to learn one and want to start a career in the US, right now iOS is the better option for finding entry-level jobs.
+<br><Br>
+<b>Why should I learn HTML, CSS, and JavaScript for an iOS boot camp?
+</b><br/>
+iOS app development is so much more than just Objective-C and Swift, it's learning how to make your app interact with the world over the network. HTML, CSS, and JavaScript are the core technologies of the 'net. We will focus on iOS development during the boot camp, so we require you to learn the core web technologies on your own before you come to camp. Not only will this let you do things such as set up a web page describing your apps, but it will also help when we teach you how to embed web pages into your app, and how to use JavaScript to communicate between your app and those web pages. 
+<br><BR>
+<b>  When an app is said to be in active state? 
+</b><br/>
+An app is said to be in active state when it is running in foreground and is receiving events.
+<br><Br>
+<b>Name the app sate which it reaches briefly on its way to being suspended. 
+</b><br/>
+An app enters background state briefly on its way to being suspended.
+<br><Br>
+
+<b>Who calls the main function of you app during the app launch cycle? 
+</b><br/>
+During app launching, the system creates a main thread for the app and calls the app’s main function on that main thread. The Xcode project's default main function hands over control to the UIKit framework, which takes care of initializing the app before it is run.
+<br><Br>
+<b>Which object is create by UIApplicationMain function at app launch time?
+</b><bR>
+ The app delegate object is created by UIApplicationMain function at app launch time. The app delegate object's main job is to handle state transitions within the app.
+<bR><BR>
+<b>  How is the app delegate is declared by Xcode project templates?</b>	<br>
+App delegate is declared as a subclass of UIResponder by Xcode project templates.
+      </div>
+           <div>
+        <h4>Testimonials</h4> 
+           
+        </div>
+   
+        <div align="justify">
+            <h4>
+                Certification</h4>
+                <br/>
+           
+             At the end of the course we provide  Certification.  <br/><br/>
+           <b>Process for Certification :</b>
+          
+  <li>You will receive a real time project Problem Statement along with a dataset to work. </li>
+  <li>After complition of your project(Reviewed by an Expert),you will be awarded a certificate with a performance-based grading. </li>
+ <li>If your project is not completed on time , you can take extra training for any of your doubts to understand the concepts better and re-attempt the Project free of cost.</li>
+<br/>
+GKTCS will help you at every stage of your learning and our 24/7 expert support team will ensure that you don't get stuck. Once you submit the project, our subject matter experts will review the same and share feedback to optimize it, if required.
+        </div>
+        </div>
+    
+    </td>
+    
+    <td valign="top" width="500">
+  		
+    <table valign="top">
+    	<tr valign="top">
+    		<font color="#366D9C" size=5px style="font-family: Georgia; padding-left:25px"><b>Course Features</b></font>  
+    		<td align="left" valign="top" width="500" height="200">
+    		
+ 
+  <br/>
+ <br/>
+ <li>Expert and qualified trainers</li>
+<li>Practical Project Based Approach</li>
+<li>Regular Assessment & feedback</li>
+<li>Total customized as per the client needs</li> 
+<li>Lifetime Access</li> 
+<li>  24 x 7 Support</li> 
+<li>  Get Certified</li>
+ 
+
+    			
+     		</td>
+     	
+    		
+    		
+    	</tr>
+    	
+    	<tr valign="top">
+    		<td height="20" valign="top" align="center">
+    		
+    		
+    		<font color="#366D9C" size=5px style="font-family: Georgia; padding-left:25px"><b>Placed Candidate</b></font>  
+    			<br/>
+    			<marquee direction="up" scrollamount="4" height="300">
+    			<table>
+    				<tr>
+    	   						
+    					<table>
+    						<tr>
+    							<td valign="top" height="30">
+    								
+    								<img src="http://gktcs.in/GLMS/public/static/images/AhilanShankar.jpg" width="100" height="100"/>
+    							</td>
+    							<td>
+    								<b>Alihan shanakar</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/capegemini.png" width="150" height="80"/> 
+    							</td>
+    						</tr>
+    						
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/sounavdas.jpg" width="100" height="100"/>
+    							</td>
+    							<td>
+    								<b>Sonav Das</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150" height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/ShashankVerma.jpg" width="60" height="80"/>
+    							</td>
+    							<td>
+    								<b>Shashank Verma</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/leoinfotech.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/rasika1.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Rasika</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/renuka.jpg" width="100" height="100"/>
+    							</td>
+    							<td>
+    								<b>Renuka Shirbhate</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/inetsoft.jpg" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/Neha.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Neha Kottarwar</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/GauravKotarwar.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Gaurav Kotarwar</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/leoinfotech.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/PrajaktaSakale.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Prajkta Sakale</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    							<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/SohailShaikh.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Sohail Shaikh</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/leoinfotech.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/ApurvaBhat.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Apurva Bhat</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/AshishSoni.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Ashish Soni</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    					
+    					    						
+    						
+    						
+    						
+    					</table>
+    					
+    						
+    						
+    					</td>
+    		
+    		
+    	</tr>
+    </table>
+    
+    </td>
+    
+    
+    </tr>
+	</table>
+	
+</body>
+</html>
+{% endblock %}

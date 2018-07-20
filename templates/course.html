@@ -1,0 +1,186 @@
+{% extends "base.html" %}
+{% block content %}
+<!--<div class="container" style="margin-top: 16px;">
+<div class="row">	
+
+	
+			
+					
+					{% for i in course %}
+					<div class="well"><h2 style="margin-top: 0;"><a href="{% url 'Courses' %}" style="color: #3366AA; text-decoration:none">{{ i.course_name }}</a></h2>
+					<b>Description:</b> {{ i.course_desc }}</div>
+					{% endfor %}
+</div>
+</div>-->
+		<div id="div1" style="margin-top:0px;">
+			<div class="container">
+				<div class="row">
+
+					<div class="col-md-12">
+					<div id="course_desc">
+					<h2 style="color:#00A4CB; text-align:center; padding-top: 20px; margin-top: 0; margin-bottom: 15px;">Corporate Courses</h2>
+						
+						<a href="/pythoncorporate/">	
+							<div class="row" style="background: rgba(40, 55, 73, 0.1);margin:10px; padding-top:4px;padding-bottom:4px; border-radius:5px;">
+								<div class="col-md-3 col-sm-3">
+									<img class="img-responsive" id="header-logo" src="http://gktcs.com/GLMS/public/static/images/python_corp.jpg" />
+								</div>
+								<div class="col-md-9 col-sm-9">
+									<h3 style="margin-bottom: 1px; margin-top: 2px;">Python Corporate Course</h3>
+									<div id="span1">
+										Anyone can learn Python, whether they are from Networking, Administration, manual testing or may be from IT support.
+									</div>
+								</div>
+							</div>
+						</a>						
+						<a href="/djangocorporate/">	
+							<div class="row" style="background: rgba(40, 55, 73, 0.1);margin:10px; padding-top:4px;padding-bottom:4px; border-radius:5px;">
+								<div class="col-md-3 col-sm-3">
+									<img class="img-responsive" id="header-logo" src="http://gktcs.com/GLMS/public/static/images/django.jpg" />
+								</div>
+								<div class="col-md-9 col-sm-9">
+									<h3 style="margin-bottom: 1px; margin-top: 2px;">Django Corporate Course</h3>
+									<div id="span1">
+										Django is a free and open source web application framework, written in Python. A web framework is a set of components that helps you to develop websites faster and easier.
+									</div>
+								</div>
+							</div>
+						</a>						
+						<a href="/pysparkcorporate/">	
+							<div class="row" style="background: rgba(40, 55, 73, 0.1);margin:10px; padding-top:4px;padding-bottom:4px; border-radius:5px;">
+								<div class="col-md-3 col-sm-3">
+									<img class="img-responsive" id="header-logo" src="http://gktcs.com/GLMS/public/static/images/pyspark.jpg" />
+								</div>
+								<div class="col-md-9 col-sm-9">
+									<h3 style="margin-bottom: 1px; margin-top: 2px;">PySpark and Machine Learning</h3>
+									<div id="span1">
+										PySpark exposes the Spark programming model to Python. Spark is a tool for doing parallel computation with large datasets and it integrates well with Python.
+									</div>
+								</div>
+							</div>
+						</a>	
+						<a href="/ruby_on_railscorporate/">	
+							<div class="row" style="background: rgba(40, 55, 73, 0.1);margin:10px; padding-top:4px;padding-bottom:4px; border-radius:5px;">
+								<div class="col-md-3 col-sm-3">
+									<img class="img-responsive" id="header-logo" src="http://gktcs.com/GLMS/public/static/images/ruby.jpg" />
+								</div>
+								<div class="col-md-9 col-sm-9">
+									<h3 style="margin-bottom: 1px; margin-top: 2px;">Ruby On Rails Corporate Course</h3>
+									<div id="span1">
+										Ruby is a Object Oriented Scripting language which is quick to learn, easy to deploy and provides substantial functionality required for e-commerce. Ruby on Rails is an extremely productive web application framework written in Ruby.
+									</div>
+								</div>
+							</div>
+						</a>	
+						<a href="/r_programmingcorporate/">	
+							<div class="row" style="background: rgba(40, 55, 73, 0.1);margin:10px; padding-top:4px;padding-bottom:4px; border-radius:5px;">
+								<div class="col-md-3 col-sm-3">
+									<img class="img-responsive" id="header-logo" src="http://gktcs.com/GLMS/public/static/images/r_programming.jpg" />
+								</div>
+								<div class="col-md-9 col-sm-9">
+									<h3 style="margin-bottom: 1px; margin-top: 2px;">R Programming Corporate Course</h3>
+									<div id="span1">
+										The Data Science with R has been designed to give you in-depth knowledge of the various data analytics techniques that can be performed using R. The data science course is packed with real-life projects and case studies, and includes R Studio Lab for practice.
+									</div>
+								</div>
+							</div>
+						</a>						
+						<a href="/hadoopcorporate/">	
+							<div class="row" style="background: rgba(40, 55, 73, 0.1);margin:10px; padding-top:4px;padding-bottom:4px; border-radius:5px;">
+								<div class="col-md-3 col-sm-3">
+									<img class="img-responsive" id="header-logo" src="http://gktcs.com/GLMS/public/static/images/hadoop1.jpg" />
+								</div>
+								<div class="col-md-9 col-sm-9">
+									<h3 style="margin-bottom: 1px; margin-top: 2px;">Big Data & Hadoop Corporate Course</h3>
+									<div id="span1">
+										The Big Data and Hadoop training course is designed to enhance your knowledge and skills to become a successful Hadoop developer. In-depth knowledge of core concepts will be covered in the course along with implementation on varied industry use-cases.
+									</div>
+								</div>
+							</div>
+						</a>						
+						<a href="/appiumcorporate/">	
+							<div class="row" style="background: rgba(40, 55, 73, 0.1);margin:10px; padding-top:4px;padding-bottom:4px; border-radius:5px;">
+								<div class="col-md-3 col-sm-3">
+									<img class="img-responsive" id="header-logo" src="http://gktcs.com/GLMS/public/static/images/appium.jpg" />
+								</div>
+								<div class="col-md-9 col-sm-9">
+									<h3 style="margin-bottom: 1px; margin-top: 2px;">Appium for Mobile Automation Testing</h3>
+									<div id="span1">
+										APPIUM is a freely distributed open source mobile application UI Testing framework. Appium allows native, hybrid and web application testing and supports automation test on physical devices as well as on emulator or simulator both.
+									</div>
+								</div>
+							</div>
+						</a>						
+						<a href="/jythoncorporate/">	
+							<div class="row" style="background: rgba(40, 55, 73, 0.1);margin:10px; padding-top:4px;padding-bottom:4px; border-radius:5px;">
+								<div class="col-md-3 col-sm-3">
+									<img class="img-responsive" id="header-logo" src="http://gktcs.com/GLMS/public/static/images/jython.jpg" />
+								</div>
+								<div class="col-md-9 col-sm-9">
+									<h3 style="margin-bottom: 1px; margin-top: 2px;">Jython Corporate Course</h3>
+									<div id="span1">
+										Jython is a high-level, object-oriented, open-source programming language. In addition to the Python library, Jython programs can also seamlessly access Java classes and libraries and extend them.
+									</div>
+								</div>
+							</div>
+						</a>						
+						<a href="/ansiblecorporate/">	
+							<div class="row" style="background: rgba(40, 55, 73, 0.1);margin:10px; padding-top:4px;padding-bottom:4px; border-radius:5px;">
+								<div class="col-md-3 col-sm-3">
+									<img class="img-responsive" id="header-logo" src="http://gktcs.com/GLMS/public/static/images/ansible.jpg" />
+								</div>
+								<div class="col-md-9 col-sm-9">
+									<h3 style="margin-bottom: 1px; margin-top: 2px;">Ansible Corporate Course</h3>
+									<div id="span1">
+										Ansible is an open source automation platform. It is very, very simple to setup and yet powerful. Ansible can help you with configuration management, application deployment, task automation
+									</div>
+								</div>
+							</div>
+						</a>						
+						<a href="/mongodbcorporate/">	
+							<div class="row" style="background: rgba(40, 55, 73, 0.1);margin:10px; padding-top:4px;padding-bottom:4px; border-radius:5px;">
+								<div class="col-md-3 col-sm-3">
+									<img class="img-responsive" id="header-logo" src="http://gktcs.com/GLMS/public/static/images/mongodb1.png" />
+								</div>
+								<div class="col-md-9 col-sm-9">
+									<h3 style="margin-bottom: 1px; margin-top: 2px;">MongoDB Corporate Course</h3>
+									<div id="span1">
+										MongoDB is the leading NoSQL database, empowering businesses to be more agile and scalable.
+									</div>
+								</div>
+							</div>
+						</a>						
+						<a href="/devopscorporate/">	
+							<div class="row" style="background: rgba(40, 55, 73, 0.1);margin:10px; padding-top:4px;padding-bottom:4px; border-radius:5px;">
+								<div class="col-md-3 col-sm-3">
+									<img class="img-responsive" id="header-logo" src="http://gktcs.com/GLMS/public/static/images/devops.jpg" />
+								</div>
+								<div class="col-md-9 col-sm-9">
+									<h3 style="margin-bottom: 1px; margin-top: 2px;">Ruby and DevOps Corporate Course</h3>
+									<div id="span1">
+										Ruby is a dynamic, reflective, object-oriented programming language. DevOps is a software engineering culture and practice that aims at unifying software development and software operation.
+									</div>
+								</div>
+							</div>
+						</a>						
+						<a href="/sparkscalacorporate/">	
+							<div class="row" style="background: rgba(40, 55, 73, 0.1);margin:10px; padding-top:4px;padding-bottom:4px; border-radius:5px;">
+								<div class="col-md-3 col-sm-3">
+									<img class="img-responsive" id="header-logo" src="http://gktcs.com/GLMS/public/static/images/sparkscala.jpg" />
+								</div>
+								<div class="col-md-9 col-sm-9">
+									<h3 style="margin-bottom: 1px; margin-top: 2px;">Spark with Scala Corporate Course</h3>
+									<div id="span1">
+										Spark is an open source computing framework up to 100 times faster than Mapreduce and Scala is a general-purpose programming language providing support for functional programming.
+									</div>
+								</div>
+							</div>
+						</a></hr>
+						<br/>
+					</div>
+					</div>
+
+				</div>
+			</div>
+		</div>	
+{% endblock %}

@@ -1,0 +1,453 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+<div style="background-color:#337ab7; padding:10px" class="row"><!––<img src="python_banner.jpg" class="img-fluid" style="width:100%" alt="Responsive image">
+<div class="col-md-5" style="padding-left:30px">	
+	<iframe width="420" height="230" src="https://www.youtube.com/embed/Cn4xdiCxxtw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+<div class="col-md-7">
+	<h1 style="color:#fff; text-shadow: 2px 2px #212020;">PySpark and Machine Learning</h1><h3 style="color:#fff;text-shadow: 2px 2px #212020;">PySpark exposes the Spark programming model to Python. Spark is a tool for doing parallel computation with large datasets and it integrates well with Python.</h3>
+</div>
+</div>
+</div>
+<div class="container" style="background-color: #e8e8e8; padding-bottom: 15px;">
+<div class="row">
+<div class="col-md-6">
+  <h3>PySpark Course objectives</h3>
+  Some of the key skills you will gain upon completion of this program include:
+                     
+<ul style="padding-left: 15px">  
+<li>Learn about Apache Spark and the Spark 2.0 architecture</li>
+<li>Build and interact with Spark DataFrames using Spark SQL</li>
+<li>Learn how to solve graph and deep learning problems using GraphFrames and TensorFrames respectively</li>
+<li>Read, transform, and understand data and use it to train machine learning models</li>
+<li>Build machine learning models with MLlib and ML</li>
+<li>Learn how to submit your applications programmatically using spark-submit</li>
+<div id="objlist" class="panel-collapse collapse">
+<li>ML Algorithms: common learning algorithms such as classification, regression, clustering, and collaborative filtering</li>
+<li>Featurization: feature extraction, transformation, dimensionality reduction, and selection</li>
+<li>Pipelines: tools for constructing, evaluating, and tuning ML Pipelines</li>
+<li>Persistence: saving and load algorithms, models, and Pipelines</li>
+<li>Utilities: linear algebra, statistics, data handling, etc.</li>
+</div>
+<a role="button" style="color:#337ab7" data-toggle="collapse" data-parent="" href="#objlist" aria-expanded="true" aria-controls="objlist">
+    More...
+</a>
+</ul>
+</div>
+<div class="col-md-6">
+<h3>Prerequisite</h3>
+<p>
+<ul style="padding-left: 15px">
+<li>• Basic Python data structures</li>
+<li>• Basic knowledge of Pandas dataframes and SQL</li>
+<li>• Knowledge of common data storage formats like JSON, delimiter separated files,
+HDFS, </li>
+<li>• Entry-level machine learning</li>
+</ul>
+</p>
+</div>
+</div>  
+<div>
+<p class=""><a target="_blank" href="http://gktcs.com/GLMS/public/static/pdf/pyspark_content.pdf" class = "btn btn-primary"><i class="fa fa-download"></i> Download Course Content (PDF)</a></p>
+</div>
+  <ul class="nav nav-pills rwo" style="background-color:#fafafa">
+    <li class="active col-md-12 col-xs-12" style="padding:0px; margin:0px; text-align: center"><a data-toggle="pill" href="#basicpy"><h4>PySpark and Machine Learning</h4></a></li>
+  </ul>
+	<form action="." method="post" style="">{% csrf_token %}
+	<div class="tab-content">
+    <div id="basicpy" class="tab-pane fade in active">
+      <h3>Modules</h3>
+		<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingOne">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="1.Introduction to Spark">
+						<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							1.Introduction to Spark
+						</a>
+					</h4>
+				</div>
+				<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+					<div class="panel-body">
+						<ul>
+							<li>What is Apache Spark?</li> 
+							<li>Spark Jobs and APIs</li>
+							<li>Spark 2.0 architecture</li>
+							<li>Installation and Configuration</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingTwo">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="2.Resilient Distributed Datasets">
+						<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							2.Resilient Distributed Datasets
+						</a>
+					</h4>
+				</div>
+				<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+					<div class="panel-body">
+						<ul>
+							<li>Internal workings of an RDD</li>
+							<li>Creating RDDs</li>
+							<li>Global versus local scope</li>
+							<li>Transformations</li>
+							<li>Actions</li>
+							<li>Hands on Session on RDD and Spark</li>
+						</ul>					
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingThree">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="3.DataFrames">
+						<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							3.DataFrames
+						</a>
+					</h4>
+				</div>
+				<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+					<div class="panel-body">
+						<ul>
+							<li>Python to RDD communications</li>
+							<li>Catalyst Optimizer refresh</li>
+							<li>Speeding up PySpark with DataFrames</li>
+							<li>Creating DataFrames </li>
+							<li>Simple DataFrame queries</li>
+							<li>Interoperating with RDDs</li>
+							<li>Querying with the DataFrame API</li>
+							<li>Hands On Session on Pandas DataFrame and PySpark</li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+						<ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="heading4">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="4.Prepare Data for Modeling">
+						<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							4.Prepare Data for Modeling
+						</a>
+					</h4>
+				</div>
+				<div id="collapse4" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Data Structures</li>
+							<li>Mutable and Immutable Data Structures</li>
+							<ul>
+								<liChecking for duplicates, missing observations, and outliers</li>
+								<li>Getting familiar with your data Visualization</li>
+								<li>Hands on Session Data Modeling</li>
+							</ul>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading5">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="5.Introducing MLlib">
+						<a data-toggle="collapse" href="#collapse5" data-parent="#accordion">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							5.Introducing MLlib
+						</a>
+					</h4>
+				</div>
+				<div id="collapse5" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Overview of the package</li>
+							<li>Loading and transforming the data</li>
+							<li>Getting to know your data</li>
+							<li>Creating the final dataset</li>
+							<li>Predicting infant survival</li>
+							<li>Hands on Session using PySpark MLib</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading6">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="6.Introducing the ML Package">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							6.Introducing the ML Package
+						</a>
+					</h4>
+				</div>
+				<div id="collapse6" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Overview of the package</li>
+							<li>Predicting the chances of infant survival with ML</li>
+							<li>Parameter hyper-tuning</li> 
+							<li>Other features of PySpark ML in action</li>
+							<li>Implementation of ML Algorithm</li>
+							<ul>
+								<li>Random Forest</li>
+								<li>Regression</li>
+								<li>K-means</li>
+							</ul>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading7">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="7.GraphFrames">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse7">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							7.GraphFrames
+						</a>
+					</h4>
+				</div>
+				<div id="collapse7" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Introducing GraphFrames</li>
+							<li>Installing GraphFrames</li>
+							<li>Preparing your flights dataset</li>
+							<li>Building the graph</li>
+							<li>Executing simple queries</li>
+							<li>Understanding vertex degrees</li>
+							<li>Determining the top transfer airports</li>
+							<li>Understanding motifs</li>
+							<li>Determining airport ranking using PageRank</li>
+							<li>Determining the most popular non-stop flights</li>
+							<li>Using Breadth-First Search</li>
+							<li>Visualizing flights using D3</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div><!-- panel-group -->	
+    </div>
+    <div id="advancedpy" class="tab-pane fade">
+      <h3>Advanced Django</h3>
+		<div class="panel-group" id="advpy" role="tablist" aria-multiselectable="true">
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading10">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="10.Middleware">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse10">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							10.Middleware
+						</a>
+					</h4>
+				</div>
+				<div id="collapse10" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Exception Handling</li>
+							<li>Enabling sessions</li>
+							<li>Configuring session engine</li>
+							<li>Using sessions in views</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading11">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="11.Request and Response Objects">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse11">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							11.Request and Response Objects
+						</a>
+					</h4>
+				</div>
+				<div id="collapse11" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>HttpRequest object</li>
+							<li>UploadedFile object</li>
+							<li>QueryDict object</li>
+							<li>HttpResponse object</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading12">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="12.Parsing XML and JSON with Python">
+						<a data-toggle="collapse" data-parent="#interpy" href="#collapse12">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							12.Parsing XML and JSON with Python
+						</a>
+					</h4>
+				</div>
+				<div id="collapse12" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>XML-RPC</li>
+							<li>XML, parsing object to XML and back</li>
+							<li>JSON, parsing object to JSON and back</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading13">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="13.Admin site">
+						<a data-toggle="collapse" data-parent="#interpy" href="#collapse13">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							13.Admin site
+						</a>
+					</h4>
+				</div>
+				<div id="collapse13" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Activating the admin site</li>
+							<li>Customizing the admin form</li>
+							<li>Adding related objects</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading14">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="14.Authentication">
+						<a data-toggle="collapse" data-parent="#interpy" href="#collapse14">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							14.Authentication
+						</a>
+					</h4>
+				</div>
+				<div id="collapse14" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Authentication Overview: Users, Permissions and Groups</li>
+							<li>User Management</li>
+							<li>How passwords are stored</li>
+							<li>Using authentication in web requests — login, logout and password changes</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading15">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="15.Logging">
+						<a data-toggle="collapse" data-parent="#interpy" href="#collapse15">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							15.Logging
+						</a>
+					</h4>
+				</div>
+				<div id="collapse15" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Loggers, Handlers, Filters and Formatters</li>
+							<li>Using logging in code</li>
+							<li>Configuring logging via settings.py</li>
+							<li>Installing and testing Sentry via Raven</li>
+							<li>Using Sentry in Django Applications</li>
+							<li>Configuring Sentry</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading16">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="16.Django & REST APIs">
+						<a data-toggle="collapse" data-parent="#interpy" href="#collapse16">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							16.Django & REST APIs
+						</a>
+					</h4>
+				</div>
+				<div id="collapse16" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Django REST framework</li>
+							<li>Django-piston</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading17">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="17.Testing">
+						<a data-toggle="collapse" data-parent="#interpy" href="#collapse17">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							17.Testing
+						</a>
+					</h4>
+				</div>
+				<div id="collapse17" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Unit testing using the builtin django test framework</li>
+							<li>Use of fixtures</li>
+							<li>Testing models</li>
+							<li>Testing views</li>
+							<li>Advantages of nose</li>
+							<li>@staticmethod</li>
+							<li>@property </li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading18">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="18.Security">
+						<a data-toggle="collapse" data-parent="#interpy" href="#collapse18">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							18.Security
+						</a>
+					</h4>
+				</div>
+				<div id="collapse18" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+    </div>
+  </div>
+	<input type = "submit" class="btn btn-primary" value= "Submit Choices" style = "">
+	</form>
+</div>
+<script>
+function toggleIcon(e) {
+    $(e.target)
+        .prev('.panel-heading')
+        .find(".more-less")
+        .toggleClass('glyphicon-plus glyphicon-minus');
+}
+$('.panel-group').on('hidden.bs.collapse', toggleIcon);
+$('.panel-group').on('shown.bs.collapse', toggleIcon);
+</script>
+{% endblock %}

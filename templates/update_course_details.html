@@ -1,0 +1,102 @@
+{% extends "base_dashboard.html" %}
+{% load crispy_forms_tags %}
+{% block head %}
+<style>
+textarea{
+	width:100%;
+	border-radius:5px;
+	border:1px solid rgb(169, 169, 169);
+}
+
+#id_course_name{
+	width:100%;
+	border-radius:5px;
+	border:1px solid rgb(169, 169, 169);
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container">        
+			<div class="card">
+				<div class="card-header">
+					<h5 class="title">UPDATE COURSES</h5>
+				</div>
+				<div class="card-body">
+					<form enctype="multipart/form-data" action="" method="post">{% csrf_token %}
+						{{ form|crispy }}
+						<input type="submit" class="btn btn-primary" value="Update">
+                    </form>		
+					</div>
+				</div>
+			</div>
+</div>
+{% endblock %}
+
+{% block lower %}
+<script>
+$("#my_courses").addClass("active");
+</script>
+<script>
+(function($) {
+    $.fn.checkFileType = function(options) {
+        var defaults = {
+            allowedExtensions: [],
+            success: function() {},
+            error: function() {}
+        };
+        options = $.extend(defaults, options);
+
+        return this.each(function() {
+
+            $(this).on('change', function() {
+                var value = $(this).val(),
+                    file = value.toLowerCase(),
+                    extension = file.substring(file.lastIndexOf('.') + 1);
+
+                if ($.inArray(extension, options.allowedExtensions) == -1) {
+                    options.error();
+                    $(this).focus();
+                } else {
+                    options.success();
+
+                }
+
+            });
+
+        });
+    };
+
+})(jQuery);
+
+$(function() {
+		var value = "#id_thumbnail"
+    $(value).checkFileType({
+        allowedExtensions: ['jpg', 'jpeg','png'],
+        success: function() {
+            
+        },
+        error: function() {
+            alert("Please select image(.jpg,.jpeg or .png) file only");
+            $(value).val("");
+        }
+    });
+
+});
+
+$(function() {
+		var value = "#doc"
+    $(value).checkFileType({
+        allowedExtensions: ['pdf'],
+        success: function() {
+            
+        },
+        error: function() {
+            alert("Please select PDF file only");
+            $(value).val("");
+        }
+    });
+
+});
+</script>
+{% endblock %}

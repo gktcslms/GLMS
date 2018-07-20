@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block head %}
+
+{% endblock %}
+{% block content %}
+<div class="container">
+<div class="row well" style=" margin-left: 3px; margin-right: 3px;border-radius:20px;">
+<h2 style="color:#00A4CB; text-align:center;">Become The Trainer</h2>
+<div class="v_module v_column col-md-4 col-sm-4 v_first" style="background:#42628b;padding-left: 0px;padding-right: 0px;margin-top:15px;border-radius: 10px;">
+  <div class="v_module v_text_block  nothing_selected">
+
+    <div class="heading" style="text-align:center; background-color:#00A4CB; color:#fff;font-size: 20px; position:relative; width:100%;padding:5px 0px;border-radius: 10px 10px 0px 0px;"><span>Fill in the form below</span></div>
+    <!--<div class="form-group no-ripple row">
+      <form id="addinstructor" method="post" class="form-inline addinstructor form_decoration no-ripple">
+        <input id="instructor_first_name" name="data[Instructor][first_name]" type="text" class="form-control firstnameorder" placeholder="First Name" required="" style="float:left;  max-width: 180px;">
+        <input id="instructor_last_name" name="data[Instructor][last_name]" type="text" class="form-control  lastnameorder" placeholder="Last Name" required="" style="float:right;  max-width: 180px;">
+        <br>
+        <input id="instructor_mobile" name="data[Instructor][phone_no]" type="text" class="form-control  firstnameorder" placeholder="Mobile" required="" style="float:left;max-width: 180px;">
+        <input name="data[Instructor][email]" id="email" type="email" class="form-control lastnameorder" placeholder="Email" required="" style="float:right; max-width: 180px;">
+        <br>
+        <input id="instructor_coursename" name="data[Instructor][to_teach]" type="text" class="form-control " placeholder="Course Name" required="">
+        <input  name="data[Instructor][linked_in]" type="text" class="form-control " placeholder="Your LinkedIn Profile" >
+        <textarea id="instructor_about" name="data[Instructor][details]" class="form-control textarea" placeholder="About the Course" required=""></textarea>
+        <textarea id="instructor_details" name="data[Instructor][about_you]" class="form-control  textarea" placeholder="Tell Us More about Yourself" required=""></textarea>
+      
+        <input type="submit" value="SUBMIT" name="login" class="button message_btn_contact">
+        
+      </form>
+    </div> 
+	<div class="form-group no-ripple row">
+
+<form id="addinstructor" class="form-inline addinstructor form_decoration no-ripple" action="" method="post">
+<label for="id_f_name">First name:</label>
+<input id="id_f_name" type="text" name="f_name" maxlength="50">
+<label for="id_l_name">Last name:</label>
+<input id="id_l_name" type="text" name="l_name" maxlength="50">
+<label for="id_mobile">Mobile:</label>
+<input id="id_mobile" type="number" name="mobile">
+<label for="id_email">Email:</label>
+<input id="id_email" type="email" name="email" maxlength="254">
+<label for="id_course_name">Course name:</label>
+<input id="id_course_name" type="text" name="course_name" maxlength="100">
+<label for="id_linkedin_profile">Linkedin profile:</label>
+<input id="id_linkedin_profile" type="text" name="linkedin_profile" maxlength="100">
+<label for="id_about_course">About course:</label>
+<textarea id="id_about_course" rows="1" name="about_course" maxlength="150" cols="40"></textarea>
+<label for="id_about_yourself">About yourself:</label>
+<textarea id="id_about_yourself" rows="1" name="about_yourself" maxlength="150" cols="40"></textarea>
+<div style="padding-left:130">
+<input class="button message_btn_contact" type="submit" name="login" value="SUBMIT">
+</div>
+</form>
+	</div> 
+	
+	<form  method='post' action="">
+			{% csrf_token %}
+			{{ form }}
+			<input type="submit" value="Submit" />
+	</form>	-->	
+<div class="form-group no-ripple" style="padding:0px 15px">
+<span id="fnameError" style="display: none;color:#ff3333;">*You must enter a valid first name</span>
+<span id="lnameError" style="display: none;color:#ff3333;">*You must enter a valid last name</span>
+<span id="emailError" style="display: none;color:#ff3333;">*You must enter a valid email address</span>
+<span id="mobileError" style="display: none;color:#ff3333;">*You must enter a valid 10 digit mobile number</span><br/>
+<form id="addinstructor" enctype="multipart/form-data" class="form-inline addinstructor form_decoration no-ripple" action="" method="post"> {% csrf_token %}
+	<input id="id_f_name" class="form-control firstnameorder" type="text" name="f_name" maxlength="50" placeholder="First Name" required="" style="float:left;" onblur="validatefName(value)" required="" />
+	<input id="id_l_name" class="form-control  lastnameorder" type="text" name="l_name" maxlength="50" placeholder="Last Name" required="" style="float:right; " onblur="validatelName(value)" required="" />
+	<input id="id_mobile" class="form-control firstnameorder number" type="number" name="mobile" placeholder="Mobile" style="float:left; -moz-appearance: textfield; -webkit-appearance: textfield; appearance: textfield" onblur="validateContact(value)" required="" />
+	<input id="id_email"  class="form-control lastnameorder email" type="email" name="email" maxlength="254" placeholder="Email" style="float:right;" onblur="validateEmail(value)" required="" />
+	<input id="id_country" class="form-control" type="text" name="country" maxlength="30" placeholder="Country" required="" />
+	<input id="id_state" class="form-control" type="text" name="state" maxlength="30" placeholder="State" required="" />
+	<input id="id_city" class="form-control" type="text" name="city" maxlength="30" placeholder="City" required="" />
+	<input id="id_course_name" class="form-control" type="text" name="course_name" maxlength="100" placeholder="Course Name" required="" required="" />
+	<input id="id_linkedin_profile" class="form-control" type="text" name="linkedin_profile" maxlength="100" placeholder="Your LinkedIn Profile(optional)" />
+	<textarea id="id_about_course" class="form-control textarea" rows="2" name="about_course" maxlength="150" cols="40" placeholder="About the Course" required=""></textarea>
+	<textarea id="id_about_yourself" class="form-control textarea" rows="2" name="about_yourself" maxlength="150" cols="40" placeholder="Tell Us More about Yourself" required=""></textarea>
+	<div id="div_id_upload_profile" class="form-group"> <label for="id_upload_profile" class="control-label ">
+                Upload profile
+            </label> <div class="controls "> <input class="clearablefileinput" id="id_upload_profile" name="upload_profile" type="file"> </div> </div>
+	<input class="button message_btn_contact" type="submit" name="login" value="SUBMIT">
+</form>		
+</div>	
+
+ <!--
+<form enctype="multipart/form-data" method="post"> {% csrf_token %}
+{{ form|crispy }}
+<input type="submit" class="btn btn-info" value="Join Now" style="float:right">
+</form>
+ <form action="" onsubmit="return validateForm()">
+    <fieldset>
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" onblur="validateName(name)" />
+      <span id="nameError" style="display: none;">You can only use alphabetic characters, hyphens and apostrophes</span>
+    </fieldset>
+    <fieldset>
+      <label for="email">Email</label>
+      <input type="text" name="email" id="email" onblur="validateEmail(value)" />
+      <span id="emailError" style="display: none;">You must enter a valid email address</span>
+    </fieldset> 
+    <fieldset>
+      <label for="animal">Favourite Animal</label>
+      <select name="animal" id="animal" onblur="validateSelect(name)">
+        <option value="">Animals</option>
+        <option value="cat">Cat</option>
+        <option value="dog">Dog</option>
+        <option value="badger">Badger</option>
+      </select>
+      <span class="validateError" id="animalError" style="display: none;">You must select your favourite animal</span>
+    </fieldset> 
+    <fieldset>
+      <label for="hand">Left or Right handed?</label>
+      <ul>
+        <li>
+          <input type="radio" name="hand" id="left" value="Left" onblur="validateRadio(id)" />
+          <label for="left">Left handed</label>
+        </li>
+        <li>
+          <input type="radio" name="hand" id="right" value="Right" onblur="validateRadio(id)" />
+          <label for="right">Right handed</label>
+        </li>
+      </ul>
+      <span class="validateError" id="handError" style="display: none;">Which hand do you use?</span>
+    </fieldset>
+    <fieldset>
+      <label for="terms">Terms and Conditions</label>
+      <ul>
+        <li>
+          <input type="checkbox" name="terms" id="accept" value="accept" onblur="validateCheckbox(id)" />
+          <label for="accept">Accept our <a href="#">Terms and Conditions</a></label>
+        </li>
+      </ul>
+      <span class="validateError" id="termsError" style="display: none;">You need to accept our terms and conditions</span>
+    </fieldset>   
+    <fieldset>
+      <input type="submit" id="submit" name="submit" value="Submit" />
+    </fieldset>   
+  </form> -->
+  </div>
+  </div>
+		<div class="col-md-8 col-sm-8 " style="text-align:justify;">
+          <p><h3>Who can teach?</h3>Anyone who has an in-depth working knowledge of the particular domain and is very passionate about teaching and sharing his/her expert knowledge with students and professionals can teach at GKTCS. Good oral communication skills are mandatory. </p>
+          <br><p><h3>Advantage GKTCS</h3>Apart from working with a very young and talented team, you will also get the revenue-sharing opportunity at the fastest growing online training company in India! You will be provided with a great platform to showcase your practical knowledge and skills that you have acquired over a period of time. What more, you can conduct your training from any part of the world!  </p>
+          <br><p><h3>The Process</h3>First thing first! You need to fill this form. If you are shortlisted and finally selected, you will undergo a training based on GKTCS Learning Methodology. You will also get the opportunity to co-create the content with us to make ‘learning’ a very rich and fruitful experience for the learners.</p>
+        </div>
+
+</div>
+</div>
+{% endblock %}

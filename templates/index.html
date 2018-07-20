@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Validation tutorial</title>
+  <script>
+    function validateName(x){
+      // Validation rule
+      var re = /[A-Za-z -']$/;
+      // Check input
+      if(re.test(document.getElementById(x).value)){
+        // Style green
+        document.getElementById(x).style.background ='#ccffcc';
+        // Hide error prompt
+        document.getElementById(x + 'Error').style.display = "none";
+        return true;
+      }else{
+        // Style red
+        document.getElementById(x).style.background ='#e35152';
+        // Show error prompt
+        document.getElementById(x + 'Error').style.display = "block";
+        return false; 
+      }
+    }
+    // Validate email
+    function validateEmail(email){ 
+      var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      if(re.test(email)){
+        document.getElementById('email').style.background ='#ccffcc';
+        document.getElementById('emailError').style.display = "none";
+        return true;
+      }else{
+        document.getElementById('email').style.background ='#e35152';
+        return false;
+      }
+    }
+    // Validate Select boxes
+    function validateSelect(x){
+      if(document.getElementById(x).selectedIndex !== 0){
+        document.getElementById(x).style.background ='#ccffcc';
+        document.getElementById(x + 'Error').style.display = "none";
+        return true;
+        }else{
+        document.getElementById(x).style.background ='#e35152';
+        return false; 
+      }
+    }
+    function validateRadio(x){
+      if(document.getElementById(x).checked){
+        return true;
+      }else{
+        return false;
+      }
+    }
+    function validateCheckbox(x){
+      if(document.getElementById(x).checked){
+        return true;
+      }
+      return false;
+    }   
+    function validateForm(){
+      // Set error catcher
+      var error = 0;
+      // Check name
+      if(!validateName('name')){
+        document.getElementById('nameError').style.display = "block";
+        error++;
+      }
+      // Validate email
+      if(!validateEmail(document.getElementById('email').value)){
+        document.getElementById('emailError').style.display = "block";
+        error++;
+      }
+      // Validate animal dropdown box
+      if(!validateSelect('animal')){
+        document.getElementById('animalError').style.display = "block";
+        error++;
+      }
+      // Validate Radio
+      if(validateRadio('left')){
+ 
+      }else if(validateRadio('right')){
+         
+      }else{
+        document.getElementById('handError').style.display = "block";
+        error++;
+      }
+      if(!validateCheckbox('accept')){
+        document.getElementById('termsError').style.display = "block";
+        error++;
+      }
+      // Don't submit form if there are errors
+      if(error > 0){
+        return false;
+      }
+    }     
+  </script>
+</head>
+<body>
+  <form action="" onsubmit="return validateForm()">
+    <fieldset>
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" onblur="validateName(name)" />
+      <span id="nameError" style="display: none;">You can only use alphabetic characters, hyphens and apostrophes</span>
+    </fieldset>
+    <fieldset>
+      <label for="email">Email</label>
+      <input type="text" name="email" id="email" onblur="validateEmail(value)" />
+      <span id="emailError" style="display: none;">You must enter a valid email address</span>
+    </fieldset> 
+    <fieldset>
+      <label for="animal">Favourite Animal</label>
+      <select name="animal" id="animal" onblur="validateSelect(name)">
+        <option value="">Animals</option>
+        <option value="cat">Cat</option>
+        <option value="dog">Dog</option>
+        <option value="badger">Badger</option>
+      </select>
+      <span class="validateError" id="animalError" style="display: none;">You must select your favourite animal</span>
+    </fieldset> 
+    <fieldset>
+      <label for="hand">Left or Right handed?</label>
+      <ul>
+        <li>
+          <input type="radio" name="hand" id="left" value="Left" onblur="validateRadio(id)" />
+          <label for="left">Left handed</label>
+        </li>
+        <li>
+          <input type="radio" name="hand" id="right" value="Right" onblur="validateRadio(id)" />
+          <label for="right">Right handed</label>
+        </li>
+      </ul>
+      <span class="validateError" id="handError" style="display: none;">Which hand do you use?</span>
+    </fieldset>
+    <fieldset>
+      <label for="terms">Terms and Conditions</label>
+      <ul>
+        <li>
+          <input type="checkbox" name="terms" id="accept" value="accept" onblur="validateCheckbox(id)" />
+          <label for="accept">Accept our <a href="#">Terms and Conditions</a></label>
+        </li>
+      </ul>
+      <span class="validateError" id="termsError" style="display: none;">You need to accept our terms and conditions</span>
+    </fieldset>   
+    <fieldset>
+      <input type="submit" id="submit" name="submit" value="Submit" />
+    </fieldset>   
+  </form>
+</body>
+</html>

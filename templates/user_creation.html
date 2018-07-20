@@ -1,0 +1,48 @@
+{% extends "registration/registration_base.html" %}
+{% load crispy_forms_tags %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Register for an account" %}{% endblock %}
+{% block head %}
+<style>
+#div_id_username{
+	display: none;
+}
+label{color:white}
+
+.help-block {color: #f1a695 !important}
+
+.has-error .control-label {color: #f1a695 !important}
+
+#hint_id_password2{color: #cac7c7 !important;}
+
+</style>
+{% endblock %}
+{% block content %}
+<div class="container">
+<div class="row well"  style="margin-left: 3px; margin-right: 3px;border-radius:20px;" >
+<h2 style="color:#00A4CB; text-align:center;">Registration</h2>
+<div class="col-md-4 col-md-offset-4"style="background:#42628b;padding-left: 0px;padding-right: 0px;border-radius: 10px;">
+<div class="heading" style="text-align:center; background-color:#00A4CB; color:#fff;font-size: 20px; position:relative; width:100%;padding:5px 0px;border-radius: 10px 10px 0px 0px;"><span>Fill in the form below</span></div>
+<br/>
+<div class="addinstructor form_decoration no-ripple" style="padding-left: 15px;padding-right: 15px;">
+<form enctype="multipart/form-data" method="post"> {% csrf_token %}
+{{ form|crispy }}
+<input class="btn btn-info" type="submit" value="{% trans 'Submit' %}" onclick="copyTextValue(this);"/>
+<span><a style="border-radius:10px" class="btn btn-success" href="/authentication/login/">login </a> </span>
+</form>
+<br/>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}
+{% block lower %}
+<script>
+function copyTextValue(bf) {
+  var text1 = document.getElementById("id_email").value;
+  document.getElementById("id_username").value = text1;
+}
+</script>
+{% endblock %}

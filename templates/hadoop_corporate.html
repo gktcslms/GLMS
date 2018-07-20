@@ -1,0 +1,384 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+<div style="background-color:#337ab7; padding:10px" class="row"><!––<img src="python_banner.jpg" class="img-fluid" style="width:100%" alt="Responsive image">
+<div class="col-md-5" style="padding-left:30px">	
+	<iframe width="420" height="230" src="https://www.youtube.com/embed/A02SRdyoshM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+<div class="col-md-7">
+	<h1 style="color:#fff; text-shadow: 2px 2px #212020;">Big Data and Hadoop</h1><h3 style="color:#fff;text-shadow: 2px 2px #212020;">The Big Data and Hadoop training course is designed to enhance your knowledge and skills to become a successful Hadoop developer. In-depth knowledge of core concepts will be covered in the course along with implementation on varied industry use-cases.</h3>
+</div>
+</div>
+</div>
+<div class="container" style="background-color: #e8e8e8; padding-bottom: 15px;">
+<div class="row">  
+<div class="col-md-6">
+  <h3>Big Data and Hadoop Course objectives</h3>
+  Some of the key skills you will gain upon completion of this program include:
+                     
+<ul style="padding-left: 15px">  
+<li>Master the concepts of HDFS and MapReduce framework</li>
+<li>Understand Hadoop 2.x Architecture</li>
+<li>Setup Hadoop Cluster and write Complex MapReduce programs</li>
+<li>Learn data loading techniques using Sqoop and Flume</li>
+<li>Perform data analytics using Pig, Hive and YARN</li>
+<li>Implement HBase and MapReduce integration</li>
+<div id="objlist" class="panel-collapse collapse">
+<li>Implement Advanced Usage and Indexing</li>
+<li>Schedule jobs using Oozie</li>
+<li>Implement best practices for Hadoop development</li>
+<li>Work on a real life Project on Big Data Analytics</li>
+<li>Understand Spark and its Ecosystem</li>
+<li>Learn how to work in RDD in Spark</li>
+</div>
+<a role="button" style="color:#337ab7" data-toggle="collapse" data-parent="" href="#objlist" aria-expanded="true" aria-controls="objlist">
+    More...
+</a>
+</ul>
+</div>
+<div class="col-md-6">
+<h3>Prerequisite</h3>
+<p>While basic knowledge of Core Java and SQL might help</p>
+</div>  
+</div>
+<div>
+<p class=""><a target="_blank" href="http://gktcs.com/GLMS/public/static/pdf/hadoop_content.pdf" class = "btn btn-primary"><i class="fa fa-download"></i> Download Course Content [5 Days] (PDF)</a></p>
+</div>
+  <ul class="nav nav-pills rwo" style="background-color:#fafafa">
+    <li class="active col-md-12 col-xs-12" style="padding:0px; margin:0px; text-align: center"><a data-toggle="pill" href="#basicpy"><h4>Big Data and Hadoop Modules</h4></a></li>
+  </ul>
+	<form action="." method="post" style="">{% csrf_token %}
+	<div class="tab-content">
+    <div id="basicpy" class="tab-pane fade in active">
+		<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingOne">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="1.Understanding Big Data and Hadoop">
+						<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							1.Understanding Big Data and Hadoop
+						</a>
+					</h4>
+				</div>
+				<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+					<div class="panel-body">
+						<ul>
+							<li>Big Data</li> 
+							<li>Limitations and Solutions of existing Data Analytics Architecture</li>
+							<li>Hadoop</li>
+							<li>Hadoop Features</li>
+							<li>Hadoop Ecosystem</li>
+							<li>Hadoop 2.x core components</li>
+							<li>Hadoop Storage: HDFS</li>
+							<li>Hadoop Processing</li>
+							<ul>
+							<li>MapReduce Framework</li>
+							<li>Hadoop Different Distributions</li>
+							</ul>
+							<li></li>
+							<li></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingTwo">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="2.Hadoop Architecture and HDFS">
+						<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							2.Hadoop Architecture and HDFS
+						</a>
+					</h4>
+				</div>
+				<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+					<div class="panel-body">
+						<ul>
+							<li>Hadoop 2.x Cluster Architecture - Federation and High Availability</li>
+							<li>A Typical Production Hadoop Cluster</li>
+							<li>Hadoop Cluster Modes</li>
+							<li>Common Hadoop Shell Commands</li>
+							<li>Hadoop 2.x Configuration Files</li>
+							<li>Single node cluster and Multi node cluster set up Hadoop Administration</li>
+						</ul>					
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingThree">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="3.Hadoop MapReduce Framework">
+						<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							3.Hadoop MapReduce Framework
+						</a>
+					</h4>
+				</div>
+				<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+					<div class="panel-body">
+						<ul>
+							<li>MapReduce Use Cases</li>
+							<li>Traditional way Vs MapReduce way</li>
+							<li>Why MapReduce</li>
+							<li>Hadoop 2.x MapReduce Architecture</li>
+							<li>Hadoop 2.x MapReduce Components</li>
+							<li>YARN MR Application Execution Flow</li>
+							<li>YARN Workflow</li>
+							<li>Anatomy of MapReduce Program</li>
+							<li>Demo on MapReduce. Input Splits</li>
+							<li>Relation between Input Splits and HDFS Blocks</li>
+							<li>MapReduce: Combiner & Partitioner</li>
+							<li>Demo on de-identifying Health Care Data set</li>
+							<li>Demo on Weather Data set</li>
+							<li></li>
+							<li></li>
+							<li></li>
+						<ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="heading4">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="4.Advanced MapReduce">
+						<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							4.Advanced MapReduce
+						</a>
+					</h4>
+				</div>
+				<div id="collapse4" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Counters</li>
+							<li>Distributed Cache</li>
+							<li>MRunit</li>
+							<li>Reduce Join</li>
+							<li>Custom Input Format</li>
+							<li>Sequence Input Format</li>
+							<li>Xml file Parsing using MapReduce</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading5">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="5.Pig">
+						<a data-toggle="collapse" href="#collapse5" data-parent="#accordion">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							5.Pig
+						</a>
+					</h4>
+				</div>
+				<div id="collapse5" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>About Pig</li>
+							<li>MapReduce Vs Pig,</li>
+							<li>Pig Use Cases</li>
+							<li>Programming Structure in Pig</li>
+							<li>Pig Running Modes</li>
+							<li>Pig components</li>
+							<li>Pig Execution</li>
+							<li>Pig Latin Program</li>
+							<li>Data Models in Pig</li>
+							<li>Pig Data Types</li>
+							<li>Shell and Utility Commands</li>
+							<li>Pig Latin</li>
+							<li>Relational Operators</li>
+							<li>File Loaders</li>
+							<li>Group Operator</li>
+							<li>COGROUP Operator</li>
+							<li>Joins and COGROUP</li>
+							<li>Union</li>
+							<li>Diagnostic Operators</li>
+							<li>Specialized joins in Pig</li>
+							<li>Built In Functions</li>
+							<li>Pig UDF</li>
+							<li>Piggybank</li>
+							<li>Parameter Substitution</li>
+							<li>Pig Streaming</li>
+							<li>Testing Pig scripts with Punit</li>
+							<li>Aviation use case in PIG</li>
+							<li>Pig Demo on Healthcare Data set</li>
+							<li></li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading6">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="6.Hive">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							6.Hive
+						</a>
+					</h4>
+				</div>
+				<div id="collapse6" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Hive Background</li>
+							<li>Hive Use Case</li>
+							<li>About Hive</li> 
+							<li>Hive Vs Pig</li>
+							<li>Hive Architecture and Components, Metastore in Hive</li>
+							<li>Limitations of Hive</li>
+							<li>Comparison with Traditional Database</li>
+							<li>Hive Data Types and Data Models</li>
+							<li>Partitions and Buckets</li>
+							<li>Hive Tables(Managed Tables and External Tables)</li>
+							<li>Importing Data</li>
+							<li>Querying Data</li>
+							<li>Managing Outputs</li>
+							<li>Hive Script</li>
+							<li>Hive UDF</li>
+							<li>Retail use case in Hive</li>
+							<li>Hive Demo on Healthcare Data set</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading7">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="7.Advanced Hive and HBase">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse7">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							7.Advanced Hive and HBase
+						</a>
+					</h4>
+				</div>
+				<div id="collapse7" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Hive QL</li>
+							<li>Joining Tables</li>
+							<li>Dynamic Partitioning</li>
+							<li>Custom Map/Reduce Scripts</li>
+							<li>Hive Indexes and views Hive query optimizers</li>
+							<li>Hive : Thrift Server</li>
+							<li>User Defined Functions</li>
+							<li>HBase: Introduction to NoSQL Databases and HBase</li>
+							<li>HBase v/s RDBMS</li>
+							<li>HBase Components</li>
+							<li>HBase Architecture,</li>
+							<li>Run Modes & Configuration</li>
+							<li>HBase Cluster Deployment</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading8">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="8.Advanced HBase">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse8">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							8.Advanced HBase
+						</a>
+					</h4>
+				</div>
+				<div id="collapse8" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>HBase Data Model</li>
+							<li>HBase Shell</li>
+							<li>HBase Client API</li>
+							<li>Data Loading Techniques</li>
+							<li>ZooKeeper Data Model</li>
+							<li>Zookeeper Service</li>
+							<li>Zookeeper</li>
+							<li>Demos on Bulk Loading</li>
+							<li>Getting and Inserting Data</li>
+							<li>Filters in HBase</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading9">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="9.Processing Distributed Data with Apache Spark">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse9">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							9.Processing Distributed Data with Apache Spark
+						</a>
+					</h4>
+				</div>
+				<div id="collapse9" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>What is Apache Spark</li>
+							<li>Spark Ecosystem</li>
+							<li>Spark Components</li>
+							<li>History of Spark and Spark Versions/Releases</li>
+							<li>Spark a Polyglot</li>
+							<li>What is Scala?</li>
+							<li>Why Scala?</li>
+							<li>SparkContext</li>
+							<li>RDD</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading10">
+					<h4 class="panel-title">
+						<input class="chk1" type="checkbox" name="checks" value="10.Oozie and Hadoop Project">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse10">
+							<i class="more-less glyphicon glyphicon-plus"></i>
+							10.Oozie and Hadoop Project
+						</a>
+					</h4>
+				</div>
+				<div id="collapse10" class="panel-collapse collapse" >
+					<div class="panel-body">
+						<ul>
+							<li>Flume and Sqoop Demo</li>
+							<li>Oozie</li>
+							<li>Configuring session engine</li>
+							<li>Using sessions in views</li>
+							<li>Oozie Components</li>
+							<li>Oozie Workflow</li>
+							<li>Scheduling with Oozie,</li>
+							<li>Demo on Oozie Workflow</li>
+							<li>Oozie Co-ordinator</li>
+							<li>Oozie Commands</li>
+							<li>Oozie Web Console</li>
+							<li>Oozie for MapReduce</li>
+							<li>PIG, Hive, and Sqoop</li>
+							<li>Combine flow of MR, PIG, Hive in Oozie</li>
+							<li>Hadoop Project Demo</li>
+							<li>Hadoop Integration with Talend</li>
+							<li></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div><!-- panel-group -->	
+    </div>
+  </div>
+	<input type = "submit" class="btn btn-primary" value= "Submit Choices" style = "">
+	</form>
+</div>
+<script>
+function toggleIcon(e) {
+    $(e.target)
+        .prev('.panel-heading')
+        .find(".more-less")
+        .toggleClass('glyphicon-plus glyphicon-minus');
+}
+$('.panel-group').on('hidden.bs.collapse', toggleIcon);
+$('.panel-group').on('shown.bs.collapse', toggleIcon);
+</script>
+{% endblock %}

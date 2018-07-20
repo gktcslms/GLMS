@@ -1,0 +1,34 @@
+<html>
+	{% extends "index.html" %}
+{% load staticfiles %}
+{% block home %}
+	<head>
+		<script>
+			function loginfun() {
+    alert("Login Successful");
+    }
+		</script>
+	</head>
+	
+	<div style="padding-left:300; padding-top:40 ; ">
+	
+		<img style="padding-left:40" src="http://gktcs.in/GLMS/public/static/images/Login.jpg" height="65" width="240">
+		<br>
+	<form  method='post' action="" > {% csrf_token %}
+					<table valign="top">
+						<tr><td><b>Username :</b</td><td>{{ form.username }}</td></tr>
+						<tr><td><b>Password :</b</td><td>{{ form.password }}</td></tr>	
+					</table>
+				
+				
+				
+				<div style="padding-left:130">	<input type="submit" onclick="loginfun()" >
+					
+				</div>
+					
+				</form>	<br><br>
+				<a href="{% url 'register' %}" >Register New User</a>
+				<a style="padding-left:40" href="{% url 'forgot' %}" >Forgot Password ?</a>
+			</div>	
+</html>
+{% endblock %}

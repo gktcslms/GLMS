@@ -1,0 +1,1755 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+<title>Gktcs LMS</title>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title> GKTCS LMS</title>
+		<link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon" />
+		<link rel="icon" href="/static/images/favicon.ico" type="image" />
+		<!-- Latest compiled and minified CSS -->
+		{% block head %}
+		{% endblock %}	
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="/static/css/YouTubePopUp.css">
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+		<!--webfonts-->
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text.css'/>
+		<link rel="stylesheet" href="/static/css/course.css">
+
+		<!--//webfonts-->
+
+		  <script>
+    function validatefName(name){
+      // Validation rule
+      var re = /[A-Za-z -']$/;
+      // Check input
+      if(re.test(name)){
+        // Style green
+        document.getElementById('id_f_name').style.background ='';
+        // Hide error prompt
+        document.getElementById('fnameError').style.display = "none";
+        return true;
+      }else{
+        // Style red
+        document.getElementById('id_f_name').style.borderColor ='#ff8888';
+        // Show error prompt
+        document.getElementById('fnameError').style.display = "block";
+        return false; 
+      }
+    }
+	function validatelName(name){
+      // Validation rule
+      var re = /[A-Za-z -']$/;
+      // Check input
+      if(re.test(name)){
+        // Style green
+        document.getElementById('id_l_name').style.background ='';
+        // Hide error prompt
+        document.getElementById('lnameError').style.display = "none";
+        return true;
+      }else{
+        // Style red
+        document.getElementById('id_l_name').style.borderColor ='#ff8888';
+        // Show error prompt
+        document.getElementById('lnameError').style.display = "block";
+        return false; 
+      }
+    }
+	function validatefirstName(name){
+      // Validation rule
+      var re = /[A-Za-z -']$/;
+      // Check input
+      if(re.test(name)){
+        // Style green
+        document.getElementById('id_first_name').style.background ='';
+        // Hide error prompt
+        document.getElementById('fnameError').style.display = "none";
+        return true;
+      }else{
+        // Style red
+        document.getElementById('id_first_name').style.borderColor ='#ff8888';
+        // Show error prompt
+        document.getElementById('fnameError').style.display = "block";
+        return false; 
+      }
+    }
+	function validatelastName(name){
+      // Validation rule
+      var re = /[A-Za-z -']$/;
+      // Check input
+      if(re.test(name)){
+        // Style green
+        document.getElementById('id_last_name').style.background ='';
+        // Hide error prompt
+        document.getElementById('lnameError').style.display = "none";
+        return true;
+      }else{
+        // Style red
+        document.getElementById('id_last_name').style.borderColor ='#ff8888';
+        // Show error prompt
+        document.getElementById('lnameError').style.display = "block";
+        return false; 
+      }
+    }
+	function validateContact(number){
+      // Validation rule
+      var re = /^\d{10}$/;
+      // Check input
+      if(re.test(number)){
+        // Style green
+        document.getElementById('id_mobile').style.background ='';
+        // Hide error prompt
+        document.getElementById('mobileError').style.display = "none";
+        return true;
+      }else{
+        // Style red
+        document.getElementById('id_mobile').style.borderColor ='#ff8888';
+        // Show error prompt
+        document.getElementById('mobileError').style.display = "block";
+        return false; 
+      }
+    }
+    // Validate email
+    function validateEmail(email){ 
+      var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      if(re.test(email)){
+        document.getElementById('id_email').style.background ='#ccffcc';
+        document.getElementById('emailError').style.display = "none";
+        return true;
+      }else{
+        document.getElementById('id_email').style.borderColor ='#ff8888';
+		document.getElementById('emailError').style.display = "block";
+        return false;
+      }
+    }
+    // Validate Select boxes
+    function validateSelect(x){
+      if(document.getElementById(x).selectedIndex !== 0){
+        document.getElementById(x).style.background ='#ccffcc';
+        document.getElementById(x + 'Error').style.display = "none";
+        return true;
+        }else{
+        document.getElementById(x).style.background ='#e35152';
+        return false; 
+      }
+    }
+    function validateRadio(x){
+      if(document.getElementById(x).checked){
+        return true;
+      }else{
+        return false;
+      }
+    }
+    function validateCheckbox(x){
+      if(document.getElementById(x).checked){
+        return true;
+      }
+      return false;
+    }   
+    function validateForm(){
+      // Set error catcher
+      var error = 0;
+      // Check name
+      if(!validateName('name')){
+        document.getElementById('nameError').style.display = "block";
+        error++;
+      }
+      // Validate email
+      if(!validateEmail(document.getElementById('id_email').value)){
+        document.getElementById('emailError').style.display = "block";
+        error++;
+      }
+      // Validate animal dropdown box
+      if(!validateSelect('animal')){
+        document.getElementById('animalError').style.display = "block";
+        error++;
+      }
+      // Validate Radio
+      if(validateRadio('left')){
+ 
+      }else if(validateRadio('right')){
+         
+      }else{
+        document.getElementById('handError').style.display = "block";
+        error++;
+      }
+      if(!validateCheckbox('accept')){
+        document.getElementById('termsError').style.display = "block";
+        error++;
+      }
+      // Don't submit form if there are errors
+      if(error > 0){
+        return false;
+      }
+    }     
+  </script>
+    	<style>
+			
+			.addinstructor > .form-control {
+				width: 100% !important;
+			}
+			.contactform input, 
+			.contactform select, 
+			.contactform textarea, 
+			.addinstructor input, 
+			.addinstructor select, 
+			.addinstructor textarea {
+				margin-bottom: 10px;
+				border-radius: 10px;
+				width: 100%;
+			}
+			
+			input::-moz-focus-inner { 
+			  border: 0; 
+			}
+			a:hover, a:active, a:focus {
+			   outline: 0;
+			}
+			a:focus {
+				text-decoration: none;
+				
+			}
+    		p {
+        		text-align: justify;
+			}
+			
+			.navbar-brand, .navbar-nav > li > a {
+				text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+			}
+    		
+    		.message_btn_contact {
+			  background-color: #00A4CB;
+			  border: 1px solid #00A4CB;
+			  border-radius: 2px;
+			  color: #fff;
+			  padding: 7px 16px;
+			}
+			
+			.navbar-default {
+				background-color: transparent;
+    			border-color: transparent;
+    			background-image: none;
+    			box-shadow: none;
+			}
+			
+			#cnav{
+				float: right
+			}
+			
+			#cnav li a {
+				color:#FFFFFF;
+			}
+
+			
+
+			.nav-pills>li.active>a,
+			.nav-pills>li.active>a:hover, 
+			.nav-pills>li.active>a:focus{
+				background-color:#F15C22;
+				border-radius:0;
+				outline: 0;
+					
+			}
+			.nav-pills>li > a {
+				width:284px;
+				width:100%;
+				text-align:center;
+				color:#484848;
+				border-radius:0px;
+				border-left: 1px solid #F15C22;
+			}
+			#bli{
+				width:285px;
+			}
+			.nav-pills li a{
+				height:48px;
+				font-size:120%;
+			}
+			.nav-pills
+			{
+				border-radius:5px;
+				border: 1px solid #F15C22;
+			}
+				.nav-pills > li > a:hover {
+      			background-color: #F9E3DB;
+      			border-radius:3px;
+      			outline: 0;
+    		}
+    		#navul >li{
+    			
+    			margin:0%;
+    			
+    		}
+    		#tophead{
+    			
+    		}
+    		#head{
+    			height:40px; 
+    			background-color:#00A4CB;
+    		}
+			#logocol{
+				z-index: 5;
+			}
+			#logo{
+				position: absolute;
+			}
+			#toprow{
+				background-color:#00A4CB;
+			}
+			#demoa{
+				float: right;
+			}
+			#demodiv{
+				background-color:#F15C22; 
+				width:143px; height:33px;
+			}
+			#demo{
+				color:#FFFFFF; 
+				padding:6px 0px 0px 5px;
+			}
+			#call1{
+				background-color:#00A4CB;
+				float: right; 
+				padding-top: 8px;
+				margin-right:15px;
+			}
+			
+			#calldiv{
+				float: right;
+			}
+			
+			#callspan{
+				color:#FFFFFF;
+			}
+			#mail{
+				background-color:#00A4CB; 
+				float: right; 
+				padding-top: 8px;
+				margin-right:30px;
+			}
+			
+			#maildiv{
+				float: right
+			}
+			
+			#mailspan{
+				color:#FFFFFF;
+			}
+			#navcol{
+				
+			}
+			#logsign{
+				float: left; 
+				margin-top: -1%; 
+				position: static; 
+				padding: 0px 10px 0px 23px;
+			}
+			#logsign1{
+				float: right; 
+				margin-top: -5%;
+			}
+			
+			#signbtn{
+				background-color:#F15C22; 
+				border-radius:5px 0px 0px 5px; 
+				color:#FFFFFF; 
+				width: 93px; 
+				height: 31px; 
+				margin-top: -18%;
+			}
+			
+			#loginbtn{
+				background-color:#F15C22; 
+				border-radius:0px 5px 5px 0px; 
+				color:#FFFFFF; 
+				width: 93px; 
+				height: 31px;
+				margin-top: -18%
+			}
+			
+			#bgbanner{
+				background :
+					linear-gradient(
+						rgba(0, 0, 0, 0.4), 
+						rgba(0, 0, 0, 0.4)
+					  ),
+					url(https://study.com/images/reDesign/home/hero-woman-coffee-desktop.jpg); 
+				height:512px;
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position:center;
+			}
+			#what{
+				color:#FFFFFF;
+				text-align: center; 
+				margin-top: 7%;
+				font-family: ProximaNovaRegular;
+				font-size:58px;
+				text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+			}
+			h1,h2,h3,h4{
+				font-family: ProximaNovaRegular;
+			}
+			#own{
+				color:#FFFFFF; 
+				font-size:25; 
+				text-align: center; 
+				margin-top: 2%; 
+				font-family: ProximaNovaLightItalic;
+			}
+			#searchcon{
+				padding-top: 3%;
+			}
+			
+			#searchdiv{
+				padding-top: 2%;
+			}
+			
+			#searchbdiv{
+				float:right;
+			}
+			#searchbtn{
+				background-color: #00A4CB; 
+				height: 50px; 
+				width: 175px;
+			}
+			
+			#search0::-webkit-input-placeholder {
+			  color: #EEEEEE;
+			}
+			#search0::-moz-placeholder { /* Firefox 19+ */
+			  color: #EEEEEE;
+			}
+			#search0:-ms-input-placeholder {
+			  color: #EEEEEE;
+			}
+			#search0:-moz-placeholder { /* Firefox 18- */
+			  color: #EEEEEE;
+			}
+			
+			#find{
+				color: #FFFFFF; 
+				font-size: 120%;
+			}
+			#wlcm{
+				border-right: 2px solid; 
+				border-color:#F3F4F8; 
+				padding-bottom:45px; 
+				padding-top: 40px
+			}
+			#wlcmh2{
+				color:#F15C22;
+			}
+			#welcorpdesc{
+				padding-top:20px; 
+				line-height:2;
+				color:#746C6C
+			}
+			#readspan{
+				color:#F15C22; 
+				font-size:120%
+			}
+			#welcorp{
+				padding-top:10px;
+			}
+			#corp{
+				padding-top: 40px;
+			}
+			#course{
+				background-color:#F3F4F8; 
+				padding-top:20px; 
+				padding-bottom:70px
+			}
+			#choose{
+				padding-top:22px;  
+				color:#746C6C; 
+				text-align:center;
+			}
+			#doyou{
+				padding-top:22px; 
+				padding-bottom:22px; 
+				color:#746C6C; 
+				text-align:center;
+			}
+			#coursecon{
+				padding-top: 15px;
+			}
+			#wta{
+				border-left: none;
+			}
+			#tabcontent{
+				padding-top: 40px;
+			}
+			#tc{
+				padding-bottom: 30px;
+			}
+			#iconpad{
+				padding-top:10px; 
+				padding-bottom: 10px;
+			}
+			#iconbtn{
+				background-color: transparent; 
+				color:#FFFFFF; 
+				border-color: #FFFFFF; 
+				border-width: 2px;
+			}
+			#btnpad{
+				padding: 0px 7px 0px 7px;
+			}
+			#lhtml{
+				padding: 20px 0px 0px 94px;
+			}
+			#lcss{
+				padding: 20px 0px 0px 90px;
+			}
+			#ldesign{
+				padding: 20px 0px 0px 97px;
+			}
+			#ljs{
+				padding: 20px 0px 0px 100px;
+			}
+			#lruby{
+				padding: 20px 0px 0px 100px;
+			}
+			#lphp{
+				padding: 20px 0px 0px 94px;
+			}
+			#lwt{
+				padding: 20px 0px 0px 98px;
+			}
+			#lios{
+				padding: 20px 0px 0px 96px;
+			}
+			#dhtml{
+				width:255px; 
+				height: 180px; 
+				background-color: #39ADD1; 
+				border-radius: 5px;
+			}
+			#dcss{
+				width:255px; 
+				height: 180px; 
+				background-color: #3079AB; 
+				border-radius: 5px;
+			}
+			#ddesign{
+				width:255px; 
+				height: 180px; 
+				background-color: #E59A13; 
+				border-radius: 5px;
+			}
+			#djs{
+				width:255px; 
+				height: 180px; 
+				background-color: #C25975; 
+				border-radius: 5px;
+			}
+			#druby{
+				width:255px; 
+				height: 180px; 
+				background-color: #E15258; 
+				border-radius: 5px;
+			}
+			#dphp{
+				width:255px; 
+				height: 180px; 
+				background-color: #7D669E; 
+				border-radius: 5px;
+			}
+			#dwt{
+				width:255px; 
+				height: 180px; 
+				background-color: #838CC7; 
+				border-radius: 5px;
+			}
+			#dios{
+				width:255px; 
+				height: 180px; 
+				background-color: #53BBB4; 
+				border-radius: 5px;
+			}
+			#conf{
+				text-align: center;
+				color:#746C6C;
+			}
+			#pt45{
+				padding-top:45px;
+			}
+			#confus{
+				color:#42C3D3;
+				font-family:ProximaNovaBoldIt;
+			}
+			#askbtn{
+				background-color:#F15C22; 
+				border-radius:5px 5px 5px 5px; 
+				color:#FFFFFF; 
+				height: 65px;
+			}
+			#revrow{
+				text-align: center; 
+				color:#00A4CB;
+			}
+			#p20{
+				padding:20px;
+			}
+			#askh1{
+				margin-top:4px;
+			}
+			#pl402{
+				padding-left: 40px;
+				line-height:1.5;
+			}
+			.glyphicon-star{
+				color:gold;
+			}
+			#rimg{
+				border:3px solid; 
+				border-color:#C2C9C2; 
+				width: 110px; 
+				height: 110px;
+			}
+			.black_text{
+				color: #000;
+			}
+			#revdesc{
+				line-height:2;
+				color:#746C6C;
+				font-size: 16px;
+			}
+			#tp15{
+				padding-top: 15px;
+			}
+			#readall{
+				color: #42C3D3;
+			}
+			#footerbnr{
+				background-image:url(/static/images/footer.png); 
+				height:408px;
+			}
+			#pt64{
+				padding-top:64px;
+			}
+			#btncol{
+				text-align: center; 
+				padding-top: 10px
+			}
+			#cntrwt{
+				text-align: center;
+				color:#FFFFFF;
+			}
+			#pt108{
+				padding-top:108px
+			}
+			#getbtn{
+				background-color:#F15C22; 
+				border-radius:5px 5px 5px 5px; 
+				color:#FFFFFF; 
+				height: 65px;
+			}
+			#tp4{
+				margin-top:4px;
+			}
+			#large{
+				padding-top:50px;
+				color:#393A3A;
+			}
+			#bridging{
+				color:#746C6C;
+			}
+			#footerdiv{
+				background-color:#363636; 
+				color:#BBB7B7;
+				padding-top:40px; 
+				padding-bottom:30px; 
+				margin-top: 15px;
+			}
+			#listedcourses{
+				color:#EEEEF0;
+			}
+			#courserow{
+				padding-top:35px;
+				line-height:2;
+			}
+			#stay {
+				color:#EEEEF0;
+				text-align: center;
+			}
+			#address{
+				padding-top:34px; 
+				line-height:2
+			}
+			#socialdiv{
+				background-color:#272727;
+			}
+			#socialrow{
+				color:#BBB7B7;
+				padding-top:15px; 
+				padding-bottom:15px;
+			}
+			#socialcol{
+				padding-top:5px;
+			}
+			#floatr{
+				float:right
+			}
+			.sm_user{
+				right:30px;
+			}
+			@font-face {
+			    font-family: 'ProximaNovaRegular';
+			    src: url('/static/fonts/ProximaNovaRegular/ProximaNovaRegular.eot');
+			    src: url('/static/fonts/ProximaNovaRegular/ProximaNovaRegular.eot') format('embedded-opentype'),
+			         url('/static/fonts/ProximaNovaRegular/ProximaNovaRegular.woff2') format('woff2'),
+			         url('/static/fonts/ProximaNovaRegular/ProximaNovaRegular.woff') format('woff'),
+			         url('/static/fonts/ProximaNovaRegular/ProximaNovaRegular.ttf') format('truetype'),
+			         url('/static/fonts/ProximaNovaRegular/ProximaNovaRegular.svg#ProximaNovaRegular') format('svg');
+			}	
+			@font-face {
+			    font-family: 'ProximaNovaLightItalic';
+			    src: url('/static/fonts/ProximaNovaLightItalic/ProximaNovaLightItalic.eot');
+			    src: url('/static/fonts/ProximaNovaLightItalic/ProximaNovaLightItalic.eot') format('embedded-opentype'),
+			         url('/static/fonts/ProximaNovaLightItalic/ProximaNovaLightItalic.woff2') format('woff2'),
+			         url('/static/fonts/ProximaNovaLightItalic/ProximaNovaLightItalic.woff') format('woff'),
+			         url('/static/fonts/ProximaNovaLightItalic/ProximaNovaLightItalic.ttf') format('truetype'),
+			         url('/static/fonts/ProximaNovaLightItalic/ProximaNovaLightItalic.svg#ProximaNovaLightItalic') format('svg');
+			}
+			@font-face {
+			    font-family: 'ProximaNovaLight';
+			    src: url('/static/fonts/ProximaNovaLight/ProximaNovaLight.eot');
+			    src: url('/static/fonts/ProximaNovaLight/ProximaNovaLight.eot') format('embedded-opentype'),
+			         url('/static/fonts/ProximaNovaLight/ProximaNovaLight.woff2') format('woff2'),
+			         url('/static/fonts/ProximaNovaLight/ProximaNovaLight.woff') format('woff'),
+			         url('/static/fonts/ProximaNovaLight/ProximaNovaLight.ttf') format('truetype'),
+			         url('/static/fonts/ProximaNovaLight/ProximaNovaLight.svg#ProximaNovaLight') format('svg');
+			}
+			@font-face {
+			    font-family: 'ProximaNovaBold';
+			    src: url('/static/fonts/ProximaNovaBold/ProximaNovaBold.eot');
+			    src: url('/static/fonts/ProximaNovaBold/ProximaNovaBold.eot') format('embedded-opentype'),
+			         url('/static/fonts/ProximaNovaBold/ProximaNovaBold.woff2') format('woff2'),
+			         url('/static/fonts/ProximaNovaBold/ProximaNovaBold.woff') format('woff'),
+			         url('/static/fonts/ProximaNovaBold/ProximaNovaBold.ttf') format('truetype'),
+			         url('/static/fonts/ProximaNovaBold/ProximaNovaBold.svg#ProximaNovaBold') format('svg');
+			}
+			@font-face {
+			    font-family: 'ProximaNovaBoldIt';
+			    src: url('/static/fonts/ProximaNovaBoldIt/ProximaNovaBoldIt.eot');
+			    src: url('/static/fonts/ProximaNovaBoldIt/ProximaNovaBoldIt.eot') format('embedded-opentype'),
+			         url('/static/fonts/ProximaNovaBoldIt/ProximaNovaBoldIt.woff2') format('woff2'),
+			         url('/static/fonts/ProximaNovaBoldIt/ProximaNovaBoldIt.woff') format('woff'),
+			         url('/static/fonts/ProximaNovaBoldIt/ProximaNovaBoldIt.ttf') format('truetype'),
+			         url('/static/fonts/ProximaNovaBoldIt/ProximaNovaBoldIt.svg#ProximaNovaBoldIt') format('svg');
+			}
+			body{
+				font-family: ProximaNovaRegular;
+				font-size:15px;
+			}
+			#name{
+				font-size: 19px ;
+				font-weight: bold;
+			}
+			#desig{
+				font-size:16px;
+				font-weight: bold;
+				color: #555;
+			}
+			#gklogo{
+				position:absolute; 
+				z-index: 555; 
+				margin-top: 7px;
+			}
+			#gklogo img{
+				width: 90px;
+			}
+
+			#screen1 {
+			    position: relative;
+			    padding-top: 25px;
+			    padding-bottom: 67.5%;
+			    height: 0;
+			}
+			#screen1 iframe {
+			    box-sizing: border-box;
+			    background-size: contain;
+			    padding: 0;
+			    position: absolute;
+			    top: 0;
+			    left: 0;
+			    width: 100%;
+			    height: 100%;
+				border: 3px solid gray;
+			}
+			.course_inner{
+				background: #FFFFFF;
+				margin: 15px 0px;
+				padding-bottom:15px;
+			}
+			
+			.course_wrap h3{
+				text-align: center;
+			}
+			#course_bg{
+				background: #DDDDDD;
+			}
+			.course_wrap p{
+				text-align: center;
+				color:#444444;
+			}
+			#form-div {
+				background-color:rgba(28, 28, 45, 0.65);
+				padding-left:25px;
+				padding-right:25px;
+				padding-top:35px;
+				padding-bottom:40px;
+				border-radius: 7px;
+				-moz-border-radius: 7px;
+				-webkit-border-radius: 7px;
+			}
+
+			.feedback-input {
+				color:#3c3c3c;
+				font-family: Helvetica, Arial, sans-serif;
+			  font-weight:500;
+				font-size: 16px;
+				border-radius: 0;
+				line-height: 20px;
+				background-color: #fbfbfb;
+				padding: 8px 8px 8px 50px;
+				margin-bottom: 10px;
+				width:100%;
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				-ms-box-sizing: border-box;
+				box-sizing: border-box;
+			  border: 3px solid rgba(0,0,0,0);
+			}
+
+			.feedback-input:focus{
+				background: #fff;
+				box-shadow: 0;
+				border: 3px solid #3498db;
+				color: #3498db;
+				outline: none;
+			  padding: 8px 8px 8px 50px;
+			}
+
+			.focused{
+				color:#30aed6;
+				border:#30aed6 solid 3px;
+			}
+
+			/* Icons ---------------------------------- */
+			#eqname{
+				background-image: url(static/images/name.svg);
+				background-size: 25px 25px;
+				background-position: 11px 6px;
+				background-repeat: no-repeat;
+			}
+
+			#eqname:focus{
+				background-image: url(static/images/name.svg);
+				background-size: 25px 25px;
+				background-position: 8px 5px;
+			  background-position: 11px 6px;
+				background-repeat: no-repeat;
+			}
+
+			#eqemail{
+				background-image: url(static/images/email.svg);
+				background-size: 25px 25px;
+				background-position: 11px 6px;
+				background-repeat: no-repeat;
+			}
+
+			#eqemail:focus{
+				background-image: url(static/images/email.svg);
+				background-size: 25px 25px;
+			  background-position: 11px 6px;
+				background-repeat: no-repeat;
+			}
+
+			#eqcomment{
+				background-image: url(static/images/comment.svg);
+				background-size: 25px 25px;
+				background-position: 11px 8px;
+				background-repeat: no-repeat;
+			}
+
+			#eqcomment {
+				width: 100%;
+				height: 120px;
+				line-height: 150%;
+				resize:vertical;
+			}
+
+			#button-blue{
+				font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+				float:left;
+				width: 100%;
+				border: #fbfbfb solid 4px;
+				cursor:pointer;
+				background-color: #3498db;
+				color:white;
+				font-size:18px;
+				padding-top:5px;
+				padding-bottom:5px;
+				-webkit-transition: all 0.3s;
+				-moz-transition: all 0.3s;
+				transition: all 0.3s;
+				font-weight:700;
+			}
+
+			#button-blue:hover{
+				background-color: rgba(0,0,0,0);
+				color: #0493bd;
+			}
+			#form1 p{
+				margin:0px;
+			}
+				
+			.submit:hover {
+				color: #3498db;
+			}
+				
+			.ease {
+				width: 0px;
+				height: 35px;
+				background-color: #fbfbfb;
+				-webkit-transition: .3s ease;
+				-moz-transition: .3s ease;
+				-o-transition: .3s ease;
+				-ms-transition: .3s ease;
+				transition: .3s ease;
+			}
+
+			.submit:hover .ease{
+			  width:100%;
+			  background-color:white;
+			}
+			*{margin:0;}
+
+
+
+			#panel{
+			  z-index:444;
+			  position:fixed;
+			  color:#fff;
+			  width:270px;
+			  top:12px;
+			  right:-270px;
+			  transition: right 0.4s ease-in-out;
+			  -o-transition: right 0.4s ease-in-out;
+			  -ms-transition: right 0.4s ease-in-out;
+			  -moz-transition: right 0.4s ease-in-out;
+			  -webkit-transition: right 0.4s ease-in-out;
+			}
+			#panel h2, #panel p{
+			  padding-top:7px;
+			  padding-bottom:7px;
+			}
+			#panelCaller{
+			  position:absolute;
+			  top:70px;
+			  right:270px;
+			}
+			#panel:hover{
+			  right:0px;
+			}
+			#panelCaller > img {
+			  width:44px;
+			}
+			#custom-show-hide-example .close{
+				float:none;
+				font-size: 18px;
+				font-weight: 500;
+				line-height: none;
+				opacity: 1;
+				text-shadow: none;
+			}
+			#custom-show-hide-example2 .close{
+				float:none;
+				font-size: 18px;
+				font-weight: 500;
+				line-height: none;
+				opacity: 1;
+				text-shadow: none;
+			}
+html {
+  height: 100%;
+}
+
+.circ:before {
+    content:'';
+    color:black;
+    position:absolute;
+    display:inline-block;
+    border:1px solid black;
+    border-radius: 999px;
+    left:31px;
+    width:17px;
+    text-align:center;
+    line-height:20px;
+    height:17px;
+}
+
+.tab-pane>h4:before,  {
+    content:'';
+    color:black;
+    position:absolute;
+    display:inline-block;
+    border:1px solid black;
+    border-radius: 999px;
+    left:31px;
+    width:17px;
+    text-align:center;
+    line-height:20px;
+    height:17px;
+}
+
+.v-center {
+  height: 100vh;
+  width: 100%;
+  display: table;
+  position: relative;
+  text-align: center;
+}
+
+.v-center > div {
+  display: table-cell;
+  vertical-align: middle;
+  position: relative;
+  top: -10%;
+}
+
+	
+.modal-box {
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  width: 98%;
+  background: white;
+  border-bottom: 1px solid #aaa;
+  border-radius: 4px;
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-clip: padding-box;
+}
+@media (min-width: 32em) {
+
+.modal-box { width: 90%; }
+}
+
+.modal-box header,
+.modal-box .modal-header {
+  padding: 1.25em 1.5em;
+  border-bottom: 1px solid #ddd;
+}
+
+.modal-box header h3,
+.modal-box header h4,
+.modal-box .modal-header h3,
+.modal-box .modal-header h4 { margin: 0; }
+
+.modal-box .modal-body { padding: 2em 1.5em; }
+
+.modal-box footer,
+.modal-box .modal-footer {
+  padding: 1em;
+  border-top: 1px solid #ddd;
+  background: rgba(0, 0, 0, 0.02);
+  text-align: right;
+}
+
+.modal-overlay {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 900;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3) !important;
+}
+
+a.close {
+  line-height: 1;
+  font-size: 50px;
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  text-decoration: none;
+  color: #283749;
+  opacity: 0.8;
+}
+
+a.close:hover {
+  color: #222;
+  -webkit-transition: color 1s ease;
+  -moz-transition: color 1s ease;
+  transition: color 1s ease;
+}
+.im-powered-link {
+    display: none !important;
+}
+.navbar-toggle {
+    background-color: #eee;
+}	.search3 {
+  display: inline-block;
+  position: absolute;
+  right: 204px;
+  top: 4px;
+}
+
+[class^="icon-search"]{
+  background: #00a4cb;
+  color:#fff;
+  border-radius:5px;
+  display:inline-block;
+  padding:6px 7px 7px;
+  font-size:22px;
+  text-shadow:1px 1px 2px #21638F;
+  transition:all 0.5s ease;
+  -webkit-transition:all 0.5s ease;
+  cursor: pointer;
+  z-index:10;
+  position:relative;
+}
+[class^="icon-search"]:hover{
+  background: #00a4cb;
+  text-shadow:0px 0px 0px #21638F;
+  box-shadow: inset 0px 0px 8px #21638F;
+  transition:all 0.5s ease;
+  -webkit-transition:all 0.5s ease;
+}
+.search_form{
+  background: #0a829e;
+  position:absolute;
+  z-index:0;
+  padding:0px 5px;
+  top:15px;
+  border-radius:10px;
+  left: 10px;
+  width:235px;
+  z-index:999999;
+  height:0px;
+  margin-top:15px;
+  transition: height 0.2s ease-out 0.5s , top 0.2s ease-out 0.5s, padding 0.2s ease-out 0.5s, width 0.3s ease-out 0.2s;
+  -webkit-transition: height 0.2s ease-out 0.5s , top 0.2s ease-out 0.5s, padding 0.2s ease-out 0.5s, width 0.3s ease-out 0.2s;
+}
+.search_form form{
+  opacity:0;
+   transition:all 0.3s ease-out;
+  -webkit-transition:all 0.3s ease-out;
+}
+.search_form input{
+  background:#fff;
+  border:none;
+}
+.search_form input[type='text']{
+  border-radius:5px;
+  width:100%;
+  margin:0px 1px 0px 0;
+  padding:0px 5px 1px;
+  min-height:23px;
+}
+.search_form input[type='submit']{
+  border-radius:0 5px  5px 0;
+  text-transform:uppercase;
+  font-size:11px;
+  padding:0px 5px;
+  min-height:24px;
+  margin:0px 0px 0px 0;
+  cursor: pointer;
+}
+.search_box{
+  visibility: hidden;
+}
+.search_box:checked~.search_form{
+  min-height:44px;
+  padding:5px;
+  top:25px;
+  transition: height 0.2s ease-out, top 0.2s ease-out, padding 0.2s ease-out, 0.3s width ease-out 0.2s;
+  -webkit-transition: height 0.2s ease-out, top 0.2s ease-out, padding 0.2s ease-out, 0.3s width ease-out 0.2s;
+}
+.search_box:checked~.search_form form{
+  opacity:1;
+  transition:0.3s all ease-out 0.5s;
+  -webkit-transition:0.3s all ease-out 0.5s;
+}	
+
+
+#myEmbed{
+	width:700px;
+
+}
+
+				@media screen and (max-width: 770px) {
+			    .navbar-default {
+				background-color: #444444;
+				}
+				#cnav{
+				float: left;
+				}
+				#gklogo{ 
+				margin-top: 4px;
+				}
+				#gklogo img{
+					width: 65px;
+				}
+				#what{
+				font-size: 40px;
+				}
+				#myCarousel {
+					top:40px;
+				}
+				.main_nb{
+					background: #00A4CB;
+					min-height: 40px;
+				}
+				#div_nb {
+					top:0;
+				}
+				.navbar-nav {
+					width: 100%;
+					text-align: center;
+				}
+				.log_btn {
+				  margin-top: 5px;
+				  padding: 3px 8px;
+				}
+				.nav-tabs > li {
+					border: 2px solid #eee;
+					float: left;
+					margin-bottom: -1px;
+					width: 50%;
+				}
+			}
+
+			
+			@media only screen and (max-width: 480px) {
+				#form-div{
+					
+				}
+				#what {
+					font-size: 30px;
+				}
+				#own {
+					font-size: 18px;
+				}
+				#call1 {
+					display: none;
+				}
+			}
+			@media only screen and (max-width: 1200px) {
+				.addinstructor input, 
+				.addinstructor select, 
+				.addinstructor textarea {
+				  max-width: inherit !important;
+				  width: 100% !important;
+				}
+			}	
+			@media only screen and (max-width: 1000px) {
+				.nav > li > a {
+					padding: 15px 10px;
+				}
+			
+			}
+			.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover {
+				background-color: #00a4cb;
+				background-image: none;
+			}
+			.dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover{
+				background-color: #0093CB;
+				background-image: none;
+			
+			}
+			.container .c_header {
+				cursor: pointer;
+			}
+			.container .c_content {
+				display: none;
+			}
+			.im-checkout {
+				margin-bottom: 0 !important;
+				margin-top: 0 !important ; 
+			}
+			
+			.im-checkout-btn {
+				color: #3399ee;
+			}
+			.br20{
+				border-radius:20px;
+			}
+			.c_content {
+				display: none;
+			}
+			.chk1{
+				width:16px;
+				height:16px;
+				margin: 0px 5px 0 0 !important;
+			}
+			div[aria-label=Pop out"]{
+				opacity:0;
+				display: none !important;
+				z-index: 0;
+			}
+	</style>
+	
+	</head>
+	<body style="background: #B9C2D4 url() no-repeat scroll 0 0;">
+		<div>
+		<div id="popup1" class="modal-box">
+		  <header> <a class="js-modal-close close">×</a>
+			<h3 style="color: #00A4CB">Register for free!</h3>
+		  </header>
+		<div class="modal-body">
+			<form action="." method="post" onSubmit="alert('Thanks!!  Register Successful.');"> {% csrf_token %}
+			<!--<div class="inset">  
+
+				<div class="form-group required" id="div_id_username"> 
+					<label class="control-label  requiredField" for="id_username">Username<span class="asteriskField">*</span> </label> 
+					<div class="controls "> <input type="text" name="username" maxlength="30" id="id_username" class="textinput textInput form-control">  </div> 
+				</div> 
+				<div class="form-group required" id="div_id_email"> 
+					<label class="control-label  requiredField" for="id_email">E-mail<span class="asteriskField">*</span> </label> 
+					<div class="controls "> <input type="email" name="email" id="id_email" class="emailinput form-control" style="background-image:none;"> </div> 
+				</div> 
+				<div class="form-group required" id="div_id_password1"> 
+					<label class="control-label  requiredField" for="id_password1">Password<span class="asteriskField">*</span> </label> 
+					<div class="controls "> <input type="password" name="password1" id="id_password1" class="textinput textInput form-control"> </div> 
+				</div> 
+				<div class="form-group required" id="div_id_password2"> 
+					<label class="control-label  requiredField" for="id_password2">Password confirmation<span class="asteriskField">*</span> </label> 
+					<div class="controls "> <input type="password" name="password2" id="id_password2" class="textinput textInput form-control"> </div> 
+				</div>
+
+			</div>-->
+				{{ form2|crispy }}
+				<div >
+					<div>
+					<input type="submit" class="btn btn-info" value="Join Now" style="float:right">
+					</div>
+					<div>
+					<span style="float:right;margin-top:7px;margin-right:25px;"><a href="/accounts/login/" style="padding:14px">Need to Login ? </a> </span>
+					</div>
+					<br>
+				</div>
+			<p></p>
+			</form>
+		</div>
+		</div>
+		<div id="popup2" class="modal-box" style="margin-top: 110px;">
+		  <header> <a class="js-modal-close close">×</a>
+			<h3 style="color: #00A4CB;text-align:center;">Login</h3>
+		  </header>
+		<div class="modal-body">
+			<form method="post">{% csrf_token %}
+				{{ form1|crispy }}
+				<div >
+					<div>
+					<input type="submit" class="btn btn-info" value="Login" style="float:right">
+					</div>
+					<div>
+					<span style="float:right;margin-top:7px;margin-right:25px;"><a href="/accounts/password/reset/" style="padding:14px; color: #00A4CB;">Forgot password ? Reset it ! </a></span>
+					</div>
+					<br>
+				</div>
+			<p></p>
+			
+			</form>
+		</div>
+		</div>
+		</div>
+	<!--<div id="panel">
+		<div id="panelCaller"><img width="5px" src="/static/images/enquiry.png"></div>
+	  <div id="form-div">
+		<form class="form" id="form1">
+		  
+		  <p class="name">
+			<input name="name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Name" id="eqname" />
+		  </p>
+		  
+		  <p class="email">
+			<input name="email" type="text" class="validate[required,custom[email]] feedback-input" id="eqemail" placeholder="Email" />
+		  </p>
+		  
+		  <p class="eqtext">
+			<textarea name="text" class="validate[required,length[6,270]] feedback-input" id="eqcomment" placeholder="Enquiry"></textarea>
+		  </p>
+		  
+		  
+		  <div class="submit">
+			<input type="submit" value="SEND" id="button-blue"/>
+			<div class="ease"></div>
+		  </div>
+		</form>
+	  </div>
+	 </div> --> 		
+		<header>
+			<div id="tophead">
+			<div id="head" class="hidden-xs">
+				<div>	
+					<div class="container"><a id="gklogo" href="/"><img src="/static/images/main_logo.png"></a></div>
+					<div class="container">
+						<div class="row">
+						<div class="col-md-4 col-lg-5 hidden-sm hidden-xs " style="padding-left:110px;">
+							<div class="" id="toprow" style="float:left;">	
+			
+								
+								<div class="hidden-md" id="call1" >
+								
+											<div id="calldiv" ><img src="/static/images/call.png" /><span id="callspan">+91 - 9975072320</span></div>
+									
+								</div>		
+								
+								<div class="" id="mail">	
+										
+											<div id="maildiv"><img src="/static/images/envelop.png" /><span id="mailspan">support@gktcs.com</span></div>
+								</div>
+									
+							</div>
+						</div>
+						<div class="col-md-5 col-lg-4 hidden-xs">
+								  <form class="navbar-form navbar-right" role="search" action="/search2/" method="get" style="margin-top: 3px;margin-bottom: 2px;">
+									<div class="form-group">
+										<input autocomplete="off" size="25" type="text" id="search" name="q" class="form-control search" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Find a course here'" placeholder="Find a course here">
+										<div style="position:relative">
+										<div id="search-results" class="search-results" style="position:absolute; z-index:9999; background: #EEE; width:100%;">
+
+										</div>
+										</div>
+									</div>
+									<button type="submit" class="btn btn-default">FIND COURSES</button>
+								  </form>
+
+						</div>		  
+						<div class="col-md-3 col-lg-3 hidden-xs">
+							{% if not request.user.is_authenticated %}
+							<div style="float:right;padding-top:3px;padding-right:5px;">
+								<a href="/authentication/login/"><button type="button" class="btn btn-warning">LOGIN</button></a>
+								<a href="/authentication/register/"><button type="button" class="btn btn-warning">SIGN UP</button></a>
+							</div>
+							{% endif %}
+						</div>
+					</div>
+				</div>	
+				</div>	
+				</div>
+				</div>
+		</header>
+		<div id="bgbanner00">
+  		<div id="div_nb">
+			<div>
+				<div class="container">
+					<div class="row" >
+						
+						<div class=" " id="navcol00">
+						<nav style="border-radius:0px; margin-bottom: 8px;" class="navbar navbar-default main_nb">
+						  	<div class="container-fluid">
+						    <!-- Brand and toggle get grouped for better mobile display -->
+						    <div class="navbar-header">
+							<div class="container visible-xs"><a id="gklogo" href="#"><img src="/static/images/main_logo.png"></a></div>
+						    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="true">
+						        <span class="sr-only">Toggle navigation</span>
+						        <span class="icon-bar"></span>
+						        <span class="icon-bar"></span>
+						    </button>
+							<div class="col-md-3 col-lg-3 visible-xs">
+							<div class="">
+							<div class="search3">
+							  <input class="search_box" type="checkbox" id="search_box">
+							  <label class="icon-search glyphicon glyphicon-search" for="search_box"></label>
+							  <div class="search_form">
+								<form  role="search" action="/search2/" method="get">
+								  <input autocomplete="off" height="40px" size="25" type="text" id="search2" name="q" class="form-control" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Find a course here'" placeholder="Find a course here">
+									<div style="position:relative">
+											<div id="search-results" class="search-results" style="position:absolute; z-index:500; background: #EEE; width:100%;">
+
+											</div>
+									</div>
+								</form>
+							  </div>
+							</div>
+							</div>
+							{% if not request.user.is_authenticated %}
+							<div style="float:right;padding-top:3px;padding-right:5px;">
+								<a href="/accounts/login/"><button type="button" class="btn btn-warning log_btn" >LOGIN</button></a>
+								<a href="/accounts/register/"><button type="button" class="btn btn-warning log_btn">SIGN UP</button></a>
+							</div>
+							{% endif %}
+							</div>  
+							  
+						      
+						    </div>
+	
+						    <!-- Collect the nav links, forms, and other content for toggling -->
+						    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						      <ul class="nav navbar-nav" id="cnav" style="margin-right: -22px;">
+								<li><a href="/">HOME</a></li>
+								<li><a href="/surendra">ABOUT US</a></li>
+								<li><a href="#">COURSES</a></li>
+								<li><a href="/contact">CONTACT</a></li> 
+								{% if request.user.is_authenticated %}
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+									 
+									{% if not user.userprofile.picture %}
+										<img src="/static/images/default_pic.jpg" width="25px" height="25px" class="profile-image img-circle"/>
+									{% else %}
+										<img src="{{MEDIA_URL}}{{ user.userprofile.picture.url }}" width="25px" height="25px" class="profile-image img-circle"/>
+									{% endif %}
+									{{user.first_name}} <span class="caret"></span></a>
+									<ul class="dropdown-menu" style="background-color: #00a4cb; min-width: 100px; border:0px; border-top: 1px solid rgba(0, 0, 0, 0.15);">
+										<li><a href="{% url 'my_dashboard' %}">MY DASHBOARD</a></li>
+										<li role="separator" class="divider"></li>
+										<li><a href="{% url 'auth_logout' %}?next=/">LOGOUT</a></li>
+										
+									</ul>
+								</li>
+								{% endif %}
+								<!--<li><a href=" url 'myprofile' user.id ">PROFILE</a></li>-->
+								<!--<li><a href="/accounts/login/">LOGIN</a></li>
+								<li><a href="/accounts/register/">SIGN UP</a></li>-->
+						      </ul>
+						    </div><!-- /.navbar-collapse -->
+						   
+						  </div><!-- /.container-fluid -->
+						</nav>
+						</div>
+					</div>	
+				</div>	
+			</div>
+				
+		</div>
+			
+			{% block content %}
+<div class"row">
+    <div class="col-lg-3">
+    </div>
+    <div class="col-lg-9">
+        {% for each in all_questions %}
+	        <h3><a href="/question/{{ each.id }}">{{ each }}</a></h3>
+	        <div class="row">
+		      {% for cc in each.comments_choice_set.all %}
+              
+		          <div class="col-lg-4">
+			          <li><strong>{{ cc.comment }}</strong></li>
+		          </div>
+                  <div class="col-lg-1">
+    		          {{ cc.total_vote }}
+    	          </div>
+                  <div class="col-lg-1">
+                      {{ cc.up_vote }}
+                  </div>
+                  <div class="col-lg-1">
+                      {{ cc.down_vote }}
+                  </div>
+                  <div class="col-lg-1">
+                      
+                  </div>
+                 {% if request.user.is_authenticated %}
+    	          <div class="col-lg-2">
+    		          <a href="/question/{{ each.id }}/?cc={{ cc.id }}&uid={{ uid }}&vote=True"><input class='btn btn-block btn-primary' type="submit" value="Up" /></a>
+                  </div>
+    	          <div class="col-lg-2">
+    		          <a href="/question/{{ each.id }}/?cc={{ cc.id }}&uid={{ uid }}&vote=False"><input class='btn btn-block btn-primar y' type="submit" value="Down" /></a><br/>
+    		      </div>
+    	           
+                {% endif %}
+
+    	      {% endfor %}
+            <div class="col-lg-12">
+             {% if form.errors %}
+    <p class="error">Sorry, that's not a valid username or password.</p>
+  {% endif %}
+  <form action="post_comment/" method="POST">{% csrf_token %}
+      {% if form.errors %}
+          <p class="error">Sorry, that's not a valid POST.</p>
+      {% endif %}
+    <label for="question" hidden>User name:</label>
+    <input type="text" name="question" value="{{ each }}" id="question" readonly hidden>
+    <h4><label for="comment">Comment:</label>
+
+    <input type="text" class="form-control" name="comment" value="" id="comment" required><br/>
+
+    <input class='btn btn-success' type="submit" value="POST" /></h4>
+  </form>
+              <br/>
+            </div>
+            </div>
+        {% endfor %}
+    </div>
+
+</div>
+			{% endblock %}
+		<div id="footerdiv">
+			<div class="container">
+
+						
+						<div class="row">
+							<div class="col-md-12">
+								<h3 id="stay">Stay Connected With Us</h3>
+							</div>	
+						</div>
+						
+						<div class="row" id="address">
+							<div class="col-md-6">
+								Head Office<br><br>
+								The Senate Business Centre<br>
+								100 ft Riverside D.P Road, <br>
+								Vartak Baug, off Karve Rd, Erandwane,<br> 
+								Pune, Maharashtra 411052<br>
+								Contact Person-Mr. Surendra Panpaliya<br>
+								Contact no.-9975072320, 020 6790 5900<br>
+								Email-surendra@gktcs.com<br><br>
+							</div>	
+							<div class="col-md-6">	
+								Global Office<Br><br>
+								227 W Wellington Dr,Palatine,IL 60067 USA<br>
+								Contact Person- Mr. Satish Panpaliya<Br>
+								Contact no.- +1(847)809-6866<br>
+								Email-srpanpaliya@gktcs.com<br><br>
+								<div id="">
+									<img src="/static/images/facebook.png"/>
+									<img src="/static/images/google+.png"/>
+									<img src="/static/images/tweeter.png"/>
+									<img src="/static/images/play.png"/>
+								</div>
+								
+							</div>	
+						</div>
+			</div>
+		</div>
+					<div id="socialdiv">
+						<div class="container">
+						<div class="row" id="socialrow">
+						<div class="col-md-9" id="socialcol">
+							@2018 GKTCS Innovations Pvt. Ltd. All Rights reserved | Privacy Policy | Site Map
+						</div>
+						<div class="col-md-3" >
+	
+						</div>
+						</div>
+						</div>
+					</div>
+		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script src="/static/js/jquery.collapse.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script type="text/javascript" src="/static/js/jquery-1.12.1.min.js"></script>
+		<script type="text/javascript" src="/static/js/YouTubePopUp.jquery.js"></script>
+		<script type="text/javascript" src="/static/js/ajax.js"></script>
+		<script type="text/javascript">
+			jQuery(function(){
+				jQuery("a.bla-1").YouTubePopUp();
+				jQuery("a.bla-2").YouTubePopUp( { autoplay: 0 } ); // Disable autoplay
+			});
+		</script>
+		<script>
+        new jQueryCollapse($("#custom-show-hide-example"), {
+          open: function() {
+            this.slideDown(150);
+          },
+          close: function() {
+            this.slideUp(150);
+          }
+        });
+      </script>
+	  <script>
+        new jQueryCollapse($("#custom-show-hide-example2"), {
+          open: function() {
+            this.slideDown(150);
+          },
+          close: function() {
+            this.slideUp(150);
+          }
+        });
+      </script>
+		<script>
+		$(function(){
+
+		var appendthis =  ("<div class='modal-overlay js-modal-close'></div>");
+
+			$('a[data-modal-id]').click(function(e) {
+				e.preventDefault();
+			$("body").append(appendthis);
+			$(".modal-overlay").fadeTo(500, 0.7);
+			//$(".js-modalbox").fadeIn(500);
+				var modalBox = $(this).attr('data-modal-id');
+				$('#'+modalBox).fadeIn($(this).data());
+			});  
+		  
+		  
+		$(".js-modal-close, .modal-overlay").click(function() {
+			$(".modal-box, .modal-overlay").fadeOut(500, function() {
+				$(".modal-overlay").remove();
+			});
+		 
+		});
+		 
+		$(window).resize(function() {
+			$(".modal-box").css({
+				top: ($(window).height() - $(".modal-box").outerHeight()) / 2,
+				left: ($(window).width() - $(".modal-box").outerWidth()) / 2
+			});
+		});
+		 
+		$(window).resize();
+		 
+		});
+		</script>
+		<script>
+		{% if messages %}
+		    {% for message in messages %}
+			    alert('{{ message }}');
+		    {% endfor %}
+        {% endif %}		
+		</script>
+		<script>
+			$(".c_header").click(function () {
+
+				$c_header = $(this);
+				//getting the next element
+				$c_content = $c_header.next();
+				//open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
+				$c_content.slideToggle(400, function () {
+					//execute this after slideToggle is done
+					//change text of header based on visibility of content div
+					$( ".lessmore" ).text(function () {
+						//change text based on condition
+						return $c_content.is(":visible") ? "Less" : "More";
+					});
+				});
+
+			});		
+		</script>
+		<script>
+		$('.nav-tabs li a').click(function (e) {     
+			//get selected href
+			var href = $(this).attr('href');    
+
+
+
+		})
+
+		</script>	
+		<script>
+			document.querySelector('.ndfHFb-c4YZDc-Wrql6b-AeOLfc-b0t70b').onload = function() {myFunction()};
+			function myFunction() {
+				document.querySelector('div[aria-label="Pop out"]').style.visibility = 'hidden';
+			}	
+		</script>
+		{% block lower %}
+		{% endblock %}
+		
+	</body>
+</html>

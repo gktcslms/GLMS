@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+{% block home %}
+<div align="justify" style="width:900px;padding-left:40px   ">
+{% for i in b %}
+
+<b><font color="#366D9C" size=5px style="font-family: Georgia">{{i.blog_title}}</font></b>
+<br><br>
+
+<B><font size=4px style="font-family: Georgia">By: {{i.blog_writer}}</font></B><br>
+<br>
+<font size=4px style="font-family: Georgia">Last Updated:{{i.blog_date}}</font>
+<br>
+<br>
+<p>{{i.blog_content}}</p><br>
+<hr>
+
+
+{% endfor %}
+</div>
+
+{% endblock %}

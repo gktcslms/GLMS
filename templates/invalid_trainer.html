@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block head %}
+
+{% endblock %}
+{% block content %}
+<div class="container">
+	<div class="row">
+		<div class="well" style="text-align:center;">
+			<h3>Your account is not registered for trainer.</h3><br/>
+			<h3>Become A Trainer!</h3>
+			<a href="/authentication/register/" class="btn btn-warning">Click here to join us.</a><br/><br/>
+			<h3>Already registered as a trainer!</h3>
+			<a href="/authentication/login/" class="btn btn-success">Click here to Login.</a>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,459 @@
+{% load staticfiles %}
+<title>Gktcs LMS</title>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title> GKTCS LMS</title>
+		<link rel="shortcut icon" href="http://gktcs.in/GLMS/public/static/images/favicon.ico" type="image/x-icon" />
+		<link rel="icon" href="http://gktcs.in/GLMS/public/static/images/favicon.ico" type="image" />
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="http://gktcs.in/GLMS/public/static/css/course.css">
+		<script type="text/javascript">
+
+$(document).ready(function () {
+	
+	$('#toggle-view li').click(function () {
+
+		var text = $(this).children('p');
+
+		if (text.is(':hidden')) {
+			text.slideDown('200');
+			$(this).children('span').html('-');		
+		} else {
+			text.slideUp('200');
+			$(this).children('span').html('+');		
+		}
+		
+	});
+
+});
+
+</script>
+	</head>
+	<body style="background: #283749 url() no-repeat scroll 0 0;">
+		<header>
+			<div id="tophead">
+			<div id="head">
+				<div class="container">	
+					<a id="gklogo" href="#"><img src="http://gktcs.in/GLMS/public/static/images/gktcs_logo.png"></a>
+					<div class="row">
+						
+						<div class="col-xs-10">
+							<div class="row" id="toprow">	
+								<div class="col-md-2" >
+			
+							
+								
+								</div>
+								
+								<div class="col-md-3" id="call1" >
+								
+										
+											<div id="calldiv" ><img src="http://gktcs.in/GLMS/public/static/images/call.png" /><span id="callspan">+91 - 9975072320</span></div>
+									
+								</div>		
+								
+								<div class="col-md-3 col-md-offset-4" id="mail">	
+										
+											<div id="maildiv"><img src="http://gktcs.in/GLMS/public/static/images/envelop.png" /><span id="mailspan">support@gktcs.in</span></div>
+								</div>
+									
+								</div>
+							</div>
+						</div>	
+					</div>	
+				</div>
+				</div>
+										<div class="container" id="navcol00">
+							<nav class="navbar navbar-default">
+						  	<div class="">
+						    <!-- Brand and toggle get grouped for better mobile display -->
+						    <div class="navbar-header">
+						      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="true">
+						        <span class="sr-only">Toggle navigation</span>
+						        <span class="icon-bar"></span>
+						        <span class="icon-bar"></span>
+						        <span class="icon-bar"></span>
+						      </button>
+						      
+						    </div>
+	
+						    <!-- Collect the nav links, forms, and other content for toggling -->
+						    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						      <ul class="nav navbar-nav" id="cnav">
+								<li><a href="{% url 'Courses' %}">COURSES</a></li>
+								<li><a href="{% url 'blog' %}">BLOGS</a></li>
+								<li><a href="{% url 'Aboutus' %}">ABOUT US</a></li>
+								<li><a href="{% url 'contact' %}">CONTACT</a></li> 
+								<li><a href="#">LOGIN</a></li>
+								<li><a href="#">SIGN UP</a></li>
+						      </ul>
+						    </div><!-- /.navbar-collapse -->
+						   
+						  </div><!-- /.container-fluid -->
+						</nav>
+						</div>
+				
+		</header>
+		<div id="div1">
+			<div class="container">
+				<div class="row">
+
+					<div class="col-md-8">
+						<div id="course_desc">
+							<div id="desc1">
+							
+							<ul class="breadcrumb" id="course_desc1">
+								<li><a href="/">HOME</a>
+								</li>
+								<li><a href="/all-courses">ALL COURSES</a>
+								</li>
+								<li class="current">jQuery UI Development
+								</li>
+							</ul>
+							<div class="row" style="background: rgba(40, 55, 73, 0.2);;">
+								<div class="col-md-4 col-sm-4">
+									<img class="img-responsive" id="header-logo" src="http://gktcs.in/GLMS/public/static/images/jquery1.jpg" />
+								</div>
+								<div class="col-md-8 col-sm-8">
+									<h1 style="margin-top: 10;">jQuery UI Development</h1>
+									<div id="span1">Become an expert in jQuery UI by mastering concepts like jQuery Traversing, jQuery Events and effects, AJAX using jQuery, UI Widgets and jQuery Mobile.</div>
+								</div>
+							</div>	
+							<div>
+								<div id="screen1">
+									<iframe width="560" height="315" src="//www.youtube.com/embed/hMxGhHNOkCU" frameborder="0" allowfullscreen></iframe>
+								</div>
+							</div>
+							
+							<h4 id="upcom"><b>Upcoming Batches : </b></h4>
+							<table class="table" id="table1">
+							    <thead>
+							      <tr id="head1">
+							        <th>STARTS</th>
+							        <th>DURATION</th>
+							        <th>DAYS</th>
+							        <th>TIME(IST)</th>
+							        <th>PRICE</th>
+							        <th>&nbsp</th>
+							      </tr>
+							    </thead>
+							    <tbody>
+							      <tr>
+							        <td>12-Jan</td>
+							        <td>5 Weeks</td>
+							        <td>Sat,Sun</td>
+							        <td>07:00 AM-10:00 AM</td>
+							        <td>15,000</td>
+							        <td id="enr">Enroll>></td>
+							      </tr>
+							      <tr>
+							        <td>18-Jan</td>
+							        <td>5 Weeks</td>
+							        <td>Sat,Sun</td>
+							        <td>08:30 PM-11:30 PM</td>
+							        <td>15,000</td>
+							        <td id="enr">Enroll>></td>
+							      </tr>
+							      <tr>
+							        <td>24-Jan</td>
+							        <td>5 Weeks</td>
+							        <td>Sat,Sun</td>
+							        <td>07:00 AM-10:00 AM</td>
+							        <td>15,000</td>
+							        <td id="enr">Enroll>></td>
+							      </tr>
+							      <tr>
+							        <td>01-Feb</td>
+							        <td>5 Weeks</td>
+							        <td>Sat,Sun</td>
+							        <td>08:30 PM-11:30 PM</td>
+							        <td>15,000</td>
+							        <td id="enr">Enroll>></td>
+							      </tr>
+							    </tbody>
+							 </table>								
+						</div>
+						</div>
+						
+					<div id="descripti">
+						<ul id = "myTab" class = "nav nav-tabs">
+						   <li class = "active">
+							  <a href = "#about" data-toggle = "tab">
+								 About The Course
+							  </a>
+						   </li>
+						   
+						   <li><a href = "#Curriculum" data-toggle = "tab">Curriculum</a></li>
+						   
+						   <li><a href = "#FAQ" data-toggle = "tab">FAQ's</a></li>
+						   
+						   <li><a href = "#Certification" data-toggle = "tab">Certification</a></li>
+						   
+						   <li><a href = "#Reviews" data-toggle = "tab">Reviews</a></li>
+							
+							
+						</ul>
+
+						<div id = "myTabContent" class = "tab-content">
+
+						   <div class = "tab-pane fade in active" id = "about">
+							  <h4>About the Course</h4>
+            <p><div style="text-align: justify;">The jQuery UI training course is designed to provide knowledge and skills to become 
+			a successful UI Developer. It starts with the fundamental concepts of jQuery DOM Traversing, jQuery Events API, jQuery Effects to advance topics of jQuery UI Widgets, jQuery Mobile etc.
+			Participants will also get to implement one realtime UI Project to a web application and mobile app.</div></p>
+                <h4>Course Objectives</h4>
+            <p><div style="text-align: justify;">After the completion of 'jQuery UI Training' at GKTCS, you will be able to:&nbsp;</div><div style="text-align: justify;">1. Understand Basic &amp; Advanced methods of jQuery Library</div><div style="text-align: justify;">2. Apply various jQuery methods in building UI projects</div><div style="text-align: justify;">3. Develop Rich Interactive Web pages</div><div style="text-align: justify;">4. Learn where to use and how to use jQuery UI Widgets, Events jQuery Mobile</div><div style="text-align: justify;">5. Apply jQuery Library to create Highly Rich Web &amp; Mobile Apps</div><div style="text-align: justify;">6. Work on a real time UI for Web and Mobile App.</div></p>
+                <h4>Who should go for this Course?</h4>
+            <p><div style="text-align: justify;">The course is designed for professionals who want to learn jQuery UI &amp; Mobile Library and wish to apply it on Web &amp; Mobile Front end. The following professionals can go for this course:</div><div style="text-align: justify;">1. Front End UI Developers who want develop Web Apps&nbsp;</div><div style="text-align: justify;">2. Professionals who want to build UI widgets for Enterprise Web Apps</div><div style="text-align: justify;">3.&nbsp;Professionals who want to build&nbsp;HTML5 based Mobile Apps</div><div style="text-align: justify;">4. UI Designers &amp; Developers&nbsp;</div><div style="text-align: justify;">5. Freelance Web designers/developers</div></p>
+                <h4>What are the pre-requisites for this Course?</h4>
+            <p><div style="text-align: justify;">The pre-requisite for this course include knowledge of Basic HTML, CSS &amp; Javascript</div></p>
+                <h4>Project Work:</h4>
+            <p><div style="text-align: justify;">Towards the end of the Course, you will be working on a real time project where you will be using jQuery Events, UI Widgets, Animations &amp; jQuery Mobile.</div><div style="text-align: justify;"><b><br></b></div><div style="text-align: justify;"><b>Project #1: </b>Developing Admin for Content Management System</div><div style="text-align: justify;"><b>Type: </b> CMS (Web Application)&nbsp;</div><div style="text-align: justify;"><b>Data: </b>You will developing a real time UI Web pages and UI Components for a Content Management System.&nbsp;</div><div style="text-align: justify;"><b><br></b></div><div style="text-align: justify;"><b>Project #2: </b>jQuery Mobile App&nbsp;</div><div style="text-align: justify;"><b>Type: </b>Corp Event&nbsp;</div><div style="text-align: justify;"><b>Data: </b>You will developing an Event Mobile App using jQuery Mobile.</div></p>
+                <h4>Why Learn jquery UI Development?</h4>
+            <p><div style="text-align: justify;">jQuery UI training certifies you with ‘in demand’ Front End Technologies to help you grab the top paying UI/Front End Developers as job title with HTML5, CSS3, Javascript &amp; jQuery skills.
+ 
+			jQuery is a widely used JS Library in the web. 70% of all websites are run on jQuery. It has lots of demand in the web world.
+			Big Brands that use jquery are: WordPress.com, Pinterest, Reddit, MSN.com, WordPress.org, Amazon, Yandex, Microsoft.com, GO.com, Ask.com, ESPN, Craigslist, About.com, Go Daddy, Stack</div></p>
+
+						   </div>
+						   
+						   <div class = "tab-pane fade" id = "Curriculum">
+											<h4>
+									1. Introducing jQuery 
+								</h4>  
+								<p><div style="text-align: justify;"><b>Learning Objectives - </b>In this module, you will understand about jQuery and overview of what jQuery does for web pages. you will also learn Basics of HTML &amp; CSS and how jQuery is used to manipulate your DOM &amp; CSS Selectors.&nbsp;</div><div><b><br></b></div><div><b>Topics - </b>Intro to jQuery &amp; History, The jQuery Object($), Basic DOM HTML Document/Page Types, CSS Selectors, IDE's for jQuery, jQuery CDN &amp; Installation. jQuery Functions, Selectors, Querying DOM, Traversing the DOM. jQuery Selectors, jQuery Basic Functions. DOM Traversing.</div> </p>
+											<h4>
+									2.  DOM Manipulation  & jQuery Effects 
+								</h4>  
+								<p><div style="text-align: justify;"><b>Learning Objectives - </b>In this module, you will learn how jQuery is used manipulate DOM easily, Also you will learn about readily available jQuery effects that can be applied to web page to make Rich Interactive Websites.&nbsp;</div><div><b><br></b></div><div><b>Topics - </b>Adding and Removing DOM elements, Iterating with each(), DOM elements, Modifying Properties and Attributes. jQuery Filters, jQuery Effects, hide/show, fading methods, chaining, Animate Function.</div> </p>
+											<h4>
+									3. jQuery Forms & Events 
+								</h4>  
+								<p><div style="text-align: justify;"><b>Learning Objectives - </b>In this module, you will learn jQuery Event event delegation and various events type in&nbsp;</div><div><b><br></b></div><div><b>Topics - </b> jQuery Form Selectors, Form Validation, Form Submission, Events, Event Handling, jQuery on() &amp; off() , Custom Events and Triggers.</div> </p>
+											<h4>
+									4. jQuery AJAX & Utilities 
+								</h4>  
+								<p><div style="text-align: justify;"><b>Learning Objectives - </b>In this module, you will learn about AJAX and how you can communicate with server using jQuery inbuilt functions and other jQuery utilities.&nbsp;</div><div><b><br></b></div><div><b>Topics - </b>AJAX using jQuery, Interacting with Server-Side, PHP and $.each and Templating, Twitter/Github API,  Deferreds.</div> </p>
+											<h4>
+									5. jQuery Plugins 
+								</h4>  
+								<p><div style="text-align: justify;"><b>Learning Objectives - </b>In this module, you will learn about jQuery plugins, how to use them into your web projects and basic plugin development.&nbsp;</div><div><b><br></b></div><div><b>Topics - </b> jQuery 3rd party plugins, Plugin Implementation, Plugin Development.</div> </p>
+											<h4>
+									6. jQuery UI 
+								</h4>  
+								<p><div style="text-align: justify;"><b>Learning Objectives - </b>In this module, you will learn about jQuery UI and single UI Component. We will look through the APIs of each Component.&nbsp;</div><div><b><br></b></div><div><b>Topics - </b>Accordion Widget, Tabs Widget, Tooltip Widget, Menu Widget, Widget, Datepicker Widget, jQuery Mobile.</div> </p>
+											<h4>
+									7. jQuery Mobile Introduction 
+								</h4>  
+								<p><div style="text-align: justify;"><b>Learning Objectives - </b>In this module, you will learn about Basics of jQuery Mobile. And also various UI components available in jQuery Mobile.&nbsp;</div><div><b><br></b></div><div><b>Topics - </b>jQuery Mobile CSS Framework, jQuery Mobile Events, Mobile Widgets</div> </p>
+											<h4>
+									8. Project 
+								</h4>  
+								<p><div style="text-align: justify;"><b>Project #1 : </b>Developing Admin for Content Management System.</div><div><div style="text-align: justify;"><b>Type : </b> CMS (Web Application)&nbsp;</div><div style="text-align: justify;"><b>Data :&nbsp;</b>You will developing a real time UI Web pages and UI Components for a Content Management System.&nbsp;</div><div style="text-align: justify;"><b><br></b></div><div style="text-align: justify;"><b>Project #2 : </b>jQuery Mobile App&nbsp;</div><div style="text-align: justify;"><b>Type : </b>Corp Event&nbsp;</div><div style="text-align: justify;"><b>Data : </b>You will developing a Event Mobile App using jQuery Mobile.</div></div> </p>
+
+            
+
+						   </div>
+						   
+						   <div class = "tab-pane fade" id = "FAQ">
+							  <p></p>
+						   </div>
+						   
+						   <div class = "tab-pane fade" id = "Certification">
+							  <h4>GKTCS Certification Process:</h4>
+									<p>
+										<div style="text-align: justify;">At the end of your course, you will
+								  work on a real time Project. You will  receive a Problem Statement
+								  along with a dataset to work. </div>
+								<div style="text-align: justify;">
+								  <br /></div>
+								<div style="text-align: justify;">Once you are successfully through with
+								  the project (reviewed by an expert),  you will be awarded a
+								  certificate with a performance based grading. </div>
+								<div style="text-align: justify;">
+								  <br /></div>
+								<div style="text-align: justify;">If your project is not approved in 1st
+								  attempt, you can take additional  assistance to understand the
+								  concepts better and reattempt the Project  free of cost.</div>    </p>
+
+						   </div>
+						   
+						   <div class = "tab-pane fade" id = "Reviews">
+							  <p></p>
+						   </div>
+						   
+						</div>
+							
+						
+					</div>
+					</div>
+						
+
+					
+					<div class="col-md-4">
+						<div id="contact1">
+							<div id="contact2">	
+								<ul>
+									<li><img src="http://gktcs.in/GLMS/public/static/images/flagin.png"/> India : +91-9975072320</li>
+									<li><img src="http://gktcs.in/GLMS/public/static/images/flagus.png"/> Us : +1(847)809-6866</li>
+									<li><img src="http://gktcs.in/GLMS/public/static/images/eml.jpg"/> Email Us : support@gktcs.in</li>
+								</ul>	
+							</div>
+						</div>
+						<div id="query1">
+							<h3 style="margin-top:10px; margin-bottom: 5px !important;">Drop Us a Query:</h3>
+							  <div id="form-div">
+								<form class="form" id="form1">
+								  
+								  <p class="name">
+									<input name="name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Name" id="eqname" />
+								  </p>
+								  
+								  <p class="email">
+									<input name="email" type="text" class="validate[required,custom[email]] feedback-input" id="eqemail" placeholder="Email" />
+								  </p>
+								  
+								  <p class="eqtext">
+									<textarea name="text" class="validate[required,length[6,270]] feedback-input" id="eqcomment" placeholder="Enquiry"></textarea>
+								  </p>
+								  
+								  
+								  <div class="submit">
+									<input type="submit" value="SEND" id="button-blue"/>
+									<div class="ease"></div>
+								  </div>
+								</form>
+							  </div>
+						</div>
+						
+					</div>
+				</div>
+			</div>	
+		</div>	
+		<div id="footerdiv">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 ">
+					<div class="row">
+							<div class="col-md-12">
+								<h3 id="listedcourses">Listed courses</h3>
+							</div>	
+					</div>	
+					<div class="row" id="courserow">	
+					<div class="col-md-6 ">	
+						<div class="row">
+							<div class="col-md-12">
+								Big data and Hadoop<br>
+								Hadoop Administration<br>
+								Apache spark and scala<br>
+								JAVA/J2EE and SOA<br>
+								PMP Exam Preparation<br>
+								informatica PowerCenter 9.X<br>
+								Mastering Python<br>
+								Data Science<br>
+								Android Development<br>
+								AWS Architect certification training<br>
+								DevOps<br>
+								Data Visualization With Tableau<br>
+								Mastering Data Analytics With R<br>
+								Talend For Big Data<br>
+							</div>	
+						</div>		
+					</div>
+					<div class="col-md-6 ">
+												
+						<div class="row">
+							<div class="col-md-12">
+								Manual Testing For Beginers<br>
+								AngularJS<br>
+								Mastering Node.js<br>
+								Red Hat Linux Administration<br>
+								Microsoft SharePoint 2013<br>
+								Map Reduce Design Patterns<br>
+								Spring Framework<br>
+								Persistance With Hibernate<br>
+								Mastering Perl Scripting<br>
+								HTML5 + CSS + JavaScript<br>
+								Testing With Selenium WebDriver<br>
+								PHP & MYSQL With MVC Frameworks<br>
+								iOS App Development<br>
+								Microsoft BI<br><br>
+							</div>	
+						</div>
+						
+					</div>
+					</div>
+					</div>
+					<div class="col-md-4">
+						
+						<div class="row">
+							<div class="col-md-12">
+								<h3 id="stay">Stay Connected With Us</h3>
+							</div>	
+						</div>
+						
+						<div class="row" id="address">
+							<div class="col-md-12">
+								Head Office<br><br>
+								11,4th Floor,Sneh Deep, Near Warje FlyOver Bridge<br>
+								Warje-Malwadi,Pune,Maharashtra,India-411058<br>
+								Contact Person-Mr. Surendra Panpaliya<br>
+								Contact no.-9975072320<br>
+								Email-surendra@gktcs.com<br><br>
+								
+								Global Office<Br><br>
+								227 W Wellington Dr,Palatine,IL 60067 USA<br>
+								Contact Person- Mr. Satish Panpaliya<Br>
+								Contact no.- +1(847)809-6866<br>
+								Email-srpanpaliya@gktcs.com<br><br>
+								
+							</div>	
+						</div>
+							
+							
+						
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<div id="socialdiv">
+						<div class="container">
+						<div class="row" id="socialrow">
+						<div class="col-md-9" id="socialcol">
+							@2015 GKTCS Innovations Pvt. Ltd. All Rights reserved | Privacy Policy | Site Map
+						</div>
+						<div class="col-md-3" >
+						<div id="floatr">
+							<img src="http://gktcs.in/GLMS/public/static/images/facebook.png"/>
+							<img src="http://gktcs.in/GLMS/public/static/images/google+.png"/>
+							<img src="http://gktcs.in/GLMS/public/static/images/tweeter.png"/>
+							<img src="http://gktcs.in/GLMS/public/static/images/play.png"/>
+						</div>	
+						</div>
+						</div>
+						</div>
+						
+					</div>
+		
+		
+		
+		
+		
+		
+		
+		<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script type="text/javascript" src="http://gktcs.in/GLMS/public/static/js/smoothscroll.js"></script>
+		<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+
+		
+	</body>
+</html>

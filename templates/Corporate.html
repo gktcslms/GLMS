@@ -1,0 +1,41 @@
+{% extends "index2.html" %}
+
+{% block home %}
+<div class="container">
+<div class="row">
+<div class="col-md-9 well">
+<h2 style="color: #FF4400" >Corporate</h3>
+<h3 style="color: #FF4400" >Who can be a Corporate Trainer?</h3>  
+<p>Who has an in-depth working knowledge of the particular domain and is very passionate about teaching and sharing his/her expert knowledge with students and professionals can teach at GKTCS. Good oral communication skills are mandatory.</p><br>
+
+
+
+<h3 style="color: #FF4400" >The Process Of Selection</h3>
+<p>First thing first! You need to fill this form. If you are shortlisted and finally selected, you will undergo a training based on GKTCS’s Learning Methodology. You will also get the opportunity to co-create the content with us to make ‘learning’ a very rich and fruitful experience for the learners.</p><br>
+
+<h3 style="color: #FF4400" >Advantages in GKTCS</h3>
+<p>Apart from working with a very young and talented team, you will also get the revenue-sharing opportunity at the fastest growing online training company in India! You will be provided with a great platform to showcase your practical knowledge and skills that you have acquired over a period of time. What more, you can conduct your training from any part of the world!</p>
+
+</div>		
+		
+
+<div class="col-md-3">			
+
+		<h4 style="color: #FF4400" >Trainer Registration</h4>
+		<form  method='post' action=""> {% csrf_token %}
+				<table>
+						<tr><td><b>Name :</b</td><td>{{ form.name }}</td></tr>
+						<tr><td><b>Email :</b</td><td>{{ form.Email }}</td></tr>
+						<tr><td><b>Contact :</b</td><td>{{ form.contactno}}</td></tr>
+						<tr><td><b>Skills :</b</td><td>{{ form.skills }}</td></tr>
+						<tr><td><b>LinkedIn :</b</td><td>{{ form.linkedin}}</td></tr>
+						<tr><td>&nbsp</td></tr>	
+						<tr><td></td><td><input type="submit" onclick="myFunction()" align="left"></td></tr>
+				</table>	
+		</form>
+</div>
+</div>
+</div>	
+ 
+
+{% endblock %}

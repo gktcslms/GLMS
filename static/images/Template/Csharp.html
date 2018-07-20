@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+{% extends "index.html" %}
+{% load staticfiles %}
+{% block home %}
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="http://api.html5media.info/1.1.5/html5media.min.js"></script>
+    
+      {% block flash%} {% endblock %}
+    
+    <style type="text/css">
+        body {
+            background: #fff;
+            font-family: verdana;
+            padding-top: 0px;
+            background-color: #027fcf;
+        }
+        #vtab {
+            margin: 10;
+            width: 700px;
+            height: 100%;
+        }
+        #vtab > ul > li {
+            width: 150px;
+            height: 80px;
+            background-color: #fff !important;
+            list-style-type: none;
+            display: block;
+            text-align: center;
+            margin: auto;
+            padding-bottom: 10px;
+            border: 1px solid #fff;
+            position: relative;
+            border-right: none;
+            opacity: .3;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+            filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+        }
+        #vtab > ul > li.home {
+            background: url('http://gktcs.in/GLMS/public/static/images/about1.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.login {
+            background: url('http://gktcs.in/GLMS/public/static/images/demo4.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.support {
+            background: url('http://gktcs.in/GLMS/public/static/images/content.jpg') no-repeat center center;
+        }
+         #vtab > ul > li.support1 {
+            background: url('http://gktcs.in/GLMS/public/static/images/batches.jpg') no-repeat center center;
+        }
+        
+        #vtab > ul > li.support2 {
+            background: url('http://gktcs.in/GLMS/public/static/images/interview.jpg') no-repeat center center;
+        }
+         #vtab > ul > li.support3 {
+            background: url('http://gktcs.in/GLMS/public/static/images/training.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.support4 {
+            background: url('http://gktcs.in/GLMS/public/static/images/FAQ.jpg') no-repeat center center;
+        }
+        #vtab > ul > li.support5 {
+            background: url('http://gktcs.in/GLMS/public/static/images/testi.jpg') no-repeat center center;
+        }
+         #vtab > ul > li.support6 {
+            background: url('http://gktcs.in/GLMS/public/static/images/certification.jpg') no-repeat center center;
+        }
+        
+        
+        #vtab > ul > li.selected {
+            opacity: 1;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+            filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+            border: 1px solid #ddd;
+            border-right: none;
+            z-index: 10;
+            background-color: #fafafa !important;
+            position: relative;
+        }
+        #vtab > ul {
+            float: left;
+            width: 110px;
+            text-align: left;
+            display: block;
+            margin: auto 0;
+            padding: 0;
+            position: relative;
+            top: 30px;
+        }
+        #vtab > div {
+            background-color: #fafafa;
+            margin-left:150px;
+            border: 1px solid #ddd;
+            min-height: 700px;
+            padding: 12px;
+            position: relative;
+            z-index: 9;
+            -moz-border-radius: 20px;
+        }
+        #vtab > div > h4 {
+            color: #800;
+            font-size: 1.2em;
+            border-bottom: 1px dotted #800;
+            padding-top: 5px;
+            margin-top: 0;
+        }
+        #loginForm label {
+            float: left;
+            width: 100px;
+            text-align: right;
+            clear: left;
+            margin-right: 15px;
+        }
+        #loginForm fieldset {
+            border: none;
+        }
+        #loginForm fieldset > div {
+            padding-top: 3px;
+            padding-bottom: 3px;
+        }
+        #loginForm #login {
+            margin-left: 115px;
+        }
+        
+     a {text-decoration: none}
+    </style>
+
+    <script type="text/javascript">
+        $(function() {
+            var $items = $('#vtab>ul>li');
+            $items.mouseover(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('#vtab>div').hide().eq(index).show();
+            }).eq(0).mouseover();
+        });
+    </script>
+
+</head>
+<body>
+
+					<font color="#366D9C" size=6px style="font-family: Georgia; padding-left: 450px"><b>C#</b></font>
+
+	
+	<table width="980" height="700"> 
+		<tr> 
+			<td width='100'>
+		
+    <div id="vtab">
+        <ul>
+            <li class="home selected"></li>
+            <li class="login"></li>
+            <li class="support"></li>
+            <li class="support1"></li>
+            <li class="support2"></li>
+            <li class="support3"></li>
+            <li class="support4"></li>
+            <li class="support5"></li>
+            <li class="support6"></li>
+        </ul>
+        <div>
+        	<h4>About Course</h4>
+        	<br/>
+           <table align="justify">
+           	<tr align="justify">
+           		<td valign="top">
+           		<img src='http://gktcs.in/GLMS/public/static/images/c-sharp-logo-1.png' width='90' height="60" />
+           		</td>
+           		<td>
+           			
+<b>Course Duration:</b>45hrs<br/>
+<br/>
+<b>Course Description:</b><br/>
+<br/>
+					.NET languages come in different flavours such as: C#.NET, VB.NET, Managed C++, F#. .NET languages compile to CIL (Common Intermediate Language) which means they all start "talking" the same language and can therefore interoperate.   
+<br/>
+<br/>
+<b>Who Should Attend:</b>
+<br/>
+<br/>
+This course is intended for those  who is familier with web development and knows the Asp.Net Very well.
+<br/><br/>
+<b>Benefits of Attendance:</b>
+<br/>
+<br/>
+Upon completion of this course, students will get following advantages of ASP .NET:<br/>
+<br/>
+<ul>
+<li> It is compiled to an intermediate language (CIL) indepently of the language it was developed or the target architecture and operating system</li><br/>
+<li>Automatic garbage collection</li><br/>
+<li>Pointers no longer needed (but optional)</li><br/>
+<li>Definition of classes and functions can be done in any order</li>
+<br/>
+</ul>
+
+<b>Prerequisites:</b><br/>
+<br/>
+The student should know about the basic concepts of Web Development and Should have knowledge of HTML, CSS, Javascript and Asp.Net very well.</td>
+           	</tr>
+           	
+           	
+           </table>
+            
+        </div>     
+         <div>
+         	<h4>Sample Demo</h4>
+         	<br/>
+         	<div>
+   <video id="abc" width="500px" height="360px" autoplay controls > <source src="{% static 'C:/GLMS/static/abc.mp4' %}" type="video/mp4"> </source>
+     
+        </video></div>
+
+</div>
+           <div>
+            <h4>
+              Content </h4>
+              <br/>
+              
+<li>Introduction to Object oriented concepts</li><br>
+<li>Classes, Variables and Data types</li><br>
+<li>Operators, Conditional & Looping Contructs</li><br>
+<li>	Abstraction, Encapsulation and Methods</li><br>
+<li>	Introduction to .NET Framework</li><br>
+<li>	Structures, Enumerations, Arrays and Collections</li><br>
+<li>	Constructor, Destructor and Polymorphism</li><br>
+<li>	Inheritance</li><br>
+<li>	File Input Output</li><br>
+<li>	Exception Handling</li><br>
+<li>	Threads</li><br>
+<li>	Delegates and Events</li><br>
+
+
+        </div>
+        
+           <div>
+        
+ <h4>Upcoming Batches</h4>
+ <br/>
+
+<div class="pricing_table">
+
+<table width=500px>
+		<tr width=500px ></tr>
+		<b><th width=280 bgcolor="#333333" style="color:#FFFFFF;">Start date</th>
+			
+		<th width=95 bgcolor="#333333" style="color:#FFFFFF;">Duration</th>
+		<th width=700 bgcolor="#333333" style="color:#FFFFFF;">Days</th>
+		<th width=100 bgcolor="#333333" style="color:#FFFFFF;">Time</th>
+		<th width=100 bgcolor="#333333" style="color:#FFFFFF;">Price</th></b>
+		</tr>
+		
+		
+		{% for j in batch %}
+		<tr width=500px>
+			
+<td width=350 bgcolor="#CCCCCC" style="text-align: center"> {{j.Start}}</td>
+<td width=220 bgcolor="#CCCCCC" style="text-align: center">{{j.Duration}}</td>
+<td width=350 bgcolor="#CCCCCC" style="text-align: center">{{j.Days}}</td>
+
+<td width=150 bgcolor="#CCCCCC" style="text-align: center">{{j.Time}}</td>
+<td width=100 bgcolor="#CCCCCC" style="text-align: center">{{j.Price}}/-</td>
+
+		
+		</tr>
+		{% endfor %}
+		
+		
+	</table>	
+
+</div>
+	 <br><br>
+	<br/>
+		
+
+<a href="/Enroll" style="padding-left: 320px; "><img src="http://gktcs.in/GLMS/public/static/images/enroll.png" height=40px width="190px" align="center"/></a>
+        </div>
+        
+           <div align="justify">
+           	<h4>Interview Questions</h4>
+           	<br/>
+           	<br/>
+           	
+           	<b>Question:  Explain about C# Language.</b><br/>
+Ans. C# is a OOPs language, .net framework use to compiled it, to generate machine code.
+<br><BR>
+         
+            <b>Question: ypes of comments in C#? </b><br/>
+Ans.  
+<li>Single line comments<br><bR>
+// for single line comments</li>
+
+<li>Multiple line comments<br><bR>
+/* for multi line comments */</li>
+
+<li>XML tags comments<br><bR>
+/// XML tags displayed in a code comment</li>
+
+<br><br>
+
+<b>Question:  Top reason to use C# language?</b><br/>
+Ans.   
+<li> Modern, general-purpose programming language</li><br>
+<li>Object oriented.</li><br>
+<li>Component oriented.</li><br>
+<li>Easy to learn.</li><br>
+<li>Structured language.</li><br>
+<li>It produces efficient programs.</li><br>
+<li>It can be compiled on a variety of computer platforms.</li><br>
+<li>Part of .Net Framework.</li>
+
+<br/>
+<br/>
+<b>Question: feature of C# language? </b><br/>
+Ans. 
+<li> Boolean Conditions</li><br>
+<li>Automatic Garbage Collection</li><br>
+<li>Standard Library</li><br>
+<li>Assembly Versioning</li><br>
+<li>Properties and Events</li><br>
+<li>Delegates and Events Management</li><br>
+<li>Easy-to-use Generics</li><br>
+<li>Indexers</li><br>
+<li>Conditional Compilation</li><br>
+<li>Simple Multithreading</li><br>
+<li>LINQ and Lambda Expressions</li><br>
+<br><Br>
+<b>Question:  What is a Class?</b><br>
+Ans. a set or category of things having some property or attribute in common and differentiated from others by kind, type, or quality.
+<br>
+<bR>
+<b>Question:  What is object?</b><br/>
+Ans.
+Objects are created from Classes, in C#, is an instance of a class that is created dynamically. Object is also a keyword that is an alias for the predefined type System.<br><bR>
+
+<b>Question: What is Constructors, explain with syntax 
+</b><br/>
+Ans. A is special method of the class that will be automatically invoked when an instance of the class is created is called as constructor.
+<br><Br>
+Constructors are mainly used to initialize private fields of the class while creating an instance for the class.
+<br><Br>
+When you are not creating a constructor in the class, then compiler will automatically create a default constructor in the class that initializes all numeric fields in the class to zero and all string and object fields to null.
+<br><Br>
+Syntax.<br>
+[Access Modifier] ClassName([Parameters])<br><Br>
+{<Br><Br><Br><Br>
+}
+
+<br><Br>
+<b>Question: Explain Types of Constructors </b><br/>
+Ans. 
+<li>Basically constructors are 5 types those are</li><br>
+<li>Default Constructor</li><br>
+<li>Parameterized Constructor</li><br>
+<li>Copy Constructor</li><br>
+<li>Static Constructor</li><br>
+<li>Private Constructor</li>
+<br><br>
+<b>Question: index value of the first element in an array? </b><bR>
+Ans.
+first element is 0 (zero). In a Array.
+<br><br>
+
+<b>Question:  Different between method overriding and  method overloading?</b><br>  	
+Ans. 
+Overriding methods it will create two or more methods with same name and same parameter in different classes.
+<Br><Br>
+while Overloading it will create more then one method with same name but different parameter in same class.
+<bR>
+	
+        </div>
+         <div align="justify">
+         	<h4>
+                Training Mode</h4>
+                <br/>
+   
+         	
+         	<table width=620><tr align="justify">
+         		<td width="330" align="justify">
+         		<br/>
+         	
+         	<b>Corporate Training :</b><br/>
+         	
+Corporate Training Solutions
+
+Corporate training is the act of grooming the workforce in order to make them capable of handling modern business challenges by improving their approach and productivity and thus, making effective utilization of resources. We at GKTCS work hand in hand with Industry on various fronts. GKTCS’s business cycle is aligned very closely to Industry needs and structured to fulfil the industry needs in terms of Training and Recruitment.
+
+We always believe our customers speak for our services based on their rich experience with our kind of services.
+</td>
+<td align="right">
+	<img src="http://gktcs.in/GLMS/public/static/images/corporate.jpg"  width="200" height="150"/> 
+</td>
+</tr>
+<tr>
+	<td>
+		<br/>
+<b>Retail Training :</b>
+<br/>
+GKTCS Innovations has a set of best trainers who are constantly engaged in spreading technical and non technical knowledge to individual who are seeking an opportunity in their respective industries and would like to straight away face the challenges of the continuously improving and changing world.
+
+The retail Training services provided by GKTCS Innovations are designed as per the needs of corporate and also as per the guidelines provided by them.
+ </td>
+ <td align="right">
+	<img src="http://gktcs.in/GLMS/public/static/images/retail.jpg"  width="200" height="150"/>
+</td>
+ </tr>
+ <tr>    <td>   
+ 	<br/>	
+ <b>Online Training </b>
+ <br/>
+ GKTCS offers Online Training , so you get trained from where you are from our experienced trainers, In the weekdays as well as weekends by the Real Time Professionals. The program is designed to provide rich learning experience for students using Internet.         	
+      </td>   
+      <td align="right">
+      	<img src="http://gktcs.in/GLMS/public/static/images/online.jpg"  width="200" height="150"/>
+      </td>  
+      </tr>	
+    </table>     	
+         	
+         </div>
+		
+
+           <div align="justify">
+           	<h4>
+                FAQs</h4>
+           	
+           	<br/>
+    
+          <b>What is C#?</b><br/>
+C# (pronounced C-Sharp) is a new programming language introduced with the Microsoft .NET framework and is no doubt the language of choice in .NET environment. It was first created in the late 1990's as part of Microsoft’s whole .NET strategy. It is a whole new language free of backward compatibility curse and a whole bunch of new, exciting and promising features. It is an Object Oriented Programming language, which at its core, has similarities with Java, C++ and VB.
+<br><BR>
+<b>What are Jagged Arrays in C#?</b>
+<br><BR>
+A special type of array is introduced in C#. A Jagged Array is an array of an array in which the length of each array index can differ. Example: A Jagged Array can be used is to create a table in which the lengths of the rows are not same. This Array is declared using square brackets ( [ ] ) to indicate each dimension.
+<br><Br>
+	
+<b>How do you prevent the class from being inheritance??
+</b><br/>
+Simply include the keyword ‘Sealed’ in front of the class keyword.
+<br><br>
+
+
+<b>What’s the advantage of using System.Text.StringBuilder over System String?
+</b><br/>
+String Builder is more efficient in cases where there is a large amount of string manipulation. Strings are immutable, so each time a string is changed, a new instance in memory is created.
+<br><Br>
+<b>Explain the use of abstraction in C#.NET?
+</b><br/>
+Abstraction is used to create a common set of methods that might have different specific implementations by subclasses. Abstract class cannot be instantiated and consists of abstract methods without any implementations. Classes inheriting from abstract class must implement all the methods in abstract class.
+<br><BR>
+<b>What is the Difference between instance data and class data?
+</b><br/>
+Class data in terms of static class is the data that particular class holds in its structure. Instances can refer to different objects of the same class that hold different values using the same class structure in memory heap.
+<br><Br>
+<b>Explain the significance of static method?
+</b><br/>
+Static methods are used when we want only one copy of that method to perform action and remain active at a single point in time.
+<br><Br>
+
+<b>Explain the uses of boxing and unboxing?
+</b><br/>
+Boxing and Unboxing are used to convert value types into reference types and vice versa. Developers often need to make some methods generic and hence create methods that accept objects rather than specific value types. The advantage of reference types is that they don’t create a copy of the object in memory, instead pass the reference of the data in the memory. This uses memory much more efficiently, especially, if the object to be passed is very heavy.
+<br><Br>
+
+<b>
+Explain the Debug class methods?
+</b><bR>
+<li> Assert:This method checks for a condition. It displays a user message if the condition is false.</li><br>
+ <li>Write:used to write information which will be used by Trace Listeners.</li><br>
+<li> WriteIf:Write information for Trace Listeners only if the condition is true.</li><br>
+<li> WriteLine: same as write but, every time writes in a new line.</li><br>
+<li> WriteLineIf:same as WriteIf but everytime writes in a new line.</li><br>
+
+<b>  What is Anchoring a control and Docking a control?
+</b>	<br>
+<li>Anchoring: used to resize controls dynamically with the form.</li><br>
+<li>Docking: to adhere to the edges of its container.</li><br>
+
+</div>
+           <div>
+        <h4>Testimonials</h4> 
+           
+        </div>
+   
+        <div align="justify">
+            <h4>
+                Certification</h4>
+                <br/>
+           
+             At the end of the course we provide  Certification.  <br/><br/>
+           <b>Process for Certification :</b>
+          
+  <li>You will receive a real time project Problem Statement along with a dataset to work. </li>
+  <li>After complition of your project(Reviewed by an Expert),you will be awarded a certificate with a performance-based grading. </li>
+ <li>If your project is not completed on time , you can take extra training for any of your doubts to understand the concepts better and re-attempt the Project free of cost.</li>
+<br/>
+GKTCS will help you at every stage of your learning and our 24/7 expert support team will ensure that you don't get stuck. Once you submit the project, our subject matter experts will review the same and share feedback to optimize it, if required.
+        </div>
+        </div>
+    
+    </td>
+    
+    <td valign="top" width="500">
+  		
+    <table valign="top">
+    	<tr valign="top">
+    		<font color="#366D9C" size=5px style="font-family: Georgia; padding-left:25px"><b>Course Features</b></font>  
+    		<td align="left" valign="top" width="500" height="200">
+    		
+ 
+  <br/>
+ <br/>
+ <li>Expert and qualified trainers</li>
+<li>Practical Project Based Approach</li>
+<li>Regular Assessment & feedback</li>
+<li>Total customized as per the client needs</li> 
+<li>Lifetime Access</li> 
+<li>  24 x 7 Support</li> 
+<li>  Get Certified</li>
+ 
+
+    			
+     		</td>
+     	
+    		
+    		
+    	</tr>
+    	
+    	<tr valign="top">
+    		<td height="20" valign="top" align="center">
+    		
+    		
+    		<font color="#366D9C" size=5px style="font-family: Georgia; padding-left:25px"><b>Placed Candidate</b></font>  
+    			<br/>
+    			<marquee direction="up" scrollamount="4" height="300">
+    			<table>
+    				<tr>
+    	   						
+    					<table>
+    						<tr>
+    							<td valign="top" height="30">
+    								
+    								<img src="http://gktcs.in/GLMS/public/static/images/AhilanShankar.jpg" width="100" height="100"/>
+    							</td>
+    							<td>
+    								<b>Alihan shanakar</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/capegemini.png" width="150" height="80"/> 
+    							</td>
+    						</tr>
+    						
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/sounavdas.jpg" width="100" height="100"/>
+    							</td>
+    							<td>
+    								<b>Sonav Das</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150" height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/ShashankVerma.jpg" width="60" height="80"/>
+    							</td>
+    							<td>
+    								<b>Shashank Verma</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/leoinfotech.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/rasika1.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Rasika</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/renuka.jpg" width="100" height="100"/>
+    							</td>
+    							<td>
+    								<b>Renuka Shirbhate</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/inetsoft.jpg" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/Neha.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Neha Kottarwar</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/GauravKotarwar.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Gaurav Kotarwar</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/leoinfotech.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/PrajaktaSakale.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Prajkta Sakale</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    							<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/SohailShaikh.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Sohail Shaikh</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/leoinfotech.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/ApurvaBhat.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Apurva Bhat</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    						<tr>
+    							<td valign="top" height="30">
+    								<img src="http://gktcs.in/GLMS/public/static/images/AshishSoni.jpg" width="100"height="100"/>
+    							</td>
+    							<td>
+    								<b>Ashish Soni</b> <br/>
+    								<img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png" width="150"height="60"/> 
+    							</td>
+    						</tr>
+    					
+    					    						
+    						
+    						
+    						
+    					</table>
+    					
+    						
+    						
+    					</td>
+    		
+    		
+    	</tr>
+    </table>
+    
+    </td>
+    
+    
+    </tr>
+	</table>
+	
+</body>
+</html>
+{% endblock %}

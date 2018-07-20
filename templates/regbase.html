@@ -1,0 +1,1023 @@
+{% load staticfiles %}
+<title>Gktcs LMS</title>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title> GKTCS LMS</title>
+		<link rel="shortcut icon" href="http://gktcs.in/GLMS/public/static/images/favicon.ico" type="image/x-icon" />
+		<link rel="icon" href="http://gktcs.in/GLMS/public/static/images/favicon.ico" type="image" />
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+		<link href="http://gktcs.in/GLMS/public/static/css/logstyle22.css" rel='stylesheet' type='text/css' />
+		<link rel="stylesheet" href="http://gktcs.in/GLMS/public/static/css/course.css">
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+		<!--webfonts-->
+		<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text.css'/>
+		<!--//webfonts-->
+    	<style>
+    		p {
+        		text-align: justify;
+			}
+    		
+    		
+			
+			.navbar-default {
+				background-color: transparent;
+    			border-color: transparent;
+    			background-image: none;
+    			box-shadow: none;
+			}
+			
+			#cnav{
+				float: right
+			}
+			
+			#cnav li a {
+				color:#FFFFFF;
+			}
+
+			
+			#search{
+				font-size:120%; 
+				background-color: transparent;
+				border-color:#00B5CB;
+				height: 50px; 
+				width: 100%; 
+				color: #EEEEEE;
+				border-width:2px;
+			}
+
+			.nav-pills>li.active>a,
+			.nav-pills>li.active>a:hover, 
+			.nav-pills>li.active>a:focus{
+				background-color:#F15C22;
+				border-radius:0;
+				outline: 0;
+					
+			}
+			.nav-pills>li > a {
+				width:284px;
+				text-align:center;
+				color:#484848;
+				border-radius:0px;
+				border-left: 1px solid #F15C22;
+			}
+			#bli{
+				width:285px;
+			}
+			.nav-pills li a{
+				height:48px;
+				font-size:120%;
+			}
+			.nav-pills
+			{
+				border-radius:5px;
+				border: 1px solid #F15C22;
+			}
+				.nav-pills > li > a:hover {
+      			background-color: #F9E3DB;
+      			border-radius:3px;
+      			outline: 0;
+    		}
+    		#navul >li{
+    			
+    			margin:0%;
+    			
+    		}
+    		#tophead{
+    			
+    		}
+    		#head{
+    			height:33px; 
+    			background-color:#00B5CB;
+    		}
+			#logocol{
+				z-index: 5;
+			}
+			#logo{
+				position: absolute;
+			}
+			#toprow{
+				background-color:#00B5CB;
+			}
+			#demoa{
+				float: right;
+			}
+			#demodiv{
+				background-color:#F15C22; 
+				width:143px; height:33px;
+			}
+			#demo{
+				color:#FFFFFF; 
+				padding:6px 0px 0px 5px;
+			}
+			#call1{
+				background-color:#00B5CB;
+				float: right; 
+				padding-top: 5px;
+				margin-right:5px;
+			}
+			
+			#calldiv{
+				float: right;
+			}
+			
+			#callspan{
+				color:#FFFFFF;
+				font-family: ProximaNovaBold;
+			}
+			#mail{
+				background-color:#00B5CB; 
+				float: right; 
+				padding-top: 5px;
+				margin-right:30px;
+			}
+			
+			#maildiv{
+				float: right
+			}
+			
+			#mailspan{
+				color:#FFFFFF;
+			}
+			#navcol{
+				
+			}
+			#logsign{
+				float: left; 
+				margin-top: -1%; 
+				position: static; 
+				padding: 0px 10px 0px 23px;
+			}
+			#logsign1{
+				float: right; 
+				margin-top: -5%;
+			}
+			
+			#signbtn{
+				background-color:#F15C22; 
+				border-radius:5px 0px 0px 5px; 
+				color:#FFFFFF; 
+				width: 93px; 
+				height: 31px; 
+				margin-top: -18%;
+			}
+			
+			#loginbtn{
+				background-color:#F15C22; 
+				border-radius:0px 5px 5px 0px; 
+				color:#FFFFFF; 
+				width: 93px; 
+				height: 31px;
+				margin-top: -18%
+			}
+			
+			#bgbanner{
+				background :
+					linear-gradient(
+						rgba(0, 0, 0, 0.4), 
+						rgba(0, 0, 0, 0.4)
+					  ),
+					url(http://study.com/images/reDesign/home/hero-woman-coffee-desktop.jpg); 
+				height:512px;
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position:center;
+			}
+			#what{
+				color:#FFFFFF;
+				text-align: center; 
+				margin-top: 7%;
+				font-family: ProximaNovaRegular;
+				font-size:58px;
+				text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+			}
+			h1,h2,h3,h4{
+				font-family: ProximaNovaRegular;
+			}
+			#own{
+				color:#FFFFFF; 
+				font-size:25; 
+				text-align: center; 
+				margin-top: 2%; 
+				font-family: ProximaNovaLightItalic;
+			}
+			#searchcon{
+				padding-top: 3%;
+			}
+			
+			#searchdiv{
+				padding-top: 2%;
+			}
+			
+			#searchbdiv{
+				float:right;
+			}
+			#searchbtn{
+				background-color: #00B5CB; 
+				height: 50px; 
+				width: 175px;
+			}
+			
+			#search::-webkit-input-placeholder {
+			  color: #EEEEEE;
+			}
+			#search::-moz-placeholder { /* Firefox 19+ */
+			  color: #EEEEEE;
+			}
+			#search:-ms-input-placeholder {
+			  color: #EEEEEE;
+			}
+			#search:-moz-placeholder { /* Firefox 18- */
+			  color: #EEEEEE;
+			}
+			
+			#find{
+				color: #FFFFFF; 
+				font-size: 120%;
+			}
+			#wlcm{
+				border-right: 2px solid; 
+				border-color:#F3F4F8; 
+				padding-bottom:45px; 
+				padding-top: 40px
+			}
+			#wlcmh2{
+				color:#F15C22;
+			}
+			#welcorpdesc{
+				padding-top:20px; 
+				line-height:2;
+				color:#746C6C
+			}
+			#readspan{
+				color:#F15C22; 
+				font-size:120%
+			}
+			#welcorp{
+				padding-top:10px;
+			}
+			#corp{
+				padding-top: 40px;
+			}
+			#course{
+				background-color:#F3F4F8; 
+				padding-top:20px; 
+				padding-bottom:70px
+			}
+			#choose{
+				padding-top:22px;  
+				color:#746C6C; 
+				text-align:center;
+			}
+			#doyou{
+				padding-top:22px; 
+				padding-bottom:22px; 
+				color:#746C6C; 
+				text-align:center;
+			}
+			#coursecon{
+				padding-top: 15px;
+			}
+			#wta{
+				border-left: none;
+			}
+			#tabcontent{
+				padding-top: 40px;
+			}
+			#tc{
+				padding-bottom: 30px;
+			}
+			#iconpad{
+				padding-top:10px; 
+				padding-bottom: 10px;
+			}
+			#iconbtn{
+				background-color: transparent; 
+				color:#FFFFFF; 
+				border-color: #FFFFFF; 
+				border-width: 2px;
+			}
+			#btnpad{
+				padding: 0px 7px 0px 7px;
+			}
+			#lhtml{
+				padding: 20px 0px 0px 94px;
+			}
+			#lcss{
+				padding: 20px 0px 0px 90px;
+			}
+			#ldesign{
+				padding: 20px 0px 0px 97px;
+			}
+			#ljs{
+				padding: 20px 0px 0px 100px;
+			}
+			#lruby{
+				padding: 20px 0px 0px 100px;
+			}
+			#lphp{
+				padding: 20px 0px 0px 94px;
+			}
+			#lwt{
+				padding: 20px 0px 0px 98px;
+			}
+			#lios{
+				padding: 20px 0px 0px 96px;
+			}
+			#dhtml{
+				width:255px; 
+				height: 180px; 
+				background-color: #39ADD1; 
+				border-radius: 5px;
+			}
+			#dcss{
+				width:255px; 
+				height: 180px; 
+				background-color: #3079AB; 
+				border-radius: 5px;
+			}
+			#ddesign{
+				width:255px; 
+				height: 180px; 
+				background-color: #E59A13; 
+				border-radius: 5px;
+			}
+			#djs{
+				width:255px; 
+				height: 180px; 
+				background-color: #C25975; 
+				border-radius: 5px;
+			}
+			#druby{
+				width:255px; 
+				height: 180px; 
+				background-color: #E15258; 
+				border-radius: 5px;
+			}
+			#dphp{
+				width:255px; 
+				height: 180px; 
+				background-color: #7D669E; 
+				border-radius: 5px;
+			}
+			#dwt{
+				width:255px; 
+				height: 180px; 
+				background-color: #838CC7; 
+				border-radius: 5px;
+			}
+			#dios{
+				width:255px; 
+				height: 180px; 
+				background-color: #53BBB4; 
+				border-radius: 5px;
+			}
+			#conf{
+				text-align: center;
+				color:#746C6C;
+			}
+			#pt45{
+				padding-top:45px;
+			}
+			#confus{
+				color:#42C3D3;
+				font-family:ProximaNovaBoldIt;
+			}
+			#askbtn{
+				background-color:#F15C22; 
+				border-radius:5px 5px 5px 5px; 
+				color:#FFFFFF; 
+				height: 65px;
+			}
+			#revrow{
+				text-align: center; 
+				padding-top:40px;
+			}
+			#p20{
+				padding:20px;
+			}
+			#askh1{
+				margin-top:4px;
+			}
+			#pl402{
+				padding-left: 40px;
+				line-height:1.5;
+			}
+			.glyphicon-star{
+				color:gold;
+			}
+			#rimg{
+				border:3px solid; 
+				border-color:#C2C9C2; 
+				width: 75px; 
+				height: 75px;
+			}
+			#revdesc{
+				line-height:2;
+				color:#746C6C;
+			}
+			#tp15{
+				padding-top: 15px;
+			}
+			#readall{
+				color: #42C3D3;
+			}
+			#footerbnr{
+				background-image:url(http://gktcs.in/GLMS/public/static/images/footer.png); 
+				height:408px;
+			}
+			#pt64{
+				padding-top:64px;
+			}
+			#btncol{
+				text-align: center; 
+				padding-top: 10px
+			}
+			#cntrwt{
+				text-align: center;
+				color:#FFFFFF;
+			}
+			#pt108{
+				padding-top:108px
+			}
+			#getbtn{
+				background-color:#F15C22; 
+				border-radius:5px 5px 5px 5px; 
+				color:#FFFFFF; 
+				height: 65px;
+			}
+			#tp4{
+				margin-top:4px;
+			}
+			#large{
+				padding-top:50px;
+				color:#393A3A;
+			}
+			#bridging{
+				color:#746C6C;
+			}
+			#footerdiv{
+				background-color:#363636; 
+				color:#BBB7B7;
+				padding-top:40px; 
+				padding-bottom:30px; 
+				margin-top: 50px;
+			}
+			#listedcourses{
+				color:#EEEEF0;
+			}
+			#courserow{
+				padding-top:35px;
+				line-height:2;
+			}
+			#stay{
+				color:#EEEEF0;
+			}
+			#address{
+				padding-top:34px; 
+				line-height:2
+			}
+			#socialdiv{
+				background-color:#272727;
+			}
+			#socialrow{
+				color:#BBB7B7;
+				padding-top:34px; 
+				padding-bottom:35px;
+			}
+			#socialcol{
+				padding-top:5px;
+			}
+			#floatr{
+				float:right
+			}
+			@font-face {
+			    font-family: 'ProximaNovaRegular';
+			    src: url('http://gktcs.in/GLMS/public/static/fonts/ProximaNovaRegular/ProximaNovaRegular.eot');
+			    src: url('http://gktcs.in/GLMS/public/static/fonts/ProximaNovaRegular/ProximaNovaRegular.eot') format('embedded-opentype'),
+			         url('http://gktcs.in/GLMS/public/static/fonts/ProximaNovaRegular/ProximaNovaRegular.woff2') format('woff2'),
+			         url('http://gktcs.in/GLMS/public/static/fonts/ProximaNovaRegular/ProximaNovaRegular.woff') format('woff'),
+			         url('http://gktcs.in/GLMS/public/static/fonts/ProximaNovaRegular/ProximaNovaRegular.ttf') format('truetype'),
+			         url('http://gktcs.in/GLMS/public/static/fonts/ProximaNovaRegular/ProximaNovaRegular.svg#ProximaNovaRegular') format('svg');
+			}	
+			@font-face {
+			    font-family: 'ProximaNovaLightItalic';
+			    src: url('http://gktcs.in/GLMS/public/static/fonts/ProximaNovaLightItalic/ProximaNovaLightItalic.eot');
+			    src: url('http://gktcs.in/GLMS/public/static/fonts/ProximaNovaLightItalic/ProximaNovaLightItalic.eot') format('embedded-opentype'),
+			         url('http://gktcs.in/GLMS/public/static/fonts/ProximaNovaLightItalic/ProximaNovaLightItalic.woff2') format('woff2'),
+			         url('http://gktcs.in/GLMS/public/static/fonts/ProximaNovaLightItalic/ProximaNovaLightItalic.woff') format('woff'),
+			         url('http://gktcs.in/GLMS/public/static/fonts/ProximaNovaLightItalic/ProximaNovaLightItalic.ttf') format('truetype'),
+			         url('http://gktcs.in/GLMS/public/static/fonts/ProximaNovaLightItalic/ProximaNovaLightItalic.svg#ProximaNovaLightItalic') format('svg');
+			}
+			@font-face {
+			    font-family: 'ProximaNovaLight';
+			    src: url('http://gktcs.in/GLMS/public/static/fonts/ProximaNovaLight/ProximaNovaLight.eot');
+			    src: url('http://gktcs.in/GLMS/public/static/fonts/ProximaNovaLight/ProximaNovaLight.eot') format('embedded-opentype'),
+			         url('http://gktcs.in/GLMS/public/static/fonts/ProximaNovaLight/ProximaNovaLight.woff2') format('woff2'),
+			         url('http://gktcs.in/GLMS/public/static/fonts/ProximaNovaLight/ProximaNovaLight.woff') format('woff'),
+			         url('http://gktcs.in/GLMS/public/static/fonts/ProximaNovaLight/ProximaNovaLight.ttf') format('truetype'),
+			         url('http://gktcs.in/GLMS/public/static/fonts/ProximaNovaLight/ProximaNovaLight.svg#ProximaNovaLight') format('svg');
+			}
+			@font-face {
+			    font-family: 'ProximaNovaBold';
+			    src: url('http://gktcs.in/GLMS/public/static/fonts/ProximaNovaBold/ProximaNovaBold.eot');
+			    src: url('http://gktcs.in/GLMS/public/static/fonts/ProximaNovaBold/ProximaNovaBold.eot') format('embedded-opentype'),
+			         url('http://gktcs.in/GLMS/public/static/fonts/ProximaNovaBold/ProximaNovaBold.woff2') format('woff2'),
+			         url('http://gktcs.in/GLMS/public/static/fonts/ProximaNovaBold/ProximaNovaBold.woff') format('woff'),
+			         url('http://gktcs.in/GLMS/public/static/fonts/ProximaNovaBold/ProximaNovaBold.ttf') format('truetype'),
+			         url('http://gktcs.in/GLMS/public/static/fonts/ProximaNovaBold/ProximaNovaBold.svg#ProximaNovaBold') format('svg');
+			}
+			@font-face {
+			    font-family: 'ProximaNovaBoldIt';
+			    src: url('http://gktcs.in/GLMS/public/static/fonts/ProximaNovaBoldIt/ProximaNovaBoldIt.eot');
+			    src: url('http://gktcs.in/GLMS/public/static/fonts/ProximaNovaBoldIt/ProximaNovaBoldIt.eot') format('embedded-opentype'),
+			         url('http://gktcs.in/GLMS/public/static/fonts/ProximaNovaBoldIt/ProximaNovaBoldIt.woff2') format('woff2'),
+			         url('http://gktcs.in/GLMS/public/static/fonts/ProximaNovaBoldIt/ProximaNovaBoldIt.woff') format('woff'),
+			         url('http://gktcs.in/GLMS/public/static/fonts/ProximaNovaBoldIt/ProximaNovaBoldIt.ttf') format('truetype'),
+			         url('http://gktcs.in/GLMS/public/static/fonts/ProximaNovaBoldIt/ProximaNovaBoldIt.svg#ProximaNovaBoldIt') format('svg');
+			}
+			body{
+				font-family: ProximaNovaRegular;
+				font-size:15;
+			}
+			#name{
+				font-size: 19;
+				font-weight: bold;
+			}
+			#desig{
+				font-size:17;
+				font-weight: bold;
+			}
+			#gklogo{
+				position:absolute; 
+				z-index: 555; 
+				padding-top: 15px;
+			}
+			#gklogo img{
+				width: 90px;
+			}
+			@media screen and (max-width: 770px) {
+			    .navbar-default {
+				background-color: #444444;
+				}
+				#cnav{
+				float: left;
+				}
+				#gklogo{ 
+				padding-top: 10px;
+				}
+				#gklogo img{
+					width: 70px;
+				}
+				#what{
+				font-size: 40px;
+				}
+			}
+			#screen1 {
+			    position: relative;
+			    padding-top: 25px;
+			    padding-bottom: 67.5%;
+			    height: 0;
+			}
+			#screen1 iframe {
+			    box-sizing: border-box;
+			    background: url(http://odoocdn.com/openerp_website/static/src/img/content/image_content_19.png) center center no-repeat;
+			    background-size: contain;
+			    padding: 11.9% 13% 14.8%;
+			    position: absolute;
+			    top: 0;
+			    left: 0;
+			    width: 100%;
+			    height: 100%;
+			}
+			.course_inner{
+				background: #FFFFFF;
+				margin: 15px 5px;
+				padding-bottom:15px;
+			}
+			
+			.course_wrap h3{
+				text-align: center;
+			}
+			#course_bg{
+				background: #DDDDDD;
+			}
+			.course_wrap p{
+				text-align: center;
+				color:#444444;
+			}
+			#form-div {
+				background-color:rgba(28, 28, 45, 0.65);
+				padding-left:25px;
+				padding-right:25px;
+				padding-top:35px;
+				padding-bottom:40px;
+				border-radius: 7px;
+				-moz-border-radius: 7px;
+				-webkit-border-radius: 7px;
+			}
+
+			.feedback-input {
+				color:#3c3c3c;
+				font-family: Helvetica, Arial, sans-serif;
+			  font-weight:500;
+				font-size: 16px;
+				border-radius: 0;
+				line-height: 20px;
+				background-color: #fbfbfb;
+				padding: 8px 8px 8px 50px;
+				margin-bottom: 10px;
+				width:100%;
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				-ms-box-sizing: border-box;
+				box-sizing: border-box;
+			  border: 3px solid rgba(0,0,0,0);
+			}
+
+			.feedback-input:focus{
+				background: #fff;
+				box-shadow: 0;
+				border: 3px solid #3498db;
+				color: #3498db;
+				outline: none;
+			  padding: 8px 8px 8px 50px;
+			}
+
+			.focused{
+				color:#30aed6;
+				border:#30aed6 solid 3px;
+			}
+
+			/* Icons ---------------------------------- */
+			#eqname{
+				background-image: url(http://rexkirby.com/kirbyandson/images/name.svg);
+				background-size: 25px 25px;
+				background-position: 11px 6px;
+				background-repeat: no-repeat;
+			}
+
+			#eqname:focus{
+				background-image: url(http://rexkirby.com/kirbyandson/images/name.svg);
+				background-size: 25px 25px;
+				background-position: 8px 5px;
+			  background-position: 11px 6px;
+				background-repeat: no-repeat;
+			}
+
+			#eqemail{
+				background-image: url(http://rexkirby.com/kirbyandson/images/email.svg);
+				background-size: 25px 25px;
+				background-position: 11px 6px;
+				background-repeat: no-repeat;
+			}
+
+			#eqemail:focus{
+				background-image: url(http://rexkirby.com/kirbyandson/images/email.svg);
+				background-size: 25px 25px;
+			  background-position: 11px 6px;
+				background-repeat: no-repeat;
+			}
+
+			#eqcomment{
+				background-image: url(http://rexkirby.com/kirbyandson/images/comment.svg);
+				background-size: 25px 25px;
+				background-position: 11px 8px;
+				background-repeat: no-repeat;
+			}
+
+			#eqcomment {
+				width: 100%;
+				height: 120px;
+				line-height: 150%;
+				resize:vertical;
+			}
+
+			#button-blue{
+				font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+				float:left;
+				width: 100%;
+				border: #fbfbfb solid 4px;
+				cursor:pointer;
+				background-color: #3498db;
+				color:white;
+				font-size:18px;
+				padding-top:5px;
+				padding-bottom:5px;
+				-webkit-transition: all 0.3s;
+				-moz-transition: all 0.3s;
+				transition: all 0.3s;
+				font-weight:700;
+			}
+
+			#button-blue:hover{
+				background-color: rgba(0,0,0,0);
+				color: #0493bd;
+			}
+			#form1 p{
+				margin:0px;
+			}
+				
+			.submit:hover {
+				color: #3498db;
+			}
+				
+			.ease {
+				width: 0px;
+				height: 35px;
+				background-color: #fbfbfb;
+				-webkit-transition: .3s ease;
+				-moz-transition: .3s ease;
+				-o-transition: .3s ease;
+				-ms-transition: .3s ease;
+				transition: .3s ease;
+			}
+
+			.submit:hover .ease{
+			  width:100%;
+			  background-color:white;
+			}
+			*{margin:0;}
+
+
+
+			#panel{
+			  z-index:444;
+			  position:fixed;
+			  color:#fff;
+			  width:270px;
+			  top:12px;
+			  right:-270px;
+			  transition: right 0.4s ease-in-out;
+			  -o-transition: right 0.4s ease-in-out;
+			  -ms-transition: right 0.4s ease-in-out;
+			  -moz-transition: right 0.4s ease-in-out;
+			  -webkit-transition: right 0.4s ease-in-out;
+			}
+			#panel h2, #panel p{
+			  padding-top:7px;
+			  padding-bottom:7px;
+			}
+			#panelCaller{
+			  position:absolute;
+			  top:70px;
+			  right:270px;
+			}
+			#panel:hover{
+			  right:0px;
+			}
+			#panelCaller > img {
+			  width:44px;
+			}
+
+			@media only screen and (max-width: 480px) {
+				#form-div{
+					
+				}
+				#what {
+					font-size: 30px;
+				}
+				#own {
+					font-size: 18px;
+				}
+				#call1 {
+					display: none;
+				}
+			}			
+		
+	</style>
+	</head>
+	<body>
+	<div id="panel">
+		<div id="panelCaller"><img width="5px" src="http://gktcs.in/GLMS/public/static/images/enquiry.png"></div>
+	  <div id="form-div">
+		<form class="form" id="form1">
+		  
+		  <p class="name">
+			<input name="name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Name" id="eqname" />
+		  </p>
+		  
+		  <p class="email">
+			<input name="email" type="text" class="validate[required,custom[email]] feedback-input" id="eqemail" placeholder="Email" />
+		  </p>
+		  
+		  <p class="eqtext">
+			<textarea name="text" class="validate[required,length[6,270]] feedback-input" id="eqcomment" placeholder="Enquiry"></textarea>
+		  </p>
+		  
+		  
+		  <div class="submit">
+			<input type="submit" value="SEND" id="button-blue"/>
+			<div class="ease"></div>
+		  </div>
+		</form>
+	  </div>
+	 </div> 		
+		<header>
+			<div id="tophead">
+			<div id="head">
+				<div>	
+					<div class="container"><a id="gklogo" href="{% url 'home' %}"><img src="http://gktcs.in/GLMS/public/static/images/gktcs_logo.png"></a></div>
+					<div class="">
+						
+						<div class="">
+							<div class="" id="toprow">	
+			
+								
+								<div class="" id="call1" >
+								
+										
+											<div id="calldiv" ><img src="http://gktcs.in/GLMS/public/static/images/call.png" /><span id="callspan">+91 - 9975072320</span></div>
+									
+								</div>		
+								
+								<div class="" id="mail">	
+										
+											<div id="maildiv"><img src="http://gktcs.in/GLMS/public/static/images/envelop.png" /><span id="mailspan">support@gktcs.in</span></div>
+								</div>
+									
+							</div>
+						</div>
+					</div>	
+				</div>	
+				</div>
+				</div>				
+				
+		</header>
+		<div id="bgbanner00">
+			<div>
+				<div class="container">
+					<div class="row" >
+						
+						<div class=" " id="navcol00">
+							<nav class="navbar navbar-default">
+						  	<div class="container-fluid">
+						    <!-- Brand and toggle get grouped for better mobile display -->
+						    <div class="navbar-header">
+						      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="true">
+						        <span class="sr-only">Toggle navigation</span>
+						        <span class="icon-bar"></span>
+						        <span class="icon-bar"></span>
+						        <span class="icon-bar"></span>
+						      </button>
+						      
+						    </div>
+	
+						    <!-- Collect the nav links, forms, and other content for toggling -->
+						    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						      <ul class="nav navbar-nav" id="cnav">
+								<li><a href="{% url 'instructor_add' %}">FOR INSTRUCTORS</a></li>
+								<li><a href="{% url 'Courses' %}">COURSES</a></li>
+								<li><a href="{% url 'blog' %}">BLOGS</a></li>
+								<li><a href="{% url 'Aboutus' %}">ABOUT US</a></li>
+								<li><a href="{% url 'contact' %}">CONTACT</a></li> 
+								<li><a href="{% url 'auth_login' %}">LOGIN</a></li>
+								<li><a href="{% url 'registration_register' %}">SIGN UP</a></li>
+						      </ul>
+						    </div><!-- /.navbar-collapse -->
+						   
+						  </div><!-- /.container-fluid -->
+						</nav>
+						</div>
+					</div>	
+				</div>	
+			</div>
+			{% block content %}
+
+
+
+			{% endblock %}
+			
+			<div id="footerdiv">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 ">
+					<div class="row">
+							<div class="col-md-12">
+								<h3 id="listedcourses">Listed courses</h3>
+							</div>	
+					</div>	
+					<div class="row" id="courserow">	
+					<div class="col-md-6 ">	
+						<div class="row">
+							<div class="col-md-12">
+								Big data and Hadoop<br>
+								Hadoop Administration<br>
+								Apache spark and scala<br>
+								JAVA/J2EE and SOA<br>
+								PMP Exam Preparation<br>
+								informatica PowerCenter 9.X<br>
+								Mastering Python<br>
+								Data Science<br>
+								Android Development<br>
+								AWS Architect certification training<br>
+								DevOps<br>
+								Data Visualization With Tableau<br>
+								Mastering Data Analytics With R<br>
+								Talend For Big Data<br>
+							</div>	
+						</div>		
+					</div>
+					<div class="col-md-6 ">
+												
+						<div class="row">
+							<div class="col-md-12">
+								Manual Testing For Beginers<br>
+								AngularJS<br>
+								Mastering Node.js<br>
+								Red Hat Linux Administration<br>
+								Microsoft SharePoint 2013<br>
+								Map Reduce Design Patterns<br>
+								Spring Framework<br>
+								Persistance With Hibernate<br>
+								Mastering Perl Scripting<br>
+								HTML5 + CSS + JavaScript<br>
+								Testing With Selenium WebDriver<br>
+								PHP & MYSQL With MVC Frameworks<br>
+								iOS App Development<br>
+								Microsoft BI<br><br>
+							</div>	
+						</div>
+						
+					</div>
+					</div>
+					</div>
+					<div class="col-md-4">
+						
+						<div class="row">
+							<div class="col-md-12">
+								<h3 id="stay">Stay Connected With Us</h3>
+							</div>	
+						</div>
+						
+						<div class="row" id="address">
+							<div class="col-md-12">
+								Head Office<br><br>
+								11,4th Floor,Sneh Deep, Near Warje FlyOver Bridge<br>
+								Warje-Malwadi,Pune,Maharashtra,India-411058<br>
+								Contact Person-Mr. Surendra Panpaliya<br>
+								Contact no.-9975072320<br>
+								Email-surendra@gktcs.com<br><br>
+								
+								Global Office<Br><br>
+								227 W Wellington Dr,Palatine,IL 60067 USA<br>
+								Contact Person- Mr. Satish Panpaliya<Br>
+								Contact no.- +1(847)809-6866<br>
+								Email-srpanpaliya@gktcs.com<br><br>
+								
+							</div>	
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>	
+<!-- begin olark code -->
+<script data-cfasync="false" type='text/javascript'>/*<![CDATA[*/window.olark||(function(c){var f=window,d=document,l=f.location.protocol=="https:"?"https:":"http:",z=c.name,r="load";var nt=function(){
+f[z]=function(){
+(a.s=a.s||[]).push(arguments)};var a=f[z]._={
+},q=c.methods.length;while(q--){(function(n){f[z][n]=function(){
+f[z]("call",n,arguments)}})(c.methods[q])}a.l=c.loader;a.i=nt;a.p={
+0:+new Date};a.P=function(u){
+a.p[u]=new Date-a.p[0]};function s(){
+a.P(r);f[z](r)}f.addEventListener?f.addEventListener(r,s,false):f.attachEvent("on"+r,s);var ld=function(){function p(hd){
+hd="head";return["<",hd,"></",hd,"><",i,' onl' + 'oad="var d=',g,";d.getElementsByTagName('head')[0].",j,"(d.",h,"('script')).",k,"='",l,"//",a.l,"'",'"',"></",i,">"].join("")}var i="body",m=d[i];if(!m){
+return setTimeout(ld,100)}a.P(1);var j="appendChild",h="createElement",k="src",n=d[h]("div"),v=n[j](d[h](z)),b=d[h]("iframe"),g="document",e="domain",o;n.style.display="none";m.insertBefore(n,m.firstChild).id=z;b.frameBorder="0";b.id=z+"-loader";if(/MSIE[ ]+6/.test(navigator.userAgent)){
+b.src="javascript:false"}b.allowTransparency="true";v[j](b);try{
+b.contentWindow[g].open()}catch(w){
+c[e]=d[e];o="javascript:var d="+g+".open();d.domain='"+d.domain+"';";b[k]=o+"void(0);"}try{
+var t=b.contentWindow[g];t.write(p());t.close()}catch(x){
+b[k]=o+'d.write("'+p().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};ld()};nt()})({
+loader: "static.olark.com/jsclient/loader0.js",name:"olark",methods:["configure","extend","declare","identify"]});
+/* custom configuration goes here (www.olark.com/documentation) */
+olark.identify('5960-502-10-2980');/*]]>*/</script><noscript><a href="https://www.olark.com/site/5960-502-10-2980/contact" title="Contact us" target="_blank">Questions? Feedback?</a> powered by <a href="http://www.olark.com?welcome" title="Olark live chat software">Olark live chat software</a></noscript>
+<!-- end olark code -->		
+					<div id="socialdiv">
+						<div class="container">
+						<div class="row" id="socialrow">
+						<div class="col-md-9" id="socialcol">
+							@2015 GKTCS Innovations Pvt. Ltd. All Rights reserved | Privacy Policy | Site Map
+						</div>
+						<div class="col-md-3" >
+						<div id="floatr">
+							<img src="http://gktcs.in/GLMS/public/static/images/facebook.png"/>
+							<img src="http://gktcs.in/GLMS/public/static/images/google+.png"/>
+							<img src="http://gktcs.in/GLMS/public/static/images/tweeter.png"/>
+							<img src="http://gktcs.in/GLMS/public/static/images/play.png"/>
+						</div>	
+						</div>
+						</div>
+						</div>
+					</div>
+		<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script type="text/javascript" src="http://gktcs.in/GLMS/public/static/js/smoothscroll.js"></script>
+		
+	</body>
+</html>

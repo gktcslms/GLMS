@@ -1,0 +1,126 @@
+{% extends "index2.html" %}
+
+{% block home %}
+
+<!-- {% for b in form %}
+ 
+Name:{{b.name}}<bR>
+image:<img src="{{ MEDIA_ROOT }}/{{b.imgstud}}"/><br>
+image:{{b.imgstud}}<br>
+compny:{{b.imgcmp}}<br><br>
+
+{% endfor %}
+-->
+ 
+<div class="container">
+<div class="row">
+<div class="col-md-10 col-md-offset-1 well">
+<h3 style="color:#FF4400">Placed Candidates </h3><br>
+
+	<div class="table-responsive">
+	<table class="table">
+		
+	<thead style="color:#366D9C">	
+		<tr >	
+		<th><h3>Student</h3></th>
+		<th><h3>Student name</h3></th>
+		<th><h3>Company Name</h3></th>
+		</tr>
+	</thead>
+	</table>
+	</div>
+
+
+	<marquee direction="up" height="300" onmouseover="this.stop();" onmouseout="this.start();">
+	<div class="table-responsive">
+	<table class="table">
+    <tbody>	
+		<tr>
+			<td> <img src="http://gktcs.in/GLMS/public/static/images/AhilanShankar.jpg" height="100" width="100"></td>
+			<td ><h3>Alihan shanakar </h3></td>
+			<td><img src="http://gktcs.in/GLMS/public/static/images/capegemini.png"></td>
+			
+		</tr>	
+		
+		<tr>
+			<td> <img src="http://gktcs.in/GLMS/public/static/images/sounavdas.jpg" height="100" width="100"></td>
+			<td><h3>	Sonav Das  </h3></td>
+			<td><img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png"></td>
+			
+		</tr>	
+		
+		<tr>
+			<td> <img src="http://gktcs.in/GLMS/public/static/images/ShashankVerma.jpg" height="100" width="100"></td>
+			<td><h3>	Shashank Verma  </h3></td>
+			<td><img src="http://gktcs.in/GLMS/public/static/images/leoinfotech.png"></td>
+			
+		</tr>	
+		
+		<tr>
+			<td> <img src="http://gktcs.in/GLMS/public/static/images/rasika1.jpg" height="100" width="100"></td>
+			<td><h3>	Rasika  </h3></td>
+			<td><img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png"></td>
+			
+		</tr>	
+		
+		
+		<tr>
+			<td> <img src="http://gktcs.in/GLMS/public/static/images/renuka.jpg" height="100" width="100"></td>
+			<td><h3>	Renuka Shirbhate </h3></td>
+			<td><img src="http://gktcs.in/GLMS/public/static/images/inetsoft.jpg"></td>
+			
+		</tr>
+		
+		<tr>
+			<td> <img src="http://gktcs.in/GLMS/public/static/images/Neha.jpg" height="100" width="100"></td>
+			<td><h3> Neha Kottarwar  </h3></td>
+			<td><img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png"></td>
+			
+		</tr>
+		
+		<tr>
+			<td> <img src="http://gktcs.in/GLMS/public/static/images/GauravKotarwar.jpg" height="100" width="100"></td>
+			<td><h3>	Gaurav Kotarwar </h3></td>
+			<td><img src="http://gktcs.in/GLMS/public/static/images/leoinfotech.png"></td>
+			
+		</tr>
+		
+		
+		<tr>
+			<td> <img src="http://gktcs.in/GLMS/public/static/images/PrajaktaSakale.jpg" height="100" width="100"></td>
+			<td><h3>	Prajkta Sakale </h3></td>
+			<td><img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png"></td>
+			
+		</tr>
+		
+		
+		<tr>
+			<td> <img src="http://gktcs.in/GLMS/public/static/images/SohailShaikh.jpg" height="100" width="100"></td>
+			<td><h3>	Sohail Shaikh  </h3></td>
+			<td><img src="http://gktcs.in/GLMS/public/static/images/leoinfotech.png"></td>
+			
+		</tr>
+		
+		
+		<tr>
+			<td> <img src="http://gktcs.in/GLMS/public/static/images/ApurvaBhat.jpg" height="100" width="100"></td>
+			<td><h3> Apurva Bhat </h3> </td>
+			<td><img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png"></td>
+			
+		</tr>
+		
+		
+		<tr>
+			<td> <img src="http://gktcs.in/GLMS/public/static/images/AshishSoni.jpg" height="100" width="100"></td>
+			<td><h3>	Ashish Soni </h3>  </td>
+			<td><img src="http://gktcs.in/GLMS/public/static/images/upsidelearning.png"></td>
+			
+		</tr>
+		</tbody>
+		
+	</table></div></marquee>	
+</div>	
+</div>
+</div>
+
+{% endblock %}
