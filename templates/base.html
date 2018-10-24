@@ -9,6 +9,7 @@
 		<link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon" />
 		<link rel="icon" href="/static/images/favicon.ico" type="image" />
 		<!-- Latest compiled and minified CSS -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		{% block head %}
 		{% endblock %}	
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -20,7 +21,6 @@
 		<!--webfonts-->
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text.css'/>
 		<link rel="stylesheet" href="/static/css/course.css">
-
 		<!--//webfonts-->
 
 		  <script>
@@ -1492,9 +1492,11 @@ a.close:hover {
 						    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						      <ul class="nav navbar-nav" id="cnav" style="margin-right: -22px;">
 								<li><a href="/">HOME</a></li>
-								<li><a href="/surendra">ABOUT US</a></li>
-								<li><a href="#">COURSES</a></li>
-								<li><a href="/contact">CONTACT</a></li> 
+								<li><a href="{% url 'list_blogs' %}">BLOGS</a></li>
+								<li><a href="{% url 'surendra_profile' %}">ABOUT US</a></li>
+								<li><a href="{% url 'Courses' %}">COURSES</a></li>
+								<li><a href="{% url 'contact' %}">CONTACT</a></li>
+								<li><a data-toggle="modal" data-target="#helpModal"><span class="btn btn-success" style="margin-top: -7px;">HELP</span></a></li>
 								{% if request.user.is_authenticated %}
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -1526,6 +1528,34 @@ a.close:hover {
 				</div>	
 			</div>
 				
+		</div>
+		<div class="modal fade" id="helpModal" role="dialog">
+			<div class="modal-dialog">
+			
+			  <!-- Modal content-->
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <button type="button" class="close" data-dismiss="modal">&times;</button>
+				  <h4 class="modal-title">Help Document</h4>
+				</div>
+				<div class="modal-body">
+					<aside class="info aside section">
+					<div class="section-inner">
+						<h3 class="heading sr-only">Help Document</h3>
+						<div class="">
+								<a style="margin:10px" class="btn btn-success " href="{% url 'help' %}"></i> Registration and Login</a>
+								<a style="margin:10px" class="btn btn-success " href="{% url 'learner_help' %}"></i> Learner Dashboard</a>
+								<a style="margin:10px" class="btn btn-success " href="{% url 'trainer_help' %}"></i> Trainer Dashboard</a>
+						</div><!--//content-->  
+					</div><!--//section-inner-->                 
+					</aside><!--//aside-->
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			  </div>
+			  
+			</div>
 		</div>
 			
 			{% block content %}
@@ -1638,15 +1668,16 @@ a.close:hover {
 						</div>
 						</div>
 					</div>
-		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		
 		<!-- Latest compiled and minified JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<!--<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 		<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-		<script src="/static/js/jquery.collapse.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script type="text/javascript" src="/static/js/jquery-1.12.1.min.js"></script>
-		<script type="text/javascript" src="/static/js/YouTubePopUp.jquery.js"></script>
+		<script type="text/javascript" src="/static/js/YouTubePopUp.jquery.js"></script>-->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script src="/static/js/jquery.collapse.js"></script>
 		<script type="text/javascript" src="/static/js/ajax.js"></script>
 		<script type="text/javascript">
 			jQuery(function(){

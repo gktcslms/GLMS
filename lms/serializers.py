@@ -21,6 +21,10 @@ class Trainer_ModelSerializer(serializers.HyperlinkedModelSerializer):
         model = Trainer_Model
         fields = ('url', 'user', 'city', 'state', 'country', 'profile_picture', 'courses_tutoring', 'describe_yourself', 'linked_in_url', 'cv')
 
+class Learner_ModelSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Learner_Model
+        fields = ('url', 'user', 'profile_picture', 'courses_subscribed')
 
 class Answer_OptionsSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -85,7 +89,7 @@ class QuizSerializer(serializers.HyperlinkedModelSerializer):
     questions = Quiz_QuestionSerializer(many=True)
     class Meta:
         model = Quiz
-        fields = ('url', 'quiz_name', 'module_referred', 'questions')
+        fields = ('url', 'id', 'quiz_name', 'module_referred', 'questions')
 
 
 class Course_ModuleSerializer(serializers.HyperlinkedModelSerializer):
@@ -93,7 +97,7 @@ class Course_ModuleSerializer(serializers.HyperlinkedModelSerializer):
     quiz = QuizSerializer(many=True, required=False)
     class Meta:
         model = Course_Module
-        fields = ('id', 'url', 'part_of', 'name', 'video', 'Presentation', 'Assignment', 'topics', 'order', 'quiz')
+        fields = ('id', 'url', 'part_of', 'name', 'video', 'Presentation', 'Assignment', 'labsession', 'reference1', 'reference2', 'reference3', 'topics', 'order', 'quiz', 'allow_preview')
 
     def create(self, validated_data):
         quiz_data = validated_data.pop('quiz')
@@ -108,8 +112,13 @@ class Course_ModuleSerializer(serializers.HyperlinkedModelSerializer):
         instance.video = validated_data.get('video', instance.video)
         instance.Presentation = validated_data.get('Presentation', instance.Presentation)
         instance.Assignment = validated_data.get('Assignment', instance.Assignment)
+        instance.labsession = validated_data.get('labsession', instance.labsession)
+        instance.reference1 = validated_data.get('reference1', instance.reference1)
+        instance.reference2 = validated_data.get('reference2', instance.reference2)
+        instance.reference3 = validated_data.get('reference3', instance.reference3)
         instance.topics = validated_data.get('topics', instance.topics)
         instance.order = validated_data.get('order', instance.order)
+        instance.allow_preview = validated_data.get('allow_preview', instance.allow_preview)
         try:
             quiz_data = validated_data.get('quiz')
         except:
@@ -130,4 +139,15 @@ class CourseSerializer(serializers.HyperlinkedModelSerializer):
     modules = Course_ModuleSerializer(many=True)
     class Meta:
         model = Course
-        fields = ('url', 'thumbnail', 'course_by', 'course_name', 'description','objectives', 'prerequisite', 'requirements', 'modules')
+        fields = ('url', 'id', 'thumbnail', 'course_by', 'course_name', 'description','objectives', 'prerequisite', 'requirements', 'modules', 'fees')
+
+class LearnerQuestionAnswerSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = LearnerQnA
+        fields = ('quiz_question', 'learner', 'chosen_option')
+
+    def to_representation(self, instance):
+        self.fields['quiz_question'] = Quiz_QuestionSerializer()
+        self.fields['learner'] = Learner_ModelSerializer()
+        self.fields['chosen_option'] = Answer_OptionsSerializer()
+        return super(LearnerQuestionAnswerSerializer, self).to_representation(instance)

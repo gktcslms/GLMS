@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block head %}
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="/static/jquery-steps/css/jquery.steps.css">
+        <script src="/static/jquery-steps/js/jquery.steps.js"></script>
+{% endblock %}
+
+			
+{% block content %}
+		<div class="content" style="background-color:white">
+            <script>
+                $(function ()
+                {
+                    $("#wizard").steps({
+                        headerTag: "h2",
+                        bodyTag: "section",
+                        transitionEffect: "slideLeft",
+                        stepsOrientation: "vertical"
+                    });
+                });
+            </script>
+<br/><h2 style="text-align:center">Features In Trainer Dashboard.</h2><br/>
+            <div id="wizard">
+                <h2>Trainer Dashboard - My Courses</h2>
+                <section>
+					<h4>After the trainer login, trainer will be redirected to Trainer Dashboard. Here trainer can see his own created courses.</h4>
+					<img style="width: 100%;" src="/static/images/TrainerCourses.png" />
+				</section>
+				<h2>Add Course</h2>
+                <section>
+					<h4>Trainer can add new course by submitting form details.</h4>
+					<img style="width: 100%;" src="/static/images/AddCourse.png" />
+				</section>
+				<h2>My Blogs</h2>
+                <section>
+					<h4>Here trainer can preview his blogs</h4>
+					<img style="width: 100%;" src="/static/images/MyBlogs.png" />
+				</section>
+                <h2>Write Blog</h2>
+                <section>
+					<h4>Trainer can write his new blogs.</h4>
+                    <img style="height: 100%;width: 100%;" src="/static/images/WriteBlog.png" />
+                </section>
+
+                <h2>Submitted Assignments</h2>
+				<section>
+					<h4>Here trainer can see the submitted assignments by learners</h4>
+                    <img style="height: 100%;width: 100%;" src="/static/images/SubmittedAs.png" />
+                </section>
+
+                <h2>Promo Code</h2>
+                <section>
+				<h4>In this section trainer can create and update promo codes for his course. Further that promo codes can be applyed by learners to get access for the courses</h4>
+                    <img style="height: 100%;width: 100%;" src="/static/images/PromoCode.png" />
+                </section>
+				
+            </div>
+        </div>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends "base_dashboard.html" %}
+{% block head %}
+<style>
+.course-box {
+    margin-bottom: 15px;
+	margin-top: 15px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 0 1px 1px rgba(20,23,28,.1), 0 3px 1px 0 rgba(20,23,28,.1);
+    padding: 4px 25px;
+}
+</style>
+{% endblock %}
+{% block content %}
+    {% if request.user.is_superuser %}
+        <div class="container" style="text-align: center;">
+            <h1>Promocode Details</h1>
+            <br>
+            <br>
+            <br>
+            <table class="table table-bordered">
+                <thead>
+                    <tr class="course-box">
+                        <th style="text-align: center;">Promo Code</th>
+                        <th style="text-align: center;">Course</th>
+                        <th style="text-align: center;">Active</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="course-box">
+                        <td>{{ promo.code }}</td>
+                        <td>{{ promo.course }}</td>
+                        <td>{{ promo.active }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <br>
+        <br>
+        <br>
+        <div class="container">
+            <div class="alert alert-danger">
+                <strong>Error!</strong> Please login as admin to view the page!.
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

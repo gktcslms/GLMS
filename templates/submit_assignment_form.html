@@ -1,0 +1,87 @@
+{% extends "learner_dashboard.html" %}
+{% load crispy_forms_tags %}
+{% block head%}
+<style>
+.card label { font-size: 14px; }
+#div_id_company label:after { content: "(Optional)"; font-size: 14px; }
+#div_id_assignment_details label:after { content: "(Optional)"; font-size: 14px; }
+</style>
+{% endblock %}
+{% block content %}
+    {% if learner %}
+        <div class="container" style="">
+			<div class="col-md-9 mx-auto">
+				<div class="card">
+					<div class="card-header">
+						<h5 class="title">Submit your assignment.</h5>
+					</div>
+					<div class="card-body">
+						{% for message in messages %} 
+							{% if message.tags == 'success' %}
+								<div class="alert alert-success" style="width: 100%;">
+									{{ message }}
+								</div>
+							{% else %}
+								<div class="alert alert-danger" style="width: 100%;">
+									{{ message }}
+								</div>
+							{% endif %} 
+						{% endfor %}
+						<!--<form action="" method="POST" class="form-vertival">{% csrf_token %}
+							{{ form|crispy }}
+							<input type="submit" value="Submit" class="btn btn-success">
+						</form>-->
+						<form action="" method="POST" class="" enctype="multipart/form-data">{% csrf_token %}
+							
+
+							<div id="div_id_company" class="form-group row"> 
+								<label for="id_company" class="control-label col-md-3">
+									Company
+								</label> 
+								<div class="controls col-md-9"> 
+									<input type="text" name="company" maxlength="30" class="textinput textInput form-control" id="id_company"> 
+								</div> 
+							</div> 
+							<div id="div_id_assignment_details" class="form-group row"> 
+								<label for="id_assignment_details" class="control-label col-md-3">
+									Assignment Details
+								</label> 
+								<div class="controls col-md-9"> 
+									<input type="text" name="assignment_details" maxlength="200" class="textinput textInput form-control" id="id_assignment_details"> 
+								</div> 
+							</div> 
+							<div id="div_id_upload_assignment" class="form-group row"> 
+								<label for="id_upload_assignment" class="control-label  requiredField col-md-3">
+									Upload assignment<span class="asteriskField">*</span> 
+								</label> 
+								<div class="controls col-md-9"> 
+									<input type="file" name="upload_assignment" required="" id="id_upload_assignment"> 
+								</div> 
+							</div>
+							<div style="text-align: center;"><br/><br/>
+								<input type="submit" value="Submit" class="btn btn-success">
+							</div>
+						</form>
+						<br>
+						<br>
+						<br>
+					</div>
+				</div>
+			</div>
+        </div>
+    {% else %}
+        <br>
+        <br>
+        <br>
+        <div class="container">
+            <div class="alert alert-danger">
+                <strong>Error!</strong> Please login as Learner to view the page!.
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
+{% block lower %}
+<script>
+$("#assignment").addClass("active");
+</script>
+{% endblock %}

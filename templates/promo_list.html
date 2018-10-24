@@ -1,0 +1,85 @@
+{% extends "base_dashboard.html" %}
+{% block head %}
+<style>
+.course-box {
+    margin-bottom: 15px;
+	margin-top: 15px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 0 1px 1px rgba(20,23,28,.1), 0 3px 1px 0 rgba(20,23,28,.1);
+    padding: 4px 25px;
+}
+</style>
+{% endblock %}
+{% block content %}
+    {% if request.user.is_superuser %}
+        <div class="container" style="text-align: center;">
+			<div class="card">
+				<div class="card-header">
+					<h5 class="title">Promo Code Listing</h5>
+				</div>
+				<div class="card-body">
+					{% for message in messages %} 
+						{% if message.tags == 'success' %}
+							<div class="alert alert-success" style="width: 100%;">
+								{{ message }}
+							</div>
+						{% else %}
+							<div class="alert alert-danger" style="width: 100%;">
+								{{ message }}
+							</div>
+						{% endif %} 
+					{% endfor %}
+					<table class="table table-bordered">
+						<thead>
+							<tr class="course-box">
+								<th style="text-align: center;">Course</th>
+								<th style="text-align: center;">Promo Code</th>
+								<th style="text-align: center;">Active</th>
+								<th style="text-align: center;">Update</th>
+								<th style="text-align: center;">Delete</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for promo in promo_list %} 
+								<tr class="course-box">
+									<td>{{ promo.course }}</td>
+									<td>{{ promo.code }}</td>
+									{% if promo.active %}
+										<td><i class="fas fa-check"></i></td>
+									{% else %}
+										<td><i class="fas fa-times"></i></td>
+									{% endif %}
+									<td><a href="{% url 'update_promocode' promo.id %}"><i class="fas fa-sync-alt"></i></td>
+									<td><a href="{% url 'delete_promocode' promo.id %}"><i class="fas fa-trash-alt"></i></a></td>
+								</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+					<br>
+					<br>
+					<br>
+					<a href="{% url 'create_promocode' %}">
+						<button class="btn btn-info">
+							Create New Promo Code
+						</button>
+					</a>
+				</div>
+			</div>
+        </div>
+    {% else %}
+        <br>
+        <br>
+        <br>
+        <div class="container">
+            <div class="alert alert-danger">
+                <strong>Error!</strong> Please login as admin to view the page!.
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
+{% block lower %}
+<script>
+$("#promocode").addClass("active");
+</script>
+{% endblock %}

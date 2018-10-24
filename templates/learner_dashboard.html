@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 {% load crispy_forms_tags %}
+{% load i18n %}
+{% load staticfiles %}
 <html lang="en">
 
 <head>
@@ -10,30 +12,17 @@
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
-    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet">
     <!-- CSS Files -->
     <link href="/static/assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/static/assets/css/now-ui-dashboard.css?v=1.0.1" rel="stylesheet" />
 	<script src="/static/assets/js/core/jquery.min.js"></script>
+	<script src="/static/js/angular.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="/static/js/jquery.formset.js"></script>
 	<script type="text/javascript" src="https://cdn.ckeditor.com/4.9.1/basic/ckeditor.js"></script>
     <!-- CSS Just for demo purpose, don't include it in your project 
     <link href="http://gktcs.com/GLMS/public/static/assets/demo/demo.css" rel="stylesheet" /> -->
-	<style>
-	.load-modal {
-		position:   fixed;
-		z-index:    1032;
-		top:        0;
-		left:       0;
-		height:     100%;
-		width:      100%;
-		background: rgba( 255, 255, 255, .8 ) 
-					url('http://sampsonresume.com/labs/pIkfp.gif') 
-					50% 50% 
-					no-repeat;
-	}
-	</style>
 	{% block head %}
 	{% endblock %}
 </head>
@@ -55,17 +44,35 @@
             <div class="sidebar-wrapper">
                 <ul class="nav">
 					<li id="my_courses">
-                        <a href="/all_courses/">
+                        <a href="/learner_my_courses/">
                             <i class="now-ui-icons education_agenda-bookmark"></i>
-                            <p>Courses</p>
+                            <p>My Courses</p>
                         </a>
                     </li>
-					<!--<li id="add_course">
-                        <a href="">
+					<li id="all_courses">
+                        <a href="/all_courses/">
                             <i class="now-ui-icons files_single-copy-04"></i>
-                            <p>Add New Course</p>
+                            <p>All Courses</p>
                         </a>
-                    </li> -->
+                    </li>
+					<li id="promocode">
+                        <a href="{% url 'apply_promo' %}">
+                            <i class="now-ui-icons shopping_tag-content"></i>
+                            <p>Apply Promo Code</p>
+                        </a>
+                    </li>
+					<li id="assignment">
+                        <a href="{% url 'submit_assignment' %}">
+                            <i class="fas fa fa-file-code"></i>
+                            <p>Submit Your Assignment</p>
+                        </a>
+                    </li>
+					<li id="my_assignments">
+                        <a href="{% url 'my_assignments' %}">
+                            <i class="fas fa fa-file-code"></i>
+                            <p>My Submitted Assignments</p>
+                        </a>
+                    </li>
 					<li id="my_profile">
                         <a href="{% url 'learner_profile' user.id %}">
                             <i class="now-ui-icons users_single-02"></i>
@@ -143,7 +150,6 @@
             </footer>
         </div>
     </div>
-	<div class="load-modal"></div>
 </body>
 <!--   Core JS Files   -->
 <script src="/static/assets/js/core/popper.min.js"></script>
@@ -164,11 +170,6 @@
     $('.confirm_delete').on('click', function () {
         return confirm('Are you sure you want to delete ?');
     });
-</script>
-<script>
-$(window).load(function() {
-	$(".load-modal").fadeOut("fast");
-})
 </script>
 <script>
 {% if messages %}

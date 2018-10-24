@@ -94,6 +94,17 @@ class learner_enquiry(models.Model):
     def __str__(self):
         return self.name
 
+class submitted_assignment(models.Model):
+    date = models.DateTimeField(default=dt.now)
+    name = models.CharField(max_length=100)
+    contact = models.CharField(max_length=15)
+    email = models.EmailField()
+    company = models.CharField(max_length=30, null=True, blank=True)
+    details = models.CharField(max_length=200, null=True, blank=True)
+    upload_assignment = models.FileField(upload_to='documents/submitted_assignments/')
+    def __str__(self):
+        return self.name
+
 class job_seeker(models.Model):
     date = models.DateTimeField(default=dt.now)
     name = models.CharField(max_length=200)
@@ -156,6 +167,7 @@ class Trainer_Model(models.Model):
     def __str__(self):
         return self.user.user.email
 
+
 class Course(models.Model):
     thumbnail = models.ImageField(upload_to='images/course_thumbnails',default= 'images/course_thumbnails/default_course.jpg', blank=True, null=True)
     course_by = models.ForeignKey(Trainer_Model, on_delete=models.CASCADE)
@@ -164,13 +176,23 @@ class Course(models.Model):
     objectives = models.TextField()
     prerequisite = models.TextField()
     requirements = models.TextField()
+    fees = models.PositiveIntegerField(blank=True, default=0, null=True)
 
     def get_absolute_url(self):
         return reverse('edit_course', kwargs={'course_id': self.id})
 
     def __str__(self):
         return self.course_name + "  --By " + self.course_by.user.user.get_full_name()
-    
+
+class Learner_Model(models.Model):
+    user = models.ForeignKey(Custom_User, on_delete=models.CASCADE)
+    profile_picture = models.ImageField(upload_to='profile_pics/%Y/%m/%d/', blank=True, null=True)
+    courses_subscribed = models.ManyToManyField(Course, blank=True, null=True)
+    credit_balance = models.PositiveIntegerField(default=0, blank=True, null=True)
+
+    def __str__(self):
+        return self.user.user.email
+		
 def content_videofile_name(instance, filename):
     return '/'.join(['Videos', instance.part_of.course_by.user.user.get_full_name(), instance.part_of.course_name, filename])
 
@@ -180,6 +202,18 @@ def content_pptfile_name(instance, filename):
 
 def content_assignmentfile_name(instance, filename):
     return '/'.join(['Assignments', instance.part_of.course_by.user.user.get_full_name(), instance.part_of.course_name, filename])
+
+def content_labsessionfile_name(instance, filename):
+    return '/'.join(['Lab Session', instance.part_of.course_by.user.user.get_full_name(), instance.part_of.course_name, filename])
+
+def content_reference1file_name(instance, filename):
+    return '/'.join(['Reference1', instance.part_of.course_by.user.user.get_full_name(), instance.part_of.course_name, filename])
+
+def content_reference2file_name(instance, filename):
+    return '/'.join(['Reference2', instance.part_of.course_by.user.user.get_full_name(), instance.part_of.course_name, filename])
+
+def content_reference3file_name(instance, filename):
+    return '/'.join(['Reference3', instance.part_of.course_by.user.user.get_full_name(), instance.part_of.course_name, filename])
 
 class Course_Module(models.Model):
     part_of = models.ForeignKey(Course, related_name='modules', on_delete=models.CASCADE)
@@ -202,11 +236,31 @@ class Course_Module(models.Model):
         blank=True,
         null=True
     )
+    labsession = models.FileField(   
+        upload_to=content_labsessionfile_name,        
+        blank=True,
+        null=True
+    )
+    reference1 = models.FileField(   
+        upload_to=content_reference1file_name,        
+        blank=True,
+        null=True
+    )
+    reference2 = models.FileField(   
+        upload_to=content_reference2file_name,        
+        blank=True,
+        null=True
+    )
+    reference3 = models.FileField(   
+        upload_to=content_reference3file_name,        
+        blank=True,
+        null=True
+    )
 
     topics = models.TextField(blank=True, null=True)
 
     order = models.IntegerField(blank=True, null=True)
-
+    allow_preview = models.NullBooleanField(blank=True, null=True, default=False)
     def __str__(self):
         return self.name
 
@@ -256,12 +310,25 @@ class Quiz_Question(models.Model):
         verbose_name = "Quiz Question"
         verbose_name_plural = "Quiz Questions"
 
+
+class LearnerQnA(models.Model):
+    quiz_question = models.ForeignKey(Quiz_Question, on_delete=models.CASCADE)
+    learner = models.ForeignKey(Learner_Model, on_delete=models.CASCADE)
+    chosen_option = models.ForeignKey(Answer_Options, related_name="chosen_option", on_delete=models.CASCADE, default=None, blank=True, null=True)
+
+
+class Subscription(models.Model):
+    learner = models.ForeignKey(Learner_Model, on_delete=models.CASCADE)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    start_date = models.DateTimeField(auto_now_add = True, auto_now = False)
+    end_date = models.DateTimeField()
+
 class Blog(models.Model):
     blogger = models.ForeignKey(Custom_User, on_delete=models.CASCADE)
     title = models.CharField(max_length=120)
     # slug = models.SlugField(unique=True)
     image = models.ImageField(upload_to='blog_pics/%Y/%m/%d/', blank=True)
-    content = RichTextUploadingField()
+    content = RichTextUploadingField(config_name='default')
     draft = models.BooleanField(default=False)
     publish = models.DateField(auto_now=False, auto_now_add=False, null=True, blank=True)
     updated = models.DateTimeField(auto_now=True, auto_now_add=False)
@@ -282,3 +349,22 @@ class Blog(models.Model):
 
     class Meta:
         ordering = ["-created", "-updated"]		
+
+class PromoCode(models.Model):
+    code = models.CharField(max_length=10, unique=True)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    active = models.NullBooleanField(blank=True, null=True, default=False)
+    def get_absolute_url(self):
+        return reverse('detail_promocode', kwargs={'id': self.id})
+    def __str__(self):
+        return self.code 
+
+class CourseFeeReceipt(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now=True)
+    courses_paid_for = models.TextField()
+    refund = models.PositiveIntegerField(default=0)
+    paid = models.PositiveIntegerField(default=0)
+    refund_for = models.TextField(default="", blank=True, null=True)
+    def __str__(self):
+        return self.user.email

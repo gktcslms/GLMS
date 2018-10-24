@@ -93,6 +93,30 @@ app.controller('myCtrl', function($scope, $http, $q) {
 			$scope.selected.presentation_name = "No File!";
 		};
 		try{
+			$scope.selected.labsession_name = unescape($scope.selected.labsession.split('/').pop());
+		}
+		catch(err){
+			$scope.selected.labsession_name = "No File!";
+		};
+		try{
+			$scope.selected.reference1_name = unescape($scope.selected.reference1.split('/').pop());
+		}
+		catch(err){
+			$scope.selected.reference1_name = "No File!";
+		};
+		try{
+			$scope.selected.reference2_name = unescape($scope.selected.reference2.split('/').pop());
+		}
+		catch(err){
+			$scope.selected.reference2_name = "No File!";
+		};
+		try{
+			$scope.selected.reference3_name = unescape($scope.selected.reference3.split('/').pop());
+		}
+		catch(err){
+			$scope.selected.reference3_name = "No File!";
+		};
+		try{
 			$scope.selected.video_name = unescape($scope.selected.video.split('/').pop());
 		}
 		catch(err){
@@ -116,6 +140,30 @@ app.controller('myCtrl', function($scope, $http, $q) {
 		}
 		catch(err){
 			$scope.selected.presentation_name = "No File!";
+		};
+		try{
+			$scope.selected.labsession_name = unescape($scope.selected.labsession.split('/').pop());
+		}
+		catch(err){
+			$scope.selected.labsession_name = "No File!";
+		};
+		try{
+			$scope.selected.reference1_name = unescape($scope.selected.reference1.split('/').pop());
+		}
+		catch(err){
+			$scope.selected.reference1_name = "No File!";
+		};
+		try{
+			$scope.selected.reference2_name = unescape($scope.selected.reference2.split('/').pop());
+		}
+		catch(err){
+			$scope.selected.reference2_name = "No File!";
+		};
+		try{
+			$scope.selected.reference3_name = unescape($scope.selected.reference3.split('/').pop());
+		}
+		catch(err){
+			$scope.selected.reference3_name = "No File!";
 		};
 		try{
 			$scope.selected.video_name = unescape($scope.selected.video.split('/').pop());
@@ -158,7 +206,25 @@ app.controller('myCtrl', function($scope, $http, $q) {
 			swal("Oops!", "Something went wrong!", "error");
 		};
 	};
-
+	// Change Preview Option Part
+	$scope.toggle_preview = function(){
+		console.log($scope.selected.allow_preview);
+		$scope.selected.allow_preview = !($scope.selected.allow_preview);
+		console.log($scope.selected.allow_preview);
+		console.log($scope.form_info.allow_preview);
+		var data = {
+			"allow_preview":$scope.form_info.allow_preview
+		};
+		var url = $scope.selected.url;
+		$http.patch(url, data).then(successCallback, errorCallback);
+		function successCallback(response){
+			swal("Preview Option Changed!", "Preview Status Successfully Changed!", "success");
+		};
+		function errorCallback(error){
+			console.log(error);
+			swal("Oops!", "Something went wrong!", "error");
+		};
+	};
 	//Video Upload Part	
 	$scope.vdo_upload = function(){
 		var file_selected = false;		
@@ -303,6 +369,7 @@ app.controller('myCtrl', function($scope, $http, $q) {
 	$scope.presentation_upload = function(){
 		var file_selected = false;		
 		var element = document.getElementById("pres");
+		console.log(element)
 		if (element.files[0] === undefined){
 			swal("No File Chosen!", "Please select a file to be uploaded!", "error");
 		}
@@ -368,7 +435,282 @@ app.controller('myCtrl', function($scope, $http, $q) {
 		};
 	};
 
+	//Lab Session Upload Part
+	$scope.lab_upload = function(){
+		var file_selected = false;		
+		var element = document.getElementById("lab");
+		if (element.files[0] === undefined){
+			swal("No File Chosen!", "Please select a file to be uploaded!", "error");
+		}
+		else{
+			file_selected = true;
+		};
+		if (file_selected === true){
+		    $scope.show_lab_progrsess_bar = true;			
+			var url = $scope.selected.url;
+			var fd = new FormData();
+			var canceller = $q.defer();
+			$scope.lab_cancel = function(){
+				swal({
+					title: "Are you sure?",
+					text: "Once aborted, you will not be able to resume!",
+					icon: "warning",
+					buttons: true,
+					dangerMode: true,
+				  })
+				  .then((willDelete) => {
+					if (willDelete) {
+					  swal("Resuming file upload.", {
+						icon: "success",
+					  });
+					} else {
+					  swal("Upload Cancelled!");
+					  canceller.resolve();
+					}
+				  });			
+			};
+			fd.append('labsession', element.files[0]);
+			$http.patch(url, fd, {
+				transformRequest: angular.identity,
+				headers: {'Content-Type': undefined},
+				uploadEventHandlers: {
+					progress: function (e) {
+							  if (e.lengthComputable) {
+								$scope.labprogressBar = Math.floor((e.loaded / e.total) * 95);
+							  }
+					}
+				},
+				timeout: canceller.promise
+			}).then(successCallback, errorCallback);
+			function successCallback(response){
+				if (response.status === 200){
+					$scope.selected.labsession = response.data.labsession;
+					console.log(response.data.labsession);
+					$scope.selected.labsession_name = $scope.selected.labsession.split('/').pop();
+					$scope.selected.labsession_name = unescape($scope.selected.labsession_name);
+					$scope.labprogressBar = $scope.labprogressBar + 5;
+					$scope.show_lab_progrsess_bar = false;
+					swal("Good job!", "Your file is uploaded!", "success");
+				}
+			};
+			function errorCallback(error){
+				if (error.status === -1){
+					swal("Aborted!", "File Uploaded Was Aborted!", "error");									
+				}
+				else{
+					swal("Oops!", "Something went wrong....!", "error");									
+				}
+				$scope.show_lab_progrsess_bar = false;
+			};
+		};
+	};
 
+	//Reference1 Upload Part
+	$scope.reference1_upload = function(){
+		var file_selected = false;		
+		var element = document.getElementById("reference1");
+		if (element.files[0] === undefined){
+			swal("No File Chosen!", "Please select a file to be uploaded!", "error");
+		}
+		else{
+			file_selected = true;
+		};
+		if (file_selected === true){
+		    $scope.show_reference1_progrsess_bar = true;			
+			var url = $scope.selected.url;
+			var fd = new FormData();
+			var canceller = $q.defer();
+			$scope.reference1_cancel = function(){
+				swal({
+					title: "Are you sure?",
+					text: "Once aborted, you will not be able to resume!",
+					icon: "warning",
+					buttons: true,
+					dangerMode: true,
+				  })
+				  .then((willDelete) => {
+					if (willDelete) {
+					  swal("Resuming file upload.", {
+						icon: "success",
+					  });
+					} else {
+					  swal("Upload Cancelled!");
+					  canceller.resolve();
+					}
+				  });			
+			};
+			fd.append('reference1', element.files[0]);
+			$http.patch(url, fd, {
+				transformRequest: angular.identity,
+				headers: {'Content-Type': undefined},
+				uploadEventHandlers: {
+					progress: function (e) {
+							  if (e.lengthComputable) {
+								$scope.reference1progressBar = Math.floor((e.loaded / e.total) * 95);
+							  }
+					}
+				},
+				timeout: canceller.promise
+			}).then(successCallback, errorCallback);
+			function successCallback(response){
+				if (response.status === 200){
+					$scope.selected.reference1 = response.data.reference1;
+					$scope.selected.reference1_name = $scope.selected.reference1.split('/').pop();
+					$scope.selected.reference1_name = unescape($scope.selected.reference1_name);
+					$scope.reference1progressBar = $scope.reference1progressBar + 5;
+					$scope.show_reference1_progrsess_bar = false;
+					swal("Good job!", "Your file is uploaded!", "success");
+				}
+			};
+			function errorCallback(error){
+				if (error.status === -1){
+					swal("Aborted!", "File Uploaded Was Aborted!", "error");									
+				}
+				else{
+					swal("Oops!", "Something went wrong....!", "error");									
+				}
+				$scope.show_reference1_progrsess_bar = false;
+			};
+		};
+	};
+
+	//Reference2 Upload Part
+	$scope.reference2_upload = function(){
+		var file_selected = false;		
+		var element = document.getElementById("reference2");
+		if (element.files[0] === undefined){
+			swal("No File Chosen!", "Please select a file to be uploaded!", "error");
+		}
+		else{
+			file_selected = true;
+		};
+		if (file_selected === true){
+		    $scope.show_reference2_progrsess_bar = true;			
+			var url = $scope.selected.url;
+			var fd = new FormData();
+			var canceller = $q.defer();
+			$scope.reference2_cancel = function(){
+				swal({
+					title: "Are you sure?",
+					text: "Once aborted, you will not be able to resume!",
+					icon: "warning",
+					buttons: true,
+					dangerMode: true,
+				  })
+				  .then((willDelete) => {
+					if (willDelete) {
+					  swal("Resuming file upload.", {
+						icon: "success",
+					  });
+					} else {
+					  swal("Upload Cancelled!");
+					  canceller.resolve();
+					}
+				  });			
+			};
+			fd.append('reference2', element.files[0]);
+			$http.patch(url, fd, {
+				transformRequest: angular.identity,
+				headers: {'Content-Type': undefined},
+				uploadEventHandlers: {
+					progress: function (e) {
+							  if (e.lengthComputable) {
+								$scope.reference2progressBar = Math.floor((e.loaded / e.total) * 95);
+							  }
+					}
+				},
+				timeout: canceller.promise
+			}).then(successCallback, errorCallback);
+			function successCallback(response){
+				if (response.status === 200){
+					$scope.selected.reference2 = response.data.reference2;
+					$scope.selected.reference2_name = $scope.selected.reference2.split('/').pop();
+					$scope.selected.reference2_name = unescape($scope.selected.reference2_name);
+					$scope.reference2progressBar = $scope.reference2progressBar + 5;
+					$scope.show_reference2_progrsess_bar = false;
+					swal("Good job!", "Your file is uploaded!", "success");
+				}
+			};
+			function errorCallback(error){
+				if (error.status === -1){
+					swal("Aborted!", "File Uploaded Was Aborted!", "error");									
+				}
+				else{
+					swal("Oops!", "Something went wrong....!", "error");									
+				}
+				$scope.show_reference2_progrsess_bar = false;
+			};
+		};
+	};
+	
+	//Reference3 Upload Part
+	$scope.reference3_upload = function(){
+		var file_selected = false;		
+		var element = document.getElementById("reference3");
+		if (element.files[0] === undefined){
+			swal("No File Chosen!", "Please select a file to be uploaded!", "error");
+		}
+		else{
+			file_selected = true;
+		};
+		if (file_selected === true){
+		    $scope.show_reference3_progrsess_bar = true;			
+			var url = $scope.selected.url;
+			var fd = new FormData();
+			var canceller = $q.defer();
+			$scope.reference3_cancel = function(){
+				swal({
+					title: "Are you sure?",
+					text: "Once aborted, you will not be able to resume!",
+					icon: "warning",
+					buttons: true,
+					dangerMode: true,
+				  })
+				  .then((willDelete) => {
+					if (willDelete) {
+					  swal("Resuming file upload.", {
+						icon: "success",
+					  });
+					} else {
+					  swal("Upload Cancelled!");
+					  canceller.resolve();
+					}
+				  });			
+			};
+			fd.append('reference3', element.files[0]);
+			$http.patch(url, fd, {
+				transformRequest: angular.identity,
+				headers: {'Content-Type': undefined},
+				uploadEventHandlers: {
+					progress: function (e) {
+							  if (e.lengthComputable) {
+								$scope.reference3progressBar = Math.floor((e.loaded / e.total) * 95);
+							  }
+					}
+				},
+				timeout: canceller.promise
+			}).then(successCallback, errorCallback);
+			function successCallback(response){
+				if (response.status === 200){
+					$scope.selected.reference3 = response.data.reference3;
+					$scope.selected.reference3_name = $scope.selected.reference3.split('/').pop();
+					$scope.selected.reference3_name = unescape($scope.selected.reference3_name);
+					$scope.reference3progressBar = $scope.reference3progressBar + 5;
+					$scope.show_reference3_progrsess_bar = false;
+					swal("Good job!", "Your file is uploaded!", "success");
+				}
+			};
+			function errorCallback(error){
+				if (error.status === -1){
+					swal("Aborted!", "File Uploaded Was Aborted!", "error");									
+				}
+				else{
+					swal("Oops!", "Something went wrong....!", "error");									
+				}
+				$scope.show_reference3_progrsess_bar = false;
+			};
+		};
+	};	
 	// Unpopulate form
 	// Empty Form
 	$scope.empty_form = function(){
@@ -383,6 +725,10 @@ app.controller('myCtrl', function($scope, $http, $q) {
 		$scope.vdo_element = document.getElementById("new_vdo");
 		$scope.pres_element = document.getElementById("new_pres");
 		$scope.ass_element = document.getElementById("new_ass");
+		$scope.lab_element = document.getElementById("new_lab");
+		$scope.reference1_element = document.getElementById("new_reference1");
+		$scope.reference2_element = document.getElementById("new_reference2");
+		$scope.reference3_element = document.getElementById("new_reference3");
 
 		$scope.fd = new FormData();	
 		$scope.show_addmodule_progrsess_bar = true;
@@ -405,7 +751,26 @@ app.controller('myCtrl', function($scope, $http, $q) {
 		else{
 			$scope.fd.append('Presentation', $scope.pres_element.files[0]);	
 		};
-
+		if ($scope.lab_element.files[0] === undefined){
+		}
+		else{
+			$scope.fd.append('labsession', $scope.lab_element.files[0]);	
+		};
+		if ($scope.reference1_element.files[0] === undefined){
+		}
+		else{
+			$scope.fd.append('reference1', $scope.reference1_element.files[0]);	
+		};
+		if ($scope.reference2_element.files[0] === undefined){
+		}
+		else{
+			$scope.fd.append('reference2', $scope.reference2_element.files[0]);	
+		};
+		if ($scope.reference3_element.files[0] === undefined){
+		}
+		else{
+			$scope.fd.append('reference3', $scope.reference3_element.files[0]);	
+		};
 		$scope.fd.append('name', $scope.new_module_name);
 		$scope.fd.append("topics", $scope.new_module_topics);
 		$scope.fd.append("part_of", $scope.query_string);

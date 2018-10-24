@@ -1,0 +1,48 @@
+{% extends "base_dashboard.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    {% if request.user.is_superuser %}
+        <div class="container" style="text-align: center;">
+			<div class="col-md-9 mx-auto">
+			<div class="card">
+				<div class="card-header">
+					<h5 class="title">Create/Update Promo Code</h5>
+				</div>
+				<div class="card-body">
+					{% for message in messages %} 
+						<div class="alert alert-success" style="width: 100%;">
+							{{ message }}
+						</div> 
+					{% endfor %}
+					<form action="" method="POST">{% csrf_token %}
+						{{ form|crispy }}
+						<input type="submit" value="Add / Update" class="btn btn-success">
+					</form>
+					<br>
+					<br>
+					<br>
+					<a href="{% url 'list_promocode' %}">
+						<button class="btn btn-info">
+							Promo Listings <i class="fas fa-arrow-circle-left"></i>
+						</button>
+					</a>
+				</div>
+			</div>
+			</div>
+        </div>
+    {% else %}
+        <br>
+        <br>
+        <br>
+        <div class="container">
+            <div class="alert alert-danger">
+                <strong>Error!</strong> Please login as admin to view the page!.
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
+{% block lower %}
+<script>
+$("#promocode").addClass("active");
+</script>
+{% endblock %}

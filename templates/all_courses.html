@@ -24,7 +24,7 @@
 		{% for course in courses %} 
 		<div class="row">
             <div class="col-md-4">
-				<a href=""><img src="{{ course.thumbnail.url }}" class="img-responsive"></a>
+				<img src="{{ course.thumbnail.url }}" class="img-responsive">
 			</div>
 			<div class="col-md-8">
 			<h3 style="margin-top:2px; margin-bottom:2px;">{{ course.course_name }}</h3>
@@ -32,7 +32,8 @@
 				<span title="Written By"><i class="fa fa-user"></i> {{ course.course_by.user.user.get_full_name }} &nbsp;</span>
 			</div>
 			<p>{{ course.description|truncatechars:140}}</p> 
-			<a href="{% url 'learner_preview_course' course.id %}" class="btn btn-primary">PREVIEW</a>
+			<!-- <a href="{% url 'learner_preview_course' course.id %}" class="btn btn-primary">PREVIEW</a> -->
+			<a href="#" class="btn btn-primary">Subscribe</a>
 			</div>
 		</div>
 			<hr/>
@@ -44,6 +45,6 @@
 
 {% block lower %}
 <script>
-$("#my_courses").addClass("active");
+$("#all_courses").addClass("active");
 </script>
 {% endblock %}

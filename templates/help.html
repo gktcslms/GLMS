@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block head %}
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="/static/jquery-steps/css/jquery.steps.css">
+        <script src="/static/jquery-steps/js/jquery.steps.js"></script>
+{% endblock %}
+
+		 
+{% block content %}
+		<div class="content" style="background-color:white">
+            <script>
+                $(function ()
+                {
+                    $("#wizard").steps({
+                        headerTag: "h2",
+                        bodyTag: "section",
+                        transitionEffect: "slideLeft",
+                        stepsOrientation: "vertical"
+                    });
+                });
+            </script>
+<br/><h2 style="text-align:center">How to register and login ?</h2><br/>
+            <div id="wizard">
+                <h2>Click on Sign Up Button</h2>
+                <section>
+					<h4>Click on Sign Up button to register your account.</h4>
+					<img style="width: 100%;" src="/static/images/SignUp.png" />
+				</section>
+                <h2>Fill and Submit Registeration Form</h2>
+                <section>
+					<h4>Fill the details, then select registraion type and submit the form.</h4>
+                    <img style="height: 100%;width: 100%;" src="/static/images/RegisterForm.png" />
+                </section>
+
+                <h2>You will get activation email</h2>
+				<section>
+					<h4>You will get activation email on your registered email account. Click on Activate Account button, only then your account will be activated.</h4>
+                    <img style="height: 100%;width: 100%;" src="/static/images/ActivationEmail.png" />
+                </section>
+
+                <h2>Click on Login Button</h2>
+                <section>
+				<h4>Click on Login Button, after successful registeration and activating your account.</h4>
+                    <img style="height: 100%;width: 100%;" src="/static/images/Login.png" />
+                </section>
+				<h2>Login to your account</h2>
+                <section>
+					<h4>Login to your account by entering registered email id and password</h4>
+                    <img style="height: 100%;width: 100%;" src="/static/images/LoginForm.png" />
+                </section>
+				<h2>Forgot password.</h2>
+                <section>
+					<h4>If you dont remember your password, Click on forgot password button on login form</h4>
+                    <img style="height: 100%;width: 100%;" src="/static/images/Forgot.png" />
+                </section>
+				<h2>Reset password.</h2>
+                <section>
+					<h4>To reset your password, enter your registered email id, then click on Submit. You will get email with reset password link.</h4>
+                    <img style="height: 100%;width: 100%;" src="/static/images/Reset.png" />
+                </section>
+            </div>
+        </div>
+{% endblock %}
+		

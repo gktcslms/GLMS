@@ -1,0 +1,148 @@
+{% load i18n %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Browse Courses</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>   
+    <link rel="stylesheet" href="{% static 'css/ng-rateit.css' %}" />
+
+    <script src="{% static 'js/angular.min.js' %}"></script>             
+    <script src="{% static 'js/ng-FitText.min.js' %}"></script>    
+    <script src="{% static 'js/ng-rateit.js' %}"></script>
+    <script src="{% static 'js/ng-infinite-scroll.min.js' %}"></script>        
+    <script src="{% static 'js/browse_courses.js' %}"></script>    
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>     
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        window.csrf_token = "{{ csrf_token }}";
+    </script>
+</head>
+<body ng-app="browse_courses" ng-controller="myCtrl">
+    {% verbatim %}    
+    <!-- Navbar -->
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a>Browse Courses</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <a ng-href="/checkout">
+                    <span class="glyphicon glyphicon-shopping-cart"></span>
+                    <span class="badge">{{ cart.length }}</span/>
+                </a>
+              </li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    
+
+    <!-- Container -->
+    <div class="container">
+        <h1>Browse All Courses:-</h1>
+        <hr>
+        <div class="row">
+            <div class="col-sm-4" ng-repeat="course in courses.results track by $index">
+                <div class="card">
+                    <img class="card-img-top" ng-src="{{ course.thumbnail }}" alt="Card image" style="width:100%; height: 150px; object-fit: contain;">
+                    <div class="card-body" style="text-align: center;">
+                        <h3 class="card-title" data-fittext data-fittext-min="10" data-fittext-max="18">{{ course.course_name }}</h3>
+                        <h6 class="card-text">{{ course.author }}</h6>
+                        <ng-rate-it ng-model="course.rating" read-only="true"></ng-rate-it>
+                        {{course.rating}} Stars |
+                        ({{ course.no_of_ratings }}) Ratings
+                        <!-- <a class="btn btn-warning" style="width: 100%;" href="/authentication/browse_course_details/{{ course.id }}">View</a>                                                 -->
+                        <a href="#" class="btn btn-primary" style="width: 100%;" data-toggle="modal" data-target="#myModal" ng-click="select_course(course)">View</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <img ng-src="{{ selected_course.thumbnail }}" alt="{{ selected_course.course_name }}" style="height: 100px; width: 100px;">
+                            </div>
+                            <div class="col-sm-6">
+                                <h2 class="modal-title">{{ selected_course.course_name }}</h2>
+                                <h4 class="modal-title">{{ selected_course.author }}</h4>
+                                <ng-rate-it ng-model="selected_course.rating" read-only="true"></ng-rate-it>
+                                {{selected_course.rating}} Stars |
+                                ({{ selected_course.no_of_ratings }}) Ratings
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div ng-hide="modules_visible">
+                            <h3>Description:-</h3>
+                            <p>
+                                {{ selected_course.description }}
+                            </p>
+                            <hr>
+                            <h3>Prerequisite:-</h3>
+                            <p>
+                                {{ selected_course.prerequisite }}
+                            </p>
+                            <hr>
+                            <h3>Requirements:-</h3>
+                            <p>
+                                {{ selected_course.requirements }}
+                            </p>
+                        </div>
+                        <div ng-show="modules_visible">
+                            <h1>Course Modules</h1>
+                            <div ng-repeat="each in selected_course.modules  | orderBy : 'order'">
+                                <div class="row">
+                                    <div class="col-sm-1">
+                                        <h3> {{ $index + 1 }} </h3>
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <h3> {{ each.name }} </h3>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <h3 ng-if="each.topics !== 'undefined'"> {{ each.topics }} </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <!-- <a class="btn btn-warning" href="/authentication/browse_course_details/{{ selected_course.id }}">Subscribe</a>                         -->
+                        <button type="button" class="btn btn-primary" ng-click="show_modules()">Overview</button>                        
+                        <button type="button" class="btn btn-info" ng-click="add_to_cart()" ng-if="selected_course.added_to_cart === false || selected_course.added_to_cart === undefined">
+                            <span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart
+                        </button>           
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Modal -->
+    </div>
+    <!-- End Container -->
+    {% endverbatim %}       
+</body> 
+</html>

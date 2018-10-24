@@ -26,34 +26,26 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["35.200.211.0",".gktcs.com","www.gktcs.com","gktcs.com"]
 
-# EMAIL_HOST = 'mail.gktcs.com'
-# EMAIL_HOST_PASSWORD = 'Gipl@2018'
-# EMAIL_HOST_USER = 'support@gktcs.com'
-# EMAIL_PORT = 25
-# EMAIL_USE_TLS = True
-# SERVER_EMAIL = 'support@gktcs.com'
-# DEFAULT_FROM_EMAIL = 'GKTCS Support <support@gktcs.com>'
 
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_HOST_USER = 'gktcslms@gmail.com'
-# EMAIL_HOST_PASSWORD = 'Gipl@2015'
-# EMAIL_PORT = 587
-# EMAIL_USE_TLS = True
+# EMAIL_HOST = 'smtpout.asia.secureserver.net'
+# EMAIL_HOST_USER = 'support@gktcs.com'
+# EMAIL_HOST_PASSWORD = 'Gipl@2018'
+# EMAIL_PORT = 80
+# EMAIL_USE_TLS = False
 # #EMAIL_USE_SSL=True
-# SERVER_EMAIL = 'gktcslms@gmail.com'
-# DEFAULT_FROM_EMAIL = 'GKTCS Support <gktcslms@gmail.com>'
+# #SERVER_EMAIL = 'support@gktcs.com'
+# DEFAULT_FROM_EMAIL = 'GKTCS Support<support@gktcs.com>'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtpout.asia.secureserver.net'
-EMAIL_HOST_USER = 'support@gktcs.com'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'gktcslms@gmail.com'
 EMAIL_HOST_PASSWORD = 'Gipl@2018'
-EMAIL_PORT = 80
-EMAIL_USE_TLS = False
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 #EMAIL_USE_SSL=True
-SERVER_EMAIL = 'support@gktcs.com'
-DEFAULT_FROM_EMAIL = 'GKTCS Support <support@gktcs.com>'
-
+SERVER_EMAIL = 'gktcslms@gmail.com'
+DEFAULT_FROM_EMAIL = 'GKTCS Support <gktcslms@gmail.com>'
 # Application definition
 
 INSTALLED_APPS = [
@@ -73,6 +65,13 @@ INSTALLED_APPS = [
     'django_cleanup',
     'ckeditor',
     'ckeditor_uploader',
+    'session_security',
+    'paypal.standard.ipn',
+    'guardian',
+    'notifications',
+    #'imagekit',
+    #'awesome_avatar',
+    'chat_bot',
 ]
 
 MIDDLEWARE = [
@@ -83,6 +82,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'session_security.middleware.SessionSecurityMiddleware',
+    #'SRC.middleware.AutoLogout'
 ]
 
 ROOT_URLCONF = 'SRC.urls'
@@ -103,13 +104,12 @@ TEMPLATES = [
     },
 ]
 
-# REST_FRAMEWORK = {
-    # # Use Django's standard `django.contrib.auth` permissions,
-    # # or allow read-only access for unauthenticated users.
-    # 'DEFAULT_PERMISSION_CLASSES': [
-        # 'rest_framework.permissions.AllowAny',
-    # ]
-# }
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend', # this is default
+    'guardian.backends.ObjectPermissionBackend',
+)
+# GUARDIAN_RENDER_403 = True
+GUARDIAN_RAISE_403 = True
 
 WSGI_APPLICATION = 'SRC.wsgi.application'
 
@@ -183,15 +183,19 @@ LOGIN_REDIRECT_URL = '/'
 REGISTRATION_FORM = 'lms.forms.Custom_registeration_form'
 
 
-# CKEDITOR_CONFIGS = {
-    # 'default': {
-        # 'toolbar': None,
-    # },
-# }
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': None,
+    },
+}
 
-CKEDITOR_BASEPATH = "/my_static/ckeditor/ckeditor"
 CKEDITOR_UPLOAD_PATH = "uploads/"
 CKEDITOR_RESTRICT_BY_USER = True
-#CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
 CKEDITOR_IMAGE_BACKEND = "pillow"
 CKEDITOR_ALLOW_NONIMAGE_FILES = False
+
+SESSION_EXPIRE_AT_BROWSER_CLOSE=True
+SESSION_SECURITY_WARN_AFTER=60*55
+SESSION_SECURITY_EXPIRE_AFTER=60*60
+#PAYPAL_RECEIVER_EMAIL = "yourpaypalemail@example.com"

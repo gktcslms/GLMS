@@ -76,6 +76,7 @@
 
 			<div id="module-group" class="panel panel-default">
 				{% for module in modules %}
+				{% if module.allow_preview == True %}
 				<div class="course-box">
 					<a role="button" data-toggle="collapse" data-parent="#module-group" href="#module{{module.id}}" aria-expanded="true" aria-controls="collapseOne">
 					<div class="panel-heading" role="tab" id="title{{module.id}}">
@@ -94,6 +95,12 @@
 								<li>{{ module.topics}}</li> 
 							</ul>
 							<div class="row">
+								{% if module.Presentation %}
+									<div class="col-md-3"><a href="{{ module.Presentation.url}}" class="btn btn-primary html5lightbox"><i class="far fa-file-powerpoint"></i> Presentation</a></div>
+								{% endif %}
+								{% if module.labsession %}
+								<div class="col-md-3"><a href="{{ module.labsession.url}}" class="btn btn-primary html5lightbox"><i class="far fa-file-alt"></i> Lab Session</a></div>
+								{% endif %}
 								{% if module.video %}
 								<div class="col-md-3">  
 									<a href="#myvideo{{ module.id }}" class="afterglow btn btn-primary"><i class="far fa-play-circle"></i> Video</a>
@@ -102,8 +109,14 @@
 									</video>
 								</div>
 								{% endif %}
-								{% if module.Presentation %}
-									<div class="col-md-3"><a href="{{ module.Presentation.url}}" class="btn btn-primary html5lightbox"><i class="far fa-file-powerpoint"></i> Presentation</a></div>
+								{% if module.reference1 %}
+								<div class="col-md-3"><a href="{{ module.reference1.url}}" class="btn btn-primary html5lightbox"><i class="far fa-file-alt"></i> Reference 1</a></div>
+								{% endif %}
+								{% if module.reference2 %}
+								<div class="col-md-3"><a href="{{ module.reference2.url}}" class="btn btn-primary html5lightbox"><i class="far fa-file-alt"></i> Reference 2</a></div>
+								{% endif %}
+								{% if module.reference3 %}
+								<div class="col-md-3"><a href="{{ module.reference3.url}}" class="btn btn-primary html5lightbox"><i class="far fa-file-alt"></i> Reference 3</a></div>
 								{% endif %}
 								{% if module.Assignment %}
 								<div class="col-md-3"><a href="{{ module.Assignment.url}}" class="btn btn-primary html5lightbox"><i class="far fa-file-alt"></i> Assignment</a></div>
@@ -112,6 +125,7 @@
 						</div>
 					</div>
 				</div>
+				{% endif %}
 				{% endfor %}
 			</div>
 		</div><!-- panel-group -->	
@@ -128,7 +142,7 @@ function toggleIcon(e) {
 $('.panel-group').on('hidden.bs.collapse', toggleIcon);
 $('.panel-group').on('shown.bs.collapse', toggleIcon);
 </script>
-
+<script src="/static/js/browse_course_details.js"></script>
 {% endblock %}
 
 {% block lower %}

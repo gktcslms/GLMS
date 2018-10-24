@@ -1,10 +1,68 @@
+<!DOCTYPE html>
 {% load i18n %}
 {% load staticfiles %}
-<!DOCTYPE html>
+{% load notifications_tags %}
 {% load crispy_forms_tags %}
 <html lang="en">
 
 <head>
+    <style>
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+        
+        .switch input {display:none;}
+        
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+        
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+        
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+        
+        input:focus + .slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+        
+        input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+        
+        /* Rounded sliders */
+        .slider.round {
+            border-radius: 34px;
+        }
+        
+        .slider.round:before {
+            border-radius: 50%;
+        }
+    </style>
     <meta charset="utf-8" />
     <link rel="icon" type="image/png" href="/static/images/favicon.ico">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -17,24 +75,12 @@
     <link href="/static/assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/static/assets/css/now-ui-dashboard.css?v=1.0.1" rel="stylesheet" />
 	<script src="/static/assets/js/core/jquery.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="/static/js/jquery.formset.js"></script>
+    <script src="{% static 'js/notify.js' %}" type="text/javascript"></script>
+{% register_notify_callbacks callbacks='fill_notification_list,fill_notification_badge' %}
     <!-- CSS Just for demo purpose, don't include it in your project 
     <link href="http://gktcs.com/GLMS/public/static/assets/demo/demo.css" rel="stylesheet" /> -->
-	<style>
-	.load-modal {
-		position:   fixed;
-		z-index:    1032;
-		top:        0;
-		left:       0;
-		height:     100%;
-		width:      100%;
-		background: rgba( 255, 255, 255, .8 ) 
-					url('/static/images/pIkfp.gif') 
-					50% 50% 
-					no-repeat;
-	}
-	</style>
 	{% block head %}
 	{% endblock %}
 </head>
@@ -85,6 +131,18 @@
                             <p>All Blogs</p>
                         </a>
                     </li>
+					<li id="assignment">
+                        <a href="{% url 'submitted_assignments' %}">
+                            <i class="fas fa fa-file-code"></i>
+                            <p>Submitted Assignments</p>
+                        </a>
+                    </li>
+					<li id="promocode">
+                        <a href="{% url 'list_promocode' %}">
+                            <i class="now-ui-icons shopping_tag-content"></i>
+                            <p>Promo Code List</p>
+                        </a>
+                    </li>
 					<li id="my_profile">
                         <a href="{% url 'myprofile' user.id %}">
                             <i class="now-ui-icons users_single-02"></i>
@@ -109,7 +167,7 @@
                                 <span class="navbar-toggler-bar bar3"></span>
                             </button>
                         </div>
-                        <a class="navbar-brand" href="#"><h4>Trainer Dashboard</h4></a>
+                        <a class="navbar-brand"><h4>Trainer Dashboard</h4></a>
                     </div>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -134,6 +192,20 @@
                                     </p>
                                 </a>
                             </li>
+							<li class="nav-item dropdown notify" href="https://gktcs.com/inbox/notifications/mark-all-as-read/">
+                                <a class="nav-link dropdown-toggle notify" href="https://gktcs.com/inbox/notifications/mark-all-as-read/" id="navbarDropdownNotification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="now-ui-icons ui-1_bell-53">{% notifications_unread as unread_count %}{% if unread_count %}<strong>{% live_notify_badge %}</strong>{% endif %}</i>
+                                    <p>
+                                        <span class="d-lg-none d-md-block">Notification</span>
+                                    </p>
+                                </a>
+								<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownNotification">
+                                    
+									    {% live_notify_list %}
+									    {% if request.user.is_superuser %}<a class="dropdown-item" href="/notifications/"> Read All Notifications </a>{% endif %}
+									
+                                </div>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="now-ui-icons users_single-02"></i>
@@ -155,14 +227,27 @@
             </div>
             <div class="content">
 			{% block content %}
-                
+                <h1>Test<h1/>
+				1{% live_notify_list list_class="dropdown-menu" %}
+				2{% live_notify_badge %}
+				3{% live_notify_list %}
+				666{% live_notify_badge badge_class="badge" %}
+				-----------------------<br/>
+							<li class="nav-item dropdown">
+                                <a class="nav-link ropdown-toggle" href="#"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="dropdown now-ui-icons ui-1_bell-53">{% live_notify_badge %}
+                                    
+                                        
+										 <ul class="dropdown-menu">{% live_notify_list %}</ul></i>
+                                    
+                                </a>
+                            </li>
 			{% endblock %}
             </div>
             <footer class="footer">
             </footer>
         </div>
     </div>
-	<div class="load-modal"></div>
 </body>
 <!--   Core JS Files   -->
 <script src="/static/assets/js/core/popper.min.js"></script>
@@ -185,16 +270,19 @@
     });
 </script>
 <script>
-$(window).load(function() {
-	$(".load-modal").fadeOut("fast");
-})
-</script>
-<script>
 {% if messages %}
 	{% for message in messages %}
 		alert('{{ message }}');
 	{% endfor %}
 {% endif %}		
+</script>
+<script type="text/jscript">
+    $(".notify").click(function () {
+        var url = "https://gktcs.com/inbox/notifications/mark-all-as-read/";
+        $.get(url, null, function (data) {
+            $("#rData").html(data);
+        });
+    })
 </script>
 {% block lower %}
 {% endblock %}

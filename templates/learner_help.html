@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block head %}
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="/static/jquery-steps/css/jquery.steps.css">
+        <script src="/static/jquery-steps/js/jquery.steps.js"></script>
+{% endblock %}
+
+			
+{% block content %}
+		<div class="content" style="background-color:white">
+            <script>
+                $(function ()
+                {
+                    $("#wizard").steps({
+                        headerTag: "h2",
+                        bodyTag: "section",
+                        transitionEffect: "slideLeft",
+                        stepsOrientation: "vertical"
+                    });
+                });
+            </script>
+<br/><h2 style="text-align:center">Features In Learner Dashboard.</h2><br/>
+            <div id="wizard">
+                <h2>Learner Dashboard - My Courses</h2>
+                <section>
+					<h4>After the learner login, learner will be redirected to Learner Dashboard. Here you can see your purchased and subscribed courses.</h4>
+					<img style="width: 100%;" src="/static/images/MyCourses.png" />
+				</section>
+				<h2>Course Preview 1</h2>
+                <section>
+					<h4>After clicking on preview button, learner can see course page which contains Course Description, Course Objective, Prerequisite, Requirements and Course Contents.</h4>
+					<img style="width: 100%;" src="/static/images/CoursePreview1.png" />
+				</section>
+				<h2>Course Preview 2</h2>
+                <section>
+					<h4>In course preview page course content is devided in modules where each module can contain Presentation, Video, Labsession, Assignment and Multiple References </h4>
+					<img style="width: 100%;" src="/static/images/CoursePreview3.png" />
+				</section>
+                <h2>Apply Promo Code</h2>
+                <section>
+					<h4>If you have a Promo Code, you can apply here. </h4>
+                    <img style="height: 100%;width: 100%;" src="/static/images/ApplyPromo.png" />
+                </section>
+
+                <h2>Submit your assignment</h2>
+				<section>
+					<h4>If you want to submit an assignment then you can select and submit your assignment(.pdf/.doc file).</h4>
+                    <img style="height: 100%;width: 100%;" src="/static/images/SubmitAs.png" />
+                </section>
+
+                <h2>My Submitted Assignment</h2>
+                <section>
+				<h4>In this section you can see all your submitted assignments</h4>
+                    <img style="height: 100%;width: 100%;" src="/static/images/MySubAS.png" />
+                </section>
+				
+            </div>
+        </div>
+{% endblock %}
+		

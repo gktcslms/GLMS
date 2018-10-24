@@ -1,5 +1,6 @@
 from django.contrib import admin
 from lms.models import *
+from guardian.admin import GuardedModelAdmin
 
 class BlogAdmin(admin.ModelAdmin):
     # prepopulated_fields = {'slug': ('title',)}
@@ -20,12 +21,20 @@ class CourseAdmin(admin.ModelAdmin):
     ]
     model = Course
 
+class CourseAdmin(GuardedModelAdmin):
+    model = Course
+
+class PromoCodeAdmin(admin.ModelAdmin):
+    list_display = ["code", "course", "active"]
+    class Meta:
+        model = PromoCode	
 # Register your models here.
 admin.site.register(select_module)
 admin.site.register(Custom_User)
 admin.site.register(userprofile)
 admin.site.register(add_instructor)
 admin.site.register(Trainer_Model)
+admin.site.register(Learner_Model)
 admin.site.register(Course, CourseAdmin)
 admin.site.register(Course_Module)
 admin.site.register(Topic)
@@ -38,3 +47,8 @@ admin.site.register(learner_enquiry)
 admin.site.register(job_seeker)
 admin.site.register(support)
 admin.site.register(Blog, BlogAdmin)
+admin.site.register(LearnerQnA)
+admin.site.register(Subscription)
+admin.site.register(submitted_assignment)
+admin.site.register(CourseFeeReceipt)
+admin.site.register(PromoCode, PromoCodeAdmin)

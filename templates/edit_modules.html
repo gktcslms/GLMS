@@ -10,6 +10,7 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
     <script src="{% static 'js/sortable.js' %}"></script>
+    <script src="/static/html5lightbox/html5lightbox.js"></script>
 <style>
 #tags{
   float:left;
@@ -83,7 +84,7 @@
 					<div class="">
 					<h5>Course Name: <b>{{ course }}</b></h5>
      <div class="container" ng-app="edit_modules" ng-controller="myCtrl">   
-        <div style="text-align:center;">
+        <div style="text-align:center; visibility: hidden;">
             <!-- <h3>{{ course }}</h3> -->
             <h3 id="course_id" ng-hide="true">{{ course.id }}</h3>
             <h3 id="csrf" ng-hide="true">{{ csrf_token }}</h3>
@@ -243,27 +244,51 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="control-label col-sm-3" for="new_ass">Assignment:</label>
+                                            <label class="control-label col-sm-3" for="Topics">Topics:</label>
                                             <div class="col-sm-9">          
-                                                <input type="file" class="form-control" id="new_ass" placeholder="Assignment" name="Assignment">
+                                                <input type="input" class="form-control" id="Topics" placeholder="Topics" name="Topics" ng-model="new_module_topics">
                                             </div>
                                         </div>
-                                        <div class="form-group row">
+										<div class="form-group row">
                                             <label class="control-label col-sm-3" for="new_pres">Presentation:</label>
                                             <div class="col-sm-9">          
                                                 <input type="file" class="form-control" id="new_pres" placeholder="Presentation" name="Presentation">
                                             </div>
                                         </div>
                                         <div class="form-group row">
+                                            <label class="control-label col-sm-3" for="new_lab"> Lab Session:</label>
+                                            <div class="col-sm-9">          
+                                                <input type="file" class="form-control" id="new_lab" placeholder="Lab Session" name="labsession">
+                                            </div>
+                                        </div>
+										<div class="form-group row">
                                             <label class="control-label col-sm-3" for="new_vdo">Video:</label>
                                             <div class="col-sm-9">          
                                                 <input type="file" class="form-control" id="new_vdo" placeholder="Video" name="Video">
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="control-label col-sm-3" for="Topics">Topics:</label>
+                                            <label class="control-label col-sm-3" for="new_reference1"> Reference 1:</label>
                                             <div class="col-sm-9">          
-                                                <input type="input" class="form-control" id="Topics" placeholder="Topics" name="Topics" ng-model="new_module_topics">
+                                                <input type="file" class="form-control" id="new_reference1" placeholder="Reference 1" name="reference1">
+                                            </div>
+                                        </div>
+										<div class="form-group row">
+                                            <label class="control-label col-sm-3" for="new_reference2"> Reference 2:</label>
+                                            <div class="col-sm-9">          
+                                                <input type="file" class="form-control" id="new_reference2" placeholder="Reference 2" name="reference2">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="control-label col-sm-3" for="new_reference3"> Reference 3:</label>
+                                            <div class="col-sm-9">          
+                                                <input type="file" class="form-control" id="new_reference3" placeholder="Reference 3" name="reference3">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="control-label col-sm-3" for="new_ass">Assignment:</label>
+                                            <div class="col-sm-9">          
+                                                <input type="file" class="form-control" id="new_ass" placeholder="Assignment" name="Assignment">
                                             </div>
                                         </div>
                                         <button type="submit" class="btn btn-primary" ng-click="add_module()" ng-disabled="show_add_progrsess_bar">Create Module</button>                                        
@@ -304,36 +329,82 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="control-label col-sm-3" for="Assignment">Assignment:</label>
-                                        <div class="col-sm-6">          
-                                            <input type="input" class="form-control" id="Assignment" placeholder="Assignment" name="Assignment" value="{{ selected.assignment_name }}" disabled>
-                                        </div>
-                                        <div class="col-sm-3">          
-                                            <a ng-href="{{ selected.Assignment }}" target="_blank">Preview</a>
+                                        <label class="control-label col-sm-3" for="Topics">Topics:</label>
+                                        <div class="col-sm-9">          
+                                            <input type="input" class="form-control" id="Topics" placeholder="Topics" name="Topics" value="{{ selected.topics }}" disabled>
                                         </div>
                                     </div>
-                                    <div class="form-group row">
+									<div class="form-group row">
                                         <label class="control-label col-sm-3" for="Presentation">Presentation:</label>
                                         <div class="col-sm-6">          
                                             <input type="input" class="form-control" id="Presentation" placeholder="Presentation" name="Presentation" value="{{ selected.presentation_name }}" disabled>
                                         </div>
                                         <div class="col-sm-3">          
-                                            <a ng-href="{{ selected.Presentation }}" target="_blank">Preview</a>
+                                            <a ng-href="{{ selected.Presentation }}" target="_blank" class="html5lightbox">Preview</a>
                                         </div>
                                     </div>
                                     <div class="form-group row">
+                                        <label class="control-label col-sm-3" for="lab">Lab Session:</label>
+                                        <div class="col-sm-6">          
+                                            <input type="input" class="form-control" id="labsession" placeholder="Lab session" name="labsession" value="{{ selected.labsession_name }}" disabled>
+                                        </div>
+                                        <div class="col-sm-3">          
+                                            <a ng-href="{{ selected.labsession }}" target="_blank" class="html5lightbox">Preview</a>
+                                        </div>
+                                    </div>
+									<div class="form-group row">
                                         <label class="control-label col-sm-3" for="Video">Video:</label>
                                         <div class="col-sm-6">          
                                             <input type="input" class="form-control" id="Video" placeholder="Video" name="Video" value="{{ selected.video_name }}" disabled>
                                         </div>
                                         <div class="col-sm-3">          
-                                            <a ng-href="{{ selected.video }}" target="_blank">Preview</a>
+                                            <a ng-href="{{ selected.video }}" target="_blank" class="html5lightbox">Preview</a>
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="control-label col-sm-3" for="Topics">Topics:</label>
-                                        <div class="col-sm-9">          
-                                            <input type="input" class="form-control" id="Topics" placeholder="Topics" name="Topics" value="{{ selected.topics }}" disabled>
+                                        <label class="control-label col-sm-3" for="ref1">Reference 1:</label>
+                                        <div class="col-sm-6">          
+                                            <input type="input" class="form-control" id="ref1" placeholder="Reference 1" name="reference1" value="{{ selected.reference1_name }}" disabled>
+                                        </div>
+                                        <div class="col-sm-3">          
+                                            <a ng-href="{{ selected.reference1 }}" target="_blank" class="html5lightbox">Preview</a>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="control-label col-sm-3" for="ref2">Reference 2:</label>
+                                        <div class="col-sm-6">          
+                                            <input type="input" class="form-control" id="ref2" placeholder="Reference 2" name="reference2" value="{{ selected.reference2_name }}" disabled>
+                                        </div>
+                                        <div class="col-sm-3">          
+                                            <a ng-href="{{ selected.reference2 }}" target="_blank" class="html5lightbox">Preview</a>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="control-label col-sm-3" for="ref3">Reference 3:</label>
+                                        <div class="col-sm-6">          
+                                            <input type="input" class="form-control" id="ref3" placeholder="Reference 3" name="reference3" value="{{ selected.reference3_name }}" disabled>
+                                        </div>
+                                        <div class="col-sm-3">          
+                                            <a ng-href="{{ selected.reference3 }}" target="_blank" class="html5lightbox">Preview</a>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="control-label col-sm-3" for="Assignment">Assignment:</label>
+                                        <div class="col-sm-6">          
+                                            <input type="input" class="form-control" id="Assignment" placeholder="Assignment" name="Assignment" value="{{ selected.assignment_name }}" disabled>
+                                        </div>
+                                        <div class="col-sm-3">          
+                                            <a ng-href="{{ selected.Assignment }}" target="_blank" class="html5lightbox">Preview</a>
+                                        </div>
+                                    </div>
+									<div class="form-group row">
+                                        <label class="control-label col-sm-2" for="Topics">Preview:</label>
+                                        <div class="col-sm-4">      
+                                            <label class="switch">
+                                                <input type="checkbox" ng-checked="selected.allow_preview" disabled>
+                                                <span class="slider round"></span>
+                                            </label>    
+                                            <!-- <input type="checkbox" ng-checked="selected.allow_preview" disabled></input> -->
                                         </div>
                                     </div>
                                 </form>
@@ -367,30 +438,20 @@
                                             <button type="submit" class="btn btn-info" ng-click="change_module_name()">Update</button>
                                         </div>
                                     </div>
-                                    <div class="form-group row">
-                                        <label class="control-label col-sm-3" for="Assignment">Assignment:</label>
+									<div class="form-group row">
+                                        <label class="control-label col-sm-3" for="Topics">Topics:</label>
                                         <div class="col-sm-7">          
-                                            <input type="file" class="form-control" id="ass" placeholder="Assignment" name="Assignment" value="{{ selected.assignment_name }}">
-                                            <label for="ass">Current File:- <a ng-href="{{ selected.Assignment }}" target="_blank">{{ selected.assignment_name }}</a></label>                                       
-                                            <div class="progress" ng-show="show_ass_progrsess_bar">
-                                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="{{assprogressBar}}" aria-valuemin="0" aria-valuemax="100" style="width: {{assprogressBar}}%">
-                                                    {{assprogressBar}}%
-                                                </div>
-                                            </div>     
+                                            <input type="input" class="form-control" id="Topics" placeholder="Topics" name="Topics" ng-model="form_info.topics">
                                         </div>
-                                        <div class="col-sm-2">          
-                                            <button class="btn btn-info" ng-click="assignment_upload()">Upload</button>     
-                                            <div>
-                                                <br>
-                                            </div>
-                                            <button class="btn btn-danger" ng-click="ass_cancel()"  ng-show="show_ass_progrsess_bar">Abort</button>    
+                                        <div class="col-sm-2">
+                                            <button type="submit" class="btn btn-info" ng-click="change_topic()">Update</button>
                                         </div>
                                     </div>
-                                    <div class="form-group row">
+									<div class="form-group row">
                                         <label class="control-label col-sm-3" for="Presentation">Presentation:</label>
                                         <div class="col-sm-7">          
                                             <input type="file" class="form-control" id="pres" placeholder="Presentation" name="Presentation" value="{{ selected.presentation_name }}">
-                                            <label for="pres">Current File:- <a ng-href="{{ selected.Presentation }}" target="_blank">{{ selected.presentation_name }}</a></label>
+                                            <label for="pres">Current File:- <a ng-href="{{ selected.Presentation }}" target="_blank" class="html5lightbox">{{ selected.presentation_name }}</a></label>
                                             <div class="progress" ng-show="show_pres_progrsess_bar">
                                                 <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="{{presprogressBar}}" aria-valuemin="0" aria-valuemax="100" style="width: {{presprogressBar}}%">
                                                     {{presprogressBar}}%
@@ -405,11 +466,30 @@
                                             <button class="btn btn-danger" ng-click="pres_cancel()"  ng-show="show_pres_progrsess_bar">Abort</button>         
                                         </div>
                                     </div>
+									<div class="form-group row">
+                                        <label class="control-label col-sm-3" for="lab">Lab Session:</label>
+                                        <div class="col-sm-7">          
+                                            <input type="file" class="form-control" id="lab" placeholder="Lab Session" name="labsession" value="{{ selected.labsession_name }}">
+                                            <label for="lab">Current File:- <a ng-href="{{ selected.labsession }}" target="_blank" class="html5lightbox">{{ selected.labsession_name }}</a></label>
+                                            <div class="progress" ng-show="show_lab_progrsess_bar">
+                                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="{{labprogressBar}}" aria-valuemin="0" aria-valuemax="100" style="width: {{labprogressBar}}%">
+                                                    {{labprogressBar}}%
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">          
+                                            <button class="btn btn-info" ng-click="lab_upload()">Upload</button>     
+                                            <div>
+                                                <br>
+                                            </div>
+                                            <button class="btn btn-danger" ng-click="lab_cancel()"  ng-show="show_labsession_progrsess_bar">Abort</button>         
+                                        </div>
+                                    </div>
                                     <div class="form-group row">
                                         <label class="control-label col-sm-3" for="Video">Video:</label>
                                         <div class="col-sm-7">          
                                             <input type="file" class="form-control" id="vdo" placeholder="Video" name="Video" value="{{ selected.video_name }}">
-                                            <label for="vdo">Current File:- <a ng-href="{{ selected.video }}" target="_blank">{{ selected.video_name }}</a></label>
+                                            <label for="vdo">Current File:- <a ng-href="{{ selected.video }}" target="_blank" class="html5lightbox">{{ selected.video_name }}</a></label>
                                             <div class="progress" ng-show="show_vdo_progrsess_bar">
                                                 <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="{{vdoprogressBar}}" aria-valuemin="0" aria-valuemax="100" style="width: {{vdoprogressBar}}%">
                                                     {{vdoprogressBar}}%
@@ -424,17 +504,95 @@
                                             <button class="btn btn-danger" ng-click="vdo_cancel()"  ng-show="show_vdo_progrsess_bar">Abort</button>         
                                         </div>   
                                     </div>
-                                    <div class="form-group row">
-                                        <label class="control-label col-sm-3" for="Topics">Topics:</label>
+									<div class="form-group row">
+                                        <label class="control-label col-sm-3" for="reference1">Reference 1:</label>
                                         <div class="col-sm-7">          
-                                            <input type="input" class="form-control" id="Topics" placeholder="Topics" name="Topics" ng-model="form_info.topics">
+                                            <input type="file" class="form-control" id="reference1" placeholder="Reference 1" name="reference1" value="{{ selected.reference1_name }}">
+                                            <label for="reference1">Current File:- <a ng-href="{{ selected.reference1 }}" target="_blank" class="html5lightbox">{{ selected.reference1_name }}</a></label>
+                                            <div class="progress" ng-show="show_reference1_progrsess_bar">
+                                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="{{reference1progressBar}}" aria-valuemin="0" aria-valuemax="100" style="width: {{reference1progressBar}}%">
+                                                    {{reference1progressBar}}%
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="col-sm-2">
-                                            <button type="submit" class="btn btn-info" ng-click="change_topic()">Update</button>
+                                        <div class="col-sm-2">          
+                                            <button class="btn btn-info" ng-click="reference1_upload()">Upload</button>     
+                                            <div>
+                                                <br>
+                                            </div>
+                                            <button class="btn btn-danger" ng-click="reference1_cancel()"  ng-show="show_reference1_progrsess_bar">Abort</button>         
                                         </div>
                                     </div>
+									<div class="form-group row">
+                                        <label class="control-label col-sm-3" for="reference2">Reference 2:</label>
+                                        <div class="col-sm-7">          
+                                            <input type="file" class="form-control" id="reference2" placeholder="Reference 2" name="reference2" value="{{ selected.reference2_name }}">
+                                            <label for="reference2">Current File:- <a ng-href="{{ selected.reference2 }}" target="_blank" class="html5lightbox">{{ selected.reference2_name }}</a></label>
+                                            <div class="progress" ng-show="show_reference2_progrsess_bar">
+                                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="{{reference2progressBar}}" aria-valuemin="0" aria-valuemax="100" style="width: {{reference2progressBar}}%">
+                                                    {{reference2progressBar}}%
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">          
+                                            <button class="btn btn-info" ng-click="reference2_upload()">Upload</button>     
+                                            <div>
+                                                <br>
+                                            </div>
+                                            <button class="btn btn-danger" ng-click="reference2_cancel()"  ng-show="show_reference2_progrsess_bar">Abort</button>         
+                                        </div>
+                                    </div>
+									<div class="form-group row">
+                                        <label class="control-label col-sm-3" for="reference3">Reference 3:</label>
+                                        <div class="col-sm-7">          
+                                            <input type="file" class="form-control" id="reference3" placeholder="Reference 3" name="reference3" value="{{ selected.reference3_name }}">
+                                            <label for="reference3">Current File:- <a ng-href="{{ selected.reference3 }}" target="_blank" class="html5lightbox">{{ selected.reference3_name }}</a></label>
+                                            <div class="progress" ng-show="show_reference3_progrsess_bar">
+                                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="{{reference3progressBar}}" aria-valuemin="0" aria-valuemax="100" style="width: {{reference3progressBar}}%">
+                                                    {{reference3progressBar}}%
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">          
+                                            <button class="btn btn-info" ng-click="reference3_upload()">Upload</button>     
+                                            <div>
+                                                <br>
+                                            </div>
+                                            <button class="btn btn-danger" ng-click="reference3_cancel()"  ng-show="show_reference2_progrsess_bar">Abort</button>         
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="control-label col-sm-3" for="Assignment">Assignment:</label>
+                                        <div class="col-sm-7">          
+                                            <input type="file" class="form-control" id="ass" placeholder="Assignment" name="Assignment" value="{{ selected.assignment_name }}">
+                                            <label for="ass">Current File:- <a ng-href="{{ selected.Assignment }}" target="_blank" class="html5lightbox">{{ selected.assignment_name }}</a></label>                                       
+                                            <div class="progress" ng-show="show_ass_progrsess_bar">
+                                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="{{assprogressBar}}" aria-valuemin="0" aria-valuemax="100" style="width: {{assprogressBar}}%">
+                                                    {{assprogressBar}}%
+                                                </div>
+                                            </div>     
+                                        </div>
+                                        <div class="col-sm-2">          
+                                            <button class="btn btn-info" ng-click="assignment_upload()">Upload</button>     
+                                            <div>
+                                                <br>
+                                            </div>
+                                            <button class="btn btn-danger" ng-click="ass_cancel()"  ng-show="show_ass_progrsess_bar">Abort</button>    
+                                        </div>
+                                    </div>
+									<div class="form-group row">
+										<label class="control-label col-sm-2" for="Topics">Preview:</label>
+										<div class="col-sm-4">          
+											<label class="switch">
+												<input type="checkbox" ng-checked="selected.allow_preview" ng-click="toggle_preview()">
+												<span class="slider round"></span>
+											</label>
+											<!-- <input type="checkbox" ng-ng-checked="selected.allow_preview" ng-click="toggle_preview()"="selected.allow_preview" ng-click="toggle_preview()"></input> -->
+										</div>
+									</div>
                                 </form>
                             </div>
+							
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
                             </div>

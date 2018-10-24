@@ -204,3 +204,16 @@ class CreateBlogForm(forms.Form):
         widgets = {
             'content' : CKEditorUploadingWidget(),
         }
+
+class CreatePromoForm(forms.ModelForm):
+    class Meta:
+        model = PromoCode
+        fields = ['course','code', 'active']
+
+class ApplyPromoForm(forms.Form):
+    promo_code = forms.CharField(max_length=10, required=True, label="Promo Code")
+
+class SubmitAssignmentForm(forms.Form):    
+    company = forms.CharField(max_length=30, required=False)
+    assignment_details = forms.CharField(max_length=200, required=False)
+    upload_assignment = forms.FileField()

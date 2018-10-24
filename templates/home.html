@@ -1,5 +1,6 @@
 {% load staticfiles %}
 {% load crispy_forms_tags %}
+{% include 'session_security/all.html' %}
 <title>GKTCS LMS</title>
 <html>
 	<head>
@@ -9,8 +10,30 @@
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-		<script src="https://cdn.jsdelivr.net/npm/afterglowplayer@1.x"></script>
-		
+		<script src="/static/js/afterglow.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>   
+		<link rel="stylesheet" href="{% static 'css/ng-rateit.css' %}" />
+		<link rel="stylesheet" type="text/css" href="/static/slick/slick.css"/>
+		<link rel="stylesheet" type="text/css" href="/static/slick/slick-theme.css"/>
+
+    <script src="{% static 'js/angular.min.js' %}"></script>
+	<script type="text/javascript" src="/static/slick/slick.min.js"></script>
+	<script type="text/javascript" src="/static/slick/angular-slick.js"></script>
+    <script src="{% static 'js/ng-FitText.min.js' %}"></script>    
+    <script src="{% static 'js/ng-rateit.js' %}"></script>
+    <script src="{% static 'js/ng-infinite-scroll.min.js' %}"></script>        
+    <script src="{% static 'js/browse_courses.js' %}"></script>    
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>     
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<link rel="stylesheet" href="https://vasyabigi.github.io/angular-slick/bower_components/slick-carousel/slick/slick.css" />
+    <script src="https://vasyabigi.github.io/angular-slick/bower_components/slick-carousel/slick/slick.js"></script>
+	<link rel="stylesheet" href="{% static 'css/chatbot_style.css' %}">
+    <!-- JS to handle chat bot -->
+    <script src="{% static 'js/chatbot_handler.js' %}"></script>
+    <script>
+        window.csrf_token = "{{ csrf_token }}";
+    </script>
     	<style>
 		
 		
@@ -593,7 +616,7 @@
 			}
 			.course_inner{
 				background: #FFFFFF;
-				margin: 15px 0px;
+				margin: 15px 5px;
 				padding-bottom:15px;
 				border-radius: 10px;
 			}
@@ -1057,18 +1080,13 @@ background:#eee;
       font-size: 15px;
   }
   
-.load-modal {
-    position:   fixed;
-    z-index:    1000;
-    top:        0;
-    left:       0;
-    height:     100%;
-    width:      100%;
-    background: rgba( 255, 255, 255, .8 ) 
-                url('/static/images/pIkfp.gif') 
-                50% 50% 
-                no-repeat;
+  .slick-slide {
+    height: auto !important;
 }
+.olark-branding-link > a{
+    visibility: hidden !important;
+}
+  
 
 			@media only screen and (max-width: 480px) {
 				#form-div{
@@ -1111,6 +1129,10 @@ background:#eee;
 				background-color: #0093CB;
 				background-image: none;
 			
+			}
+			.slick-slider {
+				touch-action: auto;
+				-ms-touch-action: auto;
 			}
 			@media screen and (max-width: 770px) {
 			    .navbar-default {
@@ -1337,108 +1359,7 @@ background:#eee;
     }     
   </script>
 	</head>
-	<body>
-		<div>
-		<div id="popup1" class="modal-box">
-		  <header> <a class="js-modal-close close">×</a>
-			<h3 style="color: #00A4CB">Register for free!</h3>
-		  </header>
-		<div class="modal-body">
-			<form method="post"> {% csrf_token %}
-			<!--<div class="inset">  
-
-				<div class="form-group required" id="div_id_username"> 
-					<label class="control-label  requiredField" for="id_username">Username<span class="asteriskField">*</span> </label> 
-					<div class="controls "> <input type="text" name="username" maxlength="30" id="id_username" class="textinput textInput form-control">  </div> 
-				</div> 
-				<div class="form-group required" id="div_id_email"> 
-					<label class="control-label  requiredField" for="id_email">E-mail<span class="asteriskField">*</span> </label> 
-					<div class="controls "> <input type="email" name="email" id="id_email" class="emailinput form-control" style="background-image:none;"> </div> 
-				</div> 
-				<div class="form-group required" id="div_id_password1"> 
-					<label class="control-label  requiredField" for="id_password1">Password<span class="asteriskField">*</span> </label> 
-					<div class="controls "> <input type="password" name="password1" id="id_password1" class="textinput textInput form-control"> </div> 
-				</div> 
-				<div class="form-group required" id="div_id_password2"> 
-					<label class="control-label  requiredField" for="id_password2">Password confirmation<span class="asteriskField">*</span> </label> 
-					<div class="controls "> <input type="password" name="password2" id="id_password2" class="textinput textInput form-control"> </div> 
-				</div>
-
-			</div>-->
-				{{ form2|crispy }}
-				<div >
-					<div>
-					<input type="submit" class="btn btn-info" value="Join Now" style="float:right">
-					</div>
-					<div>
-					<span style="float:right;margin-top:7px;margin-right:25px;"><a href="/authentication/login/" style="padding:14px">Need to Login ? </a> </span>
-					</div>
-					<br>
-				</div>
-			<p></p>
-			</form>
-		</div>
-		</div>
-		<div id="popup2" class="modal-box" style="margin-top: 40px; top:0px !important">
-		  <header> <a class="js-modal-close close">×</a>
-			<h3 style="color: #00A4CB;text-align:center;">Login</h3>
-		  </header>
-		<div class="modal-body">
-			<form method="post">{% csrf_token %}
-				<div class="inset">  
-
-					<div class="form-group" id="div_id_username"> 
-						<input type="text" name="username" maxlength="254" id="id_username" class="textinput textInput form-control" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'" placeholder="Username"> </div> 
-					</div> 
-					<div class="form-group" id="div_id_password">
-						<div class="controls "> <input type="password" name="password" id="id_password" class="textinput textInput form-control" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password*'" placeholder="Password*"> </div> 
-					</div>
-
-				</div>
-				<div>
-					<div>
-					<input type="submit" class="btn btn-info" value="Login" style="float:right;margin-right: 24px;margin-bottom: 24px;">
-					</div>
-					<div>
-					<span class="pull-left" style="float:right;margin-right:25px;padding-left:25px;"><a class="btn btn-primary" href="/accounts/password/reset/" style="">Forgot password ? Reset it ! </a></span>
-					</div>
-					<br>
-				</div>
-				<p></p>
-			
-			</form>
-		</div>
-		</div>
-		</div>
-	 <div id="panel" class="hidden">
-		<div id="panelCaller"><img width="5px" src="/static/images/enquiry.png"></div>
-		<div id="form-div">
-			<form method="post" action="" class="form" id="form1" onSubmit="alert('Thanks!!  We will get back to you soon.');">
-			<p class="name">
-			<input style="color:black" id="id_Name" type="text" name="Name" maxlength="30" placeholder="Name" class="feedback-input" onblur="validateName(value)" required="">
-			<span id="NameError" style="display: none;color:#FFF;">*You must enter a valid name</span>
-			</p>
-			<p class="email">
-			<input style="color:black" id="id_Email" type="email" name="Email" maxlength="70" placeholder="Email" class="feedback-input" onblur="validateEmail1(value)" required="">
-			<span id="emailError" style="display: none;color:#FFF;">*Enter a valid email address</span>
-			</p>
-			<p class="email">
-			<input style="color:black;-moz-appearance: textfield; -webkit-appearance: textfield; appearance: textfield;" id="id_Contact" type="number"  name="Contact" placeholder="Contact No." class="feedback-input" onblur="validateContact1(value)" required="">
-			<span id="ContactError" style="display: none;color:#fff;">*You must enter a valid 10 digit mobile number</span>
-			</p>
-			<p class="eqsubject">
-			<input style="color:black" id="id_subject" type="text" name="subject" maxlength="70" placeholder="Subject" class="feedback-input" required="">
-			</p>
-			<p class="eqtext">
-			<textarea style="color:black" id="id_Message" rows="2" name="Message" cols="26" placeholder="Enquiry" class="validate[required,length[6,270]] feedback-input" required=""></textarea>
-			</p>
-			<div class="submit">
-				<input type="submit" value="SEND" id="button-blue"/>
-				<div class="ease"></div>
-			  </div>
-			</form>	
-		</div>
-	 </div>
+	<body ng-app="browse_courses" ng-controller="myCtrl">
 		<header>
 			<div id="tophead">
 			<div id="head" class="hidden-xs">
@@ -1478,20 +1399,29 @@ background:#eee;
 
 						</div>		  
 						<div class="col-md-3 col-lg-3 hidden-xs">
+							{% verbatim %}
+										<span class="pull-right" style="margin-top:10px">
+										<a ng-href="/checkout">
+											<span class="glyphicon glyphicon-shopping-cart" style="color: white;font-size: 20;"></span>
+											<span class="badge" style="color: white;font-size: 15;margin-bottom: 10px;">{{ cart.length }}</span>
+										</a>
+										</span>
+							{% endverbatim %}
 							{% if not request.user.is_authenticated %}
-							<div style="float:right;padding-top:3px;padding-right:5px;">
+							<span style="float:right;padding-top:3px;padding-right:5px;">
 								<!--<a class="js-open-modal" data-modal-id="popup2" ><button type="button" class="btn btn-warning">LOGIN</button></a>-->
 								<a href="/authentication/login/"> <button type="button" class="btn btn-warning">LOGIN</button></a>
 								<a href="/authentication/register/"><button type="button" class="btn btn-warning">SIGN UP</button></a>
-							</div>
+							</span>
 							{% endif %}
 						</div>
 					</div>
 				</div>	
 				</div>	
 				</div>
-				</div>
-		</header>	
+			</div>
+		</header>
+		
   <div id="myCarousel" class="carousel slide" data-ride="carousel" >
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -1596,10 +1526,11 @@ background:#eee;
 						    <!-- Collect the nav links, forms, and other content for toggling -->
 						    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						      <ul class="nav navbar-nav" id="cnav" style="margin-right: -22px;">
-								<li><a href="#">BLOGS</a></li>
+								<li><a href="{% url 'list_blogs' %}">BLOGS</a></li>
 								<li><a href="{% url 'surendra_profile' %}">ABOUT US</a></li>
-								<li><a href="#">COURSES</a></li>
+								<li><a href="{% url 'Courses' %}">COURSES</a></li>
 								<li><a href="{% url 'contact' %}">CONTACT</a></li> 
+								<li><a data-toggle="modal" data-target="#helpModal"><span class="btn btn-success" style="margin-top: -7px;">HELP</span></a></li>
 								{% if request.user.is_authenticated %}
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -1617,10 +1548,9 @@ background:#eee;
 									</ul>
 								</li>
 								{% endif %}
-								<!--<li><a href=" url 'myprofile' user.id ">PROFILE</a></li>-->
-								<!--<li><a href="/accounts/login/">LOGIN</a></li>
-								<li><a href="/accounts/register/">SIGN UP</a></li>-->
+								
 						      </ul>
+
 						    </div><!-- /.navbar-collapse -->
 						   
 						  </div><!-- /.container-fluid -->
@@ -1630,6 +1560,35 @@ background:#eee;
 				</div>	
 			</div>
 				
+				
+		</div>
+		<div class="modal fade" id="helpModal" role="dialog">
+			<div class="modal-dialog">
+			
+			  <!-- Modal content-->
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <button type="button" class="close" data-dismiss="modal">&times;</button>
+				  <h4 class="modal-title">Help Document</h4>
+				</div>
+				<div class="modal-body">
+					<aside class="info aside section">
+					<div class="section-inner">
+						<h3 class="heading sr-only">Help Document</h3>
+						<div class="">
+								<a style="margin:10px" class="btn btn-success " href="{% url 'help' %}"><i class="fa fa-download"></i> Registration and Login</a>
+								<a style="margin:10px" class="btn btn-success " href="{% url 'learner_help' %}"><i class="fa fa-download"></i> Learner Dashboard</a>
+								<a style="margin:10px" class="btn btn-success " href="{% url 'trainer_help' %}"><i class="fa fa-download"></i> Trainer Dashboard</a>
+						</div><!--//content-->  
+					</div><!--//section-inner-->                 
+					</aside><!--//aside-->
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			  </div>
+			  
+			</div>
 		</div>
 		<div class="side_button">
 		<a class="side_button" data-toggle="tooltip" data-placement="right" title="Become a Trainer" href="/trainer_form/" ><button id="btn-rotate2" type="button">TRAINERS</button></a>
@@ -1640,271 +1599,362 @@ background:#eee;
 		<a class="side_button" data-toggle="tooltip" data-placement="left" title="Get Support" href="/support_form/" ><button id="btn-rotate" style="top:422 " type="button">SUPPORT</button></a>
 		</div>
 		<div id="course_bg">
-		<div class="container">
-		{% if request.user.is_superuser %}
-		<div class="" style="margin-top: 5px;">
-			<div class="row">
-			 <div class="col-md-2 col-sm-4 col-xs-6"><a href="/basic_registraion_details/" style="width:100%; margin-top: 8px;margin-bottom: 8px;" class="btn btn-primary">REGISTRATIONS</a></div>
-			 <div class="col-md-2 col-sm-4 col-xs-6"><a href="/trainer_enquiry/" style="width:100%; margin-top: 8px;margin-bottom: 8px;" class="btn btn-primary">TRAINERS</a></div>
-			 <div class="col-md-2 col-sm-4 col-xs-6"><a href="/vendor_enquiry/" style="width:100%; margin-top: 8px;margin-bottom: 8px;" class="btn btn-primary">VENDORS</a></div>
-			 <div class="col-md-2 col-sm-4 col-xs-6"><a href="/client_enquiry/" style="width:100%; margin-top: 8px;margin-bottom: 8px;" class="btn btn-primary">CLIENTS</a></div>
-			 <div class="col-md-2 col-sm-4 col-xs-6"><a href="/learner_enquiry/" style="width:100%; margin-top: 8px;margin-bottom: 8px;" class="btn btn-primary">LEARNERS</a></div>
-			 <div class="col-md-2 col-sm-4 col-xs-6"><a href="/jobs_enquiry/" style="width:100%; margin-top: 8px;margin-bottom: 8px;" class="btn btn-primary">JOBS</a></div>
-			 <div class="col-md-2 col-sm-4 col-xs-6"><a href="/support/" style="width:100%; margin-top: 8px;margin-bottom: 8px;" class="btn btn-primary">SUPPORT</a></div>
+			<div class="container">
+				{% if request.user.is_superuser %}
+				<div class="" style="margin-top: 5px;">
+					<div class="row">
+					 <div class="col-md-2 col-sm-4 col-xs-6"><a href="/basic_registraion_details/" style="width:100%; margin-top: 8px;margin-bottom: 8px;" class="btn btn-primary">REGISTRATIONS</a></div>
+					 <div class="col-md-2 col-sm-4 col-xs-6"><a href="/trainer_enquiry/" style="width:100%; margin-top: 8px;margin-bottom: 8px;" class="btn btn-primary">TRAINERS</a></div>
+					 <div class="col-md-2 col-sm-4 col-xs-6"><a href="/vendor_enquiry/" style="width:100%; margin-top: 8px;margin-bottom: 8px;" class="btn btn-primary">VENDORS</a></div>
+					 <div class="col-md-2 col-sm-4 col-xs-6"><a href="/client_enquiry/" style="width:100%; margin-top: 8px;margin-bottom: 8px;" class="btn btn-primary">CLIENTS</a></div>
+					 <div class="col-md-2 col-sm-4 col-xs-6"><a href="/learner_enquiry/" style="width:100%; margin-top: 8px;margin-bottom: 8px;" class="btn btn-primary">LEARNERS</a></div>
+					 <div class="col-md-2 col-sm-4 col-xs-6"><a href="/jobs_enquiry/" style="width:100%; margin-top: 8px;margin-bottom: 8px;" class="btn btn-primary">JOBS</a></div>
+					 <div class="col-md-2 col-sm-4 col-xs-6"><a href="/support/" style="width:100%; margin-top: 8px;margin-bottom: 8px;" class="btn btn-primary">SUPPORT</a></div>
+					</div>
+				</div>
+				{% endif %}
+				<hr/>
+				<div class="row" style="background-color: #bbbbbb;border-radius: 10px;" id="course_wrap_row">
+					<div class="" style="background-color:#fff"><h1 id="poplr">Corporate Courses</h1></div>
+					<div class="course_carousel2" style="margin-bottom:10px;">
+					<div class="course_wrap">
+						<a href="{% url 'pythoncorp' %}">
+						<div class="course_inner">
+							<div>
+								 <img class="img-responsive" src="/static/images/python_corp.jpg"/>
+							</div>
+							<div class="inner_info" style="position:relative">
+							<div class="info_show" style="position:absolute; background:#eee; width:100%; height:100%;">
+							<ul>
+								<li>Object-oriented Features</li>
+								<li>Regular Expression</li>
+								<li>Threading</li>
+								<li>Testing</li>
+							</ul>
+							</div>
+							<a href="{% url 'pythoncorp' %}"> <h3>Python Corporate Course</h3> </a>
+							<p>New Batches <br/>Starting Soon</p><br/>
+							</div>
+						</div>
+						</a>
+					</div>
+					<div class="course_wrap">
+						<a href="{% url 'djangocorp' %}">
+						<div class="course_inner">
+							<div>
+								<img style="width: 100%" class="img-responsive" src="/static/images/django.jpg"/> 
+							</div>
+							<div class="inner_info" style="position:relative">
+							<div class="info_show" style="position:absolute; background:#eee; width:100%; height:100%;">
+							<ul>
+								<li>Python Web Framework</li>
+								<li>Quick Development</li>
+								<li>Model, View, Template</li>
+								<li>Object-Relational Mapper</li>
+							</ul>
+							</div>
+							<a href="{% url 'djangocorp' %}"> <h3>Django Corporate Course</h3> </a>
+							<p>New Batches <br/>Starting Soon</p><br/>
+							</div>
+						</div>
+						</a>
+					</div>
+					<div class="course_wrap">
+						<a href="{% url 'pysparkcorp' %}">
+						<div class="course_inner">
+							<div>
+								<img class="img-responsive" src="/static/images/pyspark.jpg"/> 
+							</div>
+							<div class="inner_info" style="position:relative">
+							<div class="info_show" style="position:absolute; background:#eee; width:100%; height:100%;">
+							<ul>
+								<li>Learn about Apache Spark and the Spark 2.0 architecture</li>
+								<li>Build and interact with Spark DataFrames using Spark SQL</li>
+							</ul>
+							</div>
+							<a href="{% url 'pysparkcorp' %}"><h3>PySpark and Machine Learning</h3> </a>
+							<p>New Batches <br/>Starting Soon</p><br/>
+							</div>
+						</div>
+						</a>
+					</div>
+					<div class="course_wrap">
+						<a href="{% url 'ruby_on_railscorp' %}">
+						<div class="course_inner">
+							<div>
+								<img style="width: 100%" class="img-responsive" src="/static/images/ruby.jpg"/>
+							</div>
+							<div class="inner_info" style="position:relative">
+							<div class="info_show" style="position:absolute; background:#eee; width:100%; height:100%;">
+							<ul>
+								<li>Ruby is a dynamic, reflective, object-oriented programming language.</li>
+								<li>Rails, is a web application framework written in Ruby.</li>
+							</ul>
+							</div>
+							<a href="{% url 'ruby_on_railscorp' %}"><h3>Ruby On Rails Corporate Course</h3></a>
+							<p>New Batches <br/>Starting Soon</p></br>
+							</div>
+						</div>
+						</a>
+					</div>
+					<div class="course_wrap">
+						<a href="{% url 'r_programmingcorp' %}">
+						<div class="course_inner">
+							<div>
+								<img class="img-responsive" src="/static/images/r_programming.jpg"/>
+							</div>
+							<div class="inner_info" style="position:relative">
+							<div class="info_show" style="position:absolute; background:#eee; width:100%; height:100%;">
+							<ul>
+								<li>R language, R-studio, and R packages</li>
+								<li>linear and logistic regression, cluster analysis and forecasting.</li>
+							</ul>
+							</div>
+							<a href="{% url 'r_programmingcorp' %}"> <h3>R Programming Corporate Course</h3></a>
+							<p>New Batches <br/>Starting Soon</p><br/>
+							</div>
+						</div>
+						</a>
+					</div>
+					<div class="course_wrap">
+						<a href="{% url 'hadoopcorp' %}">
+						<div class="course_inner">
+							<div>
+								<img class="img-responsive" src="/static/images/hadoop1.jpg"/>
+							</div>
+							<div class="inner_info" style="position:relative">
+							<div class="info_show" style="position:absolute; background:#eee; width:100%; height:100%;">
+							<ul>
+								<li>Big data is a massive volume of structured and unstructured data.</li>
+								<li>Hadoop is an open-source framework that allows to store and process big data.</li>
+							</ul>
+							</div>
+							<a href="{% url 'hadoopcorp' %}"> <h3>Big Data & Hadoop Corporate Course</h3></a>
+							<p>New Batches <br/>Starting Soon</p><br/>
+							</div>
+						</div>
+						</a>
+					</div>
+					<div class="course_wrap">
+						<a href="{% url 'appiumcorp' %}">
+						<div class="course_inner">
+							<div>
+								<img class="img-responsive" src="/static/images/appium.jpg"/>
+							</div>
+							<div class="inner_info" style="position:relative">
+							<div class="info_show" style="position:absolute; background:#eee; width:100%; height:100%;">
+							<ul>
+								<li>The most versatile among all other mobile automation tool</li>
+								<li>An open-source tool for automating native, mobile web, and hybrid applications on iOS and Android platforms.</li>
+							</ul>
+							</div>
+							<a href="{% url 'appiumcorp' %}"> <h3>Appium for Mobile Automation Testing</h3></a>
+							<p>New Batches <br/>Starting Soon</p><br/>
+							</div>
+						</div>
+						</a>
+					</div>
+					<div class="course_wrap">
+						<a href="{% url 'jythoncorp' %}">
+						<div class="course_inner">
+							<div>
+								<img class="img-responsive" src="/static/images/jython.jpg"/>
+							</div>
+							<div class="inner_info" style="position:relative">
+							<div class="info_show" style="position:absolute; background:#eee; width:100%; height:100%;">
+							<ul>
+								<li>High-level, object-oriented, open-source programming language</li>
+								<li>Access Java classes and libraries and extend them</li>
+							</ul>
+							</div>
+							<a href="{% url 'jythoncorp' %}"> <h3>Jython Corporate Course</h3></a>
+							<p>New Batches <br/>Starting Soon</p><br/>
+							</div>
+						</div>
+						</a>
+					</div>
+					<div class="course_wrap">
+						<a href="{% url 'ansiblecorp' %}">
+						<div class="course_inner">
+							<div>
+								<img class="img-responsive" src="/static/images/ansible.jpg"/>
+							</div>
+							<div class="inner_info" style="position:relative">
+							<div class="info_show" style="position:absolute; background:#eee; width:100%; height:100%;">
+							<ul>
+								<li>Software that automates software provisioning, configuration management, and application deployment. </li>
+								<li>Open source automation platform. It's simple yet powerful.</li>
+							</ul>
+							</div>
+							<a href="{% url 'ansiblecorp' %}"> <h3>Ansible Corporate Course</h3></a>
+							<p>New Batches <br/>Starting Soon</p><br/>
+							</div>
+						</div>
+						</a>
+					</div>
+					<div class="course_wrap">
+						<a href="{% url 'mongodbcorp' %}">
+						<div class="course_inner">
+							<div>
+								<img class="img-responsive" src="/static/images/mongodb1.png"/>
+							</div>
+							<div class="inner_info" style="position:relative">
+							<div class="info_show" style="position:absolute; background:#eee; width:100%; height:100%;">
+							<ul>
+								<li>NoSQL database, empowering businesses to be more agile and scalable.</li>
+								<li>an open-source database used by companies of all sizes</li>
+							</ul>
+							</div>
+							<a href="{% url 'mongodbcorp' %}"> <h3>MongoDB Corporate Course</h3></a>
+							<p>New Batches <br/>Starting Soon</p><br/>
+							</div>
+						</div>
+						</a>
+					</div>
+					<div class="course_wrap">
+						<a href="{% url 'devopscorp' %}">
+						<div class="course_inner">
+							<div>
+								<img class="img-responsive" src="/static/images/devops.jpg"/>
+							</div>
+							<div class="inner_info" style="position:relative">
+							<div class="info_show" style="position:absolute; background:#eee; width:100%; height:100%;">
+							<ul>
+								<li>Ruby is a dynamic, object-oriented programming language</li>
+								<li>DevOps is a software engineering culture and practice that aims at unifying software development and software operation.</li>
+							</ul>
+							</div>
+							<a href="{% url 'devopscorp' %}"> <h3>Ruby and DevOps Corporate Course</h3></a>
+							<p>New Batches <br/>Starting Soon</p><br/>
+							</div>
+						</div>
+						</a>
+					</div>
+					<div class="course_wrap">
+						<a href="{% url 'sparkscalacorp' %}">
+						<div class="course_inner">
+							<div>
+								<img class="img-responsive" src="/static/images/sparkscala.jpg"/>
+							</div>
+							<div class="inner_info" style="position:relative">
+							<div class="info_show" style="position:absolute; background:#eee; width:100%; height:100%;">
+							<ul>
+								<li>Scala is a general-purpose programming language providing support for functional programming</li>
+								<li>Spark is an open source computing framework up to 100 times faster than Mapreduce</li>
+							</ul>
+							</div>
+							<a href="{% url 'sparkscalacorp' %}"> <h3>Spark with Scala Corporate Course</h3></a>
+							<p>New Batches <br/>Starting Soon</p><br/>
+							</div>
+						</div>
+						</a>
+					</div>
+					</div>
+						
+				</div>
+				<hr/>
 			</div>
-		</div>
-		{% endif %}
-			<hr/>
-			<div class="row" style="background-color: #bbbbbb;border-radius: 10px;" id="course_wrap_row">
-				<div class="" style="background-color:#fff"><h1 id="poplr">Corporate Courses</h1></div>
-				<div class="col-md-3 col-sm-6 course_wrap">
-					<a href="{% url 'pythoncorp' %}">
-					<div class="course_inner">
-						<div>
-							 <img class="img-responsive" src="/static/images/python_corp.jpg"/>
-						</div>
-						<div class="inner_info" style="position:relative">
-						<div class="info_show" style="position:absolute; background:#eee; width:100%; height:100%;">
-						<ul>
-							<li>Object-oriented Features</li>
-							<li>Regular Expression</li>
-							<li>Threading</li>
-							<li>Testing</li>
-						</ul>
-						</div>
-						<a href="{% url 'pythoncorp' %}"> <h3>Python Corporate Course</h3> </a>
-						<p>New Batches <br/>Starting Soon</p><br/>
+			{% verbatim %}    
+			<!-- Container -->
+			<div class="container">
+				<div class="row" style="background-color: #bbbbbb;border-radius: 10px;" id="course_wrap_row">
+				<div class="" style="background-color:#fff"><h1 id="poplr">Online Courses</h1></div>
+				<!-- Angular Slick http://embed.plnkr.co/UEnsH9/ -->
+				<slick style="margin-bottom:10px;" ng-if="dataLoaded" init-onload="false" data="dataLoaded" slides-to-show="5" slides-to-scroll="4" dots="false" lazyLoad="ondemand" responsive="breakpoints" >
+				  <div class="course_wrap" ng-repeat="course in courses.results track by $index">
+					<div class="card course_inner" style="">
+						<img class="img-responsive" ng-src="{{ course.thumbnail }}" alt="Card image" style="width:100%; height: 150px;border-radius: 10px 10px 0 0;">
+						<div class="inner_info card-body" style="text-align:center;position:relative">
+						<h3 class="card-title" data-fittext data-fittext-min="10" data-fittext-max="18">{{ course.course_name }}</h3>
+						<h6 class="">{{ course.course_by.user.user.get_full_name() }}</h6>
+						<span style="font-weight: bold; font-size: 18px;">Rs.{{ course.fees }}</span> <strike style="font-weight: bold;color: #9b9b9b;font-size: 18px;">Rs.15,000</strike><br/><br/>
+								<!--<ng-rate-it ng-model="course.rating" read-only="true"></ng-rate-it>
+								{{course.rating}} Stars |
+								({{ course.no_of_ratings }}) Ratings-->
+								<!-- <a class="btn btn-warning" style="width: 100%;" href="/authentication/browse_course_details/{{ course.id }}">View</a>                                                 -->
+								<a href="#" class="btn btn-primary" style="width: 80%;" data-toggle="modal" data-target="#myModal" ng-click="select_course(course)">Quick Look</a>
 						</div>
 					</div>
-					</a>
+				  </div>
+				</slick>
 				</div>
-				<div class="col-md-3 col-sm-6 course_wrap">
-					<a href="{% url 'djangocorp' %}">
-					<div class="course_inner">
-						<div>
-							<img style="width: 100%" class="img-responsive" src="/static/images/django.jpg"/> 
-						</div>
-						<div class="inner_info" style="position:relative">
-						<div class="info_show" style="position:absolute; background:#eee; width:100%; height:100%;">
-						<ul>
-							<li>Python Web Framework</li>
-							<li>Quick Development</li>
-							<li>Model, View, Template</li>
-							<li>Object-Relational Mapper</li>
-						</ul>
-						</div>
-						<a href="{% url 'djangocorp' %}"> <h3>Django Corporate Course</h3> </a>
-						<p>New Batches <br/>Starting Soon</p><br/>
+				<hr>
+				<!-- Modal -->
+				<div class="modal fade" id="myModal" role="dialog">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+								<div class="row">
+									<div class="col-sm-2">
+										<img ng-src="{{ selected_course.thumbnail }}" alt="{{ selected_course.course_name }}" style="height: 100px; width: 100px;">
+									</div>
+									<div class="col-sm-6">
+										<h2 class="modal-title">{{ selected_course.course_name }}</h2>
+										<h4 class="modal-title">{{ selected_course.author }}</h4>
+										<ng-rate-it ng-model="selected_course.rating" read-only="true"></ng-rate-it>
+										{{selected_course.rating}} Stars |
+										({{ selected_course.no_of_ratings }}) Ratings
+									</div>
+								</div>
+							</div>
+							<div class="modal-body">
+								<div ng-hide="modules_visible">
+									<h3>Description:-</h3>
+									<p>
+										{{ selected_course.description }}
+									</p>
+									<hr>
+									<h3>Prerequisite:-</h3>
+									<p>
+										{{ selected_course.prerequisite }}
+									</p>
+									<hr>
+									<h3>Requirements:-</h3>
+									<p>
+										{{ selected_course.requirements }}
+									</p>
+								</div>
+								<div ng-show="modules_visible">
+									<h1>Course Modules</h1>
+									<div ng-repeat="each in selected_course.modules  | orderBy : 'order'">
+										<div class="row">
+											<div class="col-sm-1">
+												<h3> {{ $index + 1 }} </h3>
+											</div>
+											<div class="col-sm-5">
+												<h3> {{ each.name }} </h3>
+											</div>
+											<div class="col-sm-4">
+												<h3 ng-if="each.topics !== 'undefined'"> {{ each.topics }} </h3>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<!-- <a class="btn btn-warning" href="/authentication/browse_course_details/{{ selected_course.id }}">Subscribe</a>                         -->
+								<button type="button" class="btn btn-primary" ng-click="show_modules()">Overview</button>                        
+								<button type="button" class="btn btn-info" ng-click="add_to_cart()" ng-if="selected_course.added_to_cart === false || selected_course.added_to_cart === undefined">
+									<span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart
+								</button>           
+							</div>
 						</div>
 					</div>
-					</a>
 				</div>
-				<div class="col-md-3 col-sm-6 course_wrap">
-					<a href="{% url 'pysparkcorp' %}">
-					<div class="course_inner">
-						<div>
-							<img class="img-responsive" src="/static/images/pyspark.jpg"/> 
-						</div>
-						<div class="inner_info" style="position:relative">
-						<div class="info_show" style="position:absolute; background:#eee; width:100%; height:100%;">
-						<ul>
-							<li>Learn about Apache Spark and the Spark 2.0 architecture</li>
-							<li>Build and interact with Spark DataFrames using Spark SQL</li>
-						</ul>
-						</div>
-						<a href="{% url 'pysparkcorp' %}"><h3>PySpark and Machine Learning</h3> </a>
-						<p>New Batches <br/>Starting Soon</p><br/>
-						</div>
-					</div>
-					</a>
-				</div>
-				<div class="col-md-3 col-sm-6 course_wrap">
-					<a href="{% url 'ruby_on_railscorp' %}">
-					<div class="course_inner">
-						<div>
-							<img style="width: 100%" class="img-responsive" src="/static/images/ruby.jpg"/>
-						</div>
-						<div class="inner_info" style="position:relative">
-						<div class="info_show" style="position:absolute; background:#eee; width:100%; height:100%;">
-						<ul>
-							<li>Ruby is a dynamic, reflective, object-oriented programming language.</li>
-							<li>Rails, is a web application framework written in Ruby.</li>
-						</ul>
-						</div>
-						<a href="{% url 'ruby_on_railscorp' %}"><h3>Ruby On Rails Corporate Course</h3></a>
-						<p>New Batches <br/>Starting Soon</p></br>
-						</div>
-					</div>
-					</a>
-				</div>
-				<div class="col-md-3 col-sm-6 course_wrap">
-					<a href="{% url 'r_programmingcorp' %}">
-					<div class="course_inner">
-						<div>
-							<img class="img-responsive" src="/static/images/r_programming.jpg"/>
-						</div>
-						<div class="inner_info" style="position:relative">
-						<div class="info_show" style="position:absolute; background:#eee; width:100%; height:100%;">
-						<ul>
-							<li>R language, R-studio, and R packages</li>
-							<li>linear and logistic regression, cluster analysis and forecasting.</li>
-						</ul>
-						</div>
-						<a href="{% url 'r_programmingcorp' %}"> <h3>R Programming Corporate Course</h3></a>
-						<p>New Batches <br/>Starting Soon</p><br/>
-						</div>
-					</div>
-					</a>
-				</div>
-				<div class="col-md-3 col-sm-6 course_wrap">
-					<a href="{% url 'hadoopcorp' %}">
-					<div class="course_inner">
-						<div>
-							<img class="img-responsive" src="/static/images/hadoop1.jpg"/>
-						</div>
-						<div class="inner_info" style="position:relative">
-						<div class="info_show" style="position:absolute; background:#eee; width:100%; height:100%;">
-						<ul>
-							<li>Big data is a massive volume of structured and unstructured data.</li>
-							<li>Hadoop is an open-source framework that allows to store and process big data.</li>
-						</ul>
-						</div>
-						<a href="{% url 'hadoopcorp' %}"> <h3>Big Data & Hadoop Corporate Course</h3></a>
-						<p>New Batches <br/>Starting Soon</p><br/>
-						</div>
-					</div>
-					</a>
-				</div>
-				<div class="col-md-3 col-sm-6 course_wrap">
-					<a href="{% url 'appiumcorp' %}">
-					<div class="course_inner">
-						<div>
-							<img class="img-responsive" src="/static/images/appium.jpg"/>
-						</div>
-						<div class="inner_info" style="position:relative">
-						<div class="info_show" style="position:absolute; background:#eee; width:100%; height:100%;">
-						<ul>
-							<li>The most versatile among all other mobile automation tool</li>
-							<li>An open-source tool for automating native, mobile web, and hybrid applications on iOS and Android platforms.</li>
-						</ul>
-						</div>
-						<a href="{% url 'appiumcorp' %}"> <h3>Appium for Mobile Automation Testing</h3></a>
-						<p>New Batches <br/>Starting Soon</p><br/>
-						</div>
-					</div>
-					</a>
-				</div>
-				<div class="col-md-3 col-sm-6 course_wrap">
-					<a href="{% url 'jythoncorp' %}">
-					<div class="course_inner">
-						<div>
-							<img class="img-responsive" src="/static/images/jython.jpg"/>
-						</div>
-						<div class="inner_info" style="position:relative">
-						<div class="info_show" style="position:absolute; background:#eee; width:100%; height:100%;">
-						<ul>
-							<li>High-level, object-oriented, open-source programming language</li>
-							<li>Access Java classes and libraries and extend them</li>
-						</ul>
-						</div>
-						<a href="{% url 'jythoncorp' %}"> <h3>Jython Corporate Course</h3></a>
-						<p>New Batches <br/>Starting Soon</p><br/>
-						</div>
-					</div>
-					</a>
-				</div>
-				<div class="col-md-3 col-sm-6 course_wrap">
-					<a href="{% url 'ansiblecorp' %}">
-					<div class="course_inner">
-						<div>
-							<img class="img-responsive" src="/static/images/ansible.jpg"/>
-						</div>
-						<div class="inner_info" style="position:relative">
-						<div class="info_show" style="position:absolute; background:#eee; width:100%; height:100%;">
-						<ul>
-							<li>Software that automates software provisioning, configuration management, and application deployment. </li>
-							<li>Open source automation platform. It's simple yet powerful.</li>
-						</ul>
-						</div>
-						<a href="{% url 'ansiblecorp' %}"> <h3>Ansible Corporate Course</h3></a>
-						<p>New Batches <br/>Starting Soon</p><br/>
-						</div>
-					</div>
-					</a>
-				</div>
-				<div class="col-md-3 col-sm-6 course_wrap">
-					<a href="{% url 'mongodbcorp' %}">
-					<div class="course_inner">
-						<div>
-							<img class="img-responsive" src="/static/images/mongodb1.png"/>
-						</div>
-						<div class="inner_info" style="position:relative">
-						<div class="info_show" style="position:absolute; background:#eee; width:100%; height:100%;">
-						<ul>
-							<li>NoSQL database, empowering businesses to be more agile and scalable.</li>
-							<li>an open-source database used by companies of all sizes</li>
-						</ul>
-						</div>
-						<a href="{% url 'mongodbcorp' %}"> <h3>MongoDB Corporate Course</h3></a>
-						<p>New Batches <br/>Starting Soon</p><br/>
-						</div>
-					</div>
-					</a>
-				</div>
-				<div class="col-md-3 col-sm-6 course_wrap">
-					<a href="{% url 'devopscorp' %}">
-					<div class="course_inner">
-						<div>
-							<img class="img-responsive" src="/static/images/devops.jpg"/>
-						</div>
-						<div class="inner_info" style="position:relative">
-						<div class="info_show" style="position:absolute; background:#eee; width:100%; height:100%;">
-						<ul>
-							<li>Ruby is a dynamic, object-oriented programming language</li>
-							<li>DevOps is a software engineering culture and practice that aims at unifying software development and software operation.</li>
-						</ul>
-						</div>
-						<a href="{% url 'devopscorp' %}"> <h3>Ruby and DevOps Corporate Course</h3></a>
-						<p>New Batches <br/>Starting Soon</p><br/>
-						</div>
-					</div>
-					</a>
-				</div>
-				<div class="col-md-3 col-sm-6 course_wrap">
-					<a href="{% url 'sparkscalacorp' %}">
-					<div class="course_inner">
-						<div>
-							<img class="img-responsive" src="/static/images/sparkscala.jpg"/>
-						</div>
-						<div class="inner_info" style="position:relative">
-						<div class="info_show" style="position:absolute; background:#eee; width:100%; height:100%;">
-						<ul>
-							<li>Scala is a general-purpose programming language providing support for functional programming</li>
-							<li>Spark is an open source computing framework up to 100 times faster than Mapreduce</li>
-						</ul>
-						</div>
-						<a href="{% url 'sparkscalacorp' %}"> <h3>Spark with Scala Corporate Course</h3></a>
-						<p>New Batches <br/>Starting Soon</p><br/>
-						</div>
-					</div>
-					</a>
-				</div>
-				
-					</a>
+				<!-- End Modal -->
 			</div>
-			<hr/>
-			<hr/>
-			</div>
+			<!-- End Container -->
+			{% endverbatim %}
 		</div>
 		<a href="#"><h3 style="text-align:center; color:#0464BB; text-decoration:underline;"> View all courses</h3></a></br>
-		</div>
 		<div style="background: #dddddd none repeat scroll 0 0;">
 		<div class="container" style="background: #bbb none repeat scroll 0 0;">
 		<div class="row">
 			<div class="col-md-6">
 				<div id="screen1"><div id="lap_screen">
-					  <video class="afterglow" width="420" height="260" poster="/static/images/main_logo.png" data-overscale="false" data-autoresize="fit" data-skin="dark">
-					      <source type="video/mp4" src="/media/Videos/Surendra%20Panpaliya/Python%20selenium/Built_in_functions2.mp4" />
+					  <video class="afterglow" width="420" height="260" poster="/static/images/main_logo.png" data-overscale="false" data-autoresize="fit" data-skin="dark" controls >
+					      <source src="/media/Videos/Surendra%20Panpaliya/Python%20selenium/Built_in_functions2.mp4?raw=true" type="video/mp4" />
 					  </video></div>
 				</div>
 			</div>
@@ -2078,18 +2128,38 @@ background:#eee;
 						</div>
 						</div>
 					</div>
-		<div class="load-modal"></div>
-		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<button type="button" style="position: fixed; bottom: 15px; left: 35px;"class="btn btn-info btn-lg" data-toggle="modal" data-target="#myChatModal">Chat Now</button>
+
+    <div id="myChatModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+        
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Chat Support</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="chatbox">
+                        <div class="chatlogs" style="height: 340px;">
+                            <div class="chat friend">
+                                <div class="user-photo"></div>
+                                <p class="chat-message">Hello! How can I help you?</p>
+                            </div>
+                        </div>
+                        <div class="chat-form">
+                            <textarea id="chat_input"></textarea>
+                            <button>Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+    </div>
 		<!-- Latest compiled and minified JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 		<script type="text/javascript" src="/static/js/ajax.js"></script>
-		<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script> 
-		<script>
-		$(window).load(function() {
-			$(".load-modal").fadeOut("fast");
-		})
-		</script>
+
 		<script>
 		$(function(){
 
@@ -2131,28 +2201,55 @@ background:#eee;
         {% endif %}		
 		</script>
 		<script>
-		$(document).ready(function () {
-			$(form).on('submit', function(e) {
-				e.preventDefault();
-				$.ajax({
-					url : $(this).attr('action') || window.location.pathname,
-					type: "GET",
-					data: $(this).serialize(),
-					success: function (data) {
-						$("#form_output").html(data);
-					},
-					error: function (jXHR, textStatus, errorThrown) {
-						alert(errorThrown);
-					}
-				});
-			});
-		});
-		</script>
-		<script>
 		$(document).ready(function(){
 			$('[data-toggle="tooltip"]').tooltip();   
 		});
 		</script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+			  $('.course_carousel2').slick({
+			      lazyLoad: 'ondemand',
+				  infinite: true,
+				  slidesToShow: 5,
+				  slidesToScroll: 3,
+				  mobileFirst:true,
+				  dots: false,
+					responsive: [
+					{
+					  breakpoint: 1024,
+					  settings: {
+						slidesToShow: 3,
+						slidesToScroll: 3,
+						infinite: true,
+						dots: true
+					  }
+					},
+					{
+					  breakpoint: 600,
+					  settings: {
+						slidesToShow: 2,
+						slidesToScroll: 2
+					  }
+					},
+					{
+					  breakpoint: 480,
+					  settings: {
+						slidesToShow: 2,
+						slidesToScroll: 2
+					  }
+					}
+					// You can unslick at a given breakpoint now by adding:
+					// settings: "unslick"
+					// instead of a settings object
+				  ]
+			  });
+			});
+		</script>
+<!-- begin olark code -->
+<script type="text/javascript" async> ;(function(o,l,a,r,k,y){if(o.olark)return; r="script";y=l.createElement(r);r=l.getElementsByTagName(r)[0]; y.async=1;y.src="//"+a;r.parentNode.insertBefore(y,r); y=o.olark=function(){k.s.push(arguments);k.t.push(+new Date)}; y.extend=function(i,j){y("extend",i,j)}; y.identify=function(i){y("identify",k.i=i)}; y.configure=function(i,j){y("configure",i,j);k.c[i]=j}; k=y._={s:[],t:[+new Date],c:{},l:a}; })(window,document,"static.olark.com/jsclient/loader.js");
+/* custom configuration goes here (www.olark.com/documentation) */
+olark.identify('4329-109-10-8084');</script>
+<!-- end olark code -->
 		
 	</body>
 </html>

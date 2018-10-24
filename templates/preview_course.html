@@ -97,6 +97,12 @@
 								<li>{{ module.topics}}</li> 
 							</ul>
 							<div class="row">
+								{% if module.Presentation %}
+									<div class="col-md-3"><a href="{{ module.Presentation.url}}" class="btn btn-primary html5lightbox"><i class="far fa-file-powerpoint"></i> Presentation</a></div>
+								{% endif %}
+								{% if module.labsession %}
+								<div class="col-md-3"><a href="{{ module.labsession.url}}" class="btn btn-primary html5lightbox"><i class="far fa-file-alt"></i> Lab Session</a></div>
+								{% endif %}
 								{% if module.video %}
 								<div class="col-md-3">  
 									<a href="#myvideo{{ module.id }}" class="afterglow btn btn-primary"><i class="far fa-play-circle"></i> Video</a>
@@ -105,8 +111,14 @@
 									</video>
 								</div>
 								{% endif %}
-								{% if module.Presentation %}
-									<div class="col-md-3"><a href="{{ module.Presentation.url}}" class="btn btn-primary html5lightbox"><i class="far fa-file-powerpoint"></i> Presentation</a></div>
+								{% if module.reference1 %}
+								<div class="col-md-3"><a href="{{ module.reference1.url}}" class="btn btn-primary html5lightbox"><i class="far fa-file-alt"></i> Reference 1</a></div>
+								{% endif %}
+								{% if module.reference2 %}
+								<div class="col-md-3"><a href="{{ module.reference2.url}}" class="btn btn-primary html5lightbox"><i class="far fa-file-alt"></i> Reference 2</a></div>
+								{% endif %}
+								{% if module.reference3 %}
+								<div class="col-md-3"><a href="{{ module.reference3.url}}" class="btn btn-primary html5lightbox"><i class="far fa-file-alt"></i> Reference 3</a></div>
 								{% endif %}
 								{% if module.Assignment %}
 								<div class="col-md-3"><a href="{{ module.Assignment.url}}" class="btn btn-primary html5lightbox"><i class="far fa-file-alt"></i> Assignment</a></div>
