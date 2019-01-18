@@ -74,8 +74,8 @@
     <!-- CSS Files -->
     <link href="/static/assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/static/assets/css/now-ui-dashboard.css?v=1.0.1" rel="stylesheet" />
-	<script src="/static/assets/js/core/jquery.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!--<script src="/static/assets/js/core/jquery.min.js"></script>-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script src="/static/js/jquery.formset.js"></script>
     <script src="{% static 'js/notify.js' %}" type="text/javascript"></script>
 {% register_notify_callbacks callbacks='fill_notification_list,fill_notification_badge' %}
@@ -135,6 +135,12 @@
                         <a href="{% url 'submitted_assignments' %}">
                             <i class="fas fa fa-file-code"></i>
                             <p>Submitted Assignments</p>
+                        </a>
+                    </li>
+					<li id="int_profiles">
+                        <a href="{% url 'submitted_int_profiles' %}">
+                            <i class="now-ui-icons files_single-copy-04"></i>
+                            <p>Intern Profiles</p>
                         </a>
                     </li>
 					<li id="promocode">
@@ -262,8 +268,8 @@
 <script src="/static/assets/js/plugins/bootstrap-notify.js"></script>
 <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
 <script src="/static/assets/js/now-ui-dashboard.js?v=1.0.1"></script>
-<!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
-<script src="/static/assets/demo/demo.js"></script>
+<!-- Now Ui Dashboard DEMO methods, don't include it in your project! 
+<script src="/static/assets/demo/demo.js"></script>-->
 <script type="text/javascript">
     $('.confirm_delete').on('click', function () {
         return confirm('Are you sure you want to delete ?');

@@ -1,0 +1,184 @@
+﻿- - What is Python?
+  - Python is a high-level, interpreted, interactive and object oriented scripting language.
+- - Is python a case sensitive language?
+  - Yes! Python is a case sensitive programming language.
+- - What is tuples in Python?
+  - A tuple is another sequence data type that is similar to the list. A tuple consists of a number of values separated by commas. Unlike lists, however, tuples are enclosed within parentheses. 
+- - What is the difference between tuples and lists in Python?
+  - The main differences between lists and tuples are − Lists are enclosed in brackets ( [ ] ) and their elements and size can be changed, while tuples are enclosed in parentheses ( ( ) ) and cannot be updated. Tuples can be thought of as read-only lists.
+- - What is PEP 8?
+  - PEP 8 is a coding convention, a set of recommendation, about how to write your Python code more readable.
+- - What is pickling and unpickling?
+  - Pickle module accepts any Python object and converts it into a string representation and dumps it into a file by using dump function, this process is called pickling. While the process of retrieving original Python objects from the stored string representation is called unpickling.
+- - How Python is interpreted?
+  - Python language is an interpreted language. Python program runs directly from the source code. It converts the source code that is written by the programmer into an intermediate language, which is again translated into machine language that has to be executed.
+- - How memory is managed in Python?
+  - Python memory is managed by Python private heap space. All Python objects and data structures are located in a private heap. The programmer does not have an access to this private heap and interpreter takes care of this Python private heap.
+- - What are the tools that help to find bugs or perform static analysis?
+  - PyChecker is a static analysis tool that detects the bugs in Python source code and warns about the style and complexity of the bug. Pylint is another tool that verifies whether the module meets the coding standard.
+- - What are Python decorators?
+  - A Python decorator is a specific change that we make in Python syntax to alter functions easily
+- - What is the difference between list and tuple?
+  - The difference between list and tuple is that list is mutable while tuple is not. Tuple can be hashed for e.g as a key for dictionaries.
+- - How are arguments passed by value or by reference?
+  - Everything in Python is an object and all variables hold references to the objects. The references values are according to the functions; as a result you cannot change the value of the references. However, you can change the objects if it is mutable.
+- - What is Dict and List comprehensions are?
+  - They are syntax constructions to ease the creation of a Dictionary or List based on existing iterable.
+- - What are the built-in type does python provides?
+  - There are mutable and Immutable types of Pythons built in types.
+- - What is namespace in Python?
+  - In Python, every name introduced has a place where it lives and can be hooked for. This is known as namespace. It is like a box where a variable name is mapped to the object placed. Whenever the variable is searched out, this box will be searched, to get corresponding object.
+- - What is lambda in Python?
+  - It is a single expression anonymous function often used as inline function.
+- - Why lambda forms in python does not have statements?
+  - A lambda form in python does not have statements as it is used to make new function object and then return them at runtime.
+- - What is pass in Python?
+  - Pass means, no-operation Python statement, or in other words it is a place holder in compound statement, where there should be a blank left and nothing has to be written there.
+- - In Python what are iterators?
+  - In Python, iterators are used to iterate a group of elements, containers like list.
+- - What is unittest in Python?
+  - A unit testing framework in Python is known as unittest. It supports sharing of setups, automation testing, shutdown code for tests, aggregation of tests into collections etc.
+- - In Python what is slicing?
+  - A mechanism to select a range of items from sequence types like list, tuple, strings etc. is known as slicing.
+- - What are generators in Python?
+  - The way of implementing iterators are known as generators. It is a normal function except that it yields expression in the function.
+- - What is docstring in Python?
+  - A Python documentation string is known as docstring, it is a way of documenting Python functions, modules and classes.
+- - How can you copy an object in Python?
+  - To copy an object in Python, you can try copy.copy () or copy.deepcopy() for the general case. You cannot copy all objects but most of them.
+- - What is negative index in Python?
+  - Python sequences can be index in positive and negative numbers. For positive index, 0 is the first index, 1 is the second index and so forth. For negative index, (-1) is the last index and (-2) is the second last index and so forth.
+- - How you can convert a number to a string?
+  - In order to convert a number into a string, use the inbuilt function str(). If you want a octal or hexadecimal representation, use the inbuilt function oct() or hex().
+- - What is the difference between Xrange and range?
+  - Xrange returns the xrange object while range returns the list, and uses the same memory and no matter what the range size is.
+- - What is module and package in Python?
+  - In Python, module is the way to structure program. Each Python program file is a module, which imports other modules like objects and attributes.
+- - Mention what are the rules for local and global variables in Python?
+  - Local variables: If a variable is assigned a new value anywhere within the function's body, it's assumed to be local. Global variables: Those variables that are only referenced inside a function are implicitly global.
+- - How can you share global variables across modules?
+  - To share global variables across modules within a single program, create a special module. Import the config module in all modules of your application. The module will be available as a global variable across modules.
+- - Explain how can you make a Python Script executable on Unix?
+  - To make a Python Script executable on Unix, you need to do two things, Script file's mode must be executable and the first line must begin with # ( #!/usr/local/bin/python)
+- - Explain how to delete a file in Python?
+  - By using a command os.remove (filename) or os.unlink(filename)
+- - Mention the use of // operator in Python?
+  - It is a Floor Divisionoperator , which is used for dividing two operands with the result as quotient showing only digits before the decimal point. For instance, 10//5 = 2 and 10.0//5.0 = 2.0.
+- - Mention the use of the split function in Python?
+  - The use of the split function in Python is that it breaks a string into shorter strings using the defined separator. It gives a list of all words present in the string.
+- - Explain what is Flask & its benefits?
+  - Flask is a web micro framework for Python based on "Werkzeug, Jinja 2 and good intentions" BSD licensed. Werkzeug and jinja are two of its dependencies.
+- - What can Python do?
+  - Python can be used on a server to create web applications.Python can be used alongside software to create workflows.Python can connect to database systems. It can also read and modify files.Python can be used to handle big data and perform complex mathematics.Python can be used for rapid prototyping, or for production-ready software development.
+- - What are the data types in Python?
+  - Python has five standard data types − 1) Numbers <br />2) String <br /> 3) List <br /> 4 ) Tuple <br /> 5) Dictionary
+- - What is Numbers in Python ?
+  - Number data types store numeric values. Number objects are created when you assign a value to them. For example −<br /> var1 = 1 <br /> var2 = 10
+- - What are numerical types in Python?
+  - int (signed integers) <br />long (long integers, they can also be represented in octal and hexadecimal) <br />float (floating point real values)<br />complex (complex numbers)
+- - What is string in Python?
+  - Strings in Python are identified as a contiguous set of characters represented in the quotation marks. Python allows for either pairs of single or double quotes.
+- - What is list in Python?
+  - Lists are the most versatile of Python's compound data types. Lists are collections of items (strings, integers, or even other lists) separated by commas and enclosed within square brackets ([]).<br />Example:  thislist = ["apple", "banana", "cherry"]
+- - What is tuple in Python ?
+  - A tuple is a collection which is ordered and unchangeable. In Python tuples are written with round brackets.<br />Example: thistuple = ("apple", "banana", "cherry")
+- - What is set in Python?
+  - A set is a collection which is unordered and unindexed. In Python sets are written with curly brackets.<br />Example: my_set = {"apple", "banana", "cherry"}
+- - What is dictionary in Python?
+  - A dictionary is a collection which is unordered, changeable and indexed. In Python dictionaries are written with curly brackets, and they have keys and values.<br />Example: thisdict =	{  "brand": "Ford",  "model": "Mustang",  "year": 1964}
+- - What is operator in Python?
+  - Python language supports the following types of operators.<br />Arithmetic Operators<br /> Comparison (Relational) Operators <br />Assignment Operators <br />Logical Operators<br />Bitwise Operators<br />Membership Operators</br >Identity Operators
+- - What is decision Making in Python?
+  - Decision making is anticipation of conditions occurring while execution of the program and specifying actions taken according to the conditions.<br />Python programming language provides following types of decision making statements.<br />1. if statement<br />2. if...else statements<br />3. nested if statements
+- - What is loops in Python?
+  - A loop statement allows us to execute a statement or group of statements multiple times.<br />Python programming language provides following types of loops to handle looping requirements.<br />1.while loop<br />2.for loop<br />3. nested loops
+- - What is while loop in Python?
+  - While Loop repeats a statement or group of statements while a given condition is TRUE. It tests the condition before executing the loop body.
+- - What is for loop in Python?
+  - For Loop executes a sequence of statements multiple times and abbreviates the code that manages the loop variable.
+- - What is nested loops in Python?
+  - You can use one or more loop inside any another while, for or do..while loop.
+- - What is Loop Control Statements in Python?
+  - Loop control statements change execution from its normal sequence. When execution leaves a scope, all automatic objects that were created in that scope are destroyed.<br />Python supports the following control statements.<br />break statement<br />continue statement<br />pass statement
+- - What is break statement in Python?
+  - Terminates the loop statement and transfers execution to the statement immediately following the loop.
+- - What is continue statement in Python?
+  - Causes the loop to skip the remainder of its body and immediately retest its condition prior to reiterating.
+- - What is pass statement in Python?
+  - The pass statement in Python is used when a statement is required syntactically but you do not want any command or code to execute.
+- - What is  Indentation in Python?
+  - Python relies on indentation, using whitespace, to define scope in the code. Other programming languages often use curly-brackets for this purpose.
+- - What is Python Functions?
+  - A function is a block of code which only runs when it is called.You can pass data, known as parameters, into a function.A function can return data as a result.
+- - What is Functions in Python?
+  - A function is a block of code which only runs when it is called.You can pass data, known as parameters, into a function.A function can return data as a result.
+- - What is Lambda Function in Python?
+  - A lambda function is a small anonymous function.<br />A lambda function can take any number of arguments, but can only have one expression.<br />Syntax:   lambda arguments : expression<br />Example:  x = lambda a : a + 10
+- - What are Lists in Python?
+  - Lists are the most versatile of Python's compound data types. Lists are collections of items (strings, integers, or even other lists) separated by commas and enclosed within square brackets ([]).<br />Example:  thislist = ["apple", "banana", "cherry"]
+- - What are Tuples in Python ?
+  - A tuple is a collection which is ordered and unchangeable. In Python tuples are written with round brackets.<br />Example: thistuple = ("apple", "banana", "cherry")
+- - What is a Set in Python?
+  - A set is a collection which is unordered and unindexed. In Python sets are written with curly brackets.<br />Example: thisset = {"apple", "banana", "cherry"}
+- - What is a Dictionary in Python?
+  - A dictionary is a collection which is unordered, changeable and indexed. In Python dictionaries are written with curly brackets, and they have keys and values.<br />Example: thisdict =	{  "brand": "Ford",  "model": "Mustang",  "year": 1964}
+- - What is a Variable in Python?
+  - A Python variable is a reserved memory location to store values. In other words, a variable in a python program gives data to the computer for processing. Every value in Python has a datatype. Different data types in Python are Numbers, List, Tuple, Strings, Dictionary, etc. Variables can be declared by any name or even alphabets like a, aa, abc, etc.
+- - How to Declare and use a Variable in Python?
+  - Let see an example. We will declare variable "a" and print it.<br />a=100 <br />print (a)
+- - What is Module in Python?
+  - A module allows you to logically organize your Python code. Grouping related code into a module makes the code easier to understand and use. A module is a Python object with arbitrarily named attributes that you can bind and reference.
+- - What is class in Python?
+  - Class is a user-defined prototype for an object that defines a set of attributes that characterize any object of the class. The attributes are data members (class variables and instance variables) and methods, accessed via dot notation.
+- - What is class variable in Python?
+  - Class variable is a variable that is shared by all instances of a class. Class variables are defined within a class but outside any of the class's methods. Class variables are not used as frequently as instance variables are.
+- - What is data member in Python?
+  - Data member is a class variable or instance variable that holds data associated with a class and its objects.
+- - What is function overloading in Python?
+  - The assignment of more than one behavior to a particular function. The operation performed varies by the types of objects or arguments involved.
+- - What is instance variable in Python?
+  - Instance variable is a variable that is defined inside a method and belongs only to the current instance of a class.
+- - What is inheritance in Python? 
+  - The transfer of the characteristics of a class to other classes that are derived from it.
+- - What is Instance in Python?
+  - Instance is an individual object of a certain class. An object obj that belongs to a class Circle, for example, is an instance of the class Circle.
+- - What is Instantiation in Python? 
+  - Instantiation is the creation of an instance of a class.
+- - What is method in Python? 
+  - Method is a special kind of function that is defined in a class definition.
+- - What is object in Python? 
+  - Object is a unique instance of a data structure that's defined by its class. An object comprises both data members (class variables and instance variables) and methods.
+- - What is operator overloading in Python? 
+  - Operator overloading means the assignment of more than one function to a particular operator.
+- - What is Regular Expressions in Python?
+  - A regular expression is a special sequence of characters that helps you match or find other strings or sets of strings, using a specialized syntax held in a pattern.
+- - How do I obtain a copy of the Python source?
+  - The latest Python source distribution is always available from python.org, at https://www.python.org/downloads/. The latest development sources can be obtained at https://github.com/python/cpython/.
+- - How do I get documentation on Python?
+  - The standard documentation for the current stable version of Python is available at https://docs.python.org/3/. PDF, plain text, and downloadable HTML versions are also available at https://docs.python.org/3/download.html.
+- - What is The range() Function?
+  - If you do need to iterate over a sequence of numbers, the built-in function range() comes in handy. It generates arithmetic progressions.<br />Example: for i in range(5)
+- - What are function Default Argument Values?
+  - The most useful form is to specify a default value for one or more arguments. This creates a function that can be called with fewer arguments than it is defined to allow.
+- - How to Use Lists as Stacks in Python?
+  - The list methods make it very easy to use a list as a stack, where the last element added is the first element retrieved (“last-in, first-out”). To add an item to the top of the stack, use append(). To retrieve an item from the top of the stack, use pop() without an explicit index.
+- - What is List Comprehensions in Python?
+  - List comprehensions provide a concise way to create lists. Common applications are to make new lists where each element is the result of some operations applied to each member of another sequence or iterable, or to create a subsequence of those elements that satisfy a certain condition.
+- - What is Nested List Comprehensions?
+  - The initial expression in a list comprehension can be any arbitrary expression, including another list comprehension.
+- - What is the del statement ?
+  - There is a way to remove an item from a list given its index instead of its value: the del statement. This differs from the pop() method which returns a value. The del statement can also be used to remove slices from a list or clear the entire list (which we did earlier by assignment of an empty list to the slice).
+- - What is Standard Modules in Python?
+  - Python comes with a library of standard modules, described in a separate document, the Python Library Reference (“Library Reference” hereafter). Some modules are built into the interpreter; these provide access to operations that are not part of the core of the language but are nevertheless built in, either for efficiency or to provide access to operating system primitives such as system calls.
+- - What is The dir() Function?
+  - The built-in function dir() is used to find out which names a module defines. It returns a sorted list of strings.
+- - How to Create Date Objects in Python?
+  - To create a date, we can use the datetime() class (constructor) of the datetime module. The datetime() class requires three parameters to create a date: year, month, day.
+- - What is Python JSON?
+  - JSON is a syntax for storing and exchanging data. JSON is text, written with JavaScript object notation.
+- - What is virtual environment in Python?
+  - A cooperatively isolated runtime environment that allows Python users and applications to install and upgrade Python distribution packages without interfering with the behaviour of other Python applications running on the same system.
+- - What is a Package?
+  - A package contains all the files you need for a module.Modules are Python code libraries you can include in your project.
+- - What is PIP in Python?
+  - pip is a package management system used to install and manage software packages written in Python. Many packages can be found in the default source for packages and their dependencies. Python 2.7.9 and later (on the python2 series), and Python 3.4 and later include pip (pip3 for Python 3) by default.

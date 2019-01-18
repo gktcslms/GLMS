@@ -1,0 +1,178 @@
+{% extends "base_dashboard.html" %}    <!-- 
+	<title>Surendra Panpaliya</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="http://gktcs.com/GLMS/public/static/images/favicon.ico" type="image/x-icon" /> 
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> 
+	<link id="theme-style" rel="stylesheet" href="http://gktcs.com/GLMS/public/static/css/p_style.css">
+    -->
+{% block head %}
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+	<link id="theme-style" rel="stylesheet" href="http://gktcs.com/GLMS/public/static/css/p_style.css">
+    <script src="/static/html5lightbox/html5lightbox.js"></script>
+<style>
+    	.rowss{
+		    margin-top:40px;
+		    padding: 0 10px;
+		}
+		.panel-primary>.panel-heading{
+			background-image: linear-gradient(to bottom,#00a4cb 0,#00a4cb 100%) !important;
+		}
+		.clickable{
+		    cursor: pointer;   
+		}
+
+		.panel-heading div {
+			margin-right: 10px;
+		}
+		.filter-btn{
+			position: absolute;
+			margin-top: -47px;
+			right: 23px;
+		}
+		.panel-body{
+			display: none;
+		}
+		.panel-primary {
+			border-color: #00a4cb !important;
+		}
+		.panel-heading div span {
+			
+		}
+		.table > thead > tr > th {
+			border-bottom-width: 1px;
+			font-size: 1.0em;
+			font-weight: 700;
+			border: 0;
+		}
+		.table > tbody > tr > td {
+			font-size: 14px;
+		}
+		.panel-body {
+			padding: 0px 15px 10px 15px;
+		}
+		@media only screen and (max-width: 780px) {
+			.tbldiv {
+				margin-top: 20px;
+			}
+		}
+		label{color:white}
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- https://bootsnipp.com/snippets/43W9 filter table-->
+	<div class="container">
+    	<div class="card">
+			<div class="tbldiv">
+				<div class="panel">
+					<div class="panel-heading" style="font-family: inherit !important;">
+						<div class="card-header " style="">
+							<h5 class="title">SUBMITTED ASSIGNMENTS</h5>
+								<span class="clickable filter btn btn-primary filter-btn" data-toggle="tooltip" title="Toggle table filter" data-container="body">
+									Filter <i class="fas fa-filter"></i>
+								</span>
+						</div>
+					</div>
+					<div class="panel-body">
+						<input type="text" class="form-control" id="dev-table-filter" data-action="filter" data-filters="#dev-table" placeholder="Filter Details" />
+					</div>
+					<div style="overflow-x: auto; max-height:450px">
+					<table class="table table-hover" id="dev-table">
+						<thead>
+							<tr><th>#</th>
+								<th>Date Time</th>
+								<th>Name</th>
+								<th>Contact No.</th>
+								<th>Email ID</th>
+								<th>Institute</th>
+								<th>Details</th>
+								<th>Uploaded Assignment</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for p in profile reversed %}
+							<tr>
+							<td>{{forloop.counter }}</td>
+							<td>{{p.date}} </td>
+							<td>{{p.user.first_name}} {{p.user.last_name}} </td>
+							<td>{{p.mobile}}</td>
+							<td><a style="color:#0000EE" href="mailto:{{i.email}}">{{p.user.email}}</a></td>
+							<td>{{p.institute}}</td>
+							<td>{{p.des}}</td>
+							<td style="text-align:center">
+								{% if p.resume  %}
+									<a target="_blank" class="btn btn-primary html5lightbox" href="{{p.resume.url}}">View Profile</a>
+								{% else %}
+									NA
+								{% endif %}
+							</td>						
+							</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}	
+{% block lower %}
+
+<script>
+(function(){
+    'use strict';
+	var $ = jQuery;
+	$.fn.extend({
+		filterTable: function(){
+			return this.each(function(){
+				$(this).on('keyup', function(e){
+					$('.filterTable_no_results').remove();
+					var $this = $(this), 
+                        search = $this.val().toLowerCase(), 
+                        target = $this.attr('data-filters'), 
+                        $target = $(target), 
+                        $rows = $target.find('tbody tr');
+                        
+					if(search == '') {
+						$rows.show(); 
+					} else {
+						$rows.each(function(){
+							var $this = $(this);
+							$this.text().toLowerCase().indexOf(search) === -1 ? $this.hide() : $this.show();
+						})
+						if($target.find('tbody tr:visible').size() === 0) {
+							var col_count = $target.find('tr').first().find('td').size();
+							var no_results = $('<tr class="filterTable_no_results"><td colspan="'+col_count+'">No results found</td></tr>')
+							$target.find('tbody').append(no_results);
+						}
+					}
+				});
+			});
+		}
+	});
+	$('[data-action="filter"]').filterTable();
+})(jQuery);
+</script>
+
+<script>
+$(function(){
+    // attach table filter plugin to inputs
+	$('[data-action="filter"]').filterTable();
+	
+	$('.container').on('click', '.panel-heading span.filter', function(e){
+		var $this = $(this), 
+			$panel = $this.parents('.panel');
+		
+		$panel.find('.panel-body').slideToggle();
+		if($this.css('display') != 'none') {
+			$panel.find('.panel-body input').focus();
+		}
+	});
+	$('[data-toggle="tooltip"]').tooltip();
+})
+</script>
+<script>
+$("#int_profiles").addClass("active");
+</script>
+{% endblock %}

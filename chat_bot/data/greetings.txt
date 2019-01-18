@@ -2,9 +2,21 @@ Hi
 Hello
 Hello
 Hi
-Thankyou
-Welcome
-Hi, How is it going?
-Good
-Hi, How is it going?
-Fine
+hi
+hello
+hello
+hi
+- - Hi, How is it going?
+  - Great
+- - How are you doing?
+  - Good.
+- - How are you?
+  - Very well, thankyou
+- - Nice to meet you.
+  - Thank you.
+- - How do you do?
+  - I'm doing well. How are you?
+- - It is a pleasure to meet you.
+  - Thank you. You too.
+- - What's up?
+  - Not much

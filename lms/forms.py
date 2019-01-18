@@ -153,6 +153,11 @@ class userprofileForm(ModelForm):
     class Meta:
         model = userprofile
         fields = ['mobile', 'linkedin_id', 'picture','city', 'des'] 
+
+class intern_profileForm(ModelForm):
+    class Meta:
+        model = intern_profile
+        fields = ['mobile', 'linkedin_id', 'picture','city', 'des','institute','country','resume']
 		
 #class UserProfileForm(ModelForm):
 #    class Meta:
@@ -172,6 +177,7 @@ class CommonRegistrationForm(forms.Form):
     email = forms.EmailField(required=True, validators=[validate_email, existing_email_validator])  
     password = forms.CharField(widget=forms.PasswordInput, required=True)
     REGISTRATION_CHOICES = (
+        ('Intern', 'Intern'),
         ('Learner', 'Learner'),
         ('Trainer', 'Trainer'),
         ('Vendor', 'Vendor'),

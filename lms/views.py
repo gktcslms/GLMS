@@ -249,6 +249,12 @@ def my_login(request):
                 last_name = request.user.last_name
                 name = first_name+ " " +last_name
                 if custom_user is not None:
+                    if str(custom_user.primary_registration_type) == "Intern":
+                        if next:
+                            notify.send(user, recipient=qs, verb=name +' (Intern) Login.')
+                            return HttpResponseRedirect(next) 
+                        notify.send(user, recipient=qs, verb=name +' (Intern) Login.')					
+                        return HttpResponseRedirect("/intern_dashboard/")
                     if str(custom_user.primary_registration_type) == "Trainer":
                         if next:
                             notify.send(user, recipient=qs, verb=name +' (Trainer) Login.')
@@ -685,22 +691,24 @@ def myprofileview(request, user_id, template_name='myprofile.html'):
         save_it.save()
     return render(request, template_name, {'form':form})
 
+
 @login_required(login_url='/authentication/login/')
-def learner_profileview(request, user_id, template_name='learner_profile.html'):
-    u = userprofile.objects.all()
+def intern_profileview(request, user_id, template_name='intern_profile.html'):
+    u = intern_profile.objects.all()
     try:
         if request.user.is_superuser:
-            up = get_object_or_404(userprofile, user_id=user_id)
+            ip = get_object_or_404(intern_profile, user_id=user_id)
         else:
-            up = get_object_or_404(userprofile, user_id=user_id, user=request.user)   
+            ip = get_object_or_404(intern_profile, user_id=user_id, user=request.user)   
     except:
-        up = userprofile(user=request.user)    
-    form = userprofileForm(request.POST or None, instance=up)
+        ip = intern_profile(user=request.user)    
+    form = intern_profileForm(request.POST or None, instance=ip)
     if form.is_valid():
         save_it = form.save(commit=False)
+        save_it.resume = request.FILES.get('resume', save_it.resume)
         save_it.picture = request.FILES.get('picture', save_it.picture)
         save_it.save()
-    return render(request, template_name, {'form':form})
+    return render(request, template_name, {"form":form,"ip":ip})
 
 def search_titles(request):
     if request.method == "POST" and request.POST:
@@ -1275,6 +1283,10 @@ def trainer_dashboard_view(request):
 @login_required(login_url='/authentication/login/')	
 def learner_dashboard_view(request):
     return render(request, 'learner_dashboard.html',locals())
+
+@login_required(login_url='/authentication/login/')	
+def intern_dashboard_view(request):
+    return render(request, 'intern_dashboard.html',locals())
 	
 @login_required(login_url='/authentication/login/')	
 def vendor_dashboard_view(request):
@@ -1577,6 +1589,8 @@ def my_dashboard(request, course_id=None):
     custom_user = get_object_or_404(Custom_User, user=user)
     if custom_user.primary_registration_type == "Trainer":
         return HttpResponseRedirect("/trainer_dashboard/")
+    elif custom_user.primary_registration_type == "Intern":
+        return HttpResponseRedirect("/intern_dashboard/")
     else:
         return HttpResponseRedirect("/learner_dashboard/")
 	
@@ -1970,6 +1984,11 @@ def submit_assignment_form_view(request):
 def submitted_assignment_view(request):
     submissions = submitted_assignment.objects.all()
     return render(request, 'submitted_assignment.html',locals())
+
+@login_required(login_url='/authentication/login/')
+def submitted_int_profile_view(request):
+    profile = intern_profile.objects.all()
+    return render(request, 'submitted_intern_profile.html',locals())
 
 @login_required(login_url='/authentication/login/')
 def my_assignments_view(request):

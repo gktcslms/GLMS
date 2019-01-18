@@ -18,6 +18,21 @@ class userprofile(models.Model):
     def get_absolute_url(self):
         return reverse('myprofile', kwargs={'user_id': self.request.user.pk})
 
+class intern_profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    date = models.DateTimeField(default=dt.now)
+    mobile = models.BigIntegerField(blank=True, null=True)
+    linkedin_id = models.CharField(max_length=60, blank=True)
+    picture = models.ImageField(upload_to = 'images/profile_pics', blank=True, null=True)
+    institute = models.CharField(max_length=50, blank=True) 	
+    city = models.CharField(max_length=15, blank=True)	
+    country = models.CharField(max_length=15, blank=True)	
+    des = models.TextField(blank=True)
+    resume = models.FileField(upload_to='documents/intern_resume/', blank=True)
+    
+    def get_absolute_url(self):
+        return reverse('intern_profile', kwargs={'user_id': self.request.user.pk})
+
 class select_module(models.Model):
     date = models.DateTimeField(default=dt.now, blank=True)
     name = models.CharField(max_length=200)
@@ -138,6 +153,7 @@ class Custom_User(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     mobile = PhoneNumberField()
     REGISTRATION_CHOICES = (
+        ('Intern', 'Intern'),
         ('Learner', 'Learner'),
         ('Trainer', 'Trainer'),
         ('Vendor', 'Vendor'),

@@ -51,6 +51,7 @@ DEFAULT_FROM_EMAIL = 'GKTCS Support <gktcslms@gmail.com>'
 INSTALLED_APPS = [
     'django.contrib.sites',
     'registration',
+    #'grapelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -69,8 +70,6 @@ INSTALLED_APPS = [
     'paypal.standard.ipn',
     'guardian',
     'notifications',
-    #'imagekit',
-    #'awesome_avatar',
     'chat_bot',
 ]
 

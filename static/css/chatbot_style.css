@@ -1,23 +1,29 @@
-body {
-    background-color: grey;
+
+#myChatModal > .modal-dialog> .modal-content{
+	background-image: url('/static/images/bot2.jpg');
+	background-color: rgba(255, 255, 255, 0.5);
+	background-size: contain;
+	background-blend-mode: lighten;
 }
 
 .chatbox{
     /* width: 500px;
     min-width: 390px;
-    height: 630px; */
-    background: #fff;
+    height: 630px; 
+    background: #fff;*/
     padding: 25px;
     /* margin: 20px auto; */
     box-shadow: 0 3px #ccc;
+
 }
 
 .chatlogs{
     padding: 1px;
     width: 100%;
-    height: 520px;
+    height: 350px;
     overflow-x: hidden;
     overflow-y: scroll;
+
 }
 
 
@@ -55,11 +61,11 @@ body {
 }
 
 .friend .chat-message{
-    background: #1adda4;
+    background: #548bba;
 }
 
 .self .chat-message{
-    background: #1ddced;
+    background: #49b1ff;
     order: -1;
 }
 
@@ -113,4 +119,85 @@ body {
 
 .chat-form button:hover {
     background: #13c8d9; 
+}
+
+.input_controls {
+    /* margin-top: -30px; */
+    display: flex;
+    align-items: flex-start;
+}
+.tbox {
+    width: 80%;
+    height: 60px;
+    border-radius: 40px;
+    overflow: hidden;
+    background: #548bba;
+}
+
+.audio_box{
+    width: 20%;
+    text-align: center;
+    height: 60px;
+    color: white;
+    font-size: 32px;
+    background: #49b1ff;
+    border-radius: 40px;
+    border: 0px;
+    outline: none;
+	margin-left:5px;
+}
+
+.audio_box button{
+	width: 100%;
+    text-align: center;
+    height: 60px;
+    color: white;
+    font-size: 32px;
+    background: #49b1ff;
+    border-radius: 40px;
+    border: 0px;
+    outline: none;
+}
+
+.tbox button{
+    float: right;
+    width: 21%;
+    text-align: center;
+    height: 60px;
+    color: white;
+    font-size: 32px;
+    background: #49b1ff;
+    border-radius: 40px;
+    border: 0px;
+    outline: none;
+}
+
+.tbox textarea{
+    border: none;
+    margin: 5px 14px;
+    width: 67%;
+    height: 50px;
+    background: none;
+    color: white;
+    padding: 10px 0;
+    outline: none;
+    resize: none;
+    font-size: large;
+}
+
+.tbox textarea::-webkit-scrollbar{
+    width: 10px;
+}
+
+.tbox textarea::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    background: rgba(241, 241, 245, 0.1)
+}
+
+.tbox button:hover {
+    background: #3f9be1; 
+}
+
+.audio_box button:hover {
+    background: #3f9be1;
 }

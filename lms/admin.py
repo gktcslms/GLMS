@@ -32,6 +32,7 @@ class PromoCodeAdmin(admin.ModelAdmin):
 admin.site.register(select_module)
 admin.site.register(Custom_User)
 admin.site.register(userprofile)
+admin.site.register(intern_profile)
 admin.site.register(add_instructor)
 admin.site.register(Trainer_Model)
 admin.site.register(Learner_Model)

@@ -10,6 +10,7 @@
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+		<link href="https://unpkg.com/ionicons@4.4.7/dist/css/ionicons.min.css" rel="stylesheet">
 		<script src="/static/js/afterglow.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>   
 		<link rel="stylesheet" href="{% static 'css/ng-rateit.css' %}" />
@@ -1083,6 +1084,7 @@ background:#eee;
   .slick-slide {
     height: auto !important;
 }
+
 .olark-branding-link > a{
     visibility: hidden !important;
 }
@@ -1566,7 +1568,7 @@ background:#eee;
 			<div class="modal-dialog">
 			
 			  <!-- Modal content-->
-			  <div class="modal-content">
+			  <div class="modal-content" id="chat-modal">
 				<div class="modal-header">
 				  <button type="button" class="close" data-dismiss="modal">&times;</button>
 				  <h4 class="modal-title">Help Document</h4>
@@ -1614,7 +1616,7 @@ background:#eee;
 				</div>
 				{% endif %}
 				<hr/>
-				<div class="row" style="background-color: #bbbbbb;border-radius: 10px;" id="course_wrap_row">
+				<div class="row hidden" style="background-color: #bbbbbb;border-radius: 10px;" id="course_wrap_row">
 					<div class="" style="background-color:#fff"><h1 id="poplr">Corporate Courses</h1></div>
 					<div class="course_carousel2" style="margin-bottom:10px;">
 					<div class="course_wrap">
@@ -1858,7 +1860,7 @@ background:#eee;
 			<!-- Container -->
 			<div class="container">
 				<div class="row" style="background-color: #bbbbbb;border-radius: 10px;" id="course_wrap_row">
-				<div class="" style="background-color:#fff"><h1 id="poplr">Online Courses</h1></div>
+				<div class="" style="background-color:#fff"><h1 id="poplr">Corporate Trending Courses</h1></div>
 				<!-- Angular Slick http://embed.plnkr.co/UEnsH9/ -->
 				<slick style="margin-bottom:10px;" ng-if="dataLoaded" init-onload="false" data="dataLoaded" slides-to-show="5" slides-to-scroll="4" dots="false" lazyLoad="ondemand" responsive="breakpoints" >
 				  <div class="course_wrap" ng-repeat="course in courses.results track by $index">
@@ -2091,16 +2093,17 @@ background:#eee;
 						<div class="row" id="address">
 							<div class="col-md-6">
 								Head Office<br><br>
-								The Senate Business Centre<br>
-								100 ft Riverside D.P Road, <br>
-								Vartak Baug, off Karve Rd, Erandwane,<br> 
-								Pune, Maharashtra 411052<br>
+								GKTCS Innovations Pvt Ltd<br>
+								266, Kshirda Building, 2nd floor,<br>
+								Next to Axis Bank, LBS road,<br>
+								Navi Peth, Pune  411030, Maharashtra <br>
 								Contact Person-Mr. Surendra Panpaliya<br>
 								Contact no.-9975072320, 020 6790 5900<br>
 								Email-surendra@gktcs.com<br><br>
 							</div>	
 							<div class="col-md-6">	
 								Global Office<Br><br>
+								GKTCS Innovations Pvt Ltd<br>
 								227 W Wellington Dr,Palatine,IL 60067 USA<br>
 								Contact Person- Mr. Satish Panpaliya<Br>
 								Contact no.- +1(847)809-6866<br>
@@ -2128,28 +2131,37 @@ background:#eee;
 						</div>
 						</div>
 					</div>
-	<button type="button" style="position: fixed; bottom: 15px; left: 35px;"class="btn btn-info btn-lg" data-toggle="modal" data-target="#myChatModal">Chat Now</button>
+	<a type="button" style="position: fixed; bottom: 15px; left: 50px;cursor:pointer;"class="" data-toggle="modal" data-target="#myChatModal">
+		<img src="/static/images/chatbot_help.png" alt="Snow" style="width:100%;max-width:100px">
+	</a>
 
     <div id="myChatModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
         
             <!-- Modal content-->
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header bot-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Chat Support</h4>
+                    <div class="chat_header">
+                        <h4 class="modal-title">CHAT BOT</h4>
+                    </div>
                 </div>
                 <div class="modal-body">
                     <div class="chatbox">
-                        <div class="chatlogs" style="height: 340px;">
+                        <div class="chatlogs">
                             <div class="chat friend">
-                                <div class="user-photo"></div>
                                 <p class="chat-message">Hello! How can I help you?</p>
                             </div>
                         </div>
-                        <div class="chat-form">
-                            <textarea id="chat_input"></textarea>
-                            <button>Send</button>
+                        <div class="input_controls">
+                            <div class="tbox">
+                                <textarea id="chat_input"></textarea>
+                                <button id="chat_button"><i class="icon ion-md-send"></i></button>
+                            </div>
+                            <div class="audio_box">
+                                <button id="audio_button_on"><i class="icon ion-md-mic"></i></button>
+                                <button id="audio_button_off"><i class="icon ion-md-mic-off"></i></button>
+                            </div>
                         </div>
                     </div>
                 </div>

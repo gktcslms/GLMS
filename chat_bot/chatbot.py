@@ -4,7 +4,7 @@ from chatterbot.trainers import ListTrainer
 
 def get_response(usrText):
     bot = ChatBot('Bot',
-    storage_adapter='chatterbot.storage.SQLStorageAdapter',
+    storage_adapter='chatterbot.storage.MongoDatabaseAdapter',
     logic_adapters=[
         {
             'import_path': 'chatterbot.logic.BestMatch'
@@ -15,6 +15,8 @@ def get_response(usrText):
             'default_response': 'I am sorry, but I do not understand.'
         }
     ],
+    database='chatdb',
+    database_uri='127.0.0.1:27017',
     trainer='chatterbot.trainers.ListTrainer')
     bot.set_trainer(ListTrainer)
     while True:
@@ -25,6 +27,8 @@ def get_response(usrText):
         if usrText.strip() == 'Bye':
             return('Bye')
             break
+        
+
         
 
         

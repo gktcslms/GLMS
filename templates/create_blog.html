@@ -3,6 +3,7 @@
 {% block head %}
 <style>
 </style>
+
 {% endblock %}
 
 {% block content %}
@@ -12,14 +13,17 @@
 			<h5 class="title">CREATE A BLOG</h5>
 		</div>
 		<div class="card-body">
-			<form enctype="multipart/form-data" action="" method="POST">{% csrf_token %}
+			<form enctype="multipart/form-data" action="" method="POST" >{% csrf_token %}
+
 				{{ form|crispy }}
 				{{ form.media }}
+
 				<input type="submit" value="Create" class="btn btn-primary">
 			</form>
 		</div>
 	</div>
 </div>
+
 {% endblock %}
 
 {% block lower %}
