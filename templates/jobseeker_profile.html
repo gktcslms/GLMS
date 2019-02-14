@@ -1,0 +1,172 @@
+{% extends "job_seeker_dashboard.html" %}
+{% block head %}
+<script src="/static/html5lightbox/html5lightbox.js"></script>
+<style>
+.course_inner{
+	background: #FFFFFF;
+    margin: 15px 0px;
+    padding-bottom: 15px;
+    border-radius: 10px;
+}
+
+.inner_info{
+	border-top: 1px solid #626873;
+}
+
+.course_img{
+	width:200px;
+	height: 170px !important;
+	border-radius: 10px 10px 0px 0px;
+}
+
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+<div class="row">	
+
+	<div class="col-md-8">
+		<div class="card">
+			<div class="card-header">
+				<h5 class="title">My Profile</h5>
+			</div>
+				<div class="card-body"style="padding-top: 0px;">
+					<form enctype="multipart/form-data" action="" method="POST">{% csrf_token %}
+						<div class="">
+											
+
+
+							<p class="mod-lvl1-desc" id="explanation"><br>
+							    Please update your interest and skills by filling up the followingform.
+								This information will help us to communicate better for
+								class feedbacks and personalized support queries.</p>
+
+							<div class="row">
+								<div class="col-md-4 col-sm-6">
+									{% if not jp.picture %}
+										<img src="/static/images/default_pic.jpg" alt="image" class="img-responsive" id="profile_pic" />
+									{% else %}
+										<img src="{{ jp.picture.url }}" alt="image" class="img-responsive" id="profile_pic" />
+									{% endif %}
+									<br/>                        
+									<label for="id_picture" ><span>Update Profiel Picture:</span></label><input id="id_picture" name="picture" type="file" value="Change Image" accept=".gif, .jpeg, .jpg, .png" />
+								</div>
+								<div class="col-md-8 col-sm-6">
+									<p>
+										<label for="id_des" >About you:</label>
+										<textarea class="form-control margin-bottom10" rows="3" id="id_des" name="des" placeholder="What would you like to say about yourself...  Describe in a sentence... " >{{ jp.des }}</textarea>
+										<p class="" style="color: #222;">Your identity is never disclosed!</p>
+									</p>	   
+								</div>
+							</div><br/>
+							<div class="row">
+							<div class="card">
+							<div class="card-body">
+								<label for="id_resume" ><div>Resume:</div></label>
+								{% if not jp.resume %}
+									<span style="color:red"> Please upload your resume</span>
+								{% else %}
+									<span style="color:green; font-size:12px"> Resume uploaded<i class="fa fa-check" aria-hidden="true"></i> (Choose new and submit to update)</span>
+								{% endif %}
+								<input id="id_resume" name="resume" type="file" value="Change Resume" accept=".pdf,.doc,.docx"/>
+									{% if jp.resume %}
+										<a href="{{ jp.resume.url}}" class="btn btn-primary html5lightbox"><i class="far fa-file-alt"></i> My Uploaded Resume</a>
+									{% endif %}
+								
+							</div>
+							</div>
+							</div>
+							<div class="">
+								<div class="row">
+									<div class="col-md-6">
+										<label for="id_linkedin_id" ><div>LinkedIn:(Optional)</div></label>
+										<input type="text" class="form-control" placeholder="http://www.linkedin.com/your-profile" id="id_linkedin_id" name="linkedin_id" value="{{ jp.linkedin_id }}">	
+									</div>
+									<div class="col-md-6">
+										<label for="id_institute" ><div>Institute:</div></label>
+										   <input type="text" id="id_institute" name="institute" class="form-control clear margin-bottom10" placeholder="Institute Name"
+													 value="{{ jp.institute }}" required />
+									</div>				 
+								</div>
+								<div class="row">
+									<div class="col-md-4">
+										<label for="id_mobile" ><div>Mobile Number:</div></label>
+										<span id="mobileError" style="display: none;color:#ff3333;">*enter a valid mobile number</span>
+										<input id="id_mobile" name="mobile" type="number" class="form-control"
+											   placeholder="Your Mobile No."
+											   value="{{ jp.mobile }}" onblur="validateContact(value)" required />
+									</div>
+									<div class="col-md-4">
+										<label for="id_city" ><div>City:</div></label>
+										   <input type="text" id="id_city" name="city" class="form-control clear margin-bottom10" placeholder="City"
+													 value="{{ jp.city }}" required />
+									</div>	
+									<div class="col-md-4">
+										<label for="id_country" ><div>Country:</div></label>
+										   <input type="text" id="id_country" name="country" class="form-control clear margin-bottom10" placeholder="country"
+													 value="{{ jp.country }}" required />
+									</div>
+								</div>
+								<p>&nbsp;</p>
+							</div>
+
+						</div>
+
+						<input class="btn btn-primary" type="submit" value="UPDATE">
+					</form>
+				</div>		 
+		</div>	
+	</div>
+	<div class="col-md-4">
+		<div class="card card-user">
+			<div class="image">
+				{% if not jp.picture %}
+					<img src="/static/images/default_pic.jpg" alt="...">
+				{% else %}
+					<img src="{{ jp.picture.url }}" alt="...">
+				{% endif %}
+			</div>
+			<div class="card-body">
+				<div class="author">
+					{% if not jp.picture %}
+						<img class="avatar border-gray" src="/static/images/default_pic.jpg" alt="...">
+					{% else %}
+						<img class="avatar border-gray" src="{{ jp.picture.url }}" alt="...">
+					{% endif %}
+					<h5 class="title">{{ user.first_name }} {{ user.last_name }}</h5>
+					
+					<p class="description">
+					E-mail ID: <b>{{user.email}}</b>			
+					</p>
+				</div>
+				<p class="description text-center">
+				<!--<div class="progress progress-mouseover" style="height: 8px; cursor: pointer;">
+					<div class="progress-bar progress-bar-success mypopover progress-fillbar" style="width: 10%;"></div>
+				</div> 
+				<span class="regular text-muted" style="font-size:12px;">Profile Strength 10%</span>-->
+				</p>
+			</div>
+			<hr>
+			<div class="button-container">
+				<button href="#" class="btn btn-neutral btn-icon btn-round btn-lg">
+					<i class="fab fa-facebook-f"></i>
+				</button>
+				<button href="#" class="btn btn-neutral btn-icon btn-round btn-lg">
+					<i class="fab fa-twitter"></i>
+				</button>
+				<button href="#" class="btn btn-neutral btn-icon btn-round btn-lg">
+					<i class="fab fa-google-plus-g"></i>
+				</button>
+			</div>
+		</div>
+	</div>
+</div>	
+</div>
+{% endblock %}
+
+{% block lower %}
+<script>
+$("#my_profile").addClass("active");
+</script>
+{% endblock %}

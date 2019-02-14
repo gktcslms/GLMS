@@ -710,6 +710,24 @@ def intern_profileview(request, user_id, template_name='intern_profile.html'):
         save_it.save()
     return render(request, template_name, {"form":form,"ip":ip})
 
+@login_required(login_url='/authentication/login/')
+def jobseeker_profileview(request, user_id, template_name='jobseeker_profile.html'):
+    u = jobseeker_profile.objects.all()
+    try:
+        if request.user.is_superuser:
+            jp = get_object_or_404(jobseeker_profile, user_id=user_id)
+        else:
+            jp = get_object_or_404(jobseeker_profile, user_id=user_id, user=request.user)   
+    except:
+        jp = jobseeker_profile(user=request.user)    
+    form = intern_profileForm(request.POST or None, instance=jp)
+    if form.is_valid():
+        save_it = form.save(commit=False)
+        save_it.resume = request.FILES.get('resume', save_it.resume)
+        save_it.picture = request.FILES.get('picture', save_it.picture)
+        save_it.save()
+    return render(request, template_name, {"form":form,"jp":jp})
+
 def search_titles(request):
     if request.method == "POST" and request.POST:
         search_text = request.POST['search_text']
@@ -1989,6 +2007,11 @@ def submitted_assignment_view(request):
 def submitted_int_profile_view(request):
     profile = intern_profile.objects.all()
     return render(request, 'submitted_intern_profile.html',locals())
+	
+@login_required(login_url='/authentication/login/')
+def submitted_jobseeker_profile_view(request):
+    profile = jobseeker_profile.objects.all()
+    return render(request, 'submitted_jobseeker_profile.html',locals())
 
 @login_required(login_url='/authentication/login/')
 def my_assignments_view(request):

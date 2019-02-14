@@ -1,0 +1,76 @@
+- - What is Ruby?
+  - Ruby is a dynamic, interpreted, reflective, object-oriented, general-purpose programming language. It was designed and developed in the mid-1990s by Yukihiro "Matz" Matsumoto in Japan.
+- - What is Ruby programming language?
+  - Ruby is a dynamic, interpreted, reflective, object-oriented, general-purpose programming language. It was designed and developed in the mid-1990s by Yukihiro "Matz" Matsumoto in Japan.
+- - Who is the developer of Ruby?
+  - Ruby is designed and developed by Yukihiro "martz" Matsumoto in mid 1990 in Japan.
+- - Why Ruby is known as a language of flexibility?
+  - Ruby is known as a language of flexibility because it facilitates its author to alter the programming elements. Some specific parts of the language can be removed or redefined.
+- - List some features of Ruby?
+  - Ruby has many features. Some of them are listed below.<br/>Object-oriented<br/>Flexible<br/>Dynamic typing and Duck typing<br/>Garbage collector<br/>Keyword arguments
+- - Explain some differences between Ruby and Python.
+  - Ruby is fully object oriented while Python is not.<br/>Ruby supports EclipseIDE while Python supports multiple IDEs.<br/>Ruby use Mixins while Python doesn't.<br/>Ruby supports blocks, procs and lambdas while Python doesn't.
+- - What is the command to get installed Ruby version in your system.
+  - ruby -v
+- - What are class libraries in Ruby?
+  - Ruby class libraries contain variety of domain such as thread programming, data types, various domains. Following is a list of domains which has relevant class libraries:<br/>Text processing<br/>CGI Programming<br/>Network programming<br/>GUI programming<br/>XML programming
+- - Name some operators used in Ruby.
+  - Operators are a symbol which is used to perform different operations.<br/>Unary operator<br/>Airthmetic operator<br/>Bitwise operator<br/>Logical operator<br/>Ternary operator
+- - What is RubyGems in Ruby
+  - RubyGems provides a standard format for distributing ruby programs and libraries. It works as a package manager for the Ruby programming language.RubyGems is now a part of the standard library from Ruby version 1.9.
+- - What is RubyGems in Ruby programming language
+  - RubyGems provides a standard format for distributing ruby programs and libraries. It works as a package manager for the Ruby programming language.RubyGems is now a part of the standard library from Ruby version 1.9.
+- - What are Ruby variables
+  - There are four types of variables in Ruby:<br/>Local variable<br/>Class variable<br/>Instance variable<br/>Global variable
+- - Explain Ruby data types
+  - There are different data types in Ruby:<br/>Numbers<br/>Strings<br/>Symbols<br/>Hashes<br/>Arrays<br/>Booleans
+- - What is the use of load and require in Ruby
+  - In Ruby, load and require both are used for loading the available code into the current code. In cases where loading the code required every time when changed or every times someone hits the URL, it is suggested to use 'load'.
+- - Explain Ruby if-else statement
+  - The Ruby if-else statement is used to test condition. There are various types of statement in Ruby.<br/>if statement<br/>if-else statement<br/>if-else-if (elsif) statement<br/>ternary statement
+- - Explain case statement in Ruby
+  - In Ruby, we use 'case' instead of 'switch' and 'when' instead of 'case'. The case statement matches one statement with multiple conditions just like a switch statement in other languages.
+- - Explain for loop in Ruby
+  - Ruby for loop iterates over a specific range of numbers. Hence, for loop is used if a program has fixed number of itrerations. Ruby for loop will execute once for each element in expression.
+- - Explain do while loop in Ruby
+  - Ruby do while loop iterates a part of program several times. In this, loop will execute at least once because do while condition is written at the end.
+- - Explain until loop in Ruby.
+  - Ruby until loop runs until the given condition evaluates to true. It exits the loop when condition becomes true. It is opposite of the while loop.
+- - Explain break statement in Ruby.
+  - Ruby break statement is used to terminate a loop. It is mostly used in while loop where value is printed till the condition is true.
+- - Explain next statement in Ruby.
+  - Ruby next statement is used to skip loop's next iteration. Once the next statement is executed, no further iteration will be performed.
+- - Explain redo statement in Ruby.
+  - Ruby redo statement is used to repeat the current iteration of the loop. The redo statement is executed without evaluating loop's condition
+- - Explain retry statement in Ruby.
+  - Ruby retry statement is used to repeat the whole loop iteration from the start.
+- - What is Ruby if-else statement
+  - The Ruby if-else statement is used to test condition. There are various types of statement in Ruby.<br/>if statement<br/>if-else statement<br/>if-else-if (elsif) statement<br/>ternary statement
+- - What is case statement in Ruby
+  - In Ruby, we use 'case' instead of 'switch' and 'when' instead of 'case'. The case statement matches one statement with multiple conditions just like a switch statement in other languages.
+- - What is for loop in Ruby
+  - Ruby for loop iterates over a specific range of numbers. Hence, for loop is used if a program has fixed number of itrerations. Ruby for loop will execute once for each element in expression.
+- - What is do while loop in Ruby
+  - Ruby do while loop iterates a part of program several times. In this, loop will execute at least once because do while condition is written at the end.
+- - What is until loop in Ruby.
+  - Ruby until loop runs until the given condition evaluates to true. It exits the loop when condition becomes true. It is opposite of the while loop.
+- - What is break statement in Ruby.
+  - Ruby break statement is used to terminate a loop. It is mostly used in while loop where value is printed till the condition is true.
+- - What is next statement in Ruby.
+  - Ruby next statement is used to skip loop's next iteration. Once the next statement is executed, no further iteration will be performed.
+- - What is redo statement in Ruby.
+  - Ruby redo statement is used to repeat the current iteration of the loop. The redo statement is executed without evaluating loop's condition
+- - What is retry statement in Ruby.
+  - Ruby retry statement is used to repeat the whole loop iteration from the start.
+- - Explain Ruby object.
+  - Object is the default root of all Ruby objects. Ruby objects inherit from BasicObject which allows creating alternate object hierarchies.
+- - How to create Ruby object?
+  - Objects in Ruby are created by calling new method of the class. It is a unique type of method and predefined in Ruby library.<br/>Syntax: objectName=className.new
+- - Explain Ruby class.
+  - Each Ruby class is an instance of Ruby class. Classes in Ruby are first class objects. It always starts with a keyword class followed by the class name.<br/>Syntax: class ClassName
+- - Define Ruby methods.
+  - Ruby method prevent us from writing the same code in a program again and again. Ruby methods are similar to functions in other languages.
+- - How to use Ruby methods.
+  - To use a Ruby method, we need to first define it. It is defined with def and end keyword. Method name should always start with a lowercase letter.<br/>Syntax:<br/>def methodName
+- - What are Ruby blocks.
+  - Ruby code blocks are called closures in other programming languages. It consist of a group of codes which is always enclosed with braces or written between do...end.
