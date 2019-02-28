@@ -1,0 +1,179 @@
+{% extends base_template_name %}
+{% load crispy_forms_tags %}
+{% block head %}
+        <!-- Import Jquery And Angular JS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="/static/quiz_assets/js/sweetalert2@8.js"></script>
+        <script src="/static/quiz_assets/js/angular.min.js"></script>
+        <script src="/static/quiz_assets/js/take_quizes.js"></script>
+        <!-- MD Icons -->
+        <link rel="stylesheet" href="https://cdn.materialdesignicons.com/3.3.92/css/materialdesignicons.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+		<style>
+        .modal-footer {
+            justify-content: normal;
+        }
+		</style>
+{% endblock %}
+{% block content %}
+<div class="container">
+<div class="card">
+	<div class="card-header">
+		<h5 class="title">Quiz Details</h5>
+	</div>
+	<div class="card-body">
+	<table class="table table-bordered" style="text-align:center;">
+		<thead>
+			<tr class="course-box">
+				<td>Quiz Name</td>
+				<td>Time Limit</td>
+				<td>Action</td>
+
+			</tr>
+		</thead>
+		<tbody>
+			<tr class="course-box">
+				<td>{{ quiz.quiz_name }}
+					{% if request.user.is_superuser %}
+						<a href="{% url 'top_scorers' quiz.id %}" class="btn btn-secondary" role="button">View Top Scorers</a>
+					{% endif %}
+				</td>
+				<td>{{ quiz.time_limit }} &nbsp Minutes</td>
+				<td>
+				    {% if candidate_object.taken_quiz %}
+						<a href="{% url 'view_score' quiz.id %}" class="btn btn-info" role="button">View Score</a>
+					{% else %}
+						<button style="text-align:center;" type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal" id="start_quiz" onclick="start_timer()">Start Quiz</button>
+					{% endif %}
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+</div>
+</div>
+	<div class="container">
+        <h4 style="text-align:center; margin-top: 10px;" id="quiz_id">{{ quiz.id }}</h4>
+        <h4 style="text-align:center; margin-top: 10px;" id="user_id">{{ user.id }}</h4>
+    </div>     
+
+    {% verbatim %}
+    <div class="modal" id="myModal" ng-app="take_quiz" ng-controller="myCtrl">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title"></h4>
+                  <br>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+          
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="row"> 
+                        <div class="col-sm-1" ng-repeat="question in quiz_questions track by $index">
+                            <button class="btn" ng-class="question.selected === null ? 'btn-primary' : 'btn-success'" ng-click="select_question(question)">{{ $index + 1 }}</button>
+                        </div> 
+                    </div>
+                    <hr>
+                    <br />
+                    <div>
+                        <form id="quiz_form">
+                            <div class="form-group row">
+                                <label for="question" class="col-sm-2 col-form-label">Question:-</label>
+                                <div class="col-sm-10">
+                                    {{selected_question.text}}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="option_1" class="col-sm-3 col-form-label">Option 1:-</label>
+                                <div class="col-sm-9">
+                                    {{selected_question.possible_answers[0].text}}
+                                    <br />                                    
+                                </div>
+                                <label for="option_2" class="col-sm-3 col-form-label">Option 2:-</label>
+                                <div class="col-sm-9">
+                                    {{selected_question.possible_answers[1].text}}
+                                    <br />                                    
+                                </div>
+                                <label for="option_3" class="col-sm-3 col-form-label">Option 3:-</label>
+                                <div class="col-sm-9">
+                                    {{selected_question.possible_answers[2].text}}
+                                    <br />                                    
+                                </div>
+                                <label for="option_4" class="col-sm-3 col-form-label">Option 4:-</label>
+                                <div class="col-sm-9">
+                                    {{selected_question.possible_answers[3].text}}
+                                    <br />                                                                        
+                                </div>
+                                <label for="choose_answer" class="col-sm-5 col-form-label" ng-hide="selected_question.possible_answers[0] === undefined || selected_question.possible_answers[1] === undefined || selected_question.possible_answers[2] === undefined || selected_question.possible_answers[3] === undefined">Choose Answer:-</label>
+                                <div class="col-sm-7">
+                                    <select class="form-control" id="choose_answer" ng-model="selected_question.selected" ng-options="item.text for item in [selected_question.possible_answers[0], selected_question.possible_answers[1], selected_question.possible_answers[2], selected_question.possible_answers[3]]"></select>
+                                    <br />                                           
+                                </div>
+                            </div>
+                        </form>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <button type="submit" class="btn btn-success" ng-click="submit_quiz()" ng-hide="true">Submit Quiz</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+          
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <span class="">Time Remainig:- <span id="countdown"></span></span>
+                    <div style="position:absolute; right:10px" ><button type="button" class="btn btn-danger" data-dismiss="modal">Close</button></div>
+                </div>
+          
+            </div>
+        </div>
+    </div> 
+    {% endverbatim %}
+    <script>
+        $(document).ready(function(){
+            var started_quiz = false;
+            $("#start_quiz").click(function(){
+                var quiz_id = document.getElementById("quiz_id").innerHTML;
+                var user_id = document.getElementById("user_id").innerHTML;
+                $.ajaxSetup({
+                    headers: { "X-CSRFToken": '{{csrf_token}}' }
+                });
+                if(started_quiz === false){
+                    $.ajax({
+                        url: '/create_candidate_record',
+                        dataType: 'json',
+                        type: 'post',
+                        contentType: 'application/json',
+                        data: JSON.stringify( { "quiz_id": quiz_id, "user_id": user_id } ),
+                        processData: false,
+                        success: function( data, textStatus, jQxhr ){
+                            Swal.fire({
+                                type: 'success',
+                                title: 'Quiz Loaded Successfully',
+                                text: 'You can now start quiz and do not close the window!',
+                            });
+                            started_quiz = true;
+                            console.log(started_quiz);
+                        },
+                        error: function( jqXhr, textStatus, errorThrown ){
+                            console.log( errorThrown );
+                            Swal.fire({
+                                type: 'error',
+                                title: 'Oops...',
+                                text: 'Something went wrong!',
+                            });
+                        }
+                    });
+                };
+                
+            });    
+        });
+    </script>
+{% endblock %}
+{% block lower %}
+<script>
+$("#quiz").addClass("active");
+</script>
+{% endblock %}

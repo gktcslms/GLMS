@@ -1,0 +1,51 @@
+{% extends base_template_name %}
+{% load crispy_forms_tags %}
+{% block head %}
+		<style>
+        .modal-footer {
+            justify-content: normal;
+        }
+		</style>
+{% endblock %}
+{% block content %}
+        <div class="container">
+        <div class="card">
+        <div class="card-body">
+		<div class="card-header">
+			<h5 class="title">Quiz Score</h5>
+		</div>
+            {% if candidate_object.taken_quiz %}
+                <h4 style="text-align:center; margin-top: 10px;">Score : {{ candidate_object.score }}</h4>
+                <br />
+                <table class="table table-bordered" style="text-align:center;">
+                    <thead>
+                        <tr class="course-box">
+                            <td>Question</td>
+                            <td>Your Answer</td>
+                            <td>Correct Answer</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for question in all_qna %}
+                        <tr class="course-box">
+                            <td>{{ question.quiz_question }}</td>
+                            <td>{{ question.selected }}</td>
+                            <td>{{ question.correct }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <h4 style="text-align:center; margin-top: 10px;">{{ error }}</h4>
+            {% endif %}
+        </div>
+        </div>
+        </div>
+{% endblock %}
+{% block lower %}
+<script>
+$("#quiz").addClass("active");
+</script>
+{% endblock %}
+
+

@@ -158,7 +158,21 @@ class intern_profileForm(ModelForm):
     class Meta:
         model = intern_profile
         fields = ['mobile', 'linkedin_id', 'picture','city', 'des','institute','country','resume']
-		
+
+class jobseeker_profileForm(ModelForm):
+    class Meta:
+        model = jobseeker_profile
+        fields = ['mobile', 'linkedin_id', 'picture','city', 'des','institute','country','resume']
+
+class learner_profileForm(ModelForm):
+    class Meta:
+        model = learner_profile
+        fields = ['mobile', 'linkedin_id', 'picture','city', 'des','institute','country','resume']
+
+class trainer_profileForm(ModelForm):
+    class Meta:
+        model = trainer_profile
+        fields = ['mobile', 'linkedin_id', 'picture','city', 'des','skills','country','resume']
 #class UserProfileForm(ModelForm):
 #    class Meta:
 #		model = UserProfile

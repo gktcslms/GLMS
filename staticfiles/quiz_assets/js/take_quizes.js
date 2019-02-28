@@ -95,7 +95,7 @@ app.controller('myCtrl', function($scope, $http, $q) {
                     var data= {
                         "quiz_question_id": $scope.quiz_questions[i].id,
                         "user_id": user_id,
-                        "chosen_answer_id": 27,
+                        "chosen_answer_id": 135,
                         "correct_answer_id": $scope.quiz_questions[i].correct.id,
                         "quiz_id": quiz_id 
                     }

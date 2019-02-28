@@ -1,5 +1,6 @@
 {% extends "learner_dashboard.html" %}
 {% block head %}
+<script src="/static/html5lightbox/html5lightbox.js"></script>
 <style>
 .course_inner{
 	background: #FFFFFF;
@@ -43,36 +44,69 @@
 
 							<div class="row">
 								<div class="col-md-4 col-sm-6">
-									<img src="{{ user.userprofile.picture.url }}" alt="image" class="img-responsive" id="profile_pic" /><br/>                        
-									<label for="id_picture" ><div>Upload Image:</div></label> <input id="id_picture" name="picture" type="file" value="Change Image" />
+									{% if not jp.picture %}
+										<img src="/static/images/default_pic.jpg" alt="image" class="img-responsive" id="profile_pic" />
+									{% else %}
+										<img src="{{ jp.picture.url }}" alt="image" class="img-responsive" id="profile_pic" />
+									{% endif %}
+									<br/>                        
+									<label for="id_picture" ><span>Update Profiel Picture:</span></label><input id="id_picture" name="picture" type="file" value="Change Image" accept=".gif, .jpeg, .jpg, .png" />
 								</div>
 								<div class="col-md-8 col-sm-6">
 									<p>
 										<label for="id_des" >About you:</label>
-										<textarea class="form-control margin-bottom10" rows="3" id="id_des" name="des" placeholder="What would you like to say about yourself...  Describe in a sentence... " >{{ user.userprofile.des }}</textarea>
+										<textarea class="form-control margin-bottom10" rows="3" id="id_des" name="des" placeholder="What would you like to say about yourself...  Describe in a sentence... " >{{ jp.des }}</textarea>
 										<p class="" style="color: #222;">Your identity is never disclosed!</p>
-									</p>
-	   
+									</p>	   
 								</div>
+							</div><br/>
+							<div class="row">
+							<div class="card">
+							<div class="card-body">
+								<label for="id_resume" ><div>Resume:</div></label>
+								{% if not jp.resume %}
+									<span style="color:red"> Please upload your resume</span>
+								{% else %}
+									<span style="color:green; font-size:12px"> Resume uploaded<i class="fa fa-check" aria-hidden="true"></i> (Choose new and submit to update)</span>
+								{% endif %}
+								<input id="id_resume" name="resume" type="file" value="Change Resume" accept=".pdf,.doc,.docx"/>
+									{% if jp.resume %}
+										<a href="{{ jp.resume.url}}" class="btn btn-primary html5lightbox"><i class="far fa-file-alt"></i> My Uploaded Resume</a>
+									{% endif %}
+								
+							</div>
+							</div>
 							</div>
 							<div class="">
 								<div class="row">
-									<div class="col-md-4">
-										<label for="id_linkedin_id" ><div>LinkedIn:</div></label>
-										<input type="text" class="form-control" placeholder="http://www.linkedin.com/your-profile" id="id_linkedin_id" name="linkedin_id" value="{{ user.userprofile.linkedin_id }}">	
+									<div class="col-md-6">
+										<label for="id_linkedin_id" ><div>LinkedIn:(Optional)</div></label>
+										<input type="text" class="form-control" placeholder="http://www.linkedin.com/your-profile" id="id_linkedin_id" name="linkedin_id" value="{{ jp.linkedin_id }}">	
 									</div>
+									<div class="col-md-6">
+										<label for="id_institute" ><div>Institute:</div></label>
+										   <input type="text" id="id_institute" name="institute" class="form-control clear margin-bottom10" placeholder="Institute Name"
+													 value="{{ jp.institute }}" required />
+									</div>				 
+								</div>
+								<div class="row">
 									<div class="col-md-4">
 										<label for="id_mobile" ><div>Mobile Number:</div></label>
 										<span id="mobileError" style="display: none;color:#ff3333;">*enter a valid mobile number</span>
 										<input id="id_mobile" name="mobile" type="number" class="form-control"
 											   placeholder="Your Mobile No."
-											   value="{{ user.userprofile.mobile }}" onblur="validateContact(value)"/>
+											   value="{{ jp.mobile }}" onblur="validateContact(value)" required />
 									</div>
 									<div class="col-md-4">
 										<label for="id_city" ><div>City:</div></label>
 										   <input type="text" id="id_city" name="city" class="form-control clear margin-bottom10" placeholder="City"
-													 value="{{ user.userprofile.city }}" />
-									</div>				 
+													 value="{{ jp.city }}" required />
+									</div>	
+									<div class="col-md-4">
+										<label for="id_country" ><div>Country:</div></label>
+										   <input type="text" id="id_country" name="country" class="form-control clear margin-bottom10" placeholder="country"
+													 value="{{ jp.country }}" required />
+									</div>
 								</div>
 								<p>&nbsp;</p>
 							</div>
@@ -87,12 +121,19 @@
 	<div class="col-md-4">
 		<div class="card card-user">
 			<div class="image">
-				<img src="{{ user.userprofile.picture.url }}" alt="...">
+				{% if not jp.picture %}
+					<img src="/static/images/default_pic.jpg" alt="...">
+				{% else %}
+					<img src="{{ jp.picture.url }}" alt="...">
+				{% endif %}
 			</div>
 			<div class="card-body">
 				<div class="author">
-					
-					<img class="avatar border-gray" src="{{ user.userprofile.picture.url }}" alt="...">
+					{% if not jp.picture %}
+						<img class="avatar border-gray" src="/static/images/default_pic.jpg" alt="...">
+					{% else %}
+						<img class="avatar border-gray" src="{{ jp.picture.url }}" alt="...">
+					{% endif %}
 					<h5 class="title">{{ user.first_name }} {{ user.last_name }}</h5>
 					
 					<p class="description">

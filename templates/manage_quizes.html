@@ -1,45 +1,59 @@
 {% extends "base_dashboard.html" %}
 {% load crispy_forms_tags %}
+{% block head %}
+        <!-- Import Jquery And Angular JS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="/static/quiz_assets/js/angular.min.js"></script>
+        <script src="/static/quiz_assets/js/manage_quizes.js"></script>
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/static/quiz_assets/css/manage_quizes.css">
+        <!-- MD Icons -->
+        <link rel="stylesheet" href="https://cdn.materialdesignicons.com/3.3.92/css/materialdesignicons.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+{% endblock %}
 {% block content %}
-	{% block head %}
-	<script src="/static/quiz_assets/js/angular.min.js"></script>
-    <script src="/static/quiz_assets/js/manage_quizes.js"></script>
-	{% endblock %}
+<div ng-app="create_quiz" ng-controller="myCtrl">
     {% verbatim %}
-        <h1 class="page_title">Manage Quizes!</h1>
-        <br />
-        <br />
-        <br />
         <!-- Container Containing Quiz List -->
         <div class="container">
+		<div class="card">
+		<div class="card-header">
+			<h5 class="title">Manage Quiz</h5>
+		</div>
+		<div class="card-body">
+		
             <table class="table table-bordered" style="text-align:center;">
                 <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Quiz Name</th>
-                        <th scope="col">Time Limit(in minutes)</th>
-                        <th scope="col">Update / Edit</th>
-                        <th scope="col">Delete</th>
+                    <tr class="course-box">
+                        <td scope="col">#</td>
+                        <td scope="col">Quiz Name</td>
+                        <td scope="col">Time Limit(in minutes)</td>
+                        <td scope="col">Update / Edit</td>
+                        <td scope="col">Delete</td>
+                        <td scope="col">Top Scorer</td>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="quiz in quizes track by $index" style="font-size: 25px">
-                        <th scope="row">{{$index + 1}}</th>
+                    <tr ng-repeat="quiz in quizes track by $index" style="" class="course-box">
+                        <td scope="row">{{$index + 1}}</td>
                         <td>{{ quiz.quiz_name }}</td>
                         <td>{{ quiz.time_limit }}</td>
                         <td><i class="mdi mdi-clipboard-text" style="cursor: pointer; color: #28a745;" data-toggle="modal" data-target="#edit_quiz" ng-click="edit_quiz(quiz, $index)"></i></td>
                         <td><i class="mdi mdi-delete" style="cursor: pointer; color: #ec1f1f;" ng-click="delete_quiz(quiz, $index)"></i></td>
+						<td><a href="/top_scorers/{{quiz.id}}" class="btn btn-secondary" role="button">View Top Scorers</a></td>
                     </tr>
                 </tbody>
             </table>
             <button class="btn btn-success" data-toggle="modal" data-target="#create_quiz">Create New Quiz</button>
+        </div>
+        </div>
         </div>
 
         <!-- End Quiz List Container -->
 
         <!-- Create Quiz Modal -->
         <div class="modal" id="create_quiz">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-lg">
               <div class="modal-content">
           
                 <!-- Modal Header -->
@@ -72,7 +86,7 @@
 
         <!-- Edit Quiz Modal -->
         <div class="modal" id="edit_quiz">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-lg">
                 <div class="modal-content">
             
                 <!-- Modal Header -->
@@ -139,9 +153,15 @@
                                     <input type="text" readonly class="form-control-plaintext" id="currently_chosen" ng-required="true" ng-model="selected_question.correct.text" ng-disabled="true">
                                     <br />                                                                        
                                 </div>
-                                <button class="btn btn-success col-sm-5 offset-sm-1" ng-click="save_question()" ng-if="selected_question !== undefined || selected_question.possible_answers[0] === undefined || selected_question.possible_answers[1] === undefined || selected_question.possible_answers[2] === undefined || selected_question.possible_answers[3] === undefined">Save Qusetion</button>
-                                <button class="btn btn-danger col-sm-5 offset-sm-1" ng-click="delete_question()" ng-if="selected_question.url !== undefined">Delete Qusetion</button>
+							</div>
+							<div class="form-group row">
+							<div class="col-md-5 float-left">
+								<button class="btn btn-danger float-right" ng-click="delete_question()" ng-if="selected_question.url !== undefined">Delete Qusetion</button>
                             </div>
+							<div class="col-md-5 float-right">
+								<button class="btn btn-success float-right" ng-click="save_question()" ng-if="selected_question !== undefined || selected_question.possible_answers[0] === undefined || selected_question.possible_answers[1] === undefined || selected_question.possible_answers[2] === undefined || selected_question.possible_answers[3] === undefined">Save Qusetion</button>
+							</div>
+							</div>
                         </form>
                     </div>
                 </div>
@@ -164,10 +184,14 @@
         </div>
         <!-- End Edit Quiz Modal -->
 
-    {% endverbatim %}
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    {% endverbatim %}    
+    </div>
 {% endblock %}
 {% block lower %}
 <script>
-$("#promocode").addClass("active");
+$("#manage_quizes").addClass("active");
 </script>
 {% endblock %}

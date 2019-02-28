@@ -1,0 +1,47 @@
+{% extends base_template_name %}
+{% block head %}
+<script src="/static/html5lightbox/html5lightbox.js"></script>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+<div class="card">
+	<div class="card-header">
+		<h5 class="title">Quiz Listing</h5>
+	</div>
+	<div class="card-body">
+	<table class="table table-bordered" style="text-align:center;">
+		<thead>
+			<tr class="course-box">
+				<td>#</td>
+				<td>Quiz Name</td>
+				<td>Time Limit</td>
+
+			</tr>
+		</thead>
+		<tbody>
+			{% for quiz in quizes_available %}
+			<tr class="course-box">
+				<td scope="row">{{forloop.counter }}</td>
+				<td><a href="{% url 'take_quiz' quiz.id %}">{{ quiz }}</a>
+					{% if request.user.is_superuser %}
+						<a href="{% url 'top_scorers' quiz.id %}" class="btn btn-secondary" role="button">View Top Scorers</a>
+					{% endif %}
+				</td>
+				<td>{{ quiz.time_limit }} &nbsp Minutes</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	</div>
+</div>
+</div>
+{% endblock %}
+
+{% block lower %}
+<script>
+$("#quiz").addClass("active");
+</script>
+{% endblock %}     
+</body>
+</html>

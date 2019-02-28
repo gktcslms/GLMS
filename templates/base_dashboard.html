@@ -143,10 +143,28 @@
                             <p>Intern Profiles</p>
                         </a>
                     </li>
-					<li id="int_profiles">
+					<li id="jobseeker_profiles">
                         <a href="{% url 'submitted_jobseeker_profiles' %}">
                             <i class="now-ui-icons files_single-copy-04"></i>
                             <p>Jobseeker Profiles</p>
+                        </a>
+                    </li>
+					<li id="learner_profiles">
+                        <a href="{% url 'submitted_learner_profiles' %}">
+                            <i class="now-ui-icons files_single-copy-04"></i>
+                            <p>Learner Profiles</p>
+                        </a>
+                    </li>
+					<li id="trainer_profiles">
+                        <a href="{% url 'submitted_trainer_profiles' %}">
+                            <i class="now-ui-icons files_single-copy-04"></i>
+                            <p>Trainer Profiles</p>
+                        </a>
+                    </li>
+					<li id="manage_quizes">
+                        <a href="{% url 'manage_quizes' %}">
+                            <i class="now-ui-icons files_single-copy-04"></i>
+                            <p>Manage Quiz</p>
                         </a>
                     </li>
 					<li id="promocode">
@@ -156,7 +174,7 @@
                         </a>
                     </li>
 					<li id="my_profile">
-                        <a href="{% url 'myprofile' user.id %}">
+                        <a href="{% url 'trainer_profile' user.id %}">
                             <i class="now-ui-icons users_single-02"></i>
                             <p>My Profile</p>
                         </a>

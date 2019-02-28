@@ -1,0 +1,53 @@
+{% extends "base_dashboard.html" %}
+{% load crispy_forms_tags %}
+{% block head %}
+        <!-- Import Jquery And Angular JS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="/static/quiz_assets/js/angular.min.js"></script>
+        <script src="/static/quiz_assets/js/manage_quizes.js"></script>
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/static/quiz_assets/css/manage_quizes.css">
+        <!-- MD Icons -->
+        <link rel="stylesheet" href="https://cdn.materialdesignicons.com/3.3.92/css/materialdesignicons.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+	<div class="card">
+		<div class="card-header">
+			<h5 class="title">List of top scorers for {{ quiz.quiz_name }}</h5>
+		</div>
+		<div class="card-body">
+			{% if top_scorers_list %}
+				<table class="table table-bordered" style="text-align:center;">
+					<thead>
+						<tr class="course-box">
+							<td>#</td>
+							<td>Candidate Name</td>
+							<td>Score</td>
+						</tr>
+					</thead>
+					<tbody>
+						{% for scorer in top_scorers_list %}
+						<tr class="course-box">
+							<td>{{ forloop.counter }}</td>
+							<td>{{ scorer.user.get_full_name }}</td>
+							<td>{{ scorer.score }}</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			{% else %}
+				<h4 style="text-align:center; margin-top: 10px;">No one has submitted quiz.</h4>
+			{% endif %}
+		</div>
+        </div>
+</div>
+{% endblock %}
+{% block lower %}
+<script>
+$("#manage_quizes").addClass("active");
+</script>
+{% endblock %}
+
+

@@ -43,10 +43,40 @@ class jobseeker_profile(models.Model):
     city = models.CharField(max_length=15, blank=True)	
     country = models.CharField(max_length=15, blank=True)	
     des = models.TextField(blank=True)
-    resume = models.FileField(upload_to='documents/intern_resume/', blank=True)
+    resume = models.FileField(upload_to='documents/jobseeker_resume/', blank=True)
     
     def get_absolute_url(self):
         return reverse('jobseeker_profile', kwargs={'user_id': self.request.user.pk})
+		
+class trainer_profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    date = models.DateTimeField(default=dt.now)
+    mobile = models.BigIntegerField(blank=True, null=True)
+    linkedin_id = models.CharField(max_length=60, blank=True)
+    picture = models.ImageField(upload_to = 'images/profile_pics', blank=True, null=True)
+    skills = models.CharField(max_length=200, blank=True) 	
+    city = models.CharField(max_length=15, blank=True)	
+    country = models.CharField(max_length=15, blank=True)	
+    des = models.TextField(blank=True)
+    resume = models.FileField(upload_to='documents/trainer_resume/', blank=True)
+    
+    def get_absolute_url(self):
+        return reverse('trainer_profile', kwargs={'user_id': self.request.user.pk})
+
+class learner_profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    date = models.DateTimeField(default=dt.now)
+    mobile = models.BigIntegerField(blank=True, null=True)
+    linkedin_id = models.CharField(max_length=60, blank=True)
+    picture = models.ImageField(upload_to = 'images/profile_pics', blank=True, null=True)
+    institute = models.CharField(max_length=50, blank=True) 	
+    city = models.CharField(max_length=15, blank=True)	
+    country = models.CharField(max_length=15, blank=True)	
+    des = models.TextField(blank=True)
+    resume = models.FileField(upload_to='documents/learner_resume/', blank=True)
+    
+    def get_absolute_url(self):
+        return reverse('learner_profile', kwargs={'user_id': self.request.user.pk})
 
 class select_module(models.Model):
     date = models.DateTimeField(default=dt.now, blank=True)

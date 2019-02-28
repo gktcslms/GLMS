@@ -68,7 +68,7 @@
 				<div class="panel">
 					<div class="panel-heading" style="font-family: inherit !important;">
 						<div class="card-header " style="">
-							<h5 class="title">JOB SEEKER PROFILES</h5>
+							<h5 class="title">TRAINER PROFILES</h5>
 								<span class="clickable filter btn btn-primary filter-btn" data-toggle="tooltip" title="Toggle table filter" data-container="body">
 									Filter <i class="fas fa-filter"></i>
 								</span>
@@ -85,7 +85,7 @@
 								<th>Name</th>
 								<th>Contact No.</th>
 								<th>Email ID</th>
-								<th>Institute</th>
+								<th>Skills</th>
 								<th>Details</th>
 								<th>Uploaded Resume</th>
 							</tr>
@@ -98,7 +98,7 @@
 							<td>{{p.user.first_name}} {{p.user.last_name}} </td>
 							<td>{{p.mobile}}</td>
 							<td><a style="color:#0000EE" href="mailto:{{i.email}}">{{p.user.email}}</a></td>
-							<td>{{p.institute}}</td>
+							<td>{{p.skills}}</td>
 							<td>{{p.des}}</td>
 							<td style="text-align:center">
 								{% if p.resume  %}
@@ -173,6 +173,6 @@ $(function(){
 })
 </script>
 <script>
-$("#jobseeker_profiles").addClass("active");
+$("#trainer_profiles").addClass("active");
 </script>
 {% endblock %}

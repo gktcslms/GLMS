@@ -71,6 +71,7 @@ INSTALLED_APPS = [
     'guardian',
     'notifications',
     'chat_bot',
+    'quiz',
 ]
 
 MIDDLEWARE = [

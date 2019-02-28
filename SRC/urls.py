@@ -23,6 +23,8 @@ from rest_framework import routers
 from lms import api_views
 import notifications.urls
 from chat_bot import views as chat_bot_views
+from quiz import views as quiz_views
+from quiz import api_views as quiz_api_views
 
 router = routers.DefaultRouter()
 router.register(r'users', api_views.UserViewSet)
@@ -39,6 +41,9 @@ router.register(r'quiz_questions', api_views.Quiz_QuestionViewSet)
 router.register(r'paginated_courses', api_views.PaginatedViewSet)
 router.register(r'learner_qa/(?P<quiz_id>[0-9]+)', api_views.LearnerQuestionAnswerList, base_name="learner_qa")
 router.register(r'learner_qa', api_views.LearnerQuestionAnswerViewSet)
+router.register(r'quiz_all_answers', quiz_api_views.Answer_OptionViewSet)
+router.register(r'quiz_all_quizes', quiz_api_views.QuizViewSet)
+router.register(r'quiz_all_questions', quiz_api_views.Quiz_QuestionViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -61,6 +66,7 @@ urlpatterns = [
     url(r'^learner_profile/(?P<user_id>\d+)$', learner_profileview, name="learner_profile"),
     url(r'^jobseeker_profile/(?P<user_id>\d+)', jobseeker_profileview, name="jobseeker_profile"),
     url(r'^intern_profile/(?P<user_id>\d+)', intern_profileview, name="intern_profile"),
+    url(r'^trainer_profile/(?P<user_id>\d+)', trainer_profileview, name="trainer_profile"),
     url(r'^learner_dashboard/',learner_my_courses,name='learner_dashboard'),
     url(r'^support/',support_view,name="support"),
     re_path('myprofile/(?P<user_id>\d+)', myprofileview, name="myprofile"),
@@ -155,6 +161,8 @@ urlpatterns = [
     path('submitted_assignments/', submitted_assignment_view, name='submitted_assignments'),
     path('submitted_int_profiles/', submitted_int_profile_view, name='submitted_int_profiles'),
     path('submitted_jobseeker_profiles/', submitted_jobseeker_profile_view, name='submitted_jobseeker_profiles'),
+    path('submitted_learner_profiles/', submitted_learner_profile_view, name='submitted_learner_profiles'),
+    path('submitted_trainer_profiles/', submitted_trainer_profile_view, name='submitted_trainer_profiles'),
     path('my_assignments/', my_assignments_view, name='my_assignments'),
     url(r'session_security/', include('session_security.urls')),
     url(r'^home2/', browse_courses, name='browse_courses'),
@@ -176,6 +184,16 @@ urlpatterns = [
     url(r'^my_receipts/', my_receipts, name='my_receipts'),
     path('chat/', chat_bot_views.chat, name='chat_view'),
     path('ajax_chat/', chat_bot_views.ajax_chat, name='ajax_chat_view'),
+    path('quiz_list', quiz_views.home, name='quiz_list'),
+    path('manage_quizes', quiz_views.manage_quizes, name='manage_quizes'),
+    path('submit_quiz', quiz_views.submit_quiz, name='submit_quiz'),
+    path('create_candidate_record', quiz_views.create_candidate_record, name='create_candidate_record'),
+    path('submit_score', quiz_views.submit_score, name='submit_score'),
+    path('admin/', admin.site.urls),
+    re_path(r'^api-auth/', include('rest_framework.urls')),
+    path('take_quiz/<int:id>', quiz_views.take_quiz, name='take_quiz'),
+    path('view_score/<int:id>', quiz_views.view_score, name='view_score'),
+    path('top_scorers/<int:id>', quiz_views.top_scorers, name='top_scorers'),
     url(r'/$',home,name="home"),
     path('',home,name="home"),
 ]

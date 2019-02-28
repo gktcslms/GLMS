@@ -727,6 +727,42 @@ def jobseeker_profileview(request, user_id, template_name='jobseeker_profile.htm
         save_it.picture = request.FILES.get('picture', save_it.picture)
         save_it.save()
     return render(request, template_name, {"form":form,"jp":jp})
+	
+@login_required(login_url='/authentication/login/')
+def learner_profileview(request, user_id, template_name='learner_profile.html'):
+    u = learner_profile.objects.all()
+    try:
+        if request.user.is_superuser:
+            jp = get_object_or_404(learner_profile, user_id=user_id)
+        else:
+            jp = get_object_or_404(learner_profile, user_id=user_id, user=request.user)   
+    except:
+        jp = learner_profile(user=request.user)    
+    form = learner_profileForm(request.POST or None, instance=jp)
+    if form.is_valid():
+        save_it = form.save(commit=False)
+        save_it.resume = request.FILES.get('resume', save_it.resume)
+        save_it.picture = request.FILES.get('picture', save_it.picture)
+        save_it.save()
+    return render(request, template_name, {"form":form,"jp":jp})
+	
+@login_required(login_url='/authentication/login/')
+def trainer_profileview(request, user_id, template_name='trainer_profile.html'):
+    u = trainer_profile.objects.all()
+    try:
+        if request.user.is_superuser:
+            jp = get_object_or_404(trainer_profile, user_id=user_id)
+        else:
+            jp = get_object_or_404(trainer_profile, user_id=user_id, user=request.user)   
+    except:
+        jp = trainer_profile(user=request.user)    
+    form = trainer_profileForm(request.POST or None, instance=jp)
+    if form.is_valid():
+        save_it = form.save(commit=False)
+        save_it.resume = request.FILES.get('resume', save_it.resume)
+        save_it.picture = request.FILES.get('picture', save_it.picture)
+        save_it.save()
+    return render(request, template_name, {"form":form,"jp":jp})
 
 def search_titles(request):
     if request.method == "POST" and request.POST:
@@ -904,7 +940,7 @@ def job_seeker_form_view(request):
 	return render(request, 'job_seeker_form.html',locals())
 
 @login_required(login_url='/authentication/login/')
-def learner_profileview(request, user_id, template_name='learner_profile.html'):
+def learner_profileview2(request, user_id, template_name='learner_profile.html'):
     u = userprofile.objects.all()
     try:
         if request.user.is_superuser:
@@ -2012,6 +2048,16 @@ def submitted_int_profile_view(request):
 def submitted_jobseeker_profile_view(request):
     profile = jobseeker_profile.objects.all()
     return render(request, 'submitted_jobseeker_profile.html',locals())
+
+@login_required(login_url='/authentication/login/')
+def submitted_learner_profile_view(request):
+    profile = learner_profile.objects.all()
+    return render(request, 'submitted_learner_profile.html',locals())
+
+@login_required(login_url='/authentication/login/')
+def submitted_trainer_profile_view(request):
+    profile = trainer_profile.objects.all()
+    return render(request, 'submitted_trainer_profile.html',locals())
 
 @login_required(login_url='/authentication/login/')
 def my_assignments_view(request):
