@@ -100,10 +100,16 @@ class Course_ModuleSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('id', 'url', 'part_of', 'name', 'video', 'Presentation', 'Assignment', 'labsession', 'reference1', 'reference2', 'reference3', 'topics', 'order', 'quiz', 'allow_preview')
 
     def create(self, validated_data):
-        quiz_data = validated_data.pop('quiz')
+        try:
+            quiz_data = validated_data.pop('quiz')
+        except Exception as e:
+            print(e)
         module = Course_Module.objects.create(**validated_data)
-        for qd in quiz_data:
-            Quiz.objects.create(module_referred = module, **qd)
+        try:
+            for qd in quiz_data:
+                Quiz.objects.create(module_referred = module, **qd)
+        except Exception as e:
+            print(e)
         return module
 
     def update(self, instance, validated_data):

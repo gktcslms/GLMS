@@ -24,7 +24,8 @@ SECRET_KEY = 'fqvspyc!h_%*mgq4spink#$t4)i6pm5i$hz72nc4f2(+ddjm9d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["35.200.211.0",".gktcs.com","www.gktcs.com","gktcs.com"]
+# ALLOWED_HOSTS = ["35.200.211.0",".gktcs.com","www.gktcs.com","gktcs.com"]
+ALLOWED_HOSTS = ["localhost"]
 
 
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -117,14 +118,21 @@ WSGI_APPLICATION = 'SRC.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'gipldb',
+#         'USER': 'gipl',
+#         'PASSWORD': 'Gipl@2018',
+#         'HOST': 'localhost',
+#         'PORT': '',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'gipldb',
-        'USER': 'gipl',
-        'PASSWORD': 'Gipl@2018',
-        'HOST': 'localhost',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
