@@ -168,16 +168,7 @@
                                             <select class="form-control" ng-model="selected_question.selected" ng-options="item.text for item in selected_question.possible_answers"></select>
                                         </div>
                                     </div>
-                                    <div class="form-group">        
-                                        <label class="control-label col-sm-4" for="select_option">Select Correct Option :</label>
-                                        <div class="col-sm-8">
-                                            <div ng-repeat="item in selected_question.possible_answers">
-                                                <label>
-                                                    <input type="radio" ng-value="item.text" ng-model="$selected_question.selected" />
-                                                    {{item.text}}
-                                                </label>
-                                            </div>
-										</div>
+                              
                                     </div>
                                     <div class="form-group">        
                                         <div class="col-sm-offset-5 col-sm-4">                                          
