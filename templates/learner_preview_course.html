@@ -2,6 +2,9 @@
 {% block head %}
 <script src="https://cdn.jsdelivr.net/npm/afterglowplayer@1.x"></script>
 <script src="/static/html5lightbox/html5lightbox.js"></script>
+<script src="/static/js/sortable.js"></script>
+<script src="/static/js/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
 <style>
 .cntr{
  text-align:center;
@@ -37,7 +40,7 @@
 	<img src="{{ course.thumbnail.url}}" class="img-responsive"> 
 </div>
 <div class="col-md-7">
-	<h1 style="color:#fff; text-shadow: 2px 2px #212020;">{{course.course_name}}</h1>
+	<h2 style="color:#fff; text-shadow: 2px 2px #212020;">{{course.course_name}}</h2>
 	<h5 style="color:#fff;text-shadow: 2px 2px #212020;">{{course.description | safe}}</h5>
 </div>
 </div>
@@ -46,7 +49,7 @@
 <div class="row">
 <div class="col-md-12">
 	<div class="course-box">
-	  <h3 class="cntr">Course objectives</h3>
+	  <h4 class="cntr">Course objectives</h4>
 	  Some of the key skills you will gain upon completion of this program include:
 	  <br/>
 	  <p id="course_obj">{{course.objectives}}</p>
@@ -55,14 +58,14 @@
 </div>
 <div class="col-md-6">
 	<div class="course-box">
-		<h3 class="cntr">Prerequisite</h3>
+		<h4 class="cntr">Prerequisite</h4>
 		<p id="course_prereq">{{course.prerequisite}}</p>
 	    <p><span id="messageSpan"><span></p>
 	</div>
 </div>
 <div class="col-md-6">
 	<div class="course-box">
-		<h3 class="cntr">Requirements</h3>
+		<h4 class="cntr">Requirements</h4>
 		<p id="course_require">{{course.requirements}}</p>
 	</div>
 </div>
@@ -74,59 +77,270 @@
     <div id="basicpy" class="">
 		<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
-			<div id="module-group" class="panel panel-default">
-				{% for module in modules %}
-				{% if module.allow_preview == True %}
-				<div class="course-box">
-					<a role="button" data-toggle="collapse" data-parent="#module-group" href="#module{{module.id}}" aria-expanded="true" aria-controls="collapseOne">
-					<div class="panel-heading" role="tab" id="title{{module.id}}">
-						<h4 class="panel-title">
-							
-								<i class="more-less glyphicon glyphicon-plus"></i>
-								{{module.order}}. {{module.name}}
-							
-						</h4>
-					</div>
-					</a>
-					<div id="module{{module.id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="title{{module.id}}">
-						<div class="panel-body course-box">
-							<span style="font-face:bold">Topics:</span>
-							<ul>
-								<li>{{ module.topics}}</li> 
-							</ul>
-							<div class="row">
-								{% if module.Presentation %}
-									<div class="col-md-3"><a href="{{ module.Presentation.url}}" class="btn btn-primary html5lightbox"><i class="far fa-file-powerpoint"></i> Presentation</a></div>
-								{% endif %}
-								{% if module.labsession %}
-								<div class="col-md-3"><a href="{{ module.labsession.url}}" class="btn btn-primary html5lightbox"><i class="far fa-file-alt"></i> Lab Session</a></div>
-								{% endif %}
-								{% if module.video %}
-								<div class="col-md-3">  
-									<a href="#myvideo{{ module.id }}" class="afterglow btn btn-primary"><i class="far fa-play-circle"></i> Video</a>
-									<video id="myvideo{{ module.id }}" width="960" height="540" data-overscale="false" class="afterglow-lightboxplayer" data-autoresize="fit" data-skin="dark">
-									  <source type="video/mp4" src="{{ module.video.url}}" />
-									</video>
-								</div>
-								{% endif %}
-								{% if module.reference1 %}
-								<div class="col-md-3"><a href="{{ module.reference1.url}}" class="btn btn-primary html5lightbox"><i class="far fa-file-alt"></i> Reference 1</a></div>
-								{% endif %}
-								{% if module.reference2 %}
-								<div class="col-md-3"><a href="{{ module.reference2.url}}" class="btn btn-primary html5lightbox"><i class="far fa-file-alt"></i> Reference 2</a></div>
-								{% endif %}
-								{% if module.reference3 %}
-								<div class="col-md-3"><a href="{{ module.reference3.url}}" class="btn btn-primary html5lightbox"><i class="far fa-file-alt"></i> Reference 3</a></div>
-								{% endif %}
-								{% if module.Assignment %}
-								<div class="col-md-3"><a href="{{ module.Assignment.url}}" class="btn btn-primary html5lightbox"><i class="far fa-file-alt"></i> Assignment</a></div>
-								{% endif %}
-							</div>
-						</div>
-					</div>
+			<div id="module-group" class="panel panel-default" ng-app="edit_modules" ng-controller="myCtrl">
+				<div style="text-align:center;">
+					<!-- <h3>{{ course }}</h3> -->
+					<h3 id="course_id" ng-hide="true">{{ course.id }}</h3>
+					<h3 id="csrf" ng-hide="true">{{ csrf_token }}</h3>
+					<h3 id="learner_id" ng-hide="true">{{ learner_id }}</h3>
 				</div>
-				{% endif %}
-				{% endfor %}
+				{% verbatim %}
+				<div ng-repeat="each in modules  | orderBy : 'order'">
+                    <div class="course-box row">
+						<div class="panel-heading col-md-6">
+							<h4><a href="" class="panel-title" data-toggle="modal" data-target="#viewModal" ng-click="view_module(each, $index)">
+								{{ $index + 1 }}. {{ each.name }}
+							</a></h4>
+						</div>
+                        <div class="col-md-4">
+                            <a class="btn btn-info" href="" data-toggle="modal" data-target="#viewModal" ng-click="view_module(each, $index)">
+                                Module Content
+                            </a>
+                        </div>
+                        <!-- Show Learner the Quiz He has not done -->
+                        <div class="col-md-2" ng-hide="each.lq_exists || each.quiz[0] == undefined || each.quiz[0].questions.length == 0">
+                            <a class="btn btn-warning" href="" data-toggle="modal" data-target="#quizModal" ng-click="take_quiz(each)">
+                                Take Quiz
+                            </a>
+                        </div>
+                        <!-- Show learner the quiz he has answered -->
+                        
+                        <div class="col-sm-2" ng-show="each.lq_exists">
+                            <a class="btn btn-success" href="" data-toggle="modal" data-target="#learnerQuizModal" ng-click="show_taken_quiz(each)">
+                                Quiz Score: {{ each.percentage | number:0 }} %
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+
+                <!-- NEW QUIZ MODAL -->
+                <div id="quizModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog modal-lg">
+                    
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5>Quiz {{ quiz_name }}:- </h5>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">                                          
+                                    <div ng-class="{'col-sm-1': true}" ng-repeat="q in questions track by $index" style="margin:3px;">
+                                        <button class='btn btn-danger' ng-click="select_question(q)">{{ $index + 1 }}</button>
+                                    </div>
+                                </div>
+                                <hr>
+                                <form class="form-horizontal" ng-submit="submit_quiz()">
+                                    <div class="form-group row">
+                                        <label class="control-label col-sm-2" for="question">Question:</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="question" placeholder="Enter question" name="question" ng-required="true" ng-model="selected_question.text" ng-disabled="true">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">        
+                                        <label class="control-label col-sm-2" for="option1">Option 1:</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="option1" placeholder="Enter Option" name="option1" ng-required="true" ng-model="selected_question.possible_answers[0].text" ng-disabled="true">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">        
+                                        <label class="control-label col-sm-2" for="option2">Option 2:</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="option2" placeholder="Enter Option" name="option2" ng-required="true" ng-model="selected_question.possible_answers[1].text" ng-disabled="true">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">        
+                                        <label class="control-label col-sm-2" for="option3">Option 3:</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="option3" placeholder="Enter Option" name="option3" ng-required="true" ng-model="selected_question.possible_answers[2].text" ng-disabled="true">       
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">        
+                                        <label class="control-label col-sm-2" for="option4">Option 4:</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="option4" placeholder="Enter Option" name="option4" ng-required="true" ng-model="selected_question.possible_answers[3].text" ng-disabled="true">          
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">        
+                                        <label class="control-label col-sm-3" for="select_option">Select Correct Option :</label>
+                                        <div class="col-sm-9">
+                                            <select class="form-control" ng-model="selected_question.selected" ng-options="item.text for item in selected_question.possible_answers"></select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">        
+                                        <label class="control-label col-sm-4" for="select_option">Select Correct Option :</label>
+                                        <div class="col-sm-8">
+                                            <div ng-repeat="item in selected_question.possible_answers">
+                                                <label>
+                                                    <input type="radio" ng-value="item.text" ng-model="$selected_question.selected" />
+                                                    {{item.text}}
+                                                </label>
+                                            </div>
+										</div>
+                                    </div>
+                                    <div class="form-group">        
+                                        <div class="col-sm-offset-5 col-sm-4">                                          
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <button type="submit" class="btn btn-primary">SUBMIT QUIZ</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
+                
+                <!-- END NEW QUIZ MODAL -->
+
+
+                <!-- LEARNER QUIZ MODAL -->
+                <div id="learnerQuizModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog modal-lg">
+                    
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+								<h5>Quiz {{ quiz_name }}:- </h5>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">                                          
+                                    <div class="col-sm-1" ng-repeat="q in learner_quiz_questions track by $index" style="margin:3px;">
+                                        <span ng-if="q.quiz_question.correct.text !== q.chosen_option.text">
+                                            <button class='btn btn-danger' ng-click="select_answered_question(q)">{{ $index + 1 }}</button>
+                                        </span>
+                                        <span ng-if="q.quiz_question.correct.text === q.chosen_option.text">
+                                            <button class='btn btn-success' ng-click="select_answered_question(q)">{{ $index + 1 }}</button>
+                                        </span>
+                                    </div>
+                                </div>
+                                <hr>
+                                <form class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-2" for="question">Question:</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="question" placeholder="Enter question" name="question" ng-required="true" ng-model="selected_answered_question.quiz_question.text" ng-disabled="true">
+                                        </div>
+                                    </div>
+                                    <div class="form-group" ng-class="{'has-success has-feedback': selected_answered_question.quiz_question.possible_answers[0].text === selected_answered_question.quiz_question.correct.text}">        
+                                        <label class="control-label col-sm-3" for="option1">Option 1:</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="option1" placeholder="Enter Option" name="option1" ng-required="true" ng-model="selected_answered_question.quiz_question.possible_answers[0].text" ng-disabled="true">
+                                            <span class="glyphicon glyphicon-ok form-control-feedback" ng-show="selected_answered_question.quiz_question.possible_answers[0].text === selected_answered_question.quiz_question.correct.text"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" ng-class="{'has-success has-feedback': selected_answered_question.quiz_question.possible_answers[1].text === selected_answered_question.quiz_question.correct.text}">        
+                                        <label class="control-label col-sm-3" for="option2">Option 2:</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="option2" placeholder="Enter Option" name="option2" ng-required="true" ng-model="selected_answered_question.quiz_question.possible_answers[1].text" ng-disabled="true">
+                                            <span class="glyphicon glyphicon-ok form-control-feedback" ng-show="selected_answered_question.quiz_question.possible_answers[1].text === selected_answered_question.quiz_question.correct.text"></span>                                            
+                                        </div>
+                                    </div>
+                                    <div class="form-group" ng-class="{'has-success has-feedback': selected_answered_question.quiz_question.possible_answers[2].text === selected_answered_question.quiz_question.correct.text}">        
+                                        <label class="control-label col-sm-3" for="option3">Option 3:</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="option3" placeholder="Enter Option" name="option3" ng-required="true" ng-model="selected_answered_question.quiz_question.possible_answers[2].text" ng-disabled="true">       
+                                            <span class="glyphicon glyphicon-ok form-control-feedback" ng-show="selected_answered_question.quiz_question.possible_answers[2].text === selected_answered_question.quiz_question.correct.text"></span>                                            
+                                        </div>
+                                    </div>
+                                    <div class="form-group" ng-class="{'has-success has-feedback': selected_answered_question.quiz_question.possible_answers[3].text === selected_answered_question.quiz_question.correct.text}">        
+                                        <label class="control-label col-sm-3" for="option4">Option 4:</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="option4" placeholder="Enter Option" name="option4" ng-required="true" ng-model="selected_answered_question.quiz_question.possible_answers[3].text" ng-disabled="true">    
+                                            <span class="glyphicon glyphicon-ok form-control-feedback" ng-show="selected_answered_question.quiz_question.possible_answers[3].text === selected_answered_question.quiz_question.correct.text"></span>                                                  
+                                        </div>
+                                    </div>
+                                    <div class="form-group">        
+                                        <label class="control-label col-sm-4" for="select_option">Your Answer :</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" id="select_option" placeholder="Enter Option" name="select_option" ng-required="true" ng-model="selected_answered_question.chosen_option.text" ng-disabled="true">     
+                                        </div>
+                                    </div>
+                                    <div class="form-group">        
+                                        <label class="control-label col-sm-4" for="correct_option">Correct Answer :</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" id="correct_option" placeholder="Enter Option" name="correct_option" ng-required="true" ng-model="selected_answered_question.quiz_question.correct.text" ng-disabled="true">     
+                                        </div>
+                                    </div>
+                                    <!-- <div class="form-group">        
+                                        <div class="col-sm-offset-5 col-sm-4">                                          
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <button type="submit" class="btn btn-primary">RETAKE QUIZ</button>
+                                        </div>
+                                    </div> -->
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
+                
+                <!-- END LEARNER QUIZ MODAL -->
+
+                
+                <!-- View Modal -->
+                <div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">{{ selected.name }}</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form class="form-horizontal">
+									
+                                    <div class="form-group">
+										<span style="font-face:bold">Topics:</span>
+										<ul>
+											<li>{{ selected.topics }}</li> 
+										</ul>
+                                    </div>
+                                    <div class="row">
+                                        <div ng-show="selected.Presentation" class="col-md-3">          
+                                            <a ng-href="{{ selected.Presentation }}" class="btn btn-primary html5lightbox" target="_blank"><i class="far fa-file-powerpoint"></i> Presentation</a>
+                                        </div>
+                                        <div ng-show="selected.labsession" class="col-md-3">          
+                                            <a ng-href="{{ selected.labsession }}" class="btn btn-primary html5lightbox" target="_blank"><i class="fas fa-laptop-code"></i> Lab Session</a>
+                                        </div>
+										<div class="col-md-3" ng-show="selected.video" >  
+											<a href="#myvideo22" class="afterglow btn btn-primary"><i class="far fa-play-circle"></i> Video</a>
+											<video id="myvideo22" width="960" height="540" data-overscale="false" class="afterglow-lightboxplayer" data-autoresize="fit" data-skin="dark">
+											  <source type="video/mp4" src="{{ selected.video }}" />
+											</video>
+										</div>
+                                        <div ng-show="selected.reference1" class="col-md-3">          
+                                            <a ng-href="{{ selected.reference1 }}" class="btn btn-primary html5lightbox" target="_blank"><i class="fa fa-link"></i> Reference 1</a>
+                                        </div>
+                                        <div ng-show="selected.reference2" class="col-md-3">          
+                                            <a ng-href="{{ selected.reference2 }}" class="btn btn-primary html5lightbox" target="_blank"><i class="fa fa-link"></i> Reference 2</a>
+                                        </div>
+                                        <div ng-show="selected.reference3" class="col-md-3">          
+                                            <a ng-href="{{ selected.reference3 }}" class="btn btn-primary html5lightbox" target="_blank"><i class="fa fa-link"></i> Reference 3</a>
+                                        </div>
+                                        <div ng-show="selected.Assignment" class="col-md-3">          
+                                            <a ng-href="{{ selected.Assignment }}" class="btn btn-primary html5lightbox" target="_blank"><i class="fa fa-file-code"></i> Assignment</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End View Modal -->
+            {% endverbatim %}
 			</div>
 		</div><!-- panel-group -->	
     </div>
@@ -147,7 +361,7 @@ $('.panel-group').on('shown.bs.collapse', toggleIcon);
 
 {% block lower %}
 <script>
-$("#my_courses").addClass("active");
+$("#html5lightbox111").addClass("html5lightbox");
 </script>
 <script>
 $(document).ready(function () {
