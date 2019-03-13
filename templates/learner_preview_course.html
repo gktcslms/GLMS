@@ -5,6 +5,7 @@
 <script src="/static/js/sortable.js"></script>
 <script src="/static/js/angular.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
 <style>
 .cntr{
  text-align:center;
@@ -113,6 +114,11 @@
                     </div>
                 </div>
                 <hr>
+
+                <div class="container">
+                    <canvas id="myChart">
+                    </canvas>
+                </div>
 
                 <!-- NEW QUIZ MODAL -->
                 <div id="quizModal" class="modal fade" role="dialog">

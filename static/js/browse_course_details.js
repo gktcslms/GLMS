@@ -97,6 +97,8 @@ app.controller('myCtrl', function($scope, $http, $q) {
 
 	$scope.module_wise_calculate_score = function(){
 		console.log("Calculate Score");
+		$scope.chart_labels = [];
+		$scope.chart_scores = [];
 		for(var i = 0; i < $scope.modules.length; i++){
 			var score = 0			
 			if($scope.modules[i].lq_exists){
@@ -111,8 +113,50 @@ app.controller('myCtrl', function($scope, $http, $q) {
 			console.log($scope.modules[i]);
 			console.log($scope.modules[i].score);
 			console.log($scope.modules[i].percentage);
+			$scope.chart_labels.push($scope.modules[i].name);
+			$scope.chart_scores.push($scope.modules[i].percentage);
 		};
+
+		$scope.show_chart();
 	};
+
+	$scope.show_chart = function(){
+		let myChart = document.getElementById('myChart').getContext('2d');
+										
+		Chart.defaults.global.defaultFontFamily ='Lato';
+		Chart.defaults.global.defaultFontSize = 18;
+		Chart.defaults.global.defaultFontColor = '#777'
+
+		let massPopChart = new Chart(myChart, {
+				type:'bar',
+				data:{
+				labels: $scope.chart_labels,
+				datasets:[
+						{
+								label:'Quiz Score',
+								backgroundColor:'lightblue',
+								borderColor:'grey',
+								borderWidth:2,
+								data:$scope.chart_scores                
+						}
+						]
+				},
+				options: {
+						scales: {
+								yAxes: [{
+										ticks: {
+												beginAtZero: true,
+												// suggestedMin: 50,
+												suggestedMax: 100,
+												stepSize: 20
+										}
+								}]
+						}
+				}
+		});
+	};
+
+
 
 	$scope.view_module = function(object, index){
 		$scope.selected = object;
