@@ -16,7 +16,7 @@ def home(request):
         base_template_name = 'intern_dashboard.html'
     if str(custom_user.primary_registration_type) == "Trainer":
         base_template_name = 'base_dashboard.html'
-    quizes_available = Quiz.objects.all()
+    quizes_available = Quiz.objects.filter(allow_quiz=True)
     return render(request, 'quiz_home.html', {"quizes_available": quizes_available, "base_template_name":base_template_name})
 
 
