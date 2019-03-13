@@ -69,5 +69,5 @@ class QuizSerializer(serializers.HyperlinkedModelSerializer):
     questions = Quiz_QuestionSerializer(many=True, required=False)
     class Meta:
         model = Quiz
-        fields = ('url', 'id', 'quiz_name', 'time_limit', 'questions')
+        fields = ('url', 'id', 'quiz_name', 'time_limit', 'allow_quiz', 'questions')
 

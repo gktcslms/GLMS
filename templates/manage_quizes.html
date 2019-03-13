@@ -31,16 +31,21 @@
                         <td scope="col">Update / Edit</td>
                         <td scope="col">Delete</td>
                         <td scope="col">Top Scorer</td>
+                        <td scope="col">Enable</td>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="quiz in quizes track by $index" style="" class="course-box">
+                    <tr ng-repeat="quiz in quizes track by $index" class="course-box">
                         <td scope="row">{{$index + 1}}</td>
                         <td>{{ quiz.quiz_name }}</td>
                         <td>{{ quiz.time_limit }}</td>
                         <td><i class="mdi mdi-clipboard-text" style="cursor: pointer; color: #28a745;" data-toggle="modal" data-target="#edit_quiz" ng-click="edit_quiz(quiz, $index)"></i></td>
                         <td><i class="mdi mdi-delete" style="cursor: pointer; color: #ec1f1f;" ng-click="delete_quiz(quiz, $index)"></i></td>
 						<td><a href="/top_scorers/{{quiz.id}}" class="btn btn-secondary" role="button">View Top Scorers</a></td>
+                        <td>
+                            <button class="btn btn-primary pull-right" ng-if="!quiz.allow_quiz" ng-click="enable_quiz(quiz)">Enable</button>
+                            <button class="btn btn-danger pull-right" ng-if="quiz.allow_quiz" ng-click="disable_quiz(quiz)">Disable</button>
+                        </td>
                     </tr>
                 </tbody>
             </table>

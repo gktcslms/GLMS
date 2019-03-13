@@ -16,6 +16,8 @@ class Answer_Option(models.Model):
 class Quiz(models.Model):
     quiz_name = models.CharField(max_length=200)
     time_limit = models.IntegerField(default=1)
+    allow_quiz = models.NullBooleanField(blank=True, null=True, default=False)
+
 
     def __str__(self):
         return self.quiz_name

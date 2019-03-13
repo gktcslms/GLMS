@@ -27,10 +27,51 @@ app.controller('myCtrl', function($scope, $http, $q) {
 		$scope.selected = object;
 		$scope.q_name = $scope.selected.quiz_name; 
 		$scope.q_time = $scope.selected.time_limit; 
+		$scope.q_enable = $scope.selected.allow_quiz;
 		$scope.questions = $scope.selected.questions;
 		if($scope.questions.length !== 0 || $scope.questions.length !== undefined){
 			$scope.selected_question = $scope.questions[0];
 		}
+	};
+
+	$scope.enable_quiz = function(object){
+		console.log("Enable Quiz");
+		object.allow_quiz = true;
+		var url = object.url;
+		var data = {
+			"allow_quiz": object.allow_quiz  
+		};
+		$http.patch(url, data).then(successCallback, errorCallback);
+		function successCallback(response){
+			if (response.status === 200){
+				console.log(response);
+				swal("Good job!", "Quiz Enabled!", "success");
+			}
+		};
+		function errorCallback(error){
+			console.log(error);
+			swal("Oops!", "Something went wrong!", "error");					
+		};
+	};
+
+	$scope.disable_quiz = function(object){
+		console.log("Disable Quiz");
+		object.allow_quiz = false;
+		var url = object.url;
+		var data = {
+			"allow_quiz": object.allow_quiz  
+		};
+		$http.patch(url, data).then(successCallback, errorCallback);
+		function successCallback(response){
+			if (response.status === 200){
+				console.log(response);
+				swal("Good job!", "Quiz Disabled!", "success");
+			}
+		};
+		function errorCallback(error){
+			console.log(error);
+			swal("Oops!", "Something went wrong!", "error");					
+		};
 	};
 
 	$scope.change_quiz_name = function(){
