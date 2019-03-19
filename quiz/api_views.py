@@ -16,11 +16,11 @@ class Answer_OptionViewSet(viewsets.ModelViewSet):
 
 
 class QuizViewSet(viewsets.ModelViewSet):
-    queryset = Quiz.objects.all()
+    queryset = Course_Quiz.objects.all()
     serializer_class = QuizSerializer
 
 
 
 class Quiz_QuestionViewSet(viewsets.ModelViewSet):
-    queryset = Quiz_Question.objects.all()
+    queryset = Course_Quiz_Question.objects.all()
     serializer_class = Quiz_QuestionSerializer

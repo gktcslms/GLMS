@@ -13,7 +13,7 @@ class Answer_Option(models.Model):
         verbose_name_plural = "Answer Options"
 
 
-class Quiz(models.Model):
+class Course_Quiz(models.Model):
     quiz_name = models.CharField(max_length=200)
     time_limit = models.IntegerField(default=1)
     allow_quiz = models.NullBooleanField(blank=True, null=True, default=False)
@@ -27,8 +27,8 @@ class Quiz(models.Model):
         verbose_name_plural = "Quizes"
 
 
-class Quiz_Question(models.Model):
-    quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE, blank=True, default=None, null=True, related_name='questions')
+class Course_Quiz_Question(models.Model):
+    quiz = models.ForeignKey(Course_Quiz, on_delete=models.CASCADE, blank=True, default=None, null=True, related_name='questions')
     text = models.CharField(max_length=200)
     possible_answers = models.ManyToManyField(Answer_Option)
     selected = models.ForeignKey(Answer_Option, related_name="selected", default=None, on_delete=models.CASCADE, blank=True, null=True)
@@ -44,7 +44,7 @@ class Quiz_Question(models.Model):
 
 class Candidate(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE, blank=True, default=None, null=True)
+    quiz = models.ForeignKey(Course_Quiz, on_delete=models.CASCADE, blank=True, default=None, null=True)
     score = models.IntegerField(default=0)
     taken_quiz = models.BooleanField(default=False)
 
@@ -57,7 +57,7 @@ class Candidate(models.Model):
 
 
 class CandidateQuestionAnswer(models.Model):
-    quiz_question = models.ForeignKey(Quiz_Question, on_delete=models.CASCADE)
+    quiz_question = models.ForeignKey(Course_Quiz_Question, on_delete=models.CASCADE)
     candidate = models.ForeignKey(Candidate, on_delete=models.CASCADE)
     selected = models.ForeignKey(Answer_Option, related_name="selected_answer", default=None, on_delete=models.CASCADE, blank=True, null=True)
     correct = models.ForeignKey(Answer_Option, related_name="correct_answer", default=None, on_delete=models.CASCADE, blank=True, null=True)

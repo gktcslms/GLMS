@@ -13,14 +13,14 @@ class Quiz_QuestionSerializer(serializers.HyperlinkedModelSerializer):
     possible_answers = Answer_OptionSerializer(many=True)
     correct = Answer_OptionSerializer()
     class Meta:
-        model = Quiz_Question
+        model = Course_Quiz_Question
         fields = ('url', 'id', 'quiz', 'text', 'possible_answers', 'selected', 'correct')
 
     def create(self, validated_data):
         possible_answers_data = validated_data.pop('possible_answers')
         selected_answers_data = validated_data.pop('selected')
         correct_answers_data = validated_data.pop('correct')
-        quiz_question = Quiz_Question.objects.create(**validated_data)
+        quiz_question = Course_Quiz_Question.objects.create(**validated_data)
         if possible_answers_data:
             for answer in possible_answers_data:
                 answer, created  = Answer_Option.objects.get_or_create(text=answer['text'])     
@@ -68,6 +68,6 @@ class Quiz_QuestionSerializer(serializers.HyperlinkedModelSerializer):
 class QuizSerializer(serializers.HyperlinkedModelSerializer):
     questions = Quiz_QuestionSerializer(many=True, required=False)
     class Meta:
-        model = Quiz
+        model = Course_Quiz
         fields = ('url', 'id', 'quiz_name', 'time_limit', 'allow_quiz', 'questions')
 
