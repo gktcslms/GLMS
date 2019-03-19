@@ -10,6 +10,7 @@ app.config(function($httpProvider) {
 });
 
 app.controller('myCtrl', function($scope, $http, $q) {
+	console.log("My Controller");
 
 	$scope.form_info = {};
 	
@@ -961,6 +962,16 @@ app.controller('myCtrl', function($scope, $http, $q) {
 			};
 			$http.post(url, data).then(successCallback, errorCallback);
 			function successCallback(response){
+				console.log("Response");
+				console.log(response.data);
+				console.log($scope.selected_question);
+				console.log($scope.selected_question.possible_answers);
+				$scope.selected_question.possible_answers = [];
+				$scope.selected_question.possible_answers.push({"text": $scope.selected_question.option_1.text});
+				$scope.selected_question.possible_answers.push({"text": $scope.selected_question.option_2.text});
+				$scope.selected_question.possible_answers.push({"text": $scope.selected_question.option_3.text});
+				$scope.selected_question.possible_answers.push({"text": $scope.selected_question.option_4.text});
+				console.log($scope.selected_question.possible_answers);
 				$scope.selected_question.url = response.data.url;
 				$scope.questions.push($scope.selected_question);
 				swal("Good job!", "Question Saved!", "success");
@@ -974,6 +985,7 @@ app.controller('myCtrl', function($scope, $http, $q) {
 		$scope.save_old_question = function(){
 			console.log("Save Old Question");
 			console.log($scope.selected_question);
+			console.log($scope.selected_question.possible_answers[0]);
 			var data = {
 				"quiz": $scope.selected_question.quiz,
 				"q_type": "MCQ",
