@@ -41,7 +41,7 @@ keyring==10.6.0
 keyrings.alt==3.0
 MarkupSafe==1.0
 mathparse==0.1.2
-nltk==3.3
+nltk==3.4.5
 oauthlib==2.1.0
 phonenumbers==8.9.16
 pilkit==2.0
