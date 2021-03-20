@@ -35,7 +35,7 @@ idna==2.6
 imagekit==1.0.6
 ipaddress==1.0.17
 ItsDangerous==1.0.0
-Jinja2==2.10
+Jinja2==2.11.3
 jsonfield==2.0.2
 keyring==10.6.0
 keyrings.alt==3.0
